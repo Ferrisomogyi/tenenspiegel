@@ -3,7 +3,7 @@
    - navigaties (de pagina zelf): network-first, val terug op cache → nieuwe deploys komen direct door, offline blijft werken
    - overige same-origin GET (manifest, iconen): cache-first
    - POST-calls naar de worker (workers.dev) worden met rust gelaten */
-const CACHE = 'tenenspiegel-v7.2.0';
+const CACHE = 'tenenspiegel-v7.3.0';
 const KERN = [
   './',
   './index.html',
