@@ -176,84 +176,97 @@ footer .bron{font-family:'Fraunces',serif;font-style:italic;font-size:14px;margi
 .plekchip.aan{background:var(--inkt);border-color:var(--inkt);color:var(--kaart)}
 .disclaimer{font-size:11.5px;color:var(--inkt-zacht);line-height:1.55;max-width:78ch;margin:12px auto 0}
 @media (prefers-reduced-motion: reduce){*{transition:none!important}html{scroll-behavior:auto}.spinner{animation:none}}
+header{position:relative}
+.taalhoek{position:absolute;top:10px;right:14px;z-index:50;text-align:right}
+#taalKnop{font-family:'Karla',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--inkt);background:var(--kaart);border:1.5px solid var(--inkt);border-radius:999px;padding:6px 12px;cursor:pointer;box-shadow:2px 2px 0 rgba(43,33,24,.12)}
+#taalKnop:hover{background:#F3ECDB}
+#taalMenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--kaart);border:1.5px solid var(--inkt);border-radius:12px;box-shadow:4px 4px 0 rgba(43,33,24,.12);min-width:160px;overflow:hidden}
+#taalMenu button{display:block;width:100%;text-align:left;padding:9px 14px;font-family:'Karla',sans-serif;font-size:14px;color:var(--inkt);background:none;border:none;cursor:pointer}
+#taalMenu button:hover{background:#F3ECDB}
+#taalMenu button[aria-selected="true"]{font-weight:700;background:#EFE6CF}
+#taalMenu .beta{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--inkt-zacht);border:1px solid var(--lijn);border-radius:999px;padding:1px 6px;margin-left:6px;vertical-align:1px}
 </style>
 </head>
 <body>
 
 <header class="wrap">
-  <div class="eyebrow">Naar de methode van Imre &amp; Margriet Somogyi</div>
+  <div class="taalhoek">
+    <button id="taalKnop" type="button" aria-haspopup="listbox" data-t-aria="ui.aria_taal" aria-label="Taal / Language">🌐 NL</button>
+    <div id="taalMenu" role="listbox" hidden></div>
+  </div>
+  <div class="eyebrow" data-t="ui.eyebrow">Naar de methode van Imre &amp; Margriet Somogyi</div>
   <h1>Tenen<span class="spiegel">spiegel</span></h1>
-  <div class="subtitel">Voeten zijn spiegels. Upload een foto of kies een teen, herken de vormen, lees jezelf.</div>
+  <div class="subtitel" data-t="ui.subtitel">Voeten zijn spiegels. Upload een foto of kies een teen, herken de vormen, lees jezelf.</div>
   <div class="elementbalk" aria-hidden="true">
-    <span class="e1">Ether</span><span class="e2">Lucht</span><span class="e3">Vuur</span><span class="e4">Water</span><span class="e5">Aarde</span>
+    <span class="e1" data-t="element.1.naam">Ether</span><span class="e2" data-t="element.2.naam">Lucht</span><span class="e3" data-t="element.3.naam">Vuur</span><span class="e4" data-t="element.4.naam">Water</span><span class="e5" data-t="element.5.naam">Aarde</span>
   </div>
 </header>
 
 <section class="wrap" id="stapfoto">
   <div class="stap">
     <span class="romein">I</span>
-    <h2>Laat de spiegel meekijken</h2>
-    <span class="hint">Optioneel · upload een foto en de vormen worden voor je aangezet</span>
+    <h2 data-t="ui.h_foto">Laat de spiegel meekijken</h2>
+    <span class="hint" data-t="ui.hint_foto">Optioneel · upload een foto en de vormen worden voor je aangezet</span>
   </div>
   <div class="fotoblok">
     <div class="fotokader">
-      <h3>Zo maak je de foto</h3>
+      <h3 data-t="ui.foto_hoe">Zo maak je de foto</h3>
       <ul class="fotolijst">
-        <li>Ga <b>ontspannen zitten</b> op een stoel, knieën in ongeveer 90 graden</li>
-        <li>Blote voeten <b>plat op de grond</b>, iets uit elkaar</li>
-        <li>Laat je tenen <b>ontspannen</b>: niet krommen, niet spreiden</li>
-        <li>Fotografeer <b>recht van boven</b>, beide voeten volledig in beeld</li>
-        <li>Zorg voor <b>goed licht</b>, zonder schaduw over de tenen</li>
-        <li><b>Meer detail?</b> Kies "Twee close-ups" en fotografeer elke voet apart — meer pixels per teen betekent scherper nagel- en contourbeeld</li>
+        <li data-t="ui.foto_li1">Ga <b>ontspannen zitten</b> op een stoel, knieën in ongeveer 90 graden</li>
+        <li data-t="ui.foto_li2">Blote voeten <b>plat op de grond</b>, iets uit elkaar</li>
+        <li data-t="ui.foto_li3">Laat je tenen <b>ontspannen</b>: niet krommen, niet spreiden</li>
+        <li data-t="ui.foto_li4">Fotografeer <b>recht van boven</b>, beide voeten volledig in beeld</li>
+        <li data-t="ui.foto_li5">Zorg voor <b>goed licht</b>, zonder schaduw over de tenen</li>
+        <li data-t="ui.foto_li6"><b>Meer detail?</b> Kies "Twee close-ups" en fotografeer elke voet apart — meer pixels per teen betekent scherper nagel- en contourbeeld</li>
       </ul>
-      <div class="fotonoot">De spiegel kijkt met je mee, maar jij blijft de lezer: loop bij stap III na wat is aangezet en pas aan wat niet klopt. Liever zelf kijken? Sla deze stap gewoon over.</div>
+      <div class="fotonoot" data-t="ui.foto_noot">De spiegel kijkt met je mee, maar jij blijft de lezer: loop bij stap III na wat is aangezet en pas aan wat niet klopt. Liever zelf kijken? Sla deze stap gewoon over.</div>
     </div>
     <div class="fotokader">
-      <div class="fotomodus" role="radiogroup" aria-label="Kies hoe je uploadt">
-        <button type="button" class="modusknop actief" id="modusEen" role="radio" aria-checked="true">Eén foto · beide voeten</button>
-        <button type="button" class="modusknop" id="modusTwee" role="radio" aria-checked="false">Twee close-ups · per voet</button>
+      <div class="fotomodus" role="radiogroup" data-t-aria="ui.aria_modus" aria-label="Kies hoe je uploadt">
+        <button type="button" class="modusknop actief" id="modusEen" data-t="ui.modus_een" role="radio" aria-checked="true">Eén foto · beide voeten</button>
+        <button type="button" class="modusknop" id="modusTwee" data-t="ui.modus_twee" role="radio" aria-checked="false">Twee close-ups · per voet</button>
       </div>
-      <div class="modusnoot" id="modusNoot">Snel en simpel: één foto van boven met beide voeten in beeld.</div>
+      <div class="modusnoot" id="modusNoot" data-t="ui.modusnoot_een">Snel en simpel: één foto van boven met beide voeten in beeld.</div>
       <input type="file" id="fotoInput" accept="image/*" hidden>
       <input type="file" id="fotoInputL" accept="image/*" hidden>
       <input type="file" id="fotoInputR" accept="image/*" hidden>
       <div id="paneelEen">
-        <div class="uploadzone" id="uploadZone" role="button" tabindex="0" aria-label="Kies of maak een foto van je voeten">
+        <div class="uploadzone" id="uploadZone" role="button" tabindex="0" data-t-aria="ui.aria_upload" aria-label="Kies of maak een foto van je voeten">
           <div class="uploadicoon" aria-hidden="true">📷</div>
-          <div class="uploadtekst"><b>Kies een foto</b> of sleep hem hierheen</div>
-          <div class="uploadsub">Bovenaanzicht van beide voeten · jpg of png</div>
+          <div class="uploadtekst" data-t="ui.upload_tekst"><b>Kies een foto</b> of sleep hem hierheen</div>
+          <div class="uploadsub" data-t="ui.upload_sub">Bovenaanzicht van beide voeten · jpg of png</div>
         </div>
-        <img id="fotoPreview" class="fotopreview" alt="Voorbeeld van je gekozen foto" hidden>
+        <img id="fotoPreview" class="fotopreview" data-t-alt="ui.alt_preview" alt="Voorbeeld van je gekozen foto" hidden>
       </div>
       <div id="paneelTwee" hidden>
         <div class="dubbelzone">
           <div>
-            <div class="voetkopje">Linkervoet · voelen</div>
-            <div class="uploadzone" id="uploadZoneL" role="button" tabindex="0" aria-label="Kies een close-upfoto van je linkervoet">
+            <div class="voetkopje" data-t="ui.voetkop_l">Linkervoet · voelen</div>
+            <div class="uploadzone" id="uploadZoneL" role="button" tabindex="0" data-t-aria="ui.aria_upload_l" aria-label="Kies een close-upfoto van je linkervoet">
               <div class="uploadicoon" aria-hidden="true">📷</div>
-              <div class="uploadtekst"><b>Linkervoet</b></div>
-              <div class="uploadsub">close-up · jpg of png</div>
+              <div class="uploadtekst" data-t="ui.upload_l"><b>Linkervoet</b></div>
+              <div class="uploadsub" data-t="ui.upload_sub_close">close-up · jpg of png</div>
             </div>
-            <img id="fotoPreviewL" class="fotopreview" alt="Voorbeeld close-up linkervoet" hidden>
+            <img id="fotoPreviewL" class="fotopreview" data-t-alt="ui.alt_preview_l" alt="Voorbeeld close-up linkervoet" hidden>
           </div>
           <div>
-            <div class="voetkopje">Rechtervoet · denken</div>
-            <div class="uploadzone" id="uploadZoneR" role="button" tabindex="0" aria-label="Kies een close-upfoto van je rechtervoet">
+            <div class="voetkopje" data-t="ui.voetkop_r">Rechtervoet · denken</div>
+            <div class="uploadzone" id="uploadZoneR" role="button" tabindex="0" data-t-aria="ui.aria_upload_r" aria-label="Kies een close-upfoto van je rechtervoet">
               <div class="uploadicoon" aria-hidden="true">📷</div>
-              <div class="uploadtekst"><b>Rechtervoet</b></div>
-              <div class="uploadsub">close-up · jpg of png</div>
+              <div class="uploadtekst" data-t="ui.upload_r"><b>Rechtervoet</b></div>
+              <div class="uploadsub" data-t="ui.upload_sub_close">close-up · jpg of png</div>
             </div>
-            <img id="fotoPreviewR" class="fotopreview" alt="Voorbeeld close-up rechtervoet" hidden>
+            <img id="fotoPreviewR" class="fotopreview" data-t-alt="ui.alt_preview_r" alt="Voorbeeld close-up rechtervoet" hidden>
           </div>
         </div>
       </div>
       <div class="foto-acties">
-        <button class="knop knop-donker" id="analyseerBtn" disabled>Analyseer mijn voeten</button>
-        <button class="knop knop-ghost2" id="fotoWissen" hidden>Opnieuw beginnen</button>
+        <button class="knop knop-donker" id="analyseerBtn" disabled data-t="ui.btn_analyseer">Analyseer mijn voeten</button>
+        <button class="knop knop-ghost2" id="fotoWissen" hidden data-t="ui.btn_opnieuw">Opnieuw beginnen</button>
       </div>
       <div class="fotostatus" id="fotoStatus" aria-live="polite"></div>
       <div id="fotoResultaat"></div>
-      <div class="fotoprivacy">Je foto wordt alleen gebruikt voor deze ene analyse en nergens opgeslagen.</div>
+      <div class="fotoprivacy" data-t="ui.foto_privacy">Je foto wordt alleen gebruikt voor deze ene analyse en nergens opgeslagen.</div>
     </div>
   </div>
 </section>
@@ -261,16 +274,16 @@ footer .bron{font-family:'Fraunces',serif;font-style:italic;font-size:14px;margi
 <section class="wrap" id="stap1">
   <div class="stap">
     <span class="romein">II</span>
-    <h2>Kies een teen</h2>
-    <span class="hint">Rechts = denken &amp; verstand · Links = voelen &amp; gevoel</span>
+    <h2 data-t="ui.h_teen">Kies een teen</h2>
+    <span class="hint" data-t="ui.hint_teen">Rechts = denken &amp; verstand · Links = voelen &amp; gevoel</span>
   </div>
   <div class="voetenblok">
     <div class="voetenkader">
-      <div class="voetlabels"><span>Linkervoet · voelen</span><span>Rechtervoet · denken</span></div>
-      <svg class="voeten" viewBox="0 0 460 290" id="voetenSvg" role="group" aria-label="Kies een teen"><defs><filter id="aq1" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="9"/></filter><filter id="aq2" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.031" numOctaves="3" seed="13" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="12"/></filter></defs><g transform="translate(198,0) scale(-1,1)"><g filter="url(#aq1)"><path d="M38,86 C36,110 40,132 40,152 C40,176 34,198 40,222 C45,250 61,268 83,268 C104,268 116,253 120,233 C124,214 127,196 135,178 C143,158 153,130 159,108 C163,96 167,88 171,84 C140,73 70,73 38,86 Z" fill="#E3BC97" fill-opacity=".38"/></g><g filter="url(#aq2)"><path d="M38,86 C36,110 40,132 40,152 C40,176 34,198 40,222 C45,250 61,268 83,268 C104,268 116,253 120,233 C124,214 127,196 135,178 C143,158 153,130 159,108 C163,96 167,88 171,84 C140,73 70,73 38,86 Z" fill="#D9A87E" fill-opacity=".28" transform="translate(2,3) scale(.985)" transform-origin="100 170"/></g><g filter="url(#aq1)"><path d="M48,92 C80,104 130,102 160,90 C158,112 150,128 122,132 C86,137 56,124 48,92 Z" fill="#C98F6E" fill-opacity=".20"/></g><g filter="url(#aq2)"><path d="M46,220 C58,206 96,204 112,218 C116,244 102,264 82,264 C60,264 44,244 46,220 Z" fill="#C98F6E" fill-opacity=".18"/></g><g filter="url(#aq1)"><path d="M44,130 C50,166 48,190 44,212 C38,190 36,158 44,130 Z" fill="#FBF7EC" fill-opacity=".45"/></g><g class="teen" data-teen="L1"><g filter="url(#aq2)"><path d="M36,66.85 C34.95,42.55 43.98,25 57,25 C70.02,25 79.05,42.55 78,66.85 C75.9,79 38.1,79 36,66.85 Z" fill="#4C5B9E" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M36,66.85 C34.95,42.55 43.98,25 57,25 C70.02,25 79.05,42.55 78,66.85 C75.9,79 38.1,79 36,66.85 Z" fill="#4C5B9E" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="57 52"/></g><g filter="url(#aq1)"><ellipse cx="57" cy="39.85" rx="9.45" ry="7.56" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="57" cy="52" rx="26" ry="33"/><circle class="stip" cx="57" cy="39.85" r="4.5"/><text x="57" y="56" text-anchor="middle" transform="scale(-1,1) translate(-114,0)">1</text></g><g class="teen" data-teen="L2"><g filter="url(#aq2)"><path d="M83.5,52.65 C82.875,31.95 88.25,17 96,17 C103.75,17 109.125,31.95 108.5,52.65 C107.25,63 84.75,63 83.5,52.65 Z" fill="#6E93A8" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M83.5,52.65 C82.875,31.95 88.25,17 96,17 C103.75,17 109.125,31.95 108.5,52.65 C107.25,63 84.75,63 83.5,52.65 Z" fill="#6E93A8" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="96 40"/></g><g filter="url(#aq1)"><ellipse cx="96" cy="29.65" rx="5.625" ry="6.44" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="96" cy="40" rx="17.5" ry="29"/><circle class="stip" cx="96" cy="29.65" r="4.5"/><text x="96" y="44" text-anchor="middle" transform="scale(-1,1) translate(-192,0)">2</text></g><g class="teen" data-teen="L3"><g filter="url(#aq2)"><path d="M113,56 C112.45,38 117.18,25 124,25 C130.82,25 135.55,38 135,56 C133.9,65 114.1,65 113,56 Z" fill="#B84A28" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M113,56 C112.45,38 117.18,25 124,25 C130.82,25 135.55,38 135,56 C133.9,65 114.1,65 113,56 Z" fill="#B84A28" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="124 45"/></g><g filter="url(#aq1)"><ellipse cx="124" cy="36" rx="4.95" ry="5.6" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="124" cy="45" rx="16" ry="26"/><circle class="stip" cx="124" cy="36" r="4.5"/><text x="124" y="49" text-anchor="middle" transform="scale(-1,1) translate(-248,0)">3</text></g><g class="teen" data-teen="L4"><g filter="url(#aq2)"><path d="M138,63.35 C137.5,48.05 141.8,37 148,37 C154.2,37 158.5,48.05 158,63.35 C157,71 139,71 138,63.35 Z" fill="#2F6E62" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M138,63.35 C137.5,48.05 141.8,37 148,37 C154.2,37 158.5,48.05 158,63.35 C157,71 139,71 138,63.35 Z" fill="#2F6E62" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="148 54"/></g><g filter="url(#aq1)"><ellipse cx="148" cy="46.35" rx="4.5" ry="4.76" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="148" cy="54" rx="15" ry="23"/><circle class="stip" cx="148" cy="46.35" r="4.5"/><text x="148" y="58" text-anchor="middle" transform="scale(-1,1) translate(-296,0)">4</text></g><g class="teen" data-teen="L5"><g filter="url(#aq2)"><path d="M160,73.7 C159.55,61.1 163.42,52 169,52 C174.58,52 178.45,61.1 178,73.7 C177.1,80 160.9,80 160,73.7 Z" fill="#8A6A3F" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M160,73.7 C159.55,61.1 163.42,52 169,52 C174.58,52 178.45,61.1 178,73.7 C177.1,80 160.9,80 160,73.7 Z" fill="#8A6A3F" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="169 66"/></g><g filter="url(#aq1)"><ellipse cx="169" cy="59.7" rx="4.05" ry="3.92" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="169" cy="66" rx="14" ry="20"/><circle class="stip" cx="169" cy="59.7" r="4.5"/><text x="169" y="70" text-anchor="middle" transform="scale(-1,1) translate(-338,0)">5</text></g></g><g transform="translate(262,0)"><g filter="url(#aq1)"><path d="M38,86 C36,110 40,132 40,152 C40,176 34,198 40,222 C45,250 61,268 83,268 C104,268 116,253 120,233 C124,214 127,196 135,178 C143,158 153,130 159,108 C163,96 167,88 171,84 C140,73 70,73 38,86 Z" fill="#E3BC97" fill-opacity=".38"/></g><g filter="url(#aq2)"><path d="M38,86 C36,110 40,132 40,152 C40,176 34,198 40,222 C45,250 61,268 83,268 C104,268 116,253 120,233 C124,214 127,196 135,178 C143,158 153,130 159,108 C163,96 167,88 171,84 C140,73 70,73 38,86 Z" fill="#D9A87E" fill-opacity=".28" transform="translate(2,3) scale(.985)" transform-origin="100 170"/></g><g filter="url(#aq1)"><path d="M48,92 C80,104 130,102 160,90 C158,112 150,128 122,132 C86,137 56,124 48,92 Z" fill="#C98F6E" fill-opacity=".20"/></g><g filter="url(#aq2)"><path d="M46,220 C58,206 96,204 112,218 C116,244 102,264 82,264 C60,264 44,244 46,220 Z" fill="#C98F6E" fill-opacity=".18"/></g><g filter="url(#aq1)"><path d="M44,130 C50,166 48,190 44,212 C38,190 36,158 44,130 Z" fill="#FBF7EC" fill-opacity=".45"/></g><g class="teen" data-teen="R1"><g filter="url(#aq2)"><path d="M36,66.85 C34.95,42.55 43.98,25 57,25 C70.02,25 79.05,42.55 78,66.85 C75.9,79 38.1,79 36,66.85 Z" fill="#4C5B9E" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M36,66.85 C34.95,42.55 43.98,25 57,25 C70.02,25 79.05,42.55 78,66.85 C75.9,79 38.1,79 36,66.85 Z" fill="#4C5B9E" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="57 52"/></g><g filter="url(#aq1)"><ellipse cx="57" cy="39.85" rx="9.45" ry="7.56" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="57" cy="52" rx="26" ry="33"/><circle class="stip" cx="57" cy="39.85" r="4.5"/><text x="57" y="56" text-anchor="middle">1</text></g><g class="teen" data-teen="R2"><g filter="url(#aq2)"><path d="M83.5,52.65 C82.875,31.95 88.25,17 96,17 C103.75,17 109.125,31.95 108.5,52.65 C107.25,63 84.75,63 83.5,52.65 Z" fill="#6E93A8" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M83.5,52.65 C82.875,31.95 88.25,17 96,17 C103.75,17 109.125,31.95 108.5,52.65 C107.25,63 84.75,63 83.5,52.65 Z" fill="#6E93A8" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="96 40"/></g><g filter="url(#aq1)"><ellipse cx="96" cy="29.65" rx="5.625" ry="6.44" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="96" cy="40" rx="17.5" ry="29"/><circle class="stip" cx="96" cy="29.65" r="4.5"/><text x="96" y="44" text-anchor="middle">2</text></g><g class="teen" data-teen="R3"><g filter="url(#aq2)"><path d="M113,56 C112.45,38 117.18,25 124,25 C130.82,25 135.55,38 135,56 C133.9,65 114.1,65 113,56 Z" fill="#B84A28" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M113,56 C112.45,38 117.18,25 124,25 C130.82,25 135.55,38 135,56 C133.9,65 114.1,65 113,56 Z" fill="#B84A28" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="124 45"/></g><g filter="url(#aq1)"><ellipse cx="124" cy="36" rx="4.95" ry="5.6" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="124" cy="45" rx="16" ry="26"/><circle class="stip" cx="124" cy="36" r="4.5"/><text x="124" y="49" text-anchor="middle">3</text></g><g class="teen" data-teen="R4"><g filter="url(#aq2)"><path d="M138,63.35 C137.5,48.05 141.8,37 148,37 C154.2,37 158.5,48.05 158,63.35 C157,71 139,71 138,63.35 Z" fill="#2F6E62" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M138,63.35 C137.5,48.05 141.8,37 148,37 C154.2,37 158.5,48.05 158,63.35 C157,71 139,71 138,63.35 Z" fill="#2F6E62" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="148 54"/></g><g filter="url(#aq1)"><ellipse cx="148" cy="46.35" rx="4.5" ry="4.76" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="148" cy="54" rx="15" ry="23"/><circle class="stip" cx="148" cy="46.35" r="4.5"/><text x="148" y="58" text-anchor="middle">4</text></g><g class="teen" data-teen="R5"><g filter="url(#aq2)"><path d="M160,73.7 C159.55,61.1 163.42,52 169,52 C174.58,52 178.45,61.1 178,73.7 C177.1,80 160.9,80 160,73.7 Z" fill="#8A6A3F" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M160,73.7 C159.55,61.1 163.42,52 169,52 C174.58,52 178.45,61.1 178,73.7 C177.1,80 160.9,80 160,73.7 Z" fill="#8A6A3F" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="169 66"/></g><g filter="url(#aq1)"><ellipse cx="169" cy="59.7" rx="4.05" ry="3.92" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="169" cy="66" rx="14" ry="20"/><circle class="stip" cx="169" cy="59.7" r="4.5"/><text x="169" y="70" text-anchor="middle">5</text></g></g></svg>
+      <div class="voetlabels"><span data-t="ui.voetkop_l">Linkervoet · voelen</span><span data-t="ui.voetkop_r">Rechtervoet · denken</span></div>
+      <svg class="voeten" viewBox="0 0 460 290" id="voetenSvg" role="group" data-t-aria="ui.aria_voeten" aria-label="Kies een teen"><defs><filter id="aq1" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="9"/></filter><filter id="aq2" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.031" numOctaves="3" seed="13" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="12"/></filter></defs><g transform="translate(198,0) scale(-1,1)"><g filter="url(#aq1)"><path d="M38,86 C36,110 40,132 40,152 C40,176 34,198 40,222 C45,250 61,268 83,268 C104,268 116,253 120,233 C124,214 127,196 135,178 C143,158 153,130 159,108 C163,96 167,88 171,84 C140,73 70,73 38,86 Z" fill="#E3BC97" fill-opacity=".38"/></g><g filter="url(#aq2)"><path d="M38,86 C36,110 40,132 40,152 C40,176 34,198 40,222 C45,250 61,268 83,268 C104,268 116,253 120,233 C124,214 127,196 135,178 C143,158 153,130 159,108 C163,96 167,88 171,84 C140,73 70,73 38,86 Z" fill="#D9A87E" fill-opacity=".28" transform="translate(2,3) scale(.985)" transform-origin="100 170"/></g><g filter="url(#aq1)"><path d="M48,92 C80,104 130,102 160,90 C158,112 150,128 122,132 C86,137 56,124 48,92 Z" fill="#C98F6E" fill-opacity=".20"/></g><g filter="url(#aq2)"><path d="M46,220 C58,206 96,204 112,218 C116,244 102,264 82,264 C60,264 44,244 46,220 Z" fill="#C98F6E" fill-opacity=".18"/></g><g filter="url(#aq1)"><path d="M44,130 C50,166 48,190 44,212 C38,190 36,158 44,130 Z" fill="#FBF7EC" fill-opacity=".45"/></g><g class="teen" data-teen="L1"><g filter="url(#aq2)"><path d="M36,66.85 C34.95,42.55 43.98,25 57,25 C70.02,25 79.05,42.55 78,66.85 C75.9,79 38.1,79 36,66.85 Z" fill="#4C5B9E" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M36,66.85 C34.95,42.55 43.98,25 57,25 C70.02,25 79.05,42.55 78,66.85 C75.9,79 38.1,79 36,66.85 Z" fill="#4C5B9E" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="57 52"/></g><g filter="url(#aq1)"><ellipse cx="57" cy="39.85" rx="9.45" ry="7.56" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="57" cy="52" rx="26" ry="33"/><circle class="stip" cx="57" cy="39.85" r="4.5"/><text x="57" y="56" text-anchor="middle" transform="scale(-1,1) translate(-114,0)">1</text></g><g class="teen" data-teen="L2"><g filter="url(#aq2)"><path d="M83.5,52.65 C82.875,31.95 88.25,17 96,17 C103.75,17 109.125,31.95 108.5,52.65 C107.25,63 84.75,63 83.5,52.65 Z" fill="#6E93A8" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M83.5,52.65 C82.875,31.95 88.25,17 96,17 C103.75,17 109.125,31.95 108.5,52.65 C107.25,63 84.75,63 83.5,52.65 Z" fill="#6E93A8" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="96 40"/></g><g filter="url(#aq1)"><ellipse cx="96" cy="29.65" rx="5.625" ry="6.44" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="96" cy="40" rx="17.5" ry="29"/><circle class="stip" cx="96" cy="29.65" r="4.5"/><text x="96" y="44" text-anchor="middle" transform="scale(-1,1) translate(-192,0)">2</text></g><g class="teen" data-teen="L3"><g filter="url(#aq2)"><path d="M113,56 C112.45,38 117.18,25 124,25 C130.82,25 135.55,38 135,56 C133.9,65 114.1,65 113,56 Z" fill="#B84A28" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M113,56 C112.45,38 117.18,25 124,25 C130.82,25 135.55,38 135,56 C133.9,65 114.1,65 113,56 Z" fill="#B84A28" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="124 45"/></g><g filter="url(#aq1)"><ellipse cx="124" cy="36" rx="4.95" ry="5.6" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="124" cy="45" rx="16" ry="26"/><circle class="stip" cx="124" cy="36" r="4.5"/><text x="124" y="49" text-anchor="middle" transform="scale(-1,1) translate(-248,0)">3</text></g><g class="teen" data-teen="L4"><g filter="url(#aq2)"><path d="M138,63.35 C137.5,48.05 141.8,37 148,37 C154.2,37 158.5,48.05 158,63.35 C157,71 139,71 138,63.35 Z" fill="#2F6E62" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M138,63.35 C137.5,48.05 141.8,37 148,37 C154.2,37 158.5,48.05 158,63.35 C157,71 139,71 138,63.35 Z" fill="#2F6E62" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="148 54"/></g><g filter="url(#aq1)"><ellipse cx="148" cy="46.35" rx="4.5" ry="4.76" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="148" cy="54" rx="15" ry="23"/><circle class="stip" cx="148" cy="46.35" r="4.5"/><text x="148" y="58" text-anchor="middle" transform="scale(-1,1) translate(-296,0)">4</text></g><g class="teen" data-teen="L5"><g filter="url(#aq2)"><path d="M160,73.7 C159.55,61.1 163.42,52 169,52 C174.58,52 178.45,61.1 178,73.7 C177.1,80 160.9,80 160,73.7 Z" fill="#8A6A3F" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M160,73.7 C159.55,61.1 163.42,52 169,52 C174.58,52 178.45,61.1 178,73.7 C177.1,80 160.9,80 160,73.7 Z" fill="#8A6A3F" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="169 66"/></g><g filter="url(#aq1)"><ellipse cx="169" cy="59.7" rx="4.05" ry="3.92" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="169" cy="66" rx="14" ry="20"/><circle class="stip" cx="169" cy="59.7" r="4.5"/><text x="169" y="70" text-anchor="middle" transform="scale(-1,1) translate(-338,0)">5</text></g></g><g transform="translate(262,0)"><g filter="url(#aq1)"><path d="M38,86 C36,110 40,132 40,152 C40,176 34,198 40,222 C45,250 61,268 83,268 C104,268 116,253 120,233 C124,214 127,196 135,178 C143,158 153,130 159,108 C163,96 167,88 171,84 C140,73 70,73 38,86 Z" fill="#E3BC97" fill-opacity=".38"/></g><g filter="url(#aq2)"><path d="M38,86 C36,110 40,132 40,152 C40,176 34,198 40,222 C45,250 61,268 83,268 C104,268 116,253 120,233 C124,214 127,196 135,178 C143,158 153,130 159,108 C163,96 167,88 171,84 C140,73 70,73 38,86 Z" fill="#D9A87E" fill-opacity=".28" transform="translate(2,3) scale(.985)" transform-origin="100 170"/></g><g filter="url(#aq1)"><path d="M48,92 C80,104 130,102 160,90 C158,112 150,128 122,132 C86,137 56,124 48,92 Z" fill="#C98F6E" fill-opacity=".20"/></g><g filter="url(#aq2)"><path d="M46,220 C58,206 96,204 112,218 C116,244 102,264 82,264 C60,264 44,244 46,220 Z" fill="#C98F6E" fill-opacity=".18"/></g><g filter="url(#aq1)"><path d="M44,130 C50,166 48,190 44,212 C38,190 36,158 44,130 Z" fill="#FBF7EC" fill-opacity=".45"/></g><g class="teen" data-teen="R1"><g filter="url(#aq2)"><path d="M36,66.85 C34.95,42.55 43.98,25 57,25 C70.02,25 79.05,42.55 78,66.85 C75.9,79 38.1,79 36,66.85 Z" fill="#4C5B9E" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M36,66.85 C34.95,42.55 43.98,25 57,25 C70.02,25 79.05,42.55 78,66.85 C75.9,79 38.1,79 36,66.85 Z" fill="#4C5B9E" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="57 52"/></g><g filter="url(#aq1)"><ellipse cx="57" cy="39.85" rx="9.45" ry="7.56" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="57" cy="52" rx="26" ry="33"/><circle class="stip" cx="57" cy="39.85" r="4.5"/><text x="57" y="56" text-anchor="middle">1</text></g><g class="teen" data-teen="R2"><g filter="url(#aq2)"><path d="M83.5,52.65 C82.875,31.95 88.25,17 96,17 C103.75,17 109.125,31.95 108.5,52.65 C107.25,63 84.75,63 83.5,52.65 Z" fill="#6E93A8" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M83.5,52.65 C82.875,31.95 88.25,17 96,17 C103.75,17 109.125,31.95 108.5,52.65 C107.25,63 84.75,63 83.5,52.65 Z" fill="#6E93A8" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="96 40"/></g><g filter="url(#aq1)"><ellipse cx="96" cy="29.65" rx="5.625" ry="6.44" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="96" cy="40" rx="17.5" ry="29"/><circle class="stip" cx="96" cy="29.65" r="4.5"/><text x="96" y="44" text-anchor="middle">2</text></g><g class="teen" data-teen="R3"><g filter="url(#aq2)"><path d="M113,56 C112.45,38 117.18,25 124,25 C130.82,25 135.55,38 135,56 C133.9,65 114.1,65 113,56 Z" fill="#B84A28" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M113,56 C112.45,38 117.18,25 124,25 C130.82,25 135.55,38 135,56 C133.9,65 114.1,65 113,56 Z" fill="#B84A28" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="124 45"/></g><g filter="url(#aq1)"><ellipse cx="124" cy="36" rx="4.95" ry="5.6" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="124" cy="45" rx="16" ry="26"/><circle class="stip" cx="124" cy="36" r="4.5"/><text x="124" y="49" text-anchor="middle">3</text></g><g class="teen" data-teen="R4"><g filter="url(#aq2)"><path d="M138,63.35 C137.5,48.05 141.8,37 148,37 C154.2,37 158.5,48.05 158,63.35 C157,71 139,71 138,63.35 Z" fill="#2F6E62" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M138,63.35 C137.5,48.05 141.8,37 148,37 C154.2,37 158.5,48.05 158,63.35 C157,71 139,71 138,63.35 Z" fill="#2F6E62" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="148 54"/></g><g filter="url(#aq1)"><ellipse cx="148" cy="46.35" rx="4.5" ry="4.76" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="148" cy="54" rx="15" ry="23"/><circle class="stip" cx="148" cy="46.35" r="4.5"/><text x="148" y="58" text-anchor="middle">4</text></g><g class="teen" data-teen="R5"><g filter="url(#aq2)"><path d="M160,73.7 C159.55,61.1 163.42,52 169,52 C174.58,52 178.45,61.1 178,73.7 C177.1,80 160.9,80 160,73.7 Z" fill="#8A6A3F" fill-opacity=".34"/></g><g filter="url(#aq1)"><path d="M160,73.7 C159.55,61.1 163.42,52 169,52 C174.58,52 178.45,61.1 178,73.7 C177.1,80 160.9,80 160,73.7 Z" fill="#8A6A3F" fill-opacity=".28" transform="translate(-1,-2) scale(1.04)" transform-origin="169 66"/></g><g filter="url(#aq1)"><ellipse cx="169" cy="59.7" rx="4.05" ry="3.92" fill="#FBF7EC" fill-opacity=".55"/></g><ellipse class="klik" cx="169" cy="66" rx="14" ry="20"/><circle class="stip" cx="169" cy="59.7" r="4.5"/><text x="169" y="70" text-anchor="middle">5</text></g></g></svg>
     </div>
     <div class="teenpaneel" id="teenpaneel">
-      <p class="leeg-teen">Klik op een teen om te beginnen. Elke teen is een antenne voor een eigen stuk van jou.</p>
+      <p class="leeg-teen" data-t="ui.leeg_teen">Klik op een teen om te beginnen. Elke teen is een antenne voor een eigen stuk van jou.</p>
     </div>
   </div>
 </section>
@@ -278,55 +291,1096 @@ footer .bron{font-family:'Fraunces',serif;font-style:italic;font-size:14px;margi
 <section class="wrap" id="stap2">
   <div class="stap">
     <span class="romein">III</span>
-    <h2>Herken de vormen</h2>
-    <span class="hint">Kijk naar je eigen teen en klik aan wat je herkent</span>
+    <h2 data-t="ui.h_vormen">Herken de vormen</h2>
+    <span class="hint" data-t="ui.hint_vormen">Kijk naar je eigen teen en klik aan wat je herkent</span>
   </div>
-  <div id="catalogus"><div class="catalogus-leeg">Kies eerst een teen hierboven, dan verschijnt hier het vademecum.</div></div>
+  <div id="catalogus"><div class="catalogus-leeg" data-t="ui.catalogus_leeg_lang">Kies eerst een teen hierboven, dan verschijnt hier het vademecum.</div></div>
 </section>
 
 <section class="wrap" id="stap3">
   <div class="stap">
     <span class="romein">IV</span>
-    <h2>De spiegel</h2>
+    <h2 data-t="ui.h_spiegel">De spiegel</h2>
   </div>
   <div class="spiegelkader">
-    <div class="motto">"Een goede spiegel vertekent niet. Dit is geen oordeel. Het is een beeld."</div>
-    <div id="spiegelInhoud"><div class="spiegel-leeg">Je spiegel is nog leeg. Kies vormen bij je tenen en hier verschijnt je verhaal.</div></div>
+    <div class="motto" data-t="ui.motto">"Een goede spiegel vertekent niet. Dit is geen oordeel. Het is een beeld."</div>
+    <div id="spiegelInhoud"><div class="spiegel-leeg" data-t="ui.spiegel_leeg">Je spiegel is nog leeg. Kies vormen bij je tenen en hier verschijnt je verhaal.</div></div>
     <div class="spiegel-acties">
-      <button class="knop knop-licht" id="kopieer">Kopieer mijn analyse</button>
-      <button class="knop knop-ghost" id="reset">Begin opnieuw</button>
+      <button class="knop knop-licht" id="kopieer" data-t="ui.btn_kopieer">Kopieer mijn analyse</button>
+      <button class="knop knop-ghost" id="reset" data-t="ui.btn_reset">Begin opnieuw</button>
     </div>
-    <div class="disclaimer">Tenen lezen spiegelt persoonlijkheid, houding en gedrag. Niets meer en niets minder. Het stelt géén medische of psychologische diagnoses; daarvoor ga je naar een arts of therapeut. Wees mild in je interpretatie: "rare" tenen bestaan niet, alleen tenen die bij jou passen.</div>
+    <div class="disclaimer" data-t="ui.disclaimer_spiegel">Tenen lezen spiegelt persoonlijkheid, houding en gedrag. Niets meer en niets minder. Het stelt géén medische of psychologische diagnoses; daarvoor ga je naar een arts of therapeut. Wees mild in je interpretatie: "rare" tenen bestaan niet, alleen tenen die bij jou passen.</div>
   </div>
 </section>
 
 <footer class="wrap">
-  <div class="bron">Gebaseerd op Tenen Lezen I · II · III en Babyteentjes Lezen · Imre &amp; Margriet Somogyi</div>
-  <div>Tenenspiegel · v7.1 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt</div>
-  <div class="disclaimer"><b>Goed om te weten.</b> De Tenenspiegel is een spel- en spiegelinstrument voor zelfreflectie, gebaseerd op de boeken van Imre &amp; Margriet Somogyi. De app en de AI-analyse geven geen garanties over juistheid of volledigheid en stellen geen medische, psychologische of andere diagnoses; aan de uitkomsten kunnen geen rechten worden ontleend. Gebruik is volledig op eigen verantwoordelijkheid — de maker van deze app aanvaardt geen enkele aansprakelijkheid voor conclusies of beslissingen die op basis van de app worden genomen. Zorgen over je gezondheid? Ga naar je huisarts of pedicure.</div>
+  <div class="bron" data-t="ui.footer_bron">Gebaseerd op Tenen Lezen I · II · III en Babyteentjes Lezen · Imre &amp; Margriet Somogyi</div>
+  <div data-t="ui.footer_versie">Tenenspiegel · v8.0 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt</div>
+  <div class="disclaimer" data-t="ui.footer_disclaimer"><b>Goed om te weten.</b> De Tenenspiegel is een spel- en spiegelinstrument voor zelfreflectie, gebaseerd op de boeken van Imre &amp; Margriet Somogyi. De app en de AI-analyse geven geen garanties over juistheid of volledigheid en stellen geen medische, psychologische of andere diagnoses; aan de uitkomsten kunnen geen rechten worden ontleend. Gebruik is volledig op eigen verantwoordelijkheid — de maker van deze app aanvaardt geen enkele aansprakelijkheid voor conclusies of beslissingen die op basis van de app worden genomen. Zorgen over je gezondheid? Ga naar je huisarts of pedicure.</div>
 </footer>
 <script>
+/* ================= i18n (v8) ================= */
+const TALEN = {
+  nl: {
+    ui: {
+      lezing_open: "Uitgebreide lezing 📜",
+      lezing_title_open: "De volledige lezing over alle tien je tenen",
+      lezing_title_slot: "Komt vrij zodra je alle tien de tenen in stap II hebt bekeken",
+      lezing_slot: n=>`Uitgebreide lezing 🔒 nog ${n} ${n===1?'teen':'tenen'}`,
+      linkervoet: "Linkervoet",
+      rechtervoet: "Rechtervoet",
+      links: "Links",
+      rechts: "Rechts",
+      leeg_teen: "Klik op een teen om te beginnen. Elke teen is een antenne voor een eigen stuk van jou.",
+      voetkop_l: "Linkervoet · voelen",
+      voetkop_r: "Rechtervoet · denken",
+      hier_woont: "Hier woont",
+      element_meta: (n,c)=>`Element <b>${n}</b> · ${c}`,
+      teller: n=>`<b>${n}</b> ${n===1?'vorm':'vormen'} herkend op deze teen`,
+      catalogus_leeg_kort: "Kies eerst een teen hierboven.",
+      leeswijzer_badge: "leeswijzer — niets aanvinken",
+      waar_lbl: "waar?",
+      spiegel_leeg: "Je spiegel is nog leeg. Kies vormen bij je tenen en hier verschijnt je verhaal.",
+      spiegel_voet_r: "Rechtervoet · het denken",
+      spiegel_voet_l: "Linkervoet · het voelen",
+      kopieer_kop: "MIJN TENENSPIEGEL\n\"Een goede spiegel vertekent niet.\"",
+      kopieer_voet_r: "RECHTERVOET · HET DENKEN",
+      kopieer_voet_l: "LINKERVOET · HET VOELEN",
+      kopieer_bron: "Gebaseerd op de methode van Imre & Margriet Somogyi.",
+      kopieer_disclaimer: "Deze spiegel is een spelinstrument voor zelfreflectie: geen diagnose, geen garanties, gebruik op eigen verantwoordelijkheid.",
+      gekopieerd: "Gekopieerd ✓",
+      fout_geen_foto: "Dit lijkt geen foto te zijn. Kies een jpg- of png-bestand.",
+      fout_heic: "Deze foto kan de browser niet lezen (HEIC?). Tip: maak er een jpg of png van; een screenshot van de foto werkt ook.",
+      een_voet_klaar: "Eén voet staat klaar. Voeg de andere close-up toe, of analyseer alleen deze voet.",
+      klaar_twee: "Beide close-ups staan klaar.",
+      klaar_een: "Foto staat klaar.",
+      klik_analyseer: "Klik op \"Analyseer mijn voeten\".",
+      modusnoot_een: "Snel en simpel: één foto van boven met beide voeten in beeld.",
+      modusnoot_twee: "Betere resultaten: close-ups geven veel meer pixels per teen — scherper nagel- en contourdetail. Eén voet mag ook.",
+      fout_analyse: "De analyse is niet gelukt. Probeer het nog een keer.",
+      fout_voeten: s=>`Let op: de analyse van de ${s} is niet gelukt — probeer die zo apart opnieuw.`,
+      en_de: " en de ",
+      spiegel_kijkt: s=>`De spiegel kijkt naar je voeten… dit duurt zo'n 20 tot ${s} seconden.`,
+      fout_worker: "Kan de analysedienst niet bereiken. Staat de Worker al online? Zie het werkdocument, of probeer het later opnieuw.",
+      aikop: "Dit zag de spiegel op je foto",
+      geen_vormen: "De spiegel zag geen uitgesproken vormen op deze foto. Dat kan kloppen, maar kijk gerust zelf verder bij stap II en III.",
+      btn_naar_spiegel: "Bekijk je spiegel",
+      btn_nalopen: "Zelf nalopen &amp; aanpassen",
+      btn_vertelt: "De spiegel vertelt ✒️",
+      btn_lezing_init: "Uitgebreide lezing 🔒",
+      ai_noot: "Dit is een eerste lezing door AI, geen waarheid. Klik in stap III vormen aan of uit tot het klopt met wat jíj ziet.",
+      ai_noot_meer: "<b>De spiegel vertelt</b> geeft daarna een duiding in de stijl van de boeken — op basis van de vormen zoals ze op dát moment zijn aangevinkt. De <b>uitgebreide lezing</b> (alle tien de tenen, veel dieper) komt vrij zodra je in stap II alle tenen zelf hebt bekeken.",
+      analyse_klaar: n=>`✓ Analyse klaar: ${n} ${n===1?'vorm':'vormen'} herkend.`,
+      zoekt_woorden_kort: "De spiegel zoekt de woorden… dit duurt zo'n 30 tot 60 seconden.",
+      zoekt_woorden_lang: "De spiegel zoekt de woorden… dit duurt zo'n 1 à 2 minuten.",
+      fout_worker_later: "Kan de analysedienst niet bereiken. Probeer het later opnieuw.",
+      fout_duiding: "De uitgebreide duiding is niet gelukt. Probeer het nog een keer.",
+      versie_noot: "(Deze functie vereist worker v2.5 of hoger; de uitgebreide lezing v2.6.)",
+      vkop_lang: "De uitgebreide lezing",
+      vkop_kort: "De spiegel vertelt",
+      vertelt_noot: "Vrijere duiding volgens de methode — hier combineert de spiegel zelf. De kaartteksten in stap III blijven de boekgetrouwe bron. Geen oordeel, geen diagnose: jij blijft de lezer.",
+      upload_sub_close: "close-up · jpg of png",
+      aria_modus: "Kies hoe je uploadt",
+      aria_upload: "Kies of maak een foto van je voeten",
+      aria_upload_l: "Kies een close-upfoto van je linkervoet",
+      aria_upload_r: "Kies een close-upfoto van je rechtervoet",
+      aria_voeten: "Kies een teen",
+      alt_preview: "Voorbeeld van je gekozen foto",
+      alt_preview_l: "Voorbeeld close-up linkervoet",
+      alt_preview_r: "Voorbeeld close-up rechtervoet",
+      eyebrow: "Naar de methode van Imre &amp; Margriet Somogyi",
+      subtitel: "Voeten zijn spiegels. Upload een foto of kies een teen, herken de vormen, lees jezelf.",
+      h_foto: "Laat de spiegel meekijken",
+      hint_foto: "Optioneel · upload een foto en de vormen worden voor je aangezet",
+      foto_hoe: "Zo maak je de foto",
+      foto_li1: "Ga <b>ontspannen zitten</b> op een stoel, knieën in ongeveer 90 graden",
+      foto_li2: "Blote voeten <b>plat op de grond</b>, iets uit elkaar",
+      foto_li3: "Laat je tenen <b>ontspannen</b>: niet krommen, niet spreiden",
+      foto_li4: "Fotografeer <b>recht van boven</b>, beide voeten volledig in beeld",
+      foto_li5: "Zorg voor <b>goed licht</b>, zonder schaduw over de tenen",
+      foto_li6: "<b>Meer detail?</b> Kies \"Twee close-ups\" en fotografeer elke voet apart — meer pixels per teen betekent scherper nagel- en contourbeeld",
+      foto_noot: "De spiegel kijkt met je mee, maar jij blijft de lezer: loop bij stap III na wat is aangezet en pas aan wat niet klopt. Liever zelf kijken? Sla deze stap gewoon over.",
+      modus_een: "Eén foto · beide voeten",
+      modus_twee: "Twee close-ups · per voet",
+      upload_tekst: "<b>Kies een foto</b> of sleep hem hierheen",
+      upload_sub: "Bovenaanzicht van beide voeten · jpg of png",
+      upload_l: "<b>Linkervoet</b>",
+      upload_r: "<b>Rechtervoet</b>",
+      btn_analyseer: "Analyseer mijn voeten",
+      btn_opnieuw: "Opnieuw beginnen",
+      foto_privacy: "Je foto wordt alleen gebruikt voor deze ene analyse en nergens opgeslagen.",
+      h_teen: "Kies een teen",
+      hint_teen: "Rechts = denken &amp; verstand · Links = voelen &amp; gevoel",
+      h_vormen: "Herken de vormen",
+      hint_vormen: "Kijk naar je eigen teen en klik aan wat je herkent",
+      catalogus_leeg_lang: "Kies eerst een teen hierboven, dan verschijnt hier het vademecum.",
+      h_spiegel: "De spiegel",
+      motto: "\"Een goede spiegel vertekent niet. Dit is geen oordeel. Het is een beeld.\"",
+      btn_kopieer: "Kopieer mijn analyse",
+      btn_reset: "Begin opnieuw",
+      disclaimer_spiegel: "Tenen lezen spiegelt persoonlijkheid, houding en gedrag. Niets meer en niets minder. Het stelt géén medische of psychologische diagnoses; daarvoor ga je naar een arts of therapeut. Wees mild in je interpretatie: \"rare\" tenen bestaan niet, alleen tenen die bij jou passen.",
+      footer_bron: "Gebaseerd op Tenen Lezen I · II · III en Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
+      footer_versie: "Tenenspiegel · v8.0 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt",
+      footer_disclaimer: "<b>Goed om te weten.</b> De Tenenspiegel is een spel- en spiegelinstrument voor zelfreflectie, gebaseerd op de boeken van Imre &amp; Margriet Somogyi. De app en de AI-analyse geven geen garanties over juistheid of volledigheid en stellen geen medische, psychologische of andere diagnoses; aan de uitkomsten kunnen geen rechten worden ontleend. Gebruik is volledig op eigen verantwoordelijkheid — de maker van deze app aanvaardt geen enkele aansprakelijkheid voor conclusies of beslissingen die op basis van de app worden genomen. Zorgen over je gezondheid? Ga naar je huisarts of pedicure.",
+      titel: "Tenenspiegel · voeten zijn spiegels",
+      aria_taal: "Taal / Language"
+    },
+    element: {
+      "1": {
+        naam: "Ether",
+        chakra: "Keelchakra"
+      },
+      "2": {
+        naam: "Lucht",
+        chakra: "Hartchakra"
+      },
+      "3": {
+        naam: "Vuur",
+        chakra: "Zonnevlecht"
+      },
+      "4": {
+        naam: "Water",
+        chakra: "Buikchakra"
+      },
+      "5": {
+        naam: "Aarde",
+        chakra: "Stuitchakra"
+      }
+    },
+    teennaam: {
+      "1": "Grote teen",
+      "2": "Tweede teen",
+      "3": "Middelste teen",
+      "4": "Vierde teen",
+      "5": "Kleine teen"
+    },
+    domein: {
+      R1: "communicatie over wat je denkt, en je vreugde",
+      L1: "communicatie over wat je voelt, en je verdriet",
+      R2: "je ambitie en wat je wilt",
+      L2: "je gevoel en hoe je ermee omgaat",
+      R3: "actie en daadkracht",
+      L3: "creativiteit en intuïtief handelen",
+      R4: "gehechtheid en controle over je situatie",
+      L4: "liefde en relaties",
+      R5: "onzekerheid en angst",
+      L5: "vertrouwen en seksualiteit"
+    },
+    plekzin: {
+      wortel: " De verkleuring zit bij de wortel: het speelt al waar dit ontstaat.",
+      midden: " De verkleuring zit op het middenkootje: het speelt in de verwerking.",
+      top: " De verkleuring zit bij de top: het speelt vooral bij het naar buiten brengen.",
+      teen: ""
+    },
+    plekopties: {
+      teen: "hele teen",
+      wortel: "wortel",
+      midden: "midden",
+      top: "top"
+    },
+    groep: {
+      vorm: "Vorm van de teen",
+      stand: "Stand & richting",
+      grond: "Contact met de grond",
+      ruimte: "Ruimte & samenhang",
+      lengte: "Lengte & verhouding",
+      lijn: "De denkbeeldige lijn",
+      nagels: "Nagels",
+      huid: "Huid",
+      kleur: "Kleur & verkleuring",
+      kootjes: "Kootjes & fasen"
+    },
+    vormen: {
+      gemiddeld: {
+        naam: "Gemiddelde teen",
+        kort: "in evenwicht",
+        tekst: d=>`Een teen zonder uitschieters: ${d} is bij jou in evenwicht. Je zendt en ontvangt hier zonder extremen; deze eigenschap loopt gewoon lekker mee.`
+      },
+      rond: {
+        naam: "Ronde teen",
+        kort: "diplomatiek, harmonie",
+        tekst: d=>`Je brengt ${d} voorkomend en diplomatiek naar buiten: liever harmonie dan confrontatie. Aardig, maar niet altijd even duidelijk.`
+      },
+      hoekig: {
+        naam: "Hoekige teen",
+        kort: "zonder omhaal",
+        tekst: d=>`In ${d} ben je duidelijk en zonder omhaal. Helder, soms hoekig en compromisloos: "zo ben ik nu eenmaal".`
+      },
+      blok: {
+        naam: "Blokvorm",
+        kort: "onverzettelijk",
+        tekst: d=>`In ${d} ben je onverzettelijk: kernachtig, eigenwijs, van buigen of barsten. Marchanderen zit er niet in.`
+      },
+      puntig: {
+        naam: "Puntige teen",
+        kort: "heftig, in buien",
+        tekst: d=>`${cap(d)} uit zich in buien: heftig en hartstochtelijk op het ene moment, leeg en stil daarna. Hoe puntiger, hoe feller de ontlading.`
+      },
+      spatel: {
+        naam: "Spatelvorm",
+        kort: "forser dan verwacht",
+        tekst: d=>`${cap(d)} komt uiteindelijk forser naar buiten dan aangekondigd. Je ontvangt ook veel, maar kunt niet alles verwerken wat wordt aangeboden.`
+      },
+      verbreding: {
+        naam: "Verbreding",
+        kort: "zwelt aan, vriendelijk",
+        tekst: d=>`In ${d} zwelt het aanbod tijdens de ontwikkeling aan: er komt méér dan aangekondigd, maar vriendelijker en minder dominant dan bij de spatelvorm. Als een trechter: veel opvangen, niet alles verteren.`
+      },
+      flessenhals: {
+        naam: "Flessenhals",
+        kort: "twijfel, stagnatie",
+        tekst: d=>`In ${d} zit twijfel ingebouwd: de gedachte of het gevoel wordt even vastgehouden voordat het naar buiten mag. Je luistert goed, maar laat niet alles toe tot je wezen.`
+      },
+      reservoir: {
+        naam: "Reservoir",
+        kort: "opgekropt",
+        tekst: d=>`Je kropt ${d} op: gedachten en emoties hopen zich op en worden niet volledig geuit. Dat zet je onder spanning; het reservoir wil af en toe geleegd worden.`
+      },
+      mengvorm: {
+        naam: "Mengvorm",
+        kort: "eerst lief, dan duidelijk",
+        tekst: d=>`In ${d} kies je eerst voor lief en tactvol. Levert dat niets op, dan schakel je om: "dan maar duidelijk en met minder zachtaardigheid".`
+      },
+      druppel: {
+        naam: "Druppel",
+        kort: "verborgen reserve",
+        tekst: d=>`Onder de oppervlakte houd je bij ${d} een verborgen reservetank: als iedereen denkt dat je op bent, blijk jij nog energie te hebben om de klus te klaren.`
+      },
+      recht: {
+        naam: "Rechte teen",
+        kort: "direct, hier en nu",
+        tekst: d=>`In ${d} ben je direct, snel en zonder vertraging: informatie komt vlot binnen en gaat er even voortvarend weer uit.`
+      },
+      krom: {
+        naam: "Gekromde teen",
+        kort: "\"laat dan ook maar\"",
+        tekst: d=>`In ${d} pas je je aan, maar altijd ten koste van jezelf: een "laat dan ook maar"-houding. Je komt niet op voor je eigen rechten en laat je domineren.`
+      },
+      klauw: {
+        naam: "Klauw",
+        kort: "afgedwongen",
+        tekst: d=>`Bij ${d} is onderwerping afgedwongen: je biedt geen verzet meer tegen druk van buiten. Aangeboden hulp of advies komt niet binnen; de antenne staat naar de grond.`
+      },
+      gedraaid: {
+        naam: "Gedraaide teen",
+        kort: "verhaal verandert",
+        tekst: d=>`Ergens onderweg verandert het verhaal: ${d} uit zich anders dan oorspronkelijk bedoeld, en ook binnenkomende berichten verwerk je anders dan men verwacht.`
+      },
+      gekanteld: {
+        naam: "Gekantelde teen",
+        kort: "vanaf de wortel anders",
+        tekst: d=>`${cap(d)} wijkt al vanaf de wortel af van de oorspronkelijke lijn: informatie wordt totaal anders aangeboden en ontvangen dan gedacht.`
+      },
+      haast: {
+        naam: "Haastteen",
+        kort: "vooruit, enthousiast",
+        tekst: d=>`Met ${d} heb je haast: enthousiast, optimistisch, op de toekomst gericht. In die vaart merk je niet altijd wat er op je afkomt.`
+      },
+      terugkijk: {
+        naam: "Terugkijkteen",
+        kort: "het verleden speelt mee",
+        tekst: d=>`Bij ${d} kijk je om: het verleden speelt voortdurend mee. Je herkauwt gebeurtenissen, soms van heel lang geleden, en loslaten is lastig.`
+      },
+      ingetrokken: {
+        naam: "Ingetrokken teen",
+        kort: "kameleon",
+        tekst: d=>`Je kunt ${d} tijdelijk terugtrekken: als een kameleon pas je je ogenschijnlijk aan, om later precies te doen waar je zelf zin in hebt. Een "nee" wordt zelden geaccepteerd.`
+      },
+      onderduik: {
+        naam: "Onderduikende teen",
+        kort: "verstopt zich",
+        tekst: d=>`Je verstopt een deel van ${d}: de teen duikt onder bij zijn buurman en ontvangt nog maar de helft van het aanbod. Wat je verbergt, blijft wel voelbaar aanwezig.`
+      },
+      gespannen: {
+        naam: "Gespannen teen",
+        kort: "verstijfd patroon",
+        tekst: d=>`Rond ${d} zit je vast in een patroon: voorspelbaar en weinig flexibel. De innerlijke bewegelijkheid is verstijfd, vaak onder invloed van ervaringen die je hinderen.`
+      },
+      extra: {
+        naam: "Extra teen",
+        kort: "dubbel uitgevoerd",
+        tekst: d=>`Een dubbele uitvoering: ${d} is bij jou extra sterk aangelegd, met heftige uitschieters naar twee kanten.`
+      },
+      rugzakje: {
+        naam: "Rugzakje",
+        kort: "prenatale bagage",
+        tekst: d=>`Een rugzakje bij de kleine teen wijst op prenatale bagage: emoties die je moeder tijdens de zwangerschap ervoer, draag je mee. Moeilijk te duiden, want het voelt niet als van jezelf.`
+      },
+      geaard: {
+        naam: "Geaard / afgeplat",
+        kort: "concreet, helder",
+        tekst: d=>`Je uit ${d} concreet en helder, met veel contact met de aarde. Goed geaard: geen zweverigheid of onduidelijkheid.`
+      },
+      nietgeaard: {
+        naam: "Niet geaard",
+        kort: "blijft zweven",
+        tekst: d=>`${cap(d)} kan niet concreet gemaakt worden: de energie blijft zweven, waardoor uitingen weifelend en onduidelijk overkomen op mensen die zelf stevig geaard zijn.`
+      },
+      droom: {
+        naam: "Droomteen",
+        kort: "fantasiewereld",
+        tekst: d=>`Bij ${d} trek je je terug in een droom- of fantasiewereld: prikkels verwerk je op een ander dan aards niveau. Ruimte voor meditatie, inspiratie en ingevingen.`
+      },
+      jubel: {
+        naam: "Jubelteen",
+        kort: "andere dimensie",
+        tekst: d=>`${cap(d)} jubelt omhoog: de sterke variant van de droomteen. Het vermogen je aan de werkelijkheid te onttrekken en in een andere dimensie aanwezig te zijn.`
+      },
+      hiaat: {
+        naam: "Hiaat",
+        kort: "vertraagd op gang",
+        tekst: d=>`Tussen deze energie en haar buur zit een hiaat: je reageert secondair en de energie van ${d} komt vertraagd op gang. Druk van buiten werkt averechts.`
+      },
+      ruimte: {
+        naam: "Ruimte tussen tenen",
+        kort: "analytisch, als een schaker",
+        tekst: d=>`Ruimte tussen de tenen maakt je analytisch: je beoordeelt ${d} op zichzelf, los van de rest, en denkt als een schaker na over je zetten. Impulsiviteit is uitgesloten.`
+      },
+      wig: {
+        naam: "Wig",
+        kort: "gaandeweg trager",
+        tekst: d=>`Een wig: in de eerste fase raak je nog aan, maar op weg naar de uiting vertraagt ${d} steeds verder. Eerst traag reageren, na enige tijd steeds sterker ingaan op het aanbod.`
+      },
+      omwig: {
+        naam: "Omgekeerde wig",
+        kort: "overwonnen hiaat",
+        tekst: d=>`Een omgekeerde wig is een overwonnen hiaat: je hebt geléérd sneller te reageren dan vroeger mogelijk was. Bij het ontvangen is het omgekeerd: eerst snel, dan steeds meer vertraging.`
+      },
+      zwemhuid: {
+        naam: "Zwemhuid",
+        kort: "onlosmakelijk verbonden",
+        tekst: d=>`Aan elkaar gegroeide tenen: deze energieën zijn onlosmakelijk verbonden en moeten als één worden gelezen. Ze versterken elkaar altijd: gebundelde kracht in karakter en gedrag.`
+      },
+      aaneen: {
+        naam: "Aaneengesloten",
+        kort: "directe doorstroming",
+        tekst: d=>`Aaneengesloten tenen: een goede en onmiddellijke doorstroming van alle energieën. Direct, snel, impulsief: zenden én ontvangen zonder vertraging.`
+      },
+      lang: {
+        naam: "Te grote teen",
+        kort: "dominante energie",
+        tekst: d=>`Deze teen is in verhouding groot: een overmaat aan ${d}. De uitgaande boodschappen overheersen én je staat extra open voor alles wat op deze golflengte binnenkomt.`
+      },
+      kort: {
+        naam: "Te kleine teen",
+        kort: "onderbedeeld",
+        tekst: d=>`Deze teen is in verhouding klein: ${d} is minder ontwikkeld en heeft minder je interesse. Met hulp en samenwerking van anderen kom je hier wél tot resultaat.`
+      },
+      fors: {
+        naam: "Forse grote teen",
+        kort: "groot communicatievermogen",
+        tekst: d=>`Een forse grote teen: groot communicatievermogen, zowel zendend als ontvangend. Dat hoeft geen geklets te zijn: communiceren kan ook met gebaren, muziek en andere kunstvormen.`
+      },
+      opeenlijn: {
+        naam: "Tenen op één lijn",
+        kort: "ordelijk, alles op een rijtje",
+        tekst: ()=>`Je tenen liggen keurig op de denkbeeldige lijn van grote naar kleine teen: je bent ordelijk en gelijkmatig en houdt alles graag op een rijtje. Chaos past niet bij je.`
+      },
+      bovenlijn: {
+        naam: "Teen boven de lijn",
+        kort: "bovenmatig ontwikkeld",
+        tekst: d=>`Deze teen steekt boven de denkbeeldige lijn uit: ${d} is bij jou bovenmatig ontwikkeld en vraagt meer ruimte dan de rest.`
+      },
+      onderlijn: {
+        naam: "Teen onder de lijn",
+        kort: "bescheidener rol",
+        tekst: d=>`Deze teen blijft onder de denkbeeldige lijn: voor ${d} heb je relatief minder aanleg. Het speelt in je leven een bescheidener rol, en dat is prima.`
+      },
+      gemiddeldnagel: {
+        naam: "Gemiddelde nagel",
+        kort: "zenden én ontvangen",
+        tekst: d=>`Je nagel beschermt hier precies genoeg: in ${d} kun je evengoed zenden als ontvangen. Je staat open zonder onbeschermd te zijn.`
+      },
+      grotenagel: {
+        naam: "Grote nagel",
+        kort: "zender, gesloten",
+        tekst: d=>`Een grote nagel dekt het hele kootje af: volledige afscherming. Je standpunt over ${d} gaat naar buiten, maar input van anderen absorbeer je niet: reflectie van buitenaf wordt afgewezen.`
+      },
+      kleinenagel: {
+        naam: "Kleine nagel",
+        kort: "gevoelig, open",
+        tekst: d=>`Een kleine nagel toont gevoeligheid rond ${d}: je zendt je eigen boodschap uit én houdt rekening met de mening van anderen. Hoe kleiner de nagel, hoe meer je openstaat.`
+      },
+      rondenagel: {
+        naam: "Ronde nagel",
+        kort: "energie glijdt af",
+        tekst: d=>`Van een ronde nagel glijdt energie snel af: een extra, wat krampachtige verdediging tegen aanbod rond ${d}. Je bent verdacht op een "aanval" en bekijkt suggesties met argwaan.`
+      },
+      ingegroeid: {
+        naam: "Ingroeiende nagel",
+        kort: "verkrampte verdediging",
+        tekst: d=>`Een ingroeiende nagel: de verdediging tegen binnenkomende informatie rond ${d} is zó verkrampt dat het pijn doet: je snijdt jezelf ermee. Sterk verzet tegen alles wat anderen aanbieden.`
+      },
+      omhoognagel: {
+        naam: "Omhoogstaande nagel",
+        kort: "deur staat open",
+        tekst: d=>`Een omhoogstaande nagel beschermt niet: het lijkt een deur die openstaat. Alles rond ${d} kan er zonder belemmering onderdoor naar binnen.`
+      },
+      daknagel: {
+        naam: "Daknagel",
+        kort: "\"laat me met rust\"",
+        tekst: d=>`Een daknagel: binnenkomende berichten rond ${d} zijn niet welkom en roetsjen eraf als sneeuw van een puntdak. "Laat me met rust: ik heb genoeg aan mezelf."`
+      },
+      kuipnagel: {
+        naam: "Kuipnagel",
+        kort: "vijver die volloopt",
+        tekst: d=>`Een kuipnagel houdt het aanbod rond ${d} even vast, als een vijver die langzaam volloopt. Pas als de vijver overloopt, komt de energie het systeem in en wordt ze opgenomen.`
+      },
+      afsluitnagel: {
+        naam: "Afsluitnagel",
+        kort: "garagedeur dicht",
+        tekst: d=>`Een afsluitnagel sluit als een garagedeur het kootje af: geen behoefte om ${d} uit te stralen, noch om iets te ontvangen. Bewust dicht, naar twee kanten.`
+      },
+      geennagel: {
+        naam: "Geen nagel",
+        kort: "ongefilterd binnen",
+        tekst: d=>`Geen nagel: totale openheid en géén bescherming rond ${d}. Alles van buiten dendert ongefilterd naar binnen en wordt al snel als óverprikkel ervaren.`
+      },
+      kalknagel: {
+        naam: "Kalk-/schimmelnagel",
+        kort: "aangetaste verdediging",
+        tekst: d=>`Een kalk- of schimmelnagel toont een aangetaste verdediging: kwetsbaar rond ${d}, ondanks de ogenschijnlijke bescherming. Een verharde nagel laat zien dat je je extra schrap zet.`
+      },
+      ribbels: {
+        naam: "Horizontale ribbels",
+        kort: "emotionele golven",
+        tekst: d=>`Horizontale ribbels zijn golfbewegingen in de emotionele sfeer rond ${d}: elke ribbel is een gebeurtenis die indruk maakte. Hoe dieper de ribbel, hoe sterker de indruk.`
+      },
+      vribbels: {
+        naam: "Verticale ribbels",
+        kort: "geen duiding",
+        tekst: d=>`Verticale ribbels duiden níét op een karaktereigenschap: ze wijzen op de stofwisseling. Een tenenlezer duidt ze bewust niet; dit valt buiten de spiegel.`
+      },
+      hallux: {
+        naam: "Hallux valgus",
+        kort: "dienstbaar, moeilijk nee",
+        tekst: d=>`De knobbel aan de wortel van de grote teen: dienstbaarheid, jezelf wegcijferen. Je staat altijd klaar, vaak ten koste van eigen behoeften. Het hoort bij je karakter: ingebakken service.`
+      },
+      eelt: {
+        naam: "Eelt",
+        kort: "\"dit is privé\"",
+        tekst: d=>`Eelt verbergt, beschermt en camoufleert: "wat hier aan de hand is, is privé". Over dit verborgen stuk van ${d} wil je liever niet communiceren.`
+      },
+      eksteroog: {
+        naam: "Eksteroog",
+        kort: "verdedigde privézone",
+        tekst: d=>`Een eksteroog is een eeltkern die van binnenuit gevoed wordt: een voortdurend verdedigde privézone rond ${d}: "het gaat jullie echt niets aan wat ik hier beleef".`
+      },
+      kleurinfo: {
+        naam: "Verkleuring lezen",
+        kort: "kleur = activiteit",
+        uitleg: "Kleur verraadt activiteit: een teen die anders kleurt dan zijn buren laat zien dat er rond die eigenschap véél gebeurt. Let ook op wáár de verkleuring zit — bij de wortel (waar iets ontstaat), op het middenkootje (de verwerking) of bij de top (het naar buiten brengen) — en kies die plek bij de kaart. Verkleuring kan ook iets zeggen over je lichamelijke conditie; dat terrein hoort bij arts of pedicure, niet bij deze spiegel."
+      },
+      wiu: {
+        naam: "Rode teen · werk in uitvoering",
+        kort: "verhoogde activiteit, ommekeer",
+        tekst: d=>`Deze teen kleurt roder dan de rest: werk in uitvoering. Rond ${d} is de activiteit verhoogd — irritatie, verandering, een ommekeer die gaande is. Je verlaat een strak patroon en verovert vrijheid om je verder te ontplooien.`
+      },
+      donker: {
+        naam: "Donkere teen",
+        kort: "\"dit is van mij\"",
+        tekst: d=>`Deze teen is donkerder van kleur dan zijn buren: wat hier rond ${d} speelt, gaat de buitenwereld niets aan. Je houdt dit stuk bewust binnen, achter een gesloten gordijn.`
+      },
+      aangetast: {
+        naam: "Schimmel of eczeem",
+        kort: "kwetsbaar, vraagt verzorging",
+        tekst: d=>`Aangetaste huid (schimmel of eczeem) toont kwetsbaarheid: het verzorgingspeil van binnenuit is rond ${d} tijdelijk verminderd. Dit stuk van jou vraagt zachte aandacht — en voor het lijfelijke deel: de pedicure of huisarts.`
+      },
+      kootjes: {
+        naam: "De drie kootjes",
+        kort: "wortel · midden · top",
+        uitleg: "Elke teen heeft drie kootjes (de grote teen twee). Het kootje bij de voet toont hoe iets ontstaat, het middelste hoe het zich vanbinnen ontwikkelt, het topkootje wat er uiteindelijk van naar buiten komt. Gebruik dit om te zien wáár op de teen een vorm zit — hier hoef je niets aan te vinken.",
+        tekst: d=>`Lees deze teen in drie delen: het kootje bij de voet toont hoe ${d} ontstaat, het middelste hoe het zich vanbinnen ontwikkelt, en het topkootje wat er uiteindelijk van naar buiten komt. De grote teen heeft er maar twee: ether laat zich niet splitsen.`
+      },
+      driefasen: {
+        naam: "Drie fasen",
+        kort: "begin · verwerking · uiting",
+        uitleg: "Zenden gaat in fasen van wortel naar top: ontstaan, verwerking, uiting. Ontvangen loopt precies andersom, van top naar wortel. Zit een vorm (bijvoorbeeld een flessenhals) laag op de teen, dan speelt het thema vroeg in het proces; zit hij bij de top, dan bij het naar buiten brengen. Gewoon meelezen, niets aanvinken.",
+        tekst: d=>`${cap(d)} beweegt in fasen door je teen: het ontstaat bij de wortel, ontwikkelt zich in het midden en komt bij de top naar buiten. Ontvangen loopt precies andersom, van top naar wortel.`
+      }
+    },
+    demo: {
+      resultaat: {
+  ok: true,
+  kwaliteit: 'Demo-modus: dit is een voorbeeldresultaat, geen echte analyse.',
+  tenen: { R1:['rond','kleinenagel'], R2:['haast'], R3:[], R4:['ruimte'], R5:['kort'],
+           L1:['mengvorm'], L2:['droom'], L3:[], L4:['terugkijk'], L5:['rugzakje'] },
+  notities: { R1:'fors profiel met vloeiend ronde top; nagel opvallend klein', R2:'wijkt vanaf de wortel richting kleine teen',
+              L2:'slank, topje wijst dromerig omhoog', L4:'buigt licht terug richting grote teen', L5:'klein, houdt zich wat schuil' },
+  algemeen: 'Wat als eerste opvalt: veel beweging aan de linkervoet, het voelen. De rechtervoet oogt rustiger.'
+},
+      vertelt: {
+  ok: true,
+  vertelt: {
+    eerste: 'Demo-modus: dit is een voorbeeldduiding, geen echte analyse. Eerste indruk: een rustige, ordelijke rechtervoet naast een linkervoet die volop in beweging is — het voelen vraagt hier de aandacht.',
+    tenen: {
+      R1: 'Je rechter grote teen is rond: je haalt de scherpe kantjes van wat je zegt. Het kleine nageltje erbij vertelt dat woorden van anderen hard kunnen binnenkomen.',
+      R2: 'De haast-teen: enthousiasme en vooruitdrang — het verleden speelt geen rol, jij wilt door.',
+      L2: 'Je gevoelsteen wijst dromerig omhoog: fantasie en de gave om je even aan de werkelijkheid te onttrekken.',
+      L4: 'De liefdes-teen kijkt terug: voorzichtig geworden, ervaringen uit het verleden kijken mee.',
+      L5: 'Het rugzakje bij je kleine teen links: vertrouwen dat al vóór je geboorte werd meegegeven.'
+    },
+    samenhang: 'Rechts denkt vooruit, links voelt terug — dat is de spanning die deze spiegel toont: nieuwe plannen naast oude gevoelens die nog een plek zoeken. Wat zou er gebeuren als het enthousiasme van rechts het voelen van links eens aan de hand meeneemt?'
+  }
+}
+    }
+  },
+  en: {
+    ui: {
+      titel: "Tenenspiegel · feet are mirrors",
+      eyebrow: "After the method of Imre &amp; Margriet Somogyi",
+      subtitel: "Feet are mirrors. Upload a photo or pick a toe, recognise the shapes, read yourself.",
+      h_foto: "Let the mirror look with you",
+      hint_foto: "Optional · upload a photo and the shapes are ticked on for you",
+      foto_hoe: "How to take the photo",
+      foto_li1: "Sit down <b>relaxed</b> on a chair, knees at roughly 90 degrees",
+      foto_li2: "Bare feet <b>flat on the floor</b>, slightly apart",
+      foto_li3: "Let your toes <b>relax</b>: no curling, no spreading",
+      foto_li4: "Photograph <b>straight from above</b>, both feet fully in frame",
+      foto_li5: "Make sure there is <b>good light</b>, without shadow across the toes",
+      foto_li6: "<b>More detail?</b> Choose \"Two close-ups\" and photograph each foot separately — more pixels per toe means a sharper picture of nails and contours",
+      foto_noot: "The mirror looks along with you, but you remain the reader: at step III, check what has been ticked on and adjust whatever is off. Rather look for yourself? Simply skip this step.",
+      aria_modus: "Choose how to upload",
+      modus_een: "One photo · both feet",
+      modus_twee: "Two close-ups · per foot",
+      modusnoot_een: "Quick and simple: one photo from above with both feet in frame.",
+      modusnoot_twee: "Better results: close-ups give far more pixels per toe — sharper nail and contour detail. One foot on its own is fine too.",
+      aria_upload: "Choose or take a photo of your feet",
+      upload_tekst: "<b>Choose a photo</b> or drag it here",
+      upload_sub: "Top view of both feet · jpg or png",
+      alt_preview: "Preview of your chosen photo",
+      voetkop_l: "Left foot · feeling",
+      voetkop_r: "Right foot · thinking",
+      aria_upload_l: "Choose a close-up photo of your left foot",
+      aria_upload_r: "Choose a close-up photo of your right foot",
+      upload_l: "<b>Left foot</b>",
+      upload_r: "<b>Right foot</b>",
+      upload_sub_close: "close-up · jpg or png",
+      alt_preview_l: "Preview close-up left foot",
+      alt_preview_r: "Preview close-up right foot",
+      btn_analyseer: "Analyse my feet",
+      btn_opnieuw: "Start over",
+      foto_privacy: "Your photo is used for this one analysis only and is never stored.",
+      h_teen: "Pick a toe",
+      hint_teen: "Right = thinking &amp; reason · Left = feeling &amp; emotion",
+      aria_voeten: "Pick a toe",
+      leeg_teen: "Click a toe to begin. Every toe is an antenna for a part of you all its own.",
+      h_vormen: "Recognise the shapes",
+      hint_vormen: "Look at your own toe and tick what you recognise",
+      catalogus_leeg_lang: "First pick a toe above, and the vademecum will appear here.",
+      catalogus_leeg_kort: "First pick a toe above.",
+      h_spiegel: "The mirror",
+      motto: "\"A good mirror does not distort. This is not a judgement. It is an image.\"",
+      spiegel_leeg: "Your mirror is still empty. Choose shapes for your toes and your story will appear here.",
+      btn_kopieer: "Copy my analysis",
+      btn_reset: "Start again",
+      disclaimer_spiegel: "Toe reading mirrors personality, attitude and behaviour. Nothing more and nothing less. It makes no medical or psychological diagnoses; for those you go to a doctor or therapist. Be gentle in your interpretation: there are no \"strange\" toes, only toes that fit you.",
+      footer_bron: "Based on Tenen Lezen I · II · III and Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
+      footer_versie: "Tenenspiegel · v8.0 · installable as an app (PWA) · extended reading, colour cards &amp; The mirror speaks",
+      footer_disclaimer: "<b>Good to know.</b> The Tenenspiegel is a game and mirroring instrument for self-reflection, based on the books by Imre &amp; Margriet Somogyi. The app and the AI analysis give no guarantees of correctness or completeness and make no medical, psychological or other diagnoses; no rights can be derived from the outcomes. Use is entirely at your own risk — the maker of this app accepts no liability whatsoever for conclusions or decisions based on the app. Worried about your health? See your family doctor or pedicurist.",
+      linkervoet: "Left foot",
+      rechtervoet: "Right foot",
+      links: "Left",
+      rechts: "Right",
+      lezing_open: "Extended reading 📜",
+      lezing_slot: n=>`Extended reading 🔒 ${n} more ${n===1?'toe':'toes'}`,
+      lezing_title_open: "The full reading across all ten of your toes",
+      lezing_title_slot: "Unlocks once you have looked at all ten toes in step II",
+      element_meta: (n,c)=>`Element <b>${n}</b> · ${c}`,
+      hier_woont: "What lives here",
+      teller: n=>`<b>${n}</b> ${n===1?'shape':'shapes'} recognised on this toe`,
+      leeswijzer_badge: "reading guide — nothing to tick",
+      waar_lbl: "where?",
+      spiegel_voet_r: "Right foot · the thinking",
+      spiegel_voet_l: "Left foot · the feeling",
+      kopieer_kop: "MY TENENSPIEGEL\n\"A good mirror does not distort.\"",
+      kopieer_voet_r: "RIGHT FOOT · THE THINKING",
+      kopieer_voet_l: "LEFT FOOT · THE FEELING",
+      kopieer_bron: "Based on the method of Imre & Margriet Somogyi.",
+      kopieer_disclaimer: "This mirror is a game instrument for self-reflection: no diagnosis, no guarantees, use at your own risk.",
+      gekopieerd: "Copied ✓",
+      fout_geen_foto: "This does not seem to be a photo. Choose a jpg or png file.",
+      fout_heic: "Your browser cannot read this photo (HEIC?). Tip: turn it into a jpg or png; a screenshot of the photo works too.",
+      een_voet_klaar: "One foot is ready. Add the other close-up, or analyse just this foot.",
+      klaar_twee: "Both close-ups are ready.",
+      klaar_een: "Photo is ready.",
+      klik_analyseer: "Click \"Analyse my feet\".",
+      fout_analyse: "The analysis did not succeed. Please try again.",
+      en_de: " and the ",
+      fout_voeten: s=>`Note: the analysis of the ${s} did not succeed — try that one again separately in a moment.`,
+      spiegel_kijkt: s=>`The mirror is looking at your feet… this takes about 20 to ${s} seconds.`,
+      fout_worker: "Cannot reach the analysis service. Is the worker online yet? See the working document, or try again later.",
+      fout_worker_later: "Cannot reach the analysis service. Please try again later.",
+      aikop: "This is what the mirror saw in your photo",
+      geen_vormen: "The mirror saw no pronounced shapes in this photo. That may well be right, but do look further yourself at steps II and III.",
+      btn_naar_spiegel: "View your mirror",
+      btn_nalopen: "Check &amp; adjust yourself",
+      btn_vertelt: "The mirror speaks ✒️",
+      btn_lezing_init: "Extended reading 🔒",
+      ai_noot: "This is a first reading by AI, not the truth. In step III, tick shapes on or off until it matches what you see.",
+      ai_noot_meer: "<b>The mirror speaks</b> then gives a reading in the style of the books — based on the shapes as they are ticked at that moment. The <b>extended reading</b> (all ten toes, much deeper) unlocks once you have looked at every toe yourself in step II.",
+      analyse_klaar: n=>`✓ Analysis done: ${n} ${n===1?'shape':'shapes'} recognised.`,
+      zoekt_woorden_kort: "The mirror is finding the words… this takes about 30 to 60 seconds.",
+      zoekt_woorden_lang: "The mirror is finding the words… this takes about 1 to 2 minutes.",
+      fout_duiding: "The extended reading did not succeed. Please try again.",
+      versie_noot: "(This feature requires worker v2.5 or higher; the extended reading v2.6.)",
+      vkop_lang: "The extended reading",
+      vkop_kort: "The mirror speaks",
+      vertelt_noot: "A freer reading following the method — here the mirror combines on its own. The card texts in step III remain the book-faithful source. No judgement, no diagnosis: you remain the reader.",
+      aria_taal: "Language / Taal"
+    },
+    element: {
+      "1": {
+        naam: "Ether",
+        chakra: "Throat chakra"
+      },
+      "2": {
+        naam: "Air",
+        chakra: "Heart chakra"
+      },
+      "3": {
+        naam: "Fire",
+        chakra: "Solar plexus"
+      },
+      "4": {
+        naam: "Water",
+        chakra: "Sacral chakra"
+      },
+      "5": {
+        naam: "Earth",
+        chakra: "Root chakra"
+      }
+    },
+    teennaam: {
+      "1": "Big toe",
+      "2": "Second toe",
+      "3": "Middle toe",
+      "4": "Fourth toe",
+      "5": "Little toe"
+    },
+    domein: {
+      R1: "communication about what you think, and your joy",
+      L1: "communication about what you feel, and your sorrow",
+      R2: "your ambition and what you want",
+      L2: "your feelings and how you handle them",
+      R3: "action and decisiveness",
+      L3: "creativity and intuitive action",
+      R4: "attachment and control over your situation",
+      L4: "love and relationships",
+      R5: "insecurity and fear",
+      L5: "trust and sexuality"
+    },
+    plekzin: {
+      wortel: " The discolouration sits at the root: this is already at play where it originates.",
+      midden: " The discolouration sits on the middle phalanx: it plays out in the processing.",
+      top: " The discolouration sits at the tip: it mainly plays out in the bringing out.",
+      teen: ""
+    },
+    plekopties: {
+      teen: "whole toe",
+      wortel: "root",
+      midden: "middle",
+      top: "tip"
+    },
+    groep: {
+      vorm: "Shape of the toe",
+      stand: "Position & direction",
+      grond: "Contact with the ground",
+      ruimte: "Space & connection",
+      lengte: "Length & proportion",
+      lijn: "The imaginary line",
+      nagels: "Nails",
+      huid: "Skin",
+      kleur: "Colour & discolouration",
+      kootjes: "Phalanges & phases"
+    },
+    vormen: {
+      gemiddeld: {
+        naam: "Average toe",
+        kort: "in balance",
+        tekst: d=>`A toe without extremes: ${d} is in balance for you. You send and receive here without excess; this quality simply runs along nicely.`
+      },
+      rond: {
+        naam: "Round toe",
+        kort: "diplomatic, harmony",
+        tekst: d=>`You bring ${d} out courteously and diplomatically: harmony rather than confrontation. Kind, but not always entirely clear.`
+      },
+      hoekig: {
+        naam: "Angular toe",
+        kort: "no beating about the bush",
+        tekst: d=>`In ${d} you are clear and direct. Plain, sometimes angular and uncompromising: "that's just how I am".`
+      },
+      blok: {
+        naam: "Block shape",
+        kort: "unyielding",
+        tekst: d=>`In ${d} you are unyielding: to the point, headstrong, bend-or-break. Haggling is not an option.`
+      },
+      puntig: {
+        naam: "Pointed toe",
+        kort: "intense, in bursts",
+        tekst: d=>`${cap(d)} expresses itself in bursts: intense and passionate one moment, empty and quiet the next. The more pointed the toe, the fiercer the discharge.`
+      },
+      spatel: {
+        naam: "Spatula shape",
+        kort: "stronger than announced",
+        tekst: d=>`${cap(d)} ultimately comes out more forcefully than announced. You receive a great deal too, but cannot process everything that is offered.`
+      },
+      verbreding: {
+        naam: "Widening",
+        kort: "swells up, friendly",
+        tekst: d=>`In ${d} the offering swells as it develops: more comes out than was announced, but friendlier and less dominant than with the spatula shape. Like a funnel: catching a lot, digesting not all of it.`
+      },
+      flessenhals: {
+        naam: "Bottleneck",
+        kort: "doubt, stagnation",
+        tekst: d=>`Doubt is built into ${d}: the thought or feeling is held back for a moment before it is allowed out. You listen well, but do not let everything through to your core.`
+      },
+      reservoir: {
+        naam: "Reservoir",
+        kort: "bottled up",
+        tekst: d=>`You bottle up ${d}: thoughts and emotions pile up and are never fully expressed. That puts you under pressure; the reservoir wants emptying every now and then.`
+      },
+      mengvorm: {
+        naam: "Mixed shape",
+        kort: "first gentle, then plain",
+        tekst: d=>`In ${d} you first choose sweet and tactful. If that yields nothing, you switch: "plain speech it is, then, with less gentleness".`
+      },
+      druppel: {
+        naam: "Teardrop",
+        kort: "hidden reserve",
+        tekst: d=>`Beneath the surface you keep a hidden reserve tank for ${d}: just when everyone thinks you are spent, you turn out to have energy left to finish the job.`
+      },
+      recht: {
+        naam: "Straight toe",
+        kort: "direct, here and now",
+        tekst: d=>`In ${d} you are direct, quick and without delay: information comes in briskly and goes out just as energetically.`
+      },
+      krom: {
+        naam: "Curled toe",
+        kort: "\"oh, never mind then\"",
+        tekst: d=>`In ${d} you adapt, but always at your own expense: an "oh, never mind then" attitude. You do not stand up for your own rights and let yourself be dominated.`
+      },
+      klauw: {
+        naam: "Claw",
+        kort: "forced under",
+        tekst: d=>`With ${d} the submission is forced: you no longer resist pressure from outside. Offered help or advice does not come in; the antenna points to the ground.`
+      },
+      gedraaid: {
+        naam: "Twisted toe",
+        kort: "the story changes",
+        tekst: d=>`Somewhere along the way the story changes: ${d} expresses itself differently than originally intended, and incoming messages are processed differently than people expect, too.`
+      },
+      gekanteld: {
+        naam: "Tilted toe",
+        kort: "different from the root up",
+        tekst: d=>`${cap(d)} deviates from the original line right from the root: information is offered and received in a completely different way than expected.`
+      },
+      haast: {
+        naam: "Hurrying toe",
+        kort: "onward, enthusiastic",
+        tekst: d=>`With ${d} you are in a hurry: enthusiastic, optimistic, aimed at the future. In that rush you do not always notice what is coming at you.`
+      },
+      terugkijk: {
+        naam: "Looking-back toe",
+        kort: "the past joins in",
+        tekst: d=>`With ${d} you look back: the past keeps playing along. You chew over events, sometimes from very long ago, and letting go is hard.`
+      },
+      ingetrokken: {
+        naam: "Retracted toe",
+        kort: "chameleon",
+        tekst: d=>`You can temporarily withdraw ${d}: like a chameleon you seemingly adapt, only to do exactly as you please later on. A "no" is rarely accepted.`
+      },
+      onderduik: {
+        naam: "Hiding toe",
+        kort: "tucks itself away",
+        tekst: d=>`You hide a part of ${d}: the toe ducks under its neighbour and receives only half of what is offered. What you hide remains tangibly present, though.`
+      },
+      gespannen: {
+        naam: "Tense toe",
+        kort: "stiffened pattern",
+        tekst: d=>`Around ${d} you are stuck in a pattern: predictable and not very flexible. The inner mobility has stiffened, often under the influence of experiences that hinder you.`
+      },
+      extra: {
+        naam: "Extra toe",
+        kort: "in duplicate",
+        tekst: d=>`A double edition: ${d} is laid out extra strongly in you, with intense swings to both sides.`
+      },
+      rugzakje: {
+        naam: "Little backpack",
+        kort: "prenatal baggage",
+        tekst: d=>`A little backpack on the little toe points to prenatal baggage: emotions your mother experienced during pregnancy, you carry along with you. Hard to interpret, because it does not feel like your own.`
+      },
+      geaard: {
+        naam: "Grounded / flattened",
+        kort: "concrete, clear",
+        tekst: d=>`You express ${d} concretely and clearly, with plenty of contact with the earth. Well grounded: no vagueness, no woolliness.`
+      },
+      nietgeaard: {
+        naam: "Not grounded",
+        kort: "keeps floating",
+        tekst: d=>`${cap(d)} cannot be made concrete: the energy keeps floating, so what you express comes across as hesitant and unclear to people who are firmly grounded themselves.`
+      },
+      droom: {
+        naam: "Dream toe",
+        kort: "fantasy world",
+        tekst: d=>`With ${d} you retreat into a dream or fantasy world: you process impressions on a level other than the earthly one. Room for meditation, inspiration and sudden insights.`
+      },
+      jubel: {
+        naam: "Jubilant toe",
+        kort: "another dimension",
+        tekst: d=>`${cap(d)} jubilates upward: the strong variant of the dream toe. The ability to withdraw from reality and be present in another dimension.`
+      },
+      hiaat: {
+        naam: "Gap",
+        kort: "slow to get going",
+        tekst: d=>`Between this energy and its neighbour sits a gap: you respond secondarily, and the energy of ${d} gets going with a delay. Pressure from outside backfires.`
+      },
+      ruimte: {
+        naam: "Space between toes",
+        kort: "analytical, like a chess player",
+        tekst: d=>`Space between the toes makes you analytical: you judge ${d} on its own, apart from the rest, and think your moves through like a chess player. Impulsiveness is out of the question.`
+      },
+      wig: {
+        naam: "Wedge",
+        kort: "gradually slower",
+        tekst: d=>`A wedge: in the first phase there is still touch, but on the way to expression ${d} slows down further and further. Responding slowly at first, then engaging ever more strongly with what is offered.`
+      },
+      omwig: {
+        naam: "Reversed wedge",
+        kort: "a gap overcome",
+        tekst: d=>`A reversed wedge is a gap overcome: you have learned to respond faster than used to be possible. Receiving works the other way round: quick at first, then more and more delay.`
+      },
+      zwemhuid: {
+        naam: "Webbed toes",
+        kort: "inseparably joined",
+        tekst: d=>`Toes grown together: these energies are inseparably joined and must be read as one. They always reinforce each other: bundled strength in character and behaviour.`
+      },
+      aaneen: {
+        naam: "Closed row",
+        kort: "direct flow",
+        tekst: d=>`Toes in a closed row: a good, immediate flow of all the energies. Direct, quick, impulsive: sending and receiving without delay.`
+      },
+      lang: {
+        naam: "Oversized toe",
+        kort: "dominant energy",
+        tekst: d=>`This toe is proportionally large: an abundance of ${d}. The outgoing messages dominate, and you are extra open to everything that comes in on this wavelength.`
+      },
+      kort: {
+        naam: "Undersized toe",
+        kort: "shortchanged",
+        tekst: d=>`This toe is proportionally small: ${d} is less developed and holds less of your interest. With help and cooperation from others you can still get results here.`
+      },
+      fors: {
+        naam: "Sturdy big toe",
+        kort: "great power of communication",
+        tekst: d=>`A sturdy big toe: a great capacity for communication, both sending and receiving. That need not mean chatter: communicating can also be done with gestures, music and other forms of art.`
+      },
+      opeenlijn: {
+        naam: "Toes on one line",
+        kort: "orderly, everything in a row",
+        tekst: ()=>`Your toes lie neatly on the imaginary line from big toe to little toe: you are orderly and even-keeled and like to keep everything in a row. Chaos does not suit you.`
+      },
+      bovenlijn: {
+        naam: "Toe above the line",
+        kort: "developed beyond measure",
+        tekst: d=>`This toe rises above the imaginary line: ${d} is developed beyond the usual measure in you and asks more room than the rest.`
+      },
+      onderlijn: {
+        naam: "Toe below the line",
+        kort: "a more modest role",
+        tekst: d=>`This toe stays below the imaginary line: you have relatively less aptitude for ${d}. It plays a more modest role in your life, and that is fine.`
+      },
+      gemiddeldnagel: {
+        naam: "Average nail",
+        kort: "sending and receiving",
+        tekst: d=>`Your nail protects just enough here: in ${d} you can send as well as receive. You stand open without being unprotected.`
+      },
+      grotenagel: {
+        naam: "Large nail",
+        kort: "sender, closed off",
+        tekst: d=>`A large nail covers the whole phalanx: complete shielding. Your view on ${d} goes out into the world, but input from others is not absorbed: reflection from outside is rejected.`
+      },
+      kleinenagel: {
+        naam: "Small nail",
+        kort: "sensitive, open",
+        tekst: d=>`A small nail shows sensitivity around ${d}: you send out your own message and take the opinions of others into account. The smaller the nail, the more open you stand.`
+      },
+      rondenagel: {
+        naam: "Round nail",
+        kort: "energy slides off",
+        tekst: d=>`Energy slides quickly off a round nail: an extra, somewhat strained defence against what is offered around ${d}. You are wary of an "attack" and eye suggestions with suspicion.`
+      },
+      ingegroeid: {
+        naam: "Ingrown nail",
+        kort: "cramped defence",
+        tekst: d=>`An ingrown nail: the defence against incoming information around ${d} is so cramped that it hurts: you cut yourself with it. Strong resistance to everything others offer.`
+      },
+      omhoognagel: {
+        naam: "Upturned nail",
+        kort: "the door stands open",
+        tekst: d=>`An upturned nail does not protect: it looks like a door left standing open. Everything around ${d} can pass underneath it, unhindered.`
+      },
+      daknagel: {
+        naam: "Roof nail",
+        kort: "\"leave me alone\"",
+        tekst: d=>`A roof nail: incoming messages around ${d} are not welcome and slide off like snow off a pointed roof. "Leave me be: I have enough on my plate."`
+      },
+      kuipnagel: {
+        naam: "Basin nail",
+        kort: "a pond filling up",
+        tekst: d=>`A basin nail holds what is offered around ${d} for a while, like a pond slowly filling. Only when the pond overflows does the energy enter the system and get taken in.`
+      },
+      afsluitnagel: {
+        naam: "Shutter nail",
+        kort: "garage door down",
+        tekst: d=>`A shutter nail closes the phalanx off like a garage door: no need to radiate ${d}, nor to receive anything. Deliberately closed, both ways.`
+      },
+      geennagel: {
+        naam: "No nail",
+        kort: "unfiltered entry",
+        tekst: d=>`No nail: total openness and no protection at all around ${d}. Everything from outside thunders in unfiltered and soon feels like overstimulation.`
+      },
+      kalknagel: {
+        naam: "Chalky / fungal nail",
+        kort: "damaged defence",
+        tekst: d=>`A chalky or fungal nail shows a damaged defence: vulnerable around ${d}, despite the apparent protection. A hardened nail shows that you are bracing yourself extra hard.`
+      },
+      ribbels: {
+        naam: "Horizontal ridges",
+        kort: "emotional waves",
+        tekst: d=>`Horizontal ridges are wave movements in the emotional sphere around ${d}: every ridge is an event that made an impression. The deeper the ridge, the stronger the impression.`
+      },
+      vribbels: {
+        naam: "Vertical ridges",
+        kort: "no reading",
+        tekst: d=>`Vertical ridges do not point to a character trait: they point to the metabolism. A toe reader deliberately leaves them unread; this falls outside the mirror.`
+      },
+      hallux: {
+        naam: "Hallux valgus",
+        kort: "of service, hard to say no",
+        tekst: d=>`The bump at the root of the big toe: being of service, effacing yourself. You are always there for others, often at the cost of your own needs. It belongs to your character: built-in service.`
+      },
+      eelt: {
+        naam: "Callus",
+        kort: "\"this is private\"",
+        tekst: d=>`Callus hides, protects and camouflages: "what is going on here is private". About this hidden part of ${d} you would rather not communicate.`
+      },
+      eksteroog: {
+        naam: "Corn",
+        kort: "defended private zone",
+        tekst: d=>`A corn is a callus core fed from within: a continuously defended private zone around ${d}: "it is truly none of your business what I experience here".`
+      },
+      kleurinfo: {
+        naam: "Reading discolouration",
+        kort: "colour = activity",
+        uitleg: "Colour betrays activity: a toe coloured differently from its neighbours shows that a great deal is happening around that quality. Also note where the discolouration sits — at the root (where something originates), on the middle phalanx (the processing) or at the tip (the bringing out) — and pick that spot on the card. Discolouration can also say something about your physical condition; that territory belongs to a doctor or pedicurist, not to this mirror."
+      },
+      wiu: {
+        naam: "Red toe · work in progress",
+        kort: "heightened activity, turnaround",
+        tekst: d=>`This toe is redder than the rest: work in progress. Around ${d} activity is heightened — irritation, change, a turnaround under way. You are leaving a rigid pattern behind and conquering the freedom to unfold further.`
+      },
+      donker: {
+        naam: "Dark toe",
+        kort: "\"this is mine\"",
+        tekst: d=>`This toe is darker in colour than its neighbours: what is going on here around ${d} is no one else's business. You deliberately keep this part inside, behind a closed curtain.`
+      },
+      aangetast: {
+        naam: "Fungus or eczema",
+        kort: "vulnerable, asks for care",
+        tekst: d=>`Affected skin (fungus or eczema) shows vulnerability: the level of care from within is temporarily lowered around ${d}. This part of you asks for gentle attention — and for the bodily side: the pedicurist or family doctor.`
+      },
+      kootjes: {
+        naam: "The three phalanges",
+        kort: "root · middle · tip",
+        uitleg: "Every toe has three phalanges (the big toe two). The phalanx by the foot shows how something originates, the middle one how it develops within, the top one what finally comes out of it. Use this to see where on the toe a shape sits — nothing to tick here.",
+        tekst: d=>`Read this toe in three parts: the phalanx by the foot shows how ${d} originates, the middle one how it develops within, and the top phalanx what finally comes out of it. The big toe has only two: ether will not be split.`
+      },
+      driefasen: {
+        naam: "Three phases",
+        kort: "origin · processing · expression",
+        uitleg: "Sending moves in phases from root to tip: origin, processing, expression. Receiving runs exactly the other way, from tip to root. If a shape (a bottleneck, say) sits low on the toe, the theme plays early in the process; if it sits at the tip, it plays in the bringing out. Just read along, nothing to tick.",
+        tekst: d=>`${cap(d)} moves through your toe in phases: it originates at the root, develops in the middle and comes out at the tip. Receiving runs exactly the other way, from tip to root.`
+      }
+    },
+    demo: {
+      resultaat: {
+  ok: true,
+  kwaliteit: 'Demo mode: this is a sample result, not a real analysis.',
+  tenen: { R1:['rond','kleinenagel'], R2:['haast'], R3:[], R4:['ruimte'], R5:['kort'],
+           L1:['mengvorm'], L2:['droom'], L3:[], L4:['terugkijk'], L5:['rugzakje'] },
+  notities: { R1:'sturdy profile with a flowing round tip; nail strikingly small', R2:'veers from the root towards the little toe',
+              L2:'slender, tip points dreamily upward', L4:'bends slightly back towards the big toe', L5:'small, keeps itself somewhat hidden' },
+  algemeen: 'What stands out first: plenty of movement on the left foot, the feeling side. The right foot looks calmer.'
+},
+      vertelt: {
+  ok: true,
+  vertelt: {
+    eerste: 'Demo mode: this is a sample reading, not a real analysis. First impression: a calm, orderly right foot next to a left foot in full motion — the feeling asks for attention here.',
+    tenen: {
+      R1: 'Your right big toe is round: you soften the sharp edges of what you say. The small nail beside it tells that words from others can land hard.',
+      R2: 'The hurrying toe: enthusiasm and forward drive — the past plays no part, you want to move on.',
+      L2: 'Your feeling toe points dreamily upward: imagination and the gift of briefly withdrawing from reality.',
+      L4: 'The love toe looks back: grown careful, experiences from the past watch along.',
+      L5: 'The little backpack on your left little toe: trust that was given to you before you were even born.'
+    },
+    samenhang: 'The right thinks ahead, the left feels back — that is the tension this mirror shows: new plans next to old feelings still looking for a place. What would happen if the enthusiasm on the right took the feeling on the left by the hand for once?'
+  }
+}
+    }
+  }
+};
+const TAAL_NAMEN = { nl:'Nederlands', en:'English' };
+const TAAL_BETA = { en:'beta' };
+let TAAL = (()=>{ try{ if(localStorage.taal && TALEN[localStorage.taal]) return localStorage.taal; }catch(e){}
+  const nav=(navigator.language||'nl').slice(0,2).toLowerCase(); return TALEN[nav]?nav:'en'; })();
+const T = pad => { const zoek = o => pad.split('.').reduce((x,k)=>x?.[k], o);
+  const r = zoek(TALEN[TAAL]); return (r!==undefined&&r!==null)?r:(zoek(TALEN.nl) ?? pad); };
+const TF = (pad,...a) => { const f = T(pad); return typeof f==='function' ? f(...a) : f; };
+const GROEP_ID = {'Vorm van de teen':'vorm','Stand & richting':'stand','Contact met de grond':'grond','Ruimte & samenhang':'ruimte','Lengte & verhouding':'lengte','De denkbeeldige lijn':'lijn','Nagels':'nagels','Huid':'huid','Kleur & verkleuring':'kleur','Kootjes & fasen':'kootjes'};
+function vertaalPagina(){
+  document.documentElement.lang = TAAL;
+  document.title = T('ui.titel');
+  document.querySelectorAll('[data-t]').forEach(el => { el.innerHTML = T(el.dataset.t); });
+  document.querySelectorAll('[data-t-aria]').forEach(el => el.setAttribute('aria-label', T(el.dataset.tAria)));
+  document.querySelectorAll('[data-t-alt]').forEach(el => el.setAttribute('alt', T(el.dataset.tAlt)));
+  document.querySelectorAll('#voetenSvg .teen').forEach(tg => { const k = tg.dataset.teen;
+    if(k) tg.setAttribute('aria-label',(k[0]==='L'?T('ui.linkervoet'):T('ui.rechtervoet'))+' '+String(T('teennaam.'+k[1])).toLowerCase()); });
+  const kn = document.getElementById('taalKnop'); if(kn) kn.textContent = '🌐 ' + TAAL.toUpperCase();
+}
+function zetTaal(t){
+  if(!TALEN[t] || t === TAAL) return;
+  TAAL = t;
+  try{ localStorage.taal = t; }catch(e){}
+  vertaalPagina();
+  renderTeenPaneel(); renderCatalogus(); renderSpiegel(); updateLezingKnop();
+  zetModus(fotoModus);
+}
+function initTaal(){
+  const knop = document.getElementById('taalKnop'), menu = document.getElementById('taalMenu');
+  const bouwMenu = () => {
+    menu.innerHTML = Object.keys(TALEN).map(t =>
+      '<button type="button" role="option" data-taal="'+t+'" aria-selected="'+(t===TAAL)+'">'+(TAAL_NAMEN[t]||t)+
+      (TAAL_BETA[t] ? ' <span class="beta">'+TAAL_BETA[t]+'</span>' : '')+'</button>').join('');
+    menu.querySelectorAll('button').forEach(b => b.addEventListener('click', () => { zetTaal(b.dataset.taal); menu.hidden = true; }));
+  };
+  knop.addEventListener('click', e => { e.stopPropagation(); bouwMenu(); menu.hidden = !menu.hidden; });
+  document.addEventListener('click', e => { if(!menu.hidden && !menu.contains(e.target)) menu.hidden = true; });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') menu.hidden = true; });
+}
+
 /* ================= DATA ================= */
 const ELEMENT = {
-  1:{naam:'Ether', chakra:'Keelchakra', kleur:'var(--ether)'},
-  2:{naam:'Lucht', chakra:'Hartchakra', kleur:'var(--lucht)'},
-  3:{naam:'Vuur',  chakra:'Zonnevlecht', kleur:'var(--vuur)'},
-  4:{naam:'Water', chakra:'Buikchakra', kleur:'var(--water)'},
-  5:{naam:'Aarde', chakra:'Stuitchakra', kleur:'var(--aarde)'}
+  1:{kleur:'var(--ether)'},
+  2:{kleur:'var(--lucht)'},
+  3:{kleur:'var(--vuur)'},
+  4:{kleur:'var(--water)'},
+  5:{kleur:'var(--aarde)'}
 };
-const TEENNAAM = {1:'Grote teen',2:'Tweede teen',3:'Middelste teen',4:'Vierde teen',5:'Kleine teen'};
-const DOMEIN = {
-  'R1':'communicatie over wat je denkt, en je vreugde',
-  'L1':'communicatie over wat je voelt, en je verdriet',
-  'R2':'je ambitie en wat je wilt',
-  'L2':'je gevoel en hoe je ermee omgaat',
-  'R3':'actie en daadkracht',
-  'L3':'creativiteit en intuïtief handelen',
-  'R4':'gehechtheid en controle over je situatie',
-  'L4':'liefde en relaties',
-  'R5':'onzekerheid en angst',
-  'L5':'vertrouwen en seksualiteit'
-};
+const ELNAAM = t => T('element.'+t+'.naam');
+const ELCHAKRA = t => T('element.'+t+'.chakra');
+const TEENNAAM = new Proxy({}, {get:(_,k)=>T('teennaam.'+k)});
+const DOMEIN = new Proxy({}, {get:(_,k)=>T('domein.'+k)});
 const cap = s => s.charAt(0).toUpperCase()+s.slice(1);
 
 // v7.1: voor de verkleuringskaarten tonen we gekleurde svg's, geen zwart-wit boekplaat
@@ -394,204 +1448,153 @@ const BOEK = {
 delete BOEK['wiu']; delete BOEK['donker']; delete BOEK['aangetast']; // v7.1: kleur-svg's winnen
 const VORMEN = [
 /* ==== VORM VAN DE TEEN (bovenaanzicht) ==== */
-{id:'gemiddeld',groep:'Vorm van de teen',naam:'Gemiddelde teen',kort:'in evenwicht',
- svg:'<path class="vul" d="M37,92 C36,62 37,42 41,29 C44,19 56,19 59,29 C63,42 64,62 63,92 Z"/><path class="nagel" d="M43,31 C43,25 57,25 57,31 C57,38 43,38 43,31 Z"/>',
- tekst:d=>`Een teen zonder uitschieters: ${d} is bij jou in evenwicht. Je zendt en ontvangt hier zonder extremen; deze eigenschap loopt gewoon lekker mee.`},
-{id:'rond',groep:'Vorm van de teen',naam:'Ronde teen',kort:'diplomatiek, harmonie',
- svg:'<path class="vul" d="M36,92 C34,62 34,40 39,27 C43,16 57,16 61,27 C66,40 66,62 64,92 Z"/><path class="nagel" d="M42,33 C42,25 58,25 58,33 C58,40 42,40 42,33 Z"/>',
- tekst:d=>`Je brengt ${d} voorkomend en diplomatiek naar buiten: liever harmonie dan confrontatie. Aardig, maar niet altijd even duidelijk.`},
-{id:'hoekig',groep:'Vorm van de teen',naam:'Hoekige teen',kort:'zonder omhaal',
- svg:'<path class="vul" d="M36,92 C35,62 35,46 36,30 L37,23 L63,23 L64,30 C65,46 65,62 64,92 Z"/><path class="nagel" d="M42,27 L58,27 L58,39 C58,41 42,41 42,39 Z"/>',
- tekst:d=>`In ${d} ben je duidelijk en zonder omhaal. Helder, soms hoekig en compromisloos: "zo ben ik nu eenmaal".`},
-{id:'blok',groep:'Vorm van de teen',naam:'Blokvorm',kort:'onverzettelijk',
- svg:'<path class="vul" d="M34,92 L34,27 C34,21 41,19 50,19 C59,19 66,21 66,27 L66,92 Z"/><path class="nagel" d="M41,25 L59,25 L59,38 C59,40 41,40 41,38 Z"/>',
- tekst:d=>`In ${d} ben je onverzettelijk: kernachtig, eigenwijs, van buigen of barsten. Marchanderen zit er niet in.`},
-{id:'puntig',groep:'Vorm van de teen',naam:'Puntige teen',kort:'heftig, in buien',
- svg:'<path class="vul" d="M37,92 C36,62 38,46 44,30 L50,16 L56,30 C62,46 64,62 63,92 Z"/><path class="nagel" d="M45,29 C46,23 54,23 55,29 C55,34 45,34 45,29 Z"/>',
- tekst:d=>`${cap(d)} uit zich in buien: heftig en hartstochtelijk op het ene moment, leeg en stil daarna. Hoe puntiger, hoe feller de ontlading.`},
-{id:'spatel',groep:'Vorm van de teen',naam:'Spatelvorm',kort:'forser dan verwacht',
- svg:'<path class="vul" d="M43,92 C43,72 44,60 44,50 L38,46 C34,42 34,29 38,24 C43,19 57,19 62,24 C66,29 66,42 62,46 L56,50 C56,60 57,72 57,92 Z"/><path class="nagel" d="M41,27 L59,27 L59,41 C59,43 41,43 41,41 Z"/>',
- tekst:d=>`${cap(d)} komt uiteindelijk forser naar buiten dan aangekondigd. Je ontvangt ook veel, maar kunt niet alles verwerken wat wordt aangeboden.`},
-{id:'verbreding',groep:'Vorm van de teen',naam:'Verbreding',kort:'zwelt aan, vriendelijk',
- svg:'<path class="vul" d="M45,92 C45,70 40,50 36,38 C33,27 38,19 50,19 C62,19 67,27 64,38 C60,50 55,70 55,92 Z"/><path class="nagel" d="M42,27 C42,22 58,22 58,27 C58,35 42,35 42,27 Z"/><path class="zacht" d="M38,66 L30,90 M62,66 L70,90"/>',
- tekst:d=>`In ${d} zwelt het aanbod tijdens de ontwikkeling aan: er komt méér dan aangekondigd, maar vriendelijker en minder dominant dan bij de spatelvorm. Als een trechter: veel opvangen, niet alles verteren.`},
-{id:'flessenhals',groep:'Vorm van de teen',naam:'Flessenhals',kort:'twijfel, stagnatie',
- svg:'<path class="vul" d="M38,92 C37,72 41,64 42,55 C43,48 38,44 38,35 C38,24 44,18 50,18 C56,18 62,24 62,35 C62,44 57,48 58,55 C59,64 63,72 62,92 Z"/><path class="nagel" d="M43,27 C43,21 57,21 57,27 C57,34 43,34 43,27 Z"/><path class="pijl" d="M22,48 L34,48 M78,48 L66,48"/><path class="pijlkop" d="M39,48 l-7,-3.5 v7 z M61,48 l7,-3.5 v7 z"/>',
- tekst:d=>`In ${d} zit twijfel ingebouwd: de gedachte of het gevoel wordt even vastgehouden voordat het naar buiten mag. Je luistert goed, maar laat niet alles toe tot je wezen.`},
-{id:'reservoir',groep:'Vorm van de teen',naam:'Reservoir',kort:'opgekropt',
- svg:'<path class="vul" d="M41,92 C39,82 33,72 33,58 C33,45 39,41 42,34 C44,27 45,20 50,20 C55,20 56,27 58,34 C61,41 67,45 67,58 C67,72 61,82 59,92 Z"/><path class="nagel" d="M44,27 C44,22 56,22 56,27 C56,33 44,33 44,27 Z"/><path class="zacht" d="M42,54 C46,50 54,50 58,54"/><path class="pijl" d="M36,60 L27,53 M64,60 L73,53"/><path class="pijlkop" d="M23,50 l8,1 -4,6 z M77,50 l-8,1 4,6 z"/>',
- tekst:d=>`Je kropt ${d} op: gedachten en emoties hopen zich op en worden niet volledig geuit. Dat zet je onder spanning; het reservoir wil af en toe geleegd worden.`},
-{id:'mengvorm',groep:'Vorm van de teen',naam:'Mengvorm',kort:'eerst lief, dan duidelijk',
- svg:'<path class="vul" d="M37,92 C35,64 35,46 38,31 C41,19 59,19 62,31 C65,46 65,64 63,92 Z"/><path class="nagel" d="M41,29 L59,29 L59,42 C59,44 41,44 41,42 Z"/><path class="zacht" d="M42,24 L58,24"/>',
- tekst:d=>`In ${d} kies je eerst voor lief en tactvol. Levert dat niets op, dan schakel je om: "dan maar duidelijk en met minder zachtaardigheid".`},
-{id:'druppel',groep:'Vorm van de teen',naam:'Druppel',kort:'verborgen reserve',
- svg:'<path class="vul" d="M90,58 C74,49 52,47 36,51 C24,54 19,61 23,68 C27,74 37,76 47,75 L90,71 Z"/><path class="nagel" d="M25,55 C21,57 21,63 25,66 C29,68 33,64 33,60 C33,56 29,54 25,55 Z"/><path class="vul" d="M46,75 C43,82 45,89 51,89 C57,89 59,82 56,75 Z"/>',
- tekst:d=>`Onder de oppervlakte houd je bij ${d} een verborgen reservetank: als iedereen denkt dat je op bent, blijk jij nog energie te hebben om de klus te klaren.`},
+{id:'gemiddeld',groep:'Vorm van de teen',
+ svg:'<path class="vul" d="M37,92 C36,62 37,42 41,29 C44,19 56,19 59,29 C63,42 64,62 63,92 Z"/><path class="nagel" d="M43,31 C43,25 57,25 57,31 C57,38 43,38 43,31 Z"/>'},
+{id:'rond',groep:'Vorm van de teen',
+ svg:'<path class="vul" d="M36,92 C34,62 34,40 39,27 C43,16 57,16 61,27 C66,40 66,62 64,92 Z"/><path class="nagel" d="M42,33 C42,25 58,25 58,33 C58,40 42,40 42,33 Z"/>'},
+{id:'hoekig',groep:'Vorm van de teen',
+ svg:'<path class="vul" d="M36,92 C35,62 35,46 36,30 L37,23 L63,23 L64,30 C65,46 65,62 64,92 Z"/><path class="nagel" d="M42,27 L58,27 L58,39 C58,41 42,41 42,39 Z"/>'},
+{id:'blok',groep:'Vorm van de teen',
+ svg:'<path class="vul" d="M34,92 L34,27 C34,21 41,19 50,19 C59,19 66,21 66,27 L66,92 Z"/><path class="nagel" d="M41,25 L59,25 L59,38 C59,40 41,40 41,38 Z"/>'},
+{id:'puntig',groep:'Vorm van de teen',
+ svg:'<path class="vul" d="M37,92 C36,62 38,46 44,30 L50,16 L56,30 C62,46 64,62 63,92 Z"/><path class="nagel" d="M45,29 C46,23 54,23 55,29 C55,34 45,34 45,29 Z"/>'},
+{id:'spatel',groep:'Vorm van de teen',
+ svg:'<path class="vul" d="M43,92 C43,72 44,60 44,50 L38,46 C34,42 34,29 38,24 C43,19 57,19 62,24 C66,29 66,42 62,46 L56,50 C56,60 57,72 57,92 Z"/><path class="nagel" d="M41,27 L59,27 L59,41 C59,43 41,43 41,41 Z"/>'},
+{id:'verbreding',groep:'Vorm van de teen',
+ svg:'<path class="vul" d="M45,92 C45,70 40,50 36,38 C33,27 38,19 50,19 C62,19 67,27 64,38 C60,50 55,70 55,92 Z"/><path class="nagel" d="M42,27 C42,22 58,22 58,27 C58,35 42,35 42,27 Z"/><path class="zacht" d="M38,66 L30,90 M62,66 L70,90"/>'},
+{id:'flessenhals',groep:'Vorm van de teen',
+ svg:'<path class="vul" d="M38,92 C37,72 41,64 42,55 C43,48 38,44 38,35 C38,24 44,18 50,18 C56,18 62,24 62,35 C62,44 57,48 58,55 C59,64 63,72 62,92 Z"/><path class="nagel" d="M43,27 C43,21 57,21 57,27 C57,34 43,34 43,27 Z"/><path class="pijl" d="M22,48 L34,48 M78,48 L66,48"/><path class="pijlkop" d="M39,48 l-7,-3.5 v7 z M61,48 l7,-3.5 v7 z"/>'},
+{id:'reservoir',groep:'Vorm van de teen',
+ svg:'<path class="vul" d="M41,92 C39,82 33,72 33,58 C33,45 39,41 42,34 C44,27 45,20 50,20 C55,20 56,27 58,34 C61,41 67,45 67,58 C67,72 61,82 59,92 Z"/><path class="nagel" d="M44,27 C44,22 56,22 56,27 C56,33 44,33 44,27 Z"/><path class="zacht" d="M42,54 C46,50 54,50 58,54"/><path class="pijl" d="M36,60 L27,53 M64,60 L73,53"/><path class="pijlkop" d="M23,50 l8,1 -4,6 z M77,50 l-8,1 4,6 z"/>'},
+{id:'mengvorm',groep:'Vorm van de teen',
+ svg:'<path class="vul" d="M37,92 C35,64 35,46 38,31 C41,19 59,19 62,31 C65,46 65,64 63,92 Z"/><path class="nagel" d="M41,29 L59,29 L59,42 C59,44 41,44 41,42 Z"/><path class="zacht" d="M42,24 L58,24"/>'},
+{id:'druppel',groep:'Vorm van de teen',
+ svg:'<path class="vul" d="M90,58 C74,49 52,47 36,51 C24,54 19,61 23,68 C27,74 37,76 47,75 L90,71 Z"/><path class="nagel" d="M25,55 C21,57 21,63 25,66 C29,68 33,64 33,60 C33,56 29,54 25,55 Z"/><path class="vul" d="M46,75 C43,82 45,89 51,89 C57,89 59,82 56,75 Z"/>'},
 
 /* ==== STAND & RICHTING ==== */
-{id:'recht',groep:'Stand & richting',naam:'Rechte teen',kort:'direct, hier en nu',
- svg:'<path class="vul" d="M40,92 L40,30 C40,20 60,20 60,30 L60,92 Z"/><path class="nagel" d="M44,28 C44,23 56,23 56,28 C56,35 44,35 44,28 Z"/>',
- tekst:d=>`In ${d} ben je direct, snel en zonder vertraging: informatie komt vlot binnen en gaat er even voortvarend weer uit.`},
-{id:'krom',groep:'Stand & richting',naam:'Gekromde teen',kort:'"laat dan ook maar"',
- svg:'<path class="vul" d="M90,56 C72,47 52,45 40,49 C28,53 24,62 29,70 C33,77 41,82 49,83 C53,83 54,78 50,75 C44,72 41,68 43,63 C55,58 72,60 88,64 Z"/><path class="nagel" d="M46,74 C43,77 44,82 48,83 C51,83 53,80 52,77 C51,74 48,73 46,74 Z"/><path class="zacht" d="M6,90 H94"/>',
- tekst:d=>`In ${d} pas je je aan, maar altijd ten koste van jezelf: een "laat dan ook maar"-houding. Je komt niet op voor je eigen rechten en laat je domineren.`},
-{id:'klauw',groep:'Stand & richting',naam:'Klauw',kort:'afgedwongen',
- svg:'<path class="vul" d="M90,50 C72,41 52,40 40,44 C28,48 23,58 28,68 C32,77 42,84 51,84 C56,84 57,78 53,75 C47,72 43,67 45,61 C56,56 72,58 88,60 Z"/><path class="nagel" d="M48,75 C45,78 46,83 50,84 C53,84 55,81 54,78 Z"/><path class="pijl" d="M51,50 L51,60"/><path class="pijlkop" d="M51,67 l-3.5,-7 h7 z"/><path class="zacht" d="M6,90 H94"/>',
- tekst:d=>`Bij ${d} is onderwerping afgedwongen: je biedt geen verzet meer tegen druk van buiten. Aangeboden hulp of advies komt niet binnen; de antenne staat naar de grond.`},
-{id:'gedraaid',groep:'Stand & richting',naam:'Gedraaide teen',kort:'verhaal verandert',
- svg:'<path class="vul" d="M38,92 C37,66 38,50 42,36 C45,25 57,22 61,30 C65,38 60,46 56,56 C53,66 56,78 60,92 Z"/><path class="nagel" transform="rotate(30 52 33)" d="M46,29 C46,24 58,24 58,29 C58,36 46,36 46,29 Z"/><path class="pijl" d="M34,82 C29,88 33,95 41,94"/><path class="pijlkop" d="M47,93 l-7.5,-3 1.5,7 z"/>',
- tekst:d=>`Ergens onderweg verandert het verhaal: ${d} uit zich anders dan oorspronkelijk bedoeld, en ook binnenkomende berichten verwerk je anders dan men verwacht.`},
-{id:'gekanteld',groep:'Stand & richting',naam:'Gekantelde teen',kort:'vanaf de wortel anders',
- svg:'<path class="zacht" d="M50,88 L50,24"/><g transform="rotate(16 50 88)"><path class="vul" d="M40,92 L40,32 C40,22 60,22 60,32 L60,92 Z"/><path class="nagel" d="M44,30 C44,25 56,25 56,30 C56,37 44,37 44,30 Z"/></g>',
- tekst:d=>`${cap(d)} wijkt al vanaf de wortel af van de oorspronkelijke lijn: informatie wordt totaal anders aangeboden en ontvangen dan gedacht.`},
-{id:'haast',groep:'Stand & richting',naam:'Haastteen',kort:'vooruit, enthousiast',
- svg:'<path class="vul" d="M40,92 C40,72 42,56 48,44 C53,34 62,30 66,36 C70,42 66,52 60,62 C55,72 52,82 52,92 Z"/><path class="nagel" d="M57,39 C60,34 67,36 66,41 C65,46 58,44 57,39 Z"/><path class="zacht" d="M46,92 L46,50 M46,92 L66,48"/>',
- tekst:d=>`Met ${d} heb je haast: enthousiast, optimistisch, op de toekomst gericht. In die vaart merk je niet altijd wat er op je afkomt.`},
-{id:'terugkijk',groep:'Stand & richting',naam:'Terugkijkteen',kort:'het verleden speelt mee',
- svg:'<path class="vul" d="M60,92 C60,72 58,56 52,44 C47,34 38,30 34,36 C30,42 34,52 40,62 C45,72 48,82 48,92 Z"/><path class="nagel" d="M43,39 C40,34 33,36 34,41 C35,46 42,44 43,39 Z"/><path class="zacht" d="M54,92 L54,50 M54,92 L34,48"/>',
- tekst:d=>`Bij ${d} kijk je om: het verleden speelt voortdurend mee. Je herkauwt gebeurtenissen, soms van heel lang geleden, en loslaten is lastig.`},
-{id:'ingetrokken',groep:'Stand & richting',naam:'Ingetrokken teen',kort:'kameleon',
- svg:'<path class="vul" d="M88,60 C74,51 56,49 44,53 C34,56 30,63 34,69 C38,75 48,77 58,76 L88,72 Z"/><path class="nagel" d="M35,58 C31,60 31,65 35,67 C39,68 42,65 42,61 C42,58 38,57 35,58 Z"/><path class="pijl" d="M22,34 L32,46"/><path class="pijlkop" d="M37,52 l-3,-8 -5.5,4.5 z"/><path class="zacht" d="M6,90 H94"/>',
- tekst:d=>`Je kunt ${d} tijdelijk terugtrekken: als een kameleon pas je je ogenschijnlijk aan, om later precies te doen waar je zelf zin in hebt. Een "nee" wordt zelden geaccepteerd.`},
-{id:'onderduik',groep:'Stand & richting',naam:'Onderduikende teen',kort:'verstopt zich',
- svg:'<path class="buur" d="M56,92 C54,64 56,42 62,30 C66,22 78,22 82,30 C88,42 90,64 88,92 Z"/><path class="vul" d="M28,92 C26,66 28,50 34,40 C38,32 48,32 52,40 C57,49 59,60 57,70 L54,92 Z"/><path class="nagel" d="M36,39 C36,34 47,34 47,39 C47,45 36,45 36,39 Z"/><path class="pijl" d="M42,80 L52,73"/><path class="pijlkop" d="M57,69 l-8,1 3.5,6.5 z"/>',
- tekst:d=>`Je verstopt een deel van ${d}: de teen duikt onder bij zijn buurman en ontvangt nog maar de helft van het aanbod. Wat je verbergt, blijft wel voelbaar aanwezig.`},
-{id:'gespannen',groep:'Stand & richting',naam:'Gespannen teen',kort:'verstijfd patroon',
- svg:'<path class="vul" style="fill:#DCD0B4" d="M40,92 L40,32 C40,23 60,23 60,32 L60,92 Z"/><path class="nagel" d="M44,30 C44,25 56,25 56,30 C56,37 44,37 44,30 Z"/><path class="pijl" d="M22,62 L34,62"/><path class="pijlkop" d="M39,62 l-7,-3.5 v7 z"/>',
- tekst:d=>`Rond ${d} zit je vast in een patroon: voorspelbaar en weinig flexibel. De innerlijke bewegelijkheid is verstijfd, vaak onder invloed van ervaringen die je hinderen.`},
-{id:'extra',groep:'Stand & richting',naam:'Extra teen',kort:'dubbel uitgevoerd',
- svg:'<path class="vul" d="M48,92 C46,68 48,52 54,42 C58,34 68,34 72,42 C78,52 80,68 78,92 Z"/><path class="nagel" d="M58,41 C58,36 68,36 68,41 C68,47 58,47 58,41 Z"/><path class="vul" d="M32,68 C28,62 30,52 36,50 C42,48 46,54 44,62 C43,68 38,72 34,71 Z"/><path class="nagel" d="M35,55 C35,52 41,52 41,55 C41,59 35,59 35,55 Z"/><path class="pijl" d="M14,84 L26,75"/><path class="pijlkop" d="M31,71 l-8,0.5 3.5,6.5 z"/>',
- tekst:d=>`Een dubbele uitvoering: ${d} is bij jou extra sterk aangelegd, met heftige uitschieters naar twee kanten.`},
-{id:'rugzakje',groep:'Stand & richting',naam:'Rugzakje',kort:'prenatale bagage',alleen:[5],
- svg:'<path class="vul" d="M46,92 C44,70 46,54 52,44 C56,36 66,36 70,44 C76,54 78,70 76,92 Z"/><path class="nagel" d="M56,43 C56,38 66,38 66,43 C66,49 56,49 56,43 Z"/><path class="vul" d="M46,74 C38,72 31,76 31,82 C31,88 38,92 44,90 L46,86 Z"/><path class="pijl" d="M14,66 L26,74"/><path class="pijlkop" d="M31,77 l-7.5,-3.5 0.5,7.5 z"/>',
- tekst:d=>`Een rugzakje bij de kleine teen wijst op prenatale bagage: emoties die je moeder tijdens de zwangerschap ervoer, draag je mee. Moeilijk te duiden, want het voelt niet als van jezelf.`},
+{id:'recht',groep:'Stand & richting',
+ svg:'<path class="vul" d="M40,92 L40,30 C40,20 60,20 60,30 L60,92 Z"/><path class="nagel" d="M44,28 C44,23 56,23 56,28 C56,35 44,35 44,28 Z"/>'},
+{id:'krom',groep:'Stand & richting',
+ svg:'<path class="vul" d="M90,56 C72,47 52,45 40,49 C28,53 24,62 29,70 C33,77 41,82 49,83 C53,83 54,78 50,75 C44,72 41,68 43,63 C55,58 72,60 88,64 Z"/><path class="nagel" d="M46,74 C43,77 44,82 48,83 C51,83 53,80 52,77 C51,74 48,73 46,74 Z"/><path class="zacht" d="M6,90 H94"/>'},
+{id:'klauw',groep:'Stand & richting',
+ svg:'<path class="vul" d="M90,50 C72,41 52,40 40,44 C28,48 23,58 28,68 C32,77 42,84 51,84 C56,84 57,78 53,75 C47,72 43,67 45,61 C56,56 72,58 88,60 Z"/><path class="nagel" d="M48,75 C45,78 46,83 50,84 C53,84 55,81 54,78 Z"/><path class="pijl" d="M51,50 L51,60"/><path class="pijlkop" d="M51,67 l-3.5,-7 h7 z"/><path class="zacht" d="M6,90 H94"/>'},
+{id:'gedraaid',groep:'Stand & richting',
+ svg:'<path class="vul" d="M38,92 C37,66 38,50 42,36 C45,25 57,22 61,30 C65,38 60,46 56,56 C53,66 56,78 60,92 Z"/><path class="nagel" transform="rotate(30 52 33)" d="M46,29 C46,24 58,24 58,29 C58,36 46,36 46,29 Z"/><path class="pijl" d="M34,82 C29,88 33,95 41,94"/><path class="pijlkop" d="M47,93 l-7.5,-3 1.5,7 z"/>'},
+{id:'gekanteld',groep:'Stand & richting',
+ svg:'<path class="zacht" d="M50,88 L50,24"/><g transform="rotate(16 50 88)"><path class="vul" d="M40,92 L40,32 C40,22 60,22 60,32 L60,92 Z"/><path class="nagel" d="M44,30 C44,25 56,25 56,30 C56,37 44,37 44,30 Z"/></g>'},
+{id:'haast',groep:'Stand & richting',
+ svg:'<path class="vul" d="M40,92 C40,72 42,56 48,44 C53,34 62,30 66,36 C70,42 66,52 60,62 C55,72 52,82 52,92 Z"/><path class="nagel" d="M57,39 C60,34 67,36 66,41 C65,46 58,44 57,39 Z"/><path class="zacht" d="M46,92 L46,50 M46,92 L66,48"/>'},
+{id:'terugkijk',groep:'Stand & richting',
+ svg:'<path class="vul" d="M60,92 C60,72 58,56 52,44 C47,34 38,30 34,36 C30,42 34,52 40,62 C45,72 48,82 48,92 Z"/><path class="nagel" d="M43,39 C40,34 33,36 34,41 C35,46 42,44 43,39 Z"/><path class="zacht" d="M54,92 L54,50 M54,92 L34,48"/>'},
+{id:'ingetrokken',groep:'Stand & richting',
+ svg:'<path class="vul" d="M88,60 C74,51 56,49 44,53 C34,56 30,63 34,69 C38,75 48,77 58,76 L88,72 Z"/><path class="nagel" d="M35,58 C31,60 31,65 35,67 C39,68 42,65 42,61 C42,58 38,57 35,58 Z"/><path class="pijl" d="M22,34 L32,46"/><path class="pijlkop" d="M37,52 l-3,-8 -5.5,4.5 z"/><path class="zacht" d="M6,90 H94"/>'},
+{id:'onderduik',groep:'Stand & richting',
+ svg:'<path class="buur" d="M56,92 C54,64 56,42 62,30 C66,22 78,22 82,30 C88,42 90,64 88,92 Z"/><path class="vul" d="M28,92 C26,66 28,50 34,40 C38,32 48,32 52,40 C57,49 59,60 57,70 L54,92 Z"/><path class="nagel" d="M36,39 C36,34 47,34 47,39 C47,45 36,45 36,39 Z"/><path class="pijl" d="M42,80 L52,73"/><path class="pijlkop" d="M57,69 l-8,1 3.5,6.5 z"/>'},
+{id:'gespannen',groep:'Stand & richting',
+ svg:'<path class="vul" style="fill:#DCD0B4" d="M40,92 L40,32 C40,23 60,23 60,32 L60,92 Z"/><path class="nagel" d="M44,30 C44,25 56,25 56,30 C56,37 44,37 44,30 Z"/><path class="pijl" d="M22,62 L34,62"/><path class="pijlkop" d="M39,62 l-7,-3.5 v7 z"/>'},
+{id:'extra',groep:'Stand & richting',
+ svg:'<path class="vul" d="M48,92 C46,68 48,52 54,42 C58,34 68,34 72,42 C78,52 80,68 78,92 Z"/><path class="nagel" d="M58,41 C58,36 68,36 68,41 C68,47 58,47 58,41 Z"/><path class="vul" d="M32,68 C28,62 30,52 36,50 C42,48 46,54 44,62 C43,68 38,72 34,71 Z"/><path class="nagel" d="M35,55 C35,52 41,52 41,55 C41,59 35,59 35,55 Z"/><path class="pijl" d="M14,84 L26,75"/><path class="pijlkop" d="M31,71 l-8,0.5 3.5,6.5 z"/>'},
+{id:'rugzakje',groep:'Stand & richting',alleen:[5],
+ svg:'<path class="vul" d="M46,92 C44,70 46,54 52,44 C56,36 66,36 70,44 C76,54 78,70 76,92 Z"/><path class="nagel" d="M56,43 C56,38 66,38 66,43 C66,49 56,49 56,43 Z"/><path class="vul" d="M46,74 C38,72 31,76 31,82 C31,88 38,92 44,90 L46,86 Z"/><path class="pijl" d="M14,66 L26,74"/><path class="pijlkop" d="M31,77 l-7.5,-3.5 0.5,7.5 z"/>'},
 
 /* ==== CONTACT MET DE GROND (zijaanzicht) ==== */
-{id:'geaard',groep:'Contact met de grond',naam:'Geaard / afgeplat',kort:'concreet, helder',
- svg:'<path class="vul" d="M12,58 C32,48 58,46 74,52 C84,56 88,66 86,74 C85,82 79,86 71,86 L13,80 Z"/><path class="nagel" d="M15,61 C11,63 11,72 15,76 C19,79 24,75 24,69 C24,64 19,60 15,61 Z"/><path class="pijl" d="M32,28 L32,40"/><path class="pijlkop" d="M32,47 l-3.5,-7 h7 z"/><path class="zacht" d="M6,90 H94"/>',
- tekst:d=>`Je uit ${d} concreet en helder, met veel contact met de aarde. Goed geaard: geen zweverigheid of onduidelijkheid.`},
-{id:'nietgeaard',groep:'Contact met de grond',naam:'Niet geaard',kort:'blijft zweven',
- svg:'<path class="vul" d="M14,46 C34,36 58,34 72,40 C82,44 86,52 84,60 C83,67 77,71 69,71 L15,66 Z"/><path class="nagel" d="M17,48 C13,50 13,58 17,61 C21,64 26,60 26,55 C26,50 21,47 17,48 Z"/><path class="zacht" d="M6,90 H94"/>',
- tekst:d=>`${cap(d)} kan niet concreet gemaakt worden: de energie blijft zweven, waardoor uitingen weifelend en onduidelijk overkomen op mensen die zelf stevig geaard zijn.`},
-{id:'droom',groep:'Contact met de grond',naam:'Droomteen',kort:'fantasiewereld',
- svg:'<path class="vul" d="M12,64 C32,54 56,50 72,52 C84,54 90,60 88,66 C86,72 78,74 70,73 L14,78 Z"/><path class="nagel" d="M16,55 C12,56 11,62 15,65 C19,67 23,63 23,59 C23,55 19,54 16,55 Z"/><path class="zacht" d="M6,90 H94"/>',
- tekst:d=>`Bij ${d} trek je je terug in een droom- of fantasiewereld: prikkels verwerk je op een ander dan aards niveau. Ruimte voor meditatie, inspiratie en ingevingen.`},
-{id:'jubel',groep:'Contact met de grond',naam:'Jubelteen',kort:'andere dimensie',
- svg:'<path class="vul" d="M12,72 C30,64 46,60 58,54 C70,48 76,38 74,28 C73,21 66,19 62,25 C56,33 48,47 40,58 L14,82 Z"/><path class="nagel" d="M63,24 C61,20 66,15 70,18 C73,20 72,25 69,27 C66,29 64,27 63,24 Z"/><path class="zacht" d="M6,90 H94"/>',
- tekst:d=>`${cap(d)} jubelt omhoog: de sterke variant van de droomteen. Het vermogen je aan de werkelijkheid te onttrekken en in een andere dimensie aanwezig te zijn.`},
+{id:'geaard',groep:'Contact met de grond',
+ svg:'<path class="vul" d="M12,58 C32,48 58,46 74,52 C84,56 88,66 86,74 C85,82 79,86 71,86 L13,80 Z"/><path class="nagel" d="M15,61 C11,63 11,72 15,76 C19,79 24,75 24,69 C24,64 19,60 15,61 Z"/><path class="pijl" d="M32,28 L32,40"/><path class="pijlkop" d="M32,47 l-3.5,-7 h7 z"/><path class="zacht" d="M6,90 H94"/>'},
+{id:'nietgeaard',groep:'Contact met de grond',
+ svg:'<path class="vul" d="M14,46 C34,36 58,34 72,40 C82,44 86,52 84,60 C83,67 77,71 69,71 L15,66 Z"/><path class="nagel" d="M17,48 C13,50 13,58 17,61 C21,64 26,60 26,55 C26,50 21,47 17,48 Z"/><path class="zacht" d="M6,90 H94"/>'},
+{id:'droom',groep:'Contact met de grond',
+ svg:'<path class="vul" d="M12,64 C32,54 56,50 72,52 C84,54 90,60 88,66 C86,72 78,74 70,73 L14,78 Z"/><path class="nagel" d="M16,55 C12,56 11,62 15,65 C19,67 23,63 23,59 C23,55 19,54 16,55 Z"/><path class="zacht" d="M6,90 H94"/>'},
+{id:'jubel',groep:'Contact met de grond',
+ svg:'<path class="vul" d="M12,72 C30,64 46,60 58,54 C70,48 76,38 74,28 C73,21 66,19 62,25 C56,33 48,47 40,58 L14,82 Z"/><path class="nagel" d="M63,24 C61,20 66,15 70,18 C73,20 72,25 69,27 C66,29 64,27 63,24 Z"/><path class="zacht" d="M6,90 H94"/>'},
 
 /* ==== RUIMTE & SAMENHANG ==== */
-{id:'hiaat',groep:'Ruimte & samenhang',naam:'Hiaat',kort:'vertraagd op gang',
- svg:'<path class="vul" d="M12,92 C10,62 12,40 18,29 C22,21 32,21 36,29 C42,40 44,62 42,92 Z"/><path class="nagel" d="M20,29 C20,24 32,24 32,29 C32,36 20,36 20,29 Z"/><path class="vul" d="M58,92 C56,62 58,40 64,29 C68,21 78,21 82,29 C88,40 90,62 88,92 Z"/><path class="nagel" d="M66,29 C66,24 78,24 78,29 C78,36 66,36 66,29 Z"/><path class="pijl" d="M30,30 C38,14 62,14 70,30"/><path class="pijlkop" d="M72,37 l-6.5,-5 6,-3.5 z"/>',
- tekst:d=>`Tussen deze energie en haar buur zit een hiaat: je reageert secondair en de energie van ${d} komt vertraagd op gang. Druk van buiten werkt averechts.`},
-{id:'ruimte',groep:'Ruimte & samenhang',naam:'Ruimte tussen tenen',kort:'analytisch, als een schaker',
- svg:'<path class="vul" d="M10,92 C9,66 11,48 16,38 C19,31 27,31 30,38 C35,48 37,66 36,92 Z"/><path class="vul" d="M41,92 C40,66 42,48 47,38 C50,31 58,31 61,38 C66,48 68,66 67,92 Z"/><path class="vul" d="M72,92 C71,66 73,48 78,38 C81,31 89,31 92,38 C97,48 99,66 98,92 Z"/><path class="nagel" d="M18,37 C18,33 28,33 28,37 C28,42 18,42 18,37 Z"/><path class="nagel" d="M49,37 C49,33 59,33 59,37 C59,42 49,42 49,37 Z"/><path class="nagel" d="M80,37 C80,33 90,33 90,37 C90,42 80,42 80,37 Z"/><path class="pijl" d="M38,88 L38,80 M69,88 L69,80"/><path class="pijlkop" d="M38,74 l-3.5,7 h7 z M69,74 l-3.5,7 h7 z"/>',
- tekst:d=>`Ruimte tussen de tenen maakt je analytisch: je beoordeelt ${d} op zichzelf, los van de rest, en denkt als een schaker na over je zetten. Impulsiviteit is uitgesloten.`},
-{id:'wig',groep:'Ruimte & samenhang',naam:'Wig',kort:'gaandeweg trager',
- svg:'<g transform="rotate(-9 46 92)"><path class="vul" d="M36,92 C35,66 37,48 41,36 C44,28 51,28 53,36 C56,48 55,66 53,92 Z"/><path class="nagel" d="M42,35 C42,31 52,31 52,35 C52,40 42,40 42,35 Z"/></g><g transform="rotate(9 54 92)"><path class="vul" d="M47,92 C45,66 44,48 47,36 C49,28 56,28 59,36 C63,48 65,66 64,92 Z"/><path class="nagel" d="M48,35 C48,31 58,31 58,35 C58,40 48,40 48,35 Z"/></g><path class="zacht" d="M50,90 L32,26 M50,90 L68,26"/>',
- tekst:d=>`Een wig: in de eerste fase raak je nog aan, maar op weg naar de uiting vertraagt ${d} steeds verder. Eerst traag reageren, na enige tijd steeds sterker ingaan op het aanbod.`},
-{id:'omwig',groep:'Ruimte & samenhang',naam:'Omgekeerde wig',kort:'overwonnen hiaat',
- svg:'<g transform="rotate(9 46 92)"><path class="vul" d="M36,92 C35,66 37,48 41,36 C44,28 51,28 53,36 C56,48 55,66 53,92 Z"/><path class="nagel" d="M42,35 C42,31 52,31 52,35 C52,40 42,40 42,35 Z"/></g><g transform="rotate(-9 54 92)"><path class="vul" d="M47,92 C45,66 44,48 47,36 C49,28 56,28 59,36 C63,48 65,66 64,92 Z"/><path class="nagel" d="M48,35 C48,31 58,31 58,35 C58,40 48,40 48,35 Z"/></g><path class="zacht" d="M32,90 L50,28 L68,90"/>',
- tekst:d=>`Een omgekeerde wig is een overwonnen hiaat: je hebt geléérd sneller te reageren dan vroeger mogelijk was. Bij het ontvangen is het omgekeerd: eerst snel, dan steeds meer vertraging.`},
-{id:'zwemhuid',groep:'Ruimte & samenhang',naam:'Zwemhuid',kort:'onlosmakelijk verbonden',
- svg:'<path class="vul" d="M16,92 C14,64 16,44 22,32 C26,24 34,24 38,32 C41,38 43,50 43,60 L43,66 L57,66 L57,60 C57,50 59,38 62,32 C66,24 74,24 78,32 C84,44 86,64 84,92 Z"/><path class="nagel" d="M22,31 C22,26 34,26 34,31 C34,38 22,38 22,31 Z"/><path class="nagel" d="M66,31 C66,26 78,26 78,31 C78,38 66,38 66,31 Z"/><path class="pijl" d="M50,86 L50,78"/><path class="pijlkop" d="M50,72 l-3.5,7 h7 z"/>',
- tekst:d=>`Aan elkaar gegroeide tenen: deze energieën zijn onlosmakelijk verbonden en moeten als één worden gelezen. Ze versterken elkaar altijd: gebundelde kracht in karakter en gedrag.`},
-{id:'aaneen',groep:'Ruimte & samenhang',naam:'Aaneengesloten',kort:'directe doorstroming',
- svg:'<path class="vul" d="M8,92 C7,62 9,42 15,31 C18,24 28,24 31,31 C33,35 34,41 35,47 L35,92 Z"/><path class="vul" d="M35,92 L35,45 C36,39 37,32 40,28 C44,22 56,22 60,28 C63,32 64,39 65,45 L65,92 Z"/><path class="vul" d="M65,92 L65,47 C66,41 67,35 69,31 C72,24 82,24 85,31 C91,42 93,62 92,92 Z"/><path class="nagel" d="M17,31 C17,27 27,27 27,31 C27,36 17,36 17,31 Z"/><path class="nagel" d="M44,29 C44,24 56,24 56,29 C56,35 44,35 44,29 Z"/><path class="nagel" d="M73,31 C73,27 83,27 83,31 C83,36 73,36 73,31 Z"/>',
- tekst:d=>`Aaneengesloten tenen: een goede en onmiddellijke doorstroming van alle energieën. Direct, snel, impulsief: zenden én ontvangen zonder vertraging.`},
+{id:'hiaat',groep:'Ruimte & samenhang',
+ svg:'<path class="vul" d="M12,92 C10,62 12,40 18,29 C22,21 32,21 36,29 C42,40 44,62 42,92 Z"/><path class="nagel" d="M20,29 C20,24 32,24 32,29 C32,36 20,36 20,29 Z"/><path class="vul" d="M58,92 C56,62 58,40 64,29 C68,21 78,21 82,29 C88,40 90,62 88,92 Z"/><path class="nagel" d="M66,29 C66,24 78,24 78,29 C78,36 66,36 66,29 Z"/><path class="pijl" d="M30,30 C38,14 62,14 70,30"/><path class="pijlkop" d="M72,37 l-6.5,-5 6,-3.5 z"/>'},
+{id:'ruimte',groep:'Ruimte & samenhang',
+ svg:'<path class="vul" d="M10,92 C9,66 11,48 16,38 C19,31 27,31 30,38 C35,48 37,66 36,92 Z"/><path class="vul" d="M41,92 C40,66 42,48 47,38 C50,31 58,31 61,38 C66,48 68,66 67,92 Z"/><path class="vul" d="M72,92 C71,66 73,48 78,38 C81,31 89,31 92,38 C97,48 99,66 98,92 Z"/><path class="nagel" d="M18,37 C18,33 28,33 28,37 C28,42 18,42 18,37 Z"/><path class="nagel" d="M49,37 C49,33 59,33 59,37 C59,42 49,42 49,37 Z"/><path class="nagel" d="M80,37 C80,33 90,33 90,37 C90,42 80,42 80,37 Z"/><path class="pijl" d="M38,88 L38,80 M69,88 L69,80"/><path class="pijlkop" d="M38,74 l-3.5,7 h7 z M69,74 l-3.5,7 h7 z"/>'},
+{id:'wig',groep:'Ruimte & samenhang',
+ svg:'<g transform="rotate(-9 46 92)"><path class="vul" d="M36,92 C35,66 37,48 41,36 C44,28 51,28 53,36 C56,48 55,66 53,92 Z"/><path class="nagel" d="M42,35 C42,31 52,31 52,35 C52,40 42,40 42,35 Z"/></g><g transform="rotate(9 54 92)"><path class="vul" d="M47,92 C45,66 44,48 47,36 C49,28 56,28 59,36 C63,48 65,66 64,92 Z"/><path class="nagel" d="M48,35 C48,31 58,31 58,35 C58,40 48,40 48,35 Z"/></g><path class="zacht" d="M50,90 L32,26 M50,90 L68,26"/>'},
+{id:'omwig',groep:'Ruimte & samenhang',
+ svg:'<g transform="rotate(9 46 92)"><path class="vul" d="M36,92 C35,66 37,48 41,36 C44,28 51,28 53,36 C56,48 55,66 53,92 Z"/><path class="nagel" d="M42,35 C42,31 52,31 52,35 C52,40 42,40 42,35 Z"/></g><g transform="rotate(-9 54 92)"><path class="vul" d="M47,92 C45,66 44,48 47,36 C49,28 56,28 59,36 C63,48 65,66 64,92 Z"/><path class="nagel" d="M48,35 C48,31 58,31 58,35 C58,40 48,40 48,35 Z"/></g><path class="zacht" d="M32,90 L50,28 L68,90"/>'},
+{id:'zwemhuid',groep:'Ruimte & samenhang',
+ svg:'<path class="vul" d="M16,92 C14,64 16,44 22,32 C26,24 34,24 38,32 C41,38 43,50 43,60 L43,66 L57,66 L57,60 C57,50 59,38 62,32 C66,24 74,24 78,32 C84,44 86,64 84,92 Z"/><path class="nagel" d="M22,31 C22,26 34,26 34,31 C34,38 22,38 22,31 Z"/><path class="nagel" d="M66,31 C66,26 78,26 78,31 C78,38 66,38 66,31 Z"/><path class="pijl" d="M50,86 L50,78"/><path class="pijlkop" d="M50,72 l-3.5,7 h7 z"/>'},
+{id:'aaneen',groep:'Ruimte & samenhang',
+ svg:'<path class="vul" d="M8,92 C7,62 9,42 15,31 C18,24 28,24 31,31 C33,35 34,41 35,47 L35,92 Z"/><path class="vul" d="M35,92 L35,45 C36,39 37,32 40,28 C44,22 56,22 60,28 C63,32 64,39 65,45 L65,92 Z"/><path class="vul" d="M65,92 L65,47 C66,41 67,35 69,31 C72,24 82,24 85,31 C91,42 93,62 92,92 Z"/><path class="nagel" d="M17,31 C17,27 27,27 27,31 C27,36 17,36 17,31 Z"/><path class="nagel" d="M44,29 C44,24 56,24 56,29 C56,35 44,35 44,29 Z"/><path class="nagel" d="M73,31 C73,27 83,27 83,31 C83,36 73,36 73,31 Z"/>'},
 
 /* ==== LENGTE & VERHOUDING ==== */
-{id:'lang',groep:'Lengte & verhouding',naam:'Te grote teen',kort:'dominante energie',
- svg:'<path class="zacht" d="M14,40 L88,40"/><path class="buur" d="M22,92 C21,66 22,52 26,44 C29,38 35,38 38,44 C42,52 43,66 42,92"/><path class="vul" d="M44,92 C43,52 44,28 48,18 C50,11 60,11 62,18 C66,28 67,52 66,92 Z"/><path class="nagel" d="M48,20 C48,15 62,15 62,20 C62,27 48,27 48,20 Z"/><path class="buur" d="M70,92 C69,68 70,56 73,49 C76,43 82,43 84,49 C88,56 89,68 88,92"/>',
- tekst:d=>`Deze teen is in verhouding groot: een overmaat aan ${d}. De uitgaande boodschappen overheersen én je staat extra open voor alles wat op deze golflengte binnenkomt.`},
-{id:'kort',groep:'Lengte & verhouding',naam:'Te kleine teen',kort:'onderbedeeld',
- svg:'<path class="zacht" d="M14,30 L88,30"/><path class="buur" d="M22,92 C21,58 22,42 26,34 C29,28 35,28 38,34 C42,42 43,58 42,92"/><path class="vul" d="M46,92 C45,74 46,62 49,56 C51,51 59,51 61,56 C64,62 65,74 64,92 Z"/><path class="nagel" d="M50,57 C50,53 60,53 60,57 C60,62 50,62 50,57 Z"/><path class="buur" d="M70,92 C69,58 70,42 73,34 C76,28 82,28 84,34 C88,42 89,58 88,92"/>',
- tekst:d=>`Deze teen is in verhouding klein: ${d} is minder ontwikkeld en heeft minder je interesse. Met hulp en samenwerking van anderen kom je hier wél tot resultaat.`},
-{id:'fors',groep:'Lengte & verhouding',naam:'Forse grote teen',kort:'groot communicatievermogen',alleen:[1],
- svg:'<path class="vul" d="M30,92 C27,58 29,34 36,22 C41,13 59,13 64,22 C71,34 73,58 70,92 Z"/><path class="nagel" d="M38,26 C38,17 62,17 62,26 C62,38 38,38 38,26 Z"/><path class="pijl" d="M18,62 L18,48 M82,62 L82,48"/><path class="pijlkop" d="M18,42 l-3.5,7 h7 z M82,42 l-3.5,7 h7 z"/>',
- tekst:d=>`Een forse grote teen: groot communicatievermogen, zowel zendend als ontvangend. Dat hoeft geen geklets te zijn: communiceren kan ook met gebaren, muziek en andere kunstvormen.`},
+{id:'lang',groep:'Lengte & verhouding',
+ svg:'<path class="zacht" d="M14,40 L88,40"/><path class="buur" d="M22,92 C21,66 22,52 26,44 C29,38 35,38 38,44 C42,52 43,66 42,92"/><path class="vul" d="M44,92 C43,52 44,28 48,18 C50,11 60,11 62,18 C66,28 67,52 66,92 Z"/><path class="nagel" d="M48,20 C48,15 62,15 62,20 C62,27 48,27 48,20 Z"/><path class="buur" d="M70,92 C69,68 70,56 73,49 C76,43 82,43 84,49 C88,56 89,68 88,92"/>'},
+{id:'kort',groep:'Lengte & verhouding',
+ svg:'<path class="zacht" d="M14,30 L88,30"/><path class="buur" d="M22,92 C21,58 22,42 26,34 C29,28 35,28 38,34 C42,42 43,58 42,92"/><path class="vul" d="M46,92 C45,74 46,62 49,56 C51,51 59,51 61,56 C64,62 65,74 64,92 Z"/><path class="nagel" d="M50,57 C50,53 60,53 60,57 C60,62 50,62 50,57 Z"/><path class="buur" d="M70,92 C69,58 70,42 73,34 C76,28 82,28 84,34 C88,42 89,58 88,92"/>'},
+{id:'fors',groep:'Lengte & verhouding',alleen:[1],
+ svg:'<path class="vul" d="M30,92 C27,58 29,34 36,22 C41,13 59,13 64,22 C71,34 73,58 70,92 Z"/><path class="nagel" d="M38,26 C38,17 62,17 62,26 C62,38 38,38 38,26 Z"/><path class="pijl" d="M18,62 L18,48 M82,62 L82,48"/><path class="pijlkop" d="M18,42 l-3.5,7 h7 z M82,42 l-3.5,7 h7 z"/>'},
 
 /* ==== DE DENKBEELDIGE LIJN ==== */
-{id:'opeenlijn',groep:'De denkbeeldige lijn',naam:'Tenen op één lijn',kort:'ordelijk, alles op een rijtje',
- svg:'<path class="lijn" d="M12,30 L88,58"/><ellipse class="vul" cx="20" cy="52" rx="11" ry="17"/><ellipse class="vul" cx="42" cy="56" rx="8" ry="13"/><ellipse class="vul" cx="60" cy="62" rx="7" ry="11"/><ellipse class="vul" cx="76" cy="68" rx="6" ry="9.5"/><ellipse class="vul" cx="90" cy="74" rx="5.5" ry="8"/>',
- tekst:()=>`Je tenen liggen keurig op de denkbeeldige lijn van grote naar kleine teen: je bent ordelijk en gelijkmatig en houdt alles graag op een rijtje. Chaos past niet bij je.`},
-{id:'bovenlijn',groep:'De denkbeeldige lijn',naam:'Teen boven de lijn',kort:'bovenmatig ontwikkeld',
- svg:'<path class="zacht" d="M12,34 L88,62"/><ellipse class="vul" cx="20" cy="56" rx="11" ry="17"/><ellipse class="vul" cx="42" cy="34" rx="8" ry="14"/><ellipse class="vul" cx="60" cy="66" rx="7" ry="11"/><ellipse class="vul" cx="76" cy="72" rx="6" ry="9.5"/><ellipse class="vul" cx="90" cy="78" rx="5.5" ry="8"/>',
- tekst:d=>`Deze teen steekt boven de denkbeeldige lijn uit: ${d} is bij jou bovenmatig ontwikkeld en vraagt meer ruimte dan de rest.`},
-{id:'onderlijn',groep:'De denkbeeldige lijn',naam:'Teen onder de lijn',kort:'bescheidener rol',
- svg:'<path class="zacht" d="M12,30 L88,58"/><ellipse class="vul" cx="20" cy="52" rx="11" ry="17"/><ellipse class="vul" cx="42" cy="74" rx="8" ry="13"/><ellipse class="vul" cx="60" cy="62" rx="7" ry="11"/><ellipse class="vul" cx="76" cy="68" rx="6" ry="9.5"/><ellipse class="vul" cx="90" cy="74" rx="5.5" ry="8"/>',
- tekst:d=>`Deze teen blijft onder de denkbeeldige lijn: voor ${d} heb je relatief minder aanleg. Het speelt in je leven een bescheidener rol, en dat is prima.`},
+{id:'opeenlijn',groep:'De denkbeeldige lijn',
+ svg:'<path class="lijn" d="M12,30 L88,58"/><ellipse class="vul" cx="20" cy="52" rx="11" ry="17"/><ellipse class="vul" cx="42" cy="56" rx="8" ry="13"/><ellipse class="vul" cx="60" cy="62" rx="7" ry="11"/><ellipse class="vul" cx="76" cy="68" rx="6" ry="9.5"/><ellipse class="vul" cx="90" cy="74" rx="5.5" ry="8"/>'},
+{id:'bovenlijn',groep:'De denkbeeldige lijn',
+ svg:'<path class="zacht" d="M12,34 L88,62"/><ellipse class="vul" cx="20" cy="56" rx="11" ry="17"/><ellipse class="vul" cx="42" cy="34" rx="8" ry="14"/><ellipse class="vul" cx="60" cy="66" rx="7" ry="11"/><ellipse class="vul" cx="76" cy="72" rx="6" ry="9.5"/><ellipse class="vul" cx="90" cy="78" rx="5.5" ry="8"/>'},
+{id:'onderlijn',groep:'De denkbeeldige lijn',
+ svg:'<path class="zacht" d="M12,30 L88,58"/><ellipse class="vul" cx="20" cy="52" rx="11" ry="17"/><ellipse class="vul" cx="42" cy="74" rx="8" ry="13"/><ellipse class="vul" cx="60" cy="62" rx="7" ry="11"/><ellipse class="vul" cx="76" cy="68" rx="6" ry="9.5"/><ellipse class="vul" cx="90" cy="74" rx="5.5" ry="8"/>'},
 /* ==== NAGELS ==== */
-{id:'gemiddeldnagel',groep:'Nagels',naam:'Gemiddelde nagel',kort:'zenden én ontvangen',
- svg:'<path class="vul" d="M36,92 C34,62 34,40 39,27 C43,16 57,16 61,27 C66,40 66,62 64,92 Z"/><path class="nagel" d="M42,26 C42,20 58,20 58,26 L58,40 C58,44 42,44 42,40 Z"/>',
- tekst:d=>`Je nagel beschermt hier precies genoeg: in ${d} kun je evengoed zenden als ontvangen. Je staat open zonder onbeschermd te zijn.`},
-{id:'grotenagel',groep:'Nagels',naam:'Grote nagel',kort:'zender, gesloten',
- svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><path class="nagel" d="M40,44 C38,28 44,20 50,20 C56,20 62,28 60,44 C58,50 42,50 40,44 Z"/>',
- tekst:d=>`Een grote nagel dekt het hele kootje af: volledige afscherming. Je standpunt over ${d} gaat naar buiten, maar input van anderen absorbeer je niet: reflectie van buitenaf wordt afgewezen.`},
-{id:'kleinenagel',groep:'Nagels',naam:'Kleine nagel',kort:'gevoelig, open',
- svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><path class="nagel" d="M45,28 C45,24 55,24 55,28 C55,33 45,33 45,28 Z"/>',
- tekst:d=>`Een kleine nagel toont gevoeligheid rond ${d}: je zendt je eigen boodschap uit én houdt rekening met de mening van anderen. Hoe kleiner de nagel, hoe meer je openstaat.`},
-{id:'rondenagel',groep:'Nagels',naam:'Ronde nagel',kort:'energie glijdt af',
- svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><path class="nagel" d="M42,40 C42,26 58,26 58,40 C58,45 42,45 42,40 Z"/><path class="zacht" d="M37,26 C35,33 35,40 37,45 M63,26 C65,33 65,40 63,45"/>',
- tekst:d=>`Van een ronde nagel glijdt energie snel af: een extra, wat krampachtige verdediging tegen aanbod rond ${d}. Je bent verdacht op een "aanval" en bekijkt suggesties met argwaan.`},
-{id:'ingegroeid',groep:'Nagels',naam:'Ingroeiende nagel',kort:'verkrampte verdediging',
- svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><path class="nagel" d="M42,27 C42,23 58,23 58,27 L58,40 C58,46 54,48 50,48 C46,48 42,46 42,40 Z"/><path class="pijl" d="M42,40 C40,44 40,48 43,50 M58,40 C60,44 60,48 57,50"/><circle class="accent" cx="41" cy="47" r="2.5"/><circle class="accent" cx="59" cy="47" r="2.5"/>',
- tekst:d=>`Een ingroeiende nagel: de verdediging tegen binnenkomende informatie rond ${d} is zó verkrampt dat het pijn doet: je snijdt jezelf ermee. Sterk verzet tegen alles wat anderen aanbieden.`},
-{id:'omhoognagel',groep:'Nagels',naam:'Omhoogstaande nagel',kort:'deur staat open',
- svg:'<path class="vul" d="M88,60 C72,51 52,49 40,53 C30,56 26,63 30,69 C34,75 44,77 54,76 L88,72 Z"/><path class="nagel" d="M34,55 L22,42 L27,39 L38,52 Z"/><path class="zacht" d="M6,90 H94"/>',
- tekst:d=>`Een omhoogstaande nagel beschermt niet: het lijkt een deur die openstaat. Alles rond ${d} kan er zonder belemmering onderdoor naar binnen.`},
-{id:'daknagel',groep:'Nagels',naam:'Daknagel',kort:'"laat me met rust"',
- svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><path class="nagel" d="M41,45 L41,33 L50,25 L59,33 L59,45 Z"/><path class="zacht" d="M45,18 L35,29 M55,18 L65,29"/>',
- tekst:d=>`Een daknagel: binnenkomende berichten rond ${d} zijn niet welkom en roetsjen eraf als sneeuw van een puntdak. "Laat me met rust: ik heb genoeg aan mezelf."`},
-{id:'kuipnagel',groep:'Nagels',naam:'Kuipnagel',kort:'vijver die volloopt',
- svg:'<path class="vul" d="M88,60 C72,51 52,49 40,53 C30,56 26,63 30,69 C34,75 44,77 54,76 L88,72 Z"/><path class="nagel" d="M23,55 C26,61 34,61 37,55 L37,51 C33,55 27,55 23,51 Z"/><path class="pijl" d="M30,32 L30,42"/><path class="pijlkop" d="M30,48 l-3.5,-7 h7 z"/><path class="zacht" d="M6,90 H94"/>',
- tekst:d=>`Een kuipnagel houdt het aanbod rond ${d} even vast, als een vijver die langzaam volloopt. Pas als de vijver overloopt, komt de energie het systeem in en wordt ze opgenomen.`},
-{id:'afsluitnagel',groep:'Nagels',naam:'Afsluitnagel',kort:'garagedeur dicht',
- svg:'<path class="vul" d="M88,60 C72,51 52,49 40,53 C30,56 26,63 30,69 C34,75 44,77 54,76 L88,72 Z"/><path class="nagel" d="M37,52 C29,52 25,58 27,65 C28,69 32,71 36,70 L36,64 C33,64 32,61 34,58 Z"/><path class="pijl" d="M18,42 C14,50 15,58 20,64"/><path class="pijlkop" d="M24,68 l-8,-1.5 3,-7 z"/><path class="zacht" d="M6,90 H94"/>',
- tekst:d=>`Een afsluitnagel sluit als een garagedeur het kootje af: geen behoefte om ${d} uit te stralen, noch om iets te ontvangen. Bewust dicht, naar twee kanten.`},
-{id:'geennagel',groep:'Nagels',naam:'Geen nagel',kort:'ongefilterd binnen',
- svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><path class="pijl" d="M50,6 L50,14"/><path class="pijlkop" d="M50,21 l-3.5,-7 h7 z"/>',
- tekst:d=>`Geen nagel: totale openheid en géén bescherming rond ${d}. Alles van buiten dendert ongefilterd naar binnen en wordt al snel als óverprikkel ervaren.`},
-{id:'kalknagel',groep:'Nagels',naam:'Kalk-/schimmelnagel',kort:'aangetaste verdediging',
- svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><path class="nagel" d="M42,42 C40,28 45,21 50,21 C55,21 60,28 58,42 C56,47 44,47 42,42 Z"/><circle cx="47" cy="30" r="2.2" fill="#C9B98F"/><circle cx="53" cy="36" r="2.8" fill="#C9B98F"/><circle cx="48" cy="41" r="1.8" fill="#C9B98F"/>',
- tekst:d=>`Een kalk- of schimmelnagel toont een aangetaste verdediging: kwetsbaar rond ${d}, ondanks de ogenschijnlijke bescherming. Een verharde nagel laat zien dat je je extra schrap zet.`},
-{id:'ribbels',groep:'Nagels',naam:'Horizontale ribbels',kort:'emotionele golven',
- svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><path class="nagel" d="M41,44 C40,30 44,22 50,22 C56,22 60,30 59,44 C57,49 43,49 41,44 Z"/><path class="lijn" d="M43,30 C46,27 54,27 57,30 M43,36 C46,33 54,33 57,36 M43,42 C46,39 54,39 57,42" style="stroke-width:2"/>',
- tekst:d=>`Horizontale ribbels zijn golfbewegingen in de emotionele sfeer rond ${d}: elke ribbel is een gebeurtenis die indruk maakte. Hoe dieper de ribbel, hoe sterker de indruk.`},
-{id:'vribbels',groep:'Nagels',naam:'Verticale ribbels',kort:'geen duiding',
- svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><path class="nagel" d="M41,44 C40,30 44,22 50,22 C56,22 60,30 59,44 C57,49 43,49 41,44 Z"/><path class="lijn" d="M45,25 L45,45 M50,24 L50,46 M55,25 L55,45" style="stroke-width:2"/>',
- tekst:d=>`Verticale ribbels duiden níét op een karaktereigenschap: ze wijzen op de stofwisseling. Een tenenlezer duidt ze bewust niet; dit valt buiten de spiegel.`},
+{id:'gemiddeldnagel',groep:'Nagels',
+ svg:'<path class="vul" d="M36,92 C34,62 34,40 39,27 C43,16 57,16 61,27 C66,40 66,62 64,92 Z"/><path class="nagel" d="M42,26 C42,20 58,20 58,26 L58,40 C58,44 42,44 42,40 Z"/>'},
+{id:'grotenagel',groep:'Nagels',
+ svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><path class="nagel" d="M40,44 C38,28 44,20 50,20 C56,20 62,28 60,44 C58,50 42,50 40,44 Z"/>'},
+{id:'kleinenagel',groep:'Nagels',
+ svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><path class="nagel" d="M45,28 C45,24 55,24 55,28 C55,33 45,33 45,28 Z"/>'},
+{id:'rondenagel',groep:'Nagels',
+ svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><path class="nagel" d="M42,40 C42,26 58,26 58,40 C58,45 42,45 42,40 Z"/><path class="zacht" d="M37,26 C35,33 35,40 37,45 M63,26 C65,33 65,40 63,45"/>'},
+{id:'ingegroeid',groep:'Nagels',
+ svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><path class="nagel" d="M42,27 C42,23 58,23 58,27 L58,40 C58,46 54,48 50,48 C46,48 42,46 42,40 Z"/><path class="pijl" d="M42,40 C40,44 40,48 43,50 M58,40 C60,44 60,48 57,50"/><circle class="accent" cx="41" cy="47" r="2.5"/><circle class="accent" cx="59" cy="47" r="2.5"/>'},
+{id:'omhoognagel',groep:'Nagels',
+ svg:'<path class="vul" d="M88,60 C72,51 52,49 40,53 C30,56 26,63 30,69 C34,75 44,77 54,76 L88,72 Z"/><path class="nagel" d="M34,55 L22,42 L27,39 L38,52 Z"/><path class="zacht" d="M6,90 H94"/>'},
+{id:'daknagel',groep:'Nagels',
+ svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><path class="nagel" d="M41,45 L41,33 L50,25 L59,33 L59,45 Z"/><path class="zacht" d="M45,18 L35,29 M55,18 L65,29"/>'},
+{id:'kuipnagel',groep:'Nagels',
+ svg:'<path class="vul" d="M88,60 C72,51 52,49 40,53 C30,56 26,63 30,69 C34,75 44,77 54,76 L88,72 Z"/><path class="nagel" d="M23,55 C26,61 34,61 37,55 L37,51 C33,55 27,55 23,51 Z"/><path class="pijl" d="M30,32 L30,42"/><path class="pijlkop" d="M30,48 l-3.5,-7 h7 z"/><path class="zacht" d="M6,90 H94"/>'},
+{id:'afsluitnagel',groep:'Nagels',
+ svg:'<path class="vul" d="M88,60 C72,51 52,49 40,53 C30,56 26,63 30,69 C34,75 44,77 54,76 L88,72 Z"/><path class="nagel" d="M37,52 C29,52 25,58 27,65 C28,69 32,71 36,70 L36,64 C33,64 32,61 34,58 Z"/><path class="pijl" d="M18,42 C14,50 15,58 20,64"/><path class="pijlkop" d="M24,68 l-8,-1.5 3,-7 z"/><path class="zacht" d="M6,90 H94"/>'},
+{id:'geennagel',groep:'Nagels',
+ svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><path class="pijl" d="M50,6 L50,14"/><path class="pijlkop" d="M50,21 l-3.5,-7 h7 z"/>'},
+{id:'kalknagel',groep:'Nagels',
+ svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><path class="nagel" d="M42,42 C40,28 45,21 50,21 C55,21 60,28 58,42 C56,47 44,47 42,42 Z"/><circle cx="47" cy="30" r="2.2" fill="#C9B98F"/><circle cx="53" cy="36" r="2.8" fill="#C9B98F"/><circle cx="48" cy="41" r="1.8" fill="#C9B98F"/>'},
+{id:'ribbels',groep:'Nagels',
+ svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><path class="nagel" d="M41,44 C40,30 44,22 50,22 C56,22 60,30 59,44 C57,49 43,49 41,44 Z"/><path class="lijn" d="M43,30 C46,27 54,27 57,30 M43,36 C46,33 54,33 57,36 M43,42 C46,39 54,39 57,42" style="stroke-width:2"/>'},
+{id:'vribbels',groep:'Nagels',
+ svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><path class="nagel" d="M41,44 C40,30 44,22 50,22 C56,22 60,30 59,44 C57,49 43,49 41,44 Z"/><path class="lijn" d="M45,25 L45,45 M50,24 L50,46 M55,25 L55,45" style="stroke-width:2"/>'},
 
 /* ==== HUID ==== */
-{id:'hallux',groep:'Huid',naam:'Hallux valgus',kort:'dienstbaar, moeilijk nee',alleen:[1],
- svg:'<path class="vul" d="M42,92 C38,80 28,72 26,60 C24,50 30,44 38,46 C40,35 42,26 48,22 C54,18 64,20 66,30 C68,44 66,68 62,92 Z"/><path class="nagel" d="M50,27 C50,20 62,22 61,29 C60,36 51,34 50,27 Z"/><circle class="accent" cx="31" cy="54" r="6"/>',
- tekst:d=>`De knobbel aan de wortel van de grote teen: dienstbaarheid, jezelf wegcijferen. Je staat altijd klaar, vaak ten koste van eigen behoeften. Het hoort bij je karakter: ingebakken service.`},
-{id:'eelt',groep:'Huid',naam:'Eelt',kort:'"dit is privé"',
- svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><circle cx="58" cy="56" r="8" fill="#D9C9A4" stroke="#2B2118" stroke-width="2"/>',
- tekst:d=>`Eelt verbergt, beschermt en camoufleert: "wat hier aan de hand is, is privé". Over dit verborgen stuk van ${d} wil je liever niet communiceren.`},
-{id:'eksteroog',groep:'Huid',naam:'Eksteroog',kort:'verdedigde privézone',
- svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><circle cx="58" cy="56" r="8" fill="#D9C9A4" stroke="#2B2118" stroke-width="2"/><circle class="accent" cx="58" cy="56" r="2.5"/>',
- tekst:d=>`Een eksteroog is een eeltkern die van binnenuit gevoed wordt: een voortdurend verdedigde privézone rond ${d}: "het gaat jullie echt niets aan wat ik hier beleef".`},
+{id:'hallux',groep:'Huid',alleen:[1],
+ svg:'<path class="vul" d="M42,92 C38,80 28,72 26,60 C24,50 30,44 38,46 C40,35 42,26 48,22 C54,18 64,20 66,30 C68,44 66,68 62,92 Z"/><path class="nagel" d="M50,27 C50,20 62,22 61,29 C60,36 51,34 50,27 Z"/><circle class="accent" cx="31" cy="54" r="6"/>'},
+{id:'eelt',groep:'Huid',
+ svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><circle cx="58" cy="56" r="8" fill="#D9C9A4" stroke="#2B2118" stroke-width="2"/>'},
+{id:'eksteroog',groep:'Huid',
+ svg:'<path class="vul" d="M36,92 C34,62 36,38 42,27 C46,19 54,19 58,27 C64,38 66,62 64,92 Z"/><circle cx="58" cy="56" r="8" fill="#D9C9A4" stroke="#2B2118" stroke-width="2"/><circle class="accent" cx="58" cy="56" r="2.5"/>'},
 /* ==== KLEUR & VERKLEURING ==== */
-{id:'kleurinfo',info:true,groep:'Kleur & verkleuring',naam:'Verkleuring lezen',kort:'kleur = activiteit',uitleg:'Kleur verraadt activiteit: een teen die anders kleurt dan zijn buren laat zien dat er rond die eigenschap véél gebeurt. Let ook op wáár de verkleuring zit — bij de wortel (waar iets ontstaat), op het middenkootje (de verwerking) of bij de top (het naar buiten brengen) — en kies die plek bij de kaart. Verkleuring kan ook iets zeggen over je lichamelijke conditie; dat terrein hoort bij arts of pedicure, niet bij deze spiegel.',
+{id:'kleurinfo',info:true,groep:'Kleur & verkleuring',
  svg:'<path class="vul" d="M38,92 L38,68 C38,64 62,64 62,68 L62,92 Z"/><path class="vul" d="M39,62 C39,45 61,45 61,62 C61,66 39,66 39,62 Z"/><circle class="accent" cx="50" cy="36" r="12"/><path class="nagel" d="M45,29 C45,24 55,24 55,29 C55,34 45,34 45,29 Z"/>'},
-{id:'wiu',plek:true,groep:'Kleur & verkleuring',naam:'Rode teen · werk in uitvoering',kort:'verhoogde activiteit, ommekeer',
- svg:'<path d="M36,92 C34,62 34,40 39,27 C43,16 57,16 61,27 C66,40 66,62 64,92 Z" fill="#F3E3CE" stroke="#2B2118" stroke-width="3" stroke-linejoin="round"/><ellipse cx="50" cy="36" rx="12.5" ry="14" fill="#C94F2E" opacity=".45"/><ellipse cx="50" cy="31" rx="8.5" ry="9" fill="#B84A28" opacity=".6"/><path class="nagel" d="M42,33 C42,25 58,25 58,33 C58,40 42,40 42,33 Z" fill-opacity=".55"/><path class="zacht" d="M28,20 C26,14 27,9 30,5 M50,15 C50,10 50,6 50,3 M72,20 C74,14 73,9 70,5"/>',
- tekst:d=>`Deze teen kleurt roder dan de rest: werk in uitvoering. Rond ${d} is de activiteit verhoogd — irritatie, verandering, een ommekeer die gaande is. Je verlaat een strak patroon en verovert vrijheid om je verder te ontplooien.`},
-{id:'donker',plek:true,groep:'Kleur & verkleuring',naam:'Donkere teen',kort:'"dit is van mij"',
- svg:'<path d="M10,92 C9,70 9,52 13,43 C16,35 26,35 29,43 C33,52 33,70 32,92 Z" fill="#F3E3CE" stroke="#2B2118" stroke-width="2"/><path d="M68,92 C67,70 67,52 71,43 C74,35 84,35 87,43 C91,52 91,70 90,92 Z" fill="#F3E3CE" stroke="#2B2118" stroke-width="2"/><path d="M36,92 C34,62 34,40 39,27 C43,16 57,16 61,27 C66,40 66,62 64,92 Z" fill="#4E4250" stroke="#2B2118" stroke-width="3" stroke-linejoin="round"/><path d="M42,33 C42,25 58,25 58,33 C58,40 42,40 42,33 Z" fill="#6B5D6E" stroke="#2B2118" stroke-width="2"/>',
- tekst:d=>`Deze teen is donkerder van kleur dan zijn buren: wat hier rond ${d} speelt, gaat de buitenwereld niets aan. Je houdt dit stuk bewust binnen, achter een gesloten gordijn.`},
-{id:'aangetast',plek:true,groep:'Kleur & verkleuring',naam:'Schimmel of eczeem',kort:'kwetsbaar, vraagt verzorging',
- svg:'<path d="M36,92 C34,62 34,40 39,27 C43,16 57,16 61,27 C66,40 66,62 64,92 Z" fill="#F3E3CE" stroke="#2B2118" stroke-width="3" stroke-linejoin="round"/><circle cx="44" cy="52" r="4.5" fill="#C94F2E" opacity=".55"/><circle cx="56" cy="63" r="3.5" fill="#C94F2E" opacity=".45"/><circle cx="50" cy="43" r="3" fill="#D9A441" opacity=".65"/><circle cx="58" cy="50" r="2.2" fill="#D9A441" opacity=".5"/><circle cx="43" cy="67" r="2.5" fill="#C94F2E" opacity=".35"/><circle cx="52" cy="74" r="2" fill="#D9A441" opacity=".4"/><path d="M42,33 C42,25 58,25 58,33 C58,40 42,40 42,33 Z" fill="#EDE2B8" stroke="#8A7B4F" stroke-width="2"/>',
- tekst:d=>`Aangetaste huid (schimmel of eczeem) toont kwetsbaarheid: het verzorgingspeil van binnenuit is rond ${d} tijdelijk verminderd. Dit stuk van jou vraagt zachte aandacht — en voor het lijfelijke deel: de pedicure of huisarts.`},
+{id:'wiu',plek:true,groep:'Kleur & verkleuring',
+ svg:'<path d="M36,92 C34,62 34,40 39,27 C43,16 57,16 61,27 C66,40 66,62 64,92 Z" fill="#F3E3CE" stroke="#2B2118" stroke-width="3" stroke-linejoin="round"/><ellipse cx="50" cy="36" rx="12.5" ry="14" fill="#C94F2E" opacity=".45"/><ellipse cx="50" cy="31" rx="8.5" ry="9" fill="#B84A28" opacity=".6"/><path class="nagel" d="M42,33 C42,25 58,25 58,33 C58,40 42,40 42,33 Z" fill-opacity=".55"/><path class="zacht" d="M28,20 C26,14 27,9 30,5 M50,15 C50,10 50,6 50,3 M72,20 C74,14 73,9 70,5"/>'},
+{id:'donker',plek:true,groep:'Kleur & verkleuring',
+ svg:'<path d="M10,92 C9,70 9,52 13,43 C16,35 26,35 29,43 C33,52 33,70 32,92 Z" fill="#F3E3CE" stroke="#2B2118" stroke-width="2"/><path d="M68,92 C67,70 67,52 71,43 C74,35 84,35 87,43 C91,52 91,70 90,92 Z" fill="#F3E3CE" stroke="#2B2118" stroke-width="2"/><path d="M36,92 C34,62 34,40 39,27 C43,16 57,16 61,27 C66,40 66,62 64,92 Z" fill="#4E4250" stroke="#2B2118" stroke-width="3" stroke-linejoin="round"/><path d="M42,33 C42,25 58,25 58,33 C58,40 42,40 42,33 Z" fill="#6B5D6E" stroke="#2B2118" stroke-width="2"/>'},
+{id:'aangetast',plek:true,groep:'Kleur & verkleuring',
+ svg:'<path d="M36,92 C34,62 34,40 39,27 C43,16 57,16 61,27 C66,40 66,62 64,92 Z" fill="#F3E3CE" stroke="#2B2118" stroke-width="3" stroke-linejoin="round"/><circle cx="44" cy="52" r="4.5" fill="#C94F2E" opacity=".55"/><circle cx="56" cy="63" r="3.5" fill="#C94F2E" opacity=".45"/><circle cx="50" cy="43" r="3" fill="#D9A441" opacity=".65"/><circle cx="58" cy="50" r="2.2" fill="#D9A441" opacity=".5"/><circle cx="43" cy="67" r="2.5" fill="#C94F2E" opacity=".35"/><circle cx="52" cy="74" r="2" fill="#D9A441" opacity=".4"/><path d="M42,33 C42,25 58,25 58,33 C58,40 42,40 42,33 Z" fill="#EDE2B8" stroke="#8A7B4F" stroke-width="2"/>'},
 /* ==== KOOTJES & FASEN ==== */
-{id:'kootjes',info:true,groep:'Kootjes & fasen',naam:'De drie kootjes',kort:'wortel · midden · top',uitleg:'Elke teen heeft drie kootjes (de grote teen twee). Het kootje bij de voet toont hoe iets ontstaat, het middelste hoe het zich vanbinnen ontwikkelt, het topkootje wat er uiteindelijk van naar buiten komt. Gebruik dit om te zien wáár op de teen een vorm zit — hier hoef je niets aan te vinken.',
- svg:'<path class="vul" d="M38,92 L38,68 C38,64 62,64 62,68 L62,92 Z"/><path class="vul" d="M39,62 C39,45 61,45 61,62 C61,66 39,66 39,62 Z"/><path class="vul" d="M41,40 C41,24 59,24 59,40 C59,44 41,44 41,40 Z"/><path class="nagel" d="M45,29 C45,24 55,24 55,29 C55,34 45,34 45,29 Z"/>',
- tekst:d=>`Lees deze teen in drie delen: het kootje bij de voet toont hoe ${d} ontstaat, het middelste hoe het zich vanbinnen ontwikkelt, en het topkootje wat er uiteindelijk van naar buiten komt. De grote teen heeft er maar twee: ether laat zich niet splitsen.`},
-{id:'driefasen',info:true,groep:'Kootjes & fasen',naam:'Drie fasen',kort:'begin · verwerking · uiting',uitleg:'Zenden gaat in fasen van wortel naar top: ontstaan, verwerking, uiting. Ontvangen loopt precies andersom, van top naar wortel. Zit een vorm (bijvoorbeeld een flessenhals) laag op de teen, dan speelt het thema vroeg in het proces; zit hij bij de top, dan bij het naar buiten brengen. Gewoon meelezen, niets aanvinken.',
- svg:'<path class="pijl" d="M30,86 L30,24 M30,24 L24,32 M30,24 L36,32"/><path class="vul" d="M50,92 L50,70 C50,66 70,66 70,70 L70,92 Z"/><path class="vul" d="M51,64 C51,48 69,48 69,64 C69,68 51,68 51,64 Z"/><path class="vul" d="M53,44 C53,28 67,28 67,44 C67,47 53,47 53,44 Z"/><path class="pijl" d="M88,24 L88,86 M88,86 L82,78 M88,86 L94,78"/>',
- tekst:d=>`${cap(d)} beweegt in fasen door je teen: het ontstaat bij de wortel, ontwikkelt zich in het midden en komt bij de top naar buiten. Ontvangen loopt precies andersom, van top naar wortel.`},
+{id:'kootjes',info:true,groep:'Kootjes & fasen',
+ svg:'<path class="vul" d="M38,92 L38,68 C38,64 62,64 62,68 L62,92 Z"/><path class="vul" d="M39,62 C39,45 61,45 61,62 C61,66 39,66 39,62 Z"/><path class="vul" d="M41,40 C41,24 59,24 59,40 C59,44 41,44 41,40 Z"/><path class="nagel" d="M45,29 C45,24 55,24 55,29 C55,34 45,34 45,29 Z"/>'},
+{id:'driefasen',info:true,groep:'Kootjes & fasen',
+ svg:'<path class="pijl" d="M30,86 L30,24 M30,24 L24,32 M30,24 L36,32"/><path class="vul" d="M50,92 L50,70 C50,66 70,66 70,70 L70,92 Z"/><path class="vul" d="M51,64 C51,48 69,48 69,64 C69,68 51,68 51,64 Z"/><path class="vul" d="M53,44 C53,28 67,28 67,44 C67,47 53,47 53,44 Z"/><path class="pijl" d="M88,24 L88,86 M88,86 L82,78 M88,86 L94,78"/>'},
 ];
+for(const v of VORMEN){
+  Object.defineProperty(v,'naam',{get(){return T('vormen.'+v.id+'.naam');}});
+  Object.defineProperty(v,'kort',{get(){return T('vormen.'+v.id+'.kort');}});
+  if(v.info) Object.defineProperty(v,'uitleg',{get(){return T('vormen.'+v.id+'.uitleg');}});
+  if(!v.info || v.id==='kootjes' || v.id==='driefasen'){
+    v.tekst = d => { const b = (TALEN[TAAL].vormen && TALEN[TAAL].vormen[v.id]) || TALEN.nl.vormen[v.id];
+      return (b.tekst || TALEN.nl.vormen[v.id].tekst)(d); };
+  }
+}
 
 /* ================= STATE ================= */
 const sel = {};
@@ -599,11 +1602,7 @@ const plek = {}; // 'R3:wiu' -> 'teen'|'wortel'|'midden'|'top' (alleen voor verk
 let actieveTeen = null;
 for(const v of ['L','R']) for(let t=1;t<=5;t++) sel[v+t]=new Set();
 
-const PLEKZIN = {
-  wortel:' De verkleuring zit bij de wortel: het speelt al waar dit ontstaat.',
-  midden:' De verkleuring zit op het middenkootje: het speelt in de verwerking.',
-  top:' De verkleuring zit bij de top: het speelt vooral bij het naar buiten brengen.'
-};
+const PLEKZIN = new Proxy({}, {get:(_,k)=>T('plekzin.'+k)});
 function plekZin(key, id){
   const v = VORMEN.find(x=>x.id===id);
   if(!v || !v.plek) return '';
@@ -618,7 +1617,7 @@ function bouwVoeten(){
     tg.style.setProperty('--tk', ELEMENT[t].kleur);
     tg.setAttribute('tabindex','0');
     tg.setAttribute('role','button');
-    tg.setAttribute('aria-label',(key[0]==='L'?'Linkervoet ':'Rechtervoet ')+TEENNAAM[t].toLowerCase());
+    tg.setAttribute('aria-label',(key[0]==='L'?T('ui.linkervoet'):T('ui.rechtervoet'))+' '+String(TEENNAAM[t]).toLowerCase());
     tg.addEventListener('click',()=>kiesTeen(key));
     tg.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();kiesTeen(key);}});
     // hover: teen naar voren halen (tekenvolgorde) zodat hij bij het groeien over zijn buren valt
@@ -642,8 +1641,8 @@ function updateLezingKnop(){
   if(!b) return;
   const klaar = bekeken.size >= 10;
   b.disabled = !klaar;
-  b.textContent = klaar ? 'Uitgebreide lezing 📜' : 'Uitgebreide lezing 🔒 nog '+(10-bekeken.size)+' '+((10-bekeken.size)===1?'teen':'tenen');
-  b.title = klaar ? 'De volledige lezing over alle tien je tenen' : 'Komt vrij zodra je alle tien de tenen in stap II hebt bekeken';
+  b.textContent = klaar ? T('ui.lezing_open') : TF('ui.lezing_slot', 10-bekeken.size);
+  b.title = klaar ? T('ui.lezing_title_open') : T('ui.lezing_title_slot');
 }
 function kiesTeen(key){
   actieveTeen = key;
@@ -660,19 +1659,19 @@ function kiesTeen(key){
 }
 function renderTeenPaneel(){
   const p = document.getElementById('teenpaneel');
-  if(!actieveTeen){p.innerHTML='<p class="leeg-teen">Klik op een teen om te beginnen. Elke teen is een antenne voor een eigen stuk van jou.</p>';return;}
+  if(!actieveTeen){p.innerHTML='<p class="leeg-teen">'+T('ui.leeg_teen')+'</p>';return;}
   const voet = actieveTeen[0], t = +actieveTeen[1];
   const e = ELEMENT[t];
   p.style.setProperty('--tk', e.kleur);
-  p.innerHTML = '<div class="waar">'+(voet==='L'?'Linkervoet · voelen':'Rechtervoet · denken')+'</div>'+
+  p.innerHTML = '<div class="waar">'+(voet==='L'?T('ui.voetkop_l'):T('ui.voetkop_r'))+'</div>'+
     '<h3>'+TEENNAAM[t]+'</h3>'+
-    '<div class="meta">Element <b>'+e.naam+'</b> · '+e.chakra+'</div>'+
-    '<div class="domeinkaart"><div class="lbl">Hier woont</div>'+cap(DOMEIN[actieveTeen])+'</div>'+
-    '<div class="teller"><b>'+sel[actieveTeen].size+'</b> '+(sel[actieveTeen].size===1?'vorm':'vormen')+' herkend op deze teen</div>';
+    '<div class="meta">'+TF('ui.element_meta', ELNAAM(t), ELCHAKRA(t))+'</div>'+
+    '<div class="domeinkaart"><div class="lbl">'+T('ui.hier_woont')+'</div>'+cap(DOMEIN[actieveTeen])+'</div>'+
+    '<div class="teller">'+TF('ui.teller', sel[actieveTeen].size)+'</div>';
 }
 function renderCatalogus(){
   const c = document.getElementById('catalogus');
-  if(!actieveTeen){c.innerHTML='<div class="catalogus-leeg">Kies eerst een teen hierboven.</div>';return;}
+  if(!actieveTeen){c.innerHTML='<div class="catalogus-leeg">'+T('ui.catalogus_leeg_kort')+'</div>';return;}
   const t = +actieveTeen[1];
   const e = ELEMENT[t];
   const groepen = [...new Set(VORMEN.map(v=>v.groep))];
@@ -680,12 +1679,12 @@ function renderCatalogus(){
   for(const gr of groepen){
     const items = VORMEN.filter(v=>v.groep===gr && (!v.alleen || v.alleen.includes(t)));
     if(!items.length) continue;
-    html += '<div class="groep"><h4>'+gr+'</h4><div class="grid">';
+    html += '<div class="groep"><h4>'+T('groep.'+GROEP_ID[gr])+'</h4><div class="grid">';
     for(const v of items){
       if(v.info){
         html += '<div class="vorm leeswijzer" style="--tk:'+e.kleur+'">'+
           (BOEK[v.id]?'<img class="boekplaat" src="'+BOEK[v.id]+'" alt=""/>':(v.svg?'<svg viewBox="0 0 100 100" aria-hidden="true">'+v.svg+'</svg>':''))+
-          '<div class="lwtekst"><div class="naam">'+v.naam+' <span class="lwbadge">leeswijzer — niets aanvinken</span></div>'+
+          '<div class="lwtekst"><div class="naam">'+v.naam+' <span class="lwbadge">'+T('ui.leeswijzer_badge')+'</span></div>'+
           '<div class="kort">'+v.uitleg+'</div></div></div>';
         continue;
       }
@@ -693,8 +1692,8 @@ function renderCatalogus(){
       let plekHtml = '';
       if(v.plek && gekozen){
         const keuze = plek[actieveTeen+':'+v.id] || 'teen';
-        const opties = t===1 ? [['teen','hele teen'],['wortel','wortel'],['top','top']] : [['teen','hele teen'],['wortel','wortel'],['midden','midden'],['top','top']];
-        plekHtml = '<div class="plekkeuze"><span class="pleklbl">waar?</span>'+
+        const opties = (t===1?['teen','wortel','top']:['teen','wortel','midden','top']).map(w=>[w,T('plekopties.'+w)]);
+        plekHtml = '<div class="plekkeuze"><span class="pleklbl">'+T('ui.waar_lbl')+'</span>'+
           opties.map(([w,l])=>'<button type="button" class="plekchip'+(keuze===w?' aan':'')+'" data-plek="'+w+'" data-plekvorm="'+v.id+'" aria-pressed="'+(keuze===w)+'">'+l+'</button>').join('')+'</div>';
       }
       html += '<div class="vorm'+(gekozen?' gekozen':'')+'" data-vorm="'+v.id+'" style="--tk:'+e.kleur+'" role="button" tabindex="0" aria-pressed="'+gekozen+'">'+
@@ -736,7 +1735,7 @@ function updateStippen(){
 function renderSpiegel(){
   const s = document.getElementById('spiegelInhoud');
   const heeftIets = Object.values(sel).some(set=>set.size>0);
-  if(!heeftIets){s.innerHTML='<div class="spiegel-leeg">Je spiegel is nog leeg. Kies vormen bij je tenen en hier verschijnt je verhaal.</div>';return;}
+  if(!heeftIets){s.innerHTML='<div class="spiegel-leeg">'+T('ui.spiegel_leeg')+'</div>';return;}
   let html='';
   for(const voet of ['R','L']){
     const teenBlokken = [];
@@ -748,10 +1747,10 @@ function renderSpiegel(){
         return '<p>'+v.tekst(DOMEIN[key])+plekZin(key,id)+'</p>';
       }).join('');
       teenBlokken.push('<div class="spiegel-teen" style="--tk:'+e.kleur+'">'+
-        '<div class="kop">'+TEENNAAM[t]+'<small>'+e.naam+' · '+DOMEIN[key]+'</small></div>'+zinnen+'</div>');
+        '<div class="kop">'+TEENNAAM[t]+'<small>'+ELNAAM(t)+' · '+DOMEIN[key]+'</small></div>'+zinnen+'</div>');
     }
     if(teenBlokken.length){
-      html += '<div class="spiegel-voet"><h5>'+(voet==='R'?'Rechtervoet · het denken':'Linkervoet · het voelen')+'</h5>'+teenBlokken.join('')+'</div>';
+      html += '<div class="spiegel-voet"><h5>'+(voet==='R'?T('ui.spiegel_voet_r'):T('ui.spiegel_voet_l'))+'</h5>'+teenBlokken.join('')+'</div>';
     }
   }
   s.innerHTML = html;
@@ -766,22 +1765,22 @@ document.getElementById('reset').addEventListener('click',()=>{
   document.getElementById('stap1').scrollIntoView({behavior:'smooth'});
 });
 document.getElementById('kopieer').addEventListener('click',async()=>{
-  let txt='MIJN TENENSPIEGEL\n"Een goede spiegel vertekent niet."\n\n';
+  let txt=T('ui.kopieer_kop')+'\n\n';
   for(const voet of ['R','L']){
     let blok='';
     for(let t=1;t<=5;t++){
       const key=voet+t; if(!sel[key].size) continue;
-      blok+='\n'+TEENNAAM[t]+' ('+ELEMENT[t].naam+' · '+DOMEIN[key]+'):\n';
+      blok+='\n'+TEENNAAM[t]+' ('+ELNAAM(t)+' · '+DOMEIN[key]+'):\n';
       for(const id of sel[key]){const v=VORMEN.find(x=>x.id===id);blok+='• '+v.tekst(DOMEIN[key])+plekZin(key,id)+'\n';}
     }
-    if(blok) txt+=(voet==='R'?'RECHTERVOET · HET DENKEN':'LINKERVOET · HET VOELEN')+'\n'+blok+'\n';
+    if(blok) txt+=(voet==='R'?T('ui.kopieer_voet_r'):T('ui.kopieer_voet_l'))+'\n'+blok+'\n';
   }
-  txt+='\nGebaseerd op de methode van Imre & Margriet Somogyi.';
-  txt+='\nDeze spiegel is een spelinstrument voor zelfreflectie: geen diagnose, geen garanties, gebruik op eigen verantwoordelijkheid.';
+  txt+='\n'+T('ui.kopieer_bron');
+  txt+='\n'+T('ui.kopieer_disclaimer');
   try{
     await navigator.clipboard.writeText(txt);
     const b=document.getElementById('kopieer');const oud=b.textContent;
-    b.textContent='Gekopieerd ✓';setTimeout(()=>b.textContent=oud,1600);
+    b.textContent=T('ui.gekopieerd');setTimeout(()=>b.textContent=oud,1600);
   }catch(e){alert(txt);}
 });
 
@@ -796,29 +1795,8 @@ let fotoModus = 'een';
 let laatsteNotities = {};
 let laatsteAlgemeen = '';
 
-const DEMO_RESULTAAT = {
-  ok: true,
-  kwaliteit: 'Demo-modus: dit is een voorbeeldresultaat, geen echte analyse.',
-  tenen: { R1:['rond','kleinenagel'], R2:['haast'], R3:[], R4:['ruimte'], R5:['kort'],
-           L1:['mengvorm'], L2:['droom'], L3:[], L4:['terugkijk'], L5:['rugzakje'] },
-  notities: { R1:'fors profiel met vloeiend ronde top; nagel opvallend klein', R2:'wijkt vanaf de wortel richting kleine teen',
-              L2:'slank, topje wijst dromerig omhoog', L4:'buigt licht terug richting grote teen', L5:'klein, houdt zich wat schuil' },
-  algemeen: 'Wat als eerste opvalt: veel beweging aan de linkervoet, het voelen. De rechtervoet oogt rustiger.'
-};
-const DEMO_VERTELT = {
-  ok: true,
-  vertelt: {
-    eerste: 'Demo-modus: dit is een voorbeeldduiding, geen echte analyse. Eerste indruk: een rustige, ordelijke rechtervoet naast een linkervoet die volop in beweging is — het voelen vraagt hier de aandacht.',
-    tenen: {
-      R1: 'Je rechter grote teen is rond: je haalt de scherpe kantjes van wat je zegt. Het kleine nageltje erbij vertelt dat woorden van anderen hard kunnen binnenkomen.',
-      R2: 'De haast-teen: enthousiasme en vooruitdrang — het verleden speelt geen rol, jij wilt door.',
-      L2: 'Je gevoelsteen wijst dromerig omhoog: fantasie en de gave om je even aan de werkelijkheid te onttrekken.',
-      L4: 'De liefdes-teen kijkt terug: voorzichtig geworden, ervaringen uit het verleden kijken mee.',
-      L5: 'Het rugzakje bij je kleine teen links: vertrouwen dat al vóór je geboorte werd meegegeven.'
-    },
-    samenhang: 'Rechts denkt vooruit, links voelt terug — dat is de spanning die deze spiegel toont: nieuwe plannen naast oude gevoelens die nog een plek zoeken. Wat zou er gebeuren als het enthousiasme van rechts het voelen van links eens aan de hand meeneemt?'
-  }
-};
+const DEMO_RESULTAAT = () => (TALEN[TAAL].demo || TALEN.nl.demo).resultaat;
+const DEMO_VERTELT = () => (TALEN[TAAL].demo || TALEN.nl.demo).vertelt;
 
 function initFoto(){
   koppelZone('uploadZone', 'fotoInput', 'fotoPreview', 'beide');
@@ -840,9 +1818,7 @@ function zetModus(m){
   twee.classList.toggle('actief', m === 'twee'); twee.setAttribute('aria-checked', String(m === 'twee'));
   document.getElementById('paneelEen').hidden = m !== 'een';
   document.getElementById('paneelTwee').hidden = m !== 'twee';
-  document.getElementById('modusNoot').textContent = m === 'een'
-    ? 'Snel en simpel: één foto van boven met beide voeten in beeld.'
-    : 'Betere resultaten: close-ups geven veel meer pixels per teen — scherper nagel- en contourdetail. Eén voet mag ook.';
+  document.getElementById('modusNoot').textContent = m === 'een' ? T('ui.modusnoot_een') : T('ui.modusnoot_twee');
   updateAnalyseKnop();
 }
 
@@ -869,12 +1845,12 @@ function koppelZone(zoneId, inputId, previewId, key){
 
 async function laadFoto(file, key, previewId){
   if(!/^image\//.test(file.type) && !/\.(jpe?g|png|webp)$/i.test(file.name)){
-    zetStatus('Dit lijkt geen foto te zijn. Kies een jpg- of png-bestand.','fout'); return;
+    zetStatus(T('ui.fout_geen_foto'),'fout'); return;
   }
   try{
     fotos[key] = await verkleind(file, 1568, 0.85);
   }catch(e){
-    zetStatus('Deze foto kan de browser niet lezen (HEIC?). Tip: maak er een jpg of png van; een screenshot van de foto werkt ook.','fout');
+    zetStatus(T('ui.fout_heic'),'fout');
     return;
   }
   const preview = document.getElementById(previewId);
@@ -882,9 +1858,9 @@ async function laadFoto(file, key, previewId){
   document.getElementById('fotoResultaat').innerHTML = '';
   updateAnalyseKnop();
   if(fotoModus === 'twee' && !(fotos.links && fotos.rechts)){
-    zetStatus('Eén voet staat klaar. Voeg de andere close-up toe, of analyseer alleen deze voet.','');
+    zetStatus(T('ui.een_voet_klaar'),'');
   }else{
-    zetStatus((fotoModus === 'twee' ? 'Beide close-ups staan klaar.' : 'Foto staat klaar.') + ' Klik op "Analyseer mijn voeten".','');
+    zetStatus((fotoModus === 'twee' ? T('ui.klaar_twee') : T('ui.klaar_een')) + ' ' + T('ui.klik_analyseer'),'');
   }
 }
 
@@ -922,7 +1898,7 @@ function zetStatus(html, soort){
 }
 
 async function roepWorker(dataUrl, voet){
-  const body = { image: dataUrl.split(',')[1], media_type: 'image/jpeg' };
+  const body = { image: dataUrl.split(',')[1], media_type: 'image/jpeg', taal: TAAL };
   if(voet) body.voet = voet;
   const r = await fetch(AI_WORKER, {
     method: 'POST',
@@ -936,7 +1912,7 @@ function mergePerVoet(uit){
   const goed = uit.filter(u => u.r && u.r.ok === true);
   if(!goed.length){
     const eerste = uit.find(u => u.r && u.r.reden);
-    return { ok: false, reden: (eerste && eerste.r.reden) || 'De analyse is niet gelukt. Probeer het nog een keer.' };
+    return { ok: false, reden: (eerste && eerste.r.reden) || T('ui.fout_analyse') };
   }
   const resu = { ok: true, tenen: {}, notities: {}, kwaliteit: '', algemeen: '' };
   const kwal = [], alg = [];
@@ -947,11 +1923,11 @@ function mergePerVoet(uit){
       resu.tenen[k] = (u.r.tenen && u.r.tenen[k]) || [];
       if(u.r.notities && u.r.notities[k]) resu.notities[k] = u.r.notities[k];
     }
-    if(u.r.kwaliteit) kwal.push((u.kant === 'links' ? 'Links: ' : 'Rechts: ') + u.r.kwaliteit);
-    if(u.r.algemeen) alg.push((u.kant === 'links' ? 'Linkervoet — ' : 'Rechtervoet — ') + u.r.algemeen);
+    if(u.r.kwaliteit) kwal.push((u.kant === 'links' ? T('ui.links') : T('ui.rechts')) + ': ' + u.r.kwaliteit);
+    if(u.r.algemeen) alg.push((u.kant === 'links' ? T('ui.linkervoet') : T('ui.rechtervoet')) + ' — ' + u.r.algemeen);
   }
-  const mislukt = uit.filter(u => !u.r || u.r.ok !== true).map(u => u.kant + 'voet');
-  if(mislukt.length) kwal.push('Let op: de analyse van de ' + mislukt.join(' en de ') + ' is niet gelukt — probeer die zo apart opnieuw.');
+  const mislukt = uit.filter(u => !u.r || u.r.ok !== true).map(u => (u.kant === 'links' ? T('ui.linkervoet') : T('ui.rechtervoet')).toLowerCase());
+  if(mislukt.length) kwal.push(TF('ui.fout_voeten', mislukt.join(T('ui.en_de'))));
   resu.kwaliteit = kwal.join(' ');
   resu.algemeen = alg.join(' ');
   return resu;
@@ -962,17 +1938,17 @@ async function analyseerFoto(){
   const tweeCalls = fotoModus === 'twee' && fotos.links && fotos.rechts;
   btn.disabled = true;
   document.getElementById('fotoResultaat').innerHTML = '';
-  zetStatus('<span class="spinner" aria-hidden="true"></span>De spiegel kijkt naar je voeten… dit duurt zo\'n 20 tot ' + (tweeCalls ? '40' : '30') + ' seconden.','bezig');
+  zetStatus('<span class="spinner" aria-hidden="true"></span>'+TF('ui.spiegel_kijkt', tweeCalls ? 40 : 30),'bezig');
   let resu;
   if(DEMO){
     await wacht(1400);
-    resu = DEMO_RESULTAAT;
+    resu = DEMO_RESULTAAT();
   }else if(fotoModus === 'een'){
     if(!fotos.beide){ updateAnalyseKnop(); return; }
     try{
       resu = await roepWorker(fotos.beide, '');
     }catch(e){
-      zetStatus('Kan de analysedienst niet bereiken. Staat de Worker al online? Zie het werkdocument, of probeer het later opnieuw.','fout');
+      zetStatus(T('ui.fout_worker'),'fout');
       updateAnalyseKnop(); return;
     }
   }else{
@@ -984,7 +1960,7 @@ async function analyseerFoto(){
   }
   updateAnalyseKnop();
   if(!resu || resu.ok !== true){
-    zetStatus(esc((resu && resu.reden) || 'De analyse is niet gelukt. Probeer het nog een keer.'),'fout');
+    zetStatus(esc((resu && resu.reden) || T('ui.fout_analyse')),'fout');
     return;
   }
   verwerkAnalyse(resu);
@@ -1008,7 +1984,7 @@ function verwerkAnalyse(resu){
   }
   updateStippen(); renderSpiegel(); renderTeenPaneel(); renderCatalogus();
 
-  let html = '<div class="airesultaat"><div class="aikop">Dit zag de spiegel op je foto</div>';
+  let html = '<div class="airesultaat"><div class="aikop">'+T('ui.aikop')+'</div>';
   if(resu.algemeen) html += '<div class="ainotitie">'+esc(resu.algemeen)+'</div>';
   for(const v of ['R','L']) for(let t = 1; t <= 5; t++){
     const key = v + t;
@@ -1016,19 +1992,19 @@ function verwerkAnalyse(resu){
     if(!sel[key].size && !noot) continue;
     const e = ELEMENT[t];
     const chips = [...sel[key]].map(id => '<span class="chip" style="--tk:'+e.kleur+'">'+esc(geldig.get(id).naam)+'</span>').join('');
-    html += '<div class="aiteen"><span class="wie">'+(v==='R'?'Rechts':'Links')+' · '+TEENNAAM[t].toLowerCase()+'</span>'+
+    html += '<div class="aiteen"><span class="wie">'+(v==='R'?T('ui.rechts'):T('ui.links'))+' · '+String(TEENNAAM[t]).toLowerCase()+'</span>'+
       (chips ? '<span>'+chips+'</span>' : '')+
       (noot ? '<span class="ainoot">'+esc(noot)+'</span>' : '')+
       '</div>';
   }
-  if(!totaal) html += '<div class="ainotitie">De spiegel zag geen uitgesproken vormen op deze foto. Dat kan kloppen, maar kijk gerust zelf verder bij stap II en III.</div>';
+  if(!totaal) html += '<div class="ainotitie">'+T('ui.geen_vormen')+'</div>';
   html += '<div class="foto-acties" style="margin-top:12px">'+
-    (totaal ? '<button class="knop knop-donker" id="naarSpiegel">Bekijk je spiegel</button>' : '')+
-    '<button class="knop knop-ghost2" id="naarCatalogus">Zelf nalopen &amp; aanpassen</button>'+
-    (totaal ? '<button class="knop knop-licht" id="verteltBtn">De spiegel vertelt ✒️</button><button class="knop knop-licht" id="lezingBtn" disabled>Uitgebreide lezing 🔒</button>' : '')+
+    (totaal ? '<button class="knop knop-donker" id="naarSpiegel">'+T('ui.btn_naar_spiegel')+'</button>' : '')+
+    '<button class="knop knop-ghost2" id="naarCatalogus">'+T('ui.btn_nalopen')+'</button>'+
+    (totaal ? '<button class="knop knop-licht" id="verteltBtn">'+T('ui.btn_vertelt')+'</button><button class="knop knop-licht" id="lezingBtn" disabled>'+T('ui.btn_lezing_init')+'</button>' : '')+
     '</div>'+
-    '<div class="fotonoot" style="margin-top:12px">Dit is een eerste lezing door AI, geen waarheid. Klik in stap III vormen aan of uit tot het klopt met wat jíj ziet.'+
-    (totaal ? ' <b>De spiegel vertelt</b> geeft daarna een duiding in de stijl van de boeken — op basis van de vormen zoals ze op dát moment zijn aangevinkt. De <b>uitgebreide lezing</b> (alle tien de tenen, veel dieper) komt vrij zodra je in stap II alle tenen zelf hebt bekeken.' : '')+
+    '<div class="fotonoot" style="margin-top:12px">'+T('ui.ai_noot')+
+    (totaal ? ' '+T('ui.ai_noot_meer') : '')+
     '</div><div id="verteltUit"></div></div>';
   const res = document.getElementById('fotoResultaat');
   res.innerHTML = html;
@@ -1041,7 +2017,7 @@ function verwerkAnalyse(resu){
   if(vB) vB.addEventListener('click', ()=>deSpiegelVertelt(false));
   const lB = document.getElementById('lezingBtn');
   if(lB){ lB.addEventListener('click', ()=>deSpiegelVertelt(true)); updateLezingKnop(); }
-  zetStatus('✓ Analyse klaar: '+totaal+' '+(totaal===1?'vorm':'vormen')+' herkend.'+(resu.kwaliteit?' <span style="font-weight:400;color:var(--inkt-zacht)">'+esc(resu.kwaliteit)+'</span>':''),'goed');
+  zetStatus(TF('ui.analyse_klaar', totaal)+(resu.kwaliteit?' <span style="font-weight:400;color:var(--inkt-zacht)">'+esc(resu.kwaliteit)+'</span>':''),'goed');
 }
 
 async function deSpiegelVertelt(uitgebreid){
@@ -1050,11 +2026,11 @@ async function deSpiegelVertelt(uitgebreid){
   const uit = document.getElementById('verteltUit');
   if(!btn || !uit) return;
   btn.disabled = true; if(lbtn) lbtn.disabled = true;
-  uit.innerHTML = '<div class="fotostatus bezig" style="margin-top:10px"><span class="spinner" aria-hidden="true"></span>De spiegel zoekt de woorden… dit duurt '+(uitgebreid ? 'zo\'n 1 à 2 minuten' : 'zo\'n 30 tot 60 seconden')+'.</div>';
+  uit.innerHTML = '<div class="fotostatus bezig" style="margin-top:10px"><span class="spinner" aria-hidden="true"></span>'+(uitgebreid ? T('ui.zoekt_woorden_lang') : T('ui.zoekt_woorden_kort'))+'</div>';
   let resu;
   if(DEMO){
     await wacht(1600);
-    resu = DEMO_VERTELT;
+    resu = DEMO_VERTELT();
   }else{
     const beelden = [];
     if(fotoModus === 'een' && fotos.beide) beelden.push({ image: fotos.beide.split(',')[1], media_type: 'image/jpeg' });
@@ -1066,34 +2042,36 @@ async function deSpiegelVertelt(uitgebreid){
       const r = await fetch(AI_WORKER, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mode: 'duiding', diepgang: uitgebreid ? 'uitgebreid' : 'kort', tenen, notities: laatsteNotities, algemeen: laatsteAlgemeen, beelden })
+        body: JSON.stringify({ mode: 'duiding', taal: TAAL, diepgang: uitgebreid ? 'uitgebreid' : 'kort', tenen, notities: laatsteNotities, algemeen: laatsteAlgemeen, beelden })
       });
       resu = await r.json();
     }catch(e){
-      uit.innerHTML = '<div class="fotostatus fout" style="margin-top:10px">Kan de analysedienst niet bereiken. Probeer het later opnieuw.</div>';
+      uit.innerHTML = '<div class="fotostatus fout" style="margin-top:10px">'+T('ui.fout_worker_later')+'</div>';
       btn.disabled = false; if(lbtn){ lbtn.disabled = false; updateLezingKnop(); } return;
     }
   }
   btn.disabled = false; if(lbtn){ lbtn.disabled = false; updateLezingKnop(); }
   if(!resu || resu.ok !== true || !resu.vertelt){
-    uit.innerHTML = '<div class="fotostatus fout" style="margin-top:10px">'+esc((resu && resu.reden) || 'De uitgebreide duiding is niet gelukt. Probeer het nog een keer.')+' <span style="font-weight:400;color:var(--inkt-zacht)">(Deze functie vereist worker v2.5 of hoger; de uitgebreide lezing v2.6.)</span></div>';
+    uit.innerHTML = '<div class="fotostatus fout" style="margin-top:10px">'+esc((resu && resu.reden) || T('ui.fout_duiding'))+' <span style="font-weight:400;color:var(--inkt-zacht)">'+T('ui.versie_noot')+'</span></div>';
     return;
   }
   const v = resu.vertelt;
-  let html = '<div class="vertelt"><div class="vkop">'+(uitgebreid ? 'De uitgebreide lezing' : 'De spiegel vertelt')+'</div>';
+  let html = '<div class="vertelt"><div class="vkop">'+(uitgebreid ? T('ui.vkop_lang') : T('ui.vkop_kort'))+'</div>';
   if(v.eerste) html += '<div class="veerste">'+esc(v.eerste)+'</div>';
   for(const kant of ['R','L']) for(let t = 1; t <= 5; t++){
     const key = kant + t;
     const tekst = v.tenen && v.tenen[key];
     if(!tekst) continue;
-    html += '<div class="vteen" style="--tk:'+ELEMENT[t].kleur+'"><b>'+(kant==='R'?'Rechts':'Links')+' · '+esc(TEENNAAM[t].toLowerCase())+'</b>'+esc(tekst)+'</div>';
+    html += '<div class="vteen" style="--tk:'+ELEMENT[t].kleur+'"><b>'+(kant==='R'?T('ui.rechts'):T('ui.links'))+' · '+esc(String(TEENNAAM[t]).toLowerCase())+'</b>'+esc(tekst)+'</div>';
   }
   if(v.samenhang) html += '<div class="vsamen">'+esc(v.samenhang)+'</div>';
-  html += '<div class="fotonoot" style="margin-top:12px">Vrijere duiding volgens de methode — hier combineert de spiegel zelf. De kaartteksten in stap III blijven de boekgetrouwe bron. Geen oordeel, geen diagnose: jij blijft de lezer.</div></div>';
+  html += '<div class="fotonoot" style="margin-top:12px">'+T('ui.vertelt_noot')+'</div></div>';
   uit.innerHTML = html;
   uit.scrollIntoView({behavior:'smooth', block:'nearest'});
 }
 
+vertaalPagina();
+initTaal();
 bouwVoeten();
 initFoto();
 </script>
