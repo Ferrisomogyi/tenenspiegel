@@ -185,6 +185,23 @@ header{position:relative}
 #taalMenu button:hover{background:#F3ECDB}
 #taalMenu button[aria-selected="true"]{font-weight:700;background:#EFE6CF}
 #taalMenu .beta{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--inkt-zacht);border:1px solid var(--lijn);border-radius:999px;padding:1px 6px;margin-left:6px;vertical-align:1px}
+/* ---- RTL (v8.2, ar/he): gerichte spiegeling van left/right-gevoelige regels ---- */
+html[dir="rtl"] .teenpaneel{border-left:1.5px solid var(--inkt);border-right:6px solid var(--tk,var(--lijn))}
+html[dir="rtl"] .spiegel-teen{border-left:none;border-right:3px solid var(--tk,#CBBD9F);padding:2px 14px 2px 0}
+html[dir="rtl"] .spiegel-teen .kop small{margin-left:0;margin-right:6px}
+html[dir="rtl"] .lwbadge{margin-left:0;margin-right:8px}
+html[dir="rtl"] .fotolijst li{padding-left:0;padding-right:26px}
+html[dir="rtl"] .fotolijst li::before{left:auto;right:0}
+html[dir="rtl"] .chip{border-left:1px solid var(--lijn);border-right:4px solid var(--tk,var(--lijn))}
+html[dir="rtl"] .vertelt .vteen{border-left:none;border-right:3px solid var(--tk,var(--lijn));padding-left:0;padding-right:10px}
+html[dir="rtl"] .vorm.leeswijzer{text-align:right}
+html[dir="rtl"] .vorm.gekozen::after{right:auto;left:9px}
+html[dir="rtl"] .spinner{margin-right:0;margin-left:8px}
+html[dir="rtl"] .pleklbl{margin-right:0;margin-left:2px}
+html[dir="rtl"] .stap .hint{margin-left:0;margin-right:auto}
+html[dir="rtl"] #taalMenu button{text-align:right}
+html[dir="rtl"] #taalMenu .beta{margin-left:0;margin-right:6px}
+@media(min-width:760px){html[dir="rtl"] .ainoot{padding-left:0;padding-right:140px}}
 </style>
 </head>
 <body>
@@ -315,7 +332,7 @@ header{position:relative}
 
 <footer class="wrap">
   <div class="bron" data-t="ui.footer_bron">Gebaseerd op Tenen Lezen I · II · III en Babyteentjes Lezen · Imre &amp; Margriet Somogyi</div>
-  <div data-t="ui.footer_versie">Tenenspiegel · v8.1 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt</div>
+  <div data-t="ui.footer_versie">Tenenspiegel · v8.2 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt</div>
   <div class="disclaimer" data-t="ui.footer_disclaimer"><b>Goed om te weten.</b> De Tenenspiegel is een spel- en spiegelinstrument voor zelfreflectie, gebaseerd op de boeken van Imre &amp; Margriet Somogyi. De app en de AI-analyse geven geen garanties over juistheid of volledigheid en stellen geen medische, psychologische of andere diagnoses; aan de uitkomsten kunnen geen rechten worden ontleend. Gebruik is volledig op eigen verantwoordelijkheid — de maker van deze app aanvaardt geen enkele aansprakelijkheid voor conclusies of beslissingen die op basis van de app worden genomen. Zorgen over je gezondheid? Ga naar je huisarts of pedicure.</div>
 </footer>
 <script>
@@ -421,7 +438,7 @@ const TALEN = {
       btn_reset: "Begin opnieuw",
       disclaimer_spiegel: "Tenen lezen spiegelt persoonlijkheid, houding en gedrag. Niets meer en niets minder. Het stelt géén medische of psychologische diagnoses; daarvoor ga je naar een arts of therapeut. Wees mild in je interpretatie: \"rare\" tenen bestaan niet, alleen tenen die bij jou passen.",
       footer_bron: "Gebaseerd op Tenen Lezen I · II · III en Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Tenenspiegel · v8.1 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt",
+      footer_versie: "Tenenspiegel · v8.2 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt",
       footer_disclaimer: "<b>Goed om te weten.</b> De Tenenspiegel is een spel- en spiegelinstrument voor zelfreflectie, gebaseerd op de boeken van Imre &amp; Margriet Somogyi. De app en de AI-analyse geven geen garanties over juistheid of volledigheid en stellen geen medische, psychologische of andere diagnoses; aan de uitkomsten kunnen geen rechten worden ontleend. Gebruik is volledig op eigen verantwoordelijkheid — de maker van deze app aanvaardt geen enkele aansprakelijkheid voor conclusies of beslissingen die op basis van de app worden genomen. Zorgen over je gezondheid? Ga naar je huisarts of pedicure.",
       titel: "Tenenspiegel · voeten zijn spiegels",
       aria_taal: "Taal / Language"
@@ -878,7 +895,7 @@ const TALEN = {
       btn_reset: "Start again",
       disclaimer_spiegel: "Toe reading mirrors personality, attitude and behaviour. Nothing more and nothing less. It makes no medical or psychological diagnoses; for those you go to a doctor or therapist. Be gentle in your interpretation: there are no \"strange\" toes, only toes that fit you.",
       footer_bron: "Based on Tenen Lezen I · II · III and Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Toe Mirror · v8.1 · installable as an app (PWA) · extended reading, colour cards &amp; The mirror speaks",
+      footer_versie: "Toe Mirror · v8.2 · installable as an app (PWA) · extended reading, colour cards &amp; The mirror speaks",
       footer_disclaimer: "<b>Good to know.</b> The Tenenspiegel is a game and mirroring instrument for self-reflection, based on the books by Imre &amp; Margriet Somogyi. The app and the AI analysis give no guarantees of correctness or completeness and make no medical, psychological or other diagnoses; no rights can be derived from the outcomes. Use is entirely at your own risk — the maker of this app accepts no liability whatsoever for conclusions or decisions based on the app. Worried about your health? See your family doctor or pedicurist.",
       linkervoet: "Left foot",
       rechtervoet: "Right foot",
@@ -1383,7 +1400,7 @@ const TALEN = {
       btn_reset: "Von vorn beginnen",
       disclaimer_spiegel: "Zehenlesen spiegelt Persönlichkeit, Haltung und Verhalten. Nicht mehr und nicht weniger. Es stellt keine medizinischen oder psychologischen Diagnosen; dafür gehst du zu Arzt oder Therapeut. Sei mild in deiner Deutung: „Komische“ Zehen gibt es nicht, nur Zehen, die zu dir passen.",
       footer_bron: "Nach Tenen Lezen I · II · III und Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Zehenspiegel · v8.1 · als App installierbar (PWA) · ausführliche Lesung, Farbkarten &amp; Der Spiegel erzählt",
+      footer_versie: "Zehenspiegel · v8.2 · als App installierbar (PWA) · ausführliche Lesung, Farbkarten &amp; Der Spiegel erzählt",
       footer_disclaimer: "<b>Gut zu wissen.</b> Der Zehenspiegel ist ein Spiel- und Spiegelinstrument zur Selbstreflexion, nach den Büchern von Imre &amp; Margriet Somogyi. App und KI-Analyse geben keine Garantien für Richtigkeit oder Vollständigkeit und stellen keine medizinischen, psychologischen oder sonstigen Diagnosen; aus den Ergebnissen können keine Rechte abgeleitet werden. Die Nutzung geschieht vollständig auf eigene Verantwortung — der Hersteller dieser App übernimmt keinerlei Haftung für Schlüsse oder Entscheidungen auf Grundlage der App. Sorgen um deine Gesundheit? Geh zu Hausarzt oder Fußpflege.",
       linkervoet: "Linker Fuß",
       rechtervoet: "Rechter Fuß",
@@ -1863,7 +1880,7 @@ const TALEN = {
       btn_reset: "Tout recommencer",
       disclaimer_spiegel: "La lecture des orteils reflète la personnalité, l'attitude et le comportement. Rien de plus, rien de moins. Elle ne pose aucun diagnostic médical ou psychologique ; pour cela, va voir un médecin ou un thérapeute. Sois indulgent dans ton interprétation : les orteils « bizarres » n'existent pas, seulement des orteils qui te ressemblent.",
       footer_bron: "D'après Tenen Lezen I · II · III et Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Miroir des orteils · v8.1 · installable comme app (PWA) · lecture approfondie, cartes couleur &amp; Le miroir raconte",
+      footer_versie: "Miroir des orteils · v8.2 · installable comme app (PWA) · lecture approfondie, cartes couleur &amp; Le miroir raconte",
       footer_disclaimer: "<b>Bon à savoir.</b> Le Miroir des orteils est un instrument de jeu et de reflet pour l'autoréflexion, d'après les livres d'Imre &amp; Margriet Somogyi. L'app et l'analyse par IA n'offrent aucune garantie d'exactitude ou d'exhaustivité et ne posent aucun diagnostic médical, psychologique ou autre ; les résultats ne créent aucun droit. L'utilisation se fait entièrement sous ta propre responsabilité — le créateur de cette app décline toute responsabilité pour les conclusions ou décisions prises sur la base de l'app. Des soucis de santé ? Va voir ton médecin ou ton pédicure.",
       linkervoet: "Pied gauche",
       rechtervoet: "Pied droit",
@@ -2343,7 +2360,7 @@ const TALEN = {
       btn_reset: "Volver a empezar",
       disclaimer_spiegel: "La lectura de los dedos del pie refleja personalidad, actitud y conducta. Nada más y nada menos. No establece diagnósticos médicos ni psicológicos; para eso acude a un médico o terapeuta. Sé benévolo al interpretar: no existen dedos «raros», solo dedos que encajan contigo.",
       footer_bron: "Basado en Tenen Lezen I · II · III y Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Espejo de los dedos · v8.1 · instalable como app (PWA) · lectura ampliada, tarjetas de color &amp; El espejo habla",
+      footer_versie: "Espejo de los dedos · v8.2 · instalable como app (PWA) · lectura ampliada, tarjetas de color &amp; El espejo habla",
       footer_disclaimer: "<b>Bueno saberlo.</b> El Espejo de los dedos es un instrumento de juego y de reflejo para la autorreflexión, basado en los libros de Imre &amp; Margriet Somogyi. La app y el análisis por IA no ofrecen garantías de exactitud o integridad y no establecen diagnósticos médicos, psicológicos ni de otro tipo; de los resultados no se derivan derechos. El uso es enteramente bajo tu propia responsabilidad — el creador de esta app no acepta responsabilidad alguna por conclusiones o decisiones tomadas a partir de la app. ¿Preocupado por tu salud? Acude a tu médico de cabecera o podólogo.",
       linkervoet: "Pie izquierdo",
       rechtervoet: "Pie derecho",
@@ -2823,7 +2840,7 @@ const TALEN = {
       btn_reset: "Ricomincia da capo",
       disclaimer_spiegel: "La lettura delle dita dei piedi rispecchia personalità, atteggiamento e comportamento. Niente di più e niente di meno. Non pone diagnosi mediche o psicologiche; per quelle vai da un medico o un terapeuta. Sii indulgente nell’interpretare: le dita «strane» non esistono, solo dita che ti somigliano.",
       footer_bron: "Basato su Tenen Lezen I · II · III e Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Specchio delle dita · v8.1 · installabile come app (PWA) · lettura estesa, carte dei colori &amp; Lo specchio racconta",
+      footer_versie: "Specchio delle dita · v8.2 · installabile come app (PWA) · lettura estesa, carte dei colori &amp; Lo specchio racconta",
       footer_disclaimer: "<b>Buono a sapersi.</b> Lo Specchio delle dita è uno strumento di gioco e di specchio per l'autoriflessione, basato sui libri di Imre &amp; Margriet Somogyi. L'app e l'analisi con IA non danno garanzie di esattezza o completezza e non pongono diagnosi mediche, psicologiche o di altro tipo; dai risultati non deriva alcun diritto. L'uso è interamente sotto la tua responsabilità — il creatore di questa app non si assume alcuna responsabilità per conclusioni o decisioni prese sulla base dell'app. Preoccupato per la tua salute? Vai dal tuo medico o dal podologo.",
       linkervoet: "Piede sinistro",
       rechtervoet: "Piede destro",
@@ -3303,7 +3320,7 @@ const TALEN = {
       btn_reset: "Recomeçar",
       disclaimer_spiegel: "A leitura dos dedos dos pés espelha personalidade, atitude e comportamento. Nada mais e nada menos. Não estabelece diagnósticos médicos nem psicológicos; para isso vais a um médico ou terapeuta. Sê brando na interpretação: dedos «esquisitos» não existem, só dedos que combinam contigo.",
       footer_bron: "Baseado em Tenen Lezen I · II · III e Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Espelho dos dedos · v8.1 · instalável como app (PWA) · leitura alargada, cartões de cor &amp; O espelho conta",
+      footer_versie: "Espelho dos dedos · v8.2 · instalável como app (PWA) · leitura alargada, cartões de cor &amp; O espelho conta",
       footer_disclaimer: "<b>Bom saber.</b> O Espelho dos dedos é um instrumento de jogo e de espelho para a autorreflexão, baseado nos livros de Imre &amp; Margriet Somogyi. A app e a análise por IA não dão garantias de exatidão ou completude e não estabelecem diagnósticos médicos, psicológicos ou outros; dos resultados não decorrem quaisquer direitos. A utilização é inteiramente por tua conta e risco — o criador desta app não aceita qualquer responsabilidade por conclusões ou decisões tomadas com base na app. Preocupado com a tua saúde? Vai ao teu médico de família ou podologista.",
       linkervoet: "Pé esquerdo",
       rechtervoet: "Pé direito",
@@ -3730,18 +3747,1940 @@ const TALEN = {
         tekst: d=>`${cap(d)} move-se por fases através do teu dedo: nasce na raiz, desenvolve-se no meio e sai pela ponta. Receber percorre exatamente o caminho inverso, da ponta à raiz.`
       }
     }
+  },
+  pl: {
+    ui: {
+      titel: "Lustro palców · stopy są lustrami",
+      merk_h1: "Lustro <span class=\"spiegel\">palców</span>",
+      eyebrow: "Według metody Imre &amp; Margriet Somogyi",
+      subtitel: "Stopy są lustrami. Wgraj zdjęcie albo wybierz palec, rozpoznaj kształty, odczytaj samego siebie.",
+      h_foto: "Niech lustro spojrzy razem z tobą",
+      hint_foto: "Opcjonalnie · wgraj zdjęcie, a kształty zostaną zaznaczone za ciebie",
+      foto_hoe: "Jak zrobić zdjęcie",
+      foto_li1: "Usiądź <b>swobodnie</b> na krześle, kolana zgięte mniej więcej pod kątem 90 stopni",
+      foto_li2: "Bose stopy <b>płasko na podłodze</b>, lekko rozstawione",
+      foto_li3: "Zostaw palce <b>rozluźnione</b>: nie podkurczaj ich i nie rozstawiaj",
+      foto_li4: "Fotografuj <b>prosto z góry</b>, obie stopy w całości w kadrze",
+      foto_li5: "Zadbaj o <b>dobre światło</b>, bez cienia na palcach",
+      foto_li6: "<b>Więcej szczegółów?</b> Wybierz „Dwa zbliżenia” i sfotografuj każdą stopę osobno — więcej pikseli na palec to ostrzejszy obraz paznokci i konturów",
+      foto_noot: "Lustro patrzy razem z tobą, ale to ty pozostajesz czytającym: w kroku III sprawdź, co zostało zaznaczone, i popraw to, co się nie zgadza. Wolisz patrzeć samodzielnie? Po prostu pomiń ten krok.",
+      aria_modus: "Wybierz sposób wgrywania",
+      modus_een: "Jedno zdjęcie · obie stopy",
+      modus_twee: "Dwa zbliżenia · osobno każda stopa",
+      modusnoot_een: "Szybko i prosto: jedno zdjęcie z góry, obie stopy w kadrze.",
+      modusnoot_twee: "Lepsze wyniki: zbliżenia dają znacznie więcej pikseli na palec — ostrzejsze detale paznokci i konturów. Sama jedna stopa też wystarczy.",
+      aria_upload: "Wybierz lub zrób zdjęcie swoich stóp",
+      upload_tekst: "<b>Wybierz zdjęcie</b> albo przeciągnij je tutaj",
+      upload_sub: "Widok obu stóp z góry · jpg lub png",
+      alt_preview: "Podgląd wybranego zdjęcia",
+      voetkop_l: "Lewa stopa · czucie",
+      voetkop_r: "Prawa stopa · myślenie",
+      aria_upload_l: "Wybierz zbliżenie lewej stopy",
+      aria_upload_r: "Wybierz zbliżenie prawej stopy",
+      upload_l: "<b>Lewa stopa</b>",
+      upload_r: "<b>Prawa stopa</b>",
+      upload_sub_close: "zbliżenie · jpg lub png",
+      alt_preview_l: "Podgląd zbliżenia lewej stopy",
+      alt_preview_r: "Podgląd zbliżenia prawej stopy",
+      btn_analyseer: "Przeanalizuj moje stopy",
+      btn_opnieuw: "Zacznij od nowa",
+      foto_privacy: "Twoje zdjęcie służy tylko do tej jednej analizy i nigdzie nie jest zapisywane.",
+      h_teen: "Wybierz palec",
+      hint_teen: "Prawa = myślenie &amp; rozum · Lewa = czucie &amp; emocje",
+      aria_voeten: "Wybierz palec",
+      leeg_teen: "Kliknij palec, żeby zacząć. Każdy palec jest anteną dla osobnego kawałka ciebie.",
+      h_vormen: "Rozpoznaj kształty",
+      hint_vormen: "Spójrz na własny palec i zaznacz to, co rozpoznajesz",
+      catalogus_leeg_lang: "Najpierw wybierz palec powyżej, a tutaj pojawi się vademecum.",
+      catalogus_leeg_kort: "Najpierw wybierz palec powyżej.",
+      h_spiegel: "Lustro",
+      motto: "„Dobre lustro nie zniekształca. To nie jest ocena. To obraz.”",
+      spiegel_leeg: "Twoje lustro jest jeszcze puste. Wybierz kształty przy swoich palcach, a tutaj pojawi się twoja historia.",
+      btn_kopieer: "Skopiuj moją analizę",
+      btn_reset: "Zacznij od początku",
+      disclaimer_spiegel: "Czytanie z palców stóp odzwierciedla osobowość, postawę i zachowanie. Nic więcej i nic mniej. Nie stawia diagnoz medycznych ani psychologicznych; z tym idziesz do lekarza lub terapeuty. Bądź łagodny w interpretacji: nie ma „dziwnych” palców, są tylko palce, które do ciebie pasują.",
+      footer_bron: "Na podstawie Tenen Lezen I · II · III oraz Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
+      footer_versie: "Lustro palców · v8.2 · do zainstalowania jako aplikacja (PWA) · pełny odczyt, karty kolorów &amp; Lustro opowiada",
+      footer_disclaimer: "<b>Warto wiedzieć.</b> Lustro palców to narzędzie zabawy i autorefleksji, oparte na książkach Imre &amp; Margriet Somogyi. Aplikacja i analiza AI nie dają gwarancji poprawności ani kompletności i nie stawiają diagnoz medycznych, psychologicznych ani żadnych innych; z wyników nie można wywodzić żadnych roszczeń. Korzystasz z aplikacji całkowicie na własną odpowiedzialność — jej twórca nie ponosi żadnej odpowiedzialności za wnioski lub decyzje podjęte na jej podstawie. Martwisz się o swoje zdrowie? Idź do lekarza rodzinnego lub podologa.",
+      linkervoet: "Lewa stopa",
+      rechtervoet: "Prawa stopa",
+      links: "Lewa",
+      rechts: "Prawa",
+      lezing_open: "Pełny odczyt 📜",
+      lezing_slot: n=>`Pełny odczyt 🔒 jeszcze ${n} ${n===1?'palec':(n%10>=2&&n%10<=4&&(n%100<12||n%100>14)?'palce':'palców')}`,
+      lezing_title_open: "Pełny odczyt wszystkich dziesięciu palców",
+      lezing_title_slot: "Odblokuje się, gdy w kroku II obejrzysz wszystkie dziesięć palców",
+      element_meta: (n,c)=>`Żywioł <b>${n}</b> · ${c}`,
+      hier_woont: "Tu mieszka",
+      teller: n=>`Na tym palcu rozpoznano <b>${n}</b> ${n===1?'kształt':(n%10>=2&&n%10<=4&&(n%100<12||n%100>14)?'kształty':'kształtów')}`,
+      leeswijzer_badge: "wskazówka do czytania — niczego nie zaznaczaj",
+      waar_lbl: "gdzie?",
+      spiegel_voet_r: "Prawa stopa · myślenie",
+      spiegel_voet_l: "Lewa stopa · czucie",
+      kopieer_kop: "MOJE LUSTRO PALCÓW\n„Dobre lustro nie zniekształca.”",
+      kopieer_voet_r: "PRAWA STOPA · MYŚLENIE",
+      kopieer_voet_l: "LEWA STOPA · CZUCIE",
+      kopieer_bron: "Według metody Imre & Margriet Somogyi.",
+      kopieer_disclaimer: "To lustro jest narzędziem zabawy i autorefleksji: żadnej diagnozy, żadnych gwarancji, korzystanie na własną odpowiedzialność.",
+      gekopieerd: "Skopiowano ✓",
+      fout_geen_foto: "To chyba nie jest zdjęcie. Wybierz plik jpg lub png.",
+      fout_heic: "Przeglądarka nie może odczytać tego zdjęcia (HEIC?). Podpowiedź: zamień je na jpg lub png; zrzut ekranu ze zdjęciem też zadziała.",
+      een_voet_klaar: "Jedna stopa jest gotowa. Dodaj drugie zbliżenie albo przeanalizuj tylko tę stopę.",
+      klaar_twee: "Oba zbliżenia są gotowe.",
+      klaar_een: "Zdjęcie jest gotowe.",
+      klik_analyseer: "Kliknij „Przeanalizuj moje stopy”.",
+      fout_analyse: "Analiza się nie powiodła. Spróbuj jeszcze raz.",
+      en_de: " i ",
+      fout_voeten: s=>`Uwaga: analiza się nie powiodła (${s}) — spróbuj za chwilę jeszcze raz, osobno.`,
+      spiegel_kijkt: s=>`Lustro patrzy na twoje stopy… potrwa to około 20 do ${s} sekund.`,
+      fout_worker: "Usługa analizy jest nieosiągalna. Czy worker jest już online? Zajrzyj do dokumentu roboczego albo spróbuj później.",
+      fout_worker_later: "Usługa analizy jest nieosiągalna. Spróbuj ponownie później.",
+      aikop: "To zobaczyło lustro na twoim zdjęciu",
+      geen_vormen: "Lustro nie zobaczyło na tym zdjęciu wyraźnych kształtów. To może się zgadzać, ale śmiało patrz dalej samodzielnie w krokach II i III.",
+      btn_naar_spiegel: "Zobacz swoje lustro",
+      btn_nalopen: "Sprawdź &amp; popraw samodzielnie",
+      btn_vertelt: "Lustro opowiada ✒️",
+      btn_lezing_init: "Pełny odczyt 🔒",
+      ai_noot: "To pierwszy odczyt wykonany przez AI, nie prawda objawiona. W kroku III zaznaczaj i odznaczaj kształty, aż będzie się zgadzać z tym, co widzisz.",
+      ai_noot_meer: "<b>Lustro opowiada</b> daje potem interpretację w stylu książek — na podstawie kształtów zaznaczonych w danej chwili. <b>Pełny odczyt</b> (wszystkie dziesięć palców, dużo głębiej) odblokuje się, gdy w kroku II samodzielnie obejrzysz wszystkie palce.",
+      analyse_klaar: n=>`✓ Analiza gotowa: rozpoznano ${n} ${n===1?'kształt':(n%10>=2&&n%10<=4&&(n%100<12||n%100>14)?'kształty':'kształtów')}.`,
+      zoekt_woorden_kort: "Lustro szuka słów… potrwa to około 30 do 60 sekund.",
+      zoekt_woorden_lang: "Lustro szuka słów… potrwa to około 1 do 2 minut.",
+      fout_duiding: "Pełna interpretacja się nie powiodła. Spróbuj jeszcze raz.",
+      versie_noot: "(Ta funkcja wymaga workera v2.5 lub nowszego; pełny odczyt v2.6.)",
+      vkop_lang: "Pełny odczyt",
+      vkop_kort: "Lustro opowiada",
+      vertelt_noot: "Swobodniejsza interpretacja według metody — tutaj lustro samo łączy wątki. Teksty kart w kroku III pozostają wiernym książkom źródłem. Żadnej oceny, żadnej diagnozy: to ty pozostajesz czytającym.",
+      aria_taal: "Język / Language"
+    },
+    element: {
+      "1": {
+        naam: "Eter",
+        chakra: "Czakra gardła"
+      },
+      "2": {
+        naam: "Powietrze",
+        chakra: "Czakra serca"
+      },
+      "3": {
+        naam: "Ogień",
+        chakra: "Splot słoneczny"
+      },
+      "4": {
+        naam: "Woda",
+        chakra: "Czakra sakralna"
+      },
+      "5": {
+        naam: "Ziemia",
+        chakra: "Czakra korzenia"
+      }
+    },
+    teennaam: {
+      "1": "Paluch",
+      "2": "Drugi palec",
+      "3": "Środkowy palec",
+      "4": "Czwarty palec",
+      "5": "Mały palec"
+    },
+    domein: {
+      R1: "komunikacja o tym, co myślisz, i twoja radość",
+      L1: "komunikacja o tym, co czujesz, i twój smutek",
+      R2: "twoja ambicja i to, czego chcesz",
+      L2: "twoje uczucia i to, jak sobie z nimi radzisz",
+      R3: "działanie i energia do czynu",
+      L3: "kreatywność i intuicyjne działanie",
+      R4: "przywiązanie i kontrola nad własną sytuacją",
+      L4: "miłość i związki",
+      R5: "niepewność i lęk",
+      L5: "zaufanie i seksualność"
+    },
+    plekzin: {
+      wortel: " Przebarwienie siedzi u nasady: działa już tam, gdzie coś powstaje.",
+      midden: " Przebarwienie siedzi na środkowym paliczku: rozgrywa się w przetwarzaniu.",
+      top: " Przebarwienie siedzi na czubku: pokazuje się głównie przy wynoszeniu na zewnątrz.",
+      teen: ""
+    },
+    plekopties: {
+      teen: "cały palec",
+      wortel: "nasada",
+      midden: "środek",
+      top: "czubek"
+    },
+    groep: {
+      vorm: "Kształt palca",
+      stand: "Ustawienie i kierunek",
+      grond: "Kontakt z podłożem",
+      ruimte: "Przestrzeń i spójność",
+      lengte: "Długość i proporcje",
+      lijn: "Wyobrażona linia",
+      nagels: "Paznokcie",
+      huid: "Skóra",
+      kleur: "Kolor i przebarwienia",
+      kootjes: "Paliczki i fazy"
+    },
+    vormen: {
+      gemiddeld: {
+        naam: "Przeciętny palec",
+        kort: "w równowadze",
+        tekst: d=>`Palec bez odchyleń: ten obszar — ${d} — jest u ciebie w równowadze. Nadajesz i odbierasz tu bez skrajności; ta cecha po prostu spokojnie robi swoje.`
+      },
+      rond: {
+        naam: "Okrągły palec",
+        kort: "dyplomacja, harmonia",
+        tekst: d=>`To, co tu mieszka — ${d} — pokazujesz światu uprzejmie i dyplomatycznie: wolisz harmonię niż konfrontację. Życzliwie, ale nie zawsze całkiem wyraźnie.`
+      },
+      hoekig: {
+        naam: "Kanciasty palec",
+        kort: "bez owijania w bawełnę",
+        tekst: d=>`Tam, gdzie w grę wchodzi ${d}, mówisz jasno i bez owijania w bawełnę. Wyraźnie, czasem kanciasto i bezkompromisowo: „Ja po prostu tak mam.”`
+      },
+      blok: {
+        naam: "Kształt bloku",
+        kort: "nieugiętość",
+        tekst: d=>`Tam, gdzie w grę wchodzi ${d}, jesteś nie do ugięcia: konkretnie, po swojemu, prędzej pękniesz, niż się wygniesz. Targowanie się nie wchodzi w grę.`
+      },
+      puntig: {
+        naam: "Spiczasty palec",
+        kort: "gwałtownie, falami",
+        tekst: d=>`${cap(d)} — to wychodzi z ciebie falami: w jednej chwili gwałtownie i namiętnie, zaraz potem pusto i cicho. Im ostrzejszy palec, tym silniejsze wyładowanie.`
+      },
+      spatel: {
+        naam: "Kształt szpatułki",
+        kort: "mocniej, niż zapowiadano",
+        tekst: d=>`${cap(d)} — to wychodzi na końcu mocniej, niż zapowiadał początek. Dużo też odbierasz, ale nie jesteś w stanie przetworzyć wszystkiego, co się pojawia.`
+      },
+      verbreding: {
+        naam: "Poszerzenie",
+        kort: "narasta, przyjaźnie",
+        tekst: d=>`W tym obszarze — ${d} — przekaz narasta po drodze: wychodzi więcej, niż zapowiadał początek, ale łagodniej i mniej dominująco niż przy szpatułce. Jak lejek: dużo łapiesz, nie wszystko trawisz.`
+      },
+      flessenhals: {
+        naam: "Szyjka butelki",
+        kort: "wątpliwość, zator",
+        tekst: d=>`W ten obszar — ${d} — wbudowana jest wątpliwość: myśl albo uczucie zostaje na chwilę przytrzymane, zanim wolno mu wyjść. Słuchasz uważnie, ale nie wszystko wpuszczasz do samego środka.`
+      },
+      reservoir: {
+        naam: "Rezerwuar",
+        kort: "nagromadzone",
+        tekst: d=>`Gromadzisz to, co tu mieszka — ${d}: myśli i uczucia piętrzą się i nigdy nie zostają wypowiedziane do końca. To trzyma cię pod ciśnieniem; rezerwuar chce być od czasu do czasu opróżniony.`
+      },
+      mengvorm: {
+        naam: "Forma mieszana",
+        kort: "najpierw miło, potem wprost",
+        tekst: d=>`W tym obszarze — ${d} — zaczynasz od miłego i taktownego tonu. Jeśli to nic nie daje, przełączasz się: „No to teraz wprost, z mniejszą łagodnością.”`
+      },
+      druppel: {
+        naam: "Kropla",
+        kort: "ukryta rezerwa",
+        tekst: d=>`Pod powierzchnią trzymasz w tym obszarze — ${d} — ukryty zbiornik rezerwowy: gdy wszyscy myślą, że opadasz z sił, ty masz jeszcze energię, żeby dokończyć sprawę.`
+      },
+      recht: {
+        naam: "Prosty palec",
+        kort: "wprost, tu i teraz",
+        tekst: d=>`W tym obszarze — ${d} — działasz wprost, szybko i bez zwłoki: informacja żwawo wchodzi i równie energicznie wychodzi.`
+      },
+      krom: {
+        naam: "Zakrzywiony palec",
+        kort: "„no to nie”",
+        tekst: d=>`W tym obszarze — ${d} — dopasowujesz się, ale zawsze własnym kosztem: postawa „no to nie”. Nie upominasz się o swoje prawa i pozwalasz sobą rządzić.`
+      },
+      klauw: {
+        naam: "Szpon",
+        kort: "wymuszona uległość",
+        tekst: d=>`Tutaj — ${d} — uległość jest wymuszona: nie stawiasz już oporu naciskom z zewnątrz. Oferowana pomoc czy rady nie docierają; antena celuje w ziemię.`
+      },
+      gedraaid: {
+        naam: "Skręcony palec",
+        kort: "historia się zmienia",
+        tekst: d=>`Gdzieś po drodze historia się zmienia: to, co tu mieszka — ${d} — wyraża się inaczej, niż było pomyślane, a przychodzące wiadomości też przetwarzasz inaczej, niż ludzie się spodziewają.`
+      },
+      gekanteld: {
+        naam: "Przechylony palec",
+        kort: "inaczej od samej nasady",
+        tekst: d=>`${cap(d)} — to odchodzi od pierwotnej linii już od nasady: informacja jest podawana i odbierana zupełnie inaczej, niż zakładano.`
+      },
+      haast: {
+        naam: "Śpieszący się palec",
+        kort: "naprzód, z entuzjazmem",
+        tekst: d=>`W tym obszarze — ${d} — śpieszysz się: entuzjazm, optymizm, wzrok skierowany w przyszłość. W tym rozpędzie nie zawsze zauważasz, co na ciebie nadciąga.`
+      },
+      terugkijk: {
+        naam: "Palec patrzący wstecz",
+        kort: "przeszłość gra swoją rolę",
+        tekst: d=>`W tym obszarze — ${d} — patrzysz wstecz: przeszłość ciągle gra swoją rolę. Przeżuwasz wydarzenia, czasem bardzo dawne, a odpuszczanie przychodzi ci z trudem.`
+      },
+      ingetrokken: {
+        naam: "Wciągnięty palec",
+        kort: "kameleon",
+        tekst: d=>`Potrafisz na jakiś czas schować to, co tu mieszka — ${d}: jak kameleon pozornie się dopasowujesz, żeby później zrobić dokładnie to, na co masz ochotę. „Nie” rzadko bywa u ciebie przyjęte.`
+      },
+      onderduik: {
+        naam: "Palec nurkujący",
+        kort: "chowa się",
+        tekst: d=>`Część tego, co tu mieszka — ${d} — ukrywasz: palec nurkuje pod sąsiada i odbiera już tylko połowę tego, co przychodzi. To, co chowasz, pozostaje jednak wyczuwalnie obecne.`
+      },
+      gespannen: {
+        naam: "Napięty palec",
+        kort: "zastygły wzorzec",
+        tekst: d=>`Wokół tego obszaru — ${d} — tkwisz we wzorcu: przewidywalnie i mało elastycznie. Wewnętrzna ruchliwość zastygła, często pod wpływem doświadczeń, które ci przeszkadzają.`
+      },
+      extra: {
+        naam: "Dodatkowy palec",
+        kort: "w podwójnym wydaniu",
+        tekst: d=>`Podwójne wydanie: ten obszar — ${d} — jest w tobie założony wyjątkowo mocno, z gwałtownymi wychyleniami w obie strony.`
+      },
+      rugzakje: {
+        naam: "Mały plecak",
+        kort: "bagaż prenatalny",
+        tekst: d=>`Mały plecak na małym palcu wskazuje na bagaż prenatalny: uczucia, które twoja mama przeżywała w ciąży, nosisz ze sobą. Trudno je odczytać, bo nie czujesz ich jak własnych.`
+      },
+      geaard: {
+        naam: "Uziemiony / spłaszczony",
+        kort: "konkretnie, jasno",
+        tekst: d=>`To, co tu mieszka — ${d} — wyrażasz konkretnie i jasno, z mocnym kontaktem z ziemią. Dobre uziemienie: żadnego bujania w obłokach, żadnej mgły.`
+      },
+      nietgeaard: {
+        naam: "Nieuziemiony",
+        kort: "zostaje w zawieszeniu",
+        tekst: d=>`${cap(d)} — tego nie da się u ciebie skonkretyzować: energia zostaje w zawieszeniu, przez co twoje wypowiedzi wydają się mocno uziemionym ludziom niepewne i niejasne.`
+      },
+      droom: {
+        naam: "Palec marzyciela",
+        kort: "świat fantazji",
+        tekst: d=>`W tym obszarze — ${d} — wycofujesz się do świata marzeń i fantazji: bodźce przetwarzasz na innym poziomie niż ziemski. Przestrzeń na medytację, inspirację i olśnienia.`
+      },
+      jubel: {
+        naam: "Palec radosny",
+        kort: "inny wymiar",
+        tekst: d=>`${cap(d)} — to wyrywa się u ciebie ku górze: mocniejszy wariant palca marzyciela. Umiejętność wymykania się rzeczywistości i przebywania w innym wymiarze.`
+      },
+      hiaat: {
+        naam: "Luka",
+        kort: "rusza z opóźnieniem",
+        tekst: d=>`Między tą energią a jej sąsiadem siedzi luka: reagujesz wtórnie, a energia tego obszaru — ${d} — potrzebuje chwili, żeby ruszyć. Nacisk z zewnątrz daje odwrotny skutek.`
+      },
+      ruimte: {
+        naam: "Przestrzeń między palcami",
+        kort: "analitycznie, jak szachista",
+        tekst: d=>`Przestrzeń między palcami sprawia, że patrzysz analitycznie: ten obszar — ${d} — oceniasz osobno, w oderwaniu od reszty, i jak szachista obmyślasz swoje ruchy. Impulsywność jest wykluczona.`
+      },
+      wig: {
+        naam: "Klin",
+        kort: "stopniowo coraz wolniej",
+        tekst: d=>`Klin: w pierwszej fazie jest jeszcze styk, ale w drodze do wyrażenia ten obszar — ${d} — zwalnia coraz bardziej. Najpierw reagujesz opieszale, po pewnym czasie coraz mocniej wchodzisz w to, co się pojawia.`
+      },
+      omwig: {
+        naam: "Odwrócony klin",
+        kort: "pokonana luka",
+        tekst: d=>`Odwrócony klin to pokonana luka: w tym obszarze — ${d} — reagujesz dziś szybciej, niż było to kiedyś możliwe. Przy odbieraniu jest odwrotnie: najpierw szybko, potem coraz więcej opóźnienia.`
+      },
+      zwemhuid: {
+        naam: "Błona pławna",
+        kort: "nierozerwalnie połączone",
+        tekst: d=>`Zrośnięte palce: te energie są nierozerwalnie połączone i trzeba je czytać jak jedną. Zawsze wzajemnie się wzmacniają: skupiona siła w charakterze i zachowaniu.`
+      },
+      aaneen: {
+        naam: "Zwarty szereg",
+        kort: "bezpośredni przepływ",
+        tekst: d=>`Palce przylegające do siebie w zwartym szeregu: dobry, bezpośredni przepływ wszystkich energii. Wprost, szybko, impulsywnie: nadawanie i odbieranie bez zwłoki.`
+      },
+      lang: {
+        naam: "Za duży palec",
+        kort: "dominująca energia",
+        tekst: d=>`Ten palec jest proporcjonalnie duży: nadmiar tego, co tu mieszka — ${d}. Wychodzące komunikaty dominują, a wszystko, co przychodzi na tej fali, znajduje w tobie wyjątkowo otwarte drzwi.`
+      },
+      kort: {
+        naam: "Za mały palec",
+        kort: "po macoszemu",
+        tekst: d=>`Ten palec jest proporcjonalnie mały: ten obszar — ${d} — jest słabiej rozwinięty i mniej cię zajmuje. Z pomocą i we współpracy z innymi i tak osiągasz tu rezultaty.`
+      },
+      fors: {
+        naam: "Potężny paluch",
+        kort: "wielka zdolność komunikacji",
+        tekst: d=>`Potężny paluch: wielka zdolność komunikacji, w nadawaniu i w odbieraniu. To nie musi być paplanina: komunikować się można też gestem, muzyką i innymi formami sztuki.`
+      },
+      opeenlijn: {
+        naam: "Palce na jednej linii",
+        kort: "porządek, wszystko poukładane",
+        tekst: ()=>`Twoje palce leżą równo na wyobrażonej linii od palucha do małego palca: masz w sobie porządek i równowagę, lubisz mieć wszystko poukładane. Chaos do ciebie nie pasuje.`
+      },
+      bovenlijn: {
+        naam: "Palec nad linią",
+        kort: "rozwinięty ponad miarę",
+        tekst: d=>`Ten palec wystaje ponad wyobrażoną linię: ten obszar — ${d} — jest u ciebie rozwinięty ponad miarę i domaga się więcej miejsca niż reszta.`
+      },
+      onderlijn: {
+        naam: "Palec pod linią",
+        kort: "skromniejsza rola",
+        tekst: d=>`Ten palec zostaje pod wyobrażoną linią: do tego obszaru — ${d} — masz stosunkowo mniej zadatków. Gra w twoim życiu skromniejszą rolę i to jest w porządku.`
+      },
+      gemiddeldnagel: {
+        naam: "Przeciętny paznokieć",
+        kort: "nadawanie i odbieranie",
+        tekst: d=>`Twój paznokieć chroni tu dokładnie tyle, ile trzeba: w tym obszarze — ${d} — równie dobrze nadajesz, jak odbierasz. Otwartość bez bezbronności.`
+      },
+      grotenagel: {
+        naam: "Duży paznokieć",
+        kort: "nadawca, zamknięcie",
+        tekst: d=>`Duży paznokieć zakrywa cały paliczek: pełna osłona. Twoje zdanie o tym, co tu mieszka — ${d} — idzie w świat, ale wkładu innych nie przyjmujesz: odbicie z zewnątrz zostaje odrzucone.`
+      },
+      kleinenagel: {
+        naam: "Mały paznokieć",
+        kort: "wrażliwość, otwartość",
+        tekst: d=>`Mały paznokieć pokazuje wrażliwość wokół tego obszaru — ${d}: wysyłasz własny komunikat i bierzesz pod uwagę zdanie innych. Im mniejszy paznokieć, tym bardziej stoisz otworem.`
+      },
+      rondenagel: {
+        naam: "Okrągły paznokieć",
+        kort: "energia się ześlizguje",
+        tekst: d=>`Z okrągłego paznokcia energia szybko się ześlizguje: dodatkowa, nieco kurczowa obrona przed tym, co przychodzi w tym obszarze — ${d}. Liczysz się z „atakiem” i patrzysz na propozycje podejrzliwie.`
+      },
+      ingegroeid: {
+        naam: "Wrastający paznokieć",
+        kort: "kurczowa obrona",
+        tekst: d=>`Wrastający paznokieć: obrona przed przychodzącą informacją w tym obszarze — ${d} — jest tak kurczowa, że aż boli: kaleczysz się nią. Silny opór wobec wszystkiego, co oferują inni.`
+      },
+      omhoognagel: {
+        naam: "Zadarty paznokieć",
+        kort: "drzwi stoją otworem",
+        tekst: d=>`Zadarty paznokieć nie chroni: działa jak drzwi zostawione na oścież. Wszystko wokół tego obszaru — ${d} — może bez przeszkód wejść pod nim do środka.`
+      },
+      daknagel: {
+        naam: "Paznokieć-daszek",
+        kort: "„zostawcie mnie w spokoju”",
+        tekst: d=>`Paznokieć jak daszek: przychodzące wiadomości w tym obszarze — ${d} — nie są mile widziane i zsuwają się jak śnieg ze spadzistego dachu. „Dajcie mi spokój: mam wystarczająco dużo na głowie.”`
+      },
+      kuipnagel: {
+        naam: "Paznokieć-wanienka",
+        kort: "staw, który się napełnia",
+        tekst: d=>`Paznokieć-wanienka przytrzymuje na jakiś czas to, co przychodzi w tym obszarze — ${d} — jak staw, który powoli się napełnia. Dopiero gdy staw się przelewa, energia wchodzi do systemu i zostaje przyjęta.`
+      },
+      afsluitnagel: {
+        naam: "Paznokieć-zamknięcie",
+        kort: "brama garażowa opuszczona",
+        tekst: d=>`Paznokieć-zamknięcie domyka paliczek jak brama garażowa: żadnej potrzeby, by promieniować tym, co tu mieszka — ${d} — ani by cokolwiek odbierać. Świadomie zamknięte, w obie strony.`
+      },
+      geennagel: {
+        naam: "Brak paznokcia",
+        kort: "wchodzi bez filtra",
+        tekst: d=>`Brak paznokcia: totalna otwartość i żadnej ochrony wokół tego obszaru — ${d}. Wszystko z zewnątrz wali do środka bez filtra i szybko zaczyna być odczuwane jako przebodźcowanie.`
+      },
+      kalknagel: {
+        naam: "Paznokieć zwapniały / grzybiczy",
+        kort: "nadwątlona obrona",
+        tekst: d=>`Zwapniały lub grzybiczy paznokieć pokazuje nadwątloną obronę: wrażliwość w tym obszarze — ${d} — mimo pozornej osłony. Stwardniały paznokieć pokazuje, że zbroisz się szczególnie mocno.`
+      },
+      ribbels: {
+        naam: "Poprzeczne bruzdy",
+        kort: "fale uczuć",
+        tekst: d=>`Poprzeczne bruzdy to ruchy falowe w sferze uczuć wokół tego obszaru — ${d}: każda bruzda to wydarzenie, które zrobiło wrażenie. Im głębsza bruzda, tym silniejsze wrażenie.`
+      },
+      vribbels: {
+        naam: "Podłużne bruzdy",
+        kort: "bez odczytu",
+        tekst: d=>`Podłużne bruzdy nie wskazują na cechę charakteru: odsyłają do przemiany materii. Czytający z palców świadomie ich nie odczytuje; to leży poza lustrem.`
+      },
+      hallux: {
+        naam: "Haluks (paluch koślawy)",
+        kort: "usłużność, trudno mówić „nie”",
+        tekst: d=>`Zgrubienie u nasady palucha: usłużność, odstawianie siebie na bok. Zawsze jesteś na posterunku, często kosztem własnych potrzeb. To należy do twojego charakteru: wbudowana służba.`
+      },
+      eelt: {
+        naam: "Zrogowaciała skóra",
+        kort: "„to prywatne”",
+        tekst: d=>`Zrogowaciała skóra ukrywa, chroni i maskuje: „To, co się tu dzieje, jest prywatne.” O tym schowanym kawałku tego obszaru — ${d} — wolisz nie rozmawiać.`
+      },
+      eksteroog: {
+        naam: "Odcisk",
+        kort: "broniona strefa prywatna",
+        tekst: d=>`Odcisk to rdzeń zrogowaciałej skóry karmiony od środka: nieustannie broniona strefa prywatna wokół tego obszaru — ${d}: „To naprawdę nie wasza sprawa, co tu przeżywam.”`
+      },
+      kleurinfo: {
+        naam: "Czytanie przebarwień",
+        kort: "kolor = aktywność",
+        uitleg: "Kolor zdradza aktywność: palec zabarwiony inaczej niż jego sąsiedzi pokazuje, że wokół tej cechy dużo się dzieje. Zwróć też uwagę, gdzie siedzi przebarwienie — u nasady (tam, gdzie coś powstaje), na środkowym paliczku (przetwarzanie) czy na czubku (wynoszenie na zewnątrz) — i wybierz to miejsce na karcie. Przebarwienie może też mówić coś o twoim stanie fizycznym; ten teren należy do lekarza albo podologa, nie do tego lustra."
+      },
+      wiu: {
+        naam: "Czerwony palec · prace w toku",
+        kort: "podwyższona aktywność, zwrot",
+        tekst: d=>`Ten palec jest bardziej czerwony niż reszta: prace w toku. W tym obszarze — ${d} — aktywność jest podwyższona — podrażnienie, zmiana, trwający zwrot. Opuszczasz sztywny wzorzec i wywalczasz sobie wolność, żeby rozwijać się dalej.`
+      },
+      donker: {
+        naam: "Ciemny palec",
+        kort: "„to moje”",
+        tekst: d=>`Ten palec jest ciemniejszy od sąsiadów: to, co dzieje się tutaj — ${d} — nie jest sprawą świata zewnętrznego. Ten kawałek świadomie trzymasz w środku, za zasuniętą zasłoną.`
+      },
+      aangetast: {
+        naam: "Grzybica lub egzema",
+        kort: "wrażliwe, prosi o troskę",
+        tekst: d=>`Zaatakowana skóra (grzybica lub egzema) pokazuje wrażliwość: poziom troski od środka jest w tym obszarze — ${d} — chwilowo obniżony. Ten kawałek ciebie prosi o łagodną uwagę — a od strony ciała: podolog albo lekarz rodzinny.`
+      },
+      kootjes: {
+        naam: "Trzy paliczki",
+        kort: "nasada · środek · czubek",
+        uitleg: "Każdy palec ma trzy paliczki (paluch dwa). Paliczek przy stopie pokazuje, jak coś powstaje, środkowy — jak rozwija się w środku, najwyższy — co ostatecznie z tego wychodzi na zewnątrz. Używaj tego, żeby zobaczyć, w którym miejscu palca siedzi dany kształt — tutaj niczego nie zaznaczasz.",
+        tekst: d=>`Czytaj ten palec w trzech częściach: paliczek przy stopie pokazuje, jak powstaje to, co tu mieszka — ${d} — środkowy, jak rozwija się w środku, a paliczek czubka — co ostatecznie z tego wychodzi na zewnątrz. Paluch ma tylko dwa: eter nie daje się dzielić.`
+      },
+      driefasen: {
+        naam: "Trzy fazy",
+        kort: "powstawanie · przetwarzanie · wyrażanie",
+        uitleg: "Nadawanie przebiega fazami od nasady do czubka: powstawanie, przetwarzanie, wyrażanie. Odbieranie biegnie dokładnie odwrotnie, od czubka do nasady. Jeśli kształt (na przykład szyjka butelki) siedzi nisko na palcu, temat gra wcześnie w procesie; jeśli na czubku — przy wynoszeniu na zewnątrz. Po prostu czytaj dalej, niczego nie zaznaczaj.",
+        tekst: d=>`${cap(d)} — to wędruje przez twój palec fazami: powstaje u nasady, rozwija się pośrodku i wychodzi na zewnątrz na czubku. Odbieranie biegnie dokładnie odwrotnie, od czubka do nasady.`
+      }
+    }
+  },
+  ru: {
+    ui: {
+      titel: "Зеркало пальцев · стопы — это зеркала",
+      merk_h1: "Зеркало <span class=\"spiegel\">пальцев</span>",
+      eyebrow: "По методу Imre &amp; Margriet Somogyi",
+      subtitel: "Стопы — это зеркала. Загрузи фото или выбери палец, узнай формы, прочти самого себя.",
+      h_foto: "Пусть зеркало посмотрит вместе с тобой",
+      hint_foto: "Необязательно · загрузи фото, и формы будут отмечены за тебя",
+      foto_hoe: "Как сделать фото",
+      foto_li1: "Сядь <b>расслабленно</b> на стул, колени примерно под углом 90 градусов",
+      foto_li2: "Босые стопы <b>плоско на полу</b>, слегка врозь",
+      foto_li3: "Держи пальцы <b>расслабленно</b>: не поджимай и не растопыривай",
+      foto_li4: "Снимай <b>ровно сверху</b>, обе стопы целиком в кадре",
+      foto_li5: "Позаботься о <b>хорошем свете</b>, без теней на пальцах",
+      foto_li6: "<b>Нужно больше деталей?</b> Выбери «Два крупных плана» и сними каждую стопу отдельно — больше пикселей на палец значит более чёткая картинка ногтей и контуров",
+      foto_noot: "Зеркало смотрит вместе с тобой, но читаешь по-прежнему ты: на шаге III проверь, что отмечено, и поправь то, что не сходится. Хочешь смотреть только сам? Просто пропусти этот шаг.",
+      aria_modus: "Выбери способ загрузки",
+      modus_een: "Одно фото · обе стопы",
+      modus_twee: "Два крупных плана · по стопе",
+      modusnoot_een: "Быстро и просто: одно фото сверху, обе стопы в кадре.",
+      modusnoot_twee: "Результат лучше: крупные планы дают гораздо больше пикселей на палец — чётче ногти и контуры. Одна стопа тоже подойдёт.",
+      aria_upload: "Выбери или сделай фото своих стоп",
+      upload_tekst: "<b>Выбери фото</b> или перетащи его сюда",
+      upload_sub: "Вид сверху на обе стопы · jpg или png",
+      alt_preview: "Предпросмотр выбранного фото",
+      voetkop_l: "Левая стопа · чувства",
+      voetkop_r: "Правая стопа · мышление",
+      aria_upload_l: "Выбери крупный план левой стопы",
+      aria_upload_r: "Выбери крупный план правой стопы",
+      upload_l: "<b>Левая стопа</b>",
+      upload_r: "<b>Правая стопа</b>",
+      upload_sub_close: "крупный план · jpg или png",
+      alt_preview_l: "Предпросмотр крупного плана левой стопы",
+      alt_preview_r: "Предпросмотр крупного плана правой стопы",
+      btn_analyseer: "Проанализировать мои стопы",
+      btn_opnieuw: "Начать заново",
+      foto_privacy: "Твоё фото используется только для этого одного анализа и нигде не сохраняется.",
+      h_teen: "Выбери палец",
+      hint_teen: "Правая = мышление &amp; рассудок · Левая = чувства &amp; эмоции",
+      aria_voeten: "Выбери палец",
+      leeg_teen: "Нажми на палец, чтобы начать. Каждый палец — антенна для своего собственного кусочка тебя.",
+      h_vormen: "Узнай формы",
+      hint_vormen: "Посмотри на свой собственный палец и отметь то, что узнаёшь",
+      catalogus_leeg_lang: "Сначала выбери палец выше — и здесь появится справочник.",
+      catalogus_leeg_kort: "Сначала выбери палец выше.",
+      h_spiegel: "Зеркало",
+      motto: "«Хорошее зеркало не искажает. Это не приговор. Это образ.»",
+      spiegel_leeg: "Твоё зеркало пока пусто. Отметь формы у своих пальцев — и здесь появится твоя история.",
+      btn_kopieer: "Скопировать мой анализ",
+      btn_reset: "Начать с начала",
+      disclaimer_spiegel: "Чтение пальцев ног отражает личность, установки и поведение. Не больше и не меньше. Оно не ставит медицинских или психологических диагнозов; за этим — к врачу или психотерапевту. Толкуй мягко: «странных» пальцев не бывает — бывают только пальцы, которые подходят тебе.",
+      footer_bron: "По книгам Tenen Lezen I · II · III и Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
+      footer_versie: "Зеркало пальцев · v8.2 · устанавливается как приложение (PWA) · полное чтение, цветные карточки &amp; «Зеркало рассказывает»",
+      footer_disclaimer: "<b>Полезно знать.</b> «Зеркало пальцев» — игровой и зеркальный инструмент для саморефлексии по книгам Imre &amp; Margriet Somogyi. Приложение и ИИ-анализ не дают гарантий верности или полноты и не ставят медицинских, психологических или иных диагнозов; из результатов нельзя выводить никаких прав. Использование происходит целиком под твою ответственность — создатель этого приложения не несёт никакой ответственности за выводы или решения, принятые на его основе. Беспокоишься о здоровье? Сходи к врачу или на педикюр.",
+      linkervoet: "Левая стопа",
+      rechtervoet: "Правая стопа",
+      links: "Слева",
+      rechts: "Справа",
+      lezing_open: "Полное чтение 📜",
+      lezing_slot: n=>`Полное чтение 🔒 ещё ${n} ${n%10===1&&n%100!==11?'палец':(n%10>=2&&n%10<=4&&(n%100<12||n%100>14)?'пальца':'пальцев')}`,
+      lezing_title_open: "Полное чтение по всем десяти пальцам",
+      lezing_title_slot: "Откроется, когда на шаге II ты посмотришь все десять пальцев",
+      element_meta: (n,c)=>`Стихия <b>${n}</b> · ${c}`,
+      hier_woont: "Здесь живёт",
+      teller: n=>`Отмечено на этом пальце: <b>${n}</b> ${n%10===1&&n%100!==11?'форма':(n%10>=2&&n%10<=4&&(n%100<12||n%100>14)?'формы':'форм')}`,
+      leeswijzer_badge: "подсказка для чтения — отмечать не нужно",
+      waar_lbl: "где?",
+      spiegel_voet_r: "Правая стопа · мышление",
+      spiegel_voet_l: "Левая стопа · чувства",
+      kopieer_kop: "МОЁ ЗЕРКАЛО ПАЛЬЦЕВ\n«Хорошее зеркало не искажает.»",
+      kopieer_voet_r: "ПРАВАЯ СТОПА · МЫШЛЕНИЕ",
+      kopieer_voet_l: "ЛЕВАЯ СТОПА · ЧУВСТВА",
+      kopieer_bron: "По методу Imre & Margriet Somogyi.",
+      kopieer_disclaimer: "Это зеркало — игровой инструмент для саморефлексии: не диагноз, без гарантий, использование под свою ответственность.",
+      gekopieerd: "Скопировано ✓",
+      fout_geen_foto: "Кажется, это не фото. Выбери файл jpg или png.",
+      fout_heic: "Браузер не может прочитать это фото (HEIC?). Совет: преобразуй его в jpg или png; скриншот фото тоже сойдёт.",
+      een_voet_klaar: "Одна стопа готова. Добавь второй крупный план или проанализируй только эту стопу.",
+      klaar_twee: "Оба крупных плана готовы.",
+      klaar_een: "Фото готово.",
+      klik_analyseer: "Нажми «Проанализировать мои стопы».",
+      fout_analyse: "Анализ не удался. Попробуй ещё раз.",
+      en_de: " и ",
+      fout_voeten: s=>`Внимание: ${s} — анализ не удался. Попробуй чуть позже ещё раз по отдельности.`,
+      spiegel_kijkt: s=>`Зеркало смотрит на твои стопы… это займёт примерно от 20 до ${s} секунд.`,
+      fout_worker: "Служба анализа недоступна. Worker уже в сети? Загляни в рабочий документ или попробуй позже ещё раз.",
+      fout_worker_later: "Служба анализа недоступна. Попробуй позже ещё раз.",
+      aikop: "Вот что зеркало увидело на твоём фото",
+      geen_vormen: "Зеркало не увидело на этом фото выраженных форм. Возможно, так и есть, но спокойно посмотри дальше сам на шагах II и III.",
+      btn_naar_spiegel: "Посмотреть своё зеркало",
+      btn_nalopen: "Проверить &amp; поправить самому",
+      btn_vertelt: "Зеркало рассказывает ✒️",
+      btn_lezing_init: "Полное чтение 🔒",
+      ai_noot: "Это первое чтение от ИИ, а не истина. На шаге III отмечай формы и снимай отметки, пока картина не совпадёт с тем, что видишь ты.",
+      ai_noot_meer: "<b>«Зеркало рассказывает»</b> затем даёт толкование в стиле книг — на основе форм, отмеченных на этот момент. <b>Полное чтение</b> (все десять пальцев, гораздо глубже) откроется, когда на шаге II ты сам посмотришь все пальцы.",
+      analyse_klaar: n=>`✓ Анализ готов. Распознано: ${n} ${n%10===1&&n%100!==11?'форма':(n%10>=2&&n%10<=4&&(n%100<12||n%100>14)?'формы':'форм')}.`,
+      zoekt_woorden_kort: "Зеркало подбирает слова… это займёт примерно от 30 до 60 секунд.",
+      zoekt_woorden_lang: "Зеркало подбирает слова… это займёт примерно от 1 до 2 минут.",
+      fout_duiding: "Полное толкование не удалось. Попробуй ещё раз.",
+      versie_noot: "(Для этой функции нужен worker v2.5 или выше; для полного чтения — v2.6.)",
+      vkop_lang: "Полное чтение",
+      vkop_kort: "Зеркало рассказывает",
+      vertelt_noot: "Более свободное толкование по методу — здесь зеркало комбинирует само. Тексты карточек на шаге III остаются верным книгам источником. Ни приговора, ни диагноза: читаешь по-прежнему ты.",
+      aria_taal: "Язык / Language"
+    },
+    element: {
+      "1": {
+        naam: "Эфир",
+        chakra: "Горловая чакра"
+      },
+      "2": {
+        naam: "Воздух",
+        chakra: "Сердечная чакра"
+      },
+      "3": {
+        naam: "Огонь",
+        chakra: "Солнечное сплетение"
+      },
+      "4": {
+        naam: "Вода",
+        chakra: "Сакральная чакра"
+      },
+      "5": {
+        naam: "Земля",
+        chakra: "Корневая чакра"
+      }
+    },
+    teennaam: {
+      "1": "Большой палец",
+      "2": "Второй палец",
+      "3": "Средний палец",
+      "4": "Четвёртый палец",
+      "5": "Мизинец"
+    },
+    domein: {
+      R1: "общение о том, что ты думаешь, и твоя радость",
+      L1: "общение о том, что ты чувствуешь, и твоя печаль",
+      R2: "твоё честолюбие и то, чего ты хочешь",
+      L2: "твои чувства и то, как ты с ними обходишься",
+      R3: "действие и решительность",
+      L3: "творчество и интуитивное действие",
+      R4: "привязанность и контроль над своим положением",
+      L4: "любовь и отношения",
+      R5: "неуверенность и страх",
+      L5: "доверие и сексуальность"
+    },
+    plekzin: {
+      wortel: " Изменение цвета сидит у корня: это действует уже там, где всё зарождается.",
+      midden: " Изменение цвета сидит на средней фаланге: дело происходит в переработке.",
+      top: " Изменение цвета сидит на кончике: это проявляется прежде всего при вынесении наружу.",
+      teen: ""
+    },
+    plekopties: {
+      teen: "весь палец",
+      wortel: "корень",
+      midden: "середина",
+      top: "кончик"
+    },
+    groep: {
+      vorm: "Форма пальца",
+      stand: "Положение и направление",
+      grond: "Контакт с землёй",
+      ruimte: "Пространство и сцепление",
+      lengte: "Длина и пропорции",
+      lijn: "Воображаемая линия",
+      nagels: "Ногти",
+      huid: "Кожа",
+      kleur: "Цвет и его изменения",
+      kootjes: "Фаланги и фазы"
+    },
+    vormen: {
+      gemiddeld: {
+        naam: "Обычный палец",
+        kort: "в равновесии",
+        tekst: d=>`Палец без крайностей: ${d} у тебя в равновесии. Здесь ты отдаёшь и принимаешь без перегибов; это качество просто спокойно работает.`
+      },
+      rond: {
+        naam: "Круглый палец",
+        kort: "дипломатичность, гармония",
+        tekst: d=>`${cap(d)} ты выносишь наружу мягко и дипломатично: лучше гармония, чем конфронтация. Дружелюбно, но не всегда до конца ясно.`
+      },
+      hoekig: {
+        naam: "Угловатый палец",
+        kort: "без обиняков",
+        tekst: d=>`В сфере „${d}“ ты действуешь ясно и без обиняков. Чётко, порой угловато и бескомпромиссно: «Такой уж у меня характер».`
+      },
+      blok: {
+        naam: "Палец-блок",
+        kort: "несгибаемость",
+        tekst: d=>`В сфере „${d}“ тебя не согнуть: крепко, упрямо, «или по-моему, или никак». Торговаться ты не станешь.`
+      },
+      puntig: {
+        naam: "Заострённый палец",
+        kort: "бурно, вспышками",
+        tekst: d=>`${cap(d)} проявляются вспышками: бурно и страстно в одну минуту, пусто и тихо в следующую. Чем острее палец, тем мощнее разряд.`
+      },
+      spatel: {
+        naam: "Форма шпателя",
+        kort: "мощнее, чем было заявлено",
+        tekst: d=>`${cap(d)} в итоге выходят наружу мощнее, чем было заявлено. Принимаешь ты тоже много, но не всё предложенное успеваешь переработать.`
+      },
+      verbreding: {
+        naam: "Расширение",
+        kort: "нарастает, дружелюбно",
+        tekst: d=>`В сфере „${d}“ поток нарастает по ходу развития: наружу выходит больше, чем было заявлено, но мягче и не так властно, как у шпателя. Как воронка: поймать много, переварить не всё.`
+      },
+      flessenhals: {
+        naam: "Бутылочное горлышко",
+        kort: "сомнение, заминка",
+        tekst: d=>`В сфере „${d}“ встроено сомнение: мысль или чувство на миг задерживаются, прежде чем им можно наружу. Ты хорошо слушаешь, но не всё пускаешь к самой сердцевине.`
+      },
+      reservoir: {
+        naam: "Резервуар",
+        kort: "копится внутри",
+        tekst: d=>`Ты копишь ${d} внутри: мысли и чувства скапливаются и так и не высказываются до конца. Это держит тебя под давлением; резервуар время от времени просит, чтобы его опорожнили.`
+      },
+      mengvorm: {
+        naam: "Смешанная форма",
+        kort: "сначала мягко, потом прямо",
+        tekst: d=>`В сфере „${d}“ ты сначала выбираешь мягкость и такт. Если это ничего не даёт, переключаешься: «Ну что ж, тогда прямо и без нежностей».`
+      },
+      druppel: {
+        naam: "Капля",
+        kort: "скрытый запас",
+        tekst: d=>`Под поверхностью ты держишь скрытый запасной бак для сферы „${d}“: когда все думают, что силы у тебя кончились, ты находишь энергию, чтобы довести дело до конца.`
+      },
+      recht: {
+        naam: "Прямой палец",
+        kort: "напрямую, здесь и сейчас",
+        tekst: d=>`В сфере „${d}“ ты действуешь прямо, быстро и без задержки: информация бодро входит и так же энергично выходит наружу.`
+      },
+      krom: {
+        naam: "Согнутый палец",
+        kort: "«ну и не надо»",
+        tekst: d=>`В сфере „${d}“ ты подстраиваешься, но всегда за свой счёт: позиция «ну и не надо». Ты не отстаиваешь свои права и позволяешь собой командовать.`
+      },
+      klauw: {
+        naam: "Коготь",
+        kort: "по принуждению",
+        tekst: d=>`В сфере „${d}“ покорность вынужденная: ты больше не сопротивляешься давлению извне. Предложенная помощь и советы не доходят; антенна смотрит в землю.`
+      },
+      gedraaid: {
+        naam: "Повёрнутый палец",
+        kort: "история меняется",
+        tekst: d=>`Где-то по пути история меняется: ${d} выражаются не так, как было задумано, и входящие послания ты тоже перерабатываешь иначе, чем от тебя ждут.`
+      },
+      gekanteld: {
+        naam: "Наклонённый палец",
+        kort: "иначе от самого корня",
+        tekst: d=>`${cap(d)} отклоняются от изначальной линии уже от самого корня: информация подаётся и принимается совсем не так, как ожидалось.`
+      },
+      haast: {
+        naam: "Спешащий палец",
+        kort: "вперёд, с воодушевлением",
+        tekst: d=>`В сфере „${d}“ ты спешишь: с воодушевлением, с оптимизмом, лицом к будущему. В этом разгоне ты не всегда замечаешь, что несётся тебе навстречу.`
+      },
+      terugkijk: {
+        naam: "Палец, глядящий назад",
+        kort: "прошлое участвует в игре",
+        tekst: d=>`В сфере „${d}“ ты оглядываешься: прошлое постоянно участвует в игре. Ты пережёвываешь события, порой очень давние, и отпускать тебе трудно.`
+      },
+      ingetrokken: {
+        naam: "Втянутый палец",
+        kort: "хамелеон",
+        tekst: d=>`Ты умеешь на время втянуть ${d}: как хамелеон, ты будто бы подстраиваешься, чтобы позже сделать ровно то, что хочется тебе самому. «Нет» ты принимаешь редко.`
+      },
+      onderduik: {
+        naam: "Ныряющий палец",
+        kort: "прячется",
+        tekst: d=>`Часть сферы „${d}“ ты прячешь: палец ныряет под соседа и принимает лишь половину предложенного. Но то, что спрятано, никуда не девается — оно ощутимо рядом.`
+      },
+      gespannen: {
+        naam: "Напряжённый палец",
+        kort: "застывший шаблон",
+        tekst: d=>`Вокруг сферы „${d}“ тебя держит шаблон: предсказуемо и малоподвижно. Внутренняя гибкость застыла — часто под влиянием опыта, который тебе мешает.`
+      },
+      extra: {
+        naam: "Лишний палец",
+        kort: "в двойном экземпляре",
+        tekst: d=>`Двойное исполнение: ${d} заложены в тебе особенно сильно, с резкими качелями в обе стороны.`
+      },
+      rugzakje: {
+        naam: "Рюкзачок",
+        kort: "дородовой багаж",
+        tekst: d=>`Рюкзачок на мизинце указывает на дородовой багаж: чувства, которые твоя мама переживала во время беременности, ты несёшь с собой. Читать его трудно: он не ощущается как твой собственный.`
+      },
+      geaard: {
+        naam: "Заземлённый / сплюснутый",
+        kort: "конкретно, ясно",
+        tekst: d=>`${cap(d)} ты выражаешь конкретно и ясно, с плотным контактом с землёй. Хорошее заземление: ничего не висит в воздухе, никакой мутности.`
+      },
+      nietgeaard: {
+        naam: "Не заземлён",
+        kort: "остаётся висеть",
+        tekst: d=>`${cap(d)} не обретают конкретности: энергия остаётся висеть в воздухе, и для крепко заземлённых людей твои проявления выглядят нерешительными и смутными.`
+      },
+      droom: {
+        naam: "Палец-мечтатель",
+        kort: "мир фантазии",
+        tekst: d=>`В сфере „${d}“ ты уходишь в мир грёз и фантазий: впечатления ты перерабатываешь не на земном уровне, а на другом. Простор для медитации, вдохновения и озарений.`
+      },
+      jubel: {
+        naam: "Ликующий палец",
+        kort: "другое измерение",
+        tekst: d=>`${cap(d)} ликуют и тянутся вверх: сильный вариант пальца-мечтателя. Способность ускользать из действительности и присутствовать в другом измерении.`
+      },
+      hiaat: {
+        naam: "Пробел",
+        kort: "заводится с задержкой",
+        tekst: d=>`Между этой энергией и её соседкой — пробел: ты реагируешь не сразу, и энергия сферы „${d}“ заводится с опозданием. Давление извне даёт обратный эффект.`
+      },
+      ruimte: {
+        naam: "Пространство между пальцами",
+        kort: "аналитик, как шахматист",
+        tekst: d=>`Пространство между пальцами делает тебя аналитиком: ты рассматриваешь ${d} отдельно, в отрыве от остального, и обдумываешь свои ходы, как шахматист. Импульсивность исключена.`
+      },
+      wig: {
+        naam: "Клин",
+        kort: "постепенно всё медленнее",
+        tekst: d=>`Клин: в первой фазе контакт ещё есть, но по дороге к выражению ${d} всё сильнее замедляются. Сначала вялый отклик, со временем — всё более полное включение в то, что предлагается.`
+      },
+      omwig: {
+        naam: "Обратный клин",
+        kort: "преодолённый пробел",
+        tekst: d=>`Обратный клин — это преодолённый пробел: тебе удалось научиться реагировать быстрее, чем получалось раньше. С приёмом всё наоборот: сначала быстро, потом всё больше задержки.`
+      },
+      zwemhuid: {
+        naam: "Перепонка",
+        kort: "связаны неразделимо",
+        tekst: d=>`Сросшиеся пальцы: эти энергии связаны неразделимо, и читать их нужно как одну. Они всегда усиливают друг друга: собранная в пучок сила в характере и поведении.`
+      },
+      aaneen: {
+        naam: "Сомкнутый ряд",
+        kort: "прямой поток",
+        tekst: d=>`Пальцы сомкнуты в ряд: хороший, непосредственный поток всех энергий. Прямо, быстро, импульсивно: отдача и приём без задержки.`
+      },
+      lang: {
+        naam: "Слишком большой палец",
+        kort: "доминирующая энергия",
+        tekst: d=>`Этот палец непропорционально велик: ${d} даны тебе с избытком. Исходящие послания преобладают, и всё, что приходит на этой волне, ты ловишь особенно чутко.`
+      },
+      kort: {
+        naam: "Слишком маленький палец",
+        kort: "осталось в тени",
+        tekst: d=>`Этот палец непропорционально мал: ${d} развиты меньше и занимают тебя меньше. С помощью других и в сотрудничестве ты всё же добиваешься здесь результатов.`
+      },
+      fors: {
+        naam: "Крепкий большой палец",
+        kort: "большой дар общения",
+        tekst: d=>`Крепкий большой палец: большая способность к общению — и отдавать, и принимать. Это не обязательно болтовня: общаться можно жестами, музыкой и другими видами искусства.`
+      },
+      opeenlijn: {
+        naam: "Пальцы на одной линии",
+        kort: "аккуратность, всё в ряд",
+        tekst: ()=>`Твои пальцы аккуратно лежат на воображаемой линии от большого пальца к мизинцу: ты человек порядка и ровного хода, тебе нравится, когда всё выстроено. Хаос — не твоё.`
+      },
+      bovenlijn: {
+        naam: "Палец над линией",
+        kort: "развито сверх меры",
+        tekst: d=>`Этот палец поднимается над воображаемой линией: ${d} развиты в тебе сверх обычной меры и требуют больше места, чем всё остальное.`
+      },
+      onderlijn: {
+        naam: "Палец под линией",
+        kort: "более скромная роль",
+        tekst: d=>`Этот палец остаётся под воображаемой линией: к сфере „${d}“ у тебя сравнительно меньше склонности. В твоей жизни она играет более скромную роль — и это нормально.`
+      },
+      gemiddeldnagel: {
+        naam: "Обычный ноготь",
+        kort: "отдавать и принимать",
+        tekst: d=>`Твой ноготь защищает здесь ровно в меру: в сфере „${d}“ ты одинаково свободно отдаёшь и принимаешь. Открытость без беззащитности.`
+      },
+      grotenagel: {
+        naam: "Большой ноготь",
+        kort: "передатчик, наглухо закрыт",
+        tekst: d=>`Большой ноготь накрывает всю фалангу: полная броня. Твоя позиция насчёт сферы „${d}“ идёт наружу, а вот чужой вклад внутрь не проходит: отражение извне отвергается.`
+      },
+      kleinenagel: {
+        naam: "Маленький ноготь",
+        kort: "чуткость, открытость",
+        tekst: d=>`Маленький ноготь говорит о чуткости вокруг сферы „${d}“: ты посылаешь собственное послание и считаешься с мнением других. Чем меньше ноготь, тем ты открытее.`
+      },
+      rondenagel: {
+        naam: "Круглый ноготь",
+        kort: "энергия соскальзывает",
+        tekst: d=>`С круглого ногтя энергия быстро соскальзывает: дополнительная, немного судорожная защита от того, что предлагается вокруг сферы „${d}“. Ты ждёшь «нападения» и смотришь на предложения с подозрением.`
+      },
+      ingegroeid: {
+        naam: "Вросший ноготь",
+        kort: "судорожная оборона",
+        tekst: d=>`Вросший ноготь: оборона от входящей информации вокруг сферы „${d}“ настолько судорожная, что становится больно — ты режешь ею самого себя. Сильное сопротивление всему, что предлагают другие.`
+      },
+      omhoognagel: {
+        naam: "Задранный ноготь",
+        kort: "дверь нараспашку",
+        tekst: d=>`Задранный вверх ноготь не защищает: он как дверь, оставленная нараспашку. Всё, что касается сферы „${d}“, беспрепятственно проходит под ним внутрь.`
+      },
+      daknagel: {
+        naam: "Ноготь-крыша",
+        kort: "«оставь меня в покое»",
+        tekst: d=>`Ноготь-крыша: входящие послания вокруг сферы „${d}“ нежеланны и соскальзывают, как снег с острой крыши. «Оставь меня в покое: мне хватает себя самого».`
+      },
+      kuipnagel: {
+        naam: "Ноготь-чаша",
+        kort: "пруд, который наполняется",
+        tekst: d=>`Ноготь-чаша какое-то время удерживает то, что предлагается вокруг сферы „${d}“, — как пруд, который медленно наполняется. Лишь когда пруд переливается через край, энергия входит в систему и усваивается.`
+      },
+      afsluitnagel: {
+        naam: "Ноготь-заслонка",
+        kort: "гаражные ворота закрыты",
+        tekst: d=>`Ноготь-заслонка запирает фалангу, как гаражные ворота: нет потребности ни излучать ${d}, ни принимать что-либо. Сознательно закрыто, в обе стороны.`
+      },
+      geennagel: {
+        naam: "Нет ногтя",
+        kort: "всё внутрь без фильтра",
+        tekst: d=>`Ногтя нет: полная открытость и никакой защиты вокруг сферы „${d}“. Всё внешнее грохочет внутрь без фильтра и быстро ощущается как перегрузка.`
+      },
+      kalknagel: {
+        naam: "Известковый / грибковый ноготь",
+        kort: "повреждённая защита",
+        tekst: d=>`Известковый или грибковый ноготь показывает повреждённую защиту: уязвимость вокруг сферы „${d}“, несмотря на видимую броню. Затвердевший ноготь говорит, что ты вооружаешься с особым усердием.`
+      },
+      ribbels: {
+        naam: "Поперечные бороздки",
+        kort: "волны чувств",
+        tekst: d=>`Поперечные бороздки — это волны в сфере чувств вокруг темы „${d}“: каждая бороздка — событие, оставившее след. Чем глубже бороздка, тем сильнее впечатление.`
+      },
+      vribbels: {
+        naam: "Продольные бороздки",
+        kort: "без толкования",
+        tekst: d=>`Продольные бороздки не указывают на черту характера: они говорят об обмене веществ. Читающий пальцы сознательно оставляет их без толкования — это за пределами зеркала.`
+      },
+      hallux: {
+        naam: "Hallux valgus",
+        kort: "служение, трудно сказать «нет»",
+        tekst: d=>`Шишка у корня большого пальца: служение, привычка отодвигать себя на второй план. Ты всегда рядом, когда нужно, — часто в ущерб собственным нуждам. Это часть твоего характера: встроенная служба.`
+      },
+      eelt: {
+        naam: "Ороговевшая кожа",
+        kort: "«это личное»",
+        tekst: d=>`Ороговевшая кожа прячет, защищает и маскирует: «то, что здесь происходит, — личное». Об этом скрытом кусочке сферы „${d}“ ты предпочитаешь не говорить.`
+      },
+      eksteroog: {
+        naam: "Стержневая мозоль",
+        kort: "обороняемая личная зона",
+        tekst: d=>`Стержневая мозоль — это ороговевшее ядро, которое питается изнутри: постоянно обороняемая личная зона вокруг сферы „${d}“: «вас правда не касается, что я здесь переживаю».`
+      },
+      kleurinfo: {
+        naam: "Читать изменение цвета",
+        kort: "цвет = активность",
+        uitleg: "Цвет выдаёт активность: палец, окрашенный иначе, чем соседи, показывает, что вокруг этого качества многое происходит. Обрати внимание и на то, где сидит изменение цвета — у корня (где что-то зарождается), на средней фаланге (переработка) или на кончике (вынесение наружу), — и выбери это место на карточке. Изменение цвета может говорить и о твоём телесном состоянии; эта область — для врача или педикюра, не для этого зеркала."
+      },
+      wiu: {
+        naam: "Красный палец · идут работы",
+        kort: "повышенная активность, перелом",
+        tekst: d=>`Этот палец краснее остальных: идут работы. Вокруг сферы „${d}“ активность повышена — раздражение, перемены, начавшийся поворот. Ты покидаешь жёсткий шаблон и отвоёвываешь свободу, чтобы разворачиваться дальше.`
+      },
+      donker: {
+        naam: "Тёмный палец",
+        kort: "«это моё»",
+        tekst: d=>`Этот палец темнее соседей: то, что происходит здесь вокруг сферы „${d}“, внешнего мира не касается. Этот кусочек ты сознательно держишь внутри, за закрытым занавесом.`
+      },
+      aangetast: {
+        naam: "Грибок или экзема",
+        kort: "уязвимо, просит заботы",
+        tekst: d=>`Повреждённая кожа (грибок или экзема) показывает уязвимость: уровень внутренней заботы вокруг сферы „${d}“ временно снижен. Этот кусочек тебя просит мягкого внимания — а телесной стороной пусть займётся педикюр или врач.`
+      },
+      kootjes: {
+        naam: "Три фаланги",
+        kort: "корень · середина · кончик",
+        uitleg: "У каждого пальца три фаланги (у большого — две). Фаланга у стопы показывает, как что-то зарождается, средняя — как оно развивается внутри, верхняя — что в итоге выходит наружу. Пользуйся этим, чтобы видеть, где на пальце сидит форма, — отмечать здесь нечего.",
+        tekst: d=>`Читай этот палец в три приёма: фаланга у стопы показывает, как ${d} зарождаются, средняя — как они развиваются внутри, а верхняя — что в итоге выходит наружу. У большого пальца их только две: эфир не делится.`
+      },
+      driefasen: {
+        naam: "Три фазы",
+        kort: "зарождение · переработка · выражение",
+        uitleg: "Отдача идёт фазами от корня к кончику: зарождение, переработка, выражение. Приём — ровно наоборот, от кончика к корню. Если форма (скажем, бутылочное горлышко) сидит низко на пальце, тема играет рано в процессе; если у кончика — при вынесении наружу. Просто читай, отмечать ничего не нужно.",
+        tekst: d=>`${cap(d)} движутся по твоему пальцу фазами: зарождаются у корня, развиваются в середине и выходят наружу на кончике. Приём идёт ровно наоборот — от кончика к корню.`
+      }
+    }
+  },
+  tr: {
+    ui: {
+      titel: "Ayak Parmağı Aynası · ayaklar birer aynadır",
+      merk_h1: "Ayak Parmağı <span class=\"spiegel\">Aynası</span>",
+      eyebrow: "Imre &amp; Margriet Somogyi yöntemine göre",
+      subtitel: "Ayaklar birer aynadır. Bir fotoğraf yükle ya da bir parmak seç, biçimleri tanı, kendini oku.",
+      h_foto: "Bırak ayna da baksın",
+      hint_foto: "İsteğe bağlı · bir fotoğraf yükle, biçimler senin için işaretlensin",
+      foto_hoe: "Fotoğrafı nasıl çekersin",
+      foto_li1: "Bir sandalyeye <b>rahatça</b> otur, dizler yaklaşık 90 derece",
+      foto_li2: "Çıplak ayaklar <b>dümdüz yerde</b>, hafif aralıklı",
+      foto_li3: "Parmakları <b>serbest</b> bırak: kıvırmak yok, açıp germek yok",
+      foto_li4: "<b>Tam tepeden</b> çek, iki ayak da eksiksiz karede olsun",
+      foto_li5: "<b>İyi ışık</b> olsun, parmakların üzerine gölge düşmesin",
+      foto_li6: "<b>Daha çok ayrıntı mı?</b> “İki yakın çekim”i seç ve her ayağı ayrı fotoğrafla — parmak başına daha çok piksel, daha keskin tırnak ve kontur görüntüsü demek",
+      foto_noot: "Ayna seninle birlikte bakar, ama okuyan sen kalırsın: III. adımda nelerin işaretlendiğini gözden geçir, yanlış olanı düzelt. Kendin bakmayı mı yeğliyorsun? Bu adımı atlayıver.",
+      aria_modus: "Nasıl yükleyeceğini seç",
+      modus_een: "Tek fotoğraf · iki ayak",
+      modus_twee: "İki yakın çekim · ayak başına",
+      modusnoot_een: "Hızlı ve basit: iki ayağın da karede olduğu, tepeden çekilmiş tek fotoğraf.",
+      modusnoot_twee: "Daha iyi sonuç: yakın çekimler parmak başına çok daha fazla piksel verir — daha keskin tırnak ve kontur ayrıntısı. Tek ayak da olur.",
+      aria_upload: "Ayaklarının bir fotoğrafını seç ya da çek",
+      upload_tekst: "<b>Bir fotoğraf seç</b> ya da buraya sürükle",
+      upload_sub: "İki ayağın tepeden görünümü · jpg ya da png",
+      alt_preview: "Seçtiğin fotoğrafın önizlemesi",
+      voetkop_l: "Sol ayak · Hissetmek",
+      voetkop_r: "Sağ ayak · Düşünmek",
+      aria_upload_l: "Sol ayağının yakın çekimini seç",
+      aria_upload_r: "Sağ ayağının yakın çekimini seç",
+      upload_l: "<b>Sol ayak</b>",
+      upload_r: "<b>Sağ ayak</b>",
+      upload_sub_close: "Yakın çekim · jpg ya da png",
+      alt_preview_l: "Sol ayak yakın çekim önizlemesi",
+      alt_preview_r: "Sağ ayak yakın çekim önizlemesi",
+      btn_analyseer: "Ayaklarımı analiz et",
+      btn_opnieuw: "Yeniden başla",
+      foto_privacy: "Fotoğrafın yalnızca bu tek analiz için kullanılır ve hiçbir yerde saklanmaz.",
+      h_teen: "Bir parmak seç",
+      hint_teen: "Sağ = düşünme &amp; akıl · Sol = hissetme &amp; duygu",
+      aria_voeten: "Bir parmak seç",
+      leeg_teen: "Başlamak için bir parmağa tıkla. Her parmak, sana ait apayrı bir parçanın antenidir.",
+      h_vormen: "Biçimleri tanı",
+      hint_vormen: "Kendi parmağına bak ve tanıdıklarını işaretle",
+      catalogus_leeg_lang: "Önce yukarıdan bir parmak seç, el kitabı burada belirecek.",
+      catalogus_leeg_kort: "Önce yukarıdan bir parmak seç.",
+      h_spiegel: "Ayna",
+      motto: "“İyi bir ayna çarpıtmaz. Bu bir yargı değil. Bir görüntü.”",
+      spiegel_leeg: "Aynan henüz boş. Parmakların için biçimler seç, hikâyen burada belirsin.",
+      btn_kopieer: "Analizimi kopyala",
+      btn_reset: "Baştan başla",
+      disclaimer_spiegel: "Ayak parmağı okumak kişiliği, tutumu ve davranışı yansıtır. Ne eksik ne fazla. Tıbbi ya da psikolojik tanı koymaz; onun için doktora ya da terapiste gidersin. Yorumunda yumuşak ol: “tuhaf” parmak yoktur, yalnızca sana uyan parmaklar vardır.",
+      footer_bron: "Tenen Lezen I · II · III ve Babyteentjes Lezen kitaplarına göre · Imre &amp; Margriet Somogyi",
+      footer_versie: "Ayak Parmağı Aynası · v8.2 · uygulama olarak kurulabilir (PWA) · ayrıntılı okuma, renk kartları &amp; Ayna anlatıyor",
+      footer_disclaimer: "<b>Bilmekte yarar var.</b> Ayak Parmağı Aynası, Imre &amp; Margriet Somogyi’nin kitaplarına dayanan, öz düşünüm için bir oyun ve ayna aracıdır. Uygulama ve yapay zekâ analizi doğruluk ya da eksiksizlik güvencesi vermez; tıbbi, psikolojik ya da başka türden tanı koymaz; sonuçlardan hiçbir hak doğmaz. Kullanım tümüyle kendi sorumluluğundadır — bu uygulamanın yapımcısı, uygulamaya dayanılarak varılan sonuçlar ya da alınan kararlar için hiçbir sorumluluk üstlenmez. Sağlığından mı endişelisin? Aile hekimine ya da ayak bakımına git.",
+      linkervoet: "Sol ayak",
+      rechtervoet: "Sağ ayak",
+      links: "Sol",
+      rechts: "Sağ",
+      lezing_open: "Ayrıntılı okuma 📜",
+      lezing_slot: n=>`Ayrıntılı okuma 🔒 ${n} parmak kaldı`,
+      lezing_title_open: "On parmağın tümü üzerine eksiksiz okuma",
+      lezing_title_slot: "II. adımda on parmağın hepsine baktığında açılır",
+      element_meta: (n,c)=>`<b>${n}</b> elementi · ${c}`,
+      hier_woont: "Burada yaşayan",
+      teller: n=>`Bu parmakta <b>${n}</b> şekil tanındı`,
+      leeswijzer_badge: "Okuma kılavuzu — işaretlenecek bir şey yok",
+      waar_lbl: "nerede?",
+      spiegel_voet_r: "Sağ ayak · düşünme",
+      spiegel_voet_l: "Sol ayak · hissetme",
+      kopieer_kop: "AYAK PARMAĞI AYNAM\n“İyi bir ayna çarpıtmaz.”",
+      kopieer_voet_r: "SAĞ AYAK · DÜŞÜNME",
+      kopieer_voet_l: "SOL AYAK · HİSSETME",
+      kopieer_bron: "Imre & Margriet Somogyi yöntemine göre.",
+      kopieer_disclaimer: "Bu ayna, öz düşünüm için bir oyun aracıdır: tanı yok, güvence yok, kullanım kendi sorumluluğunda.",
+      gekopieerd: "Kopyalandı ✓",
+      fout_geen_foto: "Bu bir fotoğrafa benzemiyor. Bir jpg ya da png dosyası seç.",
+      fout_heic: "Tarayıcı bu fotoğrafı okuyamıyor (HEIC olabilir mi?). İpucu: fotoğrafı jpg ya da png’ye çevir; ekran görüntüsü de iş görür.",
+      een_voet_klaar: "Bir ayak hazır. Diğer yakın çekimi ekle ya da yalnızca bu ayağı analiz ettir.",
+      klaar_twee: "İki yakın çekim de hazır.",
+      klaar_een: "Fotoğraf hazır.",
+      klik_analyseer: "“Ayaklarımı analiz et”e tıkla.",
+      fout_analyse: "Analiz olmadı. Bir kez daha dene.",
+      en_de: " ve ",
+      fout_voeten: s=>`Dikkat: ${s} analizi olmadı — birazdan onu tek başına yeniden dene.`,
+      spiegel_kijkt: s=>`Ayna ayaklarına bakıyor… bu yaklaşık 20 ila ${s} saniye sürer.`,
+      fout_worker: "Analiz hizmetine ulaşılamıyor. Worker çevrimiçi mi acaba? Çalışma belgesine bak ya da daha sonra yeniden dene.",
+      fout_worker_later: "Analiz hizmetine ulaşılamıyor. Daha sonra yeniden dene.",
+      aikop: "Ayna fotoğrafında bunları gördü",
+      geen_vormen: "Ayna bu fotoğrafta belirgin bir biçim görmedi. Doğru olabilir, ama sen yine de II. ve III. adımlarda kendin bakmaya devam et.",
+      btn_naar_spiegel: "Aynana bak",
+      btn_nalopen: "Kendin gözden geçir &amp; düzelt",
+      btn_vertelt: "Ayna anlatıyor ✒️",
+      btn_lezing_init: "Ayrıntılı okuma 🔒",
+      ai_noot: "Bu, yapay zekânın ilk okumasıdır, mutlak doğru değildir. III. adımda, gördüğünle örtüşene dek biçimleri işaretle ya da işaretini kaldır.",
+      ai_noot_meer: "<b>Ayna anlatıyor</b>, ardından kitapların üslubunda bir yorum verir — o an işaretli olan biçimlere dayanarak. <b>Ayrıntılı okuma</b> (on parmağın tümü, çok daha derin) ise II. adımda bütün parmaklara kendin baktığında açılır.",
+      analyse_klaar: n=>`✓ Analiz tamam: ${n} şekil tanındı.`,
+      zoekt_woorden_kort: "Ayna sözcükleri arıyor… bu yaklaşık 30 ila 60 saniye sürer.",
+      zoekt_woorden_lang: "Ayna sözcükleri arıyor… bu yaklaşık 1 ila 2 dakika sürer.",
+      fout_duiding: "Ayrıntılı yorum olmadı. Bir kez daha dene.",
+      versie_noot: "(Bu özellik Worker v2.5 ya da üstünü gerektirir; ayrıntılı okuma v2.6’yı.)",
+      vkop_lang: "Ayrıntılı okuma",
+      vkop_kort: "Ayna anlatıyor",
+      vertelt_noot: "Yönteme göre daha serbest bir yorum — burada ayna kendi başına birleştirir. III. adımdaki kart metinleri kitaba sadık kaynak olarak kalır. Yargı yok, tanı yok: okuyan sen kalırsın.",
+      aria_taal: "Dil / Language"
+    },
+    element: {
+      "1": {
+        naam: "Eter",
+        chakra: "Boğaz çakrası"
+      },
+      "2": {
+        naam: "Hava",
+        chakra: "Kalp çakrası"
+      },
+      "3": {
+        naam: "Ateş",
+        chakra: "Solar pleksus"
+      },
+      "4": {
+        naam: "Su",
+        chakra: "Sakral çakra"
+      },
+      "5": {
+        naam: "Toprak",
+        chakra: "Kök çakrası"
+      }
+    },
+    teennaam: {
+      "1": "Başparmak",
+      "2": "İkinci parmak",
+      "3": "Orta parmak",
+      "4": "Dördüncü parmak",
+      "5": "Küçük parmak"
+    },
+    domein: {
+      R1: "düşündüklerin hakkındaki iletişim ve neşen",
+      L1: "hissettiklerin hakkındaki iletişim ve hüznün",
+      R2: "hırsın ve istediklerin",
+      L2: "duyguların ve onlarla baş etme biçimin",
+      R3: "harekete geçmen ve iş bitirme gücün",
+      L3: "yaratıcılığın ve sezgisel eylemlerin",
+      R4: "bağlanman ve durumuna hâkimiyetin",
+      L4: "sevgin ve ilişkilerin",
+      R5: "güvensizliğin ve korkuların",
+      L5: "güvenin ve cinselliğin"
+    },
+    plekzin: {
+      wortel: " Renk değişimi kökte oturuyor: mesele daha doğduğu yerde iş başında.",
+      midden: " Renk değişimi orta boğumda: mesele işleme aşamasında yaşanıyor.",
+      top: " Renk değişimi uçta: kendini en çok dışa vurma sırasında gösteriyor.",
+      teen: ""
+    },
+    plekopties: {
+      teen: "parmağın tamamı",
+      wortel: "kök",
+      midden: "orta",
+      top: "uç"
+    },
+    groep: {
+      vorm: "Parmağın biçimi",
+      stand: "Duruş & yön",
+      grond: "Zeminle temas",
+      ruimte: "Aralık & birliktelik",
+      lengte: "Uzunluk & oran",
+      lijn: "Hayali çizgi",
+      nagels: "Tırnaklar",
+      huid: "Cilt",
+      kleur: "Renk & renk değişimi",
+      kootjes: "Boğumlar & evreler"
+    },
+    vormen: {
+      gemiddeld: {
+        naam: "Ortalama parmak",
+        kort: "dengede",
+        tekst: d=>`Aşırılığı olmayan bir parmak: ${d} sende dengede. Burada uçlara kaçmadan gönderir ve alırsın; bu özellik kendi hâlinde, sorunsuz akıp gider.`
+      },
+      rond: {
+        naam: "Yuvarlak parmak",
+        kort: "diplomatik, uyum",
+        tekst: d=>`Kendini ${d} konusunda nazikçe ve diplomatik biçimde ortaya koyarsın: çatışma yerine uyum. Dostça, ama her zaman yeterince net değil.`
+      },
+      hoekig: {
+        naam: "Köşeli parmak",
+        kort: "lafı dolandırmadan",
+        tekst: d=>`Konu ${d} olunca açık ve dolambaçsızsın. Net, bazen köşeli ve tavizsiz: “Ben böyleyim işte.”`
+      },
+      blok: {
+        naam: "Blok biçim",
+        kort: "eğilip bükülmez",
+        tekst: d=>`Konu ${d} olunca eğilip bükülmezsin: özlü, dik başlı, ya bükülür ya kırılır. Pazarlığa yer yok.`
+      },
+      puntig: {
+        naam: "Sivri parmak",
+        kort: "şiddetli, dalgalar hâlinde",
+        tekst: d=>`${cap(d)} kendini dalgalar hâlinde gösterir: bir an ateşli ve tutkulu, hemen ardından boş ve sessiz. Parmak ne kadar sivriyse boşalma o kadar şiddetli.`
+      },
+      spatel: {
+        naam: "Spatula biçimi",
+        kort: "söylenenden daha güçlü",
+        tekst: d=>`${cap(d)} sonunda söylenenden daha güçlü çıkar ortaya. Çok şey de alırsın, ama sunulan her şeyi işleyemezsin.`
+      },
+      verbreding: {
+        naam: "Genişleme",
+        kort: "kabarır, dostça",
+        tekst: d=>`Sunulan, ${d} konusunda gelişirken kabarır: söylenenden fazlası gelir, ama spatula biçimine göre daha dostça ve daha az baskın. Bir huni gibi: çok toplarsın, hepsini sindiremezsin.`
+      },
+      flessenhals: {
+        naam: "Şişe boynu",
+        kort: "tereddüt, tıkanma",
+        tekst: d=>`Tereddüt, ${d} konusuna işlenmiş durumda: düşünce ya da duygu, dışarı çıkmasına izin verilmeden önce bir an tutulur. İyi dinlersin, ama her şeyi özüne kadar almazsın.`
+      },
+      reservoir: {
+        naam: "Rezervuar",
+        kort: "birikmiş",
+        tekst: d=>`Sen ${d} konusunda biriktirirsin: düşünceler ve duygular üst üste yığılır, hiçbir zaman tam olarak dile gelmez. Bu seni baskı altında tutar; rezervuarın ara sıra boşalması gerekir.`
+      },
+      mengvorm: {
+        naam: "Karma biçim",
+        kort: "önce tatlı, sonra açık",
+        tekst: d=>`Konu ${d} olunca önce tatlı dili ve inceliği seçersin. İşe yaramazsa vites değiştirirsin: “O zaman açık konuşalım, bu kadar yumuşaklık yeter.”`
+      },
+      druppel: {
+        naam: "Damla",
+        kort: "gizli yedek",
+        tekst: d=>`Yüzeyin altında, ${d} için gizli bir yedek depo tutarsın: herkes bittiğini sandığı anda, işi sonuna kadar götürecek enerjin hâlâ vardır.`
+      },
+      recht: {
+        naam: "Düz parmak",
+        kort: "doğrudan, şimdi ve burada",
+        tekst: d=>`Konu ${d} olunca doğrudan, hızlı ve gecikmesizsin: bilgi çabucak girer, aynı kararlılıkla çıkar.`
+      },
+      krom: {
+        naam: "Kıvrık parmak",
+        kort: "“peki, boş ver”",
+        tekst: d=>`Konu ${d} olunca uyum sağlarsın, ama hep kendi zararına: bir “peki, boş ver” tavrı. Hakkını savunmaz, kendini ezdirirsin.`
+      },
+      klauw: {
+        naam: "Pençe",
+        kort: "zorla boyun eğmiş",
+        tekst: d=>`Söz ${d} konusuna gelince boyun eğiş artık zorla: dışarıdan gelen baskıya direnmiyorsun. Sunulan yardım ya da öğüt içeri girmiyor; anten yere dönük.`
+      },
+      gedraaid: {
+        naam: "Dönmüş parmak",
+        kort: "hikâye değişir",
+        tekst: d=>`Yolun bir yerinde hikâye değişir: ${d} kendini başta amaçlanandan farklı gösterir, gelen mesajları da beklenenden farklı işlersin.`
+      },
+      gekanteld: {
+        naam: "Yatık parmak",
+        kort: "daha kökten farklı",
+        tekst: d=>`${cap(d)} daha kökten itibaren asıl çizgiden sapar: bilgi, düşünülenden bambaşka biçimde sunulur ve alınır.`
+      },
+      haast: {
+        naam: "Aceleci parmak",
+        kort: "ileri, hevesle",
+        tekst: d=>`Konu ${d} olunca acelen var: hevesli, iyimser, geleceğe dönük. Bu hızda üstüne ne geldiğini her zaman fark etmezsin.`
+      },
+      terugkijk: {
+        naam: "Geriye bakan parmak",
+        kort: "geçmiş işin içinde",
+        tekst: d=>`Konu ${d} olunca geriye bakarsın: geçmiş sürekli işin içinde. Olayları, bazen çok eskileri bile, tekrar tekrar çiğnersin; bırakmak zor gelir.`
+      },
+      ingetrokken: {
+        naam: "İçe çekilmiş parmak",
+        kort: "bukalemun",
+        tekst: d=>`Sen ${d} konusunu geçici olarak geri çekebilirsin: bir bukalemun gibi görünüşte uyum sağlar, sonra tam canının istediğini yaparsın. Bir “hayır” nadiren kabul görür.`
+      },
+      onderduik: {
+        naam: "Alta dalan parmak",
+        kort: "kendini saklar",
+        tekst: d=>`Sen ${d} konusunun bir parçasını saklarsın: parmak komşusunun altına dalar ve sunulanın yalnızca yarısını alır. Sakladığın şeyse elle tutulur biçimde orada kalır.`
+      },
+      gespannen: {
+        naam: "Gergin parmak",
+        kort: "katılaşmış kalıp",
+        tekst: d=>`Konu ${d} olunca bir kalıba sıkışmış durumdasın: öngörülebilir ve pek esnek değil. İçteki oynaklık katılaşmış; çoğu zaman seni engelleyen deneyimlerin etkisiyle.`
+      },
+      extra: {
+        naam: "Fazladan parmak",
+        kort: "çift nüsha",
+        tekst: d=>`Çift nüsha: ${d} sende fazlasıyla güçlü döşenmiş, iki yöne de sert salınımlarla.`
+      },
+      rugzakje: {
+        naam: "Küçük sırt çantası",
+        kort: "doğum öncesi yük",
+        tekst: d=>`Küçük parmaktaki minik sırt çantası doğum öncesi yüke işaret eder: annenin hamilelikte yaşadığı duyguları sen de taşırsın. Yorumlaması zordur, çünkü sana ait gibi hissettirmez.`
+      },
+      geaard: {
+        naam: "Topraklanmış / yassılaşmış",
+        kort: "somut, net",
+        tekst: d=>`Sen ${d} konusunu somut ve net biçimde dile getirirsin, toprakla bol temas hâlinde. Sağlam topraklanmış: havada kalan, bulanık bir şey yok.`
+      },
+      nietgeaard: {
+        naam: "Topraklanmamış",
+        kort: "havada asılı kalır",
+        tekst: d=>`${cap(d)} somuta dökülmüyor: enerji havada asılı kalır; bu yüzden söylediklerin, iki ayağı yere sağlam basan insanlara çekingen ve belirsiz görünür.`
+      },
+      droom: {
+        naam: "Düş parmağı",
+        kort: "hayal dünyası",
+        tekst: d=>`Konu ${d} olunca bir düş ya da hayal dünyasına çekilirsin: uyarıları dünyevi olandan başka bir düzlemde işlersin. Meditasyona, ilhama ve ani sezgilere yer açar.`
+      },
+      jubel: {
+        naam: "Coşku parmağı",
+        kort: "başka bir boyut",
+        tekst: d=>`${cap(d)} yukarı doğru coşar: düş parmağının güçlü hâli. Gerçeklikten sıyrılıp başka bir boyutta var olabilme yetisi.`
+      },
+      hiaat: {
+        naam: "Boşluk",
+        kort: "gecikmeli çalışmaya başlar",
+        tekst: d=>`Bu enerjiyle komşusu arasında bir boşluk var: ikincil tepki verirsin ve ${d} enerjisi gecikmeli çalışmaya başlar. Dışarıdan gelen baskı ters teper.`
+      },
+      ruimte: {
+        naam: "Parmak arası aralık",
+        kort: "analitik, satranç oyuncusu gibi",
+        tekst: d=>`Parmaklar arasındaki aralık seni analitik yapar: ${d} konusunu tek başına, geri kalandan ayrı değerlendirir, hamlelerini bir satranç oyuncusu gibi düşünürsün. Düşünmeden atılmak söz konusu değil.`
+      },
+      wig: {
+        naam: "Kama",
+        kort: "giderek ağırlaşır",
+        tekst: d=>`Bir kama: ilk evrede temas hâlâ var, ama dışa vurma yolunda ${d} gitgide yavaşlar. Önce ağır tepki verir, bir süre sonra sunulana giderek daha güçlü katılırsın.`
+      },
+      omwig: {
+        naam: "Ters kama",
+        kort: "aşılmış boşluk",
+        tekst: d=>`Ters kama, aşılmış bir boşluktur: eskiden mümkün olandan daha hızlı tepki vermeyi öğrenmişsin. Alırken ise tersi geçerli: önce hızlı, sonra giderek artan gecikme.`
+      },
+      zwemhuid: {
+        naam: "Perdeli parmaklar",
+        kort: "ayrılmaz biçimde bağlı",
+        tekst: d=>`Birbirine yapışık parmaklar: bu enerjiler ayrılmaz biçimde bağlıdır ve tek olarak okunmalıdır. Birbirlerini her zaman güçlendirirler: karakterde ve davranışta demet hâlinde güç.`
+      },
+      aaneen: {
+        naam: "Kapalı dizi",
+        kort: "doğrudan akış",
+        tekst: d=>`Sıkıca yan yana duran parmaklar: tüm enerjilerin iyi, aracısız akışı. Doğrudan, hızlı, atak: gecikmesiz gönderme ve alma.`
+      },
+      lang: {
+        naam: "Fazla büyük parmak",
+        kort: "baskın enerji",
+        tekst: d=>`Bu parmak orantıya göre büyük: ${d} konusunda bir bolluk. Giden mesajlar baskındır ve bu dalga boyunda gelen her şeye fazlasıyla açıksındır.`
+      },
+      kort: {
+        naam: "Fazla küçük parmak",
+        kort: "payını az almış",
+        tekst: d=>`Bu parmak orantıya göre küçük: ${d} daha az gelişmiş ve seni daha az ilgilendiriyor. Başkalarının yardımı ve iş birliğiyle burada yine de sonuç alırsın.`
+      },
+      fors: {
+        naam: "Güçlü başparmak",
+        kort: "büyük iletişim gücü",
+        tekst: d=>`Güçlü bir başparmak: hem gönderme hem alma yönünde büyük iletişim kapasitesi. Bunun için çene çalmak şart değil: jestlerle, müzikle ve başka sanat biçimleriyle de iletişim kurulur.`
+      },
+      opeenlijn: {
+        naam: "Aynı çizgide parmaklar",
+        kort: "tertipli, her şey göz önünde",
+        tekst: ()=>`Parmakların, başparmaktan küçük parmağa uzanan hayali çizginin üzerinde düzgünce diziliyor: tertipli ve dengelisin, her şeyin yerli yerinde olmasını seversin. Kaos sana göre değil.`
+      },
+      bovenlijn: {
+        naam: "Çizginin üstünde parmak",
+        kort: "fazlaca gelişmiş",
+        tekst: d=>`Bu parmak hayali çizginin üstüne taşıyor: ${d} sende olağanın ötesinde gelişmiş ve geri kalandan daha çok yer istiyor.`
+      },
+      onderlijn: {
+        naam: "Çizginin altında parmak",
+        kort: "daha mütevazı bir rol",
+        tekst: d=>`Bu parmak hayali çizginin altında kalıyor: ${d} için görece daha az yatkınlığın var. Hayatında daha mütevazı bir rol oynuyor — ve bunda bir sorun yok.`
+      },
+      gemiddeldnagel: {
+        naam: "Ortalama tırnak",
+        kort: "gönderme ve alma",
+        tekst: d=>`Tırnağın burada tam kararında koruyor: ${d} konusunda hem gönderebilir hem alabilirsin. Korunmasız kalmadan açık durursun.`
+      },
+      grotenagel: {
+        naam: "Büyük tırnak",
+        kort: "gönderici, kapalı",
+        tekst: d=>`Büyük tırnak boğumun tamamını kaplar: eksiksiz bir kalkan. ${cap(d)} hakkındaki görüşün dışarı çıkar, ama başkalarının katkısını içeri almazsın: dışarıdan tutulan ayna geri çevrilir.`
+      },
+      kleinenagel: {
+        naam: "Küçük tırnak",
+        kort: "duyarlı, açık",
+        tekst: d=>`Küçük tırnak, ${d} çevresinde duyarlılık gösterir: kendi mesajını yollar, başkalarının görüşünü de hesaba katarsın. Tırnak ne kadar küçükse o kadar açıksındır.`
+      },
+      rondenagel: {
+        naam: "Yuvarlak tırnak",
+        kort: "enerji kayıp gider",
+        tekst: d=>`Yuvarlak tırnaktan enerji çabucak kayar: ${d} çevresinde sunulana karşı fazladan, biraz kasılmış bir savunma. Bir “saldırı” bekler, önerilere kuşkuyla bakarsın.`
+      },
+      ingegroeid: {
+        naam: "Batık tırnak",
+        kort: "kasılmış savunma",
+        tekst: d=>`Batık tırnak: ${d} çevresinde gelen bilgiye karşı savunma öyle kasılmış ki acı veriyor: kendini onunla kesiyorsun. Başkalarının sunduğu her şeye güçlü direnç.`
+      },
+      omhoognagel: {
+        naam: "Yukarı kalkık tırnak",
+        kort: "kapı ardına kadar açık",
+        tekst: d=>`Yukarı kalkık tırnak korumaz: ardına kadar açık bırakılmış bir kapı gibidir. ${cap(d)} çevresindeki her şey altından engelsizce içeri süzülür.`
+      },
+      daknagel: {
+        naam: "Çatı tırnak",
+        kort: "“beni rahat bırak”",
+        tekst: d=>`Çatı tırnak: ${d} çevresinde gelen mesajlar hoş karşılanmaz, sivri bir çatıdan kayan kar gibi kayıp gider. “Beni rahat bırak: kendimle işim başımdan aşkın.”`
+      },
+      kuipnagel: {
+        naam: "Tekne tırnak",
+        kort: "dolan bir gölet",
+        tekst: d=>`Tekne tırnak, ${d} çevresinde sunulanı bir süre tutar; yavaş yavaş dolan bir gölet gibi. Ancak gölet taştığında enerji sisteme girer ve alınır.`
+      },
+      afsluitnagel: {
+        naam: "Kepenk tırnak",
+        kort: "garaj kapısı inik",
+        tekst: d=>`Kepenk tırnak boğumu bir garaj kapısı gibi kapatır: ${d} konusunda ne bir şey yayma ihtiyacı var ne de alma. Bilinçli biçimde kapalı, iki yöne de.`
+      },
+      geennagel: {
+        naam: "Tırnaksız",
+        kort: "filtresiz içeri",
+        tekst: d=>`Tırnak yok: ${d} çevresinde tam açıklık ve sıfır koruma. Dışarıdan gelen her şey filtresiz gümbürdeyerek girer ve çabucak aşırı uyarılma gibi yaşanır.`
+      },
+      kalknagel: {
+        naam: "Kireç / mantar tırnak",
+        kort: "yıpranmış savunma",
+        tekst: d=>`Kireçlenmiş ya da mantarlı tırnak, yıpranmış bir savunmayı gösterir: görünürdeki korumaya rağmen ${d} çevresinde kırılgansın. Sertleşmiş tırnaksa kendini fazladan zırhladığını gösterir.`
+      },
+      ribbels: {
+        naam: "Enine çizgiler",
+        kort: "duygu dalgaları",
+        tekst: d=>`Enine çizgiler, ${d} çevresindeki duygu alanında dalga hareketleridir: her çizgi, iz bırakmış bir olaydır. Çizgi ne kadar derinse iz o kadar güçlüdür.`
+      },
+      vribbels: {
+        naam: "Boyuna çizgiler",
+        kort: "yorumlanmaz",
+        tekst: d=>`Boyuna çizgiler bir karakter özelliğine işaret etmez: metabolizmayı gösterir. Ayak parmağı okuyan biri bunları bilerek yorumlamaz; bu, aynanın dışında kalır.`
+      },
+      hallux: {
+        naam: "Halluks valgus",
+        kort: "hizmete hazır, hayır demek zor",
+        tekst: d=>`Başparmağın kökündeki çıkıntı: hizmet etmek, kendini geri plana atmak. Hep hazır bulunursun, çoğu zaman kendi ihtiyaçların pahasına. Bu, karakterinin parçasıdır: içine işlemiş hizmet.`
+      },
+      eelt: {
+        naam: "Nasırlaşma",
+        kort: "“burası özel”",
+        tekst: d=>`Nasırlaşmış deri gizler, korur ve kamufle eder: “Burada olan biten özeldir.” Sen ${d} konusunun bu saklı parçası hakkında konuşmamayı yeğlersin.`
+      },
+      eksteroog: {
+        naam: "Kök nasır",
+        kort: "savunulan özel bölge",
+        tekst: d=>`Kök nasır, içeriden beslenen bir nasır çekirdeğidir: ${d} çevresinde durmadan savunulan özel bir bölge: “Burada ne yaşadığım sizi gerçekten hiç ilgilendirmez.”`
+      },
+      kleurinfo: {
+        naam: "Renk değişimini okumak",
+        kort: "renk = etkinlik",
+        uitleg: "Renk, etkinliği ele verir: komşularından farklı renkte bir parmak, o özellik çevresinde çok şey olup bittiğini gösterir. Renk değişiminin nerede oturduğuna da bak — kökte (bir şeyin doğduğu yer), orta boğumda (işleme) ya da uçta (dışa vurma) — ve kartta o noktayı seç. Renk değişimi bedensel durumun hakkında da bir şeyler söyleyebilir; o alan doktora ya da ayak bakımına aittir, bu aynaya değil."
+      },
+      wiu: {
+        naam: "Kırmızı parmak · çalışma sürüyor",
+        kort: "artmış etkinlik, dönüşüm",
+        tekst: d=>`Bu parmak diğerlerinden daha kırmızı: çalışma sürüyor. Burada, ${d} çevresinde etkinlik artmış — tahriş, değişim, yolda olan bir dönüşüm. Katı bir kalıbı geride bırakıyor, kendini daha da açacak özgürlüğü kazanıyorsun.`
+      },
+      donker: {
+        naam: "Koyu renkli parmak",
+        kort: "“bu bana ait”",
+        tekst: d=>`Bu parmak komşularından daha koyu: burada ${d} çevresinde olup biten, dış dünyayı ilgilendirmez. Bu parçayı bilerek içeride, kapalı bir perdenin ardında tutarsın.`
+      },
+      aangetast: {
+        naam: "Mantar ya da egzama",
+        kort: "kırılgan, bakım ister",
+        tekst: d=>`Yıpranmış cilt (mantar ya da egzama) kırılganlığı gösterir: içeriden gelen bakım düzeyi ${d} çevresinde geçici olarak düşmüş. Senin bu parçan yumuşak bir ilgi istiyor — bedensel taraf içinse: ayak bakımı ya da aile hekimi.`
+      },
+      kootjes: {
+        naam: "Üç boğum",
+        kort: "kök · orta · uç",
+        uitleg: "Her parmakta üç boğum vardır (başparmakta iki). Ayağa yakın boğum bir şeyin nasıl doğduğunu, ortadaki içeride nasıl geliştiğini, en üstteki sonunda dışarıya ne çıktığını gösterir. Bunu, bir biçimin parmağın neresinde oturduğunu görmek için kullan — burada işaretlenecek bir şey yok.",
+        tekst: d=>`Bu parmağı üç parça hâlinde oku: ayağa yakın boğum ${d} konusunun nasıl doğduğunu, ortadaki içeride nasıl geliştiğini, uçtaki boğum ise sonunda bundan dışarıya ne çıktığını gösterir. Başparmakta yalnızca iki tane vardır: eter bölünmeye gelmez.`
+      },
+      driefasen: {
+        naam: "Üç evre",
+        kort: "doğuş · işleme · dışa vurma",
+        uitleg: "Gönderme, kökten uca evreler hâlinde ilerler: doğuş, işleme, dışa vurma. Alma tam tersine, uçtan köke doğru işler. Bir biçim (örneğin şişe boynu) parmağın alt kısmında oturuyorsa konu sürecin başında oynar; uçtaysa dışa vurma sırasında. Sadece okuyup geç, işaretlenecek bir şey yok.",
+        tekst: d=>`${cap(d)} parmağında evreler hâlinde ilerler: kökte doğar, ortada gelişir, uçta dışarı çıkar. Alma tam tersi yönde işler, uçtan köke.`
+      }
+    }
+  },
+  ar: {
+    ui: {
+      titel: "مرآة أصابع القدم · القدمان مرآتان",
+      merk_h1: "مرآة <span class=\"spiegel\">أصابع القدم</span>",
+      eyebrow: "وفق منهج Imre &amp; Margriet Somogyi",
+      subtitel: "القدمان مرآتان. ارفع صورة أو اختر إصبعًا، تعرَّف على الأشكال، واقرأ نفسك.",
+      h_foto: "دع المرآة تنظر معك",
+      hint_foto: "اختياري · ارفع صورة وستُعلَّم الأشكال من أجلك",
+      foto_hoe: "هكذا تلتقط الصورة",
+      foto_li1: "اجلس <b>مسترخيًا</b> على كرسي، والركبتان بزاوية 90 درجة تقريبًا",
+      foto_li2: "القدمان حافيتان <b>مسطحتان على الأرض</b>، متباعدتان قليلًا",
+      foto_li3: "اترك أصابع قدميك <b>مسترخية</b>: لا تثنِها ولا تباعد بينها",
+      foto_li4: "صوِّر <b>من الأعلى مباشرة</b>، والقدمان كلتاهما ظاهرتان بالكامل في الصورة",
+      foto_li5: "احرص على <b>إضاءة جيدة</b>، دون ظلال على الأصابع",
+      foto_li6: "<b>تريد تفاصيل أكثر؟</b> اختر «صورتان مقرّبتان» وصوِّر كل قدم على حدة — بكسلات أكثر لكل إصبع تعني صورة أوضح للأظافر والحدود",
+      foto_noot: "المرآة تنظر معك، لكنك تبقى القارئ: راجع في الخطوة III ما عُلِّم، وصحح ما لا يطابق. تفضّل أن تنظر بنفسك؟ تجاوز هذه الخطوة ببساطة.",
+      aria_modus: "اختر طريقة الرفع",
+      modus_een: "صورة واحدة · كلتا القدمين",
+      modus_twee: "صورتان مقرّبتان · لكل قدم",
+      modusnoot_een: "سريع وبسيط: صورة واحدة من الأعلى تظهر فيها كلتا القدمين.",
+      modusnoot_twee: "نتائج أفضل: الصور المقرّبة تعطي بكسلات أكثر بكثير لكل إصبع — تفاصيل أوضح للأظافر والحدود. قدم واحدة وحدها تكفي أيضًا.",
+      aria_upload: "اختر أو التقط صورة لقدميك",
+      upload_tekst: "<b>اختر صورة</b> أو اسحبها إلى هنا",
+      upload_sub: "لقطة من الأعلى لكلتا القدمين · jpg أو png",
+      alt_preview: "معاينة الصورة التي اخترتها",
+      voetkop_l: "القدم اليسرى · الشعور",
+      voetkop_r: "القدم اليمنى · التفكير",
+      aria_upload_l: "اختر صورة مقرّبة لقدمك اليسرى",
+      aria_upload_r: "اختر صورة مقرّبة لقدمك اليمنى",
+      upload_l: "<b>القدم اليسرى</b>",
+      upload_r: "<b>القدم اليمنى</b>",
+      upload_sub_close: "صورة مقرّبة · jpg أو png",
+      alt_preview_l: "معاينة الصورة المقرّبة للقدم اليسرى",
+      alt_preview_r: "معاينة الصورة المقرّبة للقدم اليمنى",
+      btn_analyseer: "حلِّل قدميّ",
+      btn_opnieuw: "ابدأ من جديد",
+      foto_privacy: "تُستخدم صورتك لهذا التحليل الواحد فقط ولا تُخزَّن في أي مكان.",
+      h_teen: "اختر إصبعًا",
+      hint_teen: "اليمين = التفكير والعقل · اليسار = الشعور والإحساس",
+      aria_voeten: "اختر إصبعًا",
+      leeg_teen: "انقر على إصبع لتبدأ. كل إصبع هوائي يلتقط جزءًا خاصًا بك.",
+      h_vormen: "تعرَّف على الأشكال",
+      hint_vormen: "انظر إلى إصبعك أنت وعلِّم ما تتعرف عليه",
+      catalogus_leeg_lang: "اختر أولًا إصبعًا في الأعلى، وسيظهر الدليل هنا.",
+      catalogus_leeg_kort: "اختر أولًا إصبعًا في الأعلى.",
+      h_spiegel: "المرآة",
+      motto: "«المرآة الجيدة لا تشوِّه. هذا ليس حكمًا. إنها صورة.»",
+      spiegel_leeg: "مرآتك ما زالت فارغة. اختر أشكالًا لأصابعك، وستظهر حكايتك هنا.",
+      btn_kopieer: "انسخ تحليلي",
+      btn_reset: "ابدأ من البداية",
+      disclaimer_spiegel: "قراءة أصابع القدم تعكس الشخصية والموقف والسلوك. لا أكثر ولا أقل. وهي لا تقدم تشخيصات طبية أو نفسية؛ لذلك تذهب إلى الطبيب أو المعالج. كن رفيقًا في تأويلك: لا توجد أصابع «غريبة»، بل أصابع تناسبك فحسب.",
+      footer_bron: "وفق Tenen Lezen I · II · III وBabyteentjes Lezen · Imre &amp; Margriet Somogyi",
+      footer_versie: "مرآة أصابع القدم · v8.2 · قابلة للتثبيت كتطبيق (PWA) · قراءة مفصلة وبطاقات ملونة و«المرآة تحكي»",
+      footer_disclaimer: "<b>جدير بالمعرفة.</b> مرآة أصابع القدم أداة لعب ومرآة للتأمل الذاتي، وفق كتب Imre &amp; Margriet Somogyi. لا يقدم التطبيق ولا تحليل الذكاء الاصطناعي أي ضمانات للصحة أو الاكتمال، ولا يقدمان تشخيصات طبية أو نفسية أو غيرها؛ ولا يمكن استخلاص أي حقوق من النتائج. الاستخدام على مسؤوليتك الكاملة — لا يتحمل صانع هذا التطبيق أي مسؤولية عن استنتاجات أو قرارات تُبنى على التطبيق. قلق على صحتك؟ اذهب إلى طبيب الأسرة أو أخصائي العناية بالقدم.",
+      linkervoet: "القدم اليسرى",
+      rechtervoet: "القدم اليمنى",
+      links: "يسار",
+      rechts: "يمين",
+      lezing_open: "القراءة المفصلة 📜",
+      lezing_slot: n=>`القراءة المفصلة 🔒 بقي ${n===1?'إصبع واحد':n===2?'إصبعان':n>=3&&n<=10?n+' أصابع':n+' إصبعًا'}`,
+      lezing_title_open: "القراءة الكاملة لأصابع قدميك العشرة",
+      lezing_title_slot: "تُفتح بعد أن تكون قد اطلعت على الأصابع العشرة كلها في الخطوة II",
+      element_meta: (n,c)=>`العنصر <b>${n}</b> · ${c}`,
+      hier_woont: "هنا يسكن",
+      teller: n=>`تم التعرف على <b>${n}</b> ${n===1?'شكل':n===2?'شكلين':n>=3&&n<=10?'أشكال':'شكلًا'} في هذا الإصبع`,
+      leeswijzer_badge: "دليل للقراءة — لا شيء تعلِّمه",
+      waar_lbl: "أين؟",
+      spiegel_voet_r: "القدم اليمنى · التفكير",
+      spiegel_voet_l: "القدم اليسرى · الشعور",
+      kopieer_kop: "مرآة أصابع قدمي\n«المرآة الجيدة لا تشوِّه.»",
+      kopieer_voet_r: "القدم اليمنى · التفكير",
+      kopieer_voet_l: "القدم اليسرى · الشعور",
+      kopieer_bron: "وفق منهج Imre & Margriet Somogyi.",
+      kopieer_disclaimer: "هذه المرآة أداة لعب للتأمل الذاتي: لا تشخيص، لا ضمانات، والاستخدام على مسؤوليتك الخاصة.",
+      gekopieerd: "تم النسخ ✓",
+      fout_geen_foto: "لا يبدو هذا صورة. اختر ملف jpg أو png.",
+      fout_heic: "لا يستطيع المتصفح قراءة هذه الصورة (HEIC؟). نصيحة: حوِّلها إلى jpg أو png؛ لقطة شاشة للصورة تفي بالغرض أيضًا.",
+      een_voet_klaar: "قدم واحدة جاهزة. أضف الصورة المقرّبة الأخرى، أو حلِّل هذه القدم وحدها.",
+      klaar_twee: "الصورتان المقرّبتان جاهزتان.",
+      klaar_een: "الصورة جاهزة.",
+      klik_analyseer: "انقر على «حلِّل قدميّ».",
+      fout_analyse: "لم ينجح التحليل. حاول مرة أخرى.",
+      en_de: " و",
+      fout_voeten: s=>`تنبيه: لم ينجح تحليل ${s} — حاول بعد قليل مرة أخرى لكل قدم على حدة.`,
+      spiegel_kijkt: s=>`المرآة تنظر إلى قدميك… يستغرق هذا نحو 20 إلى ${s} ثانية.`,
+      fout_worker: "تعذر الوصول إلى خدمة التحليل. هل الـ worker متصل بالفعل؟ راجع مستند العمل، أو حاول لاحقًا.",
+      fout_worker_later: "تعذر الوصول إلى خدمة التحليل. حاول مرة أخرى لاحقًا.",
+      aikop: "هذا ما رأته المرآة في صورتك",
+      geen_vormen: "لم ترَ المرآة أشكالًا بارزة في هذه الصورة. قد يكون ذلك صحيحًا، لكن واصل النظر بنفسك في الخطوتين II وIII.",
+      btn_naar_spiegel: "اعرض مرآتك",
+      btn_nalopen: "راجع وعدِّل بنفسك",
+      btn_vertelt: "المرآة تحكي ✒️",
+      btn_lezing_init: "القراءة المفصلة 🔒",
+      ai_noot: "هذه قراءة أولى من الذكاء الاصطناعي، وليست حقيقة. علِّم الأشكال أو ألغِ تعليمها في الخطوة III حتى تطابق ما تراه.",
+      ai_noot_meer: "<b>المرآة تحكي</b> تعطي بعد ذلك تأويلًا بأسلوب الكتب — بناءً على الأشكال كما هي معلَّمة في تلك اللحظة. أما <b>القراءة المفصلة</b> (الأصابع العشرة كلها، وبعمق أكبر بكثير) فتُفتح بعد أن تكون قد اطلعت بنفسك على كل الأصابع في الخطوة II.",
+      analyse_klaar: n=>`✓ اكتمل التحليل: تم التعرف على ${n} ${n===1?'شكل':n===2?'شكلين':n>=3&&n<=10?'أشكال':'شكلًا'}.`,
+      zoekt_woorden_kort: "المرآة تبحث عن الكلمات… يستغرق هذا نحو 30 إلى 60 ثانية.",
+      zoekt_woorden_lang: "المرآة تبحث عن الكلمات… يستغرق هذا نحو دقيقة إلى دقيقتين.",
+      fout_duiding: "لم ينجح التأويل المفصل. حاول مرة أخرى.",
+      versie_noot: "(تتطلب هذه الميزة worker v2.5 أو أحدث؛ والقراءة المفصلة v2.6.)",
+      vkop_lang: "القراءة المفصلة",
+      vkop_kort: "المرآة تحكي",
+      vertelt_noot: "تأويل أكثر حرية وفق المنهج — هنا تجمع المرآة بنفسها. تبقى نصوص البطاقات في الخطوة III المصدر الأمين للكتب. لا حكم ولا تشخيص: أنت تبقى القارئ.",
+      aria_taal: "اللغة / Language"
+    },
+    element: {
+      "1": {
+        naam: "الأثير",
+        chakra: "شقرا الحلق"
+      },
+      "2": {
+        naam: "الهواء",
+        chakra: "شقرا القلب"
+      },
+      "3": {
+        naam: "النار",
+        chakra: "الضفيرة الشمسية"
+      },
+      "4": {
+        naam: "الماء",
+        chakra: "الشقرا العجزية"
+      },
+      "5": {
+        naam: "الأرض",
+        chakra: "شقرا الجذر"
+      }
+    },
+    teennaam: {
+      "1": "الإصبع الكبير",
+      "2": "الإصبع الثاني",
+      "3": "الإصبع الأوسط",
+      "4": "الإصبع الرابع",
+      "5": "الإصبع الصغير"
+    },
+    domein: {
+      R1: "التواصل بشأن ما تفكر فيه، وفرحك",
+      L1: "التواصل بشأن ما تشعر به، وحزنك",
+      R2: "طموحك وما تريده",
+      L2: "مشاعرك وكيف تتعامل معها",
+      R3: "الفعل والحزم في الإنجاز",
+      L3: "الإبداع والفعل الحدسي",
+      R4: "التعلق والسيطرة على وضعك",
+      L4: "الحب والعلاقات",
+      R5: "الشعور بعدم الأمان والخوف",
+      L5: "الثقة والحياة الجنسية"
+    },
+    plekzin: {
+      wortel: " يقع التغير اللوني عند الجذر: الأمر فاعل هناك حيث ينشأ.",
+      midden: " يقع التغير اللوني عند السلامية الوسطى: الأمر يجري في مرحلة المعالجة.",
+      top: " يقع التغير اللوني عند الطرف: الأمر يظهر خصوصًا عند الإخراج إلى الخارج.",
+      teen: ""
+    },
+    plekopties: {
+      teen: "الإصبع كله",
+      wortel: "الجذر",
+      midden: "الوسط",
+      top: "الطرف"
+    },
+    groep: {
+      vorm: "شكل الإصبع",
+      stand: "الوضعية والاتجاه",
+      grond: "التلامس مع الأرض",
+      ruimte: "المسافة والترابط",
+      lengte: "الطول والنسبة",
+      lijn: "الخط المتخيَّل",
+      nagels: "الأظافر",
+      huid: "الجلد",
+      kleur: "اللون والتغير اللوني",
+      kootjes: "السلاميات والمراحل"
+    },
+    vormen: {
+      gemiddeld: {
+        naam: "الإصبع المتوسط",
+        kort: "في توازن",
+        tekst: d=>`إصبع بلا شطحات: ${d} في توازن عندك. ترسل وتستقبل هنا دون تطرف؛ هذه الصفة تسير معك ببساطة على ما يرام.`
+      },
+      rond: {
+        naam: "الإصبع المستدير",
+        kort: "دبلوماسي، انسجام",
+        tekst: d=>`تُخرج ${d} بلطف ودبلوماسية: الانسجام أحب إليك من المواجهة. ودود، لكن ليس واضحًا تمامًا في كل مرة.`
+      },
+      hoekig: {
+        naam: "الإصبع الزاوي",
+        kort: "بلا مواربة",
+        tekst: d=>`في ${d} أنت واضح وبلا مواربة. صريح، وأحيانًا حاد الزوايا لا يقبل الحلول الوسط: «هكذا أنا وكفى.»`
+      },
+      blok: {
+        naam: "الشكل الكتلي",
+        kort: "لا يلين",
+        tekst: d=>`في ${d} أنت لا تلين: صلب، عنيد، إما أن ينحني الأمر أو ينكسر. المساومة غير واردة.`
+      },
+      puntig: {
+        naam: "الإصبع المدبب",
+        kort: "حاد، على دفعات",
+        tekst: d=>`${cap(d)} يعبّر عن نفسه على دفعات: حاد ومتّقد في لحظة، فارغ وصامت بعدها. كلما ازداد التدبب، ازدادت قوة التفريغ.`
+      },
+      spatel: {
+        naam: "الشكل الملعقي",
+        kort: "أقوى مما أُعلن",
+        tekst: d=>`${cap(d)} يخرج في النهاية أقوى مما أُعلن عنه. تستقبل الكثير أيضًا، لكنك لا تستطيع معالجة كل ما يُعرض عليك.`
+      },
+      verbreding: {
+        naam: "التوسّع",
+        kort: "يتضخم، ودود",
+        tekst: d=>`في ${d} يتضخم المعروض أثناء تطوره: يخرج أكثر مما أُعلن، لكن بود أكبر وهيمنة أقل من الشكل الملعقي. مثل قمع: تلتقط الكثير ولا تهضمه كله.`
+      },
+      flessenhals: {
+        naam: "عنق الزجاجة",
+        kort: "شك، تعثّر",
+        tekst: d=>`الشك مبني في ${d}: الفكرة أو الشعور يُحتجز لحظة قبل أن يُسمح له بالخروج. تُصغي جيدًا، لكنك لا تُدخل كل شيء إلى أعماقك.`
+      },
+      reservoir: {
+        naam: "الخزان",
+        kort: "مكبوت",
+        tekst: d=>`أنت تخزّن ${d}: الأفكار والمشاعر تتراكم ولا يُعبَّر عنها كاملة أبدًا. هذا يضعك تحت ضغط؛ الخزان يحتاج إلى تفريغ بين حين وآخر.`
+      },
+      mengvorm: {
+        naam: "الشكل المختلط",
+        kort: "لطيف أولًا، ثم صريح",
+        tekst: d=>`في ${d} تختار أولًا اللطف واللباقة. فإن لم يُجدِ ذلك، بدّلت النبرة: «إذن بصراحة، وبقدر أقل من الرقة.»`
+      },
+      druppel: {
+        naam: "القطرة",
+        kort: "احتياطي خفي",
+        tekst: d=>`تحت السطح تحتفظ في ${d} بخزان احتياطي خفي: حين يظن الجميع أنك استنفدت قواك، يتبين أن لديك طاقة لإتمام الأمر حتى النهاية.`
+      },
+      recht: {
+        naam: "الإصبع المستقيم",
+        kort: "مباشر، هنا والآن",
+        tekst: d=>`في ${d} أنت مباشر وسريع وبلا تأخير: المعلومات تدخل بسرعة وتخرج بالهمة نفسها.`
+      },
+      krom: {
+        naam: "الإصبع المنحني",
+        kort: "«لا بأس، إذن لا»",
+        tekst: d=>`في ${d} تتكيف، لكن دائمًا على حسابك: موقف «لا بأس، إذن لا». لا تدافع عن حقوقك وتترك غيرك يهيمن عليك.`
+      },
+      klauw: {
+        naam: "المخلب",
+        kort: "خضوع قسري",
+        tekst: d=>`في ${d} الخضوع قسري: لم تعد تقاوم الضغط الخارجي. المساعدة أو النصيحة المعروضة لا تصل؛ الهوائي يشير إلى الأرض.`
+      },
+      gedraaid: {
+        naam: "الإصبع الملتوي",
+        kort: "الحكاية تتغير",
+        tekst: d=>`في مكان ما على الطريق تتغير الحكاية: ${d} يعبّر عن نفسه بغير ما قُصد في الأصل، والرسائل الواردة أيضًا تعالجها بغير ما يتوقعه الناس.`
+      },
+      gekanteld: {
+        naam: "الإصبع المائل",
+        kort: "مختلف من الجذر",
+        tekst: d=>`${cap(d)} ينحرف عن الخط الأصلي منذ الجذر: المعلومات تُعرض وتُستقبل بطريقة مختلفة تمامًا عما كان متوقعًا.`
+      },
+      haast: {
+        naam: "الإصبع المستعجل",
+        kort: "إلى الأمام، بحماس",
+        tekst: d=>`في ${d} أنت مستعجل: متحمس، متفائل، متجه نحو المستقبل. في هذا الاندفاع لا تلاحظ دائمًا ما يُقبل نحوك.`
+      },
+      terugkijk: {
+        naam: "الإصبع المتلفت إلى الوراء",
+        kort: "الماضي حاضر",
+        tekst: d=>`في ${d} تلتفت إلى الوراء: الماضي يشارك باستمرار. تجترّ الأحداث، أحيانًا من زمن بعيد جدًا، ويصعب عليك التخلي عنها.`
+      },
+      ingetrokken: {
+        naam: "الإصبع المنسحب",
+        kort: "حرباء",
+        tekst: d=>`تستطيع سحب ${d} مؤقتًا: كالحرباء تتكيف في الظاهر، لتفعل لاحقًا ما يحلو لك بالضبط. كلمة «لا» نادرًا ما تُقبل عندك.`
+      },
+      onderduik: {
+        naam: "الإصبع المختبئ",
+        kort: "يخفي نفسه",
+        tekst: d=>`تخفي جزءًا من ${d}: الإصبع يغطس تحت جاره فلا يستقبل إلا نصف المعروض. لكن ما تخفيه يبقى حاضرًا محسوسًا.`
+      },
+      gespannen: {
+        naam: "الإصبع المتوتر",
+        kort: "نمط متصلب",
+        tekst: d=>`حول ${d} أنت عالق في نمط: متوقَّع وقليل المرونة. الحركة الداخلية تصلبت، غالبًا تحت تأثير تجارب تعيقك.`
+      },
+      extra: {
+        naam: "إصبع زائد",
+        kort: "نسخة مزدوجة",
+        tekst: d=>`نسخة مزدوجة: ${d} موجود عندك بقوة استثنائية، مع تأرجحات حادة في الاتجاهين.`
+      },
+      rugzakje: {
+        naam: "حقيبة الظهر الصغيرة",
+        kort: "إرث ما قبل الولادة",
+        tekst: d=>`حقيبة ظهر صغيرة على الإصبع الصغير تشير إلى إرث ما قبل الولادة: مشاعر عاشتها أمك أثناء الحمل تحملها أنت معك. يصعب تأويلها، لأنها لا تُحَس كأنها من عندك.`
+      },
+      geaard: {
+        naam: "متجذر / مسطّح",
+        kort: "ملموس، واضح",
+        tekst: d=>`تعبّر عن ${d} بشكل ملموس وواضح، وبتلامس كبير مع الأرض. متجذر جيدًا: لا تحليق ولا غموض.`
+      },
+      nietgeaard: {
+        naam: "غير متجذر",
+        kort: "يظل معلقًا",
+        tekst: d=>`${cap(d)} لا يقبل التجسيد: الطاقة تظل معلقة، فتبدو تعبيراتك مترددة وغير واضحة في نظر الراسخين على الأرض.`
+      },
+      droom: {
+        naam: "إصبع الحلم",
+        kort: "عالم الخيال",
+        tekst: d=>`في ${d} تنسحب إلى عالم من الحلم أو الخيال: تعالج المؤثرات على مستوى آخر غير المستوى الأرضي. مساحة للتأمل والإلهام والومضات.`
+      },
+      jubel: {
+        naam: "الإصبع المبتهج",
+        kort: "بُعد آخر",
+        tekst: d=>`${cap(d)} يبتهج نحو الأعلى: الصيغة القوية من إصبع الحلم. القدرة على الانسحاب من الواقع والحضور في بُعد آخر.`
+      },
+      hiaat: {
+        naam: "الفجوة",
+        kort: "ينطلق متأخرًا",
+        tekst: d=>`بين هذه الطاقة وجارتها فجوة: تتفاعل بشكل ثانوي، وطاقة ${d} تنطلق متأخرة. الضغط من الخارج يأتي بعكس المراد.`
+      },
+      ruimte: {
+        naam: "مسافة بين الأصابع",
+        kort: "تحليلي، كلاعب شطرنج",
+        tekst: d=>`المسافة بين الأصابع تجعلك تحليليًا: تحكم على ${d} وحده، منفصلًا عن الباقي، وتفكر في خطواتك كلاعب شطرنج. الاندفاع مستبعد.`
+      },
+      wig: {
+        naam: "الإسفين",
+        kort: "يتباطأ تدريجيًا",
+        tekst: d=>`إسفين: في المرحلة الأولى ما زال هناك تلامس، لكن في الطريق إلى التعبير يتباطأ ${d} أكثر فأكثر. تتفاعل ببطء أولًا، ثم تنخرط مع الوقت بقوة متزايدة مع المعروض.`
+      },
+      omwig: {
+        naam: "الإسفين المعكوس",
+        kort: "فجوة تم تجاوزها",
+        tekst: d=>`الإسفين المعكوس فجوة تم تجاوزها: تعلمت أن تتفاعل أسرع مما كان ممكنًا من قبل. وفي الاستقبال يجري الأمر بالعكس: سريع أولًا، ثم تأخير يتزايد.`
+      },
+      zwemhuid: {
+        naam: "الغشاء الجلدي",
+        kort: "مرتبطان لا ينفصلان",
+        tekst: d=>`إصبعان ملتحمان: هاتان الطاقتان مرتبطتان لا تنفصلان ويجب قراءتهما كطاقة واحدة. تقوّي إحداهما الأخرى دائمًا: قوة مجمّعة في الطبع والسلوك.`
+      },
+      aaneen: {
+        naam: "صف متلاصق",
+        kort: "تدفق مباشر",
+        tekst: d=>`أصابع متلاصقة في صف مغلق: تدفق جيد ومباشر لكل الطاقات. مباشر، سريع، اندفاعي: إرسال واستقبال بلا تأخير.`
+      },
+      lang: {
+        naam: "إصبع أكبر من اللازم",
+        kort: "طاقة مهيمنة",
+        tekst: d=>`هذا الإصبع كبير نسبيًا: فائض من ${d}. الرسائل الصادرة تطغى، وأنت منفتح بشكل خاص على كل ما يرد على هذا الطول الموجي.`
+      },
+      kort: {
+        naam: "إصبع أصغر من اللازم",
+        kort: "أخذ أقل من نصيبه",
+        tekst: d=>`هذا الإصبع صغير نسبيًا: ${d} أقل تطورًا عندك ويثير اهتمامك أقل. بمساعدة الآخرين والتعاون معهم تصل هنا إلى نتائج رغم ذلك.`
+      },
+      fors: {
+        naam: "إصبع كبير قوي",
+        kort: "قدرة تواصل كبيرة",
+        tekst: d=>`إصبع كبير قوي: قدرة كبيرة على التواصل، إرسالًا واستقبالًا. ولا يلزم أن يكون ذلك ثرثرة: التواصل يكون أيضًا بالإيماءات والموسيقى وسائر الفنون.`
+      },
+      opeenlijn: {
+        naam: "أصابع على خط واحد",
+        kort: "منظم، كل شيء في مكانه",
+        tekst: ()=>`أصابعك تقع بدقة على الخط المتخيَّل من الإصبع الكبير إلى الصغير: أنت منظم ومتزن وتحب أن يكون كل شيء في نسقه. الفوضى لا تناسبك.`
+      },
+      bovenlijn: {
+        naam: "إصبع فوق الخط",
+        kort: "متطور فوق المعتاد",
+        tekst: d=>`هذا الإصبع يعلو فوق الخط المتخيَّل: ${d} متطور عندك فوق المعتاد ويطلب مساحة أكبر من الباقي.`
+      },
+      onderlijn: {
+        naam: "إصبع تحت الخط",
+        kort: "دور أكثر تواضعًا",
+        tekst: d=>`هذا الإصبع يبقى تحت الخط المتخيَّل: استعدادك في ${d} أقل نسبيًا. يلعب هذا دورًا أكثر تواضعًا في حياتك، ولا بأس بذلك.`
+      },
+      gemiddeldnagel: {
+        naam: "الظفر المتوسط",
+        kort: "إرسال واستقبال",
+        tekst: d=>`ظفرك يحمي هنا بالقدر الكافي تمامًا: في ${d} تستطيع الإرسال والاستقبال بالجودة نفسها. أنت منفتح من غير أن تكون مكشوفًا.`
+      },
+      grotenagel: {
+        naam: "الظفر الكبير",
+        kort: "مرسِل، منغلق",
+        tekst: d=>`الظفر الكبير يغطي السلامية كلها: تدريع كامل. موقفك من ${d} يخرج إلى العالم، لكنك لا تستوعب ما يقدمه الآخرون: الانعكاس من الخارج مرفوض.`
+      },
+      kleinenagel: {
+        naam: "الظفر الصغير",
+        kort: "حساس، منفتح",
+        tekst: d=>`الظفر الصغير يدل على حساسية حول ${d}: ترسل رسالتك الخاصة وتراعي رأي الآخرين. كلما صغر الظفر، ازداد انفتاحك.`
+      },
+      rondenagel: {
+        naam: "الظفر المستدير",
+        kort: "الطاقة تنزلق عنه",
+        tekst: d=>`عن الظفر المستدير تنزلق الطاقة بسرعة: دفاع إضافي متشنج بعض الشيء ضد ما يُعرض حول ${d}. تتحسب «لهجوم» وتنظر إلى الاقتراحات بارتياب.`
+      },
+      ingegroeid: {
+        naam: "الظفر الغائر",
+        kort: "دفاع متشنج",
+        tekst: d=>`ظفر غائر: الدفاع ضد المعلومات الواردة حول ${d} متشنج إلى حد الألم: تجرح به نفسك. مقاومة قوية لكل ما يقدمه الآخرون.`
+      },
+      omhoognagel: {
+        naam: "الظفر المرفوع",
+        kort: "الباب مفتوح",
+        tekst: d=>`الظفر المرفوع لا يحمي: يشبه بابًا تُرك مفتوحًا. كل ما حول ${d} يمكنه المرور من تحته إلى الداخل بلا عائق.`
+      },
+      daknagel: {
+        naam: "الظفر السقفي",
+        kort: "«اتركني وشأني»",
+        tekst: d=>`ظفر سقفي: الرسائل الواردة حول ${d} غير مرحب بها وتنزلق كما ينزلق الثلج عن سقف مدبب. «اتركني وشأني: يكفيني ما عندي من نفسي.»`
+      },
+      kuipnagel: {
+        naam: "الظفر الحوضي",
+        kort: "بركة تمتلئ",
+        tekst: d=>`الظفر الحوضي يحتجز المعروض حول ${d} فترة، كبركة تمتلئ ببطء. لا تدخل الطاقة إلى المنظومة وتُستوعب إلا حين تفيض البركة.`
+      },
+      afsluitnagel: {
+        naam: "الظفر السادّ",
+        kort: "باب المرأب مغلق",
+        tekst: d=>`الظفر السادّ يغلق السلامية كباب مرأب: لا حاجة إلى بثّ ${d} ولا إلى استقبال شيء. مغلق عن قصد، في الاتجاهين.`
+      },
+      geennagel: {
+        naam: "بلا ظفر",
+        kort: "يدخل بلا تصفية",
+        tekst: d=>`بلا ظفر: انفتاح تام وغياب كامل للحماية حول ${d}. كل ما يأتي من الخارج يقتحم بلا تصفية وسرعان ما يُحَس كفرط تحفيز.`
+      },
+      kalknagel: {
+        naam: "ظفر متكلس / فطري",
+        kort: "دفاع متضرر",
+        tekst: d=>`الظفر المتكلس أو الفطري يدل على دفاع متضرر: هشاشة حول ${d} رغم الحماية الظاهرة. الظفر المتصلب يدل على أنك تتدرع بشكل استثنائي.`
+      },
+      ribbels: {
+        naam: "أخاديد عرضية",
+        kort: "موجات شعورية",
+        tekst: d=>`الأخاديد العرضية حركات موجية في المجال الشعوري حول ${d}: كل أخدود حدث ترك أثرًا. كلما تعمّق الأخدود، اشتد الأثر.`
+      },
+      vribbels: {
+        naam: "أخاديد طولية",
+        kort: "لا تأويل",
+        tekst: d=>`الأخاديد الطولية لا تدل على صفة في الطبع: إنها تشير إلى الأيض. قارئ الأصابع يتركها عمدًا بلا تأويل؛ فهذا خارج نطاق المرآة.`
+      },
+      hallux: {
+        naam: "الوكعة (هالوكس فالغوس)",
+        kort: "خدوم، يصعب عليه قول «لا»",
+        tekst: d=>`النتوء عند جذر الإصبع الكبير: روح الخدمة وتقديم الآخرين على النفس. أنت حاضر دائمًا، وغالبًا على حساب حاجاتك أنت. إنه جزء من طبعك: خدمة مبنية في الداخل.`
+      },
+      eelt: {
+        naam: "الجسأة",
+        kort: "«هذا خاص»",
+        tekst: d=>`الجسأة تُخفي وتحمي وتموِّه: «ما يجري هنا شأن خاص.» عن هذا الجزء المستور من ${d} تفضّل ألا تتحدث.`
+      },
+      eksteroog: {
+        naam: "مسمار القدم",
+        kort: "منطقة خاصة مُدافَع عنها",
+        tekst: d=>`مسمار القدم نواة جسأة تتغذى من الداخل: منطقة خاصة يُدافَع عنها باستمرار حول ${d}: «ما أعيشه هنا لا يعنيكم حقًا.»`
+      },
+      kleurinfo: {
+        naam: "قراءة التغير اللوني",
+        kort: "اللون = نشاط",
+        uitleg: "اللون يفضح النشاط: الإصبع الذي يختلف لونه عن جيرانه يدل على أن الكثير يجري حول هذه الصفة. انتبه أيضًا إلى موضع التغير اللوني — عند الجذر (حيث ينشأ الشيء)، أو عند السلامية الوسطى (المعالجة)، أو عند الطرف (الإخراج إلى الخارج) — واختر هذا الموضع على البطاقة. قد يقول التغير اللوني أيضًا شيئًا عن حالتك الجسدية؛ وتلك منطقة الطبيب أو أخصائي العناية بالقدم، لا هذه المرآة."
+      },
+      wiu: {
+        naam: "إصبع أحمر · عمل جارٍ",
+        kort: "نشاط مرتفع، تحول",
+        tekst: d=>`هذا الإصبع أشد احمرارًا من الباقي: عمل جارٍ. حول ${d} النشاط مرتفع — تهيّج، تغيّر، تحول قيد الحدوث. أنت تغادر نمطًا جامدًا وتنتزع حرية لتنمو أكثر.`
+      },
+      donker: {
+        naam: "إصبع داكن",
+        kort: "«هذا ملكي»",
+        tekst: d=>`هذا الإصبع أدكن من جيرانه: ما يجري هنا حول ${d} لا يخص العالم الخارجي. تُبقي هذا الجزء في الداخل عن قصد، خلف ستارة مغلقة.`
+      },
+      aangetast: {
+        naam: "فطر أو إكزيما",
+        kort: "هش، يحتاج إلى عناية",
+        tekst: d=>`الجلد المتضرر (فطر أو إكزيما) يدل على هشاشة: مستوى العناية من الداخل منخفض مؤقتًا حول ${d}. هذا الجزء منك يطلب اهتمامًا رقيقًا — وللجانب الجسدي: أخصائي العناية بالقدم أو طبيب الأسرة.`
+      },
+      kootjes: {
+        naam: "السلاميات الثلاث",
+        kort: "الجذر · الوسط · الطرف",
+        uitleg: "لكل إصبع ثلاث سلاميات (وللإصبع الكبير اثنتان). السلامية عند القدم تُظهر كيف ينشأ الشيء، والوسطى كيف يتطور في الداخل، والعليا ما يخرج منه في النهاية. استخدم هذا لترى أين يقع شكل ما على الإصبع — لا شيء هنا تعلِّمه.",
+        tekst: d=>`اقرأ هذا الإصبع في ثلاثة أجزاء: السلامية عند القدم تُظهر كيف ينشأ ${d}، والوسطى كيف يتطور في الداخل، وسلامية الطرف ما يخرج منه في النهاية. الإصبع الكبير له اثنتان فقط: الأثير لا يقبل القسمة.`
+      },
+      driefasen: {
+        naam: "المراحل الثلاث",
+        kort: "نشوء · معالجة · تعبير",
+        uitleg: "الإرسال يجري في مراحل من الجذر إلى الطرف: نشوء، معالجة، تعبير. أما الاستقبال فيجري بالعكس تمامًا، من الطرف إلى الجذر. إذا وقع شكل ما (عنق زجاجة مثلًا) في أسفل الإصبع، فالموضوع يجري مبكرًا في العملية؛ وإذا وقع عند الطرف، فعند الإخراج إلى الخارج. اقرأ فحسب، لا شيء تعلِّمه.",
+        tekst: d=>`${cap(d)} يتحرك عبر إصبعك في مراحل: ينشأ عند الجذر، ويتطور في الوسط، ويخرج عند الطرف. أما الاستقبال فيجري بالعكس تمامًا، من الطرف إلى الجذر.`
+      }
+    }
   }
 };
-const TAAL_NAMEN = { nl:'Nederlands', en:"English", de:"Deutsch", fr:"Français", es:"Español", it:"Italiano", pt:"Português" };
-const TAAL_BETA = { en:"beta", de:"Beta", fr:"bêta", es:"beta", it:"beta", pt:"beta" };
+const TAAL_NAMEN = { nl:'Nederlands', en:"English", de:"Deutsch", fr:"Français", es:"Español", it:"Italiano", pt:"Português", pl:"Polski", ru:"Русский", tr:"Türkçe", ar:"العربية" };
+const TAAL_BETA = { en:"beta", de:"Beta", fr:"bêta", es:"beta", it:"beta", pt:"beta", pl:"Beta", ru:"Бета", tr:"Beta", ar:"تجريبي" };
 let TAAL = (()=>{ try{ if(localStorage.taal && TALEN[localStorage.taal]) return localStorage.taal; }catch(e){}
   const nav=(navigator.language||'nl').slice(0,2).toLowerCase(); return TALEN[nav]?nav:'en'; })();
 const T = pad => { const zoek = o => pad.split('.').reduce((x,k)=>x?.[k], o);
   const r = zoek(TALEN[TAAL]); return (r!==undefined&&r!==null)?r:(zoek(TALEN.nl) ?? pad); };
 const TF = (pad,...a) => { const f = T(pad); return typeof f==='function' ? f(...a) : f; };
 const GROEP_ID = {'Vorm van de teen':'vorm','Stand & richting':'stand','Contact met de grond':'grond','Ruimte & samenhang':'ruimte','Lengte & verhouding':'lengte','De denkbeeldige lijn':'lijn','Nagels':'nagels','Huid':'huid','Kleur & verkleuring':'kleur','Kootjes & fasen':'kootjes'};
+const RTL_TALEN = new Set(['ar','he']); /* v8.2: rechts-naar-links-schriften */
 function vertaalPagina(){
   document.documentElement.lang = TAAL;
+  document.documentElement.dir = RTL_TALEN.has(TAAL) ? 'rtl' : 'ltr';
   document.title = T('ui.titel');
   document.querySelectorAll('[data-t]').forEach(el => { el.innerHTML = T(el.dataset.t); });
   document.querySelectorAll('[data-t-aria]').forEach(el => el.setAttribute('aria-label', T(el.dataset.tAria)));
