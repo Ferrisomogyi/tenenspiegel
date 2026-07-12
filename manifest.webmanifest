@@ -1,0 +1,19 @@
+{
+  "name": "Tenenspiegel",
+  "short_name": "Tenenspiegel",
+  "description": "Voeten zijn spiegels — een speels zelfonderzoek via de vormen van je tenen.",
+  "lang": "nl",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#EFE8D8",
+  "theme_color": "#EFE8D8",
+  "categories": ["lifestyle"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
