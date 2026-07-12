@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Tenenspiegel">
-<title>Tenenspiegel · voeten zijn spiegels</title>
+<title>Tenenlezen · voeten zijn spiegels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -200,6 +200,7 @@ html[dir="rtl"] .spinner{margin-right:0;margin-left:8px}
 html[dir="rtl"] .pleklbl{margin-right:0;margin-left:2px}
 html[dir="rtl"] .stap .hint{margin-left:0;margin-right:auto}
 html[dir="rtl"] #taalMenu button{text-align:right}
+html[dir="rtl"] .voetlabels{direction:ltr} /* SVG-voeten spiegelen niet mee: labels vast op fysieke plek houden (les live-check 13 juli) */
 html[dir="rtl"] #taalMenu .beta{margin-left:0;margin-right:6px}
 @media(min-width:760px){html[dir="rtl"] .ainoot{padding-left:0;padding-right:140px}}
 </style>
@@ -212,7 +213,7 @@ html[dir="rtl"] #taalMenu .beta{margin-left:0;margin-right:6px}
     <div id="taalMenu" role="listbox" hidden></div>
   </div>
   <div class="eyebrow" data-t="ui.eyebrow">Naar de methode van Imre &amp; Margriet Somogyi</div>
-  <h1 data-t="ui.merk_h1">Tenen<span class="spiegel">spiegel</span></h1>
+  <h1 data-t="ui.merk_h1">Tenen<span class="spiegel">lezen</span></h1>
   <div class="subtitel" data-t="ui.subtitel">Voeten zijn spiegels. Upload een foto of kies een teen, herken de vormen, lees jezelf.</div>
   <div class="elementbalk" aria-hidden="true">
     <span class="e1" data-t="element.1.naam">Ether</span><span class="e2" data-t="element.2.naam">Lucht</span><span class="e3" data-t="element.3.naam">Vuur</span><span class="e4" data-t="element.4.naam">Water</span><span class="e5" data-t="element.5.naam">Aarde</span>
@@ -405,7 +406,7 @@ const TALEN = {
       alt_preview: "Voorbeeld van je gekozen foto",
       alt_preview_l: "Voorbeeld close-up linkervoet",
       alt_preview_r: "Voorbeeld close-up rechtervoet",
-      merk_h1: "Tenen<span class=\"spiegel\">spiegel</span>",
+      merk_h1: "Tenen<span class=\"spiegel\">lezen</span>",
       eyebrow: "Naar de methode van Imre &amp; Margriet Somogyi",
       subtitel: "Voeten zijn spiegels. Upload een foto of kies een teen, herken de vormen, lees jezelf.",
       h_foto: "Laat de spiegel meekijken",
@@ -440,7 +441,7 @@ const TALEN = {
       footer_bron: "Gebaseerd op Tenen Lezen I · II · III en Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
       footer_versie: "Tenenspiegel · v8.2 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt",
       footer_disclaimer: "<b>Goed om te weten.</b> De Tenenspiegel is een spel- en spiegelinstrument voor zelfreflectie, gebaseerd op de boeken van Imre &amp; Margriet Somogyi. De app en de AI-analyse geven geen garanties over juistheid of volledigheid en stellen geen medische, psychologische of andere diagnoses; aan de uitkomsten kunnen geen rechten worden ontleend. Gebruik is volledig op eigen verantwoordelijkheid — de maker van deze app aanvaardt geen enkele aansprakelijkheid voor conclusies of beslissingen die op basis van de app worden genomen. Zorgen over je gezondheid? Ga naar je huisarts of pedicure.",
-      titel: "Tenenspiegel · voeten zijn spiegels",
+      titel: "Tenenlezen · voeten zijn spiegels",
       aria_taal: "Taal / Language"
     },
     element: {
@@ -845,8 +846,8 @@ const TALEN = {
   },
   en: {
     ui: {
-      titel: "Toe Mirror · feet are mirrors",
-      merk_h1: "Toe <span class=\"spiegel\">Mirror</span>",
+      titel: "Toe Reading · feet are mirrors",
+      merk_h1: "Toe <span class=\"spiegel\">Reading</span>",
       eyebrow: "After the method of Imre &amp; Margriet Somogyi",
       subtitel: "Feet are mirrors. Upload a photo or pick a toe, recognise the shapes, read yourself.",
       h_foto: "Let the mirror look with you",
@@ -1350,8 +1351,8 @@ const TALEN = {
   },
   de: {
     ui: {
-      titel: "Zehenspiegel · Füße sind Spiegel",
-      merk_h1: "Zehen<span class=\"spiegel\">spiegel</span>",
+      titel: "Zehenlesen · Füße sind Spiegel",
+      merk_h1: "Zehen<span class=\"spiegel\">lesen</span>",
       eyebrow: "Nach der Methode von Imre &amp; Margriet Somogyi",
       subtitel: "Füße sind Spiegel. Lade ein Foto hoch oder wähle einen Zeh, erkenne die Formen, lies dich selbst.",
       h_foto: "Lass den Spiegel mitschauen",
@@ -1830,8 +1831,8 @@ const TALEN = {
   },
   fr: {
     ui: {
-      titel: "Miroir des orteils · les pieds sont des miroirs",
-      merk_h1: "Miroir <span class=\"spiegel\">des orteils</span>",
+      titel: "Lecture des orteils · les pieds sont des miroirs",
+      merk_h1: "Lecture <span class=\"spiegel\">des orteils</span>",
       eyebrow: "D'après la méthode d'Imre &amp; Margriet Somogyi",
       subtitel: "Les pieds sont des miroirs. Téléverse une photo ou choisis un orteil, reconnais les formes, lis-toi toi-même.",
       h_foto: "Laisse le miroir regarder avec toi",
@@ -2310,8 +2311,8 @@ const TALEN = {
   },
   es: {
     ui: {
-      titel: "Espejo de los dedos · los pies son espejos",
-      merk_h1: "Espejo <span class=\"spiegel\">de los dedos</span>",
+      titel: "Lectura de los dedos · los pies son espejos",
+      merk_h1: "Lectura <span class=\"spiegel\">de los dedos</span>",
       eyebrow: "Según el método de Imre &amp; Margriet Somogyi",
       subtitel: "Los pies son espejos. Sube una foto o elige un dedo, reconoce las formas, léete a ti mismo.",
       h_foto: "Deja que el espejo mire contigo",
@@ -2790,8 +2791,8 @@ const TALEN = {
   },
   it: {
     ui: {
-      titel: "Specchio delle dita · i piedi sono specchi",
-      merk_h1: "Specchio <span class=\"spiegel\">delle dita</span>",
+      titel: "Lettura delle dita · i piedi sono specchi",
+      merk_h1: "Lettura <span class=\"spiegel\">delle dita</span>",
       eyebrow: "Secondo il metodo di Imre &amp; Margriet Somogyi",
       subtitel: "I piedi sono specchi. Carica una foto o scegli un dito, riconosci le forme, leggi te stesso.",
       h_foto: "Lascia che lo specchio guardi con te",
@@ -3270,8 +3271,8 @@ const TALEN = {
   },
   pt: {
     ui: {
-      titel: "Espelho dos dedos · os pés são espelhos",
-      merk_h1: "Espelho <span class=\"spiegel\">dos dedos</span>",
+      titel: "Leitura dos dedos · os pés são espelhos",
+      merk_h1: "Leitura <span class=\"spiegel\">dos dedos</span>",
       eyebrow: "Segundo o método de Imre &amp; Margriet Somogyi",
       subtitel: "Os pés são espelhos. Envia uma foto ou escolhe um dedo, reconhece as formas, lê-te a ti próprio.",
       h_foto: "Deixa o espelho olhar contigo",
@@ -3750,8 +3751,8 @@ const TALEN = {
   },
   pl: {
     ui: {
-      titel: "Lustro palców · stopy są lustrami",
-      merk_h1: "Lustro <span class=\"spiegel\">palców</span>",
+      titel: "Czytanie palców · stopy są lustrami",
+      merk_h1: "Czytanie <span class=\"spiegel\">palców</span>",
       eyebrow: "Według metody Imre &amp; Margriet Somogyi",
       subtitel: "Stopy są lustrami. Wgraj zdjęcie albo wybierz palec, rozpoznaj kształty, odczytaj samego siebie.",
       h_foto: "Niech lustro spojrzy razem z tobą",
@@ -4230,8 +4231,8 @@ const TALEN = {
   },
   ru: {
     ui: {
-      titel: "Зеркало пальцев · стопы — это зеркала",
-      merk_h1: "Зеркало <span class=\"spiegel\">пальцев</span>",
+      titel: "Чтение пальцев · стопы — это зеркала",
+      merk_h1: "Чтение <span class=\"spiegel\">пальцев</span>",
       eyebrow: "По методу Imre &amp; Margriet Somogyi",
       subtitel: "Стопы — это зеркала. Загрузи фото или выбери палец, узнай формы, прочти самого себя.",
       h_foto: "Пусть зеркало посмотрит вместе с тобой",
@@ -4710,8 +4711,8 @@ const TALEN = {
   },
   tr: {
     ui: {
-      titel: "Ayak Parmağı Aynası · ayaklar birer aynadır",
-      merk_h1: "Ayak Parmağı <span class=\"spiegel\">Aynası</span>",
+      titel: "Ayak Parmağı Okuma · ayaklar birer aynadır",
+      merk_h1: "Ayak Parmağı <span class=\"spiegel\">Okuma</span>",
       eyebrow: "Imre &amp; Margriet Somogyi yöntemine göre",
       subtitel: "Ayaklar birer aynadır. Bir fotoğraf yükle ya da bir parmak seç, biçimleri tanı, kendini oku.",
       h_foto: "Bırak ayna da baksın",
@@ -5190,8 +5191,8 @@ const TALEN = {
   },
   ar: {
     ui: {
-      titel: "مرآة أصابع القدم · القدمان مرآتان",
-      merk_h1: "مرآة <span class=\"spiegel\">أصابع القدم</span>",
+      titel: "قراءة أصابع القدم · القدمان مرآتان",
+      merk_h1: "قراءة <span class=\"spiegel\">أصابع القدم</span>",
       eyebrow: "وفق منهج Imre &amp; Margriet Somogyi",
       subtitel: "القدمان مرآتان. ارفع صورة أو اختر إصبعًا، تعرَّف على الأشكال، واقرأ نفسك.",
       h_foto: "دع المرآة تنظر معك",
