@@ -226,6 +226,16 @@ html[dir="rtl"] .accx{right:auto;left:12px}
 .acccode{display:flex;gap:8px;margin-top:8px}
 .acccode input{flex:1;min-width:0}
 .tegoedbalk{margin:0 0 12px;padding:8px 12px;border:1.5px dashed var(--inkt);border-radius:10px;font-size:13.5px;background:#F7F1E1}
+/* ---- kassa & juridische links (v9.1) ---- */
+.koopblok{margin-top:14px;padding:12px;border:1.5px solid var(--inkt);border-radius:12px;background:#FBF6E9}
+.koopblok b{display:block;margin-bottom:8px;font-size:14px}
+.koopknop{display:flex;justify-content:space-between;align-items:baseline;gap:10px;width:100%;box-sizing:border-box;margin-top:8px;padding:10px 14px;font:inherit;font-weight:700;color:var(--inkt);background:var(--kaart);border:1.5px solid var(--inkt);border-radius:10px;cursor:pointer;box-shadow:2px 2px 0 rgba(43,33,24,.12)}
+.koopknop:hover{background:#F3ECDB}
+.koopknop:disabled{opacity:.55;cursor:wait}
+.koopknop .prijs{font-family:'Fraunces',serif;font-size:16px;white-space:nowrap}
+.koopnoot{font-size:12px;color:var(--inkt-zacht);margin-top:8px}
+.legallinks{margin:8px 0 10px}
+.legallinks a{color:var(--inkt-zacht);text-decoration:underline;margin:0 7px}
 </style>
 </head>
 <body>
@@ -362,7 +372,8 @@ html[dir="rtl"] .accx{right:auto;left:12px}
 
 <footer class="wrap">
   <div class="bron" data-t="ui.footer_bron">Gebaseerd op Tenen Lezen I · II · III en Babyteentjes Lezen · Imre &amp; Margriet Somogyi</div>
-  <div data-t="ui.footer_versie">Tenenspiegel · v9.0 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt</div>
+  <div data-t="ui.footer_versie">Tenenspiegel · v9.1 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt</div>
+  <div class="legallinks"><a href="./pricing.html" data-t="ui.leg_prijzen">Prijzen</a> · <a href="./terms.html" data-t="ui.leg_voorwaarden">Voorwaarden</a> · <a href="./privacy.html" data-t="ui.leg_privacy">Privacy</a></div>
   <div class="disclaimer" data-t="ui.footer_disclaimer"><b>Goed om te weten.</b> De Tenenspiegel is een spel- en spiegelinstrument voor zelfreflectie, gebaseerd op de boeken van Imre &amp; Margriet Somogyi. De app en de AI-analyse geven geen garanties over juistheid of volledigheid en stellen geen medische, psychologische of andere diagnoses; aan de uitkomsten kunnen geen rechten worden ontleend. Gebruik is volledig op eigen verantwoordelijkheid — de maker van deze app aanvaardt geen enkele aansprakelijkheid voor conclusies of beslissingen die op basis van de app worden genomen. Zorgen over je gezondheid? Ga naar je huisarts of pedicure.</div>
 </footer>
 <script>
@@ -468,7 +479,7 @@ const TALEN = {
       btn_reset: "Begin opnieuw",
       disclaimer_spiegel: "Tenen lezen spiegelt persoonlijkheid, houding en gedrag. Niets meer en niets minder. Het stelt géén medische of psychologische diagnoses; daarvoor ga je naar een arts of therapeut. Wees mild in je interpretatie: \"rare\" tenen bestaan niet, alleen tenen die bij jou passen.",
       footer_bron: "Gebaseerd op Tenen Lezen I · II · III en Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Tenenspiegel · v9.0 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt",
+      footer_versie: "Tenenspiegel · v9.1 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt",
       footer_disclaimer: "<b>Goed om te weten.</b> De Tenenspiegel is een spel- en spiegelinstrument voor zelfreflectie, gebaseerd op de boeken van Imre &amp; Margriet Somogyi. De app en de AI-analyse geven geen garanties over juistheid of volledigheid en stellen geen medische, psychologische of andere diagnoses; aan de uitkomsten kunnen geen rechten worden ontleend. Gebruik is volledig op eigen verantwoordelijkheid — de maker van deze app aanvaardt geen enkele aansprakelijkheid voor conclusies of beslissingen die op basis van de app worden genomen. Zorgen over je gezondheid? Ga naar je huisarts of pedicure.",
       titel: "Tenenlezen · voeten zijn spiegels",
       aria_taal: "Taal / Language"
@@ -925,7 +936,7 @@ const TALEN = {
       btn_reset: "Start again",
       disclaimer_spiegel: "Toe reading mirrors personality, attitude and behaviour. Nothing more and nothing less. It makes no medical or psychological diagnoses; for those you go to a doctor or therapist. Be gentle in your interpretation: there are no \"strange\" toes, only toes that fit you.",
       footer_bron: "Based on Tenen Lezen I · II · III and Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Toe Mirror · v9.0 · installable as an app (PWA) · extended reading, colour cards &amp; The mirror speaks",
+      footer_versie: "Toe Mirror · v9.1 · installable as an app (PWA) · extended reading, colour cards &amp; The mirror speaks",
       footer_disclaimer: "<b>Good to know.</b> The Tenenspiegel is a game and mirroring instrument for self-reflection, based on the books by Imre &amp; Margriet Somogyi. The app and the AI analysis give no guarantees of correctness or completeness and make no medical, psychological or other diagnoses; no rights can be derived from the outcomes. Use is entirely at your own risk — the maker of this app accepts no liability whatsoever for conclusions or decisions based on the app. Worried about your health? See your family doctor or pedicurist.",
       linkervoet: "Left foot",
       rechtervoet: "Right foot",
@@ -1430,7 +1441,7 @@ const TALEN = {
       btn_reset: "Von vorn beginnen",
       disclaimer_spiegel: "Zehenlesen spiegelt Persönlichkeit, Haltung und Verhalten. Nicht mehr und nicht weniger. Es stellt keine medizinischen oder psychologischen Diagnosen; dafür gehst du zu Arzt oder Therapeut. Sei mild in deiner Deutung: „Komische“ Zehen gibt es nicht, nur Zehen, die zu dir passen.",
       footer_bron: "Nach Tenen Lezen I · II · III und Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Zehenspiegel · v9.0 · als App installierbar (PWA) · ausführliche Lesung, Farbkarten &amp; Der Spiegel erzählt",
+      footer_versie: "Zehenspiegel · v9.1 · als App installierbar (PWA) · ausführliche Lesung, Farbkarten &amp; Der Spiegel erzählt",
       footer_disclaimer: "<b>Gut zu wissen.</b> Der Zehenspiegel ist ein Spiel- und Spiegelinstrument zur Selbstreflexion, nach den Büchern von Imre &amp; Margriet Somogyi. App und KI-Analyse geben keine Garantien für Richtigkeit oder Vollständigkeit und stellen keine medizinischen, psychologischen oder sonstigen Diagnosen; aus den Ergebnissen können keine Rechte abgeleitet werden. Die Nutzung geschieht vollständig auf eigene Verantwortung — der Hersteller dieser App übernimmt keinerlei Haftung für Schlüsse oder Entscheidungen auf Grundlage der App. Sorgen um deine Gesundheit? Geh zu Hausarzt oder Fußpflege.",
       linkervoet: "Linker Fuß",
       rechtervoet: "Rechter Fuß",
@@ -1910,7 +1921,7 @@ const TALEN = {
       btn_reset: "Tout recommencer",
       disclaimer_spiegel: "La lecture des orteils reflète la personnalité, l'attitude et le comportement. Rien de plus, rien de moins. Elle ne pose aucun diagnostic médical ou psychologique ; pour cela, va voir un médecin ou un thérapeute. Sois indulgent dans ton interprétation : les orteils « bizarres » n'existent pas, seulement des orteils qui te ressemblent.",
       footer_bron: "D'après Tenen Lezen I · II · III et Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Miroir des orteils · v9.0 · installable comme app (PWA) · lecture approfondie, cartes couleur &amp; Le miroir raconte",
+      footer_versie: "Miroir des orteils · v9.1 · installable comme app (PWA) · lecture approfondie, cartes couleur &amp; Le miroir raconte",
       footer_disclaimer: "<b>Bon à savoir.</b> Le Miroir des orteils est un instrument de jeu et de reflet pour l'autoréflexion, d'après les livres d'Imre &amp; Margriet Somogyi. L'app et l'analyse par IA n'offrent aucune garantie d'exactitude ou d'exhaustivité et ne posent aucun diagnostic médical, psychologique ou autre ; les résultats ne créent aucun droit. L'utilisation se fait entièrement sous ta propre responsabilité — le créateur de cette app décline toute responsabilité pour les conclusions ou décisions prises sur la base de l'app. Des soucis de santé ? Va voir ton médecin ou ton pédicure.",
       linkervoet: "Pied gauche",
       rechtervoet: "Pied droit",
@@ -2390,7 +2401,7 @@ const TALEN = {
       btn_reset: "Volver a empezar",
       disclaimer_spiegel: "La lectura de los dedos del pie refleja personalidad, actitud y conducta. Nada más y nada menos. No establece diagnósticos médicos ni psicológicos; para eso acude a un médico o terapeuta. Sé benévolo al interpretar: no existen dedos «raros», solo dedos que encajan contigo.",
       footer_bron: "Basado en Tenen Lezen I · II · III y Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Espejo de los dedos · v9.0 · instalable como app (PWA) · lectura ampliada, tarjetas de color &amp; El espejo habla",
+      footer_versie: "Espejo de los dedos · v9.1 · instalable como app (PWA) · lectura ampliada, tarjetas de color &amp; El espejo habla",
       footer_disclaimer: "<b>Bueno saberlo.</b> El Espejo de los dedos es un instrumento de juego y de reflejo para la autorreflexión, basado en los libros de Imre &amp; Margriet Somogyi. La app y el análisis por IA no ofrecen garantías de exactitud o integridad y no establecen diagnósticos médicos, psicológicos ni de otro tipo; de los resultados no se derivan derechos. El uso es enteramente bajo tu propia responsabilidad — el creador de esta app no acepta responsabilidad alguna por conclusiones o decisiones tomadas a partir de la app. ¿Preocupado por tu salud? Acude a tu médico de cabecera o podólogo.",
       linkervoet: "Pie izquierdo",
       rechtervoet: "Pie derecho",
@@ -2870,7 +2881,7 @@ const TALEN = {
       btn_reset: "Ricomincia da capo",
       disclaimer_spiegel: "La lettura delle dita dei piedi rispecchia personalità, atteggiamento e comportamento. Niente di più e niente di meno. Non pone diagnosi mediche o psicologiche; per quelle vai da un medico o un terapeuta. Sii indulgente nell’interpretare: le dita «strane» non esistono, solo dita che ti somigliano.",
       footer_bron: "Basato su Tenen Lezen I · II · III e Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Specchio delle dita · v9.0 · installabile come app (PWA) · lettura estesa, carte dei colori &amp; Lo specchio racconta",
+      footer_versie: "Specchio delle dita · v9.1 · installabile come app (PWA) · lettura estesa, carte dei colori &amp; Lo specchio racconta",
       footer_disclaimer: "<b>Buono a sapersi.</b> Lo Specchio delle dita è uno strumento di gioco e di specchio per l'autoriflessione, basato sui libri di Imre &amp; Margriet Somogyi. L'app e l'analisi con IA non danno garanzie di esattezza o completezza e non pongono diagnosi mediche, psicologiche o di altro tipo; dai risultati non deriva alcun diritto. L'uso è interamente sotto la tua responsabilità — il creatore di questa app non si assume alcuna responsabilità per conclusioni o decisioni prese sulla base dell'app. Preoccupato per la tua salute? Vai dal tuo medico o dal podologo.",
       linkervoet: "Piede sinistro",
       rechtervoet: "Piede destro",
@@ -3350,7 +3361,7 @@ const TALEN = {
       btn_reset: "Recomeçar",
       disclaimer_spiegel: "A leitura dos dedos dos pés espelha personalidade, atitude e comportamento. Nada mais e nada menos. Não estabelece diagnósticos médicos nem psicológicos; para isso vais a um médico ou terapeuta. Sê brando na interpretação: dedos «esquisitos» não existem, só dedos que combinam contigo.",
       footer_bron: "Baseado em Tenen Lezen I · II · III e Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Espelho dos dedos · v9.0 · instalável como app (PWA) · leitura alargada, cartões de cor &amp; O espelho conta",
+      footer_versie: "Espelho dos dedos · v9.1 · instalável como app (PWA) · leitura alargada, cartões de cor &amp; O espelho conta",
       footer_disclaimer: "<b>Bom saber.</b> O Espelho dos dedos é um instrumento de jogo e de espelho para a autorreflexão, baseado nos livros de Imre &amp; Margriet Somogyi. A app e a análise por IA não dão garantias de exatidão ou completude e não estabelecem diagnósticos médicos, psicológicos ou outros; dos resultados não decorrem quaisquer direitos. A utilização é inteiramente por tua conta e risco — o criador desta app não aceita qualquer responsabilidade por conclusões ou decisões tomadas com base na app. Preocupado com a tua saúde? Vai ao teu médico de família ou podologista.",
       linkervoet: "Pé esquerdo",
       rechtervoet: "Pé direito",
@@ -3830,7 +3841,7 @@ const TALEN = {
       btn_reset: "Zacznij od początku",
       disclaimer_spiegel: "Czytanie z palców stóp odzwierciedla osobowość, postawę i zachowanie. Nic więcej i nic mniej. Nie stawia diagnoz medycznych ani psychologicznych; z tym idziesz do lekarza lub terapeuty. Bądź łagodny w interpretacji: nie ma „dziwnych” palców, są tylko palce, które do ciebie pasują.",
       footer_bron: "Na podstawie Tenen Lezen I · II · III oraz Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Lustro palców · v9.0 · do zainstalowania jako aplikacja (PWA) · pełny odczyt, karty kolorów &amp; Lustro opowiada",
+      footer_versie: "Lustro palców · v9.1 · do zainstalowania jako aplikacja (PWA) · pełny odczyt, karty kolorów &amp; Lustro opowiada",
       footer_disclaimer: "<b>Warto wiedzieć.</b> Lustro palców to narzędzie zabawy i autorefleksji, oparte na książkach Imre &amp; Margriet Somogyi. Aplikacja i analiza AI nie dają gwarancji poprawności ani kompletności i nie stawiają diagnoz medycznych, psychologicznych ani żadnych innych; z wyników nie można wywodzić żadnych roszczeń. Korzystasz z aplikacji całkowicie na własną odpowiedzialność — jej twórca nie ponosi żadnej odpowiedzialności za wnioski lub decyzje podjęte na jej podstawie. Martwisz się o swoje zdrowie? Idź do lekarza rodzinnego lub podologa.",
       linkervoet: "Lewa stopa",
       rechtervoet: "Prawa stopa",
@@ -4310,7 +4321,7 @@ const TALEN = {
       btn_reset: "Начать с начала",
       disclaimer_spiegel: "Чтение пальцев ног отражает личность, установки и поведение. Не больше и не меньше. Оно не ставит медицинских или психологических диагнозов; за этим — к врачу или психотерапевту. Толкуй мягко: «странных» пальцев не бывает — бывают только пальцы, которые подходят тебе.",
       footer_bron: "По книгам Tenen Lezen I · II · III и Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Зеркало пальцев · v9.0 · устанавливается как приложение (PWA) · полное чтение, цветные карточки &amp; «Зеркало рассказывает»",
+      footer_versie: "Зеркало пальцев · v9.1 · устанавливается как приложение (PWA) · полное чтение, цветные карточки &amp; «Зеркало рассказывает»",
       footer_disclaimer: "<b>Полезно знать.</b> «Зеркало пальцев» — игровой и зеркальный инструмент для саморефлексии по книгам Imre &amp; Margriet Somogyi. Приложение и ИИ-анализ не дают гарантий верности или полноты и не ставят медицинских, психологических или иных диагнозов; из результатов нельзя выводить никаких прав. Использование происходит целиком под твою ответственность — создатель этого приложения не несёт никакой ответственности за выводы или решения, принятые на его основе. Беспокоишься о здоровье? Сходи к врачу или на педикюр.",
       linkervoet: "Левая стопа",
       rechtervoet: "Правая стопа",
@@ -4790,7 +4801,7 @@ const TALEN = {
       btn_reset: "Baştan başla",
       disclaimer_spiegel: "Ayak parmağı okumak kişiliği, tutumu ve davranışı yansıtır. Ne eksik ne fazla. Tıbbi ya da psikolojik tanı koymaz; onun için doktora ya da terapiste gidersin. Yorumunda yumuşak ol: “tuhaf” parmak yoktur, yalnızca sana uyan parmaklar vardır.",
       footer_bron: "Tenen Lezen I · II · III ve Babyteentjes Lezen kitaplarına göre · Imre &amp; Margriet Somogyi",
-      footer_versie: "Ayak Parmağı Aynası · v9.0 · uygulama olarak kurulabilir (PWA) · ayrıntılı okuma, renk kartları &amp; Ayna anlatıyor",
+      footer_versie: "Ayak Parmağı Aynası · v9.1 · uygulama olarak kurulabilir (PWA) · ayrıntılı okuma, renk kartları &amp; Ayna anlatıyor",
       footer_disclaimer: "<b>Bilmekte yarar var.</b> Ayak Parmağı Aynası, Imre &amp; Margriet Somogyi’nin kitaplarına dayanan, öz düşünüm için bir oyun ve ayna aracıdır. Uygulama ve yapay zekâ analizi doğruluk ya da eksiksizlik güvencesi vermez; tıbbi, psikolojik ya da başka türden tanı koymaz; sonuçlardan hiçbir hak doğmaz. Kullanım tümüyle kendi sorumluluğundadır — bu uygulamanın yapımcısı, uygulamaya dayanılarak varılan sonuçlar ya da alınan kararlar için hiçbir sorumluluk üstlenmez. Sağlığından mı endişelisin? Aile hekimine ya da ayak bakımına git.",
       linkervoet: "Sol ayak",
       rechtervoet: "Sağ ayak",
@@ -5270,7 +5281,7 @@ const TALEN = {
       btn_reset: "ابدأ من البداية",
       disclaimer_spiegel: "قراءة أصابع القدم تعكس الشخصية والموقف والسلوك. لا أكثر ولا أقل. وهي لا تقدم تشخيصات طبية أو نفسية؛ لذلك تذهب إلى الطبيب أو المعالج. كن رفيقًا في تأويلك: لا توجد أصابع «غريبة»، بل أصابع تناسبك فحسب.",
       footer_bron: "وفق Tenen Lezen I · II · III وBabyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "مرآة أصابع القدم · v9.0 · قابلة للتثبيت كتطبيق (PWA) · قراءة مفصلة وبطاقات ملونة و«المرآة تحكي»",
+      footer_versie: "مرآة أصابع القدم · v9.1 · قابلة للتثبيت كتطبيق (PWA) · قراءة مفصلة وبطاقات ملونة و«المرآة تحكي»",
       footer_disclaimer: "<b>جدير بالمعرفة.</b> مرآة أصابع القدم أداة لعب ومرآة للتأمل الذاتي، وفق كتب Imre &amp; Margriet Somogyi. لا يقدم التطبيق ولا تحليل الذكاء الاصطناعي أي ضمانات للصحة أو الاكتمال، ولا يقدمان تشخيصات طبية أو نفسية أو غيرها؛ ولا يمكن استخلاص أي حقوق من النتائج. الاستخدام على مسؤوليتك الكاملة — لا يتحمل صانع هذا التطبيق أي مسؤولية عن استنتاجات أو قرارات تُبنى على التطبيق. قلق على صحتك؟ اذهب إلى طبيب الأسرة أو أخصائي العناية بالقدم.",
       linkervoet: "القدم اليسرى",
       rechtervoet: "القدم اليمنى",
@@ -5750,7 +5761,7 @@ const TALEN = {
       btn_reset: "从头再来",
       disclaimer_spiegel: "脚趾解读映照的是个性、态度和行为。不多，也不少。它不做任何医学或心理诊断；那些请去找医生或治疗师。解读时请温和一些：没有“奇怪”的脚趾，只有与你相称的脚趾。",
       footer_bron: "依据《Tenen Lezen I · II · III》与《Babyteentjes Lezen》 · Imre &amp; Margriet Somogyi",
-      footer_versie: "脚趾之镜 · v9.0 · 可安装为应用（PWA） · 详细解读、彩色卡片 &amp; 听镜子说",
+      footer_versie: "脚趾之镜 · v9.1 · 可安装为应用（PWA） · 详细解读、彩色卡片 &amp; 听镜子说",
       footer_disclaimer: "<b>请知悉。</b>脚趾之镜是一件用于自省的游戏与映照工具，依据 Imre &amp; Margriet Somogyi 的著作。应用及其 AI 分析不保证正确或完整，不做任何医学、心理或其他诊断；不得依据结果主张任何权利。使用完全由你自行承担风险——对基于本应用得出的结论或作出的决定，应用制作者概不承担任何责任。担心自己的健康？请去看家庭医生或足疗师。",
       linkervoet: "左脚",
       rechtervoet: "右脚",
@@ -6230,7 +6241,7 @@ const TALEN = {
       btn_reset: "最初からやり直す",
       disclaimer_spiegel: "足指リーディングが映すのは、人柄、姿勢、ふるまいです。それ以上でも以下でもありません。医学的・心理学的な診断は行いません。そのためには医師やセラピストのもとへ。解釈はやさしく。「変な」足指はありません。あるのは、あなたに似合う足指だけです。",
       footer_bron: "Tenen Lezen I · II · III および Babyteentjes Lezen にもとづく · Imre &amp; Margriet Somogyi",
-      footer_versie: "足指の鏡 · v9.0 · アプリとしてインストール可能(PWA) · 詳しいリーディング、カラーカード &amp; 鏡が語る",
+      footer_versie: "足指の鏡 · v9.1 · アプリとしてインストール可能(PWA) · 詳しいリーディング、カラーカード &amp; 鏡が語る",
       footer_disclaimer: "<b>知っておいてほしいこと。</b>この足指の鏡は、Imre &amp; Margriet Somogyi の本にもとづく、自己をふり返るための遊びと映しの道具です。アプリとAI分析は、正確さや完全さを保証せず、医学的・心理学的その他の診断は行いません。結果からいかなる権利も生じません。利用はすべて自己責任で行ってください。アプリにもとづく結論や判断について、このアプリの制作者は一切の責任を負いません。健康が心配なときは、かかりつけ医やフットケアの専門家へどうぞ。",
       linkervoet: "左足",
       rechtervoet: "右足",
@@ -6710,7 +6721,7 @@ const TALEN = {
       btn_reset: "처음부터 다시",
       disclaimer_spiegel: "발가락 리딩은 성격과 태도, 행동을 비춰 줘요. 그 이상도 그 이하도 아니에요. 의학적·심리학적 진단은 하지 않아요; 그런 일은 의사나 치료사에게 맡기세요. 풀이는 너그럽게 해 주세요: “이상한” 발가락은 없어요, 당신에게 어울리는 발가락이 있을 뿐이에요.",
       footer_bron: "Tenen Lezen I · II · III과 Babyteentjes Lezen에 기반 · Imre &amp; Margriet Somogyi",
-      footer_versie: "발가락 거울 · v9.0 · 앱으로 설치 가능(PWA) · 자세한 리딩, 색 카드 &amp; 거울이 들려주는 이야기",
+      footer_versie: "발가락 거울 · v9.1 · 앱으로 설치 가능(PWA) · 자세한 리딩, 색 카드 &amp; 거울이 들려주는 이야기",
       footer_disclaimer: "<b>알아 두면 좋아요.</b> 발가락 거울은 Imre &amp; Margriet Somogyi의 책에 바탕을 둔, 자기 성찰을 위한 놀이이자 비춰 보기 도구예요. 앱과 AI 분석은 정확성이나 완전성을 보장하지 않고, 의학적·심리학적 진단이나 그 밖의 어떤 진단도 하지 않아요; 결과로부터 어떤 권리도 주장할 수 없어요. 사용은 전적으로 본인 책임이에요 — 이 앱의 제작자는 앱에 근거한 결론이나 결정에 대해 어떤 책임도 지지 않아요. 건강이 걱정되나요? 주치의나 발 관리사를 찾아 주세요.",
       linkervoet: "왼발",
       rechtervoet: "오른발",
@@ -7190,7 +7201,7 @@ const TALEN = {
       btn_reset: "नए सिरे से शुरू",
       disclaimer_spiegel: "पैर की उँगलियाँ पढ़ना व्यक्तित्व, रवैये और व्यवहार का आईना है। न इससे ज़्यादा, न कम। यह कोई चिकित्सकीय या मनोवैज्ञानिक निदान नहीं करता; उसके लिए आप डॉक्टर या थेरेपिस्ट के पास जाइए। अपनी व्याख्या में कोमल रहिए: “अजीब” उँगलियाँ होती ही नहीं, बस ऐसी उँगलियाँ होती हैं जो आप पर जँचती हैं।",
       footer_bron: "Tenen Lezen I · II · III और Babyteentjes Lezen पर आधारित · Imre &amp; Margriet Somogyi",
-      footer_versie: "उँगलियों का आईना · v9.0 · ऐप (PWA) के रूप में इंस्टॉल करने योग्य · विस्तृत पाठ, रंग-कार्ड &amp; आईना बोलता है",
+      footer_versie: "उँगलियों का आईना · v9.1 · ऐप (PWA) के रूप में इंस्टॉल करने योग्य · विस्तृत पाठ, रंग-कार्ड &amp; आईना बोलता है",
       footer_disclaimer: "<b>जानना अच्छा है।</b> यह उँगलियों का आईना Imre &amp; Margriet Somogyi की किताबों पर आधारित, आत्म-चिंतन के लिए एक खेल और दर्पण-उपकरण है। ऐप और AI-विश्लेषण सटीकता या पूर्णता की कोई गारंटी नहीं देते और कोई चिकित्सकीय, मनोवैज्ञानिक या अन्य निदान नहीं करते; नतीजों से कोई अधिकार नहीं निकलते। उपयोग पूरी तरह आपके अपने जोखिम पर है — इस ऐप के निर्माता ऐप पर आधारित निष्कर्षों या निर्णयों की कोई भी ज़िम्मेदारी नहीं लेते। सेहत की चिंता है? अपने डॉक्टर या पेडीक्योरिस्ट के पास जाइए।",
       linkervoet: "बायाँ पैर",
       rechtervoet: "दायाँ पैर",
@@ -8387,6 +8398,219 @@ const ACC_TALEN = {
   }
 };
 for(const t in ACC_TALEN){ if(TALEN[t] && TALEN[t].ui) Object.assign(TALEN[t].ui, ACC_TALEN[t]); }
+const KOOP_TALEN = {
+  nl: {
+    koop_titel: "Tegoed bijkopen",
+    koop_pakket: "10 analyses",
+    koop_jaar: "Jaar onbeperkt",
+    koop_jaar_noot: "onbeperkt = fair use, tot 60 analyses per maand",
+    koop_wacht: "Betaling gelukt! Je tegoed wordt nu bijgewerkt…",
+    koop_succes: "Gelukt! Je tegoed is bijgewerkt.",
+    koop_fout: "De kassa kon niet openen. Probeer het zo nog eens — of mail support@toereading.app.",
+    koop_login: "Log eerst in of maak een gratis account — daarna opent de kassa vanzelf.",
+    koop_veilig: "Afrekenen verloopt veilig via Paddle · prijzen inclusief btw.",
+    leg_prijzen: "Prijzen",
+    leg_voorwaarden: "Voorwaarden",
+    leg_privacy: "Privacy"
+  },
+  en: {
+    koop_titel: "Top up your balance",
+    koop_pakket: "10 analyses",
+    koop_jaar: "Year unlimited",
+    koop_jaar_noot: "unlimited = fair use, up to 60 analyses per month",
+    koop_wacht: "Payment successful! Your balance is being updated…",
+    koop_succes: "Done! Your balance has been updated.",
+    koop_fout: "The checkout could not open. Please try again in a moment — or email support@toereading.app.",
+    koop_login: "Sign in first or create a free account — the checkout will then open by itself.",
+    koop_veilig: "Checkout is handled securely by Paddle · prices include VAT.",
+    leg_prijzen: "Pricing",
+    leg_voorwaarden: "Terms",
+    leg_privacy: "Privacy"
+  },
+  de: {
+    koop_titel: "Guthaben nachkaufen",
+    koop_pakket: "10 Analysen",
+    koop_jaar: "Jahr unbegrenzt",
+    koop_jaar_noot: "unbegrenzt = fair use, bis zu 60 Analysen pro Monat",
+    koop_wacht: "Zahlung geglückt! Dein Guthaben wird jetzt aktualisiert…",
+    koop_succes: "Geschafft! Dein Guthaben wurde aktualisiert.",
+    koop_fout: "Die Kasse konnte nicht geöffnet werden. Versuch es gleich noch einmal — oder schreib an support@toereading.app.",
+    koop_login: "Melde dich zuerst an oder erstelle ein kostenloses Konto — danach öffnet sich die Kasse von selbst.",
+    koop_veilig: "Die Zahlung läuft sicher über Paddle · Preise inklusive MwSt.",
+    leg_prijzen: "Preise",
+    leg_voorwaarden: "AGB",
+    leg_privacy: "Datenschutz"
+  },
+  fr: {
+    koop_titel: "Recharger ton crédit",
+    koop_pakket: "10 analyses",
+    koop_jaar: "Un an illimité",
+    koop_jaar_noot: "illimité = usage raisonnable, jusqu'à 60 analyses par mois",
+    koop_wacht: "Paiement réussi ! Ton crédit se met à jour…",
+    koop_succes: "C'est fait ! Ton crédit a été mis à jour.",
+    koop_fout: "La caisse n'a pas pu s'ouvrir. Réessaie dans un instant — ou écris à support@toereading.app.",
+    koop_login: "Connecte-toi d'abord ou crée un compte gratuit — la caisse s'ouvrira ensuite d'elle-même.",
+    koop_veilig: "Le paiement s'effectue en toute sécurité via Paddle · prix TVA comprise.",
+    leg_prijzen: "Tarifs",
+    leg_voorwaarden: "Conditions générales",
+    leg_privacy: "Confidentialité"
+  },
+  es: {
+    koop_titel: "Ampliar tu saldo",
+    koop_pakket: "10 análisis",
+    koop_jaar: "Año ilimitado",
+    koop_jaar_noot: "ilimitado = uso razonable, hasta 60 análisis al mes",
+    koop_wacht: "¡Pago completado! Tu saldo se está actualizando…",
+    koop_succes: "¡Listo! Tu saldo se ha actualizado.",
+    koop_fout: "No se ha podido abrir la caja. Inténtalo de nuevo en un momento — o escribe a support@toereading.app.",
+    koop_login: "Inicia sesión primero o crea una cuenta gratuita — después la caja se abrirá sola.",
+    koop_veilig: "El pago se realiza de forma segura a través de Paddle · precios con IVA incluido.",
+    leg_prijzen: "Precios",
+    leg_voorwaarden: "Condiciones",
+    leg_privacy: "Privacidad"
+  },
+  it: {
+    koop_titel: "Acquista altro credito",
+    koop_pakket: "10 analisi",
+    koop_jaar: "Un anno illimitato",
+    koop_jaar_noot: "illimitato = fair use, fino a 60 analisi al mese",
+    koop_wacht: "Pagamento riuscito! Il tuo credito si sta aggiornando…",
+    koop_succes: "Fatto! Il tuo credito è stato aggiornato.",
+    koop_fout: "La cassa non si è aperta. Riprova tra poco — oppure scrivi a support@toereading.app.",
+    koop_login: "Accedi prima o crea un account gratuito — poi la cassa si aprirà da sola.",
+    koop_veilig: "Il pagamento avviene in modo sicuro tramite Paddle · prezzi IVA inclusa.",
+    leg_prijzen: "Prezzi",
+    leg_voorwaarden: "Condizioni",
+    leg_privacy: "Privacy"
+  },
+  pt: {
+    koop_titel: "Comprar mais saldo",
+    koop_pakket: "10 análises",
+    koop_jaar: "Ano ilimitado",
+    koop_jaar_noot: "ilimitado = uso justo, até 60 análises por mês",
+    koop_wacht: "Pagamento concluído! O teu saldo está a ser atualizado…",
+    koop_succes: "Conseguido! O teu saldo foi atualizado.",
+    koop_fout: "Não foi possível abrir a página de pagamento. Tenta outra vez daqui a pouco — ou escreve para support@toereading.app.",
+    koop_login: "Inicia primeiro sessão ou cria uma conta gratuita — depois a página de pagamento abre-se sozinha.",
+    koop_veilig: "O pagamento é processado em segurança pela Paddle · preços com IVA incluído.",
+    leg_prijzen: "Preços",
+    leg_voorwaarden: "Condições",
+    leg_privacy: "Privacidade"
+  },
+  pl: {
+    koop_titel: "Doładuj saldo",
+    koop_pakket: "10 analiz",
+    koop_jaar: "Rok bez limitu",
+    koop_jaar_noot: "bez limitu = fair use, do 60 analiz miesięcznie",
+    koop_wacht: "Płatność się powiodła! Twoje saldo właśnie się aktualizuje…",
+    koop_succes: "Udało się! Twoje saldo zostało zaktualizowane.",
+    koop_fout: "Nie udało się otworzyć kasy. Spróbuj za chwilę jeszcze raz — albo napisz na support@toereading.app.",
+    koop_login: "Najpierw zaloguj się albo załóż darmowe konto — potem kasa otworzy się sama.",
+    koop_veilig: "Płatność przebiega bezpiecznie przez Paddle · ceny zawierają VAT.",
+    leg_prijzen: "Cennik",
+    leg_voorwaarden: "Regulamin",
+    leg_privacy: "Prywatność"
+  },
+  ru: {
+    koop_titel: "Пополнить запас",
+    koop_pakket: "10 анализов",
+    koop_jaar: "Год без ограничений",
+    koop_jaar_noot: "без ограничений = добросовестное использование, до 60 анализов в месяц",
+    koop_wacht: "Оплата прошла! Твой запас сейчас обновляется…",
+    koop_succes: "Получилось! Твой запас обновлён.",
+    koop_fout: "Касса не смогла открыться. Попробуй чуть позже ещё раз — или напиши на support@toereading.app.",
+    koop_login: "Сначала войди или создай бесплатный аккаунт — после этого касса откроется сама.",
+    koop_veilig: "Оплата проходит безопасно через Paddle · цены включают НДС.",
+    leg_prijzen: "Цены",
+    leg_voorwaarden: "Условия",
+    leg_privacy: "Конфиденциальность"
+  },
+  tr: {
+    koop_titel: "Bakiye satın al",
+    koop_pakket: "10 analiz",
+    koop_jaar: "Bir yıl sınırsız",
+    koop_jaar_noot: "sınırsız = adil kullanım, ayda en çok 60 analiz",
+    koop_wacht: "Ödeme başarılı! Bakiyen şimdi güncelleniyor…",
+    koop_succes: "Oldu! Bakiyen güncellendi.",
+    koop_fout: "Ödeme sayfası açılamadı. Birazdan bir kez daha dene — ya da support@toereading.app adresine yaz.",
+    koop_login: "Önce giriş yap ya da ücretsiz bir hesap oluştur — ardından ödeme sayfası kendiliğinden açılır.",
+    koop_veilig: "Ödeme, Paddle üzerinden güvenle gerçekleşir · fiyatlara KDV dahildir.",
+    leg_prijzen: "Fiyatlar",
+    leg_voorwaarden: "Koşullar",
+    leg_privacy: "Gizlilik"
+  },
+  ar: {
+    koop_titel: "شراء رصيد إضافي",
+    koop_pakket: "10 تحليلات",
+    koop_jaar: "سنة بلا حدود",
+    koop_jaar_noot: "بلا حدود = استخدام عادل، حتى 60 تحليلًا في الشهر",
+    koop_wacht: "تم الدفع بنجاح! يجري الآن تحديث رصيدك…",
+    koop_succes: "تم! جرى تحديث رصيدك.",
+    koop_fout: "تعذر فتح صفحة الدفع. حاول بعد قليل مرة أخرى — أو راسلنا على support@toereading.app.",
+    koop_login: "سجّل الدخول أولًا أو أنشئ حسابًا مجانيًا — وبعدها تُفتح صفحة الدفع من تلقاء نفسها.",
+    koop_veilig: "يتم الدفع بأمان عبر Paddle · الأسعار شاملة ضريبة القيمة المضافة.",
+    leg_prijzen: "الأسعار",
+    leg_voorwaarden: "الشروط",
+    leg_privacy: "الخصوصية"
+  },
+  zh: {
+    koop_titel: "补充额度",
+    koop_pakket: "10 次分析",
+    koop_jaar: "年度不限次",
+    koop_jaar_noot: "不限次＝合理使用，每月最多 60 次分析",
+    koop_wacht: "付款成功！正在为你更新额度……",
+    koop_succes: "成功了！你的额度已更新。",
+    koop_fout: "收银台没能打开。请稍后再试一次——或写信给 support@toereading.app。",
+    koop_login: "请先登录或创建一个免费账户——之后收银台会自动打开。",
+    koop_veilig: "结算通过 Paddle 安全进行 · 价格均含增值税。",
+    leg_prijzen: "价格",
+    leg_voorwaarden: "条款",
+    leg_privacy: "隐私"
+  },
+  ja: {
+    koop_titel: "回数を買い足す",
+    koop_pakket: "分析10回分",
+    koop_jaar: "年間・無制限",
+    koop_jaar_noot: "無制限=フェアユース(月60回の分析まで)",
+    koop_wacht: "お支払いが完了しました!残り回数を更新しています…",
+    koop_succes: "できました!残り回数が更新されました。",
+    koop_fout: "レジを開けませんでした。少ししてから、もう一度お試しください。解決しないときは support@toereading.app までメールをどうぞ。",
+    koop_login: "まずログインするか、無料アカウントを作ってください。そのあと、レジは自動的に開きます。",
+    koop_veilig: "お支払いは Paddle を通じて安全に行われます · 価格は消費税込みです。",
+    leg_prijzen: "料金",
+    leg_voorwaarden: "利用規約",
+    leg_privacy: "プライバシー"
+  },
+  ko: {
+    koop_titel: "이용권 충전하기",
+    koop_pakket: "분석 10회",
+    koop_jaar: "연간 무제한",
+    koop_jaar_noot: "무제한은 공정 이용 기준으로, 한 달에 분석 60회까지예요",
+    koop_wacht: "결제가 완료됐어요! 이용권을 지금 업데이트하고 있어요…",
+    koop_succes: "완료됐어요! 이용권이 업데이트됐어요.",
+    koop_fout: "결제 창을 열지 못했어요. 잠시 후 다시 시도해 주세요 — 또는 support@toereading.app로 메일을 보내 주세요.",
+    koop_login: "먼저 로그인하거나 무료 계정을 만들어 주세요 — 그러면 결제 창이 자동으로 열려요.",
+    koop_veilig: "결제는 Paddle을 통해 안전하게 진행돼요 · 가격은 부가세 포함이에요.",
+    leg_prijzen: "가격 안내",
+    leg_voorwaarden: "이용약관",
+    leg_privacy: "개인정보 처리방침"
+  },
+  hi: {
+    koop_titel: "बैलेंस खरीदिए",
+    koop_pakket: "10 विश्लेषण",
+    koop_jaar: "साल भर असीमित",
+    koop_jaar_noot: "असीमित = उचित उपयोग, प्रति माह अधिकतम 60 विश्लेषण",
+    koop_wacht: "भुगतान हो गया! आपका बैलेंस अभी अपडेट किया जा रहा है…",
+    koop_succes: "हो गया! आपका बैलेंस अपडेट हो गया है।",
+    koop_fout: "चेकआउट खुल नहीं सका। थोड़ी देर में फिर कोशिश कीजिए — या support@toereading.app पर मेल कीजिए।",
+    koop_login: "पहले लॉग इन कीजिए या मुफ़्त खाता बनाइए — उसके बाद चेकआउट अपने आप खुल जाएगा।",
+    koop_veilig: "भुगतान Paddle के ज़रिए सुरक्षित रूप से होता है · कीमतें कर (VAT) सहित।",
+    leg_prijzen: "कीमतें",
+    leg_voorwaarden: "नियम व शर्तें",
+    leg_privacy: "गोपनीयता"
+  }
+};
+for(const t in KOOP_TALEN){ if(TALEN[t] && TALEN[t].ui) Object.assign(TALEN[t].ui, KOOP_TALEN[t]); }
 const TAAL_NAMEN = { nl:'Nederlands', en:"English", de:"Deutsch", fr:"Français", es:"Español", it:"Italiano", pt:"Português", pl:"Polski", ru:"Русский", tr:"Türkçe", ar:"العربية", zh:"中文", ja:"日本語", ko:"한국어", hi:"हिन्दी" };
 const TAAL_BETA = { en:"beta", de:"Beta", fr:"bêta", es:"beta", it:"beta", pt:"beta", pl:"Beta", ru:"Бета", tr:"Beta", ar:"تجريبي", zh:"测试版", ja:"ベータ", ko:"베타", hi:"बीटा" };
 let TAAL = (()=>{ try{ if(localStorage.taal && TALEN[localStorage.taal]) return localStorage.taal; }catch(e){}
@@ -8849,6 +9073,9 @@ const AI_WORKER = new URLSearchParams(location.search).get('worker') || 'https:/
 const SB_URL = 'https://kfdtppnwhljivbcutxcm.supabase.co';
 const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtmZHRwcG53aGxqaXZiY3V0eGNtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM4MzAwOTQsImV4cCI6MjA5OTQwNjA5NH0.EQ_g5xEULelqYIdKBg7WI-m0-JorF7Cro6w7oNOhMV8';
 const FAIRUSE_MAAND = 60;
+const PADDLE_TOKEN = 'live_b54c01c6173c83d34f8eb044f59';
+const PADDLE_PRIJS = { pakket10: 'pri_01kxe9r5t36c00hh08z905c707', jaar: 'pri_01kxe9nc82abz28ma8qgqph758' };
+const PADDLE_LOCALES = { nl:'nl', en:'en', de:'de', fr:'fr', es:'es', it:'it', pt:'pt', pl:'pl', ru:'ru', tr:'tr', zh:'zh-Hans', ja:'ja', ko:'ko' };
 const DEMO = new URLSearchParams(location.search).has('demo');
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const wacht = ms => new Promise(r => setTimeout(r, ms));
@@ -9024,7 +9251,7 @@ async function analyseerFoto(){
   }
   updateAnalyseKnop();
   if(!resu || resu.ok !== true){
-    if(resu && accFoutcode(resu.code)) { zetStatus(esc(accFoutTekst(resu.code)),'fout'); return; }
+    if(resu && accFoutcode(resu.code)) { zetStatus(esc(accFoutTekst(resu.code)),'fout'); if(resu.code === 'tegoed_op') accFoutcodeActie(resu.code); return; }
     zetStatus(esc((resu && resu.reden) || T('ui.fout_analyse')),'fout');
     return;
   }
@@ -9119,7 +9346,7 @@ async function deSpiegelVertelt(uitgebreid){
   }
   btn.disabled = false; if(lbtn){ lbtn.disabled = false; updateLezingKnop(); }
   if(!resu || resu.ok !== true || !resu.vertelt){
-    if(resu && accFoutcode(resu.code)){ uit.innerHTML = '<div class="fotostatus fout" style="margin-top:10px">'+esc(accFoutTekst(resu.code))+'</div>'; return; }
+    if(resu && accFoutcode(resu.code)){ uit.innerHTML = '<div class="fotostatus fout" style="margin-top:10px">'+esc(accFoutTekst(resu.code))+'</div>'; if(resu.code === 'tegoed_op') accFoutcodeActie(resu.code); return; }
     uit.innerHTML = '<div class="fotostatus fout" style="margin-top:10px">'+esc((resu && resu.reden) || T('ui.fout_duiding'))+' <span style="font-weight:400;color:var(--inkt-zacht)">'+T('ui.versie_noot')+'</span></div>';
     return;
   }
@@ -9348,6 +9575,10 @@ function renderAccountPaneel(){
       '<div class="accinfo">' + T('ui.acc_code_vraag') + '</div>' +
       '<div class="acccode"><input class="accveld" id="accCode" type="text" autocomplete="off" placeholder="TS-XXXX-XXXX" style="margin:0">' +
       '<button class="knop knop-licht" id="accDoeCode" style="white-space:nowrap">' + T('ui.acc_btn_code') + '</button></div>' +
+      '<div class="koopblok"><b>' + T('ui.koop_titel') + '</b>' +
+      '<button class="koopknop" id="accKoopPakket"><span>' + T('ui.koop_pakket') + '</span><span class="prijs">\u20ac\u00a04,99</span></button>' +
+      '<button class="koopknop" id="accKoopJaar"><span>' + T('ui.koop_jaar') + '</span><span class="prijs">\u20ac\u00a039,99</span></button>' +
+      '<div class="koopnoot">' + esc(T('ui.koop_jaar_noot')) + '<br>' + esc(T('ui.koop_veilig')) + '</div></div>' +
       '<div class="accknoppen"><button class="knop knop-ghost2" id="accUit">' + T('ui.acc_btn_uitloggen') + '</button></div>';
   } else {
     html = X + '<h3 id="accTitel">' + T('ui.acc_titel_login') + '</h3>' + accMsgHtml() +
@@ -9363,6 +9594,8 @@ function renderAccountPaneel(){
   bind('accWissel', () => { accMelding = ''; accModus = (accModus === 'login' ? 'registreer' : 'login'); renderAccountPaneel(); });
   bind('accHerstelLink', () => { accMelding = ''; accModus = 'herstel'; renderAccountPaneel(); });
   bind('accUit', accUitloggen);
+  bind('accKoopPakket', () => koopStart('pakket10'));
+  bind('accKoopJaar', () => koopStart('jaar'));
   bind('accDoeCode', accDoeCode);
   bind('accDoe', accDoe);
   const eersteVeld = p.querySelector('input');
@@ -9385,7 +9618,7 @@ async function accDoe(){
   else if(accModus === 'herstel') uit = await accHerstel(email.trim());
   else uit = await accNieuwWachtwoord(ww);
   if(!uit.ok){ accToonFout(uit.fout || 'acc_fout_net'); return; }
-  if(accModus === 'login'){ accModus = 'account'; accMelding = ''; renderAccountUI(); renderAccountPaneel(); laadTegoed(); }
+  if(accModus === 'login'){ accModus = 'account'; accMelding = ''; renderAccountUI(); renderAccountPaneel(); laadTegoed(); if(koopPending){ const s = koopPending; koopPending = null; setTimeout(() => koopStart(s), 400); } }
   else if(accModus === 'registreer'){
     if(uit.direct){ accModus = 'account'; accMelding = ''; renderAccountUI(); renderAccountPaneel(); laadTegoed(); }
     else { accModus = 'mail'; accMelding = ''; renderAccountPaneel(); }
@@ -9443,11 +9676,85 @@ function initAccount(){
   }
 }
 
+
+/* ================= KASSA (Paddle overlay, v9.1) ================= */
+let koopPending = null, paddleLaden = null, paddleKlaar = false, koopPollTimers = [], koopVorigTegoed = null;
+function laadPaddle(){
+  if(paddleKlaar) return Promise.resolve(true);
+  if(paddleLaden) return paddleLaden;
+  paddleLaden = new Promise((klaar) => {
+    const s = document.createElement('script');
+    const wekker = setTimeout(() => { if(!paddleKlaar){ paddleLaden = null; klaar(false); } }, 8000);
+    s.src = 'https://cdn.paddle.com/paddle/v2/paddle.js';
+    s.onload = () => {
+      clearTimeout(wekker);
+      try{
+        Paddle.Initialize({ token: PADDLE_TOKEN, eventCallback: paddleEvent });
+        paddleKlaar = true; klaar(true);
+      }catch(e){ paddleLaden = null; klaar(false); }
+    };
+    s.onerror = () => { clearTimeout(wekker); paddleLaden = null; klaar(false); };
+    document.head.appendChild(s);
+  });
+  return paddleLaden;
+}
+function paddleEvent(ev){
+  if(!ev || !ev.name) return;
+  if(ev.name === 'checkout.completed'){
+    try{ Paddle.Checkout.close(); }catch(e){}
+    koopVorigTegoed = JSON.stringify(laatsteTegoed || null);
+    openAccount('account', T('ui.koop_wacht'));
+    koopPollTimers.forEach(clearTimeout); koopPollTimers = [];
+    [2500, 6000, 12000, 22000, 40000].forEach(ms => koopPollTimers.push(setTimeout(koopPoll, ms)));
+  }
+}
+async function koopPoll(){
+  const g = await laadTegoed();
+  if(g && JSON.stringify(g) !== koopVorigTegoed){
+    koopPollTimers.forEach(clearTimeout); koopPollTimers = [];
+    accMelding = T('ui.koop_succes'); accMeldingFout = false;
+    const ov = document.getElementById('accOverlay');
+    if(ov && !ov.hidden && accModus === 'account') renderAccountPaneel();
+  }
+}
+async function koopStart(soort){
+  if(!PADDLE_PRIJS[soort]) return;
+  const s = accSessie();
+  if(!s){ koopPending = soort; openAccount('login', T('ui.koop_login')); return; }
+  const knoppen = [document.getElementById('accKoopPakket'), document.getElementById('accKoopJaar')].filter(Boolean);
+  knoppen.forEach(k => { k.disabled = true; });
+  const ok = await laadPaddle();
+  knoppen.forEach(k => { k.disabled = false; });
+  if(!ok){ openAccount('account', T('ui.koop_fout')); accMeldingFout = true; renderAccountPaneel(); return; }
+  const conf = {
+    items: [{ priceId: PADDLE_PRIJS[soort], quantity: 1 }],
+    customData: { uid: s.uid || '', soort: soort },
+    settings: { displayMode: 'overlay', variant: 'one-page', showAddDiscounts: false }
+  };
+  if(PADDLE_LOCALES[TAAL]) conf.settings.locale = PADDLE_LOCALES[TAAL];
+  if(s.email) conf.customer = { email: s.email };
+  try{ Paddle.Checkout.open(conf); }
+  catch(e){ openAccount('account', T('ui.koop_fout')); accMeldingFout = true; renderAccountPaneel(); }
+}
+function initKoop(){
+  let par = null;
+  try{ par = new URLSearchParams(location.search).get('koop'); }catch(e){}
+  if(par !== 'pakket10' && par !== 'jaar') return;
+  try{
+    const qs = new URLSearchParams(location.search);
+    qs.delete('koop');
+    const rest = qs.toString();
+    history.replaceState(null, '', location.pathname + (rest ? '?' + rest : '') + location.hash);
+  }catch(e){}
+  setTimeout(() => koopStart(par), 600);
+}
+
 vertaalPagina();
 initTaal();
 bouwVoeten();
 initFoto();
 initAccount();
+initKoop();
 </script>
 <script>
 if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost')){
