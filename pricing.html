@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-taal="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#EFE8D8">
+<title>Pricing · Toe Reading</title>
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--papier:#EFE8D8;--kaart:#FBF7EC;--inkt:#2B2118;--inkt-zacht:#6B5D4A;--lijn:#CBBD9F;--lijn-zacht:#DCD2BA;--aarde:#8A6A3F;--water:#2F6E62;--vuur:#B84A28}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:'Karla',sans-serif;line-height:1.65;font-size:17px}
+.wrap{max-width:860px;margin:0 auto;padding:24px 20px 64px}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0 20px;border-bottom:1px solid var(--lijn-zacht)}
+.merk{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--inkt)}
+.merk img{width:34px;height:34px;border-radius:8px}
+.merk b{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600}
+.talen{display:flex;gap:6px}
+.talen button{border:1px solid var(--lijn);background:var(--kaart);color:var(--inkt-zacht);border-radius:999px;padding:5px 14px;font-family:'Karla',sans-serif;font-weight:700;font-size:.85rem;cursor:pointer}
+.talen button.actief{background:var(--inkt);color:var(--kaart);border-color:var(--inkt)}
+h1{font-family:'Fraunces',serif;font-weight:900;font-size:1.9rem;line-height:1.2;margin:28px 0 4px;text-align:center}
+.sub{color:var(--inkt-zacht);text-align:center;margin:0 0 26px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:22px 0}
+.kaart{background:var(--kaart);border:1px solid var(--lijn-zacht);border-radius:16px;padding:22px 20px;display:flex;flex-direction:column}
+.kaart.uitgelicht{border:2px solid var(--aarde);position:relative}
+.badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--aarde);color:var(--kaart);border-radius:999px;font-size:.75rem;font-weight:700;padding:2px 12px;white-space:nowrap}
+.kaart h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;margin:0 0 6px}
+.prijs{font-family:'Fraunces',serif;font-weight:900;font-size:2rem;margin:2px 0}
+.prijs small{font-family:'Karla',sans-serif;font-weight:400;font-size:.95rem;color:var(--inkt-zacht)}
+.kaart ul{padding-left:18px;margin:12px 0 0;flex:1}
+.kaart li{margin:6px 0;font-size:.95rem}
+.koop{display:block;text-align:center;margin-top:16px;background:var(--aarde);color:var(--kaart);text-decoration:none;font-weight:700;border-radius:999px;padding:9px 18px;font-size:.95rem}
+.koop.stil{background:transparent;color:var(--aarde);border:1px solid var(--aarde)}
+.cta{display:block;text-align:center;margin:30px auto 0;background:var(--inkt);color:var(--kaart);text-decoration:none;font-weight:700;border-radius:999px;padding:12px 34px;width:fit-content}
+.noot{text-align:center;color:var(--inkt-zacht);font-size:.9rem;margin-top:18px}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;margin:36px 0 6px}
+a{color:var(--water)}
+footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--lijn-zacht);font-size:.9rem;color:var(--inkt-zacht)}
+footer nav{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:10px}
+[lang-blok]{display:none}
+html[data-taal="en"] [lang-blok="en"]{display:block}
+html[data-taal="nl"] [lang-blok="nl"]{display:block}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="merk" href="./"><img src="icons/icon-192.png" alt=""><b>Toe Reading</b></a>
+  <nav class="talen"><button data-t="en">EN</button><button data-t="nl">NL</button></nav>
+</header>
+
+<main lang-blok="en">
+<h1>Simple, honest pricing</h1>
+<p class="sub">One credit = one complete reading: photo analysis plus the full interpretation, "The mirror speaks". In 15 languages.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Try it free</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li><strong>3 full readings</strong> when you create an account</li>
+      <li>No payment details needed</li>
+      <li>Explore the toe encyclopedia freely, no account required</li>
+    </ul>
+    <a class="koop stil" href="./">Create a free account</a>
+  </div>
+  <div class="kaart">
+    <h2>10-pack</h2>
+    <div class="prijs">€4.99 <small>one-time</small></div>
+    <ul>
+      <li><strong>10 full readings</strong></li>
+      <li>Credits never expire</li>
+      <li>Buy again whenever you like</li>
+      <li>Great for reading friends &amp; family</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Buy in the app</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">Best value</span>
+    <h2>Year</h2>
+    <div class="prijs">€39.99 <small>/ year</small></div>
+    <ul>
+      <li><strong>A full year of readings</strong></li>
+      <li>Fair use: up to 60 readings per month</li>
+      <li>Renews yearly — cancel anytime</li>
+      <li>Reminder e-mail before every renewal</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Buy in the app</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Open Toe Reading</a>
+<p class="noot">You buy inside the app, after signing in — that way the credits land on <em>your</em> account. All prices include VAT. Payments are handled securely by Paddle, our Merchant of Record. Full refund within 14 days if credits are unused — see the <a href="refund.html">Refund Policy</a>.</p>
+
+<h3>Good to know</h3>
+<p><strong>What happens to my photos?</strong> They're analysed and immediately discarded — never stored, never used to train AI. <a href="privacy.html">Privacy Policy</a>.</p>
+<p><strong>Is this medical advice?</strong> No. Toe Reading is for entertainment and self-reflection only — see our <a href="terms.html">Terms</a>.</p>
+<p><strong>Which credits are used first?</strong> Free first, then pack credits, then your subscription.</p>
+</main>
+
+<main lang-blok="nl">
+<h1>Eerlijke, simpele prijzen</h1>
+<p class="sub">Eén tegoed = één complete lezing: foto-analyse plus de volledige duiding, "De spiegel vertelt". In 15 talen.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Probeer gratis</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li><strong>3 volledige lezingen</strong> bij het aanmaken van een account</li>
+      <li>Geen betaalgegevens nodig</li>
+      <li>De tenen-encyclopedie vrij te verkennen, zonder account</li>
+    </ul>
+    <a class="koop stil" href="./">Maak een gratis account</a>
+  </div>
+  <div class="kaart">
+    <h2>10-pakket</h2>
+    <div class="prijs">€4,99 <small>eenmalig</small></div>
+    <ul>
+      <li><strong>10 volledige lezingen</strong></li>
+      <li>Tegoed verloopt nooit</li>
+      <li>Koop bij wanneer je wilt</li>
+      <li>Leuk om vrienden &amp; familie te lezen</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Koop in de app</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">Beste deal</span>
+    <h2>Jaar</h2>
+    <div class="prijs">€39,99 <small>/ jaar</small></div>
+    <ul>
+      <li><strong>Een heel jaar lezingen</strong></li>
+      <li>Fair use: tot 60 lezingen per maand</li>
+      <li>Verlengt jaarlijks — altijd opzegbaar</li>
+      <li>Herinneringsmail vóór elke verlenging</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Koop in de app</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Open Toe Reading</a>
+<p class="noot">Kopen doe je in de app, na het inloggen — zo wordt het tegoed op <em>jouw</em> account bijgeschreven. Alle prijzen zijn inclusief btw. Betalingen verlopen veilig via Paddle, onze Merchant of Record. Volledige terugbetaling binnen 14 dagen als het tegoed ongebruikt is — zie het <a href="refund.html">terugbetalingsbeleid</a>.</p>
+
+<h3>Goed om te weten</h3>
+<p><strong>Wat gebeurt er met mijn foto's?</strong> Ze worden geanalyseerd en direct weggegooid — nooit opgeslagen, nooit gebruikt om AI te trainen. <a href="privacy.html">Privacyverklaring</a>.</p>
+<p><strong>Is dit medisch advies?</strong> Nee. Toe Reading is uitsluitend voor entertainment en zelfreflectie — zie onze <a href="terms.html">voorwaarden</a>.</p>
+<p><strong>Welk tegoed gaat eerst op?</strong> Eerst gratis, dan pakket-tegoed, dan je abonnement.</p>
+</main>
+
+<footer>
+<nav>
+<a href="./">App</a>
+<a href="pricing.html">Pricing · Prijzen</a>
+<a href="terms.html">Terms · Voorwaarden</a>
+<a href="privacy.html">Privacy</a>
+<a href="refund.html">Refunds</a>
+</nav>
+<div>Toe Reading · Ferri Somogyi Productions · KvK 34286815 · <a href="mailto:support@toereading.app">support@toereading.app</a></div>
+</footer>
+</div>
+<script>
+(function(){
+  var t='en';
+  try{ t = localStorage.legal_taal || ((localStorage.taal==='nl' || (navigator.language||'').slice(0,2).toLowerCase()==='nl')?'nl':'en'); }catch(e){}
+  if(t!=='nl') t='en';
+  function zet(x){
+    document.documentElement.setAttribute('data-taal',x);
+    document.documentElement.lang=x;
+    document.querySelectorAll('.talen button').forEach(function(b){b.classList.toggle('actief',b.getAttribute('data-t')===x);});
+    try{localStorage.legal_taal=x;}catch(e){}
+  }
+  document.querySelectorAll('.talen button').forEach(function(b){b.onclick=function(){zet(b.getAttribute('data-t'));};});
+  zet(t);
+})();
+</script>
+</body>
+</html>
