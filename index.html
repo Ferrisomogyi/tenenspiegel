@@ -203,12 +203,36 @@ html[dir="rtl"] #taalMenu button{text-align:right}
 html[dir="rtl"] .voetlabels{direction:ltr} /* SVG-voeten spiegelen niet mee: labels vast op fysieke plek houden (les live-check 13 juli) */
 html[dir="rtl"] #taalMenu .beta{margin-left:0;margin-right:6px}
 @media(min-width:760px){html[dir="rtl"] .ainoot{padding-left:0;padding-right:140px}}
+/* ---- accounts & tegoed (v9.0) ---- */
+.taalhoek{display:flex;gap:8px;justify-content:flex-end}
+#accKnop{font-family:'Karla',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.04em;color:var(--inkt);background:var(--kaart);border:1.5px solid var(--inkt);border-radius:999px;padding:6px 12px;cursor:pointer;box-shadow:2px 2px 0 rgba(43,33,24,.12);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#accKnop:hover{background:#F3ECDB}
+#accOverlay{position:fixed;inset:0;background:rgba(43,33,24,.45);z-index:200;display:flex;align-items:flex-start;justify-content:center;padding:42px 16px;overflow:auto}
+#accPaneel{position:relative;background:var(--kaart);border:1.5px solid var(--inkt);border-radius:16px;box-shadow:6px 6px 0 rgba(43,33,24,.15);max-width:430px;width:100%;padding:22px 24px 20px;font-family:'Karla',sans-serif}
+#accPaneel h3{font-family:'Fraunces',serif;font-size:22px;margin:0 0 10px;padding-right:26px}
+html[dir="rtl"] #accPaneel h3{padding-right:0;padding-left:26px}
+.accx{position:absolute;top:12px;right:12px;background:none;border:none;font-size:20px;line-height:1;cursor:pointer;color:var(--inkt);padding:4px}
+html[dir="rtl"] .accx{right:auto;left:12px}
+.acclbl{display:block;font-size:13px;font-weight:700;letter-spacing:.03em;margin-top:10px}
+.acclbl small{font-weight:400;color:var(--inkt-zacht)}
+.accveld{display:block;width:100%;box-sizing:border-box;margin:5px 0 2px;padding:10px 12px;font:inherit;color:var(--inkt);border:1.5px solid var(--inkt);border-radius:10px;background:#FFFDF7}
+.accmsg{margin:10px 0 4px;padding:9px 12px;border:1.5px solid var(--lijn);border-radius:10px;font-size:14px;background:#F3ECDB}
+.accmsg.fout{border-color:#B4574B;color:#7A2A22;background:#F7E9E4}
+.accknoppen{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.acclink{background:none;border:none;color:var(--inkt);text-decoration:underline;cursor:pointer;font:inherit;font-size:13.5px;padding:0;margin-top:10px;display:block}
+.accinfo{font-size:13px;color:var(--inkt-zacht);margin-top:10px}
+.acctegoed{margin-top:12px;padding:10px 12px;border:1.5px dashed var(--inkt);border-radius:10px;font-size:14px;background:#F7F1E1}
+.acctegoed b{display:block;margin-bottom:2px}
+.acccode{display:flex;gap:8px;margin-top:8px}
+.acccode input{flex:1;min-width:0}
+.tegoedbalk{margin:0 0 12px;padding:8px 12px;border:1.5px dashed var(--inkt);border-radius:10px;font-size:13.5px;background:#F7F1E1}
 </style>
 </head>
 <body>
 
 <header class="wrap">
   <div class="taalhoek">
+    <button id="accKnop" type="button" aria-haspopup="dialog" data-t-aria="ui.acc_aria" aria-label="Account">👤</button>
     <button id="taalKnop" type="button" aria-haspopup="listbox" data-t-aria="ui.aria_taal" aria-label="Taal / Language">🌐 NL</button>
     <div id="taalMenu" role="listbox" hidden></div>
   </div>
@@ -219,6 +243,10 @@ html[dir="rtl"] #taalMenu .beta{margin-left:0;margin-right:6px}
     <span class="e1" data-t="element.1.naam">Ether</span><span class="e2" data-t="element.2.naam">Lucht</span><span class="e3" data-t="element.3.naam">Vuur</span><span class="e4" data-t="element.4.naam">Water</span><span class="e5" data-t="element.5.naam">Aarde</span>
   </div>
 </header>
+
+<div id="accOverlay" hidden>
+  <div id="accPaneel" role="dialog" aria-modal="true" aria-labelledby="accTitel"></div>
+</div>
 
 <section class="wrap" id="stapfoto">
   <div class="stap">
@@ -278,6 +306,7 @@ html[dir="rtl"] #taalMenu .beta{margin-left:0;margin-right:6px}
           </div>
         </div>
       </div>
+      <div class="tegoedbalk" id="tegoedBalk" hidden></div>
       <div class="foto-acties">
         <button class="knop knop-donker" id="analyseerBtn" disabled data-t="ui.btn_analyseer">Analyseer mijn voeten</button>
         <button class="knop knop-ghost2" id="fotoWissen" hidden data-t="ui.btn_opnieuw">Opnieuw beginnen</button>
@@ -333,7 +362,7 @@ html[dir="rtl"] #taalMenu .beta{margin-left:0;margin-right:6px}
 
 <footer class="wrap">
   <div class="bron" data-t="ui.footer_bron">Gebaseerd op Tenen Lezen I · II · III en Babyteentjes Lezen · Imre &amp; Margriet Somogyi</div>
-  <div data-t="ui.footer_versie">Tenenspiegel · v8.3 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt</div>
+  <div data-t="ui.footer_versie">Tenenspiegel · v9.0 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt</div>
   <div class="disclaimer" data-t="ui.footer_disclaimer"><b>Goed om te weten.</b> De Tenenspiegel is een spel- en spiegelinstrument voor zelfreflectie, gebaseerd op de boeken van Imre &amp; Margriet Somogyi. De app en de AI-analyse geven geen garanties over juistheid of volledigheid en stellen geen medische, psychologische of andere diagnoses; aan de uitkomsten kunnen geen rechten worden ontleend. Gebruik is volledig op eigen verantwoordelijkheid — de maker van deze app aanvaardt geen enkele aansprakelijkheid voor conclusies of beslissingen die op basis van de app worden genomen. Zorgen over je gezondheid? Ga naar je huisarts of pedicure.</div>
 </footer>
 <script>
@@ -439,7 +468,7 @@ const TALEN = {
       btn_reset: "Begin opnieuw",
       disclaimer_spiegel: "Tenen lezen spiegelt persoonlijkheid, houding en gedrag. Niets meer en niets minder. Het stelt géén medische of psychologische diagnoses; daarvoor ga je naar een arts of therapeut. Wees mild in je interpretatie: \"rare\" tenen bestaan niet, alleen tenen die bij jou passen.",
       footer_bron: "Gebaseerd op Tenen Lezen I · II · III en Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Tenenspiegel · v8.3 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt",
+      footer_versie: "Tenenspiegel · v9.0 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt",
       footer_disclaimer: "<b>Goed om te weten.</b> De Tenenspiegel is een spel- en spiegelinstrument voor zelfreflectie, gebaseerd op de boeken van Imre &amp; Margriet Somogyi. De app en de AI-analyse geven geen garanties over juistheid of volledigheid en stellen geen medische, psychologische of andere diagnoses; aan de uitkomsten kunnen geen rechten worden ontleend. Gebruik is volledig op eigen verantwoordelijkheid — de maker van deze app aanvaardt geen enkele aansprakelijkheid voor conclusies of beslissingen die op basis van de app worden genomen. Zorgen over je gezondheid? Ga naar je huisarts of pedicure.",
       titel: "Tenenlezen · voeten zijn spiegels",
       aria_taal: "Taal / Language"
@@ -896,7 +925,7 @@ const TALEN = {
       btn_reset: "Start again",
       disclaimer_spiegel: "Toe reading mirrors personality, attitude and behaviour. Nothing more and nothing less. It makes no medical or psychological diagnoses; for those you go to a doctor or therapist. Be gentle in your interpretation: there are no \"strange\" toes, only toes that fit you.",
       footer_bron: "Based on Tenen Lezen I · II · III and Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Toe Mirror · v8.3 · installable as an app (PWA) · extended reading, colour cards &amp; The mirror speaks",
+      footer_versie: "Toe Mirror · v9.0 · installable as an app (PWA) · extended reading, colour cards &amp; The mirror speaks",
       footer_disclaimer: "<b>Good to know.</b> The Tenenspiegel is a game and mirroring instrument for self-reflection, based on the books by Imre &amp; Margriet Somogyi. The app and the AI analysis give no guarantees of correctness or completeness and make no medical, psychological or other diagnoses; no rights can be derived from the outcomes. Use is entirely at your own risk — the maker of this app accepts no liability whatsoever for conclusions or decisions based on the app. Worried about your health? See your family doctor or pedicurist.",
       linkervoet: "Left foot",
       rechtervoet: "Right foot",
@@ -1401,7 +1430,7 @@ const TALEN = {
       btn_reset: "Von vorn beginnen",
       disclaimer_spiegel: "Zehenlesen spiegelt Persönlichkeit, Haltung und Verhalten. Nicht mehr und nicht weniger. Es stellt keine medizinischen oder psychologischen Diagnosen; dafür gehst du zu Arzt oder Therapeut. Sei mild in deiner Deutung: „Komische“ Zehen gibt es nicht, nur Zehen, die zu dir passen.",
       footer_bron: "Nach Tenen Lezen I · II · III und Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Zehenspiegel · v8.3 · als App installierbar (PWA) · ausführliche Lesung, Farbkarten &amp; Der Spiegel erzählt",
+      footer_versie: "Zehenspiegel · v9.0 · als App installierbar (PWA) · ausführliche Lesung, Farbkarten &amp; Der Spiegel erzählt",
       footer_disclaimer: "<b>Gut zu wissen.</b> Der Zehenspiegel ist ein Spiel- und Spiegelinstrument zur Selbstreflexion, nach den Büchern von Imre &amp; Margriet Somogyi. App und KI-Analyse geben keine Garantien für Richtigkeit oder Vollständigkeit und stellen keine medizinischen, psychologischen oder sonstigen Diagnosen; aus den Ergebnissen können keine Rechte abgeleitet werden. Die Nutzung geschieht vollständig auf eigene Verantwortung — der Hersteller dieser App übernimmt keinerlei Haftung für Schlüsse oder Entscheidungen auf Grundlage der App. Sorgen um deine Gesundheit? Geh zu Hausarzt oder Fußpflege.",
       linkervoet: "Linker Fuß",
       rechtervoet: "Rechter Fuß",
@@ -1881,7 +1910,7 @@ const TALEN = {
       btn_reset: "Tout recommencer",
       disclaimer_spiegel: "La lecture des orteils reflète la personnalité, l'attitude et le comportement. Rien de plus, rien de moins. Elle ne pose aucun diagnostic médical ou psychologique ; pour cela, va voir un médecin ou un thérapeute. Sois indulgent dans ton interprétation : les orteils « bizarres » n'existent pas, seulement des orteils qui te ressemblent.",
       footer_bron: "D'après Tenen Lezen I · II · III et Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Miroir des orteils · v8.3 · installable comme app (PWA) · lecture approfondie, cartes couleur &amp; Le miroir raconte",
+      footer_versie: "Miroir des orteils · v9.0 · installable comme app (PWA) · lecture approfondie, cartes couleur &amp; Le miroir raconte",
       footer_disclaimer: "<b>Bon à savoir.</b> Le Miroir des orteils est un instrument de jeu et de reflet pour l'autoréflexion, d'après les livres d'Imre &amp; Margriet Somogyi. L'app et l'analyse par IA n'offrent aucune garantie d'exactitude ou d'exhaustivité et ne posent aucun diagnostic médical, psychologique ou autre ; les résultats ne créent aucun droit. L'utilisation se fait entièrement sous ta propre responsabilité — le créateur de cette app décline toute responsabilité pour les conclusions ou décisions prises sur la base de l'app. Des soucis de santé ? Va voir ton médecin ou ton pédicure.",
       linkervoet: "Pied gauche",
       rechtervoet: "Pied droit",
@@ -2361,7 +2390,7 @@ const TALEN = {
       btn_reset: "Volver a empezar",
       disclaimer_spiegel: "La lectura de los dedos del pie refleja personalidad, actitud y conducta. Nada más y nada menos. No establece diagnósticos médicos ni psicológicos; para eso acude a un médico o terapeuta. Sé benévolo al interpretar: no existen dedos «raros», solo dedos que encajan contigo.",
       footer_bron: "Basado en Tenen Lezen I · II · III y Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Espejo de los dedos · v8.3 · instalable como app (PWA) · lectura ampliada, tarjetas de color &amp; El espejo habla",
+      footer_versie: "Espejo de los dedos · v9.0 · instalable como app (PWA) · lectura ampliada, tarjetas de color &amp; El espejo habla",
       footer_disclaimer: "<b>Bueno saberlo.</b> El Espejo de los dedos es un instrumento de juego y de reflejo para la autorreflexión, basado en los libros de Imre &amp; Margriet Somogyi. La app y el análisis por IA no ofrecen garantías de exactitud o integridad y no establecen diagnósticos médicos, psicológicos ni de otro tipo; de los resultados no se derivan derechos. El uso es enteramente bajo tu propia responsabilidad — el creador de esta app no acepta responsabilidad alguna por conclusiones o decisiones tomadas a partir de la app. ¿Preocupado por tu salud? Acude a tu médico de cabecera o podólogo.",
       linkervoet: "Pie izquierdo",
       rechtervoet: "Pie derecho",
@@ -2841,7 +2870,7 @@ const TALEN = {
       btn_reset: "Ricomincia da capo",
       disclaimer_spiegel: "La lettura delle dita dei piedi rispecchia personalità, atteggiamento e comportamento. Niente di più e niente di meno. Non pone diagnosi mediche o psicologiche; per quelle vai da un medico o un terapeuta. Sii indulgente nell’interpretare: le dita «strane» non esistono, solo dita che ti somigliano.",
       footer_bron: "Basato su Tenen Lezen I · II · III e Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Specchio delle dita · v8.3 · installabile come app (PWA) · lettura estesa, carte dei colori &amp; Lo specchio racconta",
+      footer_versie: "Specchio delle dita · v9.0 · installabile come app (PWA) · lettura estesa, carte dei colori &amp; Lo specchio racconta",
       footer_disclaimer: "<b>Buono a sapersi.</b> Lo Specchio delle dita è uno strumento di gioco e di specchio per l'autoriflessione, basato sui libri di Imre &amp; Margriet Somogyi. L'app e l'analisi con IA non danno garanzie di esattezza o completezza e non pongono diagnosi mediche, psicologiche o di altro tipo; dai risultati non deriva alcun diritto. L'uso è interamente sotto la tua responsabilità — il creatore di questa app non si assume alcuna responsabilità per conclusioni o decisioni prese sulla base dell'app. Preoccupato per la tua salute? Vai dal tuo medico o dal podologo.",
       linkervoet: "Piede sinistro",
       rechtervoet: "Piede destro",
@@ -3321,7 +3350,7 @@ const TALEN = {
       btn_reset: "Recomeçar",
       disclaimer_spiegel: "A leitura dos dedos dos pés espelha personalidade, atitude e comportamento. Nada mais e nada menos. Não estabelece diagnósticos médicos nem psicológicos; para isso vais a um médico ou terapeuta. Sê brando na interpretação: dedos «esquisitos» não existem, só dedos que combinam contigo.",
       footer_bron: "Baseado em Tenen Lezen I · II · III e Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Espelho dos dedos · v8.3 · instalável como app (PWA) · leitura alargada, cartões de cor &amp; O espelho conta",
+      footer_versie: "Espelho dos dedos · v9.0 · instalável como app (PWA) · leitura alargada, cartões de cor &amp; O espelho conta",
       footer_disclaimer: "<b>Bom saber.</b> O Espelho dos dedos é um instrumento de jogo e de espelho para a autorreflexão, baseado nos livros de Imre &amp; Margriet Somogyi. A app e a análise por IA não dão garantias de exatidão ou completude e não estabelecem diagnósticos médicos, psicológicos ou outros; dos resultados não decorrem quaisquer direitos. A utilização é inteiramente por tua conta e risco — o criador desta app não aceita qualquer responsabilidade por conclusões ou decisões tomadas com base na app. Preocupado com a tua saúde? Vai ao teu médico de família ou podologista.",
       linkervoet: "Pé esquerdo",
       rechtervoet: "Pé direito",
@@ -3801,7 +3830,7 @@ const TALEN = {
       btn_reset: "Zacznij od początku",
       disclaimer_spiegel: "Czytanie z palców stóp odzwierciedla osobowość, postawę i zachowanie. Nic więcej i nic mniej. Nie stawia diagnoz medycznych ani psychologicznych; z tym idziesz do lekarza lub terapeuty. Bądź łagodny w interpretacji: nie ma „dziwnych” palców, są tylko palce, które do ciebie pasują.",
       footer_bron: "Na podstawie Tenen Lezen I · II · III oraz Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Lustro palców · v8.3 · do zainstalowania jako aplikacja (PWA) · pełny odczyt, karty kolorów &amp; Lustro opowiada",
+      footer_versie: "Lustro palców · v9.0 · do zainstalowania jako aplikacja (PWA) · pełny odczyt, karty kolorów &amp; Lustro opowiada",
       footer_disclaimer: "<b>Warto wiedzieć.</b> Lustro palców to narzędzie zabawy i autorefleksji, oparte na książkach Imre &amp; Margriet Somogyi. Aplikacja i analiza AI nie dają gwarancji poprawności ani kompletności i nie stawiają diagnoz medycznych, psychologicznych ani żadnych innych; z wyników nie można wywodzić żadnych roszczeń. Korzystasz z aplikacji całkowicie na własną odpowiedzialność — jej twórca nie ponosi żadnej odpowiedzialności za wnioski lub decyzje podjęte na jej podstawie. Martwisz się o swoje zdrowie? Idź do lekarza rodzinnego lub podologa.",
       linkervoet: "Lewa stopa",
       rechtervoet: "Prawa stopa",
@@ -4281,7 +4310,7 @@ const TALEN = {
       btn_reset: "Начать с начала",
       disclaimer_spiegel: "Чтение пальцев ног отражает личность, установки и поведение. Не больше и не меньше. Оно не ставит медицинских или психологических диагнозов; за этим — к врачу или психотерапевту. Толкуй мягко: «странных» пальцев не бывает — бывают только пальцы, которые подходят тебе.",
       footer_bron: "По книгам Tenen Lezen I · II · III и Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Зеркало пальцев · v8.3 · устанавливается как приложение (PWA) · полное чтение, цветные карточки &amp; «Зеркало рассказывает»",
+      footer_versie: "Зеркало пальцев · v9.0 · устанавливается как приложение (PWA) · полное чтение, цветные карточки &amp; «Зеркало рассказывает»",
       footer_disclaimer: "<b>Полезно знать.</b> «Зеркало пальцев» — игровой и зеркальный инструмент для саморефлексии по книгам Imre &amp; Margriet Somogyi. Приложение и ИИ-анализ не дают гарантий верности или полноты и не ставят медицинских, психологических или иных диагнозов; из результатов нельзя выводить никаких прав. Использование происходит целиком под твою ответственность — создатель этого приложения не несёт никакой ответственности за выводы или решения, принятые на его основе. Беспокоишься о здоровье? Сходи к врачу или на педикюр.",
       linkervoet: "Левая стопа",
       rechtervoet: "Правая стопа",
@@ -4761,7 +4790,7 @@ const TALEN = {
       btn_reset: "Baştan başla",
       disclaimer_spiegel: "Ayak parmağı okumak kişiliği, tutumu ve davranışı yansıtır. Ne eksik ne fazla. Tıbbi ya da psikolojik tanı koymaz; onun için doktora ya da terapiste gidersin. Yorumunda yumuşak ol: “tuhaf” parmak yoktur, yalnızca sana uyan parmaklar vardır.",
       footer_bron: "Tenen Lezen I · II · III ve Babyteentjes Lezen kitaplarına göre · Imre &amp; Margriet Somogyi",
-      footer_versie: "Ayak Parmağı Aynası · v8.3 · uygulama olarak kurulabilir (PWA) · ayrıntılı okuma, renk kartları &amp; Ayna anlatıyor",
+      footer_versie: "Ayak Parmağı Aynası · v9.0 · uygulama olarak kurulabilir (PWA) · ayrıntılı okuma, renk kartları &amp; Ayna anlatıyor",
       footer_disclaimer: "<b>Bilmekte yarar var.</b> Ayak Parmağı Aynası, Imre &amp; Margriet Somogyi’nin kitaplarına dayanan, öz düşünüm için bir oyun ve ayna aracıdır. Uygulama ve yapay zekâ analizi doğruluk ya da eksiksizlik güvencesi vermez; tıbbi, psikolojik ya da başka türden tanı koymaz; sonuçlardan hiçbir hak doğmaz. Kullanım tümüyle kendi sorumluluğundadır — bu uygulamanın yapımcısı, uygulamaya dayanılarak varılan sonuçlar ya da alınan kararlar için hiçbir sorumluluk üstlenmez. Sağlığından mı endişelisin? Aile hekimine ya da ayak bakımına git.",
       linkervoet: "Sol ayak",
       rechtervoet: "Sağ ayak",
@@ -5241,7 +5270,7 @@ const TALEN = {
       btn_reset: "ابدأ من البداية",
       disclaimer_spiegel: "قراءة أصابع القدم تعكس الشخصية والموقف والسلوك. لا أكثر ولا أقل. وهي لا تقدم تشخيصات طبية أو نفسية؛ لذلك تذهب إلى الطبيب أو المعالج. كن رفيقًا في تأويلك: لا توجد أصابع «غريبة»، بل أصابع تناسبك فحسب.",
       footer_bron: "وفق Tenen Lezen I · II · III وBabyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "مرآة أصابع القدم · v8.3 · قابلة للتثبيت كتطبيق (PWA) · قراءة مفصلة وبطاقات ملونة و«المرآة تحكي»",
+      footer_versie: "مرآة أصابع القدم · v9.0 · قابلة للتثبيت كتطبيق (PWA) · قراءة مفصلة وبطاقات ملونة و«المرآة تحكي»",
       footer_disclaimer: "<b>جدير بالمعرفة.</b> مرآة أصابع القدم أداة لعب ومرآة للتأمل الذاتي، وفق كتب Imre &amp; Margriet Somogyi. لا يقدم التطبيق ولا تحليل الذكاء الاصطناعي أي ضمانات للصحة أو الاكتمال، ولا يقدمان تشخيصات طبية أو نفسية أو غيرها؛ ولا يمكن استخلاص أي حقوق من النتائج. الاستخدام على مسؤوليتك الكاملة — لا يتحمل صانع هذا التطبيق أي مسؤولية عن استنتاجات أو قرارات تُبنى على التطبيق. قلق على صحتك؟ اذهب إلى طبيب الأسرة أو أخصائي العناية بالقدم.",
       linkervoet: "القدم اليسرى",
       rechtervoet: "القدم اليمنى",
@@ -5721,7 +5750,7 @@ const TALEN = {
       btn_reset: "从头再来",
       disclaimer_spiegel: "脚趾解读映照的是个性、态度和行为。不多，也不少。它不做任何医学或心理诊断；那些请去找医生或治疗师。解读时请温和一些：没有“奇怪”的脚趾，只有与你相称的脚趾。",
       footer_bron: "依据《Tenen Lezen I · II · III》与《Babyteentjes Lezen》 · Imre &amp; Margriet Somogyi",
-      footer_versie: "脚趾之镜 · v8.3 · 可安装为应用（PWA） · 详细解读、彩色卡片 &amp; 听镜子说",
+      footer_versie: "脚趾之镜 · v9.0 · 可安装为应用（PWA） · 详细解读、彩色卡片 &amp; 听镜子说",
       footer_disclaimer: "<b>请知悉。</b>脚趾之镜是一件用于自省的游戏与映照工具，依据 Imre &amp; Margriet Somogyi 的著作。应用及其 AI 分析不保证正确或完整，不做任何医学、心理或其他诊断；不得依据结果主张任何权利。使用完全由你自行承担风险——对基于本应用得出的结论或作出的决定，应用制作者概不承担任何责任。担心自己的健康？请去看家庭医生或足疗师。",
       linkervoet: "左脚",
       rechtervoet: "右脚",
@@ -6201,7 +6230,7 @@ const TALEN = {
       btn_reset: "最初からやり直す",
       disclaimer_spiegel: "足指リーディングが映すのは、人柄、姿勢、ふるまいです。それ以上でも以下でもありません。医学的・心理学的な診断は行いません。そのためには医師やセラピストのもとへ。解釈はやさしく。「変な」足指はありません。あるのは、あなたに似合う足指だけです。",
       footer_bron: "Tenen Lezen I · II · III および Babyteentjes Lezen にもとづく · Imre &amp; Margriet Somogyi",
-      footer_versie: "足指の鏡 · v8.3 · アプリとしてインストール可能(PWA) · 詳しいリーディング、カラーカード &amp; 鏡が語る",
+      footer_versie: "足指の鏡 · v9.0 · アプリとしてインストール可能(PWA) · 詳しいリーディング、カラーカード &amp; 鏡が語る",
       footer_disclaimer: "<b>知っておいてほしいこと。</b>この足指の鏡は、Imre &amp; Margriet Somogyi の本にもとづく、自己をふり返るための遊びと映しの道具です。アプリとAI分析は、正確さや完全さを保証せず、医学的・心理学的その他の診断は行いません。結果からいかなる権利も生じません。利用はすべて自己責任で行ってください。アプリにもとづく結論や判断について、このアプリの制作者は一切の責任を負いません。健康が心配なときは、かかりつけ医やフットケアの専門家へどうぞ。",
       linkervoet: "左足",
       rechtervoet: "右足",
@@ -6681,7 +6710,7 @@ const TALEN = {
       btn_reset: "처음부터 다시",
       disclaimer_spiegel: "발가락 리딩은 성격과 태도, 행동을 비춰 줘요. 그 이상도 그 이하도 아니에요. 의학적·심리학적 진단은 하지 않아요; 그런 일은 의사나 치료사에게 맡기세요. 풀이는 너그럽게 해 주세요: “이상한” 발가락은 없어요, 당신에게 어울리는 발가락이 있을 뿐이에요.",
       footer_bron: "Tenen Lezen I · II · III과 Babyteentjes Lezen에 기반 · Imre &amp; Margriet Somogyi",
-      footer_versie: "발가락 거울 · v8.3 · 앱으로 설치 가능(PWA) · 자세한 리딩, 색 카드 &amp; 거울이 들려주는 이야기",
+      footer_versie: "발가락 거울 · v9.0 · 앱으로 설치 가능(PWA) · 자세한 리딩, 색 카드 &amp; 거울이 들려주는 이야기",
       footer_disclaimer: "<b>알아 두면 좋아요.</b> 발가락 거울은 Imre &amp; Margriet Somogyi의 책에 바탕을 둔, 자기 성찰을 위한 놀이이자 비춰 보기 도구예요. 앱과 AI 분석은 정확성이나 완전성을 보장하지 않고, 의학적·심리학적 진단이나 그 밖의 어떤 진단도 하지 않아요; 결과로부터 어떤 권리도 주장할 수 없어요. 사용은 전적으로 본인 책임이에요 — 이 앱의 제작자는 앱에 근거한 결론이나 결정에 대해 어떤 책임도 지지 않아요. 건강이 걱정되나요? 주치의나 발 관리사를 찾아 주세요.",
       linkervoet: "왼발",
       rechtervoet: "오른발",
@@ -7161,7 +7190,7 @@ const TALEN = {
       btn_reset: "नए सिरे से शुरू",
       disclaimer_spiegel: "पैर की उँगलियाँ पढ़ना व्यक्तित्व, रवैये और व्यवहार का आईना है। न इससे ज़्यादा, न कम। यह कोई चिकित्सकीय या मनोवैज्ञानिक निदान नहीं करता; उसके लिए आप डॉक्टर या थेरेपिस्ट के पास जाइए। अपनी व्याख्या में कोमल रहिए: “अजीब” उँगलियाँ होती ही नहीं, बस ऐसी उँगलियाँ होती हैं जो आप पर जँचती हैं।",
       footer_bron: "Tenen Lezen I · II · III और Babyteentjes Lezen पर आधारित · Imre &amp; Margriet Somogyi",
-      footer_versie: "उँगलियों का आईना · v8.3 · ऐप (PWA) के रूप में इंस्टॉल करने योग्य · विस्तृत पाठ, रंग-कार्ड &amp; आईना बोलता है",
+      footer_versie: "उँगलियों का आईना · v9.0 · ऐप (PWA) के रूप में इंस्टॉल करने योग्य · विस्तृत पाठ, रंग-कार्ड &amp; आईना बोलता है",
       footer_disclaimer: "<b>जानना अच्छा है।</b> यह उँगलियों का आईना Imre &amp; Margriet Somogyi की किताबों पर आधारित, आत्म-चिंतन के लिए एक खेल और दर्पण-उपकरण है। ऐप और AI-विश्लेषण सटीकता या पूर्णता की कोई गारंटी नहीं देते और कोई चिकित्सकीय, मनोवैज्ञानिक या अन्य निदान नहीं करते; नतीजों से कोई अधिकार नहीं निकलते। उपयोग पूरी तरह आपके अपने जोखिम पर है — इस ऐप के निर्माता ऐप पर आधारित निष्कर्षों या निर्णयों की कोई भी ज़िम्मेदारी नहीं लेते। सेहत की चिंता है? अपने डॉक्टर या पेडीक्योरिस्ट के पास जाइए।",
       linkervoet: "बायाँ पैर",
       rechtervoet: "दायाँ पैर",
@@ -7590,6 +7619,774 @@ const TALEN = {
     }
   }
 };
+const ACC_TALEN = {
+  nl: {
+    acc_aria: "Account",
+    acc_titel_login: "Inloggen",
+    acc_titel_registreer: "Maak een gratis account",
+    acc_titel_herstel: "Wachtwoord vergeten",
+    acc_titel_nieuwww: "Kies een nieuw wachtwoord",
+    acc_titel_account: "Jouw account",
+    acc_intro_registreer: "Je krijgt 3 gratis analyses cadeau. We bewaren alleen je naam en e-mailadres — foto’s worden nooit opgeslagen.",
+    acc_lbl_naam: "Je naam",
+    acc_lbl_email: "E-mailadres",
+    acc_lbl_wachtwoord: "Wachtwoord",
+    acc_lbl_wachtwoord2: "Nieuw wachtwoord",
+    acc_hint_ww: "minimaal 8 tekens",
+    acc_btn_login: "Log in",
+    acc_btn_registreer: "Registreer",
+    acc_btn_herstel: "Stuur herstelmail",
+    acc_btn_nieuwww: "Bewaar wachtwoord",
+    acc_btn_uitloggen: "Uitloggen",
+    acc_btn_sluit: "Sluiten",
+    acc_naar_registreer: "Nog geen account? Registreer gratis",
+    acc_naar_login: "Al een account? Log in",
+    acc_naar_herstel: "Wachtwoord vergeten?",
+    acc_check_mail: "Bijna klaar! We hebben je een e-mail gestuurd — klik op de bevestigingslink en log daarna in.",
+    acc_herstel_gestuurd: "Als dit e-mailadres bij ons bekend is, ontvang je een e-mail met een herstelkoppeling.",
+    acc_bevestigd: "Je e-mailadres is bevestigd — welkom!",
+    acc_ww_gewijzigd: "Je wachtwoord is gewijzigd. Je bent ingelogd.",
+    acc_ingelogd_als: "Ingelogd als",
+    acc_fout_login: "Inloggen is niet gelukt. Controleer je e-mailadres en wachtwoord.",
+    acc_fout_bevestig: "Bevestig eerst je e-mailadres via de link in je mail.",
+    acc_fout_bestaat: "Er bestaat al een account met dit e-mailadres. Log in, of gebruik “Wachtwoord vergeten”.",
+    acc_fout_zwak: "Kies een wachtwoord van minimaal 8 tekens.",
+    acc_fout_email: "Vul een geldig e-mailadres in.",
+    acc_fout_naam: "Vul je naam in.",
+    acc_fout_net: "Kan de accountdienst niet bereiken. Probeer het later opnieuw.",
+    acc_sessie_verlopen: "Je sessie is verlopen. Log opnieuw in.",
+    acc_gate: "Maak een gratis account om de spiegel mee te laten kijken — je krijgt 3 analyses cadeau. Stap I tot en met III blijven vrij te verkennen.",
+    acc_tegoed_kop: "Je tegoed",
+    acc_tegoed_op: "Je analyses zijn op.",
+    acc_tegoed_op_uitleg: "Verzilver een cadeaucode — of houd de app in de gaten: binnenkort kun je hier tegoed bijkopen.",
+    acc_tegoed_onbereikbaar: "De tegoedcontrole is even niet bereikbaar. Probeer het zo opnieuw.",
+    acc_code_vraag: "Heb je een cadeaucode?",
+    acc_btn_code: "Verzilver",
+    acc_code_gelukt_jaar: "Gelukt! Je jaarabonnement staat aan.",
+    acc_code_gelukt_pakket: "Gelukt! Er zijn 10 analyses aan je tegoed toegevoegd.",
+    acc_code_fout: "Deze code is onbekend of al gebruikt.",
+    acc_bezig: "Even geduld…",
+    acc_abo_tot: d=>`jaarabonnement actief tot ${d}`,
+    acc_tegoed_gratis: n=>`nog ${n} gratis ${n===1?'analyse':'analyses'}`,
+    acc_tegoed_pakket: n=>`${n} gekochte ${n===1?'analyse':'analyses'}`,
+    acc_tegoed_abo_maand: n=>`nog ${n} analyses deze maand`
+  },
+  en: {
+    acc_aria: "Account",
+    acc_titel_login: "Sign in",
+    acc_titel_registreer: "Create a free account",
+    acc_titel_herstel: "Forgotten password",
+    acc_titel_nieuwww: "Choose a new password",
+    acc_titel_account: "Your account",
+    acc_intro_registreer: "You receive 3 free analyses as a gift. We only store your name and email address — photos are never stored.",
+    acc_lbl_naam: "Your name",
+    acc_lbl_email: "Email address",
+    acc_lbl_wachtwoord: "Password",
+    acc_lbl_wachtwoord2: "New password",
+    acc_hint_ww: "at least 8 characters",
+    acc_btn_login: "Sign in",
+    acc_btn_registreer: "Register",
+    acc_btn_herstel: "Send recovery email",
+    acc_btn_nieuwww: "Save password",
+    acc_btn_uitloggen: "Sign out",
+    acc_btn_sluit: "Close",
+    acc_naar_registreer: "No account yet? Register for free",
+    acc_naar_login: "Already have an account? Sign in",
+    acc_naar_herstel: "Forgotten your password?",
+    acc_check_mail: "Almost there! We have sent you an email — click the confirmation link, then sign in.",
+    acc_herstel_gestuurd: "If this email address is known to us, you will receive an email with a recovery link.",
+    acc_bevestigd: "Your email address has been confirmed — welcome!",
+    acc_ww_gewijzigd: "Your password has been changed. You are signed in.",
+    acc_ingelogd_als: "Signed in as",
+    acc_fout_login: "Signing in did not work. Check your email address and password.",
+    acc_fout_bevestig: "First confirm your email address via the link in your mail.",
+    acc_fout_bestaat: "An account with this email address already exists. Sign in, or use “Forgotten your password?”.",
+    acc_fout_zwak: "Choose a password of at least 8 characters.",
+    acc_fout_email: "Enter a valid email address.",
+    acc_fout_naam: "Enter your name.",
+    acc_fout_net: "Cannot reach the account service. Please try again later.",
+    acc_sessie_verlopen: "Your session has expired. Please sign in again.",
+    acc_gate: "Create a free account to let the mirror look with you — you receive 3 analyses as a gift. Steps I to III remain free to explore.",
+    acc_tegoed_kop: "Your balance",
+    acc_tegoed_op: "Your analyses have run out.",
+    acc_tegoed_op_uitleg: "Redeem a gift code — or keep an eye on the app: soon you will be able to buy credit here.",
+    acc_tegoed_onbereikbaar: "The balance check is briefly unavailable. Please try again in a moment.",
+    acc_code_vraag: "Do you have a gift code?",
+    acc_btn_code: "Redeem",
+    acc_code_gelukt_jaar: "Done! Your annual subscription is now active.",
+    acc_code_gelukt_pakket: "Done! 10 analyses have been added to your balance.",
+    acc_code_fout: "This code is unknown or has already been used.",
+    acc_bezig: "One moment…",
+    acc_abo_tot: d=>`annual subscription active until ${d}`,
+    acc_tegoed_gratis: n=>`${n} free ${n===1?'analysis':'analyses'} left`,
+    acc_tegoed_pakket: n=>`${n} purchased ${n===1?'analysis':'analyses'}`,
+    acc_tegoed_abo_maand: n=>`${n} analyses left this month`
+  },
+  de: {
+    acc_aria: "Konto",
+    acc_titel_login: "Anmelden",
+    acc_titel_registreer: "Erstelle ein kostenloses Konto",
+    acc_titel_herstel: "Passwort vergessen",
+    acc_titel_nieuwww: "Wähle ein neues Passwort",
+    acc_titel_account: "Dein Konto",
+    acc_intro_registreer: "Du bekommst 3 kostenlose Analysen geschenkt. Wir speichern nur deinen Namen und deine E-Mail-Adresse — Fotos werden niemals gespeichert.",
+    acc_lbl_naam: "Dein Name",
+    acc_lbl_email: "E-Mail-Adresse",
+    acc_lbl_wachtwoord: "Passwort",
+    acc_lbl_wachtwoord2: "Neues Passwort",
+    acc_hint_ww: "mindestens 8 Zeichen",
+    acc_btn_login: "Anmelden",
+    acc_btn_registreer: "Registrieren",
+    acc_btn_herstel: "Wiederherstellungsmail senden",
+    acc_btn_nieuwww: "Passwort speichern",
+    acc_btn_uitloggen: "Abmelden",
+    acc_btn_sluit: "Schließen",
+    acc_naar_registreer: "Noch kein Konto? Registriere dich kostenlos",
+    acc_naar_login: "Schon ein Konto? Melde dich an",
+    acc_naar_herstel: "Passwort vergessen?",
+    acc_check_mail: "Fast geschafft! Wir haben dir eine E-Mail geschickt — klicke auf den Bestätigungslink und melde dich danach an.",
+    acc_herstel_gestuurd: "Wenn diese E-Mail-Adresse bei uns bekannt ist, bekommst du eine E-Mail mit einem Wiederherstellungslink.",
+    acc_bevestigd: "Deine E-Mail-Adresse ist bestätigt — willkommen!",
+    acc_ww_gewijzigd: "Dein Passwort wurde geändert. Du bist angemeldet.",
+    acc_ingelogd_als: "Angemeldet als",
+    acc_fout_login: "Die Anmeldung hat nicht geklappt. Prüfe deine E-Mail-Adresse und dein Passwort.",
+    acc_fout_bevestig: "Bestätige zuerst deine E-Mail-Adresse über den Link in deiner Mail.",
+    acc_fout_bestaat: "Mit dieser E-Mail-Adresse gibt es schon ein Konto. Melde dich an oder nutze „Passwort vergessen?“.",
+    acc_fout_zwak: "Wähle ein Passwort mit mindestens 8 Zeichen.",
+    acc_fout_email: "Gib eine gültige E-Mail-Adresse ein.",
+    acc_fout_naam: "Gib deinen Namen ein.",
+    acc_fout_net: "Der Kontodienst ist nicht erreichbar. Versuch es später erneut.",
+    acc_sessie_verlopen: "Deine Sitzung ist abgelaufen. Melde dich neu an.",
+    acc_gate: "Erstelle ein kostenloses Konto, damit der Spiegel mitschauen kann — du bekommst 3 Analysen geschenkt. Schritt I bis III kannst du weiter frei erkunden.",
+    acc_tegoed_kop: "Dein Guthaben",
+    acc_tegoed_op: "Deine Analysen sind aufgebraucht.",
+    acc_tegoed_op_uitleg: "Löse einen Geschenkcode ein — oder behalte die App im Auge: Bald kannst du hier Guthaben nachkaufen.",
+    acc_tegoed_onbereikbaar: "Die Guthabenprüfung ist gerade nicht erreichbar. Versuch es gleich noch einmal.",
+    acc_code_vraag: "Hast du einen Geschenkcode?",
+    acc_btn_code: "Einlösen",
+    acc_code_gelukt_jaar: "Geschafft! Dein Jahresabo ist aktiv.",
+    acc_code_gelukt_pakket: "Geschafft! Deinem Guthaben wurden 10 Analysen hinzugefügt.",
+    acc_code_fout: "Dieser Code ist unbekannt oder wurde schon benutzt.",
+    acc_bezig: "Einen Moment…",
+    acc_abo_tot: d=>`Jahresabo aktiv bis ${d}`,
+    acc_tegoed_gratis: n=>`noch ${n} kostenlose ${n===1?'Analyse':'Analysen'}`,
+    acc_tegoed_pakket: n=>`${n} gekaufte ${n===1?'Analyse':'Analysen'}`,
+    acc_tegoed_abo_maand: n=>`noch ${n} Analysen in diesem Monat`
+  },
+  fr: {
+    acc_aria: "Compte",
+    acc_titel_login: "Se connecter",
+    acc_titel_registreer: "Crée un compte gratuit",
+    acc_titel_herstel: "Mot de passe oublié",
+    acc_titel_nieuwww: "Choisis un nouveau mot de passe",
+    acc_titel_account: "Ton compte",
+    acc_intro_registreer: "Tu reçois 3 analyses gratuites en cadeau. Nous ne conservons que ton nom et ton adresse e-mail — les photos ne sont jamais enregistrées.",
+    acc_lbl_naam: "Ton nom",
+    acc_lbl_email: "Adresse e-mail",
+    acc_lbl_wachtwoord: "Mot de passe",
+    acc_lbl_wachtwoord2: "Nouveau mot de passe",
+    acc_hint_ww: "au moins 8 caractères",
+    acc_btn_login: "Se connecter",
+    acc_btn_registreer: "S'inscrire",
+    acc_btn_herstel: "Envoyer l'e-mail de récupération",
+    acc_btn_nieuwww: "Enregistrer le mot de passe",
+    acc_btn_uitloggen: "Se déconnecter",
+    acc_btn_sluit: "Fermer",
+    acc_naar_registreer: "Pas encore de compte ? Inscris-toi gratuitement",
+    acc_naar_login: "Déjà un compte ? Connecte-toi",
+    acc_naar_herstel: "Mot de passe oublié ?",
+    acc_check_mail: "Presque fini ! Nous t'avons envoyé un e-mail — clique sur le lien de confirmation, puis connecte-toi.",
+    acc_herstel_gestuurd: "Si cette adresse e-mail nous est connue, tu recevras un e-mail avec un lien de récupération.",
+    acc_bevestigd: "Ton adresse e-mail est confirmée — bienvenue !",
+    acc_ww_gewijzigd: "Ton mot de passe a été modifié. Te voilà connecté.",
+    acc_ingelogd_als: "Connecté en tant que",
+    acc_fout_login: "La connexion n'a pas abouti. Vérifie ton adresse e-mail et ton mot de passe.",
+    acc_fout_bevestig: "Confirme d'abord ton adresse e-mail via le lien reçu par e-mail.",
+    acc_fout_bestaat: "Un compte existe déjà avec cette adresse e-mail. Connecte-toi, ou utilise « Mot de passe oublié ? ».",
+    acc_fout_zwak: "Choisis un mot de passe d'au moins 8 caractères.",
+    acc_fout_email: "Saisis une adresse e-mail valide.",
+    acc_fout_naam: "Indique ton nom.",
+    acc_fout_net: "Impossible de joindre le service des comptes. Réessaie plus tard.",
+    acc_sessie_verlopen: "Ta session a expiré. Reconnecte-toi.",
+    acc_gate: "Crée un compte gratuit pour laisser le miroir regarder avec toi — tu reçois 3 analyses en cadeau. Les étapes I à III restent en libre accès.",
+    acc_tegoed_kop: "Ton crédit",
+    acc_tegoed_op: "Tes analyses sont épuisées.",
+    acc_tegoed_op_uitleg: "Échange un code cadeau — ou garde un œil sur l'app : bientôt, tu pourras acheter du crédit ici.",
+    acc_tegoed_onbereikbaar: "La vérification du crédit est momentanément indisponible. Réessaie dans un instant.",
+    acc_code_vraag: "As-tu un code cadeau ?",
+    acc_btn_code: "Échanger",
+    acc_code_gelukt_jaar: "C'est fait ! Ton abonnement annuel est actif.",
+    acc_code_gelukt_pakket: "C'est fait ! 10 analyses ont été ajoutées à ton crédit.",
+    acc_code_fout: "Ce code est inconnu ou a déjà été utilisé.",
+    acc_bezig: "Un instant…",
+    acc_abo_tot: d=>`abonnement annuel actif jusqu'au ${d}`,
+    acc_tegoed_gratis: n=>`encore ${n} ${n===1?'analyse gratuite':'analyses gratuites'}`,
+    acc_tegoed_pakket: n=>`${n} ${n===1?'analyse achetée':'analyses achetées'}`,
+    acc_tegoed_abo_maand: n=>`encore ${n} analyses ce mois-ci`
+  },
+  es: {
+    acc_aria: "Cuenta",
+    acc_titel_login: "Iniciar sesión",
+    acc_titel_registreer: "Crea una cuenta gratuita",
+    acc_titel_herstel: "Contraseña olvidada",
+    acc_titel_nieuwww: "Elige una contraseña nueva",
+    acc_titel_account: "Tu cuenta",
+    acc_intro_registreer: "Recibes 3 análisis gratis de regalo. Solo guardamos tu nombre y tu correo electrónico — las fotos no se guardan nunca.",
+    acc_lbl_naam: "Tu nombre",
+    acc_lbl_email: "Correo electrónico",
+    acc_lbl_wachtwoord: "Contraseña",
+    acc_lbl_wachtwoord2: "Contraseña nueva",
+    acc_hint_ww: "mínimo 8 caracteres",
+    acc_btn_login: "Inicia sesión",
+    acc_btn_registreer: "Regístrate",
+    acc_btn_herstel: "Enviar correo de recuperación",
+    acc_btn_nieuwww: "Guardar contraseña",
+    acc_btn_uitloggen: "Cerrar sesión",
+    acc_btn_sluit: "Cerrar",
+    acc_naar_registreer: "¿Aún no tienes cuenta? Regístrate gratis",
+    acc_naar_login: "¿Ya tienes cuenta? Inicia sesión",
+    acc_naar_herstel: "¿Has olvidado tu contraseña?",
+    acc_check_mail: "¡Ya casi está! Te hemos enviado un correo — haz clic en el enlace de confirmación y después inicia sesión.",
+    acc_herstel_gestuurd: "Si conocemos esta dirección de correo, recibirás un mensaje con un enlace de recuperación.",
+    acc_bevestigd: "Tu correo electrónico está confirmado — ¡te damos la bienvenida!",
+    acc_ww_gewijzigd: "Tu contraseña se ha cambiado. Ya tienes la sesión iniciada.",
+    acc_ingelogd_als: "Sesión iniciada como",
+    acc_fout_login: "No se ha podido iniciar sesión. Comprueba tu correo electrónico y tu contraseña.",
+    acc_fout_bevestig: "Confirma primero tu correo electrónico con el enlace que te hemos enviado.",
+    acc_fout_bestaat: "Ya existe una cuenta con este correo electrónico. Inicia sesión, o usa «¿Has olvidado tu contraseña?».",
+    acc_fout_zwak: "Elige una contraseña de al menos 8 caracteres.",
+    acc_fout_email: "Introduce un correo electrónico válido.",
+    acc_fout_naam: "Escribe tu nombre.",
+    acc_fout_net: "No se puede contactar con el servicio de cuentas. Inténtalo más tarde.",
+    acc_sessie_verlopen: "Tu sesión ha caducado. Inicia sesión de nuevo.",
+    acc_gate: "Crea una cuenta gratuita para que el espejo mire contigo — recibes 3 análisis de regalo. Los pasos I a III puedes seguir explorándolos libremente.",
+    acc_tegoed_kop: "Tu saldo",
+    acc_tegoed_op: "Tus análisis se han agotado.",
+    acc_tegoed_op_uitleg: "Canjea un código regalo — o mantente atento a la app: pronto podrás comprar más análisis aquí.",
+    acc_tegoed_onbereikbaar: "La comprobación del saldo no está disponible ahora mismo. Vuelve a intentarlo enseguida.",
+    acc_code_vraag: "¿Tienes un código regalo?",
+    acc_btn_code: "Canjear",
+    acc_code_gelukt_jaar: "¡Listo! Tu suscripción anual ya está activa.",
+    acc_code_gelukt_pakket: "¡Listo! Se han añadido 10 análisis a tu saldo.",
+    acc_code_fout: "Este código no existe o ya se ha usado.",
+    acc_bezig: "Un momento…",
+    acc_abo_tot: d=>`suscripción anual activa hasta ${d}`,
+    acc_tegoed_gratis: n=>`${n===1?'te queda':'te quedan'} ${n} análisis gratis`,
+    acc_tegoed_pakket: n=>`${n} análisis ${n===1?'comprado':'comprados'}`,
+    acc_tegoed_abo_maand: n=>`${n===1?'te queda':'te quedan'} ${n} análisis este mes`
+  },
+  it: {
+    acc_aria: "Account",
+    acc_titel_login: "Accedi",
+    acc_titel_registreer: "Crea un account gratuito",
+    acc_titel_herstel: "Password dimenticata",
+    acc_titel_nieuwww: "Scegli una nuova password",
+    acc_titel_account: "Il tuo account",
+    acc_intro_registreer: "Ricevi in regalo 3 analisi gratuite. Conserviamo solo il tuo nome e il tuo indirizzo e-mail — le foto non vengono mai salvate.",
+    acc_lbl_naam: "Il tuo nome",
+    acc_lbl_email: "Indirizzo e-mail",
+    acc_lbl_wachtwoord: "Password",
+    acc_lbl_wachtwoord2: "Nuova password",
+    acc_hint_ww: "almeno 8 caratteri",
+    acc_btn_login: "Accedi",
+    acc_btn_registreer: "Registrati",
+    acc_btn_herstel: "Invia l'e-mail di recupero",
+    acc_btn_nieuwww: "Salva la password",
+    acc_btn_uitloggen: "Esci",
+    acc_btn_sluit: "Chiudi",
+    acc_naar_registreer: "Non hai ancora un account? Registrati gratis",
+    acc_naar_login: "Hai già un account? Accedi",
+    acc_naar_herstel: "Password dimenticata?",
+    acc_check_mail: "Ci sei quasi! Ti abbiamo inviato un'e-mail — clicca sul link di conferma e poi accedi.",
+    acc_herstel_gestuurd: "Se questo indirizzo e-mail ci è noto, riceverai un'e-mail con un link di recupero.",
+    acc_bevestigd: "Il tuo indirizzo e-mail è stato confermato — benvenuto!",
+    acc_ww_gewijzigd: "La tua password è stata cambiata. Ora hai effettuato l'accesso.",
+    acc_ingelogd_als: "Accesso effettuato come",
+    acc_fout_login: "L'accesso non è riuscito. Controlla il tuo indirizzo e-mail e la password.",
+    acc_fout_bevestig: "Conferma prima il tuo indirizzo e-mail tramite il link che trovi nella tua e-mail.",
+    acc_fout_bestaat: "Esiste già un account con questo indirizzo e-mail. Accedi, oppure usa «Password dimenticata?».",
+    acc_fout_zwak: "Scegli una password di almeno 8 caratteri.",
+    acc_fout_email: "Inserisci un indirizzo e-mail valido.",
+    acc_fout_naam: "Inserisci il tuo nome.",
+    acc_fout_net: "Impossibile raggiungere il servizio account. Riprova più tardi.",
+    acc_sessie_verlopen: "La tua sessione è scaduta. Accedi di nuovo.",
+    acc_gate: "Crea un account gratuito per lasciare che lo specchio guardi con te — ricevi in regalo 3 analisi. I passi da I a III restano liberi da esplorare.",
+    acc_tegoed_kop: "Il tuo credito",
+    acc_tegoed_op: "Le tue analisi sono esaurite.",
+    acc_tegoed_op_uitleg: "Riscatta un codice regalo — oppure tieni d'occhio l'app: presto potrai acquistare qui altro credito.",
+    acc_tegoed_onbereikbaar: "Il controllo del credito è momentaneamente non raggiungibile. Riprova tra poco.",
+    acc_code_vraag: "Hai un codice regalo?",
+    acc_btn_code: "Riscatta",
+    acc_code_gelukt_jaar: "Fatto! Il tuo abbonamento annuale è attivo.",
+    acc_code_gelukt_pakket: "Fatto! 10 analisi sono state aggiunte al tuo credito.",
+    acc_code_fout: "Questo codice è sconosciuto o è già stato usato.",
+    acc_bezig: "Un attimo di pazienza…",
+    acc_abo_tot: d=>`abbonamento annuale attivo fino al ${d}`,
+    acc_tegoed_gratis: n=>`ancora ${n} ${n===1?'analisi gratuita':'analisi gratuite'}`,
+    acc_tegoed_pakket: n=>`${n} ${n===1?'analisi acquistata':'analisi acquistate'}`,
+    acc_tegoed_abo_maand: n=>`ancora ${n} analisi questo mese`
+  },
+  pt: {
+    acc_aria: "Conta",
+    acc_titel_login: "Iniciar sessão",
+    acc_titel_registreer: "Cria uma conta gratuita",
+    acc_titel_herstel: "Palavra-passe esquecida",
+    acc_titel_nieuwww: "Escolhe uma nova palavra-passe",
+    acc_titel_account: "A tua conta",
+    acc_intro_registreer: "Recebes 3 análises gratuitas de presente. Guardamos apenas o teu nome e o teu endereço de e-mail — as fotos nunca ficam guardadas.",
+    acc_lbl_naam: "O teu nome",
+    acc_lbl_email: "Endereço de e-mail",
+    acc_lbl_wachtwoord: "Palavra-passe",
+    acc_lbl_wachtwoord2: "Nova palavra-passe",
+    acc_hint_ww: "no mínimo 8 caracteres",
+    acc_btn_login: "Entrar",
+    acc_btn_registreer: "Registar",
+    acc_btn_herstel: "Enviar e-mail de recuperação",
+    acc_btn_nieuwww: "Guardar palavra-passe",
+    acc_btn_uitloggen: "Terminar sessão",
+    acc_btn_sluit: "Fechar",
+    acc_naar_registreer: "Ainda não tens conta? Regista-te gratuitamente",
+    acc_naar_login: "Já tens conta? Inicia sessão",
+    acc_naar_herstel: "Esqueceste-te da palavra-passe?",
+    acc_check_mail: "Quase pronto! Enviámos-te um e-mail — clica na ligação de confirmação e inicia depois a sessão.",
+    acc_herstel_gestuurd: "Se este endereço de e-mail nos for conhecido, vais receber um e-mail com uma ligação de recuperação.",
+    acc_bevestigd: "O teu endereço de e-mail está confirmado — bem-vindo!",
+    acc_ww_gewijzigd: "A tua palavra-passe foi alterada. Tens a sessão iniciada.",
+    acc_ingelogd_als: "Sessão iniciada como",
+    acc_fout_login: "Não foi possível iniciar sessão. Verifica o teu endereço de e-mail e a palavra-passe.",
+    acc_fout_bevestig: "Confirma primeiro o teu endereço de e-mail através da ligação no teu correio.",
+    acc_fout_bestaat: "Já existe uma conta com este endereço de e-mail. Inicia sessão, ou usa «Esqueceste-te da palavra-passe?».",
+    acc_fout_zwak: "Escolhe uma palavra-passe com pelo menos 8 caracteres.",
+    acc_fout_email: "Introduz um endereço de e-mail válido.",
+    acc_fout_naam: "Escreve o teu nome.",
+    acc_fout_net: "Não é possível contactar o serviço de contas. Tenta mais tarde.",
+    acc_sessie_verlopen: "A tua sessão expirou. Inicia sessão outra vez.",
+    acc_gate: "Cria uma conta gratuita para deixares o espelho olhar contigo — recebes 3 análises de presente. Os passos I a III continuam livres para explorar.",
+    acc_tegoed_kop: "O teu saldo",
+    acc_tegoed_op: "As tuas análises acabaram.",
+    acc_tegoed_op_uitleg: "Resgata um código-presente — ou fica de olho na app: em breve poderás comprar saldo aqui.",
+    acc_tegoed_onbereikbaar: "A verificação do saldo está momentaneamente indisponível. Tenta outra vez daqui a pouco.",
+    acc_code_vraag: "Tens um código-presente?",
+    acc_btn_code: "Resgatar",
+    acc_code_gelukt_jaar: "Conseguido! A tua assinatura anual está ativa.",
+    acc_code_gelukt_pakket: "Conseguido! Foram adicionadas 10 análises ao teu saldo.",
+    acc_code_fout: "Este código é desconhecido ou já foi usado.",
+    acc_bezig: "Um momento…",
+    acc_abo_tot: d=>`assinatura anual ativa até ${d}`,
+    acc_tegoed_gratis: n=>`ainda ${n} ${n===1?'análise gratuita':'análises gratuitas'}`,
+    acc_tegoed_pakket: n=>`${n} ${n===1?'análise comprada':'análises compradas'}`,
+    acc_tegoed_abo_maand: n=>`ainda ${n} análises este mês`
+  },
+  pl: {
+    acc_aria: "Konto",
+    acc_titel_login: "Zaloguj się",
+    acc_titel_registreer: "Załóż darmowe konto",
+    acc_titel_herstel: "Odzyskiwanie hasła",
+    acc_titel_nieuwww: "Wybierz nowe hasło",
+    acc_titel_account: "Twoje konto",
+    acc_intro_registreer: "W prezencie dostajesz 3 darmowe analizy. Zapisujemy tylko twoje imię i adres e-mail — zdjęcia nigdy nie są zapisywane.",
+    acc_lbl_naam: "Twoje imię",
+    acc_lbl_email: "Adres e-mail",
+    acc_lbl_wachtwoord: "Hasło",
+    acc_lbl_wachtwoord2: "Nowe hasło",
+    acc_hint_ww: "co najmniej 8 znaków",
+    acc_btn_login: "Zaloguj się",
+    acc_btn_registreer: "Zarejestruj się",
+    acc_btn_herstel: "Wyślij e-mail odzyskiwania",
+    acc_btn_nieuwww: "Zapisz hasło",
+    acc_btn_uitloggen: "Wyloguj się",
+    acc_btn_sluit: "Zamknij",
+    acc_naar_registreer: "Nie masz jeszcze konta? Zarejestruj się za darmo",
+    acc_naar_login: "Masz już konto? Zaloguj się",
+    acc_naar_herstel: "Nie pamiętasz hasła?",
+    acc_check_mail: "Prawie gotowe! Wysłaliśmy ci e-mail — kliknij link potwierdzający, a potem się zaloguj.",
+    acc_herstel_gestuurd: "Jeśli znamy ten adres e-mail, otrzymasz wiadomość z linkiem do odzyskania hasła.",
+    acc_bevestigd: "Twój adres e-mail został potwierdzony — witamy!",
+    acc_ww_gewijzigd: "Twoje hasło zostało zmienione. Zalogowaliśmy cię.",
+    acc_ingelogd_als: "Zalogowano jako",
+    acc_fout_login: "Logowanie się nie powiodło. Sprawdź adres e-mail i hasło.",
+    acc_fout_bevestig: "Najpierw potwierdź swój adres e-mail, klikając link w wiadomości.",
+    acc_fout_bestaat: "Konto z tym adresem e-mail już istnieje. Zaloguj się albo skorzystaj z opcji „Nie pamiętasz hasła?”.",
+    acc_fout_zwak: "Wybierz hasło o długości co najmniej 8 znaków.",
+    acc_fout_email: "Podaj prawidłowy adres e-mail.",
+    acc_fout_naam: "Podaj swoje imię.",
+    acc_fout_net: "Nie można połączyć się z usługą kont. Spróbuj ponownie później.",
+    acc_sessie_verlopen: "Twoja sesja wygasła. Zaloguj się ponownie.",
+    acc_gate: "Załóż darmowe konto, żeby lustro mogło patrzeć razem z tobą — dostajesz w prezencie 3 analizy. Kroki od I do III możesz nadal swobodnie odkrywać.",
+    acc_tegoed_kop: "Twoje saldo",
+    acc_tegoed_op: "Twoje analizy się skończyły.",
+    acc_tegoed_op_uitleg: "Wykorzystaj kod podarunkowy — albo miej aplikację na oku: już wkrótce dokupisz tu kolejne analizy.",
+    acc_tegoed_onbereikbaar: "Sprawdzanie salda jest chwilowo niedostępne. Spróbuj za moment jeszcze raz.",
+    acc_code_vraag: "Masz kod podarunkowy?",
+    acc_btn_code: "Wykorzystaj",
+    acc_code_gelukt_jaar: "Udało się! Twój abonament roczny jest aktywny.",
+    acc_code_gelukt_pakket: "Udało się! Do twojego salda dodano 10 analiz.",
+    acc_code_fout: "Ten kod jest nieznany albo został już użyty.",
+    acc_bezig: "Chwila cierpliwości…",
+    acc_abo_tot: d=>`abonament roczny aktywny do ${d}`,
+    acc_tegoed_gratis: n=>`jeszcze ${n} ${n===1?'darmowa analiza':(n%10>=2&&n%10<=4&&(n%100<12||n%100>14)?'darmowe analizy':'darmowych analiz')}`,
+    acc_tegoed_pakket: n=>`${n} ${n===1?'kupiona analiza':(n%10>=2&&n%10<=4&&(n%100<12||n%100>14)?'kupione analizy':'kupionych analiz')}`,
+    acc_tegoed_abo_maand: n=>`jeszcze ${n} ${n===1?'analiza':(n%10>=2&&n%10<=4&&(n%100<12||n%100>14)?'analizy':'analiz')} w tym miesiącu`
+  },
+  ru: {
+    acc_aria: "Аккаунт",
+    acc_titel_login: "Вход",
+    acc_titel_registreer: "Создай бесплатный аккаунт",
+    acc_titel_herstel: "Восстановление пароля",
+    acc_titel_nieuwww: "Выбери новый пароль",
+    acc_titel_account: "Твой аккаунт",
+    acc_intro_registreer: "Ты получаешь в подарок 3 бесплатных анализа. Мы храним только твоё имя и адрес электронной почты — фото никогда не сохраняются.",
+    acc_lbl_naam: "Твоё имя",
+    acc_lbl_email: "Адрес электронной почты",
+    acc_lbl_wachtwoord: "Пароль",
+    acc_lbl_wachtwoord2: "Новый пароль",
+    acc_hint_ww: "не меньше 8 знаков",
+    acc_btn_login: "Войти",
+    acc_btn_registreer: "Зарегистрироваться",
+    acc_btn_herstel: "Отправить письмо для восстановления",
+    acc_btn_nieuwww: "Сохранить пароль",
+    acc_btn_uitloggen: "Выйти",
+    acc_btn_sluit: "Закрыть",
+    acc_naar_registreer: "Ещё нет аккаунта? Зарегистрируйся бесплатно",
+    acc_naar_login: "Уже есть аккаунт? Войди",
+    acc_naar_herstel: "Не помнишь пароль?",
+    acc_check_mail: "Почти готово! Мы отправили тебе письмо — нажми на ссылку подтверждения, а потом войди.",
+    acc_herstel_gestuurd: "Если этот адрес нам знаком, ты получишь письмо со ссылкой для восстановления.",
+    acc_bevestigd: "Твой адрес электронной почты подтверждён — добро пожаловать!",
+    acc_ww_gewijzigd: "Твой пароль изменён. Вход выполнен.",
+    acc_ingelogd_als: "Вход выполнен как",
+    acc_fout_login: "Войти не получилось. Проверь адрес электронной почты и пароль.",
+    acc_fout_bevestig: "Сначала подтверди свой адрес электронной почты по ссылке из письма.",
+    acc_fout_bestaat: "Аккаунт с этим адресом уже существует. Войди или воспользуйся «Не помнишь пароль?».",
+    acc_fout_zwak: "Выбери пароль не короче 8 знаков.",
+    acc_fout_email: "Укажи действительный адрес электронной почты.",
+    acc_fout_naam: "Укажи своё имя.",
+    acc_fout_net: "Не удаётся связаться со службой аккаунтов. Попробуй позже ещё раз.",
+    acc_sessie_verlopen: "Твоя сессия истекла. Войди заново.",
+    acc_gate: "Создай бесплатный аккаунт, чтобы зеркало могло смотреть вместе с тобой, — ты получишь в подарок 3 анализа. Шаги с I по III по-прежнему открыты для свободного исследования.",
+    acc_tegoed_kop: "Твой запас",
+    acc_tegoed_op: "Твои анализы закончились.",
+    acc_tegoed_op_uitleg: "Активируй подарочный код — или следи за приложением: скоро здесь можно будет докупить анализы.",
+    acc_tegoed_onbereikbaar: "Проверка запаса сейчас недоступна. Попробуй чуть позже ещё раз.",
+    acc_code_vraag: "У тебя есть подарочный код?",
+    acc_btn_code: "Активировать",
+    acc_code_gelukt_jaar: "Получилось! Твоя годовая подписка включена.",
+    acc_code_gelukt_pakket: "Получилось! К твоему запасу добавлено 10 анализов.",
+    acc_code_fout: "Этот код неизвестен или уже использован.",
+    acc_bezig: "Минутку…",
+    acc_abo_tot: d=>`годовая подписка активна до ${d}`,
+    acc_tegoed_gratis: n=>`ещё ${n} ${n%10===1&&n%100!==11?'бесплатный анализ':(n%10>=2&&n%10<=4&&(n%100<12||n%100>14)?'бесплатных анализа':'бесплатных анализов')}`,
+    acc_tegoed_pakket: n=>`${n} ${n%10===1&&n%100!==11?'купленный анализ':(n%10>=2&&n%10<=4&&(n%100<12||n%100>14)?'купленных анализа':'купленных анализов')}`,
+    acc_tegoed_abo_maand: n=>`ещё ${n} ${n%10===1&&n%100!==11?'анализ':(n%10>=2&&n%10<=4&&(n%100<12||n%100>14)?'анализа':'анализов')} в этом месяце`
+  },
+  tr: {
+    acc_aria: "Hesap",
+    acc_titel_login: "Giriş yap",
+    acc_titel_registreer: "Ücretsiz bir hesap oluştur",
+    acc_titel_herstel: "Şifremi unuttum",
+    acc_titel_nieuwww: "Yeni bir şifre seç",
+    acc_titel_account: "Hesabın",
+    acc_intro_registreer: "Sana 3 ücretsiz analiz hediye. Yalnızca adını ve e-posta adresini saklarız — fotoğraflar hiçbir zaman kaydedilmez.",
+    acc_lbl_naam: "Adın",
+    acc_lbl_email: "E-posta adresi",
+    acc_lbl_wachtwoord: "Şifre",
+    acc_lbl_wachtwoord2: "Yeni şifre",
+    acc_hint_ww: "en az 8 karakter",
+    acc_btn_login: "Giriş yap",
+    acc_btn_registreer: "Kayıt ol",
+    acc_btn_herstel: "Kurtarma e-postası gönder",
+    acc_btn_nieuwww: "Şifreyi kaydet",
+    acc_btn_uitloggen: "Çıkış yap",
+    acc_btn_sluit: "Kapat",
+    acc_naar_registreer: "Henüz hesabın yok mu? Ücretsiz kayıt ol",
+    acc_naar_login: "Zaten bir hesabın var mı? Giriş yap",
+    acc_naar_herstel: "Şifreni mi unuttun?",
+    acc_check_mail: "Az kaldı! Sana bir e-posta gönderdik — onay bağlantısına tıkla, sonra giriş yap.",
+    acc_herstel_gestuurd: "Bu e-posta adresi bizde kayıtlıysa, kurtarma bağlantısı içeren bir e-posta alacaksın.",
+    acc_bevestigd: "E-posta adresin onaylandı — hoş geldin!",
+    acc_ww_gewijzigd: "Şifren değiştirildi. Giriş yaptın.",
+    acc_ingelogd_als: "Giriş yapan",
+    acc_fout_login: "Giriş yapılamadı. E-posta adresini ve şifreni kontrol et.",
+    acc_fout_bevestig: "Önce e-postandaki bağlantıya tıklayarak e-posta adresini onayla.",
+    acc_fout_bestaat: "Bu e-posta adresiyle zaten bir hesap var. Giriş yap ya da “Şifreni mi unuttun?” seçeneğini kullan.",
+    acc_fout_zwak: "En az 8 karakterden oluşan bir şifre seç.",
+    acc_fout_email: "Geçerli bir e-posta adresi gir.",
+    acc_fout_naam: "Adını gir.",
+    acc_fout_net: "Hesap hizmetine ulaşılamıyor. Daha sonra yeniden dene.",
+    acc_sessie_verlopen: "Oturumun sona erdi. Yeniden giriş yap.",
+    acc_gate: "Aynanın seninle birlikte bakabilmesi için ücretsiz bir hesap oluştur — sana 3 analiz hediye. I. adımdan III. adıma kadar her şey keşfe açık kalır.",
+    acc_tegoed_kop: "Bakiyen",
+    acc_tegoed_op: "Analiz hakkın bitti.",
+    acc_tegoed_op_uitleg: "Bir hediye kodu kullan — ya da uygulamaya göz kulak ol: yakında buradan bakiye satın alabileceksin.",
+    acc_tegoed_onbereikbaar: "Bakiye kontrolüne şu an ulaşılamıyor. Birazdan yeniden dene.",
+    acc_code_vraag: "Bir hediye kodun var mı?",
+    acc_btn_code: "Kullan",
+    acc_code_gelukt_jaar: "Oldu! Yıllık aboneliğin artık etkin.",
+    acc_code_gelukt_pakket: "Oldu! Bakiyene 10 analiz eklendi.",
+    acc_code_fout: "Bu kod tanınmıyor ya da daha önce kullanılmış.",
+    acc_bezig: "Biraz sabır…",
+    acc_abo_tot: d=>`yıllık abonelik ${d} tarihine kadar etkin`,
+    acc_tegoed_gratis: n=>`${n} ücretsiz analiz hakkın kaldı`,
+    acc_tegoed_pakket: n=>`${n} satın alınmış analiz`,
+    acc_tegoed_abo_maand: n=>`bu ay ${n} analiz hakkın kaldı`
+  },
+  ar: {
+    acc_aria: "الحساب",
+    acc_titel_login: "تسجيل الدخول",
+    acc_titel_registreer: "أنشئ حسابًا مجانيًا",
+    acc_titel_herstel: "نسيت كلمة المرور",
+    acc_titel_nieuwww: "اختر كلمة مرور جديدة",
+    acc_titel_account: "حسابك",
+    acc_intro_registreer: "تحصل على 3 تحليلات مجانية هدية. لا نحفظ سوى اسمك وبريدك الإلكتروني — أما الصور فلا تُخزَّن أبدًا.",
+    acc_lbl_naam: "اسمك",
+    acc_lbl_email: "البريد الإلكتروني",
+    acc_lbl_wachtwoord: "كلمة المرور",
+    acc_lbl_wachtwoord2: "كلمة المرور الجديدة",
+    acc_hint_ww: "8 أحرف على الأقل",
+    acc_btn_login: "سجّل الدخول",
+    acc_btn_registreer: "سجِّل",
+    acc_btn_herstel: "أرسل رسالة الاستعادة",
+    acc_btn_nieuwww: "احفظ كلمة المرور",
+    acc_btn_uitloggen: "تسجيل الخروج",
+    acc_btn_sluit: "إغلاق",
+    acc_naar_registreer: "ليس لديك حساب بعد؟ سجّل مجانًا",
+    acc_naar_login: "لديك حساب بالفعل؟ سجّل الدخول",
+    acc_naar_herstel: "هل نسيت كلمة المرور؟",
+    acc_check_mail: "اقتربنا من النهاية! أرسلنا إليك رسالة بريدية — انقر على رابط التأكيد ثم سجّل الدخول.",
+    acc_herstel_gestuurd: "إذا كان هذا البريد الإلكتروني معروفًا لدينا، فستصلك رسالة تحتوي على رابط الاستعادة.",
+    acc_bevestigd: "تم تأكيد بريدك الإلكتروني — أهلًا بك!",
+    acc_ww_gewijzigd: "تم تغيير كلمة مرورك. أنت الآن مسجَّل الدخول.",
+    acc_ingelogd_als: "مسجَّل الدخول باسم",
+    acc_fout_login: "لم ينجح تسجيل الدخول. تحقق من بريدك الإلكتروني وكلمة المرور.",
+    acc_fout_bevestig: "أكِّد أولًا بريدك الإلكتروني عبر الرابط الموجود في رسالتك.",
+    acc_fout_bestaat: "يوجد بالفعل حساب بهذا البريد الإلكتروني. سجّل الدخول، أو استخدم «هل نسيت كلمة المرور؟».",
+    acc_fout_zwak: "اختر كلمة مرور من 8 أحرف على الأقل.",
+    acc_fout_email: "أدخل بريدًا إلكترونيًا صالحًا.",
+    acc_fout_naam: "أدخل اسمك.",
+    acc_fout_net: "تعذر الوصول إلى خدمة الحسابات. حاول مرة أخرى لاحقًا.",
+    acc_sessie_verlopen: "انتهت صلاحية جلستك. سجّل الدخول من جديد.",
+    acc_gate: "أنشئ حسابًا مجانيًا لتدع المرآة تنظر معك — تحصل على 3 تحليلات هدية. وتبقى الخطوات من I إلى III متاحة للاستكشاف مجانًا.",
+    acc_tegoed_kop: "رصيدك",
+    acc_tegoed_op: "نفدت تحليلاتك.",
+    acc_tegoed_op_uitleg: "استبدل رمز هدية — أو راقب التطبيق: قريبًا ستتمكن من شراء رصيد إضافي هنا.",
+    acc_tegoed_onbereikbaar: "التحقق من الرصيد غير متاح مؤقتًا. حاول بعد قليل مرة أخرى.",
+    acc_code_vraag: "هل لديك رمز هدية؟",
+    acc_btn_code: "استبدل",
+    acc_code_gelukt_jaar: "تم! اشتراكك السنوي مفعَّل الآن.",
+    acc_code_gelukt_pakket: "تم! أُضيفت 10 تحليلات إلى رصيدك.",
+    acc_code_fout: "هذا الرمز غير معروف أو استُخدم من قبل.",
+    acc_bezig: "لحظة من فضلك…",
+    acc_abo_tot: d=>`الاشتراك السنوي فعّال حتى ${d}`,
+    acc_tegoed_gratis: n=>`بقي ${n===1?'تحليل مجاني واحد':n===2?'تحليلان مجانيان':n>=3&&n<=10?n+' تحليلات مجانية':n+' تحليلًا مجانيًا'}`,
+    acc_tegoed_pakket: n=>`${n===1?'تحليل واحد مشترى':n===2?'تحليلان مشتريان':n>=3&&n<=10?n+' تحليلات مشتراة':n+' تحليلًا مشترى'}`,
+    acc_tegoed_abo_maand: n=>`بقي ${n===1?'تحليل واحد':n===2?'تحليلان':n>=3&&n<=10?n+' تحليلات':n+' تحليلًا'} هذا الشهر`
+  },
+  zh: {
+    acc_aria: "账户",
+    acc_titel_login: "登录",
+    acc_titel_registreer: "创建免费账户",
+    acc_titel_herstel: "忘记密码",
+    acc_titel_nieuwww: "设置新密码",
+    acc_titel_account: "你的账户",
+    acc_intro_registreer: "你将获赠 3 次免费分析。我们只保存你的姓名和邮箱地址——照片绝不会被保存。",
+    acc_lbl_naam: "你的姓名",
+    acc_lbl_email: "邮箱地址",
+    acc_lbl_wachtwoord: "密码",
+    acc_lbl_wachtwoord2: "新密码",
+    acc_hint_ww: "至少 8 个字符",
+    acc_btn_login: "登录",
+    acc_btn_registreer: "注册",
+    acc_btn_herstel: "发送找回邮件",
+    acc_btn_nieuwww: "保存密码",
+    acc_btn_uitloggen: "退出登录",
+    acc_btn_sluit: "关闭",
+    acc_naar_registreer: "还没有账户？免费注册",
+    acc_naar_login: "已有账户？直接登录",
+    acc_naar_herstel: "忘记密码？",
+    acc_check_mail: "就快好了！我们已经给你发了一封邮件——请点击其中的确认链接，然后再登录。",
+    acc_herstel_gestuurd: "如果这个邮箱地址在我们这里有记录，你会收到一封带有找回链接的邮件。",
+    acc_bevestigd: "你的邮箱地址已确认——欢迎！",
+    acc_ww_gewijzigd: "你的密码已修改，你已登录。",
+    acc_ingelogd_als: "已登录为",
+    acc_fout_login: "登录没有成功。请检查你的邮箱地址和密码。",
+    acc_fout_bevestig: "请先通过邮件中的链接确认你的邮箱地址。",
+    acc_fout_bestaat: "这个邮箱地址已经注册过账户。请直接登录，或使用“忘记密码？”。",
+    acc_fout_zwak: "请选择一个至少 8 个字符的密码。",
+    acc_fout_email: "请填写有效的邮箱地址。",
+    acc_fout_naam: "请填写你的姓名。",
+    acc_fout_net: "无法连接账户服务。请稍后再试。",
+    acc_sessie_verlopen: "你的会话已过期。请重新登录。",
+    acc_gate: "创建一个免费账户，让镜子陪你一起看——你将获赠 3 次分析。第 I 步到第 III 步依然可以自由探索。",
+    acc_tegoed_kop: "你的额度",
+    acc_tegoed_op: "你的分析次数已用完。",
+    acc_tegoed_op_uitleg: "兑换一个礼品码——或者留意应用的动态：不久之后，你就可以在这里购买额度。",
+    acc_tegoed_onbereikbaar: "额度查询暂时无法连接。请稍后再试一次。",
+    acc_code_vraag: "你有礼品码吗？",
+    acc_btn_code: "兑换",
+    acc_code_gelukt_jaar: "成功了！你的年度订阅已生效。",
+    acc_code_gelukt_pakket: "成功了！已为你的额度添加 10 次分析。",
+    acc_code_fout: "这个礼品码无法识别，或已被使用过。",
+    acc_bezig: "请稍候……",
+    acc_abo_tot: d=>`年度订阅有效至 ${d}`,
+    acc_tegoed_gratis: n=>`还剩 ${n} 次免费分析`,
+    acc_tegoed_pakket: n=>`已购买 ${n} 次分析`,
+    acc_tegoed_abo_maand: n=>`本月还剩 ${n} 次分析`
+  },
+  ja: {
+    acc_aria: "アカウント",
+    acc_titel_login: "ログイン",
+    acc_titel_registreer: "無料アカウントを作る",
+    acc_titel_herstel: "パスワードをお忘れの方",
+    acc_titel_nieuwww: "新しいパスワードを選ぶ",
+    acc_titel_account: "あなたのアカウント",
+    acc_intro_registreer: "3回分の無料分析をプレゼントします。お預かりするのはお名前とメールアドレスだけで、写真は決して保存されません。",
+    acc_lbl_naam: "お名前",
+    acc_lbl_email: "メールアドレス",
+    acc_lbl_wachtwoord: "パスワード",
+    acc_lbl_wachtwoord2: "新しいパスワード",
+    acc_hint_ww: "8文字以上",
+    acc_btn_login: "ログイン",
+    acc_btn_registreer: "登録する",
+    acc_btn_herstel: "再設定メールを送る",
+    acc_btn_nieuwww: "パスワードを保存",
+    acc_btn_uitloggen: "ログアウト",
+    acc_btn_sluit: "閉じる",
+    acc_naar_registreer: "アカウントをお持ちでない方は、無料で登録できます",
+    acc_naar_login: "すでにアカウントをお持ちの方は、ログインへ",
+    acc_naar_herstel: "パスワードをお忘れですか?",
+    acc_check_mail: "あと少しです!メールをお送りしました。中の確認リンクをクリックして、そのあとログインしてください。",
+    acc_herstel_gestuurd: "このメールアドレスが登録されていれば、再設定リンクの入ったメールが届きます。",
+    acc_bevestigd: "メールアドレスが確認できました。ようこそ!",
+    acc_ww_gewijzigd: "パスワードを変更しました。ログイン済みです。",
+    acc_ingelogd_als: "ログイン中:",
+    acc_fout_login: "ログインできませんでした。メールアドレスとパスワードをご確認ください。",
+    acc_fout_bevestig: "まず、メールに届いたリンクからメールアドレスを確認してください。",
+    acc_fout_bestaat: "このメールアドレスのアカウントは、すでに存在します。ログインするか、「パスワードをお忘れですか?」をお使いください。",
+    acc_fout_zwak: "8文字以上のパスワードを選んでください。",
+    acc_fout_email: "有効なメールアドレスを入力してください。",
+    acc_fout_naam: "お名前を入力してください。",
+    acc_fout_net: "アカウントサービスに接続できません。のちほどもう一度お試しください。",
+    acc_sessie_verlopen: "セッションの有効期限が切れました。もう一度ログインしてください。",
+    acc_gate: "無料アカウントを作って、鏡にいっしょに見てもらいましょう。3回分の分析をプレゼントします。ステップIからIIIまでは、これからも自由にお使いいただけます。",
+    acc_tegoed_kop: "あなたの残り回数",
+    acc_tegoed_op: "分析の回数を使い切りました。",
+    acc_tegoed_op_uitleg: "ギフトコードをお持ちなら引き換えを。あるいは、アプリをお楽しみに。まもなく、ここで回数を買い足せるようになります。",
+    acc_tegoed_onbereikbaar: "残り回数の確認が、いま一時的にできません。少ししてから、もう一度お試しください。",
+    acc_code_vraag: "ギフトコードをお持ちですか?",
+    acc_btn_code: "引き換える",
+    acc_code_gelukt_jaar: "できました!年間プランが有効になりました。",
+    acc_code_gelukt_pakket: "できました!残り回数に、10回分の分析が加わりました。",
+    acc_code_fout: "このコードは見つからないか、すでに使われています。",
+    acc_bezig: "少々お待ちください…",
+    acc_abo_tot: d=>`年間プランは${d}まで有効です`,
+    acc_tegoed_gratis: n=>`無料の分析があと${n}回`,
+    acc_tegoed_pakket: n=>`購入した分析が${n}回分`,
+    acc_tegoed_abo_maand: n=>`今月はあと${n}回の分析ができます`
+  },
+  ko: {
+    acc_aria: "계정",
+    acc_titel_login: "로그인",
+    acc_titel_registreer: "무료 계정 만들기",
+    acc_titel_herstel: "비밀번호 찾기",
+    acc_titel_nieuwww: "새 비밀번호 정하기",
+    acc_titel_account: "나의 계정",
+    acc_intro_registreer: "무료 분석 3회를 선물로 드려요. 저장하는 것은 이름과 이메일 주소뿐이에요 — 사진은 절대 저장되지 않아요.",
+    acc_lbl_naam: "이름",
+    acc_lbl_email: "이메일 주소",
+    acc_lbl_wachtwoord: "비밀번호",
+    acc_lbl_wachtwoord2: "새 비밀번호",
+    acc_hint_ww: "8자 이상",
+    acc_btn_login: "로그인",
+    acc_btn_registreer: "가입하기",
+    acc_btn_herstel: "재설정 메일 보내기",
+    acc_btn_nieuwww: "비밀번호 저장하기",
+    acc_btn_uitloggen: "로그아웃",
+    acc_btn_sluit: "닫기",
+    acc_naar_registreer: "아직 계정이 없나요? 무료로 가입해 보세요",
+    acc_naar_login: "이미 계정이 있나요? 로그인하세요",
+    acc_naar_herstel: "비밀번호를 잊으셨나요?",
+    acc_check_mail: "거의 다 됐어요! 이메일을 보내 드렸어요 — 확인 링크를 누른 다음 로그인해 주세요.",
+    acc_herstel_gestuurd: "이 이메일 주소가 저희에게 등록되어 있다면, 재설정 링크가 담긴 이메일이 도착할 거예요.",
+    acc_bevestigd: "이메일 주소가 확인됐어요 — 환영해요!",
+    acc_ww_gewijzigd: "비밀번호가 바뀌었어요. 로그인된 상태예요.",
+    acc_ingelogd_als: "로그인한 계정",
+    acc_fout_login: "로그인이 잘되지 않았어요. 이메일 주소와 비밀번호를 확인해 주세요.",
+    acc_fout_bevestig: "먼저 메일함에 있는 링크를 눌러 이메일 주소를 확인해 주세요.",
+    acc_fout_bestaat: "이 이메일 주소로 만든 계정이 이미 있어요. 로그인하시거나 “비밀번호를 잊으셨나요?”를 이용해 주세요.",
+    acc_fout_zwak: "8자 이상의 비밀번호를 정해 주세요.",
+    acc_fout_email: "올바른 이메일 주소를 입력해 주세요.",
+    acc_fout_naam: "이름을 입력해 주세요.",
+    acc_fout_net: "계정 서비스에 연결할 수 없어요. 나중에 다시 시도해 주세요.",
+    acc_sessie_verlopen: "세션이 만료됐어요. 다시 로그인해 주세요.",
+    acc_gate: "무료 계정을 만들면 거울이 당신의 발을 함께 봐 드려요 — 분석 3회를 선물로 드려요. 1단계부터 3단계까지는 계속 자유롭게 둘러볼 수 있어요.",
+    acc_tegoed_kop: "나의 이용권",
+    acc_tegoed_op: "분석 횟수를 모두 사용했어요.",
+    acc_tegoed_op_uitleg: "선물 코드를 등록해 보세요 — 아니면 앱을 눈여겨봐 주세요: 곧 여기서 이용권을 충전할 수 있게 돼요.",
+    acc_tegoed_onbereikbaar: "이용권 확인이 잠시 되지 않고 있어요. 조금 뒤에 다시 시도해 주세요.",
+    acc_code_vraag: "선물 코드가 있나요?",
+    acc_btn_code: "등록하기",
+    acc_code_gelukt_jaar: "완료됐어요! 연간 구독이 켜졌어요.",
+    acc_code_gelukt_pakket: "완료됐어요! 이용권에 분석 10회가 추가됐어요.",
+    acc_code_fout: "이 코드는 등록되지 않았거나 이미 사용된 코드예요.",
+    acc_bezig: "잠시만 기다려 주세요…",
+    acc_abo_tot: d=>`연간 구독 이용 중 · ${d}까지`,
+    acc_tegoed_gratis: n=>`무료 분석 ${n}회 남음`,
+    acc_tegoed_pakket: n=>`구매한 분석 ${n}회`,
+    acc_tegoed_abo_maand: n=>`이번 달 분석 ${n}회 남음`
+  },
+  hi: {
+    acc_aria: "खाता",
+    acc_titel_login: "लॉग इन कीजिए",
+    acc_titel_registreer: "मुफ़्त खाता बनाइए",
+    acc_titel_herstel: "पासवर्ड भूल गए",
+    acc_titel_nieuwww: "नया पासवर्ड चुनिए",
+    acc_titel_account: "आपका खाता",
+    acc_intro_registreer: "आपको 3 मुफ़्त विश्लेषण उपहार में मिलते हैं। हम केवल आपका नाम और ईमेल पता सहेजते हैं — फ़ोटो कभी सहेजी नहीं जातीं।",
+    acc_lbl_naam: "आपका नाम",
+    acc_lbl_email: "ईमेल पता",
+    acc_lbl_wachtwoord: "पासवर्ड",
+    acc_lbl_wachtwoord2: "नया पासवर्ड",
+    acc_hint_ww: "कम से कम 8 वर्ण",
+    acc_btn_login: "लॉग इन",
+    acc_btn_registreer: "रजिस्टर कीजिए",
+    acc_btn_herstel: "रिकवरी ईमेल भेजिए",
+    acc_btn_nieuwww: "पासवर्ड सहेजिए",
+    acc_btn_uitloggen: "लॉग आउट",
+    acc_btn_sluit: "बंद कीजिए",
+    acc_naar_registreer: "अभी खाता नहीं है? मुफ़्त में रजिस्टर कीजिए",
+    acc_naar_login: "पहले से खाता है? लॉग इन कीजिए",
+    acc_naar_herstel: "पासवर्ड भूल गए?",
+    acc_check_mail: "बस थोड़ा-सा और! हमने आपको एक ईमेल भेजा है — पुष्टि-लिंक पर क्लिक कीजिए और फिर लॉग इन कीजिए।",
+    acc_herstel_gestuurd: "अगर यह ईमेल पता हमारे पास दर्ज है, तो आपको रिकवरी-लिंक वाला एक ईमेल मिलेगा।",
+    acc_bevestigd: "आपका ईमेल पता पुष्ट हो गया है — स्वागत है!",
+    acc_ww_gewijzigd: "आपका पासवर्ड बदल दिया गया है। आप लॉग इन हैं।",
+    acc_ingelogd_als: "इस रूप में लॉग इन:",
+    acc_fout_login: "लॉग इन सफल नहीं हुआ। कृपया अपना ईमेल पता और पासवर्ड जाँचिए।",
+    acc_fout_bevestig: "पहले अपने मेल में आए लिंक से अपना ईमेल पता पुष्ट कीजिए।",
+    acc_fout_bestaat: "इस ईमेल पते से पहले से ही एक खाता मौजूद है। लॉग इन कीजिए, या “पासवर्ड भूल गए?” का उपयोग कीजिए।",
+    acc_fout_zwak: "कम से कम 8 वर्णों का पासवर्ड चुनिए।",
+    acc_fout_email: "कृपया एक मान्य ईमेल पता भरिए।",
+    acc_fout_naam: "कृपया अपना नाम भरिए।",
+    acc_fout_net: "खाता-सेवा तक पहुँच नहीं हो पा रही। कृपया बाद में फिर कोशिश कीजिए।",
+    acc_sessie_verlopen: "आपका सत्र समाप्त हो गया है। कृपया फिर से लॉग इन कीजिए।",
+    acc_gate: "आईने को साथ देखने देने के लिए एक मुफ़्त खाता बनाइए — आपको 3 विश्लेषण उपहार में मिलते हैं। चरण I से III आप आगे भी मुक्त रूप से देख सकते हैं।",
+    acc_tegoed_kop: "आपका बैलेंस",
+    acc_tegoed_op: "आपके विश्लेषण समाप्त हो गए हैं।",
+    acc_tegoed_op_uitleg: "कोई उपहार-कोड भुनाइए — या ऐप पर नज़र रखिए: जल्द ही आप यहाँ बैलेंस खरीद सकेंगे।",
+    acc_tegoed_onbereikbaar: "बैलेंस की जाँच अभी थोड़ी देर के लिए उपलब्ध नहीं है। कृपया थोड़ी देर में फिर कोशिश कीजिए।",
+    acc_code_vraag: "क्या आपके पास कोई उपहार-कोड है?",
+    acc_btn_code: "भुनाइए",
+    acc_code_gelukt_jaar: "हो गया! आपकी वार्षिक सदस्यता चालू है।",
+    acc_code_gelukt_pakket: "हो गया! आपके बैलेंस में 10 विश्लेषण जोड़ दिए गए हैं।",
+    acc_code_fout: "यह कोड अज्ञात है या पहले ही इस्तेमाल हो चुका है।",
+    acc_bezig: "ज़रा ठहरिए…",
+    acc_abo_tot: d=>`वार्षिक सदस्यता ${d} तक सक्रिय`,
+    acc_tegoed_gratis: n=>`अभी ${n} मुफ़्त विश्लेषण बाकी`,
+    acc_tegoed_pakket: n=>`${n} ${n===1?'खरीदा हुआ':'खरीदे हुए'} विश्लेषण`,
+    acc_tegoed_abo_maand: n=>`इस महीने अभी ${n} विश्लेषण बाकी`
+  }
+};
+for(const t in ACC_TALEN){ if(TALEN[t] && TALEN[t].ui) Object.assign(TALEN[t].ui, ACC_TALEN[t]); }
 const TAAL_NAMEN = { nl:'Nederlands', en:"English", de:"Deutsch", fr:"Français", es:"Español", it:"Italiano", pt:"Português", pl:"Polski", ru:"Русский", tr:"Türkçe", ar:"العربية", zh:"中文", ja:"日本語", ko:"한국어", hi:"हिन्दी" };
 const TAAL_BETA = { en:"beta", de:"Beta", fr:"bêta", es:"beta", it:"beta", pt:"beta", pl:"Beta", ru:"Бета", tr:"Beta", ar:"تجريبي", zh:"测试版", ja:"ベータ", ko:"베타", hi:"बीटा" };
 let TAAL = (()=>{ try{ if(localStorage.taal && TALEN[localStorage.taal]) return localStorage.taal; }catch(e){}
@@ -7609,6 +8406,7 @@ function vertaalPagina(){
   document.querySelectorAll('#voetenSvg .teen').forEach(tg => { const k = tg.dataset.teen;
     if(k) tg.setAttribute('aria-label',(k[0]==='L'?T('ui.linkervoet'):T('ui.rechtervoet'))+' '+String(T('teennaam.'+k[1])).toLowerCase()); });
   const kn = document.getElementById('taalKnop'); if(kn) kn.textContent = '🌐 ' + TAAL.toUpperCase();
+  if(typeof renderAccountUI === 'function') renderAccountUI();
 }
 function zetTaal(t){
   if(!TALEN[t] || t === TAAL) return;
@@ -8048,6 +8846,9 @@ document.getElementById('kopieer').addEventListener('click',async()=>{
 
 /* ================= FOTO-ANALYSE (fase 2) ================= */
 const AI_WORKER = new URLSearchParams(location.search).get('worker') || 'https://tenenspiegel-ai.ferri-a8a.workers.dev';
+const SB_URL = 'https://kfdtppnwhljivbcutxcm.supabase.co';
+const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtmZHRwcG53aGxqaXZiY3V0eGNtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM4MzAwOTQsImV4cCI6MjA5OTQwNjA5NH0.EQ_g5xEULelqYIdKBg7WI-m0-JorF7Cro6w7oNOhMV8';
+const FAIRUSE_MAAND = 60;
 const DEMO = new URLSearchParams(location.search).has('demo');
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const wacht = ms => new Promise(r => setTimeout(r, ms));
@@ -8164,7 +8965,7 @@ async function roepWorker(dataUrl, voet){
   if(voet) body.voet = voet;
   const r = await fetch(AI_WORKER, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: Object.assign({ 'Content-Type': 'application/json' }, await accAuthKop()),
     body: JSON.stringify(body)
   });
   return r.json();
@@ -8196,6 +8997,7 @@ function mergePerVoet(uit){
 }
 
 async function analyseerFoto(){
+  if(!DEMO && !accSessie()){ openAccount('login', T('ui.acc_gate')); return; }
   const btn = document.getElementById('analyseerBtn');
   const tweeCalls = fotoModus === 'twee' && fotos.links && fotos.rechts;
   btn.disabled = true;
@@ -8222,10 +9024,12 @@ async function analyseerFoto(){
   }
   updateAnalyseKnop();
   if(!resu || resu.ok !== true){
+    if(resu && accFoutcode(resu.code)) { zetStatus(esc(accFoutTekst(resu.code)),'fout'); return; }
     zetStatus(esc((resu && resu.reden) || T('ui.fout_analyse')),'fout');
     return;
   }
   verwerkAnalyse(resu);
+  laadTegoed();
 }
 
 function verwerkAnalyse(resu){
@@ -8283,6 +9087,7 @@ function verwerkAnalyse(resu){
 }
 
 async function deSpiegelVertelt(uitgebreid){
+  if(!DEMO && !accSessie()){ openAccount('login', T('ui.acc_gate')); return; }
   const btn = document.getElementById('verteltBtn');
   const lbtn = document.getElementById('lezingBtn');
   const uit = document.getElementById('verteltUit');
@@ -8303,7 +9108,7 @@ async function deSpiegelVertelt(uitgebreid){
     try{
       const r = await fetch(AI_WORKER, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: Object.assign({ 'Content-Type': 'application/json' }, await accAuthKop()),
         body: JSON.stringify({ mode: 'duiding', taal: TAAL, diepgang: uitgebreid ? 'uitgebreid' : 'kort', tenen, notities: laatsteNotities, algemeen: laatsteAlgemeen, beelden })
       });
       resu = await r.json();
@@ -8314,6 +9119,7 @@ async function deSpiegelVertelt(uitgebreid){
   }
   btn.disabled = false; if(lbtn){ lbtn.disabled = false; updateLezingKnop(); }
   if(!resu || resu.ok !== true || !resu.vertelt){
+    if(resu && accFoutcode(resu.code)){ uit.innerHTML = '<div class="fotostatus fout" style="margin-top:10px">'+esc(accFoutTekst(resu.code))+'</div>'; return; }
     uit.innerHTML = '<div class="fotostatus fout" style="margin-top:10px">'+esc((resu && resu.reden) || T('ui.fout_duiding'))+' <span style="font-weight:400;color:var(--inkt-zacht)">'+T('ui.versie_noot')+'</span></div>';
     return;
   }
@@ -8332,10 +9138,316 @@ async function deSpiegelVertelt(uitgebreid){
   uit.scrollIntoView({behavior:'smooth', block:'nearest'});
 }
 
+
+/* ================= ACCOUNTS & TEGOED (v9.0) ================= */
+function accSessie(){ try{ const s = JSON.parse(localStorage.ts_sessie || 'null'); return (s && s.at) ? s : null; }catch(e){ return null; } }
+function accBewaar(s){ try{ localStorage.ts_sessie = JSON.stringify(s); }catch(e){} }
+function accWis(){ try{ delete localStorage.ts_sessie; }catch(e){} laatsteTegoed = null; }
+
+function accUitTokens(dt){
+  if(!dt || !dt.access_token) return null;
+  const s = {
+    at: dt.access_token, rt: dt.refresh_token || '',
+    exp: dt.expires_at || (Math.floor(Date.now()/1000) + (dt.expires_in || 3600)),
+    email: (dt.user && dt.user.email) || '',
+    naam: (dt.user && dt.user.user_metadata && dt.user.user_metadata.volledige_naam) || '',
+    uid: (dt.user && dt.user.id) || ''
+  };
+  accBewaar(s); return s;
+}
+async function sbAuth(pad, body, token, methode){
+  const r = await fetch(SB_URL + '/auth/v1/' + pad, {
+    method: methode || 'POST',
+    headers: Object.assign({ 'Content-Type': 'application/json', apikey: SB_KEY }, token ? { Authorization: 'Bearer ' + token } : {}),
+    body: JSON.stringify(body || {})
+  });
+  let dt = null; try{ dt = await r.json(); }catch(e){}
+  return { status: r.status, dt };
+}
+let accVerversing = null;
+async function accToken(){
+  const s = accSessie();
+  if(!s) return null;
+  if(s.exp - 60 > Math.floor(Date.now()/1000)) return s.at;
+  if(!s.rt){ accWis(); return null; }
+  if(!accVerversing){
+    accVerversing = sbAuth('token?grant_type=refresh_token', { refresh_token: s.rt }).then(({status, dt}) => {
+      accVerversing = null;
+      if(status === 200 && dt && dt.access_token) return accUitTokens(dt).at;
+      accWis(); renderAccountUI(); return null;
+    }).catch(() => { accVerversing = null; return null; });
+  }
+  return accVerversing;
+}
+async function accAuthKop(){
+  const t = await accToken();
+  return t ? { Authorization: 'Bearer ' + t } : {};
+}
+function accFoutcode(code){ return code === 'login_vereist' || code === 'sessie_verlopen' || code === 'tegoed_op' || code === 'tegoed_onbereikbaar'; }
+function accFoutTekst(code){
+  if(code === 'sessie_verlopen') return T('ui.acc_sessie_verlopen');
+  if(code === 'tegoed_op') return T('ui.acc_tegoed_op') + ' ' + T('ui.acc_tegoed_op_uitleg');
+  if(code === 'tegoed_onbereikbaar') return T('ui.acc_tegoed_onbereikbaar');
+  return T('ui.acc_gate');
+}
+function accFoutcodeActie(code){
+  if(code === 'sessie_verlopen'){ accWis(); renderAccountUI(); openAccount('login', T('ui.acc_sessie_verlopen')); }
+  else if(code === 'login_vereist'){ openAccount('login', T('ui.acc_gate')); }
+  else if(code === 'tegoed_op'){ openAccount('account', T('ui.acc_tegoed_op') + ' ' + T('ui.acc_tegoed_op_uitleg')); }
+}
+
+async function accInloggen(email, ww){
+  let uit; try{ uit = await sbAuth('token?grant_type=password', { email: email, password: ww }); }catch(e){ return { ok:false, fout:'acc_fout_net' }; }
+  const dt = uit.dt || {};
+  if(uit.status === 200 && dt.access_token){ accUitTokens(dt); return { ok: true }; }
+  const cd = String(dt.error_code || dt.code || ''), msg = String(dt.error_description || dt.msg || '');
+  if(cd.indexOf('email_not_confirmed') >= 0 || /not confirmed/i.test(msg)) return { ok:false, fout:'acc_fout_bevestig' };
+  if(uit.status === 400 || uit.status === 401) return { ok:false, fout:'acc_fout_login' };
+  return { ok:false, fout:'acc_fout_net' };
+}
+async function accRegistreren(naam, email, ww){
+  let uit; try{ uit = await sbAuth('signup?redirect_to=' + encodeURIComponent(location.origin + location.pathname), { email: email, password: ww, data: { volledige_naam: naam } }); }catch(e){ return { ok:false, fout:'acc_fout_net' }; }
+  const dt = uit.dt || {};
+  if(uit.status === 200){
+    if(dt.access_token){ accUitTokens(dt); return { ok:true, direct:true }; }
+    if(dt.id && Array.isArray(dt.identities) && dt.identities.length === 0) return { ok:false, fout:'acc_fout_bestaat' };
+    return { ok:true };
+  }
+  const cd = String(dt.error_code || dt.code || ''), msg = String(dt.error_description || dt.msg || '');
+  if(cd.indexOf('user_already_exists') >= 0 || /already registered/i.test(msg)) return { ok:false, fout:'acc_fout_bestaat' };
+  if(cd.indexOf('weak_password') >= 0 || /password/i.test(msg)) return { ok:false, fout:'acc_fout_zwak' };
+  if(/email/i.test(msg)) return { ok:false, fout:'acc_fout_email' };
+  return { ok:false, fout:'acc_fout_net' };
+}
+async function accHerstel(email){
+  try{ await sbAuth('recover?redirect_to=' + encodeURIComponent(location.origin + location.pathname), { email: email }); }catch(e){ return { ok:false, fout:'acc_fout_net' }; }
+  return { ok: true };
+}
+async function accNieuwWachtwoord(ww){
+  const t = await accToken();
+  if(!t) return { ok:false, fout:'acc_sessie_verlopen' };
+  let uit; try{ uit = await sbAuth('user', { password: ww }, t, 'PUT'); }catch(e){ return { ok:false, fout:'acc_fout_net' }; }
+  if(uit.status === 200) return { ok: true };
+  const msg = String((uit.dt && (uit.dt.error_description || uit.dt.msg)) || '');
+  if(/password/i.test(msg)) return { ok:false, fout:'acc_fout_zwak' };
+  return { ok:false, fout:'acc_fout_net' };
+}
+async function accUitloggen(){
+  const s = accSessie();
+  accWis(); renderAccountUI(); sluitAccount();  // lokaal direct uitloggen; server-revoke is best-effort
+  if(s){ try{ sbAuth('logout', {}, s.at).catch(() => {}); }catch(e){} }
+}
+async function accHaalGebruiker(){
+  const t = await accToken(); if(!t) return;
+  try{
+    const r = await fetch(SB_URL + '/auth/v1/user', { headers: { apikey: SB_KEY, Authorization: 'Bearer ' + t } });
+    const dt = await r.json();
+    if(dt && dt.email){ const s = accSessie(); if(s){ s.email = dt.email; s.naam = (dt.user_metadata && dt.user_metadata.volledige_naam) || s.naam; s.uid = dt.id || s.uid; accBewaar(s); } }
+  }catch(e){}
+}
+
+/* ---- tegoed ---- */
+let laatsteTegoed = null;
+async function laadTegoed(){
+  const t = await accToken();
+  if(!t){ laatsteTegoed = null; renderTegoedBalk(); return null; }
+  try{
+    const r = await fetch(SB_URL + '/rest/v1/tegoed?select=gratis_over,pakket_over,abo_tot,fair_use_maand,fair_use_reset', { headers: { apikey: SB_KEY, Authorization: 'Bearer ' + t } });
+    const rijen = await r.json();
+    laatsteTegoed = Array.isArray(rijen) && rijen[0] ? rijen[0] : null;
+  }catch(e){ laatsteTegoed = null; }
+  renderTegoedBalk();
+  const ov = document.getElementById('accOverlay');
+  if(ov && !ov.hidden && accModus === 'account') renderAccountPaneel();
+  return laatsteTegoed;
+}
+function tegoedTekst(){
+  const g = laatsteTegoed;
+  if(!g) return '';
+  const delen = [];
+  if(g.gratis_over > 0) delen.push(TF('ui.acc_tegoed_gratis', g.gratis_over));
+  if(g.pakket_over > 0) delen.push(TF('ui.acc_tegoed_pakket', g.pakket_over));
+  const aboActief = g.abo_tot && new Date(g.abo_tot) > new Date();
+  if(aboActief){
+    delen.push(TF('ui.acc_abo_tot', new Date(g.abo_tot).toLocaleDateString(TAAL)));
+    const reset = g.fair_use_reset ? new Date(g.fair_use_reset) : null, nu = new Date();
+    const zelfdeMaand = reset && reset.getFullYear() === nu.getFullYear() && reset.getMonth() === nu.getMonth();
+    let over = FAIRUSE_MAAND - (zelfdeMaand ? (g.fair_use_maand || 0) : 0);
+    if(over < 0) over = 0;
+    delen.push(TF('ui.acc_tegoed_abo_maand', over));
+  }
+  if(!delen.length) return T('ui.acc_tegoed_op');
+  return delen.join(' · ');
+}
+function renderTegoedBalk(){
+  const balk = document.getElementById('tegoedBalk');
+  if(!balk) return;
+  if(!accSessie() || !laatsteTegoed){ balk.hidden = true; return; }
+  balk.hidden = false;
+  balk.textContent = T('ui.acc_tegoed_kop') + ': ' + tegoedTekst();
+}
+async function accVerzilver(code){
+  const t = await accToken();
+  if(!t) return { ok:false, fout:'acc_sessie_verlopen' };
+  try{
+    const r = await fetch(SB_URL + '/rest/v1/rpc/verzilver_code', { method:'POST', headers:{ 'Content-Type':'application/json', apikey: SB_KEY, Authorization: 'Bearer ' + t }, body: JSON.stringify({ p_code: code }) });
+    const dt = await r.json();
+    if(dt && dt.ok) return { ok:true, soort: dt.soort };
+    return { ok:false, fout:'acc_code_fout' };
+  }catch(e){ return { ok:false, fout:'acc_fout_net' }; }
+}
+
+/* ---- paneel ---- */
+let accModus = 'login', accMelding = '', accMeldingFout = false;
+function openAccount(modus, melding){
+  accModus = modus === 'account' || (!modus && accSessie()) ? 'account' : (modus || 'login');
+  if(accModus !== 'account' && accSessie()) accModus = 'account';
+  accMelding = melding || ''; accMeldingFout = false;
+  const ov = document.getElementById('accOverlay');
+  ov.hidden = false;
+  renderAccountPaneel();
+  if(accModus === 'account') laadTegoed();
+}
+function sluitAccount(){ const ov = document.getElementById('accOverlay'); if(ov) ov.hidden = true; accMelding = ''; }
+function accVeld(id, lbl, type, hint){
+  return '<label class="acclbl" for="' + id + '">' + T(lbl) + (hint ? ' <small>(' + T(hint) + ')</small>' : '') + '</label>' +
+         '<input class="accveld" id="' + id + '" type="' + type + '" ' + (type === 'password' ? 'autocomplete="current-password"' : type === 'email' ? 'autocomplete="email" inputmode="email"' : 'autocomplete="name"') + '>';
+}
+function accMsgHtml(){ return accMelding ? '<div class="accmsg' + (accMeldingFout ? ' fout' : '') + '">' + esc(accMelding) + '</div>' : ''; }
+function renderAccountPaneel(){
+  const p = document.getElementById('accPaneel');
+  if(!p) return;
+  const X = '<button class="accx" id="accSluit" aria-label="' + esc(T('ui.acc_btn_sluit')) + '">×</button>';
+  let html = '';
+  if(accModus === 'registreer'){
+    html = X + '<h3 id="accTitel">' + T('ui.acc_titel_registreer') + '</h3>' + accMsgHtml() +
+      '<div class="accinfo">' + T('ui.acc_intro_registreer') + '</div>' +
+      accVeld('accNaam', 'ui.acc_lbl_naam', 'text') +
+      accVeld('accEmail', 'ui.acc_lbl_email', 'email') +
+      accVeld('accWw', 'ui.acc_lbl_wachtwoord', 'password', 'ui.acc_hint_ww') +
+      '<div class="accknoppen"><button class="knop knop-donker" id="accDoe">' + T('ui.acc_btn_registreer') + '</button></div>' +
+      '<button class="acclink" id="accWissel">' + T('ui.acc_naar_login') + '</button>';
+  } else if(accModus === 'herstel'){
+    html = X + '<h3 id="accTitel">' + T('ui.acc_titel_herstel') + '</h3>' + accMsgHtml() +
+      accVeld('accEmail', 'ui.acc_lbl_email', 'email') +
+      '<div class="accknoppen"><button class="knop knop-donker" id="accDoe">' + T('ui.acc_btn_herstel') + '</button></div>' +
+      '<button class="acclink" id="accWissel">' + T('ui.acc_naar_login') + '</button>';
+  } else if(accModus === 'nieuwww'){
+    html = X + '<h3 id="accTitel">' + T('ui.acc_titel_nieuwww') + '</h3>' + accMsgHtml() +
+      accVeld('accWw', 'ui.acc_lbl_wachtwoord2', 'password', 'ui.acc_hint_ww') +
+      '<div class="accknoppen"><button class="knop knop-donker" id="accDoe">' + T('ui.acc_btn_nieuwww') + '</button></div>';
+  } else if(accModus === 'mail'){
+    html = X + '<h3 id="accTitel">' + T('ui.acc_titel_registreer') + '</h3>' +
+      '<div class="accmsg">' + esc(accMelding || T('ui.acc_check_mail')) + '</div>' +
+      '<div class="accknoppen"><button class="knop knop-licht" id="accSluit2">' + T('ui.acc_btn_sluit') + '</button></div>';
+  } else if(accModus === 'account'){
+    const s = accSessie() || { email: '', naam: '' };
+    html = X + '<h3 id="accTitel">' + T('ui.acc_titel_account') + '</h3>' + accMsgHtml() +
+      '<div class="accinfo">' + T('ui.acc_ingelogd_als') + ' <b>' + esc(s.naam || s.email) + '</b>' + (s.naam ? '<br>' + esc(s.email) : '') + '</div>' +
+      '<div class="acctegoed"><b>' + T('ui.acc_tegoed_kop') + '</b>' + (laatsteTegoed ? esc(tegoedTekst()) : '…') + '</div>' +
+      '<div class="accinfo">' + T('ui.acc_code_vraag') + '</div>' +
+      '<div class="acccode"><input class="accveld" id="accCode" type="text" autocomplete="off" placeholder="TS-XXXX-XXXX" style="margin:0">' +
+      '<button class="knop knop-licht" id="accDoeCode" style="white-space:nowrap">' + T('ui.acc_btn_code') + '</button></div>' +
+      '<div class="accknoppen"><button class="knop knop-ghost2" id="accUit">' + T('ui.acc_btn_uitloggen') + '</button></div>';
+  } else {
+    html = X + '<h3 id="accTitel">' + T('ui.acc_titel_login') + '</h3>' + accMsgHtml() +
+      accVeld('accEmail', 'ui.acc_lbl_email', 'email') +
+      accVeld('accWw', 'ui.acc_lbl_wachtwoord', 'password') +
+      '<div class="accknoppen"><button class="knop knop-donker" id="accDoe">' + T('ui.acc_btn_login') + '</button></div>' +
+      '<button class="acclink" id="accWissel">' + T('ui.acc_naar_registreer') + '</button>' +
+      '<button class="acclink" id="accHerstelLink">' + T('ui.acc_naar_herstel') + '</button>';
+  }
+  p.innerHTML = html;
+  const bind = (id, fn) => { const el = document.getElementById(id); if(el) el.addEventListener('click', fn); };
+  bind('accSluit', sluitAccount); bind('accSluit2', sluitAccount);
+  bind('accWissel', () => { accMelding = ''; accModus = (accModus === 'login' ? 'registreer' : 'login'); renderAccountPaneel(); });
+  bind('accHerstelLink', () => { accMelding = ''; accModus = 'herstel'; renderAccountPaneel(); });
+  bind('accUit', accUitloggen);
+  bind('accDoeCode', accDoeCode);
+  bind('accDoe', accDoe);
+  const eersteVeld = p.querySelector('input');
+  if(eersteVeld) eersteVeld.focus();
+  p.querySelectorAll('input').forEach(inp => inp.addEventListener('keydown', e => { if(e.key === 'Enter'){ e.preventDefault(); const k = document.getElementById('accDoe') || document.getElementById('accDoeCode'); if(k) k.click(); } }));
+}
+function accToonFout(sleutel){ accMelding = T('ui.' + sleutel); accMeldingFout = true; renderAccountPaneel(); }
+async function accDoe(){
+  const knop = document.getElementById('accDoe');
+  const email = (document.getElementById('accEmail') || {}).value || '';
+  const ww = (document.getElementById('accWw') || {}).value || '';
+  const naam = (document.getElementById('accNaam') || {}).value || '';
+  if(accModus === 'registreer' && !naam.trim()) return accToonFout('acc_fout_naam');
+  if((accModus === 'login' || accModus === 'registreer' || accModus === 'herstel') && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) return accToonFout('acc_fout_email');
+  if((accModus === 'login' || accModus === 'registreer' || accModus === 'nieuwww') && (accModus === 'login' ? !ww : ww.length < 8)) return accToonFout(accModus === 'login' ? 'acc_fout_login' : 'acc_fout_zwak');
+  knop.disabled = true; knop.textContent = T('ui.acc_bezig');
+  let uit;
+  if(accModus === 'login') uit = await accInloggen(email.trim(), ww);
+  else if(accModus === 'registreer') uit = await accRegistreren(naam.trim(), email.trim(), ww);
+  else if(accModus === 'herstel') uit = await accHerstel(email.trim());
+  else uit = await accNieuwWachtwoord(ww);
+  if(!uit.ok){ accToonFout(uit.fout || 'acc_fout_net'); return; }
+  if(accModus === 'login'){ accModus = 'account'; accMelding = ''; renderAccountUI(); renderAccountPaneel(); laadTegoed(); }
+  else if(accModus === 'registreer'){
+    if(uit.direct){ accModus = 'account'; accMelding = ''; renderAccountUI(); renderAccountPaneel(); laadTegoed(); }
+    else { accModus = 'mail'; accMelding = ''; renderAccountPaneel(); }
+  }
+  else if(accModus === 'herstel'){ accMelding = T('ui.acc_herstel_gestuurd'); accMeldingFout = false; accModus = 'login'; renderAccountPaneel(); }
+  else { accModus = 'account'; accMelding = T('ui.acc_ww_gewijzigd'); accMeldingFout = false; renderAccountUI(); renderAccountPaneel(); laadTegoed(); }
+}
+async function accDoeCode(){
+  const veld = document.getElementById('accCode');
+  const code = (veld && veld.value || '').trim();
+  if(!code) return;
+  const knop = document.getElementById('accDoeCode');
+  knop.disabled = true; knop.textContent = T('ui.acc_bezig');
+  const uit = await accVerzilver(code);
+  if(!uit.ok){ accToonFout(uit.fout || 'acc_code_fout'); return; }
+  accMelding = T(uit.soort === 'jaar' ? 'ui.acc_code_gelukt_jaar' : 'ui.acc_code_gelukt_pakket'); accMeldingFout = false;
+  await laadTegoed();
+  renderAccountPaneel();
+}
+function renderAccountUI(){
+  const k = document.getElementById('accKnop');
+  if(k){
+    const s = accSessie();
+    k.textContent = s ? '👤 ' + String(s.naam || s.email).split(/[ @]/)[0].slice(0, 12) : '👤';
+    k.setAttribute('aria-label', T('ui.acc_aria'));
+  }
+  renderTegoedBalk();
+  const ov = document.getElementById('accOverlay');
+  if(ov && !ov.hidden) renderAccountPaneel();
+}
+function initAccount(){
+  document.getElementById('accKnop').addEventListener('click', () => openAccount());
+  document.getElementById('accOverlay').addEventListener('click', e => { if(e.target && e.target.id === 'accOverlay') sluitAccount(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') sluitAccount(); });
+  if(location.hash.indexOf('access_token=') >= 0){
+    const par = new URLSearchParams(location.hash.slice(1));
+    accBewaar({ at: par.get('access_token') || '', rt: par.get('refresh_token') || '',
+      exp: Number(par.get('expires_at')) || (Math.floor(Date.now()/1000) + 3600), email: '', naam: '', uid: '' });
+    const soort = par.get('type') || '';
+    history.replaceState(null, '', location.pathname + location.search);
+    accHaalGebruiker().then(() => {
+      renderAccountUI();
+      if(soort === 'recovery') openAccount('nieuwww');
+      else openAccount('account', T('ui.acc_bevestigd'));
+      laadTegoed();
+    });
+  } else if(location.hash.indexOf('error_description=') >= 0){
+    const par = new URLSearchParams(location.hash.slice(1));
+    history.replaceState(null, '', location.pathname + location.search);
+    openAccount('login', String(par.get('error_description') || '').replace(/\+/g, ' '));
+    renderAccountUI();
+  } else {
+    renderAccountUI();
+    if(accSessie()) laadTegoed();
+  }
+}
+
 vertaalPagina();
 initTaal();
 bouwVoeten();
 initFoto();
+initAccount();
 </script>
 <script>
 if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost')){
