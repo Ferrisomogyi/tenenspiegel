@@ -1,8 +1,8 @@
 {
-  "name": "Tenenspiegel",
-  "short_name": "Tenenspiegel",
-  "description": "Voeten zijn spiegels — een speels zelfonderzoek via de vormen van je tenen.",
-  "lang": "nl",
+  "name": "Toe Reading",
+  "short_name": "Toe Reading",
+  "description": "Feet are mirrors \u2014 a playful self-inquiry through the shapes of your toes.",
+  "lang": "en",
   "id": "./",
   "start_url": "./",
   "scope": "./",
