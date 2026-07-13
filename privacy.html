@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-taal="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#EFE8D8">
+<title>Privacy Policy · Toe Reading</title>
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--papier:#EFE8D8;--kaart:#FBF7EC;--inkt:#2B2118;--inkt-zacht:#6B5D4A;--lijn:#CBBD9F;--lijn-zacht:#DCD2BA;--aarde:#8A6A3F;--water:#2F6E62;--vuur:#B84A28}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:'Karla',sans-serif;line-height:1.65;font-size:17px}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0 20px;border-bottom:1px solid var(--lijn-zacht)}
+.merk{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--inkt)}
+.merk img{width:34px;height:34px;border-radius:8px}
+.merk b{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600}
+.talen{display:flex;gap:6px}
+.talen button{border:1px solid var(--lijn);background:var(--kaart);color:var(--inkt-zacht);border-radius:999px;padding:5px 14px;font-family:'Karla',sans-serif;font-weight:700;font-size:.85rem;cursor:pointer}
+.talen button.actief{background:var(--inkt);color:var(--kaart);border-color:var(--inkt)}
+h1{font-family:'Fraunces',serif;font-weight:900;font-size:1.9rem;line-height:1.2;margin:28px 0 4px}
+.datum{color:var(--inkt-zacht);font-size:.92rem;margin:0 0 18px}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;margin:32px 0 8px}
+.zacht{color:var(--inkt-zacht)}
+.kaartje{background:var(--kaart);border:1px solid var(--lijn-zacht);border-radius:14px;padding:14px 18px;margin:18px 0}
+.groen{border-left:4px solid var(--water)}
+a{color:var(--water)}
+footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--lijn-zacht);font-size:.9rem;color:var(--inkt-zacht)}
+footer nav{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:10px}
+table{border-collapse:collapse;width:100%;font-size:.9rem;margin:10px 0}
+th,td{border:1px solid var(--lijn-zacht);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--kaart)}
+[lang-blok]{display:none}
+html[data-taal="en"] [lang-blok="en"]{display:block}
+html[data-taal="nl"] [lang-blok="nl"]{display:block}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="merk" href="./"><img src="icons/icon-192.png" alt=""><b>Toe Reading</b></a>
+  <nav class="talen"><button data-t="en">EN</button><button data-t="nl">NL</button></nav>
+</header>
+
+<main lang-blok="en">
+<h1>Privacy Policy</h1>
+<p class="datum">Effective date: 13 July 2026</p>
+
+<div class="kaartje groen">
+<p><strong>The short version:</strong> your foot photos are analysed and immediately discarded — never stored, never used to train AI. We keep only what an account needs: your name, e-mail, credit balance and (if you save them) your reading texts. No tracking, no ads, no analytics cookies.</p>
+</div>
+
+<h2>1. Who is responsible</h2>
+<p>The controller for your personal data is <strong>Ferri Somogyi Productions</strong>, registered in the Netherlands (KvK no. 34286815). Contact: <a href="mailto:support@toereading.app">support@toereading.app</a>. For purchases, <strong>Paddle.com</strong> acts as Merchant of Record and is an independent controller for the payment data it processes (see <a href="https://www.paddle.com/legal/privacy" rel="noopener">Paddle's privacy policy</a>).</p>
+
+<h2>2. What we process, and why</h2>
+<table>
+<tr><th>Data</th><th>Purpose</th><th>Legal basis</th></tr>
+<tr><td>Name, e-mail, password (stored as a secure hash)</td><td>Your account: login, e-mail verification, password reset</td><td>Contract</td></tr>
+<tr><td>Credit balance and usage counters</td><td>Knowing how many readings you can run (free / pack / subscription, fair-use counter)</td><td>Contract</td></tr>
+<tr><td><strong>Foot photos</strong></td><td>Generating the reading you request — nothing else. Processed in memory, sent encrypted to our AI provider, and <strong>not stored anywhere</strong> after the analysis completes. Not used to train AI models.</td><td>Contract (you actively request each analysis)</td></tr>
+<tr><td>Saved readings ("my readings")</td><td>Only the classification codes and reading texts — never photos. You can delete them at any time.</td><td>Contract</td></tr>
+<tr><td>Transaction metadata (product, amount, Paddle transaction ID)</td><td>Crediting your purchase, bookkeeping, fraud prevention. We never see or store your card details — Paddle handles payment.</td><td>Contract, legal obligation</td></tr>
+<tr><td>Technical logs (IP address, timestamps)</td><td>Security, rate limiting and abuse prevention on our servers</td><td>Legitimate interest</td></tr>
+<tr><td>Support e-mails</td><td>Helping you when you contact us</td><td>Legitimate interest</td></tr>
+</table>
+<p>We do not ask for your date of birth or any other data we don't need (data minimisation). We do not use advertising or analytics trackers. The app stores your session token and language preference in your browser's local storage — functional only.</p>
+
+<h2>3. Who helps us process data</h2>
+<table>
+<tr><th>Party</th><th>Role</th><th>Location</th></tr>
+<tr><td>Supabase</td><td>Accounts and database hosting</td><td>EU (Frankfurt, Germany)</td></tr>
+<tr><td>Cloudflare</td><td>Analysis gateway (worker), DNS</td><td>EU/US, EU Data Privacy Framework &amp; SCCs</td></tr>
+<tr><td>Anthropic</td><td>AI analysis of your photo (Claude API); API data is not used to train models</td><td>US, protected by EU Standard Contractual Clauses / DPF</td></tr>
+<tr><td>Paddle</td><td>Payments (Merchant of Record, independent controller)</td><td>UK/EU (UK has an EU adequacy decision)</td></tr>
+<tr><td>GitHub Pages</td><td>Hosting of the app's static files; may log IP addresses</td><td>US, DPF</td></tr>
+</table>
+<p>We have data processing agreements with our processors. We never sell personal data.</p>
+
+<h2>4. How long we keep things</h2>
+<p>Account data: until you delete your account. Saved readings: until you delete them (or your account). Photos: <strong>not kept at all</strong>. Transaction records: up to 7 years (Dutch tax law). Support e-mails: up to 2 years. Deleting your account removes your profile, credit balance and saved readings automatically (cascading delete).</p>
+
+<h2>5. Your rights</h2>
+<p>You can ask us for access, correction, deletion, restriction, portability, or object to processing — e-mail <a href="mailto:support@toereading.app">support@toereading.app</a> and we'll respond within a month. You can delete saved readings yourself in the app; for full account deletion, e-mail us (an in-app delete button is on its way). You can also complain to the Dutch supervisory authority, the <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
+
+<h2>6. Security</h2>
+<p>Data travels encrypted (TLS). Passwords are stored as secure hashes. Database access is protected with row-level security: your data is only readable by you. Server keys live only in server environments, never in the app. Should a data breach nevertheless occur that poses a risk to you, we will report it to the Autoriteit Persoonsgegevens within 72 hours and inform you when required.</p>
+
+<h2>7. Children</h2>
+<p>Toe Reading is not intended for children under 16, and we do not knowingly process their data.</p>
+
+<h2>8. Changes</h2>
+<p>If we change this policy in a meaningful way, we'll let you know in the app or by e-mail before the change takes effect.</p>
+</main>
+
+<main lang-blok="nl">
+<h1>Privacyverklaring</h1>
+<p class="datum">Ingangsdatum: 13 juli 2026</p>
+
+<div class="kaartje groen">
+<p><strong>De korte versie:</strong> je voetfoto's worden geanalyseerd en direct daarna weggegooid — nooit opgeslagen, nooit gebruikt om AI te trainen. We bewaren alleen wat een account nodig heeft: je naam, e-mail, tegoed en (als je ze bewaart) je lezingteksten. Geen tracking, geen advertenties, geen analytics-cookies.</p>
+</div>
+
+<h2>1. Wie is verantwoordelijk</h2>
+<p>De verwerkingsverantwoordelijke voor je persoonsgegevens is <strong>Ferri Somogyi Productions</strong>, gevestigd in Nederland (KvK-nummer 34286815). Contact: <a href="mailto:support@toereading.app">support@toereading.app</a>. Voor aankopen treedt <strong>Paddle.com</strong> op als Merchant of Record en is Paddle zelfstandig verantwoordelijk voor de betaalgegevens die zij verwerken (zie de <a href="https://www.paddle.com/legal/privacy" rel="noopener">privacyverklaring van Paddle</a>).</p>
+
+<h2>2. Wat we verwerken, en waarom</h2>
+<table>
+<tr><th>Gegevens</th><th>Doel</th><th>Grondslag</th></tr>
+<tr><td>Naam, e-mail, wachtwoord (opgeslagen als veilige hash)</td><td>Je account: inloggen, e-mailverificatie, wachtwoord-reset</td><td>Overeenkomst</td></tr>
+<tr><td>Tegoed en gebruiksteller</td><td>Weten hoeveel lezingen je kunt draaien (gratis / pakket / abonnement, fair-use-teller)</td><td>Overeenkomst</td></tr>
+<tr><td><strong>Voetfoto's</strong></td><td>Het genereren van de lezing die jij aanvraagt — niets anders. Verwerkt in het geheugen, versleuteld verstuurd naar onze AI-leverancier en <strong>nergens opgeslagen</strong> na afloop van de analyse. Niet gebruikt om AI-modellen te trainen.</td><td>Overeenkomst (jij vraagt elke analyse actief aan)</td></tr>
+<tr><td>Bewaarde lezingen ("mijn lezingen")</td><td>Alleen de classificatiecodes en lezingteksten — nooit foto's. Je kunt ze altijd verwijderen.</td><td>Overeenkomst</td></tr>
+<tr><td>Transactiegegevens (product, bedrag, Paddle-transactie-ID)</td><td>Je aankoop bijschrijven, administratie, fraudepreventie. Je kaartgegevens zien of bewaren we nooit — Paddle verzorgt de betaling.</td><td>Overeenkomst, wettelijke plicht</td></tr>
+<tr><td>Technische logs (IP-adres, tijdstippen)</td><td>Beveiliging, rate limiting en misbruikpreventie op onze servers</td><td>Gerechtvaardigd belang</td></tr>
+<tr><td>Support-e-mails</td><td>Je helpen als je contact opneemt</td><td>Gerechtvaardigd belang</td></tr>
+</table>
+<p>We vragen niet om je geboortedatum of andere gegevens die we niet nodig hebben (dataminimalisatie). We gebruiken geen advertentie- of analytics-trackers. De app bewaart je sessietoken en taalvoorkeur in de local storage van je browser — puur functioneel.</p>
+
+<h2>3. Wie ons helpt met verwerken</h2>
+<table>
+<tr><th>Partij</th><th>Rol</th><th>Locatie</th></tr>
+<tr><td>Supabase</td><td>Accounts en database-hosting</td><td>EU (Frankfurt, Duitsland)</td></tr>
+<tr><td>Cloudflare</td><td>Analyse-poort (worker), DNS</td><td>EU/VS, EU Data Privacy Framework &amp; SCC's</td></tr>
+<tr><td>Anthropic</td><td>AI-analyse van je foto (Claude API); API-data wordt niet gebruikt om modellen te trainen</td><td>VS, beschermd via EU Standard Contractual Clauses / DPF</td></tr>
+<tr><td>Paddle</td><td>Betalingen (Merchant of Record, zelfstandig verantwoordelijke)</td><td>VK/EU (het VK heeft een EU-adequaatheidsbesluit)</td></tr>
+<tr><td>GitHub Pages</td><td>Hosting van de statische app-bestanden; kan IP-adressen loggen</td><td>VS, DPF</td></tr>
+</table>
+<p>Met onze verwerkers hebben we verwerkersovereenkomsten. We verkopen nooit persoonsgegevens.</p>
+
+<h2>4. Hoelang we dingen bewaren</h2>
+<p>Accountgegevens: tot je je account verwijdert. Bewaarde lezingen: tot jij ze verwijdert (of je account). Foto's: <strong>helemaal niet bewaard</strong>. Transactiegegevens: tot 7 jaar (fiscale bewaarplicht). Support-e-mails: tot 2 jaar. Bij het verwijderen van je account verdwijnen je profiel, tegoed en bewaarde lezingen automatisch mee (cascade delete).</p>
+
+<h2>5. Je rechten</h2>
+<p>Je kunt ons vragen om inzage, correctie, verwijdering, beperking of overdracht van je gegevens, of bezwaar maken tegen verwerking — mail <a href="mailto:support@toereading.app">support@toereading.app</a>, we reageren binnen een maand. Bewaarde lezingen verwijder je zelf in de app; voor volledige accountverwijdering mail je ons (een verwijderknop in de app is onderweg). Klagen kan ook bij de <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
+
+<h2>6. Beveiliging</h2>
+<p>Gegevens reizen versleuteld (TLS). Wachtwoorden worden als veilige hash opgeslagen. Databasetoegang is beveiligd met row-level security: jouw gegevens zijn alleen voor jou leesbaar. Serversleutels leven uitsluitend in serveromgevingen, nooit in de app. Mocht er toch een datalek ontstaan met risico voor jou, dan melden we dat binnen 72 uur bij de Autoriteit Persoonsgegevens en informeren we je waar dat moet.</p>
+
+<h2>7. Kinderen</h2>
+<p>Toe Reading is niet bedoeld voor kinderen onder de 16 en we verwerken hun gegevens niet bewust.</p>
+
+<h2>8. Wijzigingen</h2>
+<p>Wijzigen we deze verklaring op een betekenisvolle manier, dan laten we dat vooraf weten in de app of per e-mail.</p>
+</main>
+
+<footer>
+<nav>
+<a href="./">App</a>
+<a href="pricing.html">Pricing · Prijzen</a>
+<a href="terms.html">Terms · Voorwaarden</a>
+<a href="privacy.html">Privacy</a>
+<a href="refund.html">Refunds</a>
+</nav>
+<div>Toe Reading · Ferri Somogyi Productions · KvK 34286815 · <a href="mailto:support@toereading.app">support@toereading.app</a></div>
+</footer>
+</div>
+<script>
+(function(){
+  var t='en';
+  try{ t = localStorage.legal_taal || ((localStorage.taal==='nl' || (navigator.language||'').slice(0,2).toLowerCase()==='nl')?'nl':'en'); }catch(e){}
+  if(t!=='nl') t='en';
+  function zet(x){
+    document.documentElement.setAttribute('data-taal',x);
+    document.documentElement.lang=x;
+    document.querySelectorAll('.talen button').forEach(function(b){b.classList.toggle('actief',b.getAttribute('data-t')===x);});
+    try{localStorage.legal_taal=x;}catch(e){}
+  }
+  document.querySelectorAll('.talen button').forEach(function(b){b.onclick=function(){zet(b.getAttribute('data-t'));};});
+  zet(t);
+})();
+</script>
+</body>
+</html>
