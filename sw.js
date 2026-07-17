@@ -1,9 +1,9 @@
-/* Toe Reading service worker · v9.3.0
+/* Toe Reading service worker · v9.5.0
    Strategie:
    - navigaties (de pagina zelf): network-first, val terug op cache → nieuwe deploys komen direct door, offline blijft werken
    - overige same-origin GET (manifest, iconen): cache-first
    - POST-calls naar de worker (workers.dev) worden met rust gelaten */
-const CACHE = 'tenenspiegel-v9.4.0';
+const CACHE = 'tenenspiegel-v9.5.0';
 const KERN = [
   './',
   './index.html',

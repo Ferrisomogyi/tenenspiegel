@@ -247,6 +247,25 @@ html[dir="rtl"] .accx{right:auto;left:12px}
 .admrij select.accveld{flex:0 0 auto;width:auto}
 .admuit{margin-top:8px;font-size:12.5px;white-space:pre-wrap;word-break:break-all;background:var(--kaart);border:1px dashed var(--inkt);border-radius:8px;padding:8px;max-height:180px;overflow:auto}
 .admnoot{font-size:12px;color:var(--inkt-zacht);margin-top:6px}
+.vraagsectie{margin-top:18px;padding:14px;border:1.5px solid var(--lijn);border-radius:12px;background:#FBF6E9}
+.vraagkop{font-weight:700;font-size:16px;margin-bottom:6px}
+.vraagdisclaimer{font-size:12.5px;color:var(--inkt-zacht);margin-bottom:10px}
+.vraaglog{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
+.vraaglog:empty{display:none}
+.vbubbel{max-width:85%;padding:9px 12px;border-radius:12px;font-size:14.5px;line-height:1.5;white-space:pre-wrap;overflow-wrap:break-word}
+.vbubbel.vraag{margin-inline-start:auto;background:#E9DFC6;border:1px solid var(--lijn);border-end-end-radius:4px}
+.vbubbel.antwoord{margin-inline-end:auto;background:#fff;border:1px solid var(--lijn);border-end-start-radius:4px}
+.vbubbel.bezig{color:var(--inkt-zacht);font-style:italic}
+.vraagakkoord{margin:8px 0;font-size:13px}
+.vraagakkoord label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.vraagakkoord input{margin-top:3px;flex:none}
+.vraaginvoer{display:flex;gap:8px;align-items:flex-end}
+.vraaginvoer textarea{flex:1;resize:vertical;min-height:44px;padding:10px 12px;border:1.5px solid var(--lijn);border-radius:10px;font:inherit;font-size:14.5px;background:#fff}
+.vraagvoet{display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:13px;color:var(--inkt-zacht)}
+.vraagop{margin-top:8px;padding:9px 12px;border:1.5px dashed var(--inkt);border-radius:10px;font-size:13.5px;background:#F7F1E1}
+.accbewaar{display:flex;gap:10px;align-items:flex-start;margin-top:14px;padding:10px 12px;border:1.5px solid var(--lijn);border-radius:10px;font-size:13px;background:#F7F1E1;cursor:pointer}
+.accbewaar input{margin-top:2px;flex:none}
+.accbewaar b{font-size:13.5px}
 </style>
 </head>
 <body>
@@ -383,7 +402,7 @@ html[dir="rtl"] .accx{right:auto;left:12px}
 
 <footer class="wrap">
   <div class="bron" data-t="ui.footer_bron">Gebaseerd op Tenen Lezen I · II · III en Babyteentjes Lezen · Imre &amp; Margriet Somogyi</div>
-  <div data-t="ui.footer_versie">Tenenspiegel · v9.4 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt</div>
+  <div data-t="ui.footer_versie">Tenenspiegel · v9.5 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt</div>
   <div class="legallinks"><a href="./pricing.html" data-t="ui.leg_prijzen">Prijzen</a> · <a href="./terms.html" data-t="ui.leg_voorwaarden">Voorwaarden</a> · <a href="./privacy.html" data-t="ui.leg_privacy">Privacy</a> · <a href="./refund.html" data-t="ui.leg_refund">Terugbetaling</a></div>
   <div class="disclaimer" data-t="ui.footer_disclaimer"><b>Goed om te weten.</b> De Tenenspiegel is een spel- en spiegelinstrument voor zelfreflectie, gebaseerd op de boeken van Imre &amp; Margriet Somogyi. De app en de AI-analyse geven geen garanties over juistheid of volledigheid en stellen geen medische, psychologische of andere diagnoses; aan de uitkomsten kunnen geen rechten worden ontleend. Gebruik is volledig op eigen verantwoordelijkheid — de maker van deze app aanvaardt geen enkele aansprakelijkheid voor conclusies of beslissingen die op basis van de app worden genomen. Zorgen over je gezondheid? Ga naar je huisarts of pedicure.</div>
 </footer>
@@ -490,7 +509,7 @@ const TALEN = {
       btn_reset: "Begin opnieuw",
       disclaimer_spiegel: "Tenen lezen spiegelt persoonlijkheid, houding en gedrag. Niets meer en niets minder. Het stelt géén medische of psychologische diagnoses; daarvoor ga je naar een arts of therapeut. Wees mild in je interpretatie: \"rare\" tenen bestaan niet, alleen tenen die bij jou passen.",
       footer_bron: "Gebaseerd op Tenen Lezen I · II · III en Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Tenenspiegel · v9.4 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt",
+      footer_versie: "Tenenspiegel · v9.5 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt",
       footer_disclaimer: "<b>Goed om te weten.</b> De Tenenspiegel is een spel- en spiegelinstrument voor zelfreflectie, gebaseerd op de boeken van Imre &amp; Margriet Somogyi. De app en de AI-analyse geven geen garanties over juistheid of volledigheid en stellen geen medische, psychologische of andere diagnoses; aan de uitkomsten kunnen geen rechten worden ontleend. Gebruik is volledig op eigen verantwoordelijkheid — de maker van deze app aanvaardt geen enkele aansprakelijkheid voor conclusies of beslissingen die op basis van de app worden genomen. Zorgen over je gezondheid? Ga naar je huisarts of pedicure.",
       titel: "Tenenlezen · voeten zijn spiegels",
       aria_taal: "Taal / Language"
@@ -947,7 +966,7 @@ const TALEN = {
       btn_reset: "Start again",
       disclaimer_spiegel: "Toe reading mirrors personality, attitude and behaviour. Nothing more and nothing less. It makes no medical or psychological diagnoses; for those you go to a doctor or therapist. Be gentle in your interpretation: there are no \"strange\" toes, only toes that fit you.",
       footer_bron: "Based on Tenen Lezen I · II · III and Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Toe Mirror · v9.4 · installable as an app (PWA) · extended reading, colour cards &amp; The mirror speaks",
+      footer_versie: "Toe Mirror · v9.5 · installable as an app (PWA) · extended reading, colour cards &amp; The mirror speaks",
       footer_disclaimer: "<b>Good to know.</b> The Tenenspiegel is a game and mirroring instrument for self-reflection, based on the books by Imre &amp; Margriet Somogyi. The app and the AI analysis give no guarantees of correctness or completeness and make no medical, psychological or other diagnoses; no rights can be derived from the outcomes. Use is entirely at your own risk — the maker of this app accepts no liability whatsoever for conclusions or decisions based on the app. Worried about your health? See your family doctor or pedicurist.",
       linkervoet: "Left foot",
       rechtervoet: "Right foot",
@@ -1452,7 +1471,7 @@ const TALEN = {
       btn_reset: "Von vorn beginnen",
       disclaimer_spiegel: "Zehenlesen spiegelt Persönlichkeit, Haltung und Verhalten. Nicht mehr und nicht weniger. Es stellt keine medizinischen oder psychologischen Diagnosen; dafür gehst du zu Arzt oder Therapeut. Sei mild in deiner Deutung: „Komische“ Zehen gibt es nicht, nur Zehen, die zu dir passen.",
       footer_bron: "Nach Tenen Lezen I · II · III und Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Zehenspiegel · v9.4 · als App installierbar (PWA) · ausführliche Lesung, Farbkarten &amp; Der Spiegel erzählt",
+      footer_versie: "Zehenspiegel · v9.5 · als App installierbar (PWA) · ausführliche Lesung, Farbkarten &amp; Der Spiegel erzählt",
       footer_disclaimer: "<b>Gut zu wissen.</b> Der Zehenspiegel ist ein Spiel- und Spiegelinstrument zur Selbstreflexion, nach den Büchern von Imre &amp; Margriet Somogyi. App und KI-Analyse geben keine Garantien für Richtigkeit oder Vollständigkeit und stellen keine medizinischen, psychologischen oder sonstigen Diagnosen; aus den Ergebnissen können keine Rechte abgeleitet werden. Die Nutzung geschieht vollständig auf eigene Verantwortung — der Hersteller dieser App übernimmt keinerlei Haftung für Schlüsse oder Entscheidungen auf Grundlage der App. Sorgen um deine Gesundheit? Geh zu Hausarzt oder Fußpflege.",
       linkervoet: "Linker Fuß",
       rechtervoet: "Rechter Fuß",
@@ -1932,7 +1951,7 @@ const TALEN = {
       btn_reset: "Tout recommencer",
       disclaimer_spiegel: "La lecture des orteils reflète la personnalité, l'attitude et le comportement. Rien de plus, rien de moins. Elle ne pose aucun diagnostic médical ou psychologique ; pour cela, va voir un médecin ou un thérapeute. Sois indulgent dans ton interprétation : les orteils « bizarres » n'existent pas, seulement des orteils qui te ressemblent.",
       footer_bron: "D'après Tenen Lezen I · II · III et Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Miroir des orteils · v9.4 · installable comme app (PWA) · lecture approfondie, cartes couleur &amp; Le miroir raconte",
+      footer_versie: "Miroir des orteils · v9.5 · installable comme app (PWA) · lecture approfondie, cartes couleur &amp; Le miroir raconte",
       footer_disclaimer: "<b>Bon à savoir.</b> Le Miroir des orteils est un instrument de jeu et de reflet pour l'autoréflexion, d'après les livres d'Imre &amp; Margriet Somogyi. L'app et l'analyse par IA n'offrent aucune garantie d'exactitude ou d'exhaustivité et ne posent aucun diagnostic médical, psychologique ou autre ; les résultats ne créent aucun droit. L'utilisation se fait entièrement sous ta propre responsabilité — le créateur de cette app décline toute responsabilité pour les conclusions ou décisions prises sur la base de l'app. Des soucis de santé ? Va voir ton médecin ou ton pédicure.",
       linkervoet: "Pied gauche",
       rechtervoet: "Pied droit",
@@ -2412,7 +2431,7 @@ const TALEN = {
       btn_reset: "Volver a empezar",
       disclaimer_spiegel: "La lectura de los dedos del pie refleja personalidad, actitud y conducta. Nada más y nada menos. No establece diagnósticos médicos ni psicológicos; para eso acude a un médico o terapeuta. Sé benévolo al interpretar: no existen dedos «raros», solo dedos que encajan contigo.",
       footer_bron: "Basado en Tenen Lezen I · II · III y Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Espejo de los dedos · v9.4 · instalable como app (PWA) · lectura ampliada, tarjetas de color &amp; El espejo habla",
+      footer_versie: "Espejo de los dedos · v9.5 · instalable como app (PWA) · lectura ampliada, tarjetas de color &amp; El espejo habla",
       footer_disclaimer: "<b>Bueno saberlo.</b> El Espejo de los dedos es un instrumento de juego y de reflejo para la autorreflexión, basado en los libros de Imre &amp; Margriet Somogyi. La app y el análisis por IA no ofrecen garantías de exactitud o integridad y no establecen diagnósticos médicos, psicológicos ni de otro tipo; de los resultados no se derivan derechos. El uso es enteramente bajo tu propia responsabilidad — el creador de esta app no acepta responsabilidad alguna por conclusiones o decisiones tomadas a partir de la app. ¿Preocupado por tu salud? Acude a tu médico de cabecera o podólogo.",
       linkervoet: "Pie izquierdo",
       rechtervoet: "Pie derecho",
@@ -2892,7 +2911,7 @@ const TALEN = {
       btn_reset: "Ricomincia da capo",
       disclaimer_spiegel: "La lettura delle dita dei piedi rispecchia personalità, atteggiamento e comportamento. Niente di più e niente di meno. Non pone diagnosi mediche o psicologiche; per quelle vai da un medico o un terapeuta. Sii indulgente nell’interpretare: le dita «strane» non esistono, solo dita che ti somigliano.",
       footer_bron: "Basato su Tenen Lezen I · II · III e Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Specchio delle dita · v9.4 · installabile come app (PWA) · lettura estesa, carte dei colori &amp; Lo specchio racconta",
+      footer_versie: "Specchio delle dita · v9.5 · installabile come app (PWA) · lettura estesa, carte dei colori &amp; Lo specchio racconta",
       footer_disclaimer: "<b>Buono a sapersi.</b> Lo Specchio delle dita è uno strumento di gioco e di specchio per l'autoriflessione, basato sui libri di Imre &amp; Margriet Somogyi. L'app e l'analisi con IA non danno garanzie di esattezza o completezza e non pongono diagnosi mediche, psicologiche o di altro tipo; dai risultati non deriva alcun diritto. L'uso è interamente sotto la tua responsabilità — il creatore di questa app non si assume alcuna responsabilità per conclusioni o decisioni prese sulla base dell'app. Preoccupato per la tua salute? Vai dal tuo medico o dal podologo.",
       linkervoet: "Piede sinistro",
       rechtervoet: "Piede destro",
@@ -3372,7 +3391,7 @@ const TALEN = {
       btn_reset: "Recomeçar",
       disclaimer_spiegel: "A leitura dos dedos dos pés espelha personalidade, atitude e comportamento. Nada mais e nada menos. Não estabelece diagnósticos médicos nem psicológicos; para isso vais a um médico ou terapeuta. Sê brando na interpretação: dedos «esquisitos» não existem, só dedos que combinam contigo.",
       footer_bron: "Baseado em Tenen Lezen I · II · III e Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Espelho dos dedos · v9.4 · instalável como app (PWA) · leitura alargada, cartões de cor &amp; O espelho conta",
+      footer_versie: "Espelho dos dedos · v9.5 · instalável como app (PWA) · leitura alargada, cartões de cor &amp; O espelho conta",
       footer_disclaimer: "<b>Bom saber.</b> O Espelho dos dedos é um instrumento de jogo e de espelho para a autorreflexão, baseado nos livros de Imre &amp; Margriet Somogyi. A app e a análise por IA não dão garantias de exatidão ou completude e não estabelecem diagnósticos médicos, psicológicos ou outros; dos resultados não decorrem quaisquer direitos. A utilização é inteiramente por tua conta e risco — o criador desta app não aceita qualquer responsabilidade por conclusões ou decisões tomadas com base na app. Preocupado com a tua saúde? Vai ao teu médico de família ou podologista.",
       linkervoet: "Pé esquerdo",
       rechtervoet: "Pé direito",
@@ -3852,7 +3871,7 @@ const TALEN = {
       btn_reset: "Zacznij od początku",
       disclaimer_spiegel: "Czytanie z palców stóp odzwierciedla osobowość, postawę i zachowanie. Nic więcej i nic mniej. Nie stawia diagnoz medycznych ani psychologicznych; z tym idziesz do lekarza lub terapeuty. Bądź łagodny w interpretacji: nie ma „dziwnych” palców, są tylko palce, które do ciebie pasują.",
       footer_bron: "Na podstawie Tenen Lezen I · II · III oraz Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Lustro palców · v9.4 · do zainstalowania jako aplikacja (PWA) · pełny odczyt, karty kolorów &amp; Lustro opowiada",
+      footer_versie: "Lustro palców · v9.5 · do zainstalowania jako aplikacja (PWA) · pełny odczyt, karty kolorów &amp; Lustro opowiada",
       footer_disclaimer: "<b>Warto wiedzieć.</b> Lustro palców to narzędzie zabawy i autorefleksji, oparte na książkach Imre &amp; Margriet Somogyi. Aplikacja i analiza AI nie dają gwarancji poprawności ani kompletności i nie stawiają diagnoz medycznych, psychologicznych ani żadnych innych; z wyników nie można wywodzić żadnych roszczeń. Korzystasz z aplikacji całkowicie na własną odpowiedzialność — jej twórca nie ponosi żadnej odpowiedzialności za wnioski lub decyzje podjęte na jej podstawie. Martwisz się o swoje zdrowie? Idź do lekarza rodzinnego lub podologa.",
       linkervoet: "Lewa stopa",
       rechtervoet: "Prawa stopa",
@@ -4332,7 +4351,7 @@ const TALEN = {
       btn_reset: "Начать с начала",
       disclaimer_spiegel: "Чтение пальцев ног отражает личность, установки и поведение. Не больше и не меньше. Оно не ставит медицинских или психологических диагнозов; за этим — к врачу или психотерапевту. Толкуй мягко: «странных» пальцев не бывает — бывают только пальцы, которые подходят тебе.",
       footer_bron: "По книгам Tenen Lezen I · II · III и Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Зеркало пальцев · v9.4 · устанавливается как приложение (PWA) · полное чтение, цветные карточки &amp; «Зеркало рассказывает»",
+      footer_versie: "Зеркало пальцев · v9.5 · устанавливается как приложение (PWA) · полное чтение, цветные карточки &amp; «Зеркало рассказывает»",
       footer_disclaimer: "<b>Полезно знать.</b> «Зеркало пальцев» — игровой и зеркальный инструмент для саморефлексии по книгам Imre &amp; Margriet Somogyi. Приложение и ИИ-анализ не дают гарантий верности или полноты и не ставят медицинских, психологических или иных диагнозов; из результатов нельзя выводить никаких прав. Использование происходит целиком под твою ответственность — создатель этого приложения не несёт никакой ответственности за выводы или решения, принятые на его основе. Беспокоишься о здоровье? Сходи к врачу или на педикюр.",
       linkervoet: "Левая стопа",
       rechtervoet: "Правая стопа",
@@ -4812,7 +4831,7 @@ const TALEN = {
       btn_reset: "Baştan başla",
       disclaimer_spiegel: "Ayak parmağı okumak kişiliği, tutumu ve davranışı yansıtır. Ne eksik ne fazla. Tıbbi ya da psikolojik tanı koymaz; onun için doktora ya da terapiste gidersin. Yorumunda yumuşak ol: “tuhaf” parmak yoktur, yalnızca sana uyan parmaklar vardır.",
       footer_bron: "Tenen Lezen I · II · III ve Babyteentjes Lezen kitaplarına göre · Imre &amp; Margriet Somogyi",
-      footer_versie: "Ayak Parmağı Aynası · v9.4 · uygulama olarak kurulabilir (PWA) · ayrıntılı okuma, renk kartları &amp; Ayna anlatıyor",
+      footer_versie: "Ayak Parmağı Aynası · v9.5 · uygulama olarak kurulabilir (PWA) · ayrıntılı okuma, renk kartları &amp; Ayna anlatıyor",
       footer_disclaimer: "<b>Bilmekte yarar var.</b> Ayak Parmağı Aynası, Imre &amp; Margriet Somogyi’nin kitaplarına dayanan, öz düşünüm için bir oyun ve ayna aracıdır. Uygulama ve yapay zekâ analizi doğruluk ya da eksiksizlik güvencesi vermez; tıbbi, psikolojik ya da başka türden tanı koymaz; sonuçlardan hiçbir hak doğmaz. Kullanım tümüyle kendi sorumluluğundadır — bu uygulamanın yapımcısı, uygulamaya dayanılarak varılan sonuçlar ya da alınan kararlar için hiçbir sorumluluk üstlenmez. Sağlığından mı endişelisin? Aile hekimine ya da ayak bakımına git.",
       linkervoet: "Sol ayak",
       rechtervoet: "Sağ ayak",
@@ -5292,7 +5311,7 @@ const TALEN = {
       btn_reset: "ابدأ من البداية",
       disclaimer_spiegel: "قراءة أصابع القدم تعكس الشخصية والموقف والسلوك. لا أكثر ولا أقل. وهي لا تقدم تشخيصات طبية أو نفسية؛ لذلك تذهب إلى الطبيب أو المعالج. كن رفيقًا في تأويلك: لا توجد أصابع «غريبة»، بل أصابع تناسبك فحسب.",
       footer_bron: "وفق Tenen Lezen I · II · III وBabyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "مرآة أصابع القدم · v9.4 · قابلة للتثبيت كتطبيق (PWA) · قراءة مفصلة وبطاقات ملونة و«المرآة تحكي»",
+      footer_versie: "مرآة أصابع القدم · v9.5 · قابلة للتثبيت كتطبيق (PWA) · قراءة مفصلة وبطاقات ملونة و«المرآة تحكي»",
       footer_disclaimer: "<b>جدير بالمعرفة.</b> مرآة أصابع القدم أداة لعب ومرآة للتأمل الذاتي، وفق كتب Imre &amp; Margriet Somogyi. لا يقدم التطبيق ولا تحليل الذكاء الاصطناعي أي ضمانات للصحة أو الاكتمال، ولا يقدمان تشخيصات طبية أو نفسية أو غيرها؛ ولا يمكن استخلاص أي حقوق من النتائج. الاستخدام على مسؤوليتك الكاملة — لا يتحمل صانع هذا التطبيق أي مسؤولية عن استنتاجات أو قرارات تُبنى على التطبيق. قلق على صحتك؟ اذهب إلى طبيب الأسرة أو أخصائي العناية بالقدم.",
       linkervoet: "القدم اليسرى",
       rechtervoet: "القدم اليمنى",
@@ -5772,7 +5791,7 @@ const TALEN = {
       btn_reset: "从头再来",
       disclaimer_spiegel: "脚趾解读映照的是个性、态度和行为。不多，也不少。它不做任何医学或心理诊断；那些请去找医生或治疗师。解读时请温和一些：没有“奇怪”的脚趾，只有与你相称的脚趾。",
       footer_bron: "依据《Tenen Lezen I · II · III》与《Babyteentjes Lezen》 · Imre &amp; Margriet Somogyi",
-      footer_versie: "脚趾之镜 · v9.4 · 可安装为应用（PWA） · 详细解读、彩色卡片 &amp; 听镜子说",
+      footer_versie: "脚趾之镜 · v9.5 · 可安装为应用（PWA） · 详细解读、彩色卡片 &amp; 听镜子说",
       footer_disclaimer: "<b>请知悉。</b>脚趾之镜是一件用于自省的游戏与映照工具，依据 Imre &amp; Margriet Somogyi 的著作。应用及其 AI 分析不保证正确或完整，不做任何医学、心理或其他诊断；不得依据结果主张任何权利。使用完全由你自行承担风险——对基于本应用得出的结论或作出的决定，应用制作者概不承担任何责任。担心自己的健康？请去看家庭医生或足疗师。",
       linkervoet: "左脚",
       rechtervoet: "右脚",
@@ -6252,7 +6271,7 @@ const TALEN = {
       btn_reset: "最初からやり直す",
       disclaimer_spiegel: "足指リーディングが映すのは、人柄、姿勢、ふるまいです。それ以上でも以下でもありません。医学的・心理学的な診断は行いません。そのためには医師やセラピストのもとへ。解釈はやさしく。「変な」足指はありません。あるのは、あなたに似合う足指だけです。",
       footer_bron: "Tenen Lezen I · II · III および Babyteentjes Lezen にもとづく · Imre &amp; Margriet Somogyi",
-      footer_versie: "足指の鏡 · v9.4 · アプリとしてインストール可能(PWA) · 詳しいリーディング、カラーカード &amp; 鏡が語る",
+      footer_versie: "足指の鏡 · v9.5 · アプリとしてインストール可能(PWA) · 詳しいリーディング、カラーカード &amp; 鏡が語る",
       footer_disclaimer: "<b>知っておいてほしいこと。</b>この足指の鏡は、Imre &amp; Margriet Somogyi の本にもとづく、自己をふり返るための遊びと映しの道具です。アプリとAI分析は、正確さや完全さを保証せず、医学的・心理学的その他の診断は行いません。結果からいかなる権利も生じません。利用はすべて自己責任で行ってください。アプリにもとづく結論や判断について、このアプリの制作者は一切の責任を負いません。健康が心配なときは、かかりつけ医やフットケアの専門家へどうぞ。",
       linkervoet: "左足",
       rechtervoet: "右足",
@@ -6732,7 +6751,7 @@ const TALEN = {
       btn_reset: "처음부터 다시",
       disclaimer_spiegel: "발가락 리딩은 성격과 태도, 행동을 비춰 줘요. 그 이상도 그 이하도 아니에요. 의학적·심리학적 진단은 하지 않아요; 그런 일은 의사나 치료사에게 맡기세요. 풀이는 너그럽게 해 주세요: “이상한” 발가락은 없어요, 당신에게 어울리는 발가락이 있을 뿐이에요.",
       footer_bron: "Tenen Lezen I · II · III과 Babyteentjes Lezen에 기반 · Imre &amp; Margriet Somogyi",
-      footer_versie: "발가락 거울 · v9.4 · 앱으로 설치 가능(PWA) · 자세한 리딩, 색 카드 &amp; 거울이 들려주는 이야기",
+      footer_versie: "발가락 거울 · v9.5 · 앱으로 설치 가능(PWA) · 자세한 리딩, 색 카드 &amp; 거울이 들려주는 이야기",
       footer_disclaimer: "<b>알아 두면 좋아요.</b> 발가락 거울은 Imre &amp; Margriet Somogyi의 책에 바탕을 둔, 자기 성찰을 위한 놀이이자 비춰 보기 도구예요. 앱과 AI 분석은 정확성이나 완전성을 보장하지 않고, 의학적·심리학적 진단이나 그 밖의 어떤 진단도 하지 않아요; 결과로부터 어떤 권리도 주장할 수 없어요. 사용은 전적으로 본인 책임이에요 — 이 앱의 제작자는 앱에 근거한 결론이나 결정에 대해 어떤 책임도 지지 않아요. 건강이 걱정되나요? 주치의나 발 관리사를 찾아 주세요.",
       linkervoet: "왼발",
       rechtervoet: "오른발",
@@ -7212,7 +7231,7 @@ const TALEN = {
       btn_reset: "नए सिरे से शुरू",
       disclaimer_spiegel: "पैर की उँगलियाँ पढ़ना व्यक्तित्व, रवैये और व्यवहार का आईना है। न इससे ज़्यादा, न कम। यह कोई चिकित्सकीय या मनोवैज्ञानिक निदान नहीं करता; उसके लिए आप डॉक्टर या थेरेपिस्ट के पास जाइए। अपनी व्याख्या में कोमल रहिए: “अजीब” उँगलियाँ होती ही नहीं, बस ऐसी उँगलियाँ होती हैं जो आप पर जँचती हैं।",
       footer_bron: "Tenen Lezen I · II · III और Babyteentjes Lezen पर आधारित · Imre &amp; Margriet Somogyi",
-      footer_versie: "उँगलियों का आईना · v9.4 · ऐप (PWA) के रूप में इंस्टॉल करने योग्य · विस्तृत पाठ, रंग-कार्ड &amp; आईना बोलता है",
+      footer_versie: "उँगलियों का आईना · v9.5 · ऐप (PWA) के रूप में इंस्टॉल करने योग्य · विस्तृत पाठ, रंग-कार्ड &amp; आईना बोलता है",
       footer_disclaimer: "<b>जानना अच्छा है।</b> यह उँगलियों का आईना Imre &amp; Margriet Somogyi की किताबों पर आधारित, आत्म-चिंतन के लिए एक खेल और दर्पण-उपकरण है। ऐप और AI-विश्लेषण सटीकता या पूर्णता की कोई गारंटी नहीं देते और कोई चिकित्सकीय, मनोवैज्ञानिक या अन्य निदान नहीं करते; नतीजों से कोई अधिकार नहीं निकलते। उपयोग पूरी तरह आपके अपने जोखिम पर है — इस ऐप के निर्माता ऐप पर आधारित निष्कर्षों या निर्णयों की कोई भी ज़िम्मेदारी नहीं लेते। सेहत की चिंता है? अपने डॉक्टर या पेडीक्योरिस्ट के पास जाइए।",
       linkervoet: "बायाँ पैर",
       rechtervoet: "दायाँ पैर",
@@ -7692,7 +7711,7 @@ const TALEN = {
       btn_reset: "Mulai lagi",
       disclaimer_spiegel: "Membaca jari kaki mencerminkan kepribadian, sikap, dan perilaku. Tidak lebih dan tidak kurang. Ia tidak membuat diagnosis medis atau psikologis; untuk itu kamu pergi ke dokter atau terapis. Bersikaplah lembut dalam menafsirkan: tidak ada jari kaki yang \"aneh\", hanya jari kaki yang cocok denganmu.",
       footer_bron: "Berdasarkan Tenen Lezen I · II · III dan Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Cermin Jari Kaki · v9.4 · dapat dipasang sebagai aplikasi (PWA) · pembacaan lengkap, kartu warna &amp; Cermin bercerita",
+      footer_versie: "Cermin Jari Kaki · v9.5 · dapat dipasang sebagai aplikasi (PWA) · pembacaan lengkap, kartu warna &amp; Cermin bercerita",
       footer_disclaimer: "<b>Baik untuk diketahui.</b> Tenenspiegel adalah alat permainan dan pencerminan untuk refleksi diri, berdasarkan buku-buku Imre &amp; Margriet Somogyi. Aplikasi dan analisis AI-nya tidak memberi jaminan kebenaran atau kelengkapan dan tidak membuat diagnosis medis, psikologis, atau lainnya; tidak ada hak yang dapat diturunkan dari hasilnya. Penggunaan sepenuhnya atas risikomu sendiri — pembuat aplikasi ini tidak menerima tanggung jawab apa pun atas kesimpulan atau keputusan yang diambil berdasarkan aplikasi. Khawatir tentang kesehatanmu? Temui dokter keluarga atau ahli perawatan kakimu.",
       linkervoet: "Kaki kiri",
       rechtervoet: "Kaki kanan",
@@ -8197,7 +8216,7 @@ const TALEN = {
       btn_reset: "Làm lại từ đầu",
       disclaimer_spiegel: "Đọc ngón chân phản chiếu nhân cách, thái độ và hành vi. Không hơn không kém. Nó không đưa ra chẩn đoán y khoa hay tâm lý; việc ấy bạn tìm đến bác sĩ hay nhà trị liệu. Hãy dịu dàng khi diễn giải: không có ngón chân nào \"kỳ lạ\", chỉ có những ngón chân vừa vặn với bạn.",
       footer_bron: "Dựa trên Tenen Lezen I · II · III và Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Gương Ngón Chân · v9.4 · cài được như ứng dụng (PWA) · bài đọc mở rộng, thẻ màu &amp; Tấm gương kể chuyện",
+      footer_versie: "Gương Ngón Chân · v9.5 · cài được như ứng dụng (PWA) · bài đọc mở rộng, thẻ màu &amp; Tấm gương kể chuyện",
       footer_disclaimer: "<b>Nên biết.</b> Tenenspiegel là một công cụ trò chơi và soi chiếu để tự nhìn lại mình, dựa trên các cuốn sách của Imre &amp; Margriet Somogyi. Ứng dụng và phần phân tích AI không bảo đảm tính đúng đắn hay đầy đủ và không đưa ra chẩn đoán y khoa, tâm lý hay bất kỳ chẩn đoán nào khác; không quyền lợi nào có thể được suy ra từ các kết quả. Việc sử dụng hoàn toàn thuộc rủi ro của bạn — người làm ra ứng dụng này không nhận bất kỳ trách nhiệm pháp lý nào cho các kết luận hay quyết định dựa trên ứng dụng. Lo lắng về sức khỏe? Hãy gặp bác sĩ gia đình hay chuyên viên chăm sóc chân của bạn.",
       linkervoet: "Chân trái",
       rechtervoet: "Chân phải",
@@ -8702,7 +8721,7 @@ const TALEN = {
       btn_reset: "เริ่มต้นใหม่",
       disclaimer_spiegel: "การอ่านนิ้วเท้าสะท้อนบุคลิกภาพ ทัศนคติ และพฤติกรรม ไม่มากไปและไม่น้อยไปกว่านั้น มันไม่วินิจฉัยทางการแพทย์หรือจิตวิทยา เรื่องเหล่านั้นคุณไปหาแพทย์หรือนักบำบัด จงอ่อนโยนในการตีความ: ไม่มีนิ้วเท้าที่ \"ประหลาด\" มีแต่นิ้วเท้าที่เข้ากับคุณ",
       footer_bron: "อิงจาก Tenen Lezen I · II · III และ Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "กระจกนิ้วเท้า · v9.4 · ติดตั้งเป็นแอปได้ (PWA) · บทอ่านฉบับเต็ม การ์ดสี &amp; กระจกเล่าเรื่อง",
+      footer_versie: "กระจกนิ้วเท้า · v9.5 · ติดตั้งเป็นแอปได้ (PWA) · บทอ่านฉบับเต็ม การ์ดสี &amp; กระจกเล่าเรื่อง",
       footer_disclaimer: "<b>ควรรู้ไว้</b> Tenenspiegel เป็นเครื่องมือเชิงเกมและการสะท้อนเพื่อการทบทวนตัวเอง อิงจากหนังสือของ Imre &amp; Margriet Somogyi แอปและการวิเคราะห์ด้วย AI ไม่รับประกันความถูกต้องหรือความครบถ้วน และไม่ให้การวินิจฉัยทางการแพทย์ จิตวิทยา หรือการวินิจฉัยอื่นใด ไม่อาจอ้างสิทธิ์ใด ๆ จากผลลัพธ์ได้ การใช้งานเป็นความเสี่ยงของคุณเองทั้งหมด — ผู้สร้างแอปนี้ไม่รับผิดใด ๆ ต่อข้อสรุปหรือการตัดสินใจที่อิงจากแอป กังวลเรื่องสุขภาพ? พบแพทย์ประจำบ้านหรือช่างดูแลเท้าของคุณ",
       linkervoet: "เท้าซ้าย",
       rechtervoet: "เท้าขวา",
@@ -9207,7 +9226,7 @@ const TALEN = {
       btn_reset: "Почати спочатку",
       disclaimer_spiegel: "Читання пальців ніг віддзеркалює особистість, поставу і поведінку. Не більше і не менше. Воно не ставить медичних чи психологічних діагнозів; для цього йдуть до лікаря чи терапевта. Будь лагідним у тлумаченні: не буває «дивних» пальців — бувають лише пальці, що пасують тобі.",
       footer_bron: "На основі Tenen Lezen I · II · III і Babyteentjes Lezen · Імре та Марґріт Шомоді",
-      footer_versie: "Дзеркало пальців ніг · v9.4 · встановлюється як застосунок (PWA) · розгорнуте читання, кольорові картки &amp; Дзеркало розповідає",
+      footer_versie: "Дзеркало пальців ніг · v9.5 · встановлюється як застосунок (PWA) · розгорнуте читання, кольорові картки &amp; Дзеркало розповідає",
       footer_disclaimer: "<b>Добре знати.</b> Tenenspiegel — це ігровий і дзеркальний інструмент для саморефлексії, заснований на книжках Імре та Марґріт Шомоді. Застосунок і ШІ-аналіз не дають гарантій правильності чи повноти і не ставлять медичних, психологічних чи інших діагнозів; із результатів не випливає жодних прав. Використання цілком на власний ризик — творець застосунку не бере на себе жодної відповідальності за висновки чи рішення, ухвалені на його основі. Непокоїшся про здоров'я? Звернися до сімейного лікаря чи подолога.",
       linkervoet: "Ліва стопа",
       rechtervoet: "Права стопа",
@@ -10908,6 +10927,580 @@ const KOOP_TALEN = {
 for(const t in KOOP_TALEN){ if(TALEN[t] && TALEN[t].ui) Object.assign(TALEN[t].ui, KOOP_TALEN[t]); }
 const REFUND_TALEN = {nl: "Terugbetaling", en: "Refunds", de: "Rückerstattung", fr: "Remboursements", es: "Reembolsos", it: "Rimborsi", pt: "Reembolsos", pl: "Zwroty", ru: "Возврат средств", tr: "İade", ar: "استرداد المبلغ", zh: "退款", ja: "返金", ko: "환불", hi: "धनवापसी"};
 for(const t in REFUND_TALEN){ if(TALEN[t] && TALEN[t].ui) TALEN[t].ui.leg_refund = REFUND_TALEN[t]; }
+const VRAAG_TALEN = {
+  nl: {
+    vr_kop: "Stel een vraag",
+    vr_disclaimer: "De spiegel antwoordt op basis van jouw lezing en de boeken van Imre & Margriet Somogyi. Geen medisch of psychologisch advies, geen toekomstvoorspelling.",
+    vr_placeholder: "Typ je vraag over jouw lezing…",
+    vr_verzend: "Verstuur",
+    vr_teller: n=>`nog ${n} ${n===1?'vraag':'vragen'}`,
+    vr_op: "Je vragen zijn op. Een nieuwe analyse geeft 3 nieuwe vragen; binnenkort kun je hier ook vragen bijkopen.",
+    vr_koop: "Koop 20 vragen",
+    vr_akkoord: "Ik begrijp dat de spiegel geen medisch of psychologisch advies geeft en geen toekomst voorspelt, en dat ik de antwoorden op eigen risico gebruik.",
+    vr_akkoord_eerst: "Vink eerst het akkoord aan, dan kan je vraag naar de spiegel.",
+    vr_login: "Log in om vragen over jouw lezing te stellen. Elke analyse geeft je 3 vragen cadeau.",
+    vr_bezig: "De spiegel denkt na…",
+    vr_fout_druk: "Rustig aan: er kwamen net veel vragen kort achter elkaar. Probeer het over een paar minuten opnieuw.",
+    vr_fout_net: "De spiegel is even niet bereikbaar. Probeer het later opnieuw.",
+    vr_wis: "Wis dit gesprek",
+    vr_gewist: "Het gesprek is gewist.",
+    acc_bewaar_label: "Bewaar mijn lezingen en gesprekken",
+    acc_bewaar_uitleg: "Staat dit aan, dan bewaren we je lezing en je vragen bij je account. Standaard uit; wissen kan altijd."
+  },
+  en: {
+    vr_kop: "Ask a question",
+    vr_disclaimer: "The mirror answers based on your reading and the books by Imre & Margriet Somogyi. No medical or psychological advice, no predicting the future.",
+    vr_placeholder: "Type your question about your reading…",
+    vr_verzend: "Send",
+    vr_teller: n=>`${n} ${n===1?'question':'questions'} left`,
+    vr_op: "You are out of questions. A new analysis gives you 3 new questions; soon you can also buy extra questions here.",
+    vr_koop: "Buy 20 questions",
+    vr_akkoord: "I understand that the mirror gives no medical or psychological advice and does not predict the future, and that I use the answers at my own risk.",
+    vr_akkoord_eerst: "Please tick the agreement box first, then your question can go to the mirror.",
+    vr_login: "Sign in to ask questions about your reading. Every analysis gives you 3 free questions.",
+    vr_bezig: "The mirror is thinking…",
+    vr_fout_druk: "Easy does it: a lot of questions just came in. Please try again in a few minutes.",
+    vr_fout_net: "The mirror is unavailable right now. Please try again later.",
+    vr_wis: "Clear this conversation",
+    vr_gewist: "The conversation has been cleared.",
+    acc_bewaar_label: "Save my readings and conversations",
+    acc_bewaar_uitleg: "When on, your reading and your questions are saved with your account. Off by default; you can delete them at any time."
+  },
+  de: {
+    vr_kop: "Stell eine Frage",
+    vr_disclaimer: "Der Spiegel antwortet auf Grundlage deiner Lesung und der Bücher von Imre & Margriet Somogyi. Kein medizinischer oder psychologischer Rat, keine Zukunftsvorhersage.",
+    vr_placeholder: "Schreib deine Frage zu deiner Lesung…",
+    vr_verzend: "Senden",
+    vr_teller: n=>`noch ${n} ${n===1?'Frage':'Fragen'}`,
+    vr_op: "Deine Fragen sind aufgebraucht. Eine neue Analyse schenkt dir 3 neue Fragen; bald kannst du hier auch Fragen dazukaufen.",
+    vr_koop: "20 Fragen kaufen",
+    vr_akkoord: "Ich verstehe, dass der Spiegel keinen medizinischen oder psychologischen Rat gibt und keine Zukunft vorhersagt, und dass ich die Antworten auf eigenes Risiko nutze.",
+    vr_akkoord_eerst: "Setz zuerst das Häkchen, dann kann deine Frage zum Spiegel.",
+    vr_login: "Melde dich an, um Fragen zu deiner Lesung zu stellen. Jede Analyse schenkt dir 3 Fragen.",
+    vr_bezig: "Der Spiegel denkt nach…",
+    vr_fout_druk: "Immer mit der Ruhe: Es kamen gerade viele Fragen kurz hintereinander. Versuch es in ein paar Minuten erneut.",
+    vr_fout_net: "Der Spiegel ist gerade nicht erreichbar. Versuch es später noch einmal.",
+    vr_wis: "Dieses Gespräch löschen",
+    vr_gewist: "Das Gespräch wurde gelöscht.",
+    acc_bewaar_label: "Meine Lesungen und Gespräche speichern",
+    acc_bewaar_uitleg: "Ist dies aktiviert, speichern wir deine Lesung und deine Fragen bei deinem Konto. Standardmäßig aus; Löschen ist jederzeit möglich."
+  },
+  fr: {
+    vr_kop: "Pose une question",
+    vr_disclaimer: "Le miroir répond à partir de ta lecture et des livres d'Imre & Margriet Somogyi. Pas d'avis médical ou psychologique, pas de prédiction de l'avenir.",
+    vr_placeholder: "Écris ta question sur ta lecture…",
+    vr_verzend: "Envoyer",
+    vr_teller: n=>`encore ${n} question${n>1?'s':''}`,
+    vr_op: "Tes questions sont épuisées. Une nouvelle analyse t'offre 3 nouvelles questions ; bientôt tu pourras aussi en acheter ici.",
+    vr_koop: "Acheter 20 questions",
+    vr_akkoord: "Je comprends que le miroir ne donne pas d'avis médical ou psychologique et ne prédit pas l'avenir, et que j'utilise les réponses à mes propres risques.",
+    vr_akkoord_eerst: "Coche d'abord la case d'accord, puis ta question pourra partir vers le miroir.",
+    vr_login: "Connecte-toi pour poser des questions sur ta lecture. Chaque analyse t'offre 3 questions.",
+    vr_bezig: "Le miroir réfléchit…",
+    vr_fout_druk: "Doucement : beaucoup de questions viennent d'arriver. Réessaie dans quelques minutes.",
+    vr_fout_net: "Le miroir est momentanément indisponible. Réessaie plus tard.",
+    vr_wis: "Effacer cette conversation",
+    vr_gewist: "La conversation a été effacée.",
+    acc_bewaar_label: "Conserver mes lectures et conversations",
+    acc_bewaar_uitleg: "Si activé, ta lecture et tes questions sont conservées avec ton compte. Désactivé par défaut ; tu peux tout effacer à tout moment."
+  },
+  es: {
+    vr_kop: "Haz una pregunta",
+    vr_disclaimer: "El espejo responde a partir de tu lectura y de los libros de Imre & Margriet Somogyi. Sin consejo médico ni psicológico, sin predicciones de futuro.",
+    vr_placeholder: "Escribe tu pregunta sobre tu lectura…",
+    vr_verzend: "Enviar",
+    vr_teller: n=>`quedan ${n} pregunta${n===1?'':'s'}`,
+    vr_op: "Se te han acabado las preguntas. Un nuevo análisis te regala 3 preguntas nuevas; pronto también podrás comprar preguntas aquí.",
+    vr_koop: "Comprar 20 preguntas",
+    vr_akkoord: "Entiendo que el espejo no da consejo médico ni psicológico y no predice el futuro, y que uso las respuestas bajo mi propia responsabilidad.",
+    vr_akkoord_eerst: "Marca primero la casilla de acuerdo; después tu pregunta podrá llegar al espejo.",
+    vr_login: "Inicia sesión para hacer preguntas sobre tu lectura. Cada análisis te regala 3 preguntas.",
+    vr_bezig: "El espejo está pensando…",
+    vr_fout_druk: "Con calma: acaban de llegar muchas preguntas seguidas. Inténtalo de nuevo en unos minutos.",
+    vr_fout_net: "El espejo no está disponible en este momento. Inténtalo más tarde.",
+    vr_wis: "Borrar esta conversación",
+    vr_gewist: "La conversación se ha borrado.",
+    acc_bewaar_label: "Guardar mis lecturas y conversaciones",
+    acc_bewaar_uitleg: "Si está activado, guardamos tu lectura y tus preguntas en tu cuenta. Desactivado por defecto; puedes borrarlas cuando quieras."
+  },
+  it: {
+    vr_kop: "Fai una domanda",
+    vr_disclaimer: "Lo specchio risponde in base alla tua lettura e ai libri di Imre & Margriet Somogyi. Nessun consiglio medico o psicologico, nessuna previsione del futuro.",
+    vr_placeholder: "Scrivi la tua domanda sulla tua lettura…",
+    vr_verzend: "Invia",
+    vr_teller: n=>`ancora ${n} domand${n===1?'a':'e'}`,
+    vr_op: "Le tue domande sono finite. Una nuova analisi ti regala 3 nuove domande; presto potrai anche acquistarne qui.",
+    vr_koop: "Acquista 20 domande",
+    vr_akkoord: "Capisco che lo specchio non dà consigli medici o psicologici e non prevede il futuro, e che uso le risposte a mio rischio.",
+    vr_akkoord_eerst: "Spunta prima la casella di consenso, poi la tua domanda potrà partire verso lo specchio.",
+    vr_login: "Accedi per fare domande sulla tua lettura. Ogni analisi ti regala 3 domande.",
+    vr_bezig: "Lo specchio sta pensando…",
+    vr_fout_druk: "Con calma: sono appena arrivate molte domande di seguito. Riprova tra qualche minuto.",
+    vr_fout_net: "Lo specchio al momento non è raggiungibile. Riprova più tardi.",
+    vr_wis: "Cancella questa conversazione",
+    vr_gewist: "La conversazione è stata cancellata.",
+    acc_bewaar_label: "Salva le mie letture e conversazioni",
+    acc_bewaar_uitleg: "Se attivo, la tua lettura e le tue domande vengono salvate nel tuo account. Disattivato di default; puoi cancellarle in ogni momento."
+  },
+  pt: {
+    vr_kop: "Faz uma pergunta",
+    vr_disclaimer: "O espelho responde com base na tua leitura e nos livros de Imre & Margriet Somogyi. Sem conselhos médicos ou psicológicos, sem previsões do futuro.",
+    vr_placeholder: "Escreve a tua pergunta sobre a tua leitura…",
+    vr_verzend: "Enviar",
+    vr_teller: n=>`ainda ${n} pergunta${n===1?'':'s'}`,
+    vr_op: "As tuas perguntas acabaram. Uma nova análise oferece-te 3 novas perguntas; em breve também poderás comprar perguntas aqui.",
+    vr_koop: "Comprar 20 perguntas",
+    vr_akkoord: "Compreendo que o espelho não dá conselhos médicos ou psicológicos nem prevê o futuro, e que uso as respostas por minha conta e risco.",
+    vr_akkoord_eerst: "Assinala primeiro a caixa de acordo; depois a tua pergunta pode seguir para o espelho.",
+    vr_login: "Inicia sessão para fazer perguntas sobre a tua leitura. Cada análise oferece-te 3 perguntas.",
+    vr_bezig: "O espelho está a pensar…",
+    vr_fout_druk: "Com calma: chegaram muitas perguntas seguidas. Tenta novamente dentro de alguns minutos.",
+    vr_fout_net: "O espelho está indisponível neste momento. Tenta mais tarde.",
+    vr_wis: "Apagar esta conversa",
+    vr_gewist: "A conversa foi apagada.",
+    acc_bewaar_label: "Guardar as minhas leituras e conversas",
+    acc_bewaar_uitleg: "Se estiver ativo, guardamos a tua leitura e as tuas perguntas na tua conta. Desligado por predefinição; podes apagar tudo a qualquer momento."
+  },
+  pl: {
+    vr_kop: "Zadaj pytanie",
+    vr_disclaimer: "Lustro odpowiada na podstawie twojego odczytu i książek Imre i Margriet Somogyi. Bez porad medycznych i psychologicznych, bez przepowiadania przyszłości.",
+    vr_placeholder: "Wpisz pytanie o swój odczyt…",
+    vr_verzend: "Wyślij",
+    vr_teller: n=>{const m=n%10,s=n%100;return `jeszcze ${n} ${n===1?'pytanie':(m>=2&&m<=4&&(s<12||s>14)?'pytania':'pytań')}`;},
+    vr_op: "Twoje pytania się skończyły. Nowa analiza daje 3 nowe pytania; wkrótce będzie można dokupić pytania tutaj.",
+    vr_koop: "Kup 20 pytań",
+    vr_akkoord: "Rozumiem, że lustro nie udziela porad medycznych ani psychologicznych i nie przepowiada przyszłości, a z odpowiedzi korzystam na własne ryzyko.",
+    vr_akkoord_eerst: "Najpierw zaznacz zgodę, wtedy twoje pytanie trafi do lustra.",
+    vr_login: "Zaloguj się, aby zadawać pytania o swój odczyt. Każda analiza daje ci 3 pytania w prezencie.",
+    vr_bezig: "Lustro się zastanawia…",
+    vr_fout_druk: "Spokojnie: właśnie przyszło wiele pytań naraz. Spróbuj ponownie za kilka minut.",
+    vr_fout_net: "Lustro jest chwilowo niedostępne. Spróbuj później.",
+    vr_wis: "Usuń tę rozmowę",
+    vr_gewist: "Rozmowa została usunięta.",
+    acc_bewaar_label: "Zapisuj moje odczyty i rozmowy",
+    acc_bewaar_uitleg: "Gdy włączone, twój odczyt i pytania są zapisywane na twoim koncie. Domyślnie wyłączone; zawsze możesz je usunąć."
+  },
+  ru: {
+    vr_kop: "Задай вопрос",
+    vr_disclaimer: "Зеркало отвечает на основе твоего чтения и книг Имре и Маргрит Шомоди. Без медицинских и психологических советов, без предсказаний будущего.",
+    vr_placeholder: "Напиши свой вопрос о чтении…",
+    vr_verzend: "Отправить",
+    vr_teller: n=>{const m=n%10,s=n%100;return `ещё ${n} ${m===1&&s!==11?'вопрос':(m>=2&&m<=4&&(s<12||s>14)?'вопроса':'вопросов')}`;},
+    vr_op: "Твои вопросы закончились. Новый анализ даёт 3 новых вопроса; скоро здесь можно будет докупить вопросы.",
+    vr_koop: "Купить 20 вопросов",
+    vr_akkoord: "Я понимаю, что зеркало не даёт медицинских или психологических советов и не предсказывает будущее, и что я использую ответы на свой страх и риск.",
+    vr_akkoord_eerst: "Сначала отметь согласие, тогда твой вопрос отправится к зеркалу.",
+    vr_login: "Войди, чтобы задавать вопросы о своём чтении. Каждый анализ даёт 3 вопроса в подарок.",
+    vr_bezig: "Зеркало думает…",
+    vr_fout_druk: "Не спеши: только что пришло много вопросов подряд. Попробуй снова через несколько минут.",
+    vr_fout_net: "Зеркало сейчас недоступно. Попробуй позже.",
+    vr_wis: "Удалить этот разговор",
+    vr_gewist: "Разговор удалён.",
+    acc_bewaar_label: "Сохранять мои чтения и разговоры",
+    acc_bewaar_uitleg: "Если включено, твоё чтение и твои вопросы сохраняются в аккаунте. По умолчанию выключено; удалить можно в любой момент."
+  },
+  tr: {
+    vr_kop: "Bir soru sor",
+    vr_disclaimer: "Ayna, senin okumana ve Imre & Margriet Somogyi'nin kitaplarına dayanarak yanıt verir. Tıbbi veya psikolojik tavsiye yok, gelecek tahmini yok.",
+    vr_placeholder: "Okuman hakkındaki sorunu yaz…",
+    vr_verzend: "Gönder",
+    vr_teller: n=>`${n} soru kaldı`,
+    vr_op: "Soruların bitti. Yeni bir analiz sana 3 yeni soru kazandırır; yakında buradan soru da satın alabileceksin.",
+    vr_koop: "20 soru satın al",
+    vr_akkoord: "Aynanın tıbbi veya psikolojik tavsiye vermediğini ve geleceği tahmin etmediğini, yanıtları kendi sorumluluğumda kullandığımı anlıyorum.",
+    vr_akkoord_eerst: "Önce onay kutusunu işaretle, sonra sorun aynaya gidebilir.",
+    vr_login: "Okuman hakkında soru sormak için giriş yap. Her analiz sana 3 soru hediye eder.",
+    vr_bezig: "Ayna düşünüyor…",
+    vr_fout_druk: "Sakin ol: az önce art arda çok soru geldi. Birkaç dakika sonra tekrar dene.",
+    vr_fout_net: "Ayna şu anda ulaşılamıyor. Daha sonra tekrar dene.",
+    vr_wis: "Bu konuşmayı sil",
+    vr_gewist: "Konuşma silindi.",
+    acc_bewaar_label: "Okumalarımı ve konuşmalarımı kaydet",
+    acc_bewaar_uitleg: "Açıksa, okuman ve soruların hesabında saklanır. Varsayılan olarak kapalı; istediğin zaman silebilirsin."
+  },
+  ar: {
+    vr_kop: "اطرح سؤالاً",
+    vr_disclaimer: "تجيب المرآة استناداً إلى قراءتك وكتب إمره ومارخريت شوموجي. لا نصائح طبية أو نفسية، ولا تنبؤ بالمستقبل.",
+    vr_placeholder: "اكتب سؤالك عن قراءتك…",
+    vr_verzend: "أرسل",
+    vr_teller: n=>`تبقى لديك ${n} من الأسئلة`,
+    vr_op: "انتهت أسئلتك. يمنحك التحليل الجديد 3 أسئلة جديدة؛ وقريباً يمكنك شراء أسئلة إضافية هنا.",
+    vr_koop: "اشترِ 20 سؤالاً",
+    vr_akkoord: "أفهم أن المرآة لا تقدم نصائح طبية أو نفسية ولا تتنبأ بالمستقبل، وأنني أستخدم الإجابات على مسؤوليتي الخاصة.",
+    vr_akkoord_eerst: "ضع علامة الموافقة أولاً، وبعدها يمكن إرسال سؤالك إلى المرآة.",
+    vr_login: "سجّل الدخول لطرح أسئلة عن قراءتك. كل تحليل يمنحك 3 أسئلة هدية.",
+    vr_bezig: "المرآة تفكر…",
+    vr_fout_druk: "على مهل: وصلت للتو أسئلة كثيرة متتالية. حاول مجدداً بعد بضع دقائق.",
+    vr_fout_net: "المرآة غير متاحة حالياً. حاول مرة أخرى لاحقاً.",
+    vr_wis: "امسح هذه المحادثة",
+    vr_gewist: "تم مسح المحادثة.",
+    acc_bewaar_label: "احفظ قراءاتي ومحادثاتي",
+    acc_bewaar_uitleg: "عند التفعيل، تُحفظ قراءتك وأسئلتك في حسابك. معطل افتراضياً؛ ويمكنك الحذف في أي وقت."
+  },
+  zh: {
+    vr_kop: "提个问题",
+    vr_disclaimer: "镜子根据你的解读以及 Imre & Margriet Somogyi 的著作来回答。不提供医疗或心理建议，也不预测未来。",
+    vr_placeholder: "输入你关于这次解读的问题…",
+    vr_verzend: "发送",
+    vr_teller: n=>`还剩 ${n} 个问题`,
+    vr_op: "你的提问次数用完了。新的分析会赠送 3 个新问题；很快你也可以在这里购买问题。",
+    vr_koop: "购买 20 个问题",
+    vr_akkoord: "我理解镜子不提供医疗或心理建议，也不预测未来，我自行承担使用回答的风险。",
+    vr_akkoord_eerst: "请先勾选同意，然后你的问题才能发给镜子。",
+    vr_login: "登录后即可就你的解读提问。每次分析赠送 3 个问题。",
+    vr_bezig: "镜子正在思考…",
+    vr_fout_druk: "别急：刚刚收到了很多连续的问题。请过几分钟再试。",
+    vr_fout_net: "镜子暂时无法使用。请稍后再试。",
+    vr_wis: "清除此对话",
+    vr_gewist: "对话已清除。",
+    acc_bewaar_label: "保存我的解读和对话",
+    acc_bewaar_uitleg: "开启后，你的解读和问题会保存在你的账户中。默认关闭；随时可以删除。"
+  },
+  ja: {
+    vr_kop: "質問する",
+    vr_disclaimer: "鏡はあなたのリーディングと Imre & Margriet Somogyi の著書に基づいて答えます。医療や心理のアドバイスはせず、未来も予言しません。",
+    vr_placeholder: "リーディングについての質問を入力…",
+    vr_verzend: "送信",
+    vr_teller: n=>`あと ${n} 問`,
+    vr_op: "質問がなくなりました。新しい分析で3問が追加されます。まもなくここで質問を購入することもできます。",
+    vr_koop: "20問を購入",
+    vr_akkoord: "鏡は医療や心理のアドバイスをせず、未来を予言しないこと、回答は自己責任で利用することを理解しました。",
+    vr_akkoord_eerst: "まず同意にチェックを入れてください。そうすれば質問を鏡に送れます。",
+    vr_login: "ログインするとリーディングについて質問できます。分析ごとに3問プレゼント。",
+    vr_bezig: "鏡が考えています…",
+    vr_fout_druk: "少しお待ちを：たった今、質問が続けてたくさん届きました。数分後にもう一度お試しください。",
+    vr_fout_net: "鏡は現在利用できません。しばらくしてからお試しください。",
+    vr_wis: "この会話を消す",
+    vr_gewist: "会話を消しました。",
+    acc_bewaar_label: "リーディングと会話を保存する",
+    acc_bewaar_uitleg: "オンにすると、リーディングと質問がアカウントに保存されます。初期設定はオフ。いつでも削除できます。"
+  },
+  ko: {
+    vr_kop: "질문하기",
+    vr_disclaimer: "거울은 당신의 리딩과 Imre & Margriet Somogyi의 책을 바탕으로 답합니다. 의학적, 심리적 조언이나 미래 예측은 하지 않습니다.",
+    vr_placeholder: "리딩에 대한 질문을 입력하세요…",
+    vr_verzend: "보내기",
+    vr_teller: n=>`${n}개의 질문 남음`,
+    vr_op: "질문을 모두 사용했습니다. 새 분석을 하면 질문 3개를 드립니다. 곧 여기에서 질문을 구매할 수도 있습니다.",
+    vr_koop: "질문 20개 구매",
+    vr_akkoord: "거울이 의학적, 심리적 조언을 하지 않고 미래를 예측하지 않으며, 답변은 제 책임하에 사용한다는 것을 이해합니다.",
+    vr_akkoord_eerst: "먼저 동의에 체크해 주세요. 그러면 질문이 거울에게 전달됩니다.",
+    vr_login: "로그인하면 리딩에 대해 질문할 수 있습니다. 분석마다 질문 3개를 드립니다.",
+    vr_bezig: "거울이 생각 중입니다…",
+    vr_fout_druk: "잠시만요: 방금 질문이 연달아 많이 들어왔습니다. 몇 분 후에 다시 시도해 주세요.",
+    vr_fout_net: "거울을 지금 사용할 수 없습니다. 나중에 다시 시도해 주세요.",
+    vr_wis: "이 대화 지우기",
+    vr_gewist: "대화가 지워졌습니다.",
+    acc_bewaar_label: "내 리딩과 대화 저장하기",
+    acc_bewaar_uitleg: "켜면 리딩과 질문이 계정에 저장됩니다. 기본값은 꺼짐이며 언제든지 삭제할 수 있습니다."
+  },
+  hi: {
+    vr_kop: "एक सवाल पूछो",
+    vr_disclaimer: "दर्पण तुम्हारी रीडिंग और Imre & Margriet Somogyi की किताबों के आधार पर जवाब देता है। कोई चिकित्सा या मनोवैज्ञानिक सलाह नहीं, भविष्यवाणी नहीं।",
+    vr_placeholder: "अपनी रीडिंग के बारे में सवाल लिखो…",
+    vr_verzend: "भेजो",
+    vr_teller: n=>`अभी ${n} सवाल बाकी`,
+    vr_op: "तुम्हारे सवाल खत्म हो गए। नया विश्लेषण 3 नए सवाल देता है; जल्द ही यहाँ सवाल खरीदे भी जा सकेंगे।",
+    vr_koop: "20 सवाल खरीदो",
+    vr_akkoord: "मैं समझता/समझती हूँ कि दर्पण कोई चिकित्सा या मनोवैज्ञानिक सलाह नहीं देता और भविष्य नहीं बताता, और जवाबों का उपयोग मैं अपने जोखिम पर करता/करती हूँ।",
+    vr_akkoord_eerst: "पहले सहमति पर टिक करो, फिर तुम्हारा सवाल दर्पण तक जाएगा।",
+    vr_login: "अपनी रीडिंग के बारे में सवाल पूछने के लिए लॉग इन करो। हर विश्लेषण पर 3 सवाल उपहार में।",
+    vr_bezig: "दर्पण सोच रहा है…",
+    vr_fout_druk: "थोड़ा रुको: अभी-अभी बहुत सारे सवाल एक साथ आए हैं। कुछ मिनट बाद फिर कोशिश करो।",
+    vr_fout_net: "दर्पण अभी उपलब्ध नहीं है। बाद में फिर कोशिश करो।",
+    vr_wis: "यह बातचीत मिटाओ",
+    vr_gewist: "बातचीत मिटा दी गई।",
+    acc_bewaar_label: "मेरी रीडिंग और बातचीत सहेजो",
+    acc_bewaar_uitleg: "चालू होने पर तुम्हारी रीडिंग और सवाल तुम्हारे खाते में सहेजे जाते हैं। डिफ़ॉल्ट रूप से बंद; कभी भी मिटा सकते हो।"
+  },
+  id: {
+    vr_kop: "Ajukan pertanyaan",
+    vr_disclaimer: "Cermin menjawab berdasarkan pembacaanmu dan buku-buku Imre & Margriet Somogyi. Tanpa saran medis atau psikologis, tanpa ramalan masa depan.",
+    vr_placeholder: "Tulis pertanyaanmu tentang pembacaanmu…",
+    vr_verzend: "Kirim",
+    vr_teller: n=>`sisa ${n} pertanyaan`,
+    vr_op: "Pertanyaanmu sudah habis. Analisis baru memberimu 3 pertanyaan baru; segera kamu juga bisa membeli pertanyaan di sini.",
+    vr_koop: "Beli 20 pertanyaan",
+    vr_akkoord: "Saya paham bahwa cermin tidak memberikan saran medis atau psikologis dan tidak meramal masa depan, dan saya menggunakan jawabannya atas risiko sendiri.",
+    vr_akkoord_eerst: "Centang dulu persetujuannya, lalu pertanyaanmu bisa dikirim ke cermin.",
+    vr_login: "Masuk untuk bertanya tentang pembacaanmu. Setiap analisis memberimu 3 pertanyaan gratis.",
+    vr_bezig: "Cermin sedang berpikir…",
+    vr_fout_druk: "Pelan-pelan: barusan banyak pertanyaan masuk berturut-turut. Coba lagi beberapa menit lagi.",
+    vr_fout_net: "Cermin sedang tidak dapat dihubungi. Coba lagi nanti.",
+    vr_wis: "Hapus percakapan ini",
+    vr_gewist: "Percakapan telah dihapus.",
+    acc_bewaar_label: "Simpan pembacaan dan percakapanku",
+    acc_bewaar_uitleg: "Jika aktif, pembacaan dan pertanyaanmu disimpan di akunmu. Nonaktif secara bawaan; kamu selalu bisa menghapusnya."
+  },
+  vi: {
+    vr_kop: "Đặt câu hỏi",
+    vr_disclaimer: "Tấm gương trả lời dựa trên bài đọc của bạn và các cuốn sách của Imre & Margriet Somogyi. Không tư vấn y tế hay tâm lý, không dự đoán tương lai.",
+    vr_placeholder: "Nhập câu hỏi về bài đọc của bạn…",
+    vr_verzend: "Gửi",
+    vr_teller: n=>`còn ${n} câu hỏi`,
+    vr_op: "Bạn đã hết câu hỏi. Một phân tích mới tặng bạn 3 câu hỏi mới; sắp tới bạn cũng có thể mua thêm câu hỏi tại đây.",
+    vr_koop: "Mua 20 câu hỏi",
+    vr_akkoord: "Tôi hiểu rằng tấm gương không đưa ra lời khuyên y tế hay tâm lý và không dự đoán tương lai, và tôi tự chịu trách nhiệm khi sử dụng các câu trả lời.",
+    vr_akkoord_eerst: "Hãy đánh dấu đồng ý trước, sau đó câu hỏi của bạn mới được gửi tới tấm gương.",
+    vr_login: "Đăng nhập để đặt câu hỏi về bài đọc của bạn. Mỗi phân tích tặng bạn 3 câu hỏi.",
+    vr_bezig: "Tấm gương đang suy nghĩ…",
+    vr_fout_druk: "Từ từ thôi: vừa có nhiều câu hỏi liên tiếp. Hãy thử lại sau vài phút.",
+    vr_fout_net: "Tấm gương hiện không truy cập được. Hãy thử lại sau.",
+    vr_wis: "Xóa cuộc trò chuyện này",
+    vr_gewist: "Cuộc trò chuyện đã được xóa.",
+    acc_bewaar_label: "Lưu các bài đọc và cuộc trò chuyện của tôi",
+    acc_bewaar_uitleg: "Khi bật, bài đọc và câu hỏi của bạn được lưu trong tài khoản. Mặc định tắt; bạn luôn có thể xóa."
+  },
+  th: {
+    vr_kop: "ถามคำถาม",
+    vr_disclaimer: "กระจกตอบโดยอิงจากผลการอ่านของคุณและหนังสือของ Imre & Margriet Somogyi ไม่มีคำแนะนำทางการแพทย์หรือจิตวิทยา และไม่ทำนายอนาคต",
+    vr_placeholder: "พิมพ์คำถามเกี่ยวกับผลการอ่านของคุณ…",
+    vr_verzend: "ส่ง",
+    vr_teller: n=>`เหลืออีก ${n} คำถาม`,
+    vr_op: "คำถามของคุณหมดแล้ว การวิเคราะห์ใหม่จะให้คำถามใหม่ 3 ข้อ และอีกไม่นานคุณจะซื้อคำถามเพิ่มได้ที่นี่",
+    vr_koop: "ซื้อ 20 คำถาม",
+    vr_akkoord: "ฉันเข้าใจว่ากระจกไม่ให้คำแนะนำทางการแพทย์หรือจิตวิทยาและไม่ทำนายอนาคต และฉันใช้คำตอบโดยรับความเสี่ยงเอง",
+    vr_akkoord_eerst: "กรุณาติ๊กยอมรับก่อน แล้วคำถามของคุณจึงจะส่งถึงกระจกได้",
+    vr_login: "เข้าสู่ระบบเพื่อถามเกี่ยวกับผลการอ่านของคุณ ทุกการวิเคราะห์จะได้รับ 3 คำถามฟรี",
+    vr_bezig: "กระจกกำลังคิด…",
+    vr_fout_druk: "ใจเย็นๆ: เมื่อครู่มีคำถามเข้ามาติดกันจำนวนมาก โปรดลองอีกครั้งในอีกไม่กี่นาที",
+    vr_fout_net: "ขณะนี้ไม่สามารถติดต่อกระจกได้ โปรดลองใหม่ภายหลัง",
+    vr_wis: "ลบบทสนทนานี้",
+    vr_gewist: "ลบบทสนทนาแล้ว",
+    acc_bewaar_label: "บันทึกผลการอ่านและบทสนทนาของฉัน",
+    acc_bewaar_uitleg: "เมื่อเปิด ผลการอ่านและคำถามของคุณจะถูกบันทึกไว้ในบัญชี ปิดเป็นค่าเริ่มต้น และลบได้ทุกเมื่อ"
+  },
+  uk: {
+    vr_kop: "Постав запитання",
+    vr_disclaimer: "Дзеркало відповідає на основі твого читання та книг Імре й Маргріт Шомоді. Без медичних чи психологічних порад, без передбачення майбутнього.",
+    vr_placeholder: "Напиши своє запитання про читання…",
+    vr_verzend: "Надіслати",
+    vr_teller: n=>{const m=n%10,s=n%100;return `ще ${n} ${m===1&&s!==11?'запитання':(m>=2&&m<=4&&(s<12||s>14)?'запитання':'запитань')}`;},
+    vr_op: "Твої запитання закінчилися. Новий аналіз дає 3 нових запитання; незабаром тут можна буде докупити запитання.",
+    vr_koop: "Купити 20 запитань",
+    vr_akkoord: "Я розумію, що дзеркало не надає медичних чи психологічних порад і не передбачає майбутнє, і що я використовую відповіді на власний ризик.",
+    vr_akkoord_eerst: "Спершу познач згоду, тоді твоє запитання піде до дзеркала.",
+    vr_login: "Увійди, щоб ставити запитання про своє читання. Кожен аналіз дарує 3 запитання.",
+    vr_bezig: "Дзеркало думає…",
+    vr_fout_druk: "Не поспішай: щойно надійшло багато запитань поспіль. Спробуй ще раз за кілька хвилин.",
+    vr_fout_net: "Дзеркало зараз недоступне. Спробуй пізніше.",
+    vr_wis: "Стерти цю розмову",
+    vr_gewist: "Розмову стерто.",
+    acc_bewaar_label: "Зберігати мої читання та розмови",
+    acc_bewaar_uitleg: "Якщо ввімкнено, твоє читання та запитання зберігаються в акаунті. Типово вимкнено; стерти можна будь-коли."
+  },
+  /* onderstaande 11 talen zijn voorbereid voor de 30-talen-uitrol; ze worden pas actief zodra TALEN[t] bestaat */
+  hu: {
+    vr_kop: "Tegyél fel egy kérdést",
+    vr_disclaimer: "A tükör a te olvasatod és Somogyi Imre & Margriet könyvei alapján válaszol. Nem ad orvosi vagy pszichológiai tanácsot, és nem jósol jövőt.",
+    vr_placeholder: "Írd be a kérdésed az olvasatodról…",
+    vr_verzend: "Küldés",
+    vr_teller: n=>`még ${n} kérdés`,
+    vr_op: "Elfogytak a kérdéseid. Egy új elemzés 3 új kérdést ad; hamarosan itt kérdéseket is vásárolhatsz.",
+    vr_koop: "20 kérdés vásárlása",
+    vr_akkoord: "Megértem, hogy a tükör nem ad orvosi vagy pszichológiai tanácsot, nem jósol jövőt, és a válaszokat saját felelősségemre használom.",
+    vr_akkoord_eerst: "Előbb pipáld ki a beleegyezést, utána mehet a kérdésed a tükörhöz.",
+    vr_login: "Jelentkezz be, hogy kérdezhess az olvasatodról. Minden elemzés 3 kérdést ad ajándékba.",
+    vr_bezig: "A tükör gondolkodik…",
+    vr_fout_druk: "Csak nyugodtan: az imént sok kérdés érkezett egymás után. Próbáld újra néhány perc múlva.",
+    vr_fout_net: "A tükör most nem elérhető. Próbáld meg később.",
+    vr_wis: "Beszélgetés törlése",
+    vr_gewist: "A beszélgetés törölve.",
+    acc_bewaar_label: "Olvasataim és beszélgetéseim mentése",
+    acc_bewaar_uitleg: "Ha be van kapcsolva, az olvasatod és a kérdéseid a fiókodban tárolódnak. Alapból kikapcsolva; bármikor törölheted."
+  },
+  bn: {
+    vr_kop: "একটি প্রশ্ন করো",
+    vr_disclaimer: "আয়না তোমার রিডিং এবং Imre & Margriet Somogyi-র বইয়ের ভিত্তিতে উত্তর দেয়। কোনো চিকিৎসা বা মনস্তাত্ত্বিক পরামর্শ নয়, ভবিষ্যদ্বাণীও নয়।",
+    vr_placeholder: "তোমার রিডিং নিয়ে প্রশ্ন লেখো…",
+    vr_verzend: "পাঠাও",
+    vr_teller: n=>`আর ${n}টি প্রশ্ন বাকি`,
+    vr_op: "তোমার প্রশ্ন শেষ। নতুন বিশ্লেষণে ৩টি নতুন প্রশ্ন পাবে; শিগগিরই এখানে প্রশ্ন কেনাও যাবে।",
+    vr_koop: "২০টি প্রশ্ন কেনো",
+    vr_akkoord: "আমি বুঝি যে আয়না কোনো চিকিৎসা বা মনস্তাত্ত্বিক পরামর্শ দেয় না, ভবিষ্যৎ বলে না, এবং উত্তরগুলো আমি নিজ দায়িত্বে ব্যবহার করি।",
+    vr_akkoord_eerst: "আগে সম্মতিতে টিক দাও, তারপর তোমার প্রশ্ন আয়নার কাছে যাবে।",
+    vr_login: "তোমার রিডিং নিয়ে প্রশ্ন করতে লগ ইন করো। প্রতিটি বিশ্লেষণে ৩টি প্রশ্ন উপহার।",
+    vr_bezig: "আয়না ভাবছে…",
+    vr_fout_druk: "একটু ধীরে: এইমাত্র পরপর অনেক প্রশ্ন এসেছে। কয়েক মিনিট পরে আবার চেষ্টা করো।",
+    vr_fout_net: "আয়না এখন পাওয়া যাচ্ছে না। পরে আবার চেষ্টা করো।",
+    vr_wis: "এই কথোপকথন মুছে ফেলো",
+    vr_gewist: "কথোপকথন মুছে ফেলা হয়েছে।",
+    acc_bewaar_label: "আমার রিডিং ও কথোপকথন সংরক্ষণ করো",
+    acc_bewaar_uitleg: "চালু থাকলে তোমার রিডিং ও প্রশ্ন তোমার অ্যাকাউন্টে সংরক্ষিত হয়। ডিফল্টে বন্ধ; যেকোনো সময় মুছতে পারো।"
+  },
+  ur: {
+    vr_kop: "ایک سوال پوچھیں",
+    vr_disclaimer: "آئینہ آپ کی ریڈنگ اور Imre & Margriet Somogyi کی کتابوں کی بنیاد پر جواب دیتا ہے۔ کوئی طبی یا نفسیاتی مشورہ نہیں، مستقبل کی پیشگوئی نہیں۔",
+    vr_placeholder: "اپنی ریڈنگ کے بارے میں سوال لکھیں…",
+    vr_verzend: "بھیجیں",
+    vr_teller: n=>`${n} سوال باقی`,
+    vr_op: "آپ کے سوال ختم ہو گئے۔ نیا تجزیہ 3 نئے سوال دیتا ہے؛ جلد ہی آپ یہاں سوال خرید بھی سکیں گے۔",
+    vr_koop: "20 سوال خریدیں",
+    vr_akkoord: "میں سمجھتا/سمجھتی ہوں کہ آئینہ کوئی طبی یا نفسیاتی مشورہ نہیں دیتا اور مستقبل نہیں بتاتا، اور جوابات میں اپنی ذمہ داری پر استعمال کرتا/کرتی ہوں۔",
+    vr_akkoord_eerst: "پہلے رضامندی پر نشان لگائیں، پھر آپ کا سوال آئینے تک جائے گا۔",
+    vr_login: "اپنی ریڈنگ کے بارے میں سوال پوچھنے کے لیے لاگ ان کریں۔ ہر تجزیے پر 3 سوال تحفے میں۔",
+    vr_bezig: "آئینہ سوچ رہا ہے…",
+    vr_fout_druk: "ذرا آرام سے: ابھی یکے بعد دیگرے بہت سے سوال آئے ہیں۔ چند منٹ بعد دوبارہ کوشش کریں۔",
+    vr_fout_net: "آئینہ اس وقت دستیاب نہیں۔ بعد میں دوبارہ کوشش کریں۔",
+    vr_wis: "یہ گفتگو مٹائیں",
+    vr_gewist: "گفتگو مٹا دی گئی۔",
+    acc_bewaar_label: "میری ریڈنگز اور گفتگو محفوظ کریں",
+    acc_bewaar_uitleg: "فعال ہونے پر آپ کی ریڈنگ اور سوالات آپ کے اکاؤنٹ میں محفوظ ہوتے ہیں۔ طے شدہ طور پر بند؛ کسی بھی وقت مٹا سکتے ہیں۔"
+  },
+  fa: {
+    vr_kop: "یک پرسش بپرس",
+    vr_disclaimer: "آینه بر پایه خوانش تو و کتاب‌های Imre & Margriet Somogyi پاسخ می‌دهد. بدون توصیه پزشکی یا روان‌شناختی، بدون پیشگویی آینده.",
+    vr_placeholder: "پرسشت را درباره خوانشت بنویس…",
+    vr_verzend: "ارسال",
+    vr_teller: n=>`${n} پرسش باقی مانده`,
+    vr_op: "پرسش‌هایت تمام شد. یک تحلیل تازه ۳ پرسش تازه می‌دهد؛ به‌زودی می‌توانی اینجا پرسش هم بخری.",
+    vr_koop: "خرید ۲۰ پرسش",
+    vr_akkoord: "می‌دانم که آینه توصیه پزشکی یا روان‌شناختی نمی‌دهد و آینده را پیشگویی نمی‌کند، و پاسخ‌ها را با مسئولیت خودم به کار می‌برم.",
+    vr_akkoord_eerst: "اول تیک موافقت را بزن، بعد پرسشت به آینه می‌رسد.",
+    vr_login: "برای پرسیدن درباره خوانشت وارد شو. هر تحلیل ۳ پرسش هدیه می‌دهد.",
+    vr_bezig: "آینه در حال فکر کردن است…",
+    vr_fout_druk: "کمی آرام‌تر: همین حالا پرسش‌های زیادی پشت سر هم رسید. چند دقیقه دیگر دوباره امتحان کن.",
+    vr_fout_net: "آینه اکنون در دسترس نیست. بعداً دوباره امتحان کن.",
+    vr_wis: "پاک کردن این گفتگو",
+    vr_gewist: "گفتگو پاک شد.",
+    acc_bewaar_label: "خوانش‌ها و گفتگوهای من ذخیره شود",
+    acc_bewaar_uitleg: "اگر روشن باشد، خوانش و پرسش‌هایت در حسابت ذخیره می‌شود. به‌طور پیش‌فرض خاموش؛ هر وقت بخواهی می‌توانی پاکشان کنی."
+  },
+  ms: {
+    vr_kop: "Tanya soalan",
+    vr_disclaimer: "Cermin menjawab berdasarkan bacaanmu dan buku-buku Imre & Margriet Somogyi. Tiada nasihat perubatan atau psikologi, tiada ramalan masa depan.",
+    vr_placeholder: "Taip soalanmu tentang bacaanmu…",
+    vr_verzend: "Hantar",
+    vr_teller: n=>`tinggal ${n} soalan`,
+    vr_op: "Soalanmu sudah habis. Analisis baharu memberimu 3 soalan baharu; tidak lama lagi kamu juga boleh membeli soalan di sini.",
+    vr_koop: "Beli 20 soalan",
+    vr_akkoord: "Saya faham bahawa cermin tidak memberikan nasihat perubatan atau psikologi dan tidak meramal masa depan, dan saya menggunakan jawapannya atas risiko sendiri.",
+    vr_akkoord_eerst: "Tandakan persetujuan dahulu, barulah soalanmu boleh dihantar ke cermin.",
+    vr_login: "Log masuk untuk bertanya tentang bacaanmu. Setiap analisis memberimu 3 soalan percuma.",
+    vr_bezig: "Cermin sedang berfikir…",
+    vr_fout_druk: "Perlahan-lahan: banyak soalan baru sahaja masuk berturut-turut. Cuba lagi dalam beberapa minit.",
+    vr_fout_net: "Cermin tidak dapat dihubungi buat masa ini. Cuba lagi nanti.",
+    vr_wis: "Padam perbualan ini",
+    vr_gewist: "Perbualan telah dipadamkan.",
+    acc_bewaar_label: "Simpan bacaan dan perbualan saya",
+    acc_bewaar_uitleg: "Jika aktif, bacaan dan soalanmu disimpan dalam akaunmu. Dimatikan secara lalai; kamu boleh memadamnya bila-bila masa."
+  },
+  tl: {
+    vr_kop: "Magtanong",
+    vr_disclaimer: "Sumasagot ang salamin batay sa iyong pagbasa at sa mga aklat nina Imre & Margriet Somogyi. Walang medikal o sikolohikal na payo, walang panghuhula ng hinaharap.",
+    vr_placeholder: "I-type ang tanong mo tungkol sa iyong pagbasa…",
+    vr_verzend: "Ipadala",
+    vr_teller: n=>`may ${n} pang tanong`,
+    vr_op: "Ubos na ang mga tanong mo. Ang bagong pagsusuri ay magbibigay ng 3 bagong tanong; malapit ka na ring makabili ng tanong dito.",
+    vr_koop: "Bumili ng 20 tanong",
+    vr_akkoord: "Nauunawaan ko na ang salamin ay hindi nagbibigay ng medikal o sikolohikal na payo at hindi nanghuhula ng hinaharap, at ginagamit ko ang mga sagot sa sarili kong pananagutan.",
+    vr_akkoord_eerst: "Lagyan muna ng tsek ang pagsang-ayon, saka makakarating ang tanong mo sa salamin.",
+    vr_login: "Mag-sign in para magtanong tungkol sa iyong pagbasa. Bawat pagsusuri ay may 3 libreng tanong.",
+    vr_bezig: "Nag-iisip ang salamin…",
+    vr_fout_druk: "Dahan-dahan lang: maraming tanong ang sunud-sunod na dumating. Subukan ulit pagkalipas ng ilang minuto.",
+    vr_fout_net: "Hindi maabot ang salamin sa ngayon. Subukan ulit mamaya.",
+    vr_wis: "Burahin ang usapang ito",
+    vr_gewist: "Nabura na ang usapan.",
+    acc_bewaar_label: "I-save ang aking mga pagbasa at usapan",
+    acc_bewaar_uitleg: "Kapag naka-on, ang pagbasa at mga tanong mo ay naka-save sa iyong account. Naka-off bilang default; maaari mong burahin anumang oras."
+  },
+  el: {
+    vr_kop: "Κάνε μια ερώτηση",
+    vr_disclaimer: "Ο καθρέφτης απαντά με βάση την ανάγνωσή σου και τα βιβλία των Imre & Margriet Somogyi. Καμία ιατρική ή ψυχολογική συμβουλή, καμία πρόβλεψη του μέλλοντος.",
+    vr_placeholder: "Γράψε την ερώτησή σου για την ανάγνωσή σου…",
+    vr_verzend: "Αποστολή",
+    vr_teller: n=>`ακόμη ${n} ${n===1?'ερώτηση':'ερωτήσεις'}`,
+    vr_op: "Οι ερωτήσεις σου τελείωσαν. Μια νέα ανάλυση σου χαρίζει 3 νέες ερωτήσεις· σύντομα θα μπορείς να αγοράσεις ερωτήσεις κι εδώ.",
+    vr_koop: "Αγόρασε 20 ερωτήσεις",
+    vr_akkoord: "Κατανοώ ότι ο καθρέφτης δεν δίνει ιατρικές ή ψυχολογικές συμβουλές και δεν προβλέπει το μέλλον, και ότι χρησιμοποιώ τις απαντήσεις με δική μου ευθύνη.",
+    vr_akkoord_eerst: "Τσέκαρε πρώτα τη συγκατάθεση και μετά η ερώτησή σου μπορεί να πάει στον καθρέφτη.",
+    vr_login: "Συνδέσου για να κάνεις ερωτήσεις για την ανάγνωσή σου. Κάθε ανάλυση σου χαρίζει 3 ερωτήσεις.",
+    vr_bezig: "Ο καθρέφτης σκέφτεται…",
+    vr_fout_druk: "Με ηρεμία: μόλις ήρθαν πολλές ερωτήσεις στη σειρά. Δοκίμασε ξανά σε λίγα λεπτά.",
+    vr_fout_net: "Ο καθρέφτης δεν είναι διαθέσιμος αυτή τη στιγμή. Δοκίμασε ξανά αργότερα.",
+    vr_wis: "Διαγραφή αυτής της συνομιλίας",
+    vr_gewist: "Η συνομιλία διαγράφηκε.",
+    acc_bewaar_label: "Αποθήκευση των αναγνώσεων και συνομιλιών μου",
+    acc_bewaar_uitleg: "Αν είναι ενεργό, η ανάγνωση και οι ερωτήσεις σου αποθηκεύονται στον λογαριασμό σου. Απενεργοποιημένο από προεπιλογή· μπορείς πάντα να τα διαγράψεις."
+  },
+  cs: {
+    vr_kop: "Polož otázku",
+    vr_disclaimer: "Zrcadlo odpovídá na základě tvého čtení a knih Imre & Margriet Somogyi. Žádné lékařské ani psychologické rady, žádné předpovídání budoucnosti.",
+    vr_placeholder: "Napiš svou otázku ke svému čtení…",
+    vr_verzend: "Odeslat",
+    vr_teller: n=>`ještě ${n} ${n===1?'otázka':(n>=2&&n<=4?'otázky':'otázek')}`,
+    vr_op: "Tvé otázky došly. Nová analýza ti dá 3 nové otázky; brzy si zde budeš moci otázky i dokoupit.",
+    vr_koop: "Koupit 20 otázek",
+    vr_akkoord: "Rozumím, že zrcadlo nedává lékařské ani psychologické rady a nepředpovídá budoucnost, a že odpovědi používám na vlastní riziko.",
+    vr_akkoord_eerst: "Nejdřív zaškrtni souhlas, pak může tvá otázka putovat k zrcadlu.",
+    vr_login: "Přihlas se, abys mohl(a) pokládat otázky ke svému čtení. Každá analýza ti dá 3 otázky zdarma.",
+    vr_bezig: "Zrcadlo přemýšlí…",
+    vr_fout_druk: "Jen klid: právě přišlo hodně otázek za sebou. Zkus to znovu za pár minut.",
+    vr_fout_net: "Zrcadlo je momentálně nedostupné. Zkus to později.",
+    vr_wis: "Smazat tento rozhovor",
+    vr_gewist: "Rozhovor byl smazán.",
+    acc_bewaar_label: "Ukládat má čtení a rozhovory",
+    acc_bewaar_uitleg: "Pokud je zapnuto, tvé čtení a otázky se ukládají k tvému účtu. Ve výchozím stavu vypnuto; kdykoli je můžeš smazat."
+  },
+  ro: {
+    vr_kop: "Pune o întrebare",
+    vr_disclaimer: "Oglinda răspunde pe baza citirii tale și a cărților lui Imre & Margriet Somogyi. Fără sfaturi medicale sau psihologice, fără prezicerea viitorului.",
+    vr_placeholder: "Scrie întrebarea ta despre citirea ta…",
+    vr_verzend: "Trimite",
+    vr_teller: n=>n===1?'încă o întrebare':`încă ${n} ${n<20?'întrebări':'de întrebări'}`,
+    vr_op: "Întrebările tale s-au terminat. O analiză nouă îți oferă 3 întrebări noi; în curând vei putea cumpăra întrebări și aici.",
+    vr_koop: "Cumpără 20 de întrebări",
+    vr_akkoord: "Înțeleg că oglinda nu oferă sfaturi medicale sau psihologice și nu prezice viitorul, și că folosesc răspunsurile pe propria răspundere.",
+    vr_akkoord_eerst: "Bifează mai întâi acordul, apoi întrebarea ta poate ajunge la oglindă.",
+    vr_login: "Conectează-te ca să pui întrebări despre citirea ta. Fiecare analiză îți oferă 3 întrebări cadou.",
+    vr_bezig: "Oglinda se gândește…",
+    vr_fout_druk: "Ușor: tocmai au venit multe întrebări una după alta. Încearcă din nou peste câteva minute.",
+    vr_fout_net: "Oglinda nu este disponibilă momentan. Încearcă mai târziu.",
+    vr_wis: "Șterge această conversație",
+    vr_gewist: "Conversația a fost ștearsă.",
+    acc_bewaar_label: "Salvează citirile și conversațiile mele",
+    acc_bewaar_uitleg: "Dacă este activat, citirea și întrebările tale se salvează în contul tău. Dezactivat implicit; le poți șterge oricând."
+  },
+  sv: {
+    vr_kop: "Ställ en fråga",
+    vr_disclaimer: "Spegeln svarar utifrån din läsning och böckerna av Imre & Margriet Somogyi. Inga medicinska eller psykologiska råd, inga förutsägelser om framtiden.",
+    vr_placeholder: "Skriv din fråga om din läsning…",
+    vr_verzend: "Skicka",
+    vr_teller: n=>`${n} ${n===1?'fråga':'frågor'} kvar`,
+    vr_op: "Dina frågor är slut. En ny analys ger dig 3 nya frågor; snart kan du också köpa frågor här.",
+    vr_koop: "Köp 20 frågor",
+    vr_akkoord: "Jag förstår att spegeln inte ger medicinska eller psykologiska råd och inte förutspår framtiden, och att jag använder svaren på egen risk.",
+    vr_akkoord_eerst: "Bocka först i samtycket, sedan kan din fråga gå till spegeln.",
+    vr_login: "Logga in för att ställa frågor om din läsning. Varje analys ger dig 3 frågor.",
+    vr_bezig: "Spegeln funderar…",
+    vr_fout_druk: "Lugnt och fint: många frågor kom precis i rad. Försök igen om några minuter.",
+    vr_fout_net: "Spegeln går inte att nå just nu. Försök igen senare.",
+    vr_wis: "Rensa den här konversationen",
+    vr_gewist: "Konversationen har rensats.",
+    acc_bewaar_label: "Spara mina läsningar och konversationer",
+    acc_bewaar_uitleg: "När det är på sparas din läsning och dina frågor på ditt konto. Av som standard; du kan alltid radera dem."
+  },
+  zht: {
+    vr_kop: "提出問題",
+    vr_disclaimer: "鏡子根據你的解讀以及 Imre & Margriet Somogyi 的著作來回答。不提供醫療或心理建議，也不預測未來。",
+    vr_placeholder: "輸入你關於這次解讀的問題…",
+    vr_verzend: "傳送",
+    vr_teller: n=>`還剩 ${n} 個問題`,
+    vr_op: "你的提問次數用完了。新的分析會贈送 3 個新問題；很快你也可以在這裡購買問題。",
+    vr_koop: "購買 20 個問題",
+    vr_akkoord: "我理解鏡子不提供醫療或心理建議，也不預測未來，我自行承擔使用回答的風險。",
+    vr_akkoord_eerst: "請先勾選同意，然後你的問題才能送給鏡子。",
+    vr_login: "登入後即可就你的解讀提問。每次分析贈送 3 個問題。",
+    vr_bezig: "鏡子正在思考…",
+    vr_fout_druk: "別急：剛剛收到許多連續的問題。請過幾分鐘再試。",
+    vr_fout_net: "鏡子暫時無法使用。請稍後再試。",
+    vr_wis: "清除此對話",
+    vr_gewist: "對話已清除。",
+    acc_bewaar_label: "儲存我的解讀和對話",
+    acc_bewaar_uitleg: "開啟後，你的解讀和問題會儲存在你的帳戶中。預設關閉；隨時可以刪除。"
+  }
+};
+for(const t in VRAAG_TALEN){ if(TALEN[t] && TALEN[t].ui) Object.assign(TALEN[t].ui, VRAAG_TALEN[t]); }
 const TAAL_NAMEN = { nl:'Nederlands', en:"English", de:"Deutsch", fr:"Français", es:"Español", it:"Italiano", pt:"Português", pl:"Polski", ru:"Русский", tr:"Türkçe", ar:"العربية", zh:"中文", ja:"日本語", ko:"한국어", hi:"हिन्दी", id:"Bahasa Indonesia", vi:"Tiếng Việt", th:"ไทย", uk:"Українська" };
 const TAAL_BETA = { en:"beta", de:"Beta", fr:"bêta", es:"beta", it:"beta", pt:"beta", pl:"Beta", ru:"Бета", tr:"Beta", ar:"تجريبي", zh:"测试版", ja:"ベータ", ko:"베타", hi:"बीटा", id:"Beta", vi:"Beta", th:"Beta", uk:"Beta" };
 let TAAL = (()=>{ try{ if(localStorage.taal && TALEN[localStorage.taal]) return localStorage.taal; }catch(e){}
@@ -11658,7 +12251,10 @@ async function deSpiegelVertelt(uitgebreid){
   }
   if(v.samenhang) html += '<div class="vsamen">'+esc(v.samenhang)+'</div>';
   html += '<div class="fotonoot" style="margin-top:12px">'+T('ui.vertelt_noot')+'</div></div>';
+  laatsteVertelt = v; laatsteDiepgang = uitgebreid ? 'uitgebreid' : 'kort';
   uit.innerHTML = html;
+  bewaarLezingAlsAan();
+  renderVraagSectie();
   uit.scrollIntoView({behavior:'smooth', block:'nearest'});
 }
 
@@ -11666,7 +12262,7 @@ async function deSpiegelVertelt(uitgebreid){
 /* ================= ACCOUNTS & TEGOED (v9.0) ================= */
 function accSessie(){ try{ const s = JSON.parse(localStorage.ts_sessie || 'null'); return (s && s.at) ? s : null; }catch(e){ return null; } }
 function accBewaar(s){ try{ localStorage.ts_sessie = JSON.stringify(s); }catch(e){} }
-function accWis(){ try{ delete localStorage.ts_sessie; }catch(e){} laatsteTegoed = null; accIsAdmin = false; accAdminGecheckt = false; }
+function accWis(){ try{ delete localStorage.ts_sessie; }catch(e){} laatsteTegoed = null; accIsAdmin = false; accAdminGecheckt = false; accProfiel = null; vraagGesprek = []; huidigeLezingId = null; }
 
 function accUitTokens(dt){
   if(!dt || !dt.access_token) return null;
@@ -11776,11 +12372,12 @@ async function laadTegoed(){
   const t = await accToken();
   if(!t){ laatsteTegoed = null; renderTegoedBalk(); return null; }
   try{
-    const r = await fetch(SB_URL + '/rest/v1/tegoed?select=gratis_over,pakket_over,abo_tot,fair_use_maand,fair_use_reset', { headers: { apikey: SB_KEY, Authorization: 'Bearer ' + t } });
+    const r = await fetch(SB_URL + '/rest/v1/tegoed?select=gratis_over,pakket_over,abo_tot,fair_use_maand,fair_use_reset,vragen_over,vragen_maand', { headers: { apikey: SB_KEY, Authorization: 'Bearer ' + t } });
     const rijen = await r.json();
     laatsteTegoed = Array.isArray(rijen) && rijen[0] ? rijen[0] : null;
   }catch(e){ laatsteTegoed = null; }
   renderTegoedBalk();
+  if(typeof renderVraagTeller === 'function') renderVraagTeller();
   const ov = document.getElementById('accOverlay');
   if(ov && !ov.hidden && accModus === 'account') renderAccountPaneel();
   return laatsteTegoed;
@@ -11876,6 +12473,7 @@ function renderAccountPaneel(){
       '<button class="koopknop" id="accKoopPakket"><span>' + T('ui.koop_pakket') + '</span><span class="prijs">\u20ac\u00a04,99</span></button>' +
       '<button class="koopknop" id="accKoopJaar"><span>' + T('ui.koop_jaar') + '</span><span class="prijs">\u20ac\u00a039,99</span></button>' +
       '<div class="koopnoot">' + esc(T('ui.koop_jaar_noot')) + '<br>' + esc(T('ui.koop_veilig')) + '</div></div>' +
+      '<label class="accbewaar"><input type="checkbox" id="accBewaarLez"' + (accProfiel && accProfiel.bewaar_lezingen ? ' checked' : '') + '><span><b>' + esc(T('ui.acc_bewaar_label')) + '</b><br>' + esc(T('ui.acc_bewaar_uitleg')) + '</span></label>' +
       (accIsAdmin ? '<button class="acclink" id="accBeheer">Beheer (admin) →</button>' : '') +
       '<div class="accknoppen"><button class="knop knop-ghost2" id="accUit">' + T('ui.acc_btn_uitloggen') + '</button></div>';
   } else if(accModus === 'beheer'){
@@ -11905,6 +12503,17 @@ function renderAccountPaneel(){
   bind('accKoopJaar', () => koopStart('jaar'));
   bind('accDoeCode', accDoeCode);
   bind('accDoe', accDoe);
+  const accBL = document.getElementById('accBewaarLez');
+  if(accBL){
+    if(!accProfiel) laadProfiel().then(p => { const el = document.getElementById('accBewaarLez'); if(p && el) el.checked = !!p.bewaar_lezingen; });
+    accBL.addEventListener('change', async () => {
+      accBL.disabled = true;
+      const okk = await zetProfiel({ bewaar_lezingen: accBL.checked });
+      accBL.disabled = false;
+      if(!okk){ accBL.checked = !accBL.checked; return; }
+      if(accBL.checked){ bewaarLezingAlsAan().then(() => { if(vraagGesprek.length) bewaarGesprekAlsAan(); }); }
+    });
+  }
   const eersteVeld = p.querySelector('input');
   if(eersteVeld) eersteVeld.focus();
   p.querySelectorAll('input').forEach(inp => inp.addEventListener('keydown', e => { if(e.key === 'Enter'){ e.preventDefault(); const k = document.getElementById('accDoe') || document.getElementById('accDoeCode'); if(k) k.click(); } }));
@@ -11983,6 +12592,220 @@ function initAccount(){
   }
 }
 
+
+/* ================= VRAGEN AAN DE SPIEGEL (v9.5) ================= */
+const VRAGEN_MAAND = 30;
+const VRAAG_KOOP_ACTIEF = false; /* aanzetten zodra de betaalprovider live is; knop koppelt dan aan koopStart('vragen20') */
+let vraagGesprek = [];
+let vraagBezig = false;
+let laatsteVertelt = null;
+let laatsteDiepgang = 'kort';
+let huidigeLezingId = null;
+let accProfiel = null;
+
+async function laadProfiel(){
+  const t = await accToken();
+  if(!t){ accProfiel = null; return null; }
+  try{
+    const r = await fetch(SB_URL + '/rest/v1/profielen?select=vraag_akkoord,bewaar_lezingen', { headers: { apikey: SB_KEY, Authorization: 'Bearer ' + t } });
+    const rijen = await r.json();
+    accProfiel = Array.isArray(rijen) && rijen[0] ? rijen[0] : null;
+  }catch(e){ accProfiel = null; }
+  return accProfiel;
+}
+async function zetProfiel(velden){
+  const t = await accToken(); if(!t) return false;
+  let s = accSessie();
+  if(s && !s.uid){ await accHaalGebruiker(); s = accSessie(); }
+  if(!s || !s.uid) return false;
+  try{
+    const r = await fetch(SB_URL + '/rest/v1/profielen?id=eq.' + encodeURIComponent(s.uid), {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json', apikey: SB_KEY, Authorization: 'Bearer ' + t, Prefer: 'return=minimal' },
+      body: JSON.stringify(velden)
+    });
+    if(r.ok){ accProfiel = Object.assign(accProfiel || {}, velden); return true; }
+  }catch(e){}
+  return false;
+}
+
+function vragenTotaal(){
+  const g = laatsteTegoed;
+  if(!g || g.vragen_over === undefined || g.vragen_over === null) return null;
+  let tot = g.vragen_over || 0;
+  const aboActief = g.abo_tot && new Date(g.abo_tot) > new Date();
+  if(aboActief){
+    const reset = g.fair_use_reset ? new Date(g.fair_use_reset) : null, nu = new Date();
+    const zelfdeMaand = reset && reset.getFullYear() === nu.getFullYear() && reset.getMonth() === nu.getMonth();
+    tot += Math.max(0, VRAGEN_MAAND - (zelfdeMaand ? (g.vragen_maand || 0) : 0));
+  }
+  return tot;
+}
+function renderVraagTeller(){
+  const el = document.getElementById('vraagTeller');
+  if(!el) return;
+  const n = vragenTotaal();
+  el.textContent = (n === null) ? '' : TF('ui.vr_teller', n);
+  const op = document.getElementById('vraagOp');
+  if(op) op.hidden = (n !== 0);
+  const koop = document.getElementById('vraagKoop');
+  if(koop) koop.hidden = !(VRAAG_KOOP_ACTIEF && n === 0);
+}
+function vraagStatus(html, soort){
+  const el = document.getElementById('vraagStatus');
+  if(el) el.innerHTML = html ? '<div class="fotostatus ' + (soort || '') + '" style="margin-top:8px">' + html + '</div>' : '';
+}
+function vraagBubbel(soort, tekst){
+  const log = document.getElementById('vraagLog');
+  if(!log) return null;
+  const d = document.createElement('div');
+  d.className = 'vbubbel ' + soort;
+  d.textContent = tekst;
+  log.appendChild(d);
+  return d;
+}
+function renderVraagSectie(){
+  const uit = document.getElementById('verteltUit');
+  if(!uit || document.getElementById('vraagSectie')) return;
+  vraagGesprek = []; huidigeLezingId = null;
+  const d = document.createElement('div');
+  d.className = 'vraagsectie'; d.id = 'vraagSectie';
+  d.innerHTML = '<div class="vraagkop">' + esc(T('ui.vr_kop')) + '</div>' +
+    '<div class="vraagdisclaimer">' + esc(T('ui.vr_disclaimer')) + '</div>' +
+    '<div id="vraagLog" class="vraaglog"></div>' +
+    '<div id="vraagAkkoordRij" class="vraagakkoord" hidden><label><input type="checkbox" id="vraagAkkoord"><span>' + esc(T('ui.vr_akkoord')) + '</span></label></div>' +
+    '<div class="vraaginvoer"><textarea id="vraagVeld" rows="2" maxlength="500" placeholder="' + esc(T('ui.vr_placeholder')) + '"></textarea>' +
+    '<button class="knop knop-donker" id="vraagVerzend">' + esc(T('ui.vr_verzend')) + '</button></div>' +
+    '<div class="vraagvoet"><span id="vraagTeller"></span><button class="acclink" id="vraagWis" hidden style="margin:0">' + esc(T('ui.vr_wis')) + '</button></div>' +
+    '<div id="vraagOp" class="vraagop" hidden>' + esc(T('ui.vr_op')) + '</div>' +
+    '<button class="knop knop-licht" id="vraagKoop" hidden style="margin-top:8px">' + esc(T('ui.vr_koop')) + '</button>' +
+    '<div id="vraagStatus"></div>';
+  uit.appendChild(d);
+  document.getElementById('vraagVerzend').addEventListener('click', verzendVraag);
+  document.getElementById('vraagWis').addEventListener('click', wisGesprek);
+  const veld = document.getElementById('vraagVeld');
+  veld.addEventListener('keydown', e => { if(e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); verzendVraag(); } });
+  if(accSessie() && !DEMO){
+    (accProfiel ? Promise.resolve(accProfiel) : laadProfiel()).then(p => {
+      const rij = document.getElementById('vraagAkkoordRij');
+      if(rij && p && !p.vraag_akkoord) rij.hidden = false;
+    });
+    laadTegoed();
+  }
+  renderVraagTeller();
+}
+async function verzendVraag(){
+  if(vraagBezig) return;
+  const veld = document.getElementById('vraagVeld');
+  const vraag = ((veld && veld.value) || '').trim();
+  if(!vraag) return;
+  if(!accSessie()){ openAccount('login', T('ui.vr_login')); return; }
+  if(!accProfiel) await laadProfiel();
+  if(!accProfiel || !accProfiel.vraag_akkoord){
+    const rij = document.getElementById('vraagAkkoordRij');
+    const vink = document.getElementById('vraagAkkoord');
+    if(rij && rij.hidden){ rij.hidden = false; vraagStatus(esc(T('ui.vr_akkoord_eerst')), ''); return; }
+    if(!vink || !vink.checked){ vraagStatus(esc(T('ui.vr_akkoord_eerst')), 'fout'); return; }
+    await zetProfiel({ vraag_akkoord: new Date().toISOString() });
+    if(accProfiel && accProfiel.vraag_akkoord && rij) rij.hidden = true;
+  }
+  vraagBezig = true;
+  const knop = document.getElementById('vraagVerzend');
+  if(knop) knop.disabled = true;
+  vraagStatus('');
+  const bubbelVraag = vraagBubbel('vraag', vraag);
+  const bubbelBezig = vraagBubbel('antwoord bezig', T('ui.vr_bezig'));
+  const tenen = {}; for(const k in sel) tenen[k] = [...sel[k]];
+  let r = null, dt = null;
+  try{
+    r = await fetch(AI_WORKER + '/vraag', {
+      method: 'POST',
+      headers: Object.assign({ 'Content-Type': 'application/json' }, await accAuthKop()),
+      body: JSON.stringify({ taal: TAAL, analyse: { tenen, notities: laatsteNotities, vertelt: laatsteVertelt }, geschiedenis: vraagGesprek.slice(-6), vraag })
+    });
+    try{ dt = await r.json(); }catch(e){}
+  }catch(e){}
+  vraagBezig = false;
+  if(knop) knop.disabled = false;
+  if(bubbelBezig) bubbelBezig.remove();
+  if(r && r.ok && dt && dt.ok === true && dt.antwoord){
+    vraagGesprek.push({ vraag: vraag, antwoord: dt.antwoord });
+    vraagBubbel('antwoord', dt.antwoord);
+    if(veld) veld.value = '';
+    const w = document.getElementById('vraagWis'); if(w) w.hidden = false;
+    if(laatsteTegoed && dt.over !== undefined){
+      if(dt.bron === 'abo'){ laatsteTegoed.vragen_over = 0; laatsteTegoed.vragen_maand = VRAGEN_MAAND - dt.over; }
+      else laatsteTegoed.vragen_over = dt.over;
+    }
+    renderVraagTeller();
+    laadTegoed();
+    bewaarGesprekAlsAan();
+    return;
+  }
+  if(bubbelVraag) bubbelVraag.remove();
+  const code = String((dt && (dt.code || dt.reden)) || '');
+  const st = r ? r.status : 0;
+  if(st === 401 || code === 'login_vereist' || code === 'sessie_verlopen'){
+    if(code === 'sessie_verlopen'){ accWis(); renderAccountUI(); openAccount('login', T('ui.acc_sessie_verlopen')); }
+    else openAccount('login', T('ui.vr_login'));
+  } else if(st === 402 || code === 'vragen_op'){
+    if(laatsteTegoed){ laatsteTegoed.vragen_over = 0; laatsteTegoed.vragen_maand = VRAGEN_MAAND; }
+    renderVraagTeller(); laadTegoed();
+    vraagStatus(esc(T('ui.vr_op')), 'fout');
+  } else if(st === 429){
+    vraagStatus(esc(T('ui.vr_fout_druk')), 'fout');
+  } else {
+    vraagStatus(esc(T('ui.vr_fout_net')), 'fout');
+  }
+}
+async function bewaarLezingAlsAan(){
+  if(DEMO || huidigeLezingId || !accSessie() || !laatsteVertelt) return;
+  if(!accProfiel) await laadProfiel();
+  if(!accProfiel || !accProfiel.bewaar_lezingen) return;
+  const t = await accToken(); if(!t) return;
+  let s = accSessie();
+  if(s && !s.uid){ await accHaalGebruiker(); s = accSessie(); }
+  if(!s || !s.uid) return;
+  const tenen = {}; for(const k in sel) tenen[k] = [...sel[k]];
+  try{
+    const r = await fetch(SB_URL + '/rest/v1/lezingen', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', apikey: SB_KEY, Authorization: 'Bearer ' + t, Prefer: 'return=representation' },
+      body: JSON.stringify({ gebruiker: s.uid, diepgang: laatsteDiepgang, tenen: tenen, notities: laatsteNotities, vertelt: laatsteVertelt })
+    });
+    const rijen = await r.json();
+    if(r.ok && Array.isArray(rijen) && rijen[0] && rijen[0].id) huidigeLezingId = rijen[0].id;
+  }catch(e){}
+}
+async function bewaarGesprekAlsAan(){
+  if(DEMO || !accProfiel || !accProfiel.bewaar_lezingen) return;
+  if(!huidigeLezingId) await bewaarLezingAlsAan();
+  if(!huidigeLezingId) return;
+  const t = await accToken(); if(!t) return;
+  try{
+    await fetch(SB_URL + '/rest/v1/lezingen?id=eq.' + encodeURIComponent(huidigeLezingId), {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json', apikey: SB_KEY, Authorization: 'Bearer ' + t, Prefer: 'return=minimal' },
+      body: JSON.stringify({ vragen: vraagGesprek })
+    });
+  }catch(e){}
+}
+async function wisGesprek(){
+  vraagGesprek = [];
+  const log = document.getElementById('vraagLog'); if(log) log.innerHTML = '';
+  const w = document.getElementById('vraagWis'); if(w) w.hidden = true;
+  vraagStatus(esc(T('ui.vr_gewist')), 'goed');
+  if(huidigeLezingId){
+    const t = await accToken(); if(!t) return;
+    try{
+      await fetch(SB_URL + '/rest/v1/lezingen?id=eq.' + encodeURIComponent(huidigeLezingId), {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json', apikey: SB_KEY, Authorization: 'Bearer ' + t, Prefer: 'return=minimal' },
+        body: JSON.stringify({ vragen: null })
+      });
+    }catch(e){}
+  }
+}
 
 /* ================= KASSA (Paddle overlay, v9.1) ================= */
 let koopPending = null, paddleLaden = null, paddleKlaar = false, koopPollTimers = [], koopVorigTegoed = null;
