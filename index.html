@@ -262,6 +262,13 @@ html[dir="rtl"] .accx{right:auto;left:12px}
 .vbubbel.vraag{margin-inline-start:auto;background:#E9DFC6;border:1px solid var(--lijn);border-end-end-radius:4px}
 .vbubbel.antwoord{margin-inline-end:auto;background:#fff;border:1px solid var(--lijn);border-end-start-radius:4px}
 .vbubbel.bezig{color:var(--inkt-zacht);font-style:italic}
+.duobanner{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:10px 0;padding:10px 12px;border:1.5px solid var(--lijn);border-radius:12px;background:#F3ECD9;font-size:14.5px}
+.duopaneel{margin:10px 0;padding:14px;border:1.5px solid var(--lijn);border-radius:12px;background:#FBF6E9}
+.duokop{font-weight:700;font-size:16px;margin-bottom:6px}
+.duotekst{font-size:14.5px;line-height:1.5;margin-bottom:8px}
+.duovink{display:flex;gap:8px;align-items:flex-start;font-size:14px;margin:10px 0;cursor:pointer}
+.duovink input{margin-top:3px;flex:0 0 auto}
+.duoverhaal{white-space:pre-wrap;font-size:15px;line-height:1.65}
 .vraagakkoord{margin:8px 0;font-size:13px}
 .vraagakkoord label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
 .vraagakkoord input{margin-top:3px;flex:none}
@@ -324,6 +331,7 @@ html[dir="rtl"] .accx{right:auto;left:12px}
         <button type="button" class="modusknop" id="modusTwee" data-t="ui.modus_twee" role="radio" aria-checked="false">Twee close-ups · per voet</button>
       </div>
       <div class="modusnoot" id="modusNoot" data-t="ui.modusnoot_een">Snel en simpel: één foto van boven met beide voeten in beeld.</div>
+      <div id="duoPaneel"></div>
       <input type="file" id="fotoInput" accept="image/*" hidden>
       <input type="file" id="fotoInputL" accept="image/*" hidden>
       <input type="file" id="fotoInputR" accept="image/*" hidden>
@@ -361,9 +369,11 @@ html[dir="rtl"] .accx{right:auto;left:12px}
       <div class="foto-acties">
         <button class="knop knop-donker" id="analyseerBtn" disabled data-t="ui.btn_analyseer">Analyseer mijn voeten</button>
         <button class="knop knop-ghost2" id="fotoWissen" hidden data-t="ui.btn_opnieuw">Opnieuw beginnen</button>
+        <button class="knop knop-licht" id="duoStartBtn" data-t="ui.duo_knop">Duo-analyse</button>
       </div>
       <div class="fotostatus" id="fotoStatus" aria-live="polite"></div>
       <div id="fotoResultaat"></div>
+      <div id="duoUit"></div>
       <div class="fotoprivacy" data-t="ui.foto_privacy">Je foto wordt alleen gebruikt voor deze ene analyse en nergens opgeslagen.</div>
     </div>
   </div>
@@ -413,7 +423,7 @@ html[dir="rtl"] .accx{right:auto;left:12px}
 
 <footer class="wrap">
   <div class="bron" data-t="ui.footer_bron">Gebaseerd op Tenen Lezen I · II · III en Babyteentjes Lezen · Imre &amp; Margriet Somogyi</div>
-  <div data-t="ui.footer_versie">Tenenspiegel · v9.6 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt</div>
+  <div data-t="ui.footer_versie">Tenenspiegel · v9.7 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt</div>
   <div class="legallinks"><a href="./pricing.html" data-t="ui.leg_prijzen">Prijzen</a> · <a href="./terms.html" data-t="ui.leg_voorwaarden">Voorwaarden</a> · <a href="./privacy.html" data-t="ui.leg_privacy">Privacy</a> · <a href="./refund.html" data-t="ui.leg_refund">Terugbetaling</a></div>
   <div class="disclaimer" data-t="ui.footer_disclaimer"><b>Goed om te weten.</b> De Tenenspiegel is een spel- en spiegelinstrument voor zelfreflectie, gebaseerd op de boeken van Imre &amp; Margriet Somogyi. De app en de AI-analyse geven geen garanties over juistheid of volledigheid en stellen geen medische, psychologische of andere diagnoses; aan de uitkomsten kunnen geen rechten worden ontleend. Gebruik is volledig op eigen verantwoordelijkheid — de maker van deze app aanvaardt geen enkele aansprakelijkheid voor conclusies of beslissingen die op basis van de app worden genomen. Zorgen over je gezondheid? Ga naar je huisarts of pedicure.</div>
 </footer>
@@ -520,7 +530,7 @@ const TALEN = {
       btn_reset: "Begin opnieuw",
       disclaimer_spiegel: "Tenen lezen spiegelt persoonlijkheid, houding en gedrag. Niets meer en niets minder. Het stelt géén medische of psychologische diagnoses; daarvoor ga je naar een arts of therapeut. Wees mild in je interpretatie: \"rare\" tenen bestaan niet, alleen tenen die bij jou passen.",
       footer_bron: "Gebaseerd op Tenen Lezen I · II · III en Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Tenenspiegel · v9.6 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt",
+      footer_versie: "Tenenspiegel · v9.7 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt",
       footer_disclaimer: "<b>Goed om te weten.</b> De Tenenspiegel is een spel- en spiegelinstrument voor zelfreflectie, gebaseerd op de boeken van Imre &amp; Margriet Somogyi. De app en de AI-analyse geven geen garanties over juistheid of volledigheid en stellen geen medische, psychologische of andere diagnoses; aan de uitkomsten kunnen geen rechten worden ontleend. Gebruik is volledig op eigen verantwoordelijkheid — de maker van deze app aanvaardt geen enkele aansprakelijkheid voor conclusies of beslissingen die op basis van de app worden genomen. Zorgen over je gezondheid? Ga naar je huisarts of pedicure.",
       titel: "Tenenlezen · voeten zijn spiegels",
       aria_taal: "Taal / Language"
@@ -977,7 +987,7 @@ const TALEN = {
       btn_reset: "Start again",
       disclaimer_spiegel: "Toe reading mirrors personality, attitude and behaviour. Nothing more and nothing less. It makes no medical or psychological diagnoses; for those you go to a doctor or therapist. Be gentle in your interpretation: there are no \"strange\" toes, only toes that fit you.",
       footer_bron: "Based on Tenen Lezen I · II · III and Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Toe Mirror · v9.6 · installable as an app (PWA) · extended reading, colour cards &amp; The mirror speaks",
+      footer_versie: "Toe Mirror · v9.7 · installable as an app (PWA) · extended reading, colour cards &amp; The mirror speaks",
       footer_disclaimer: "<b>Good to know.</b> The Tenenspiegel is a game and mirroring instrument for self-reflection, based on the books by Imre &amp; Margriet Somogyi. The app and the AI analysis give no guarantees of correctness or completeness and make no medical, psychological or other diagnoses; no rights can be derived from the outcomes. Use is entirely at your own risk — the maker of this app accepts no liability whatsoever for conclusions or decisions based on the app. Worried about your health? See your family doctor or pedicurist.",
       linkervoet: "Left foot",
       rechtervoet: "Right foot",
@@ -1482,7 +1492,7 @@ const TALEN = {
       btn_reset: "Von vorn beginnen",
       disclaimer_spiegel: "Zehenlesen spiegelt Persönlichkeit, Haltung und Verhalten. Nicht mehr und nicht weniger. Es stellt keine medizinischen oder psychologischen Diagnosen; dafür gehst du zu Arzt oder Therapeut. Sei mild in deiner Deutung: „Komische“ Zehen gibt es nicht, nur Zehen, die zu dir passen.",
       footer_bron: "Nach Tenen Lezen I · II · III und Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Zehenspiegel · v9.6 · als App installierbar (PWA) · ausführliche Lesung, Farbkarten &amp; Der Spiegel erzählt",
+      footer_versie: "Zehenspiegel · v9.7 · als App installierbar (PWA) · ausführliche Lesung, Farbkarten &amp; Der Spiegel erzählt",
       footer_disclaimer: "<b>Gut zu wissen.</b> Der Zehenspiegel ist ein Spiel- und Spiegelinstrument zur Selbstreflexion, nach den Büchern von Imre &amp; Margriet Somogyi. App und KI-Analyse geben keine Garantien für Richtigkeit oder Vollständigkeit und stellen keine medizinischen, psychologischen oder sonstigen Diagnosen; aus den Ergebnissen können keine Rechte abgeleitet werden. Die Nutzung geschieht vollständig auf eigene Verantwortung — der Hersteller dieser App übernimmt keinerlei Haftung für Schlüsse oder Entscheidungen auf Grundlage der App. Sorgen um deine Gesundheit? Geh zu Hausarzt oder Fußpflege.",
       linkervoet: "Linker Fuß",
       rechtervoet: "Rechter Fuß",
@@ -1962,7 +1972,7 @@ const TALEN = {
       btn_reset: "Tout recommencer",
       disclaimer_spiegel: "La lecture des orteils reflète la personnalité, l'attitude et le comportement. Rien de plus, rien de moins. Elle ne pose aucun diagnostic médical ou psychologique ; pour cela, va voir un médecin ou un thérapeute. Sois indulgent dans ton interprétation : les orteils « bizarres » n'existent pas, seulement des orteils qui te ressemblent.",
       footer_bron: "D'après Tenen Lezen I · II · III et Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Miroir des orteils · v9.6 · installable comme app (PWA) · lecture approfondie, cartes couleur &amp; Le miroir raconte",
+      footer_versie: "Miroir des orteils · v9.7 · installable comme app (PWA) · lecture approfondie, cartes couleur &amp; Le miroir raconte",
       footer_disclaimer: "<b>Bon à savoir.</b> Le Miroir des orteils est un instrument de jeu et de reflet pour l'autoréflexion, d'après les livres d'Imre &amp; Margriet Somogyi. L'app et l'analyse par IA n'offrent aucune garantie d'exactitude ou d'exhaustivité et ne posent aucun diagnostic médical, psychologique ou autre ; les résultats ne créent aucun droit. L'utilisation se fait entièrement sous ta propre responsabilité — le créateur de cette app décline toute responsabilité pour les conclusions ou décisions prises sur la base de l'app. Des soucis de santé ? Va voir ton médecin ou ton pédicure.",
       linkervoet: "Pied gauche",
       rechtervoet: "Pied droit",
@@ -2442,7 +2452,7 @@ const TALEN = {
       btn_reset: "Volver a empezar",
       disclaimer_spiegel: "La lectura de los dedos del pie refleja personalidad, actitud y conducta. Nada más y nada menos. No establece diagnósticos médicos ni psicológicos; para eso acude a un médico o terapeuta. Sé benévolo al interpretar: no existen dedos «raros», solo dedos que encajan contigo.",
       footer_bron: "Basado en Tenen Lezen I · II · III y Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Espejo de los dedos · v9.6 · instalable como app (PWA) · lectura ampliada, tarjetas de color &amp; El espejo habla",
+      footer_versie: "Espejo de los dedos · v9.7 · instalable como app (PWA) · lectura ampliada, tarjetas de color &amp; El espejo habla",
       footer_disclaimer: "<b>Bueno saberlo.</b> El Espejo de los dedos es un instrumento de juego y de reflejo para la autorreflexión, basado en los libros de Imre &amp; Margriet Somogyi. La app y el análisis por IA no ofrecen garantías de exactitud o integridad y no establecen diagnósticos médicos, psicológicos ni de otro tipo; de los resultados no se derivan derechos. El uso es enteramente bajo tu propia responsabilidad — el creador de esta app no acepta responsabilidad alguna por conclusiones o decisiones tomadas a partir de la app. ¿Preocupado por tu salud? Acude a tu médico de cabecera o podólogo.",
       linkervoet: "Pie izquierdo",
       rechtervoet: "Pie derecho",
@@ -2922,7 +2932,7 @@ const TALEN = {
       btn_reset: "Ricomincia da capo",
       disclaimer_spiegel: "La lettura delle dita dei piedi rispecchia personalità, atteggiamento e comportamento. Niente di più e niente di meno. Non pone diagnosi mediche o psicologiche; per quelle vai da un medico o un terapeuta. Sii indulgente nell’interpretare: le dita «strane» non esistono, solo dita che ti somigliano.",
       footer_bron: "Basato su Tenen Lezen I · II · III e Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Specchio delle dita · v9.6 · installabile come app (PWA) · lettura estesa, carte dei colori &amp; Lo specchio racconta",
+      footer_versie: "Specchio delle dita · v9.7 · installabile come app (PWA) · lettura estesa, carte dei colori &amp; Lo specchio racconta",
       footer_disclaimer: "<b>Buono a sapersi.</b> Lo Specchio delle dita è uno strumento di gioco e di specchio per l'autoriflessione, basato sui libri di Imre &amp; Margriet Somogyi. L'app e l'analisi con IA non danno garanzie di esattezza o completezza e non pongono diagnosi mediche, psicologiche o di altro tipo; dai risultati non deriva alcun diritto. L'uso è interamente sotto la tua responsabilità — il creatore di questa app non si assume alcuna responsabilità per conclusioni o decisioni prese sulla base dell'app. Preoccupato per la tua salute? Vai dal tuo medico o dal podologo.",
       linkervoet: "Piede sinistro",
       rechtervoet: "Piede destro",
@@ -3402,7 +3412,7 @@ const TALEN = {
       btn_reset: "Recomeçar",
       disclaimer_spiegel: "A leitura dos dedos dos pés espelha personalidade, atitude e comportamento. Nada mais e nada menos. Não estabelece diagnósticos médicos nem psicológicos; para isso vais a um médico ou terapeuta. Sê brando na interpretação: dedos «esquisitos» não existem, só dedos que combinam contigo.",
       footer_bron: "Baseado em Tenen Lezen I · II · III e Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Espelho dos dedos · v9.6 · instalável como app (PWA) · leitura alargada, cartões de cor &amp; O espelho conta",
+      footer_versie: "Espelho dos dedos · v9.7 · instalável como app (PWA) · leitura alargada, cartões de cor &amp; O espelho conta",
       footer_disclaimer: "<b>Bom saber.</b> O Espelho dos dedos é um instrumento de jogo e de espelho para a autorreflexão, baseado nos livros de Imre &amp; Margriet Somogyi. A app e a análise por IA não dão garantias de exatidão ou completude e não estabelecem diagnósticos médicos, psicológicos ou outros; dos resultados não decorrem quaisquer direitos. A utilização é inteiramente por tua conta e risco — o criador desta app não aceita qualquer responsabilidade por conclusões ou decisões tomadas com base na app. Preocupado com a tua saúde? Vai ao teu médico de família ou podologista.",
       linkervoet: "Pé esquerdo",
       rechtervoet: "Pé direito",
@@ -3882,7 +3892,7 @@ const TALEN = {
       btn_reset: "Zacznij od początku",
       disclaimer_spiegel: "Czytanie z palców stóp odzwierciedla osobowość, postawę i zachowanie. Nic więcej i nic mniej. Nie stawia diagnoz medycznych ani psychologicznych; z tym idziesz do lekarza lub terapeuty. Bądź łagodny w interpretacji: nie ma „dziwnych” palców, są tylko palce, które do ciebie pasują.",
       footer_bron: "Na podstawie Tenen Lezen I · II · III oraz Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Lustro palców · v9.6 · do zainstalowania jako aplikacja (PWA) · pełny odczyt, karty kolorów &amp; Lustro opowiada",
+      footer_versie: "Lustro palców · v9.7 · do zainstalowania jako aplikacja (PWA) · pełny odczyt, karty kolorów &amp; Lustro opowiada",
       footer_disclaimer: "<b>Warto wiedzieć.</b> Lustro palców to narzędzie zabawy i autorefleksji, oparte na książkach Imre &amp; Margriet Somogyi. Aplikacja i analiza AI nie dają gwarancji poprawności ani kompletności i nie stawiają diagnoz medycznych, psychologicznych ani żadnych innych; z wyników nie można wywodzić żadnych roszczeń. Korzystasz z aplikacji całkowicie na własną odpowiedzialność — jej twórca nie ponosi żadnej odpowiedzialności za wnioski lub decyzje podjęte na jej podstawie. Martwisz się o swoje zdrowie? Idź do lekarza rodzinnego lub podologa.",
       linkervoet: "Lewa stopa",
       rechtervoet: "Prawa stopa",
@@ -4362,7 +4372,7 @@ const TALEN = {
       btn_reset: "Начать с начала",
       disclaimer_spiegel: "Чтение пальцев ног отражает личность, установки и поведение. Не больше и не меньше. Оно не ставит медицинских или психологических диагнозов; за этим — к врачу или психотерапевту. Толкуй мягко: «странных» пальцев не бывает — бывают только пальцы, которые подходят тебе.",
       footer_bron: "По книгам Tenen Lezen I · II · III и Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Зеркало пальцев · v9.6 · устанавливается как приложение (PWA) · полное чтение, цветные карточки &amp; «Зеркало рассказывает»",
+      footer_versie: "Зеркало пальцев · v9.7 · устанавливается как приложение (PWA) · полное чтение, цветные карточки &amp; «Зеркало рассказывает»",
       footer_disclaimer: "<b>Полезно знать.</b> «Зеркало пальцев» — игровой и зеркальный инструмент для саморефлексии по книгам Imre &amp; Margriet Somogyi. Приложение и ИИ-анализ не дают гарантий верности или полноты и не ставят медицинских, психологических или иных диагнозов; из результатов нельзя выводить никаких прав. Использование происходит целиком под твою ответственность — создатель этого приложения не несёт никакой ответственности за выводы или решения, принятые на его основе. Беспокоишься о здоровье? Сходи к врачу или на педикюр.",
       linkervoet: "Левая стопа",
       rechtervoet: "Правая стопа",
@@ -4842,7 +4852,7 @@ const TALEN = {
       btn_reset: "Baştan başla",
       disclaimer_spiegel: "Ayak parmağı okumak kişiliği, tutumu ve davranışı yansıtır. Ne eksik ne fazla. Tıbbi ya da psikolojik tanı koymaz; onun için doktora ya da terapiste gidersin. Yorumunda yumuşak ol: “tuhaf” parmak yoktur, yalnızca sana uyan parmaklar vardır.",
       footer_bron: "Tenen Lezen I · II · III ve Babyteentjes Lezen kitaplarına göre · Imre &amp; Margriet Somogyi",
-      footer_versie: "Ayak Parmağı Aynası · v9.6 · uygulama olarak kurulabilir (PWA) · ayrıntılı okuma, renk kartları &amp; Ayna anlatıyor",
+      footer_versie: "Ayak Parmağı Aynası · v9.7 · uygulama olarak kurulabilir (PWA) · ayrıntılı okuma, renk kartları &amp; Ayna anlatıyor",
       footer_disclaimer: "<b>Bilmekte yarar var.</b> Ayak Parmağı Aynası, Imre &amp; Margriet Somogyi’nin kitaplarına dayanan, öz düşünüm için bir oyun ve ayna aracıdır. Uygulama ve yapay zekâ analizi doğruluk ya da eksiksizlik güvencesi vermez; tıbbi, psikolojik ya da başka türden tanı koymaz; sonuçlardan hiçbir hak doğmaz. Kullanım tümüyle kendi sorumluluğundadır — bu uygulamanın yapımcısı, uygulamaya dayanılarak varılan sonuçlar ya da alınan kararlar için hiçbir sorumluluk üstlenmez. Sağlığından mı endişelisin? Aile hekimine ya da ayak bakımına git.",
       linkervoet: "Sol ayak",
       rechtervoet: "Sağ ayak",
@@ -5322,7 +5332,7 @@ const TALEN = {
       btn_reset: "ابدأ من البداية",
       disclaimer_spiegel: "قراءة أصابع القدم تعكس الشخصية والموقف والسلوك. لا أكثر ولا أقل. وهي لا تقدم تشخيصات طبية أو نفسية؛ لذلك تذهب إلى الطبيب أو المعالج. كن رفيقًا في تأويلك: لا توجد أصابع «غريبة»، بل أصابع تناسبك فحسب.",
       footer_bron: "وفق Tenen Lezen I · II · III وBabyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "مرآة أصابع القدم · v9.6 · قابلة للتثبيت كتطبيق (PWA) · قراءة مفصلة وبطاقات ملونة و«المرآة تحكي»",
+      footer_versie: "مرآة أصابع القدم · v9.7 · قابلة للتثبيت كتطبيق (PWA) · قراءة مفصلة وبطاقات ملونة و«المرآة تحكي»",
       footer_disclaimer: "<b>جدير بالمعرفة.</b> مرآة أصابع القدم أداة لعب ومرآة للتأمل الذاتي، وفق كتب Imre &amp; Margriet Somogyi. لا يقدم التطبيق ولا تحليل الذكاء الاصطناعي أي ضمانات للصحة أو الاكتمال، ولا يقدمان تشخيصات طبية أو نفسية أو غيرها؛ ولا يمكن استخلاص أي حقوق من النتائج. الاستخدام على مسؤوليتك الكاملة — لا يتحمل صانع هذا التطبيق أي مسؤولية عن استنتاجات أو قرارات تُبنى على التطبيق. قلق على صحتك؟ اذهب إلى طبيب الأسرة أو أخصائي العناية بالقدم.",
       linkervoet: "القدم اليسرى",
       rechtervoet: "القدم اليمنى",
@@ -5802,7 +5812,7 @@ const TALEN = {
       btn_reset: "从头再来",
       disclaimer_spiegel: "脚趾解读映照的是个性、态度和行为。不多，也不少。它不做任何医学或心理诊断；那些请去找医生或治疗师。解读时请温和一些：没有“奇怪”的脚趾，只有与你相称的脚趾。",
       footer_bron: "依据《Tenen Lezen I · II · III》与《Babyteentjes Lezen》 · Imre &amp; Margriet Somogyi",
-      footer_versie: "脚趾之镜 · v9.6 · 可安装为应用（PWA） · 详细解读、彩色卡片 &amp; 听镜子说",
+      footer_versie: "脚趾之镜 · v9.7 · 可安装为应用（PWA） · 详细解读、彩色卡片 &amp; 听镜子说",
       footer_disclaimer: "<b>请知悉。</b>脚趾之镜是一件用于自省的游戏与映照工具，依据 Imre &amp; Margriet Somogyi 的著作。应用及其 AI 分析不保证正确或完整，不做任何医学、心理或其他诊断；不得依据结果主张任何权利。使用完全由你自行承担风险——对基于本应用得出的结论或作出的决定，应用制作者概不承担任何责任。担心自己的健康？请去看家庭医生或足疗师。",
       linkervoet: "左脚",
       rechtervoet: "右脚",
@@ -6282,7 +6292,7 @@ const TALEN = {
       btn_reset: "最初からやり直す",
       disclaimer_spiegel: "足指リーディングが映すのは、人柄、姿勢、ふるまいです。それ以上でも以下でもありません。医学的・心理学的な診断は行いません。そのためには医師やセラピストのもとへ。解釈はやさしく。「変な」足指はありません。あるのは、あなたに似合う足指だけです。",
       footer_bron: "Tenen Lezen I · II · III および Babyteentjes Lezen にもとづく · Imre &amp; Margriet Somogyi",
-      footer_versie: "足指の鏡 · v9.6 · アプリとしてインストール可能(PWA) · 詳しいリーディング、カラーカード &amp; 鏡が語る",
+      footer_versie: "足指の鏡 · v9.7 · アプリとしてインストール可能(PWA) · 詳しいリーディング、カラーカード &amp; 鏡が語る",
       footer_disclaimer: "<b>知っておいてほしいこと。</b>この足指の鏡は、Imre &amp; Margriet Somogyi の本にもとづく、自己をふり返るための遊びと映しの道具です。アプリとAI分析は、正確さや完全さを保証せず、医学的・心理学的その他の診断は行いません。結果からいかなる権利も生じません。利用はすべて自己責任で行ってください。アプリにもとづく結論や判断について、このアプリの制作者は一切の責任を負いません。健康が心配なときは、かかりつけ医やフットケアの専門家へどうぞ。",
       linkervoet: "左足",
       rechtervoet: "右足",
@@ -6762,7 +6772,7 @@ const TALEN = {
       btn_reset: "처음부터 다시",
       disclaimer_spiegel: "발가락 리딩은 성격과 태도, 행동을 비춰 줘요. 그 이상도 그 이하도 아니에요. 의학적·심리학적 진단은 하지 않아요; 그런 일은 의사나 치료사에게 맡기세요. 풀이는 너그럽게 해 주세요: “이상한” 발가락은 없어요, 당신에게 어울리는 발가락이 있을 뿐이에요.",
       footer_bron: "Tenen Lezen I · II · III과 Babyteentjes Lezen에 기반 · Imre &amp; Margriet Somogyi",
-      footer_versie: "발가락 거울 · v9.6 · 앱으로 설치 가능(PWA) · 자세한 리딩, 색 카드 &amp; 거울이 들려주는 이야기",
+      footer_versie: "발가락 거울 · v9.7 · 앱으로 설치 가능(PWA) · 자세한 리딩, 색 카드 &amp; 거울이 들려주는 이야기",
       footer_disclaimer: "<b>알아 두면 좋아요.</b> 발가락 거울은 Imre &amp; Margriet Somogyi의 책에 바탕을 둔, 자기 성찰을 위한 놀이이자 비춰 보기 도구예요. 앱과 AI 분석은 정확성이나 완전성을 보장하지 않고, 의학적·심리학적 진단이나 그 밖의 어떤 진단도 하지 않아요; 결과로부터 어떤 권리도 주장할 수 없어요. 사용은 전적으로 본인 책임이에요 — 이 앱의 제작자는 앱에 근거한 결론이나 결정에 대해 어떤 책임도 지지 않아요. 건강이 걱정되나요? 주치의나 발 관리사를 찾아 주세요.",
       linkervoet: "왼발",
       rechtervoet: "오른발",
@@ -7242,7 +7252,7 @@ const TALEN = {
       btn_reset: "नए सिरे से शुरू",
       disclaimer_spiegel: "पैर की उँगलियाँ पढ़ना व्यक्तित्व, रवैये और व्यवहार का आईना है। न इससे ज़्यादा, न कम। यह कोई चिकित्सकीय या मनोवैज्ञानिक निदान नहीं करता; उसके लिए आप डॉक्टर या थेरेपिस्ट के पास जाइए। अपनी व्याख्या में कोमल रहिए: “अजीब” उँगलियाँ होती ही नहीं, बस ऐसी उँगलियाँ होती हैं जो आप पर जँचती हैं।",
       footer_bron: "Tenen Lezen I · II · III और Babyteentjes Lezen पर आधारित · Imre &amp; Margriet Somogyi",
-      footer_versie: "उँगलियों का आईना · v9.6 · ऐप (PWA) के रूप में इंस्टॉल करने योग्य · विस्तृत पाठ, रंग-कार्ड &amp; आईना बोलता है",
+      footer_versie: "उँगलियों का आईना · v9.7 · ऐप (PWA) के रूप में इंस्टॉल करने योग्य · विस्तृत पाठ, रंग-कार्ड &amp; आईना बोलता है",
       footer_disclaimer: "<b>जानना अच्छा है।</b> यह उँगलियों का आईना Imre &amp; Margriet Somogyi की किताबों पर आधारित, आत्म-चिंतन के लिए एक खेल और दर्पण-उपकरण है। ऐप और AI-विश्लेषण सटीकता या पूर्णता की कोई गारंटी नहीं देते और कोई चिकित्सकीय, मनोवैज्ञानिक या अन्य निदान नहीं करते; नतीजों से कोई अधिकार नहीं निकलते। उपयोग पूरी तरह आपके अपने जोखिम पर है — इस ऐप के निर्माता ऐप पर आधारित निष्कर्षों या निर्णयों की कोई भी ज़िम्मेदारी नहीं लेते। सेहत की चिंता है? अपने डॉक्टर या पेडीक्योरिस्ट के पास जाइए।",
       linkervoet: "बायाँ पैर",
       rechtervoet: "दायाँ पैर",
@@ -7722,7 +7732,7 @@ const TALEN = {
       btn_reset: "Mulai lagi",
       disclaimer_spiegel: "Membaca jari kaki mencerminkan kepribadian, sikap, dan perilaku. Tidak lebih dan tidak kurang. Ia tidak membuat diagnosis medis atau psikologis; untuk itu kamu pergi ke dokter atau terapis. Bersikaplah lembut dalam menafsirkan: tidak ada jari kaki yang \"aneh\", hanya jari kaki yang cocok denganmu.",
       footer_bron: "Berdasarkan Tenen Lezen I · II · III dan Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Cermin Jari Kaki · v9.6 · dapat dipasang sebagai aplikasi (PWA) · pembacaan lengkap, kartu warna &amp; Cermin bercerita",
+      footer_versie: "Cermin Jari Kaki · v9.7 · dapat dipasang sebagai aplikasi (PWA) · pembacaan lengkap, kartu warna &amp; Cermin bercerita",
       footer_disclaimer: "<b>Baik untuk diketahui.</b> Tenenspiegel adalah alat permainan dan pencerminan untuk refleksi diri, berdasarkan buku-buku Imre &amp; Margriet Somogyi. Aplikasi dan analisis AI-nya tidak memberi jaminan kebenaran atau kelengkapan dan tidak membuat diagnosis medis, psikologis, atau lainnya; tidak ada hak yang dapat diturunkan dari hasilnya. Penggunaan sepenuhnya atas risikomu sendiri — pembuat aplikasi ini tidak menerima tanggung jawab apa pun atas kesimpulan atau keputusan yang diambil berdasarkan aplikasi. Khawatir tentang kesehatanmu? Temui dokter keluarga atau ahli perawatan kakimu.",
       linkervoet: "Kaki kiri",
       rechtervoet: "Kaki kanan",
@@ -8227,7 +8237,7 @@ const TALEN = {
       btn_reset: "Làm lại từ đầu",
       disclaimer_spiegel: "Đọc ngón chân phản chiếu nhân cách, thái độ và hành vi. Không hơn không kém. Nó không đưa ra chẩn đoán y khoa hay tâm lý; việc ấy bạn tìm đến bác sĩ hay nhà trị liệu. Hãy dịu dàng khi diễn giải: không có ngón chân nào \"kỳ lạ\", chỉ có những ngón chân vừa vặn với bạn.",
       footer_bron: "Dựa trên Tenen Lezen I · II · III và Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "Gương Ngón Chân · v9.6 · cài được như ứng dụng (PWA) · bài đọc mở rộng, thẻ màu &amp; Tấm gương kể chuyện",
+      footer_versie: "Gương Ngón Chân · v9.7 · cài được như ứng dụng (PWA) · bài đọc mở rộng, thẻ màu &amp; Tấm gương kể chuyện",
       footer_disclaimer: "<b>Nên biết.</b> Tenenspiegel là một công cụ trò chơi và soi chiếu để tự nhìn lại mình, dựa trên các cuốn sách của Imre &amp; Margriet Somogyi. Ứng dụng và phần phân tích AI không bảo đảm tính đúng đắn hay đầy đủ và không đưa ra chẩn đoán y khoa, tâm lý hay bất kỳ chẩn đoán nào khác; không quyền lợi nào có thể được suy ra từ các kết quả. Việc sử dụng hoàn toàn thuộc rủi ro của bạn — người làm ra ứng dụng này không nhận bất kỳ trách nhiệm pháp lý nào cho các kết luận hay quyết định dựa trên ứng dụng. Lo lắng về sức khỏe? Hãy gặp bác sĩ gia đình hay chuyên viên chăm sóc chân của bạn.",
       linkervoet: "Chân trái",
       rechtervoet: "Chân phải",
@@ -8732,7 +8742,7 @@ const TALEN = {
       btn_reset: "เริ่มต้นใหม่",
       disclaimer_spiegel: "การอ่านนิ้วเท้าสะท้อนบุคลิกภาพ ทัศนคติ และพฤติกรรม ไม่มากไปและไม่น้อยไปกว่านั้น มันไม่วินิจฉัยทางการแพทย์หรือจิตวิทยา เรื่องเหล่านั้นคุณไปหาแพทย์หรือนักบำบัด จงอ่อนโยนในการตีความ: ไม่มีนิ้วเท้าที่ \"ประหลาด\" มีแต่นิ้วเท้าที่เข้ากับคุณ",
       footer_bron: "อิงจาก Tenen Lezen I · II · III และ Babyteentjes Lezen · Imre &amp; Margriet Somogyi",
-      footer_versie: "กระจกนิ้วเท้า · v9.6 · ติดตั้งเป็นแอปได้ (PWA) · บทอ่านฉบับเต็ม การ์ดสี &amp; กระจกเล่าเรื่อง",
+      footer_versie: "กระจกนิ้วเท้า · v9.7 · ติดตั้งเป็นแอปได้ (PWA) · บทอ่านฉบับเต็ม การ์ดสี &amp; กระจกเล่าเรื่อง",
       footer_disclaimer: "<b>ควรรู้ไว้</b> Tenenspiegel เป็นเครื่องมือเชิงเกมและการสะท้อนเพื่อการทบทวนตัวเอง อิงจากหนังสือของ Imre &amp; Margriet Somogyi แอปและการวิเคราะห์ด้วย AI ไม่รับประกันความถูกต้องหรือความครบถ้วน และไม่ให้การวินิจฉัยทางการแพทย์ จิตวิทยา หรือการวินิจฉัยอื่นใด ไม่อาจอ้างสิทธิ์ใด ๆ จากผลลัพธ์ได้ การใช้งานเป็นความเสี่ยงของคุณเองทั้งหมด — ผู้สร้างแอปนี้ไม่รับผิดใด ๆ ต่อข้อสรุปหรือการตัดสินใจที่อิงจากแอป กังวลเรื่องสุขภาพ? พบแพทย์ประจำบ้านหรือช่างดูแลเท้าของคุณ",
       linkervoet: "เท้าซ้าย",
       rechtervoet: "เท้าขวา",
@@ -9237,7 +9247,7 @@ const TALEN = {
       btn_reset: "Почати спочатку",
       disclaimer_spiegel: "Читання пальців ніг віддзеркалює особистість, поставу і поведінку. Не більше і не менше. Воно не ставить медичних чи психологічних діагнозів; для цього йдуть до лікаря чи терапевта. Будь лагідним у тлумаченні: не буває «дивних» пальців — бувають лише пальці, що пасують тобі.",
       footer_bron: "На основі Tenen Lezen I · II · III і Babyteentjes Lezen · Імре та Марґріт Шомоді",
-      footer_versie: "Дзеркало пальців ніг · v9.6 · встановлюється як застосунок (PWA) · розгорнуте читання, кольорові картки &amp; Дзеркало розповідає",
+      footer_versie: "Дзеркало пальців ніг · v9.7 · встановлюється як застосунок (PWA) · розгорнуте читання, кольорові картки &amp; Дзеркало розповідає",
       footer_disclaimer: "<b>Добре знати.</b> Tenenspiegel — це ігровий і дзеркальний інструмент для саморефлексії, заснований на книжках Імре та Марґріт Шомоді. Застосунок і ШІ-аналіз не дають гарантій правильності чи повноти і не ставлять медичних, психологічних чи інших діагнозів; із результатів не випливає жодних прав. Використання цілком на власний ризик — творець застосунку не бере на себе жодної відповідальності за висновки чи рішення, ухвалені на його основі. Непокоїшся про здоров'я? Звернися до сімейного лікаря чи подолога.",
       linkervoet: "Ліва стопа",
       rechtervoet: "Права стопа",
@@ -11513,6 +11523,820 @@ const VRAAG_TALEN = {
 };
 for(const t in VRAAG_TALEN){ if(TALEN[t] && TALEN[t].ui) Object.assign(TALEN[t].ui, VRAAG_TALEN[t]); }
 
+const DUO_TALEN = {
+  nl: {
+    duo_knop: "Duo-analyse",
+    duo_upgrade: "Leg er een tweede paar voeten naast",
+    duo_uitleg: "Twee paar voeten, één vergelijkende lezing: de spiegel vertelt hoe deze twee blauwdrukken op elkaar reageren. Dat kan elke relatie zijn: geliefden, collega's, ouder en kind, vrienden.",
+    duo_disclaimer: "Een duo-analyse gaat over twee mensen. Upload de voeten van iemand anders alleen als die persoon dat weet en goed vindt. Bij kinderen beslist de ouder of voogd. Foto's worden zoals altijd nooit opgeslagen.",
+    duo_vink: "De ander weet hiervan en vindt het goed.",
+    duo_vink_eerst: "Vink eerst aan dat de ander het weet en goed vindt.",
+    duo_kost2: "Een duo-analyse kost 2 analyses van je tegoed.",
+    duo_kost1: "Dit kost 1 analyse van je tegoed.",
+    duo_start: "Start de duo-analyse",
+    duo_annuleer: "Annuleren",
+    duo_stop: "Duo-analyse afbreken",
+    duo_p1: "Persoon 1: upload de voeten en bevestig de vormen.",
+    duo_p2: "Persoon 2: upload de voeten en bevestig de vormen.",
+    duo_klaar1: "Klaar met persoon 1: verder naar persoon 2",
+    duo_klaar2: "Klaar met persoon 2: naar de vergelijking",
+    duo_leeg: "Bevestig eerst minstens één vorm, dan kan de spiegel verder.",
+    duo_namen_kop: "Hoe mag de spiegel jullie noemen?",
+    duo_naam1: "Naam van persoon 1 (mag leeg blijven)",
+    duo_naam2: "Naam van persoon 2 (mag leeg blijven)",
+    duo_relatie: "Wat is jullie relatie? (mag leeg blijven)",
+    duo_relatie_vb: "bijv. partners, collega's, vader en dochter, vrienden",
+    duo_vergelijk: "De spiegel vergelijkt",
+    duo_bezig: "De spiegel legt de twee lezingen naast elkaar…",
+    duo_kop: "De spiegel vergelijkt",
+    duo_noot: "De spiegel vergelijkt op basis van jullie twee lezingen en de boeken van Imre & Margriet Somogyi. Geen medisch of psychologisch advies, geen toekomstvoorspelling en geen oordeel."
+  },
+  en: {
+    duo_knop: "Duo analysis",
+    duo_upgrade: "Place a second pair of feet next to it",
+    duo_uitleg: "Two pairs of feet, one comparative reading: the mirror tells how these two blueprints respond to each other. This can be any relationship: partners, colleagues, parent and child, friends.",
+    duo_disclaimer: "A duo analysis is about two people. Only upload someone else's feet if that person knows about it and agrees. For children, the parent or guardian decides. As always, photos are never stored.",
+    duo_vink: "The other person knows about this and agrees.",
+    duo_vink_eerst: "First tick the box confirming the other person knows and agrees.",
+    duo_kost2: "A duo analysis costs 2 analyses from your balance.",
+    duo_kost1: "This costs 1 analysis from your balance.",
+    duo_start: "Start the duo analysis",
+    duo_annuleer: "Cancel",
+    duo_stop: "Stop the duo analysis",
+    duo_p1: "Person 1: upload the feet and confirm the shapes.",
+    duo_p2: "Person 2: upload the feet and confirm the shapes.",
+    duo_klaar1: "Done with person 1: continue to person 2",
+    duo_klaar2: "Done with person 2: on to the comparison",
+    duo_leeg: "Confirm at least one shape first, then the mirror can continue.",
+    duo_namen_kop: "What may the mirror call you two?",
+    duo_naam1: "Name of person 1 (may be left empty)",
+    duo_naam2: "Name of person 2 (may be left empty)",
+    duo_relatie: "What is your relationship? (may be left empty)",
+    duo_relatie_vb: "e.g. partners, colleagues, father and daughter, friends",
+    duo_vergelijk: "The mirror compares",
+    duo_bezig: "The mirror is laying the two readings side by side…",
+    duo_kop: "The mirror compares",
+    duo_noot: "The mirror compares based on your two readings and the books by Imre & Margriet Somogyi. No medical or psychological advice, no predicting the future and no judgement."
+  },
+  de: {
+    duo_knop: "Duo-Analyse",
+    duo_upgrade: "Leg ein zweites Paar Füße daneben",
+    duo_uitleg: "Zwei Paar Füße, eine vergleichende Lesung: Der Spiegel erzählt, wie diese beiden Blaupausen aufeinander reagieren. Das kann jede Beziehung sein: Partner, Kollegen, Eltern und Kind, Freunde.",
+    duo_disclaimer: "Eine Duo-Analyse betrifft zwei Menschen. Lade die Füße einer anderen Person nur hoch, wenn diese Person davon weiß und einverstanden ist. Bei Kindern entscheiden die Eltern oder Erziehungsberechtigten. Fotos werden wie immer niemals gespeichert.",
+    duo_vink: "Die andere Person weiß davon und ist einverstanden.",
+    duo_vink_eerst: "Setz zuerst das Häkchen, dass die andere Person davon weiß und einverstanden ist.",
+    duo_kost2: "Eine Duo-Analyse kostet 2 Analysen von deinem Guthaben.",
+    duo_kost1: "Das kostet 1 Analyse von deinem Guthaben.",
+    duo_start: "Duo-Analyse starten",
+    duo_annuleer: "Abbrechen",
+    duo_stop: "Duo-Analyse beenden",
+    duo_p1: "Person 1: Lade die Füße hoch und bestätige die Formen.",
+    duo_p2: "Person 2: Lade die Füße hoch und bestätige die Formen.",
+    duo_klaar1: "Fertig mit Person 1: weiter zu Person 2",
+    duo_klaar2: "Fertig mit Person 2: weiter zum Vergleich",
+    duo_leeg: "Bestätige zuerst mindestens eine Form, dann kann der Spiegel weitermachen.",
+    duo_namen_kop: "Wie darf der Spiegel euch nennen?",
+    duo_naam1: "Name von Person 1 (darf leer bleiben)",
+    duo_naam2: "Name von Person 2 (darf leer bleiben)",
+    duo_relatie: "Was ist eure Beziehung? (darf leer bleiben)",
+    duo_relatie_vb: "z. B. Partner, Kollegen, Vater und Tochter, Freunde",
+    duo_vergelijk: "Der Spiegel vergleicht",
+    duo_bezig: "Der Spiegel legt die beiden Lesungen nebeneinander…",
+    duo_kop: "Der Spiegel vergleicht",
+    duo_noot: "Der Spiegel vergleicht auf Grundlage eurer beiden Lesungen und der Bücher von Imre & Margriet Somogyi. Kein medizinischer oder psychologischer Rat, keine Zukunftsvorhersage und kein Urteil."
+  },
+  fr: {
+    duo_knop: "Analyse duo",
+    duo_upgrade: "Pose une deuxième paire de pieds à côté",
+    duo_uitleg: "Deux paires de pieds, une lecture comparée : le miroir raconte comment ces deux empreintes réagissent l'une à l'autre. Toute relation est possible : partenaires, collègues, parent et enfant, amis.",
+    duo_disclaimer: "Une analyse duo concerne deux personnes. Ne téléverse les pieds de quelqu'un d'autre que si cette personne le sait et est d'accord. Pour les enfants, c'est le parent ou le tuteur qui décide. Comme toujours, les photos ne sont jamais conservées.",
+    duo_vink: "L'autre personne est au courant et est d'accord.",
+    duo_vink_eerst: "Coche d'abord la case confirmant que l'autre personne le sait et est d'accord.",
+    duo_kost2: "Une analyse duo coûte 2 analyses de ton crédit.",
+    duo_kost1: "Ceci coûte 1 analyse de ton crédit.",
+    duo_start: "Lancer l'analyse duo",
+    duo_annuleer: "Annuler",
+    duo_stop: "Arrêter l'analyse duo",
+    duo_p1: "Personne 1 : téléverse les pieds et confirme les formes.",
+    duo_p2: "Personne 2 : téléverse les pieds et confirme les formes.",
+    duo_klaar1: "Personne 1 terminée : passer à la personne 2",
+    duo_klaar2: "Personne 2 terminée : vers la comparaison",
+    duo_leeg: "Confirme d'abord au moins une forme, ensuite le miroir peut continuer.",
+    duo_namen_kop: "Comment le miroir peut-il vous appeler ?",
+    duo_naam1: "Prénom de la personne 1 (peut rester vide)",
+    duo_naam2: "Prénom de la personne 2 (peut rester vide)",
+    duo_relatie: "Quelle est votre relation ? (peut rester vide)",
+    duo_relatie_vb: "ex. partenaires, collègues, père et fille, amis",
+    duo_vergelijk: "Le miroir compare",
+    duo_bezig: "Le miroir pose les deux lectures côte à côte…",
+    duo_kop: "Le miroir compare",
+    duo_noot: "Le miroir compare à partir de vos deux lectures et des livres d'Imre & Margriet Somogyi. Pas de conseil médical ou psychologique, pas de prédiction de l'avenir et aucun jugement."
+  },
+  es: {
+    duo_knop: "Análisis dúo",
+    duo_upgrade: "Pon un segundo par de pies al lado",
+    duo_uitleg: "Dos pares de pies, una lectura comparada: el espejo cuenta cómo reaccionan entre sí estos dos planos. Puede ser cualquier relación: pareja, colegas, madre e hijo, amigos.",
+    duo_disclaimer: "Un análisis dúo trata de dos personas. Sube los pies de otra persona solo si esa persona lo sabe y está de acuerdo. En el caso de menores, decide el padre, la madre o el tutor. Como siempre, las fotos nunca se guardan.",
+    duo_vink: "La otra persona lo sabe y está de acuerdo.",
+    duo_vink_eerst: "Marca primero la casilla de que la otra persona lo sabe y está de acuerdo.",
+    duo_kost2: "Un análisis dúo cuesta 2 análisis de tu saldo.",
+    duo_kost1: "Esto cuesta 1 análisis de tu saldo.",
+    duo_start: "Iniciar el análisis dúo",
+    duo_annuleer: "Cancelar",
+    duo_stop: "Interrumpir el análisis dúo",
+    duo_p1: "Persona 1: sube los pies y confirma las formas.",
+    duo_p2: "Persona 2: sube los pies y confirma las formas.",
+    duo_klaar1: "Persona 1 lista: seguir con la persona 2",
+    duo_klaar2: "Persona 2 lista: a la comparación",
+    duo_leeg: "Confirma primero al menos una forma; entonces el espejo puede continuar.",
+    duo_namen_kop: "¿Cómo puede llamaros el espejo?",
+    duo_naam1: "Nombre de la persona 1 (puede quedar vacío)",
+    duo_naam2: "Nombre de la persona 2 (puede quedar vacío)",
+    duo_relatie: "¿Cuál es vuestra relación? (puede quedar vacío)",
+    duo_relatie_vb: "p. ej. pareja, colegas, padre e hija, amigos",
+    duo_vergelijk: "El espejo compara",
+    duo_bezig: "El espejo pone las dos lecturas una junto a otra…",
+    duo_kop: "El espejo compara",
+    duo_noot: "El espejo compara a partir de vuestras dos lecturas y de los libros de Imre & Margriet Somogyi. Sin consejo médico ni psicológico, sin predicción del futuro y sin juicio."
+  },
+  it: {
+    duo_knop: "Analisi duo",
+    duo_upgrade: "Metti accanto un secondo paio di piedi",
+    duo_uitleg: "Due paia di piedi, una lettura comparata: lo specchio racconta come queste due impronte reagiscono l'una all'altra. Può essere qualsiasi relazione: partner, colleghi, genitore e figlio, amici.",
+    duo_disclaimer: "Un'analisi duo riguarda due persone. Carica i piedi di un'altra persona solo se quella persona lo sa ed è d'accordo. Per i bambini decide il genitore o il tutore. Come sempre, le foto non vengono mai salvate.",
+    duo_vink: "L'altra persona lo sa ed è d'accordo.",
+    duo_vink_eerst: "Spunta prima la casella che conferma che l'altra persona lo sa ed è d'accordo.",
+    duo_kost2: "Un'analisi duo costa 2 analisi del tuo credito.",
+    duo_kost1: "Questo costa 1 analisi del tuo credito.",
+    duo_start: "Avvia l'analisi duo",
+    duo_annuleer: "Annulla",
+    duo_stop: "Interrompi l'analisi duo",
+    duo_p1: "Persona 1: carica i piedi e conferma le forme.",
+    duo_p2: "Persona 2: carica i piedi e conferma le forme.",
+    duo_klaar1: "Persona 1 fatta: avanti con la persona 2",
+    duo_klaar2: "Persona 2 fatta: al confronto",
+    duo_leeg: "Conferma prima almeno una forma, poi lo specchio può continuare.",
+    duo_namen_kop: "Come può chiamarvi lo specchio?",
+    duo_naam1: "Nome della persona 1 (può restare vuoto)",
+    duo_naam2: "Nome della persona 2 (può restare vuoto)",
+    duo_relatie: "Qual è la vostra relazione? (può restare vuoto)",
+    duo_relatie_vb: "es. partner, colleghi, padre e figlia, amici",
+    duo_vergelijk: "Lo specchio confronta",
+    duo_bezig: "Lo specchio mette le due letture una accanto all'altra…",
+    duo_kop: "Lo specchio confronta",
+    duo_noot: "Lo specchio confronta sulla base delle vostre due letture e dei libri di Imre & Margriet Somogyi. Nessun consiglio medico o psicologico, nessuna previsione del futuro e nessun giudizio."
+  },
+  pt: {
+    duo_knop: "Análise a dois",
+    duo_upgrade: "Coloca um segundo par de pés ao lado",
+    duo_uitleg: "Dois pares de pés, uma leitura comparada: o espelho conta como estas duas matrizes reagem uma à outra. Pode ser qualquer relação: casal, colegas, pai e filho, amigos.",
+    duo_disclaimer: "Uma análise a dois é sobre duas pessoas. Só envia os pés de outra pessoa se essa pessoa souber e concordar. No caso de crianças, decide o pai, a mãe ou o tutor. Como sempre, as fotos nunca são guardadas.",
+    duo_vink: "A outra pessoa sabe disto e concorda.",
+    duo_vink_eerst: "Marca primeiro a caixa a confirmar que a outra pessoa sabe e concorda.",
+    duo_kost2: "Uma análise a dois custa 2 análises do teu saldo.",
+    duo_kost1: "Isto custa 1 análise do teu saldo.",
+    duo_start: "Iniciar a análise a dois",
+    duo_annuleer: "Cancelar",
+    duo_stop: "Interromper a análise a dois",
+    duo_p1: "Pessoa 1: envia os pés e confirma as formas.",
+    duo_p2: "Pessoa 2: envia os pés e confirma as formas.",
+    duo_klaar1: "Pessoa 1 pronta: seguir para a pessoa 2",
+    duo_klaar2: "Pessoa 2 pronta: para a comparação",
+    duo_leeg: "Confirma primeiro pelo menos uma forma; depois o espelho pode continuar.",
+    duo_namen_kop: "Como pode o espelho chamar-vos?",
+    duo_naam1: "Nome da pessoa 1 (pode ficar vazio)",
+    duo_naam2: "Nome da pessoa 2 (pode ficar vazio)",
+    duo_relatie: "Qual é a vossa relação? (pode ficar vazio)",
+    duo_relatie_vb: "p. ex. casal, colegas, pai e filha, amigos",
+    duo_vergelijk: "O espelho compara",
+    duo_bezig: "O espelho põe as duas leituras lado a lado…",
+    duo_kop: "O espelho compara",
+    duo_noot: "O espelho compara com base nas vossas duas leituras e nos livros de Imre & Margriet Somogyi. Sem conselhos médicos ou psicológicos, sem previsão do futuro e sem julgamento."
+  },
+  pl: {
+    duo_knop: "Analiza duo",
+    duo_upgrade: "Połóż obok drugą parę stóp",
+    duo_uitleg: "Dwie pary stóp, jeden porównawczy odczyt: lustro opowiada, jak te dwa plany reagują na siebie. To może być każda relacja: partnerzy, współpracownicy, rodzic i dziecko, przyjaciele.",
+    duo_disclaimer: "Analiza duo dotyczy dwóch osób. Prześlij stopy innej osoby tylko wtedy, gdy ta osoba o tym wie i się zgadza. W przypadku dzieci decyduje rodzic lub opiekun. Jak zawsze, zdjęcia nigdy nie są zapisywane.",
+    duo_vink: "Druga osoba o tym wie i się zgadza.",
+    duo_vink_eerst: "Najpierw zaznacz, że druga osoba o tym wie i się zgadza.",
+    duo_kost2: "Analiza duo kosztuje 2 analizy z twojego salda.",
+    duo_kost1: "To kosztuje 1 analizę z twojego salda.",
+    duo_start: "Rozpocznij analizę duo",
+    duo_annuleer: "Anuluj",
+    duo_stop: "Przerwij analizę duo",
+    duo_p1: "Osoba 1: prześlij stopy i potwierdź kształty.",
+    duo_p2: "Osoba 2: prześlij stopy i potwierdź kształty.",
+    duo_klaar1: "Osoba 1 gotowa: dalej do osoby 2",
+    duo_klaar2: "Osoba 2 gotowa: do porównania",
+    duo_leeg: "Najpierw potwierdź co najmniej jeden kształt, wtedy lustro może kontynuować.",
+    duo_namen_kop: "Jak lustro może was nazywać?",
+    duo_naam1: "Imię osoby 1 (może pozostać puste)",
+    duo_naam2: "Imię osoby 2 (może pozostać puste)",
+    duo_relatie: "Jaka jest wasza relacja? (może pozostać puste)",
+    duo_relatie_vb: "np. partnerzy, współpracownicy, ojciec i córka, przyjaciele",
+    duo_vergelijk: "Lustro porównuje",
+    duo_bezig: "Lustro kładzie oba odczyty obok siebie…",
+    duo_kop: "Lustro porównuje",
+    duo_noot: "Lustro porównuje na podstawie waszych dwóch odczytów i książek Imre i Margriet Somogyi. Bez porad medycznych i psychologicznych, bez przepowiadania przyszłości i bez oceniania."
+  },
+  ru: {
+    duo_knop: "Дуо-анализ",
+    duo_upgrade: "Положи рядом вторую пару ног",
+    duo_uitleg: "Две пары ног, одно сравнительное чтение: зеркало рассказывает, как эти два узора откликаются друг на друга. Это может быть любая связь: партнёры, коллеги, родитель и ребёнок, друзья.",
+    duo_disclaimer: "Дуо-анализ касается двух людей. Загружай ноги другого человека только если он об этом знает и согласен. За детей решает родитель или опекун. Как всегда, фотографии никогда не сохраняются.",
+    duo_vink: "Другой человек знает об этом и согласен.",
+    duo_vink_eerst: "Сначала отметь, что другой человек знает и согласен.",
+    duo_kost2: "Дуо-анализ стоит 2 анализа с твоего баланса.",
+    duo_kost1: "Это стоит 1 анализ с твоего баланса.",
+    duo_start: "Начать дуо-анализ",
+    duo_annuleer: "Отмена",
+    duo_stop: "Прервать дуо-анализ",
+    duo_p1: "Человек 1: загрузи ноги и подтверди формы.",
+    duo_p2: "Человек 2: загрузи ноги и подтверди формы.",
+    duo_klaar1: "Человек 1 готов: дальше к человеку 2",
+    duo_klaar2: "Человек 2 готов: к сравнению",
+    duo_leeg: "Сначала подтверди хотя бы одну форму, тогда зеркало сможет продолжить.",
+    duo_namen_kop: "Как зеркалу вас называть?",
+    duo_naam1: "Имя человека 1 (можно оставить пустым)",
+    duo_naam2: "Имя человека 2 (можно оставить пустым)",
+    duo_relatie: "Какая у вас связь? (можно оставить пустым)",
+    duo_relatie_vb: "напр. партнёры, коллеги, отец и дочь, друзья",
+    duo_vergelijk: "Зеркало сравнивает",
+    duo_bezig: "Зеркало кладёт два чтения рядом…",
+    duo_kop: "Зеркало сравнивает",
+    duo_noot: "Зеркало сравнивает на основе ваших двух чтений и книг Имре и Маргрит Шомоди. Без медицинских и психологических советов, без предсказания будущего и без оценок."
+  },
+  tr: {
+    duo_knop: "İkili analiz",
+    duo_upgrade: "Yanına ikinci bir çift ayak koy",
+    duo_uitleg: "İki çift ayak, tek karşılaştırmalı okuma: ayna bu iki planın birbirine nasıl tepki verdiğini anlatır. Her ilişki olabilir: eşler, iş arkadaşları, ebeveyn ve çocuk, arkadaşlar.",
+    duo_disclaimer: "İkili analiz iki kişiyle ilgilidir. Başka birinin ayaklarını yalnızca o kişi bunu biliyor ve onaylıyorsa yükle. Çocuklarda karar ebeveyne veya vasiye aittir. Her zamanki gibi fotoğraflar asla kaydedilmez.",
+    duo_vink: "Diğer kişi bunu biliyor ve onaylıyor.",
+    duo_vink_eerst: "Önce diğer kişinin bildiğini ve onayladığını işaretle.",
+    duo_kost2: "İkili analiz, bakiyenden 2 analiz düşer.",
+    duo_kost1: "Bu, bakiyenden 1 analiz düşer.",
+    duo_start: "İkili analizi başlat",
+    duo_annuleer: "İptal",
+    duo_stop: "İkili analizi durdur",
+    duo_p1: "Kişi 1: ayakları yükle ve şekilleri onayla.",
+    duo_p2: "Kişi 2: ayakları yükle ve şekilleri onayla.",
+    duo_klaar1: "Kişi 1 tamam: kişi 2'ye geç",
+    duo_klaar2: "Kişi 2 tamam: karşılaştırmaya geç",
+    duo_leeg: "Önce en az bir şekli onayla, sonra ayna devam edebilir.",
+    duo_namen_kop: "Ayna size nasıl seslensin?",
+    duo_naam1: "Kişi 1'in adı (boş bırakılabilir)",
+    duo_naam2: "Kişi 2'nin adı (boş bırakılabilir)",
+    duo_relatie: "İlişkiniz nedir? (boş bırakılabilir)",
+    duo_relatie_vb: "örn. eşler, iş arkadaşları, baba ve kız, arkadaşlar",
+    duo_vergelijk: "Ayna karşılaştırıyor",
+    duo_bezig: "Ayna iki okumayı yan yana koyuyor…",
+    duo_kop: "Ayna karşılaştırıyor",
+    duo_noot: "Ayna, iki okumanız ve Imre & Margriet Somogyi'nin kitapları temelinde karşılaştırır. Tıbbi veya psikolojik tavsiye yok, gelecek tahmini yok ve yargı yok."
+  },
+  ar: {
+    duo_knop: "تحليل ثنائي",
+    duo_upgrade: "ضع زوجًا ثانيًا من الأقدام بجانبه",
+    duo_uitleg: "زوجان من الأقدام وقراءة مقارنة واحدة: المرآة تحكي كيف يتجاوب هذان المخططان معًا. قد تكون أي علاقة: شريكان، زميلا عمل، والد وطفل، صديقان.",
+    duo_disclaimer: "التحليل الثنائي يخص شخصين. لا ترفع صور أقدام شخص آخر إلا إذا كان يعلم بذلك ويوافق. وفي حالة الأطفال يقرر الوالد أو الوصي. وكما هو الحال دائمًا، لا تُحفظ الصور أبدًا.",
+    duo_vink: "الشخص الآخر يعلم بهذا ويوافق.",
+    duo_vink_eerst: "ضع علامة أولًا على أن الشخص الآخر يعلم ويوافق.",
+    duo_kost2: "التحليل الثنائي يكلف تحليلين من رصيدك.",
+    duo_kost1: "هذا يكلف تحليلًا واحدًا من رصيدك.",
+    duo_start: "ابدأ التحليل الثنائي",
+    duo_annuleer: "إلغاء",
+    duo_stop: "إيقاف التحليل الثنائي",
+    duo_p1: "الشخص 1: ارفع صور القدمين وأكّد الأشكال.",
+    duo_p2: "الشخص 2: ارفع صور القدمين وأكّد الأشكال.",
+    duo_klaar1: "انتهى الشخص 1: ننتقل إلى الشخص 2",
+    duo_klaar2: "انتهى الشخص 2: إلى المقارنة",
+    duo_leeg: "أكّد شكلًا واحدًا على الأقل أولًا، حينها تستطيع المرآة المتابعة.",
+    duo_namen_kop: "بماذا تناديكما المرآة؟",
+    duo_naam1: "اسم الشخص 1 (يمكن تركه فارغًا)",
+    duo_naam2: "اسم الشخص 2 (يمكن تركه فارغًا)",
+    duo_relatie: "ما علاقتكما؟ (يمكن تركه فارغًا)",
+    duo_relatie_vb: "مثلًا: شريكان، زميلا عمل، أب وابنته، صديقان",
+    duo_vergelijk: "المرآة تقارن",
+    duo_bezig: "المرآة تضع القراءتين جنبًا إلى جنب…",
+    duo_kop: "المرآة تقارن",
+    duo_noot: "تقارن المرآة استنادًا إلى قراءتيكما وكتب إمره ومارخريت شوموجي. لا نصائح طبية أو نفسية، ولا تنبؤ بالمستقبل، ولا حكم على أحد."
+  },
+  zh: {
+    duo_knop: "双人解读",
+    duo_upgrade: "在旁边放上第二双脚",
+    duo_uitleg: "两双脚，一份对照解读：镜子讲述这两份蓝图如何相互回应。可以是任何关系：伴侣、同事、亲子、朋友。",
+    duo_disclaimer: "双人解读涉及两个人。只有在对方知情并同意时，才能上传他人的脚部照片。儿童由父母或监护人决定。照片一如既往，绝不保存。",
+    duo_vink: "对方知情并同意。",
+    duo_vink_eerst: "请先勾选确认对方知情并同意。",
+    duo_kost2: "双人解读需消耗你的 2 次分析额度。",
+    duo_kost1: "这将消耗你的 1 次分析额度。",
+    duo_start: "开始双人解读",
+    duo_annuleer: "取消",
+    duo_stop: "中止双人解读",
+    duo_p1: "第 1 位：上传脚部照片并确认形态。",
+    duo_p2: "第 2 位：上传脚部照片并确认形态。",
+    duo_klaar1: "第 1 位完成：继续第 2 位",
+    duo_klaar2: "第 2 位完成：进入对照",
+    duo_leeg: "请先确认至少一个形态，镜子才能继续。",
+    duo_namen_kop: "镜子该怎么称呼你们？",
+    duo_naam1: "第 1 位的名字（可留空）",
+    duo_naam2: "第 2 位的名字（可留空）",
+    duo_relatie: "你们是什么关系？（可留空）",
+    duo_relatie_vb: "例如：伴侣、同事、父女、朋友",
+    duo_vergelijk: "镜子来对照",
+    duo_bezig: "镜子正把两份解读并排放在一起…",
+    duo_kop: "镜子来对照",
+    duo_noot: "镜子基于你们的两份解读以及 Imre & Margriet Somogyi 的著作进行对照。不提供医疗或心理建议，不预测未来，也不作评判。"
+  },
+  ja: {
+    duo_knop: "ペア分析",
+    duo_upgrade: "隣にもう一組の足を並べる",
+    duo_uitleg: "二組の足、ひとつの比較リーディング。鏡がこの二つの設計図がどう響き合うかを語ります。どんな関係でも構いません：パートナー、同僚、親子、友人。",
+    duo_disclaimer: "ペア分析は二人に関わるものです。相手が知っていて同意している場合にのみ、他の人の足をアップロードしてください。お子さまの場合は保護者が判断します。写真はこれまで通り、一切保存されません。",
+    duo_vink: "相手はこのことを知っていて、同意しています。",
+    duo_vink_eerst: "まず、相手が知っていて同意していることにチェックを入れてください。",
+    duo_kost2: "ペア分析には残高から分析2回分を使います。",
+    duo_kost1: "これには残高から分析1回分を使います。",
+    duo_start: "ペア分析を始める",
+    duo_annuleer: "キャンセル",
+    duo_stop: "ペア分析を中止する",
+    duo_p1: "1人目：足の写真をアップロードして形を確認してください。",
+    duo_p2: "2人目：足の写真をアップロードして形を確認してください。",
+    duo_klaar1: "1人目が完了：2人目へ進む",
+    duo_klaar2: "2人目が完了：比較へ進む",
+    duo_leeg: "まず少なくとも一つの形を確認すると、鏡が先へ進めます。",
+    duo_namen_kop: "鏡はお二人を何と呼べばいいですか？",
+    duo_naam1: "1人目の名前（空欄でも可）",
+    duo_naam2: "2人目の名前（空欄でも可）",
+    duo_relatie: "お二人の関係は？（空欄でも可）",
+    duo_relatie_vb: "例：パートナー、同僚、父と娘、友人",
+    duo_vergelijk: "鏡が比べる",
+    duo_bezig: "鏡が二つのリーディングを並べています…",
+    duo_kop: "鏡が比べる",
+    duo_noot: "鏡はお二人のリーディングと Imre & Margriet Somogyi の著書に基づいて比較します。医療・心理のアドバイスや未来予測、評価は行いません。"
+  },
+  ko: {
+    duo_knop: "듀오 분석",
+    duo_upgrade: "옆에 두 번째 발을 나란히 놓기",
+    duo_uitleg: "두 쌍의 발, 하나의 비교 리딩: 거울이 이 두 청사진이 서로 어떻게 반응하는지 들려줍니다. 어떤 관계든 좋습니다: 연인, 동료, 부모와 자녀, 친구.",
+    duo_disclaimer: "듀오 분석은 두 사람에 관한 것입니다. 상대방이 알고 동의한 경우에만 다른 사람의 발 사진을 올려 주세요. 어린이의 경우 부모나 보호자가 결정합니다. 사진은 언제나처럼 절대 저장되지 않습니다.",
+    duo_vink: "상대방이 이 사실을 알고 동의합니다.",
+    duo_vink_eerst: "먼저 상대방이 알고 동의한다는 항목에 체크해 주세요.",
+    duo_kost2: "듀오 분석에는 잔액에서 분석 2회가 사용됩니다.",
+    duo_kost1: "여기에는 잔액에서 분석 1회가 사용됩니다.",
+    duo_start: "듀오 분석 시작",
+    duo_annuleer: "취소",
+    duo_stop: "듀오 분석 중단",
+    duo_p1: "1번째 사람: 발 사진을 올리고 형태를 확인해 주세요.",
+    duo_p2: "2번째 사람: 발 사진을 올리고 형태를 확인해 주세요.",
+    duo_klaar1: "1번째 사람 완료: 2번째 사람으로",
+    duo_klaar2: "2번째 사람 완료: 비교로 이동",
+    duo_leeg: "먼저 형태를 하나 이상 확인해야 거울이 계속할 수 있습니다.",
+    duo_namen_kop: "거울이 두 분을 어떻게 부르면 될까요?",
+    duo_naam1: "1번째 사람의 이름 (비워 두어도 됩니다)",
+    duo_naam2: "2번째 사람의 이름 (비워 두어도 됩니다)",
+    duo_relatie: "두 분은 어떤 관계인가요? (비워 두어도 됩니다)",
+    duo_relatie_vb: "예: 연인, 동료, 아버지와 딸, 친구",
+    duo_vergelijk: "거울이 비교합니다",
+    duo_bezig: "거울이 두 리딩을 나란히 놓고 있습니다…",
+    duo_kop: "거울이 비교합니다",
+    duo_noot: "거울은 두 분의 리딩과 Imre & Margriet Somogyi의 책을 바탕으로 비교합니다. 의학적·심리학적 조언이나 미래 예측, 판단은 하지 않습니다."
+  },
+  hi: {
+    duo_knop: "डुओ विश्लेषण",
+    duo_upgrade: "बगल में दूसरी जोड़ी पैर रखो",
+    duo_uitleg: "दो जोड़ी पैर, एक तुलनात्मक रीडिंग: आईना बताता है कि ये दो खाके एक-दूसरे पर कैसे प्रतिक्रिया देते हैं। रिश्ता कोई भी हो सकता है: पार्टनर, सहकर्मी, माता-पिता और बच्चा, दोस्त।",
+    duo_disclaimer: "डुओ विश्लेषण दो लोगों के बारे में है। किसी और के पैरों की फ़ोटो तभी अपलोड करो जब वह व्यक्ति यह जानता हो और सहमत हो। बच्चों के मामले में माता-पिता या अभिभावक तय करते हैं। हमेशा की तरह, फ़ोटो कभी सेव नहीं होतीं।",
+    duo_vink: "दूसरा व्यक्ति यह जानता है और सहमत है।",
+    duo_vink_eerst: "पहले टिक करो कि दूसरा व्यक्ति जानता है और सहमत है।",
+    duo_kost2: "डुओ विश्लेषण में तुम्हारे बैलेंस से 2 विश्लेषण लगते हैं।",
+    duo_kost1: "इसमें तुम्हारे बैलेंस से 1 विश्लेषण लगता है।",
+    duo_start: "डुओ विश्लेषण शुरू करो",
+    duo_annuleer: "रद्द करो",
+    duo_stop: "डुओ विश्लेषण रोको",
+    duo_p1: "व्यक्ति 1: पैरों की फ़ोटो अपलोड करो और आकार पक्के करो।",
+    duo_p2: "व्यक्ति 2: पैरों की फ़ोटो अपलोड करो और आकार पक्के करो।",
+    duo_klaar1: "व्यक्ति 1 पूरा: अब व्यक्ति 2 की ओर",
+    duo_klaar2: "व्यक्ति 2 पूरा: अब तुलना की ओर",
+    duo_leeg: "पहले कम से कम एक आकार पक्का करो, तभी आईना आगे बढ़ सकता है।",
+    duo_namen_kop: "आईना तुम दोनों को क्या कहकर बुलाए?",
+    duo_naam1: "व्यक्ति 1 का नाम (खाली छोड़ सकते हो)",
+    duo_naam2: "व्यक्ति 2 का नाम (खाली छोड़ सकते हो)",
+    duo_relatie: "तुम्हारा रिश्ता क्या है? (खाली छोड़ सकते हो)",
+    duo_relatie_vb: "जैसे: पार्टनर, सहकर्मी, पिता और बेटी, दोस्त",
+    duo_vergelijk: "आईना तुलना करता है",
+    duo_bezig: "आईना दोनों रीडिंग साथ-साथ रख रहा है…",
+    duo_kop: "आईना तुलना करता है",
+    duo_noot: "आईना तुम्हारी दोनों रीडिंग और Imre & Margriet Somogyi की किताबों के आधार पर तुलना करता है। कोई मेडिकल या मनोवैज्ञानिक सलाह नहीं, कोई भविष्यवाणी नहीं और कोई फ़ैसला नहीं।"
+  },
+  id: {
+    duo_knop: "Analisis duo",
+    duo_upgrade: "Letakkan sepasang kaki kedua di sebelahnya",
+    duo_uitleg: "Dua pasang kaki, satu pembacaan perbandingan: cermin menceritakan bagaimana kedua cetak biru ini saling menanggapi. Bisa hubungan apa saja: pasangan, rekan kerja, orang tua dan anak, sahabat.",
+    duo_disclaimer: "Analisis duo menyangkut dua orang. Unggah kaki orang lain hanya jika orang itu tahu dan setuju. Untuk anak-anak, orang tua atau wali yang memutuskan. Seperti biasa, foto tidak pernah disimpan.",
+    duo_vink: "Orang itu tahu dan setuju.",
+    duo_vink_eerst: "Centang dulu bahwa orang itu tahu dan setuju.",
+    duo_kost2: "Analisis duo memakai 2 analisis dari saldomu.",
+    duo_kost1: "Ini memakai 1 analisis dari saldomu.",
+    duo_start: "Mulai analisis duo",
+    duo_annuleer: "Batal",
+    duo_stop: "Hentikan analisis duo",
+    duo_p1: "Orang 1: unggah kaki dan konfirmasi bentuknya.",
+    duo_p2: "Orang 2: unggah kaki dan konfirmasi bentuknya.",
+    duo_klaar1: "Orang 1 selesai: lanjut ke orang 2",
+    duo_klaar2: "Orang 2 selesai: ke perbandingan",
+    duo_leeg: "Konfirmasi dulu minimal satu bentuk, baru cermin bisa lanjut.",
+    duo_namen_kop: "Cermin boleh memanggil kalian apa?",
+    duo_naam1: "Nama orang 1 (boleh kosong)",
+    duo_naam2: "Nama orang 2 (boleh kosong)",
+    duo_relatie: "Apa hubungan kalian? (boleh kosong)",
+    duo_relatie_vb: "mis. pasangan, rekan kerja, ayah dan putri, sahabat",
+    duo_vergelijk: "Cermin membandingkan",
+    duo_bezig: "Cermin menaruh kedua pembacaan berdampingan…",
+    duo_kop: "Cermin membandingkan",
+    duo_noot: "Cermin membandingkan berdasarkan dua pembacaan kalian dan buku-buku Imre & Margriet Somogyi. Tanpa saran medis atau psikologis, tanpa ramalan masa depan, dan tanpa penilaian."
+  },
+  vi: {
+    duo_knop: "Phân tích đôi",
+    duo_upgrade: "Đặt thêm một đôi bàn chân bên cạnh",
+    duo_uitleg: "Hai đôi bàn chân, một bài đọc so sánh: tấm gương kể hai bản thiết kế này phản ứng với nhau ra sao. Có thể là bất kỳ mối quan hệ nào: người yêu, đồng nghiệp, cha mẹ và con, bạn bè.",
+    duo_disclaimer: "Phân tích đôi liên quan đến hai người. Chỉ tải lên bàn chân của người khác khi người đó biết và đồng ý. Với trẻ em, cha mẹ hoặc người giám hộ quyết định. Như mọi khi, ảnh không bao giờ được lưu.",
+    duo_vink: "Người kia biết việc này và đồng ý.",
+    duo_vink_eerst: "Hãy đánh dấu trước rằng người kia biết và đồng ý.",
+    duo_kost2: "Một phân tích đôi tốn 2 lượt phân tích trong số dư của bạn.",
+    duo_kost1: "Việc này tốn 1 lượt phân tích trong số dư của bạn.",
+    duo_start: "Bắt đầu phân tích đôi",
+    duo_annuleer: "Hủy",
+    duo_stop: "Dừng phân tích đôi",
+    duo_p1: "Người 1: tải ảnh bàn chân lên và xác nhận các hình dạng.",
+    duo_p2: "Người 2: tải ảnh bàn chân lên và xác nhận các hình dạng.",
+    duo_klaar1: "Xong người 1: tiếp tục với người 2",
+    duo_klaar2: "Xong người 2: đến phần so sánh",
+    duo_leeg: "Hãy xác nhận ít nhất một hình dạng trước, rồi tấm gương mới tiếp tục được.",
+    duo_namen_kop: "Tấm gương nên gọi hai bạn là gì?",
+    duo_naam1: "Tên người 1 (có thể để trống)",
+    duo_naam2: "Tên người 2 (có thể để trống)",
+    duo_relatie: "Mối quan hệ của hai bạn là gì? (có thể để trống)",
+    duo_relatie_vb: "vd. người yêu, đồng nghiệp, cha và con gái, bạn bè",
+    duo_vergelijk: "Tấm gương so sánh",
+    duo_bezig: "Tấm gương đang đặt hai bài đọc cạnh nhau…",
+    duo_kop: "Tấm gương so sánh",
+    duo_noot: "Tấm gương so sánh dựa trên hai bài đọc của các bạn và các cuốn sách của Imre & Margriet Somogyi. Không tư vấn y tế hay tâm lý, không dự đoán tương lai và không phán xét."
+  },
+  th: {
+    duo_knop: "วิเคราะห์คู่",
+    duo_upgrade: "วางเท้าอีกคู่ไว้ข้างกัน",
+    duo_uitleg: "เท้าสองคู่ หนึ่งผลการอ่านเชิงเปรียบเทียบ: กระจกจะเล่าว่าพิมพ์เขียวทั้งสองตอบสนองกันอย่างไร จะเป็นความสัมพันธ์แบบไหนก็ได้: คู่รัก เพื่อนร่วมงาน พ่อแม่กับลูก เพื่อน",
+    duo_disclaimer: "การวิเคราะห์คู่เกี่ยวข้องกับคนสองคน อัปโหลดรูปเท้าของคนอื่นเฉพาะเมื่อคนนั้นรู้และยินยอมเท่านั้น สำหรับเด็ก พ่อแม่หรือผู้ปกครองเป็นผู้ตัดสินใจ และเช่นเคย รูปถ่ายจะไม่ถูกบันทึกเด็ดขาด",
+    duo_vink: "อีกฝ่ายรู้เรื่องนี้และยินยอม",
+    duo_vink_eerst: "กรุณาติ๊กยืนยันก่อนว่าอีกฝ่ายรู้และยินยอม",
+    duo_kost2: "การวิเคราะห์คู่ใช้ 2 การวิเคราะห์จากยอดคงเหลือของคุณ",
+    duo_kost1: "ส่วนนี้ใช้ 1 การวิเคราะห์จากยอดคงเหลือของคุณ",
+    duo_start: "เริ่มการวิเคราะห์คู่",
+    duo_annuleer: "ยกเลิก",
+    duo_stop: "หยุดการวิเคราะห์คู่",
+    duo_p1: "คนที่ 1: อัปโหลดรูปเท้าและยืนยันรูปทรง",
+    duo_p2: "คนที่ 2: อัปโหลดรูปเท้าและยืนยันรูปทรง",
+    duo_klaar1: "คนที่ 1 เสร็จแล้ว: ต่อไปคนที่ 2",
+    duo_klaar2: "คนที่ 2 เสร็จแล้ว: ไปที่การเปรียบเทียบ",
+    duo_leeg: "กรุณายืนยันรูปทรงอย่างน้อยหนึ่งอย่างก่อน กระจกจึงจะไปต่อได้",
+    duo_namen_kop: "ให้กระจกเรียกคุณทั้งสองว่าอย่างไรดี",
+    duo_naam1: "ชื่อคนที่ 1 (เว้นว่างได้)",
+    duo_naam2: "ชื่อคนที่ 2 (เว้นว่างได้)",
+    duo_relatie: "ความสัมพันธ์ของคุณคืออะไร (เว้นว่างได้)",
+    duo_relatie_vb: "เช่น คู่รัก เพื่อนร่วมงาน พ่อกับลูกสาว เพื่อน",
+    duo_vergelijk: "กระจกเปรียบเทียบ",
+    duo_bezig: "กระจกกำลังวางผลการอ่านทั้งสองไว้ข้างกัน…",
+    duo_kop: "กระจกเปรียบเทียบ",
+    duo_noot: "กระจกเปรียบเทียบจากผลการอ่านทั้งสองของคุณและหนังสือของ Imre & Margriet Somogyi ไม่ใช่คำแนะนำทางการแพทย์หรือจิตวิทยา ไม่ทำนายอนาคต และไม่ตัดสินใคร"
+  },
+  uk: {
+    duo_knop: "Дуо-аналіз",
+    duo_upgrade: "Поклади поруч другу пару ніг",
+    duo_uitleg: "Дві пари ніг, одне порівняльне читання: дзеркало розповідає, як ці два креслення відгукуються одне на одного. Це може бути будь-який зв'язок: партнери, колеги, батьки й дитина, друзі.",
+    duo_disclaimer: "Дуо-аналіз стосується двох людей. Завантажуй ноги іншої людини лише тоді, коли вона про це знає і згодна. За дітей вирішують батьки або опікун. Як завжди, фото ніколи не зберігаються.",
+    duo_vink: "Інша людина знає про це і згодна.",
+    duo_vink_eerst: "Спершу познач, що інша людина знає і згодна.",
+    duo_kost2: "Дуо-аналіз коштує 2 аналізи з твого балансу.",
+    duo_kost1: "Це коштує 1 аналіз з твого балансу.",
+    duo_start: "Почати дуо-аналіз",
+    duo_annuleer: "Скасувати",
+    duo_stop: "Перервати дуо-аналіз",
+    duo_p1: "Людина 1: завантаж ноги й підтверди форми.",
+    duo_p2: "Людина 2: завантаж ноги й підтверди форми.",
+    duo_klaar1: "Людина 1 готова: далі до людини 2",
+    duo_klaar2: "Людина 2 готова: до порівняння",
+    duo_leeg: "Спершу підтверди хоча б одну форму, тоді дзеркало зможе продовжити.",
+    duo_namen_kop: "Як дзеркалу вас називати?",
+    duo_naam1: "Ім'я людини 1 (можна лишити порожнім)",
+    duo_naam2: "Ім'я людини 2 (можна лишити порожнім)",
+    duo_relatie: "Який у вас зв'язок? (можна лишити порожнім)",
+    duo_relatie_vb: "напр. партнери, колеги, батько й донька, друзі",
+    duo_vergelijk: "Дзеркало порівнює",
+    duo_bezig: "Дзеркало кладе два читання поруч…",
+    duo_kop: "Дзеркало порівнює",
+    duo_noot: "Дзеркало порівнює на основі ваших двох читань і книжок Імре та Маргріт Шомоді. Без медичних чи психологічних порад, без передбачення майбутнього і без осуду."
+  },
+  hu: {
+    duo_knop: "Páros elemzés",
+    duo_upgrade: "Tegyél mellé egy második pár lábat",
+    duo_uitleg: "Két pár láb, egy összehasonlító olvasat: a tükör elmeséli, hogyan hat egymásra ez a két tervrajz. Bármilyen kapcsolat lehet: párok, kollégák, szülő és gyerek, barátok.",
+    duo_disclaimer: "A páros elemzés két emberről szól. Csak akkor tölts fel másvalaki lábáról képet, ha az illető tud róla és beleegyezik. Gyerekeknél a szülő vagy a gyám dönt. A fotókat, mint mindig, soha nem tároljuk.",
+    duo_vink: "A másik tud róla és beleegyezik.",
+    duo_vink_eerst: "Előbb pipáld ki, hogy a másik tud róla és beleegyezik.",
+    duo_kost2: "A páros elemzés 2 elemzést von le az egyenlegedből.",
+    duo_kost1: "Ez 1 elemzést von le az egyenlegedből.",
+    duo_start: "Páros elemzés indítása",
+    duo_annuleer: "Mégse",
+    duo_stop: "Páros elemzés megszakítása",
+    duo_p1: "1. személy: töltsd fel a lábakat és erősítsd meg a formákat.",
+    duo_p2: "2. személy: töltsd fel a lábakat és erősítsd meg a formákat.",
+    duo_klaar1: "1. személy kész: tovább a 2. személyhez",
+    duo_klaar2: "2. személy kész: irány az összehasonlítás",
+    duo_leeg: "Előbb erősíts meg legalább egy formát, akkor a tükör folytathatja.",
+    duo_namen_kop: "Hogyan szólíthat titeket a tükör?",
+    duo_naam1: "1. személy neve (üresen hagyható)",
+    duo_naam2: "2. személy neve (üresen hagyható)",
+    duo_relatie: "Mi a kapcsolatotok? (üresen hagyható)",
+    duo_relatie_vb: "pl. párok, kollégák, apa és lánya, barátok",
+    duo_vergelijk: "A tükör összehasonlít",
+    duo_bezig: "A tükör egymás mellé teszi a két olvasatot…",
+    duo_kop: "A tükör összehasonlít",
+    duo_noot: "A tükör a két olvasatotok és Somogyi Imre & Margriet könyvei alapján hasonlít össze. Nem orvosi vagy pszichológiai tanács, nem jövendölés és nem ítélet."
+  },
+  bn: {
+    duo_knop: "ডুয়ো বিশ্লেষণ",
+    duo_upgrade: "পাশে আরেক জোড়া পা রাখো",
+    duo_uitleg: "দুই জোড়া পা, একটি তুলনামূলক রিডিং: আয়না বলে এই দুটি নকশা একে অপরের সঙ্গে কীভাবে সাড়া দেয়। যেকোনো সম্পর্ক হতে পারে: সঙ্গী, সহকর্মী, বাবা-মা ও সন্তান, বন্ধু।",
+    duo_disclaimer: "ডুয়ো বিশ্লেষণ দুজন মানুষকে নিয়ে। অন্য কারও পায়ের ছবি তখনই আপলোড করো যখন সে জানে এবং রাজি আছে। শিশুদের ক্ষেত্রে বাবা-মা বা অভিভাবক সিদ্ধান্ত নেন। বরাবরের মতো, ছবি কখনও সংরক্ষণ করা হয় না।",
+    duo_vink: "অন্যজন এ বিষয়ে জানে এবং রাজি।",
+    duo_vink_eerst: "আগে টিক দাও যে অন্যজন জানে এবং রাজি।",
+    duo_kost2: "একটি ডুয়ো বিশ্লেষণে তোমার ব্যালেন্স থেকে ২টি বিশ্লেষণ লাগে।",
+    duo_kost1: "এতে তোমার ব্যালেন্স থেকে ১টি বিশ্লেষণ লাগে।",
+    duo_start: "ডুয়ো বিশ্লেষণ শুরু করো",
+    duo_annuleer: "বাতিল",
+    duo_stop: "ডুয়ো বিশ্লেষণ থামাও",
+    duo_p1: "ব্যক্তি ১: পায়ের ছবি আপলোড করো এবং আকৃতিগুলো নিশ্চিত করো।",
+    duo_p2: "ব্যক্তি ২: পায়ের ছবি আপলোড করো এবং আকৃতিগুলো নিশ্চিত করো।",
+    duo_klaar1: "ব্যক্তি ১ শেষ: এবার ব্যক্তি ২",
+    duo_klaar2: "ব্যক্তি ২ শেষ: এবার তুলনা",
+    duo_leeg: "আগে অন্তত একটি আকৃতি নিশ্চিত করো, তবেই আয়না এগোতে পারবে।",
+    duo_namen_kop: "আয়না তোমাদের কী নামে ডাকবে?",
+    duo_naam1: "ব্যক্তি ১-এর নাম (খালি রাখা যায়)",
+    duo_naam2: "ব্যক্তি ২-এর নাম (খালি রাখা যায়)",
+    duo_relatie: "তোমাদের সম্পর্ক কী? (খালি রাখা যায়)",
+    duo_relatie_vb: "যেমন: সঙ্গী, সহকর্মী, বাবা ও মেয়ে, বন্ধু",
+    duo_vergelijk: "আয়না তুলনা করে",
+    duo_bezig: "আয়না দুটি রিডিং পাশাপাশি রাখছে…",
+    duo_kop: "আয়না তুলনা করে",
+    duo_noot: "আয়না তোমাদের দুটি রিডিং এবং Imre & Margriet Somogyi-র বইয়ের ভিত্তিতে তুলনা করে। কোনো চিকিৎসা বা মনস্তাত্ত্বিক পরামর্শ নয়, ভবিষ্যদ্বাণী নয় এবং কোনো বিচার নয়।"
+  },
+  ur: {
+    duo_knop: "جوڑی تجزیہ",
+    duo_upgrade: "ساتھ میں دوسرا جوڑا پاؤں رکھیں",
+    duo_uitleg: "دو جوڑے پاؤں، ایک تقابلی ریڈنگ: آئینہ بتاتا ہے کہ یہ دونوں خاکے ایک دوسرے پر کیسا ردعمل دیتے ہیں۔ رشتہ کوئی بھی ہو سکتا ہے: شریک حیات، ساتھی کارکن، والدین اور بچہ، دوست۔",
+    duo_disclaimer: "جوڑی تجزیہ دو افراد کے بارے میں ہے۔ کسی اور کے پاؤں کی تصویر صرف اسی وقت اپ لوڈ کریں جب وہ شخص جانتا ہو اور راضی ہو۔ بچوں کے معاملے میں والدین یا سرپرست فیصلہ کرتے ہیں۔ حسب معمول، تصاویر کبھی محفوظ نہیں کی جاتیں۔",
+    duo_vink: "دوسرا شخص اس کے بارے میں جانتا ہے اور راضی ہے۔",
+    duo_vink_eerst: "پہلے نشان لگائیں کہ دوسرا شخص جانتا ہے اور راضی ہے۔",
+    duo_kost2: "جوڑی تجزیے پر آپ کے بیلنس سے 2 تجزیے خرچ ہوتے ہیں۔",
+    duo_kost1: "اس پر آپ کے بیلنس سے 1 تجزیہ خرچ ہوتا ہے۔",
+    duo_start: "جوڑی تجزیہ شروع کریں",
+    duo_annuleer: "منسوخ کریں",
+    duo_stop: "جوڑی تجزیہ روکیں",
+    duo_p1: "فرد 1: پاؤں کی تصویر اپ لوڈ کریں اور شکلوں کی تصدیق کریں۔",
+    duo_p2: "فرد 2: پاؤں کی تصویر اپ لوڈ کریں اور شکلوں کی تصدیق کریں۔",
+    duo_klaar1: "فرد 1 مکمل: اب فرد 2 کی طرف",
+    duo_klaar2: "فرد 2 مکمل: اب موازنے کی طرف",
+    duo_leeg: "پہلے کم از کم ایک شکل کی تصدیق کریں، تب آئینہ آگے بڑھ سکتا ہے۔",
+    duo_namen_kop: "آئینہ آپ دونوں کو کس نام سے پکارے؟",
+    duo_naam1: "فرد 1 کا نام (خالی چھوڑ سکتے ہیں)",
+    duo_naam2: "فرد 2 کا نام (خالی چھوڑ سکتے ہیں)",
+    duo_relatie: "آپ کا رشتہ کیا ہے؟ (خالی چھوڑ سکتے ہیں)",
+    duo_relatie_vb: "مثلاً: شریک حیات، ساتھی کارکن، باپ اور بیٹی، دوست",
+    duo_vergelijk: "آئینہ موازنہ کرتا ہے",
+    duo_bezig: "آئینہ دونوں ریڈنگز کو ساتھ ساتھ رکھ رہا ہے…",
+    duo_kop: "آئینہ موازنہ کرتا ہے",
+    duo_noot: "آئینہ آپ دونوں کی ریڈنگز اور Imre & Margriet Somogyi کی کتابوں کی بنیاد پر موازنہ کرتا ہے۔ کوئی طبی یا نفسیاتی مشورہ نہیں، مستقبل کی کوئی پیش گوئی نہیں اور کوئی فیصلہ نہیں۔"
+  },
+  fa: {
+    duo_knop: "تحلیل دونفره",
+    duo_upgrade: "یک جفت پای دوم را کنارش بگذار",
+    duo_uitleg: "دو جفت پا، یک خوانش مقایسه‌ای: آینه تعریف می‌کند این دو طرح چگونه به هم واکنش نشان می‌دهند. هر رابطه‌ای می‌تواند باشد: شریک زندگی، همکار، والد و فرزند، دوستان.",
+    duo_disclaimer: "تحلیل دونفره درباره دو نفر است. عکس پای شخص دیگر را فقط وقتی بارگذاری کن که او بداند و موافق باشد. درباره کودکان، والد یا سرپرست تصمیم می‌گیرد. مثل همیشه، عکس‌ها هرگز ذخیره نمی‌شوند.",
+    duo_vink: "طرف مقابل از این موضوع خبر دارد و موافق است.",
+    duo_vink_eerst: "اول تیک بزن که طرف مقابل خبر دارد و موافق است.",
+    duo_kost2: "یک تحلیل دونفره ۲ تحلیل از اعتبارت کم می‌کند.",
+    duo_kost1: "این ۱ تحلیل از اعتبارت کم می‌کند.",
+    duo_start: "شروع تحلیل دونفره",
+    duo_annuleer: "انصراف",
+    duo_stop: "توقف تحلیل دونفره",
+    duo_p1: "نفر ۱: عکس پاها را بارگذاری کن و شکل‌ها را تأیید کن.",
+    duo_p2: "نفر ۲: عکس پاها را بارگذاری کن و شکل‌ها را تأیید کن.",
+    duo_klaar1: "نفر ۱ تمام شد: برویم سراغ نفر ۲",
+    duo_klaar2: "نفر ۲ تمام شد: برویم سراغ مقایسه",
+    duo_leeg: "اول دست‌کم یک شکل را تأیید کن، آن‌وقت آینه می‌تواند ادامه دهد.",
+    duo_namen_kop: "آینه شما دو نفر را چه صدا کند؟",
+    duo_naam1: "نام نفر ۱ (می‌تواند خالی بماند)",
+    duo_naam2: "نام نفر ۲ (می‌تواند خالی بماند)",
+    duo_relatie: "رابطه شما چیست؟ (می‌تواند خالی بماند)",
+    duo_relatie_vb: "مثلاً: شریک زندگی، همکار، پدر و دختر، دوستان",
+    duo_vergelijk: "آینه مقایسه می‌کند",
+    duo_bezig: "آینه دو خوانش را کنار هم می‌گذارد…",
+    duo_kop: "آینه مقایسه می‌کند",
+    duo_noot: "آینه بر پایه دو خوانش شما و کتاب‌های Imre & Margriet Somogyi مقایسه می‌کند. نه توصیه پزشکی یا روان‌شناختی، نه پیش‌گویی آینده و نه قضاوت."
+  },
+  ms: {
+    duo_knop: "Analisis duo",
+    duo_upgrade: "Letakkan sepasang kaki kedua di sebelahnya",
+    duo_uitleg: "Dua pasang kaki, satu bacaan perbandingan: cermin menceritakan bagaimana kedua-dua pelan ini saling bertindak balas. Boleh jadi apa-apa hubungan: pasangan, rakan sekerja, ibu bapa dan anak, kawan.",
+    duo_disclaimer: "Analisis duo melibatkan dua orang. Muat naik kaki orang lain hanya jika orang itu tahu dan bersetuju. Bagi kanak-kanak, ibu bapa atau penjaga yang memutuskan. Seperti biasa, foto tidak pernah disimpan.",
+    duo_vink: "Orang itu tahu dan bersetuju.",
+    duo_vink_eerst: "Tandakan dulu bahawa orang itu tahu dan bersetuju.",
+    duo_kost2: "Analisis duo menggunakan 2 analisis daripada bakimu.",
+    duo_kost1: "Ini menggunakan 1 analisis daripada bakimu.",
+    duo_start: "Mulakan analisis duo",
+    duo_annuleer: "Batal",
+    duo_stop: "Hentikan analisis duo",
+    duo_p1: "Orang 1: muat naik kaki dan sahkan bentuknya.",
+    duo_p2: "Orang 2: muat naik kaki dan sahkan bentuknya.",
+    duo_klaar1: "Orang 1 selesai: teruskan ke orang 2",
+    duo_klaar2: "Orang 2 selesai: ke perbandingan",
+    duo_leeg: "Sahkan dulu sekurang-kurangnya satu bentuk, barulah cermin boleh teruskan.",
+    duo_namen_kop: "Cermin boleh panggil kamu berdua apa?",
+    duo_naam1: "Nama orang 1 (boleh kosong)",
+    duo_naam2: "Nama orang 2 (boleh kosong)",
+    duo_relatie: "Apakah hubungan kamu berdua? (boleh kosong)",
+    duo_relatie_vb: "cth. pasangan, rakan sekerja, ayah dan anak perempuan, kawan",
+    duo_vergelijk: "Cermin membandingkan",
+    duo_bezig: "Cermin meletakkan kedua-dua bacaan bersebelahan…",
+    duo_kop: "Cermin membandingkan",
+    duo_noot: "Cermin membandingkan berdasarkan dua bacaan kamu dan buku-buku Imre & Margriet Somogyi. Tiada nasihat perubatan atau psikologi, tiada ramalan masa depan dan tiada penghakiman."
+  },
+  tl: {
+    duo_knop: "Duo na pagsusuri",
+    duo_upgrade: "Maglagay ng pangalawang pares ng paa sa tabi nito",
+    duo_uitleg: "Dalawang pares ng paa, isang paghahambing na pagbasa: ikukuwento ng salamin kung paano tumutugon sa isa't isa ang dalawang blueprint na ito. Puwede itong anumang relasyon: magkasintahan, magkatrabaho, magulang at anak, magkaibigan.",
+    duo_disclaimer: "Ang duo na pagsusuri ay tungkol sa dalawang tao. I-upload lang ang paa ng ibang tao kung alam niya ito at pumapayag siya. Para sa mga bata, ang magulang o tagapag-alaga ang magpapasya. Gaya ng dati, hindi kailanman iniimbak ang mga larawan.",
+    duo_vink: "Alam ito ng kabilang tao at pumapayag siya.",
+    duo_vink_eerst: "Lagyan muna ng tsek na alam ng kabilang tao at pumapayag siya.",
+    duo_kost2: "Ang duo na pagsusuri ay gumagamit ng 2 pagsusuri mula sa balanse mo.",
+    duo_kost1: "Gumagamit ito ng 1 pagsusuri mula sa balanse mo.",
+    duo_start: "Simulan ang duo na pagsusuri",
+    duo_annuleer: "Kanselahin",
+    duo_stop: "Itigil ang duo na pagsusuri",
+    duo_p1: "Tao 1: i-upload ang mga paa at kumpirmahin ang mga hugis.",
+    duo_p2: "Tao 2: i-upload ang mga paa at kumpirmahin ang mga hugis.",
+    duo_klaar1: "Tapos na ang tao 1: tuloy sa tao 2",
+    duo_klaar2: "Tapos na ang tao 2: sa paghahambing na",
+    duo_leeg: "Kumpirmahin muna ang kahit isang hugis, saka makakapagpatuloy ang salamin.",
+    duo_namen_kop: "Ano ang itatawag ng salamin sa inyong dalawa?",
+    duo_naam1: "Pangalan ng tao 1 (puwedeng iwanang blangko)",
+    duo_naam2: "Pangalan ng tao 2 (puwedeng iwanang blangko)",
+    duo_relatie: "Ano ang relasyon ninyo? (puwedeng iwanang blangko)",
+    duo_relatie_vb: "hal. magkasintahan, magkatrabaho, ama at anak, magkaibigan",
+    duo_vergelijk: "Naghahambing ang salamin",
+    duo_bezig: "Pinagtatabi ng salamin ang dalawang pagbasa…",
+    duo_kop: "Naghahambing ang salamin",
+    duo_noot: "Naghahambing ang salamin batay sa inyong dalawang pagbasa at sa mga aklat nina Imre & Margriet Somogyi. Walang medikal o sikolohikal na payo, walang panghuhula sa hinaharap at walang paghatol."
+  },
+  el: {
+    duo_knop: "Ανάλυση duo",
+    duo_upgrade: "Βάλε δίπλα ένα δεύτερο ζευγάρι πόδια",
+    duo_uitleg: "Δύο ζευγάρια πόδια, μία συγκριτική ανάγνωση: ο καθρέφτης αφηγείται πώς αντιδρούν αυτά τα δύο σχέδια το ένα στο άλλο. Μπορεί να είναι οποιαδήποτε σχέση: σύντροφοι, συνάδελφοι, γονιός και παιδί, φίλοι.",
+    duo_disclaimer: "Η ανάλυση duo αφορά δύο ανθρώπους. Ανέβασε τα πόδια κάποιου άλλου μόνο αν εκείνος το γνωρίζει και συμφωνεί. Για τα παιδιά αποφασίζει ο γονιός ή ο κηδεμόνας. Όπως πάντα, οι φωτογραφίες δεν αποθηκεύονται ποτέ.",
+    duo_vink: "Ο άλλος το γνωρίζει και συμφωνεί.",
+    duo_vink_eerst: "Τσέκαρε πρώτα ότι ο άλλος το γνωρίζει και συμφωνεί.",
+    duo_kost2: "Μια ανάλυση duo κοστίζει 2 αναλύσεις από το υπόλοιπό σου.",
+    duo_kost1: "Αυτό κοστίζει 1 ανάλυση από το υπόλοιπό σου.",
+    duo_start: "Ξεκίνα την ανάλυση duo",
+    duo_annuleer: "Ακύρωση",
+    duo_stop: "Διακοπή της ανάλυσης duo",
+    duo_p1: "Άτομο 1: ανέβασε τα πόδια και επιβεβαίωσε τα σχήματα.",
+    duo_p2: "Άτομο 2: ανέβασε τα πόδια και επιβεβαίωσε τα σχήματα.",
+    duo_klaar1: "Έτοιμο το άτομο 1: συνέχεια στο άτομο 2",
+    duo_klaar2: "Έτοιμο το άτομο 2: προς τη σύγκριση",
+    duo_leeg: "Επιβεβαίωσε πρώτα τουλάχιστον ένα σχήμα, μετά μπορεί να συνεχίσει ο καθρέφτης.",
+    duo_namen_kop: "Πώς να σας αποκαλεί ο καθρέφτης;",
+    duo_naam1: "Όνομα ατόμου 1 (μπορεί να μείνει κενό)",
+    duo_naam2: "Όνομα ατόμου 2 (μπορεί να μείνει κενό)",
+    duo_relatie: "Ποια είναι η σχέση σας; (μπορεί να μείνει κενό)",
+    duo_relatie_vb: "π.χ. σύντροφοι, συνάδελφοι, πατέρας και κόρη, φίλοι",
+    duo_vergelijk: "Ο καθρέφτης συγκρίνει",
+    duo_bezig: "Ο καθρέφτης βάζει τις δύο αναγνώσεις δίπλα δίπλα…",
+    duo_kop: "Ο καθρέφτης συγκρίνει",
+    duo_noot: "Ο καθρέφτης συγκρίνει με βάση τις δύο αναγνώσεις σας και τα βιβλία των Imre & Margriet Somogyi. Καμία ιατρική ή ψυχολογική συμβουλή, καμία πρόβλεψη του μέλλοντος και καμία κρίση."
+  },
+  cs: {
+    duo_knop: "Analýza ve dvou",
+    duo_upgrade: "Polož vedle druhý pár nohou",
+    duo_uitleg: "Dva páry nohou, jedno srovnávací čtení: zrcadlo vypráví, jak na sebe tyto dva plány reagují. Může jít o jakýkoli vztah: partneři, kolegové, rodič a dítě, přátelé.",
+    duo_disclaimer: "Analýza ve dvou se týká dvou lidí. Nohy někoho jiného nahraj jen tehdy, když o tom ten člověk ví a souhlasí. U dětí rozhoduje rodič nebo opatrovník. Fotky se jako vždy nikdy neukládají.",
+    duo_vink: "Ten druhý o tom ví a souhlasí.",
+    duo_vink_eerst: "Nejdřív zaškrtni, že ten druhý o tom ví a souhlasí.",
+    duo_kost2: "Analýza ve dvou stojí 2 analýzy z tvého zůstatku.",
+    duo_kost1: "Tohle stojí 1 analýzu z tvého zůstatku.",
+    duo_start: "Spustit analýzu ve dvou",
+    duo_annuleer: "Zrušit",
+    duo_stop: "Přerušit analýzu ve dvou",
+    duo_p1: "Osoba 1: nahraj nohy a potvrď tvary.",
+    duo_p2: "Osoba 2: nahraj nohy a potvrď tvary.",
+    duo_klaar1: "Osoba 1 hotová: dál k osobě 2",
+    duo_klaar2: "Osoba 2 hotová: ke srovnání",
+    duo_leeg: "Nejdřív potvrď aspoň jeden tvar, pak může zrcadlo pokračovat.",
+    duo_namen_kop: "Jak vám má zrcadlo říkat?",
+    duo_naam1: "Jméno osoby 1 (může zůstat prázdné)",
+    duo_naam2: "Jméno osoby 2 (může zůstat prázdné)",
+    duo_relatie: "Jaký je váš vztah? (může zůstat prázdné)",
+    duo_relatie_vb: "např. partneři, kolegové, otec a dcera, přátelé",
+    duo_vergelijk: "Zrcadlo srovnává",
+    duo_bezig: "Zrcadlo klade obě čtení vedle sebe…",
+    duo_kop: "Zrcadlo srovnává",
+    duo_noot: "Zrcadlo srovnává na základě vašich dvou čtení a knih Imre & Margriet Somogyi. Žádné lékařské ani psychologické rady, žádné předpovídání budoucnosti a žádné soudy."
+  },
+  ro: {
+    duo_knop: "Analiză duo",
+    duo_upgrade: "Pune alături o a doua pereche de picioare",
+    duo_uitleg: "Două perechi de picioare, o singură citire comparativă: oglinda povestește cum reacționează aceste două tipare unul la celălalt. Poate fi orice relație: parteneri, colegi, părinte și copil, prieteni.",
+    duo_disclaimer: "O analiză duo privește doi oameni. Încarcă picioarele altcuiva doar dacă acea persoană știe și este de acord. În cazul copiilor decide părintele sau tutorele. Ca întotdeauna, fotografiile nu sunt salvate niciodată.",
+    duo_vink: "Cealaltă persoană știe și este de acord.",
+    duo_vink_eerst: "Bifează mai întâi că cealaltă persoană știe și este de acord.",
+    duo_kost2: "O analiză duo costă 2 analize din creditul tău.",
+    duo_kost1: "Aceasta costă 1 analiză din creditul tău.",
+    duo_start: "Pornește analiza duo",
+    duo_annuleer: "Anulează",
+    duo_stop: "Oprește analiza duo",
+    duo_p1: "Persoana 1: încarcă picioarele și confirmă formele.",
+    duo_p2: "Persoana 2: încarcă picioarele și confirmă formele.",
+    duo_klaar1: "Persoana 1 gata: mai departe la persoana 2",
+    duo_klaar2: "Persoana 2 gata: la comparație",
+    duo_leeg: "Confirmă mai întâi cel puțin o formă, apoi oglinda poate continua.",
+    duo_namen_kop: "Cum să vă spună oglinda?",
+    duo_naam1: "Numele persoanei 1 (poate rămâne gol)",
+    duo_naam2: "Numele persoanei 2 (poate rămâne gol)",
+    duo_relatie: "Care este relația voastră? (poate rămâne gol)",
+    duo_relatie_vb: "de ex. parteneri, colegi, tată și fiică, prieteni",
+    duo_vergelijk: "Oglinda compară",
+    duo_bezig: "Oglinda așază cele două citiri una lângă alta…",
+    duo_kop: "Oglinda compară",
+    duo_noot: "Oglinda compară pe baza celor două citiri ale voastre și a cărților lui Imre & Margriet Somogyi. Fără sfaturi medicale sau psihologice, fără prezicerea viitorului și fără judecată."
+  },
+  sv: {
+    duo_knop: "Duoanalys",
+    duo_upgrade: "Lägg ett andra par fötter bredvid",
+    duo_uitleg: "Två par fötter, en jämförande läsning: spegeln berättar hur dessa två ritningar svarar på varandra. Det kan vara vilken relation som helst: partner, kollegor, förälder och barn, vänner.",
+    duo_disclaimer: "En duoanalys handlar om två personer. Ladda bara upp någon annans fötter om den personen känner till det och godkänner det. För barn bestämmer föräldern eller vårdnadshavaren. Som alltid sparas foton aldrig.",
+    duo_vink: "Den andra personen känner till detta och godkänner det.",
+    duo_vink_eerst: "Bocka först i att den andra personen känner till det och godkänner det.",
+    duo_kost2: "En duoanalys kostar 2 analyser från ditt saldo.",
+    duo_kost1: "Detta kostar 1 analys från ditt saldo.",
+    duo_start: "Starta duoanalysen",
+    duo_annuleer: "Avbryt",
+    duo_stop: "Avbryt duoanalysen",
+    duo_p1: "Person 1: ladda upp fötterna och bekräfta formerna.",
+    duo_p2: "Person 2: ladda upp fötterna och bekräfta formerna.",
+    duo_klaar1: "Klar med person 1: vidare till person 2",
+    duo_klaar2: "Klar med person 2: till jämförelsen",
+    duo_leeg: "Bekräfta först minst en form, sedan kan spegeln fortsätta.",
+    duo_namen_kop: "Vad får spegeln kalla er?",
+    duo_naam1: "Namn på person 1 (får lämnas tomt)",
+    duo_naam2: "Namn på person 2 (får lämnas tomt)",
+    duo_relatie: "Vad är er relation? (får lämnas tomt)",
+    duo_relatie_vb: "t.ex. partner, kollegor, far och dotter, vänner",
+    duo_vergelijk: "Spegeln jämför",
+    duo_bezig: "Spegeln lägger de två läsningarna bredvid varandra…",
+    duo_kop: "Spegeln jämför",
+    duo_noot: "Spegeln jämför utifrån era två läsningar och böckerna av Imre & Margriet Somogyi. Inga medicinska eller psykologiska råd, inga förutsägelser om framtiden och inga omdömen."
+  },
+  zht: {
+    duo_knop: "雙人解讀",
+    duo_upgrade: "在旁邊放上第二雙腳",
+    duo_uitleg: "兩雙腳，一份對照解讀：鏡子述說這兩份藍圖如何相互回應。可以是任何關係：伴侶、同事、親子、朋友。",
+    duo_disclaimer: "雙人解讀涉及兩個人。只有在對方知情並同意時，才能上傳他人的腳部照片。兒童由父母或監護人決定。照片一如既往，絕不儲存。",
+    duo_vink: "對方知情並同意。",
+    duo_vink_eerst: "請先勾選確認對方知情並同意。",
+    duo_kost2: "雙人解讀需使用你的 2 次分析額度。",
+    duo_kost1: "這將使用你的 1 次分析額度。",
+    duo_start: "開始雙人解讀",
+    duo_annuleer: "取消",
+    duo_stop: "中止雙人解讀",
+    duo_p1: "第 1 位:上傳腳部照片並確認形態。",
+    duo_p2: "第 2 位:上傳腳部照片並確認形態。",
+    duo_klaar1: "第 1 位完成:繼續第 2 位",
+    duo_klaar2: "第 2 位完成:進入對照",
+    duo_leeg: "請先確認至少一個形態，鏡子才能繼續。",
+    duo_namen_kop: "鏡子該怎麼稱呼你們?",
+    duo_naam1: "第 1 位的名字(可留空)",
+    duo_naam2: "第 2 位的名字(可留空)",
+    duo_relatie: "你們是什麼關係?(可留空)",
+    duo_relatie_vb: "例如:伴侶、同事、父女、朋友",
+    duo_vergelijk: "鏡子來對照",
+    duo_bezig: "鏡子正把兩份解讀並排放在一起…",
+    duo_kop: "鏡子來對照",
+    duo_noot: "鏡子基於你們的兩份解讀以及 Imre & Margriet Somogyi 的著作進行對照。不提供醫療或心理建議，不預測未來，也不作評判。"
+  }
+};
+for(const t in DUO_TALEN){ if(TALEN[t] && TALEN[t].ui) Object.assign(TALEN[t].ui, DUO_TALEN[t]); }
+
 /* ================= OVER-PAGINA (v9.6) ================= */
 const OVER_TALEN = {
   nl: {"over_aria": "Over tenen lezen", "over_titel": "Over tenen lezen", "over_b1_kop": "Wat is tenen lezen?", "over_b1_p1": "Voeten zijn spiegels. De stand en vorm van je tenen laten zien hoe je met je emoties omgaat en hoe je karakter in elkaar zit: de tenen als spiegel van de ziel. Dat uitgangspunt is zo oud als de mensheid en verrassend logisch: alles spiegelt alles. Zoals je gezicht, je handen en je houding iets over je vertellen, doen je tenen dat ook. Verrassend precies zelfs, omdat ze zelden gemaskeerd worden.", "over_b1_p2": "Imre Somogyi ontdekte en systematiseerde deze samenhang. Elke teen is een antenne voor een eigen stuk van jou: communicatie, wilskracht en gevoel, daadkracht en creativiteit, liefde en loslaten, vertrouwen en angst. De rechtervoet spiegelt je denken, de linkervoet je voelen.", "over_b1_p3": "Tenen lezen is geen waarzeggerij en geen helderziendheid. Het is kijken, heel goed kijken, naar wat er al is: een blauwdruk van je karakter, een spoor van wat je hebt meegemaakt, en soms ook wat er nú in je leeft: tenen veranderen mee met je leven, en recente ontwikkelingen zijn er soms al in waar te nemen.", "over_b2_kop": "Wat kun je ermee, en wat niet?", "over_b2_wel": "Wél: jezelf beter leren kennen. Zien waar je energie vanzelf stroomt en waar je hem tegenhoudt. Begrijpen waarom je doet zoals je doet, en herkennen wat je van huis uit hebt meegekregen. Ouders lezen de teentjes van hun kinderen om hun karakter te begrijpen in plaats van ertegen te vechten. Partners en collega's ontdekken waarom ze elkaar soms kwijtraken en waar ze elkaar kunnen vinden.", "over_b2_niet": "Níet: de toekomst voorspellen: tenen tonen wie je bent, niet wat er gaat gebeuren. Geen medische diagnoses: daarvoor ga je naar je huisarts; tenen lezen is daarvoor absoluut ongeschikt. En geen oordeel: er bestaan geen goede of foute tenen. Een goede spiegel vertekent niet.", "over_b3_kop": "Imre & Margriet Somogyi", "over_b3_p1": "Deze app is gebouwd op het levenswerk van Imre en Margriet Somogyi, die het tenen lezen vanaf de jaren tachtig ontwikkelden tot een systematische methode: het tenenleesalfabet. Zij legden hun werk vast in vier boeken (Tenen Lezen I, Tenen Lezen II, Babyteentjes Lezen en Tenen Lezen III: De Verdieping) die in meerdere talen verschenen en wereldwijd lezers en cursisten vonden. Hun grondregels dragen deze app: zeg wat je ziet, verzin niets, oordeel nooit, en behandel ieder mens met warmte en respect.", "over_b3_p2": "De Tenenspiegel is gemaakt met hun toestemming en in hun geest.", "over_b4_kop": "Wat kan deze app?", "over_b4_p1": "Zelf lezen (gratis): kies een teen, blader door het vademecum en klik aan wat je bij jezelf herkent. De spiegel vertelt wat het betekent.", "over_b4_p2": "De spiegel kijkt mee (AI-analyse): upload een foto van je voeten en de vormen worden voor je herkend en aangezet. Jij blijft de lezer: jij bevestigt of corrigeert. Je foto wordt alleen voor die ene analyse gebruikt en nooit opgeslagen.", "over_b4_p3": "De spiegel vertelt: een uitgeschreven lezing die de losse vormen tot één verhaal maakt.", "over_b4_p4": "Stel een vraag: praat door over jouw lezing. De spiegel antwoordt op basis van jouw tenen en de vier boeken.", "over_b4_p5": "19 talen · installeerbaar als app op je telefoon · account met tegoed, jaarabonnement of losse pakketten.", "over_faq_kop": "Veelgestelde vragen", "over_f1q": "Is tenen lezen serieus?", "over_f1a": "Ja. Tenen lezen is een serieuze zelfreflectie-methode, ontwikkeld en vastgelegd in vier boeken die wereldwijd in meerdere talen zijn verschenen. Het is geen wetenschap, geen geloof en geen therapie. Het is een spiegel. Alle duidingen in deze app komen rechtstreeks uit de boeken van Imre & Margriet Somogyi.", "over_f2q": "Wordt mijn foto opgeslagen?", "over_f2a": "Nee. Je foto wordt alleen gebruikt voor de ene analyse die jij aanvraagt en wordt daarna direct vergeten. Niet opgeslagen, nergens.", "over_f3q": "Kan de app zien of ik ziek ben?", "over_f3a": "Nee, en dat proberen we ook niet. Tenen lezen doet geen medische uitspraken. Zorgen over je gezondheid? Ga naar je huisarts of pedicure.", "over_f4q": "Voorspellen mijn tenen mijn toekomst?", "over_f4a": "Nee. Tenen tonen je karakter en soms sporen van je verleden, geen toekomst. Wie je bent zegt natuurlijk wel iets over hoe je met morgen omgaat; dát is precies waar de spiegel je bij helpt.", "over_f5q": "Waarom verschillen mijn linker- en rechtervoet?", "over_f5a": "Rechts spiegelt je denken, links je voelen. Verschillen tussen beide voeten zijn juist interessant: daar zit vaak het verhaal.", "over_f6q": "Veranderen tenen?", "over_f6a": "Ja. De basisvorm ligt vast, maar stand, nagels en huid veranderen mee met je leven. Wie innerlijk verandert, ziet dat op den duur aan zijn tenen, op elke leeftijd.", "over_f7q": "Kan ik ook de teentjes van mijn kind lezen?", "over_f7a": "Ja, dat is zelfs een van de mooiste toepassingen (er is een heel boek over: Babyteentjes Lezen). Direct na de geboorte tonen teentjes al een blauwdruk van het karakter. Handig voor ouders die willen begrijpen in plaats van botsen.", "over_f8q": "Wat kost het?", "over_f8a": "Rondkijken, tenen kiezen en het vademecum gebruiken is gratis. Voor de AI-analyse (De spiegel kijkt mee) gebruik je tegoed: na registratie krijg je 3 gratis analyses, daarna kies je een los pakket of een jaarabonnement. Prijzen staan onder Prijzen in de footer.", "over_f9q": "Ik heb betaald maar geen tegoed gekregen, wat nu?", "over_f9a": "Mail ons op support@toereading.app met het e-mailadres van je account, dan lossen we het op. Terugbetalingsvoorwaarden staan onder Terugbetaling.", "over_f10q": "Andere vraag of feedback?", "over_f10a": "We horen graag van je: support@toereading.app."},
@@ -12178,6 +13002,7 @@ function mergePerVoet(uit){
 
 async function analyseerFoto(){
   if(!DEMO && !accSessie()){ openAccount('login', T('ui.acc_gate')); return; }
+  if(!duo && duoContext){ duoContext = null; const duoU = document.getElementById('duoUit'); if(duoU) duoU.innerHTML = ''; }
   const btn = document.getElementById('analyseerBtn');
   const tweeCalls = fotoModus === 'twee' && fotos.links && fotos.rechts;
   btn.disabled = true;
@@ -12263,7 +13088,7 @@ function verwerkAnalyse(resu){
   if(vB) vB.addEventListener('click', ()=>deSpiegelVertelt(false));
   const lB = document.getElementById('lezingBtn');
   if(lB){ lB.addEventListener('click', ()=>deSpiegelVertelt(true)); updateLezingKnop(); }
-  zetStatus(TF('ui.analyse_klaar', totaal)+(resu.kwaliteit?' <span style="font-weight:400;color:var(--inkt-zacht)">'+esc(resu.kwaliteit)+'</span>':''),'goed');
+  zetStatus(TF('ui.analyse_klaar', totaal)+(resu.kwaliteit?' <span style="font-weight:400;color:var(--inkt-zacht)">'+esc(resu.kwaliteit)+'</span>':''),'goed');  duoNaAnalyse();
 }
 
 async function deSpiegelVertelt(uitgebreid){
@@ -12315,9 +13140,11 @@ async function deSpiegelVertelt(uitgebreid){
   if(v.samenhang) html += '<div class="vsamen">'+esc(v.samenhang)+'</div>';
   html += '<div class="fotonoot" style="margin-top:12px">'+T('ui.vertelt_noot')+'</div></div>';
   laatsteVertelt = v; laatsteDiepgang = uitgebreid ? 'uitgebreid' : 'kort';
+  duoContext = null;
   uit.innerHTML = html;
   bewaarLezingAlsAan();
   renderVraagSectie();
+  renderDuoUpgrade();
   uit.scrollIntoView({behavior:'smooth', block:'nearest'});
 }
 
@@ -12325,7 +13152,7 @@ async function deSpiegelVertelt(uitgebreid){
 /* ================= ACCOUNTS & TEGOED (v9.0) ================= */
 function accSessie(){ try{ const s = JSON.parse(localStorage.ts_sessie || 'null'); return (s && s.at) ? s : null; }catch(e){ return null; } }
 function accBewaar(s){ try{ localStorage.ts_sessie = JSON.stringify(s); }catch(e){} }
-function accWis(){ try{ delete localStorage.ts_sessie; }catch(e){} laatsteTegoed = null; accIsAdmin = false; accAdminGecheckt = false; accProfiel = null; vraagGesprek = []; huidigeLezingId = null; }
+function accWis(){ try{ delete localStorage.ts_sessie; }catch(e){} laatsteTegoed = null; accIsAdmin = false; accAdminGecheckt = false; accProfiel = null; vraagGesprek = []; huidigeLezingId = null; duo = null; duoContext = null; }
 
 function accUitTokens(dt){
   if(!dt || !dt.access_token) return null;
@@ -12727,9 +13554,11 @@ function vraagBubbel(soort, tekst){
   log.appendChild(d);
   return d;
 }
-function renderVraagSectie(){
-  const uit = document.getElementById('verteltUit');
-  if(!uit || document.getElementById('vraagSectie')) return;
+function renderVraagSectie(anker){
+  const uit = anker || document.getElementById('verteltUit');
+  if(!uit) return;
+  const oudeSectie = document.getElementById('vraagSectie');
+  if(oudeSectie) oudeSectie.remove();
   vraagGesprek = []; huidigeLezingId = null;
   const d = document.createElement('div');
   d.className = 'vraagsectie'; d.id = 'vraagSectie';
@@ -12784,7 +13613,9 @@ async function verzendVraag(){
     r = await fetch(AI_WORKER + '/vraag', {
       method: 'POST',
       headers: Object.assign({ 'Content-Type': 'application/json' }, await accAuthKop()),
-      body: JSON.stringify({ taal: TAAL, analyse: { tenen, notities: laatsteNotities, vertelt: laatsteVertelt }, geschiedenis: vraagGesprek.slice(-6), vraag })
+      body: JSON.stringify(duoContext
+        ? { taal: TAAL, duo: duoContext, geschiedenis: vraagGesprek.slice(-6), vraag }
+        : { taal: TAAL, analyse: { tenen, notities: laatsteNotities, vertelt: laatsteVertelt }, geschiedenis: vraagGesprek.slice(-6), vraag })
     });
     try{ dt = await r.json(); }catch(e){}
   }catch(e){}
@@ -12822,6 +13653,7 @@ async function verzendVraag(){
   }
 }
 async function bewaarLezingAlsAan(){
+  if(duoContext) return bewaarDuoAlsAan();
   if(DEMO || huidigeLezingId || !accSessie() || !laatsteVertelt) return;
   if(!accProfiel) await laadProfiel();
   if(!accProfiel || !accProfiel.bewaar_lezingen) return;
@@ -12872,6 +13704,229 @@ async function wisGesprek(){
 
 /* ================= KASSA (Paddle overlay, v9.1) ================= */
 let koopPending = null, paddleLaden = null, paddleKlaar = false, koopPollTimers = [], koopVorigTegoed = null;
+/* ================= DUO-ANALYSE (v9.7) ================= */
+let duo = null;          /* actieve duo-flow: {stap:'A'|'B', route:'direct'|'upgrade', A, B} */
+let duoContext = null;   /* afgeronde duo voor /vraag: {A, B, verhaal, namen?, relatie?} */
+let duoBezig = false;
+
+function duoEl(id){ return document.getElementById(id); }
+
+function duoSnapshot(){
+  const tenen = {}; let n = 0;
+  for(const k in sel){ tenen[k] = [...sel[k]]; n += sel[k].size; }
+  if(!n) return null;
+  const s = { tenen: tenen };
+  if(laatsteNotities && Object.keys(laatsteNotities).length) s.notities = laatsteNotities;
+  return s;
+}
+
+function duoWisSelectie(){
+  wisFotos();
+  for(const k in sel) sel[k].clear();
+  for(const k in plek) delete plek[k];
+  updateStippen(); renderSpiegel(); renderTeenPaneel(); renderCatalogus();
+  const res = document.getElementById('fotoResultaat'); if(res) res.innerHTML = '';
+}
+
+function duoBanner(){
+  const p = duoEl('duoPaneel'); if(!p) return;
+  if(!duo){ p.innerHTML = ''; return; }
+  p.innerHTML = '<div class="duobanner"><b>' + esc(T(duo.stap === 'A' ? 'ui.duo_p1' : 'ui.duo_p2')) + '</b>' +
+    '<button class="acclink" id="duoStop" style="margin:0">' + esc(T('ui.duo_stop')) + '</button></div>';
+  duoEl('duoStop').addEventListener('click', duoAfbreken);
+}
+
+function duoAfbreken(){
+  duo = null;
+  const p = duoEl('duoPaneel'); if(p) p.innerHTML = '';
+  const u = duoEl('duoUit'); if(u) u.innerHTML = '';
+}
+
+function startDuo(route){
+  if(DEMO || duoBezig) return;
+  if(!accSessie()){ openAccount('login', T('ui.acc_gate')); return; }
+  const p = duoEl('duoPaneel'); if(!p) return;
+  p.innerHTML = '<div class="duopaneel">' +
+    '<div class="duokop">' + esc(T('ui.duo_knop')) + '</div>' +
+    '<div class="duotekst">' + esc(T('ui.duo_uitleg')) + '</div>' +
+    '<div class="duotekst"><b>' + esc(T(route === 'upgrade' ? 'ui.duo_kost1' : 'ui.duo_kost2')) + '</b></div>' +
+    '<div class="duotekst">' + esc(T('ui.duo_disclaimer')) + '</div>' +
+    '<label class="duovink"><input type="checkbox" id="duoVink"><span>' + esc(T('ui.duo_vink')) + '</span></label>' +
+    '<div class="foto-acties"><button class="knop knop-donker" id="duoGo">' + esc(T('ui.duo_start')) + '</button>' +
+    '<button class="knop knop-ghost2" id="duoNee">' + esc(T('ui.duo_annuleer')) + '</button></div>' +
+    '<div id="duoConsentFout"></div></div>';
+  duoEl('duoNee').addEventListener('click', () => { p.innerHTML = ''; if(duo) duoBanner(); });
+  duoEl('duoGo').addEventListener('click', () => {
+    const fout = duoEl('duoConsentFout');
+    if(!duoEl('duoVink').checked){ if(fout) fout.innerHTML = '<div class="fotostatus fout" style="margin-top:8px">' + esc(T('ui.duo_vink_eerst')) + '</div>'; return; }
+    if(route === 'upgrade'){
+      const a = duoSnapshot();
+      if(!a){ if(fout) fout.innerHTML = '<div class="fotostatus fout" style="margin-top:8px">' + esc(T('ui.duo_leeg')) + '</div>'; return; }
+      if(laatsteVertelt) a.vertelt = laatsteVertelt;
+      duo = { stap: 'B', route: 'upgrade', A: a, B: null };
+    } else {
+      duo = { stap: 'A', route: 'direct', A: null, B: null };
+    }
+    duoContext = null;
+    const u = duoEl('duoUit'); if(u) u.innerHTML = '';
+    duoWisSelectie();
+    zetStatus('', '');
+    duoBanner();
+    const sf = document.getElementById('stapfoto'); if(sf) sf.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+  p.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function duoNaAnalyse(){
+  if(!duo) return;
+  for(const id of ['verteltBtn','lezingBtn']){ const b = duoEl(id); if(b) b.hidden = true; }
+  const rij = document.querySelector('#fotoResultaat .foto-acties');
+  if(!rij || duoEl('duoVolgende')) return;
+  const b = document.createElement('button');
+  b.className = 'knop knop-donker';
+  b.id = 'duoVolgende';
+  b.textContent = T(duo.stap === 'A' ? 'ui.duo_klaar1' : 'ui.duo_klaar2');
+  rij.prepend(b);
+  b.addEventListener('click', duoVolgende);
+}
+
+function duoVolgende(){
+  if(!duo) return;
+  const s = duoSnapshot();
+  if(!s){ zetStatus(esc(T('ui.duo_leeg')), 'fout'); return; }
+  if(duo.stap === 'A'){
+    duo.A = s; duo.stap = 'B';
+    duoWisSelectie();
+    zetStatus('', '');
+    duoBanner();
+    const sf = document.getElementById('stapfoto'); if(sf) sf.scrollIntoView({behavior:'smooth', block:'start'});
+  } else {
+    duo.B = s;
+    toonDuoNamen();
+  }
+}
+
+function toonDuoNamen(){
+  const p = duoEl('duoPaneel'); if(!p) return;
+  p.innerHTML = '<div class="duopaneel">' +
+    '<div class="duokop">' + esc(T('ui.duo_namen_kop')) + '</div>' +
+    '<label class="acclbl" for="duoNaam1">' + esc(T('ui.duo_naam1')) + '</label><input class="accveld" id="duoNaam1" maxlength="40" autocomplete="off">' +
+    '<label class="acclbl" for="duoNaam2">' + esc(T('ui.duo_naam2')) + '</label><input class="accveld" id="duoNaam2" maxlength="40" autocomplete="off">' +
+    '<label class="acclbl" for="duoRelatie">' + esc(T('ui.duo_relatie')) + '</label><input class="accveld" id="duoRelatie" maxlength="40" autocomplete="off" placeholder="' + esc(T('ui.duo_relatie_vb')) + '">' +
+    '<div class="foto-acties" style="margin-top:12px"><button class="knop knop-donker" id="duoVergelijkBtn">' + esc(T('ui.duo_vergelijk')) + '</button>' +
+    '<button class="knop knop-ghost2" id="duoStop2">' + esc(T('ui.duo_stop')) + '</button></div></div>';
+  duoEl('duoStop2').addEventListener('click', duoAfbreken);
+  duoEl('duoVergelijkBtn').addEventListener('click', roepDuo);
+  p.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+async function roepDuo(){
+  if(duoBezig || !duo || !duo.A || !duo.B) return;
+  duoBezig = true;
+  const knop = duoEl('duoVergelijkBtn'); if(knop) knop.disabled = true;
+  const pak = id => ((duoEl(id) && duoEl(id).value) || '').trim().slice(0, 40);
+  const n1 = pak('duoNaam1'), n2 = pak('duoNaam2'), rel = pak('duoRelatie');
+  const u = duoEl('duoUit');
+  if(u){
+    u.innerHTML = '<div class="fotostatus bezig" style="margin-top:10px"><span class="spinner" aria-hidden="true"></span>' + esc(T('ui.duo_bezig')) + '</div>';
+    u.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+  const body = { taal: TAAL, A: duo.A, B: duo.B };
+  if(n1 || n2) body.namen = [n1, n2];
+  if(rel) body.relatie = rel;
+  let r = null, dt = null;
+  try{
+    r = await fetch(AI_WORKER + '/duo', {
+      method: 'POST',
+      headers: Object.assign({ 'Content-Type': 'application/json' }, await accAuthKop()),
+      body: JSON.stringify(body)
+    });
+    try{ dt = await r.json(); }catch(e){}
+  }catch(e){}
+  duoBezig = false;
+  if(knop) knop.disabled = false;
+  if(r && r.ok && dt && dt.ok === true && dt.verhaal){
+    duoContext = { A: duo.A, B: duo.B, verhaal: dt.verhaal };
+    if(n1 || n2) duoContext.namen = [n1, n2];
+    if(rel) duoContext.relatie = rel;
+    const p = duoEl('duoPaneel'); if(p) p.innerHTML = '';
+    duo = null;
+    renderDuoVerhaal();
+    bewaarDuoAlsAan();
+    laadTegoed();
+    return;
+  }
+  const code = String((dt && (dt.code || dt.reden)) || '');
+  const st = r ? r.status : 0;
+  let fout = T('ui.vr_fout_net');
+  if(st === 401 || code === 'login_vereist' || code === 'sessie_verlopen'){
+    if(code === 'sessie_verlopen'){ accWis(); renderAccountUI(); openAccount('login', T('ui.acc_sessie_verlopen')); }
+    else openAccount('login', T('ui.acc_gate'));
+  }
+  if(st === 429) fout = T('ui.vr_fout_druk');
+  if(code === 'lezing_leeg') fout = T('ui.duo_leeg');
+  if(u) u.innerHTML = '<div class="fotostatus fout" style="margin-top:10px">' + esc(fout) + '</div>';
+}
+
+function renderDuoVerhaal(){
+  const u = duoEl('duoUit'); if(!u || !duoContext) return;
+  let kop = esc(T('ui.duo_kop'));
+  if(duoContext.namen && (duoContext.namen[0] || duoContext.namen[1])){
+    const nn = [duoContext.namen[0], duoContext.namen[1]].filter(Boolean).join(' & ');
+    kop += ' · ' + esc(nn);
+  }
+  u.innerHTML = '<div class="vertelt"><div class="vkop">' + kop + '</div>' +
+    '<div class="duoverhaal">' + esc(duoContext.verhaal) + '</div>' +
+    '<div class="fotonoot" style="margin-top:12px">' + esc(T('ui.duo_noot')) + '</div>' +
+    '<div id="duoVraagAnker"></div></div>';
+  renderVraagSectie(duoEl('duoVraagAnker'));
+  u.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function renderDuoUpgrade(){
+  if(DEMO || duo) return;
+  const uit = document.getElementById('verteltUit');
+  if(!uit || duoEl('duoUpgradeBtn')) return;
+  const d = document.createElement('div');
+  d.className = 'foto-acties';
+  d.style.marginTop = '10px';
+  d.innerHTML = '<button class="knop knop-licht" id="duoUpgradeBtn">' + esc(T('ui.duo_upgrade')) + '</button>';
+  uit.appendChild(d);
+  duoEl('duoUpgradeBtn').addEventListener('click', () => startDuo('upgrade'));
+}
+
+async function bewaarDuoAlsAan(){
+  if(DEMO || huidigeLezingId || !accSessie() || !duoContext) return;
+  if(!accProfiel) await laadProfiel();
+  if(!accProfiel || !accProfiel.bewaar_lezingen) return;
+  const t = await accToken(); if(!t) return;
+  let s = accSessie();
+  if(s && !s.uid){ await accHaalGebruiker(); s = accSessie(); }
+  if(!s || !s.uid) return;
+  try{
+    const r = await fetch(SB_URL + '/rest/v1/lezingen', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', apikey: SB_KEY, Authorization: 'Bearer ' + t, Prefer: 'return=representation' },
+      body: JSON.stringify({
+        gebruiker: s.uid, diepgang: 'uitgebreid',
+        tenen: { duo: true, A: duoContext.A.tenen, B: duoContext.B.tenen },
+        notities: { A: duoContext.A.notities || {}, B: duoContext.B.notities || {} },
+        vertelt: { duo: true, verhaal: duoContext.verhaal }
+      })
+    });
+    const rijen = await r.json();
+    if(r.ok && Array.isArray(rijen) && rijen[0] && rijen[0].id) huidigeLezingId = rijen[0].id;
+  }catch(e){}
+}
+
+function initDuo(){
+  const b = duoEl('duoStartBtn');
+  if(b){
+    if(DEMO) b.hidden = true;
+    b.addEventListener('click', () => startDuo('direct'));
+  }
+}
+
 function laadPaddle(){
   if(paddleKlaar) return Promise.resolve(true);
   if(paddleLaden) return paddleLaden;
@@ -13061,6 +14116,7 @@ initFoto();
 initAccount();
 initOver();
 initKoop();
+initDuo();
 </script>
 <script>
 if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost')){
