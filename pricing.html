@@ -44,13 +44,43 @@ footer nav{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:10px}
 [lang-blok]{display:none}
 html[data-taal="en"] [lang-blok="en"]{display:block}
 html[data-taal="nl"] [lang-blok="nl"]{display:block}
+html[data-taal="de"] [lang-blok="de"]{display:block}
+html[data-taal="fr"] [lang-blok="fr"]{display:block}
+html[data-taal="es"] [lang-blok="es"]{display:block}
+html[data-taal="it"] [lang-blok="it"]{display:block}
+html[data-taal="pt"] [lang-blok="pt"]{display:block}
+html[data-taal="pl"] [lang-blok="pl"]{display:block}
+html[data-taal="ru"] [lang-blok="ru"]{display:block}
+html[data-taal="tr"] [lang-blok="tr"]{display:block}
+html[data-taal="ar"] [lang-blok="ar"]{display:block}
+html[data-taal="zh"] [lang-blok="zh"]{display:block}
+html[data-taal="ja"] [lang-blok="ja"]{display:block}
+html[data-taal="ko"] [lang-blok="ko"]{display:block}
+html[data-taal="hi"] [lang-blok="hi"]{display:block}
+html[data-taal="id"] [lang-blok="id"]{display:block}
+html[data-taal="vi"] [lang-blok="vi"]{display:block}
+html[data-taal="th"] [lang-blok="th"]{display:block}
+html[data-taal="uk"] [lang-blok="uk"]{display:block}
+html[data-taal="hu"] [lang-blok="hu"]{display:block}
+html[data-taal="bn"] [lang-blok="bn"]{display:block}
+html[data-taal="ur"] [lang-blok="ur"]{display:block}
+html[data-taal="fa"] [lang-blok="fa"]{display:block}
+html[data-taal="ms"] [lang-blok="ms"]{display:block}
+html[data-taal="tl"] [lang-blok="tl"]{display:block}
+html[data-taal="el"] [lang-blok="el"]{display:block}
+html[data-taal="cs"] [lang-blok="cs"]{display:block}
+html[data-taal="ro"] [lang-blok="ro"]{display:block}
+html[data-taal="sv"] [lang-blok="sv"]{display:block}
+html[data-taal="zht"] [lang-blok="zht"]{display:block}
+html[dir="rtl"] main{direction:rtl;text-align:right}
+.talen select{border:1px solid var(--lijn);background:var(--kaart);color:var(--inkt);border-radius:8px;padding:6px 10px;font-family:'Karla',sans-serif;font-size:.9rem;max-width:180px}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header class="top">
   <a class="merk" href="./"><img src="icons/icon-192.png" alt=""><b>Toe Reading</b></a>
-  <nav class="talen"><button data-t="en">EN</button><button data-t="nl">NL</button></nav>
+  <nav class="talen"><select id="taalKeuze" aria-label="Language"><option value="en">English</option><option value="nl">Nederlands</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="es">Español</option><option value="it">Italiano</option><option value="pt">Português</option><option value="pl">Polski</option><option value="ru">Русский</option><option value="tr">Türkçe</option><option value="ar">العربية</option><option value="zh">中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="hi">हिन्दी</option><option value="id">Bahasa Indonesia</option><option value="vi">Tiếng Việt</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="hu">Magyar</option><option value="bn">বাংলা</option><option value="ur">اردو</option><option value="fa">فارسی</option><option value="ms">Bahasa Melayu</option><option value="tl">Filipino</option><option value="el">Ελληνικά</option><option value="cs">Čeština</option><option value="ro">Română</option><option value="sv">Svenska</option><option value="zht">繁體中文</option></select></nav>
 </header>
 
 <main lang-blok="en">
@@ -86,7 +116,7 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
     <ul>
       <li><strong>A full year of readings</strong></li>
       <li>Fair use: up to 60 readings per month</li>
-      <li>Renews yearly — cancel anytime</li>
+      <li>Renews yearly, cancel anytime</li>
       <li>Reminder e-mail before every renewal</li>
     </ul>
     <a class="koop" href="./?koop=jaar">Buy in the app</a>
@@ -94,14 +124,13 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 </div>
 
 <a class="cta" href="./">Open Toe Reading</a>
-<p class="noot">You buy inside the app, after signing in — that way the credits land on <em>your</em> account. All prices include VAT. Payments are handled securely by Paddle, our Merchant of Record. Full refund within 14 days if credits are unused — see the <a href="refund.html">Refund Policy</a>.</p>
+<p class="noot">You buy inside the app, after signing in: that way the credits land on <em>your</em> account. All prices include VAT. Payments are handled securely by our payment partner, the Merchant of Record. Full refund within 14 days if credits are unused; see the <a href="refund.html">Refund Policy</a>.</p>
 
 <h3>Good to know</h3>
-<p><strong>What happens to my photos?</strong> They're analysed and immediately discarded — never stored, never used to train AI. <a href="privacy.html">Privacy Policy</a>.</p>
-<p><strong>Is this medical advice?</strong> No. Toe Reading is for entertainment and self-reflection only — see our <a href="terms.html">Terms</a>.</p>
+<p><strong>What happens to my photos?</strong> They're analysed and immediately discarded: never stored, never used to train AI. <a href="privacy.html">Privacy Policy</a>.</p>
+<p><strong>Is this medical advice?</strong> No. Toe Reading is for entertainment and self-reflection only; see our <a href="terms.html">Terms</a>.</p>
 <p><strong>Which credits are used first?</strong> Free first, then pack credits, then your subscription.</p>
 </main>
-
 <main lang-blok="nl">
 <h1>Eerlijke, simpele prijzen</h1>
 <p class="sub">Eén tegoed = één complete lezing: foto-analyse plus de volledige duiding, "De spiegel vertelt". In 15 talen.</p>
@@ -135,7 +164,7 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
     <ul>
       <li><strong>Een heel jaar lezingen</strong></li>
       <li>Fair use: tot 60 lezingen per maand</li>
-      <li>Verlengt jaarlijks — altijd opzegbaar</li>
+      <li>Verlengt jaarlijks, altijd opzegbaar</li>
       <li>Herinneringsmail vóór elke verlenging</li>
     </ul>
     <a class="koop" href="./?koop=jaar">Koop in de app</a>
@@ -143,12 +172,1356 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 </div>
 
 <a class="cta" href="./">Open Toe Reading</a>
-<p class="noot">Kopen doe je in de app, na het inloggen — zo wordt het tegoed op <em>jouw</em> account bijgeschreven. Alle prijzen zijn inclusief btw. Betalingen verlopen veilig via Paddle, onze Merchant of Record. Volledige terugbetaling binnen 14 dagen als het tegoed ongebruikt is — zie het <a href="refund.html">terugbetalingsbeleid</a>.</p>
+<p class="noot">Kopen doe je in de app, na het inloggen: zo wordt het tegoed op <em>jouw</em> account bijgeschreven. Alle prijzen zijn inclusief btw. Betalingen verlopen veilig via onze betaalpartner, de Merchant of Record. Volledige terugbetaling binnen 14 dagen als het tegoed ongebruikt is; zie het <a href="refund.html">terugbetalingsbeleid</a>.</p>
 
 <h3>Goed om te weten</h3>
-<p><strong>Wat gebeurt er met mijn foto's?</strong> Ze worden geanalyseerd en direct weggegooid — nooit opgeslagen, nooit gebruikt om AI te trainen. <a href="privacy.html">Privacyverklaring</a>.</p>
-<p><strong>Is dit medisch advies?</strong> Nee. Toe Reading is uitsluitend voor entertainment en zelfreflectie — zie onze <a href="terms.html">voorwaarden</a>.</p>
+<p><strong>Wat gebeurt er met mijn foto's?</strong> Ze worden geanalyseerd en direct weggegooid: nooit opgeslagen, nooit gebruikt om AI te trainen. <a href="privacy.html">Privacyverklaring</a>.</p>
+<p><strong>Is dit medisch advies?</strong> Nee. Toe Reading is uitsluitend voor entertainment en zelfreflectie; zie onze <a href="terms.html">voorwaarden</a>.</p>
 <p><strong>Welk tegoed gaat eerst op?</strong> Eerst gratis, dan pakket-tegoed, dan je abonnement.</p>
+</main>
+<main lang-blok="de">
+<h1>Einfache, ehrliche Preise</h1>
+<p class="sub">Ein Guthaben = eine komplette Lesung: Foto-Analyse plus die vollständige Deutung, „Der Spiegel erzählt“. In 15 Sprachen.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Gratis ausprobieren</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li><strong>3 volle Lesungen</strong> beim Erstellen eines Kontos</li>
+      <li>Keine Zahlungsdaten nötig</li>
+      <li>Die Zehen-Enzyklopädie frei erkunden, ganz ohne Konto</li>
+    </ul>
+    <a class="koop stil" href="./">Kostenloses Konto erstellen</a>
+  </div>
+  <div class="kaart">
+    <h2>10er-Paket</h2>
+    <div class="prijs">€4,99 <small>einmalig</small></div>
+    <ul>
+      <li><strong>10 volle Lesungen</strong></li>
+      <li>Guthaben verfällt nie</li>
+      <li>Kauf nach, wann immer du willst</li>
+      <li>Ideal, um Freunde &amp; Familie zu lesen</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">In der App kaufen</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">Bestes Angebot</span>
+    <h2>Jahr</h2>
+    <div class="prijs">€39,99 <small>/ Jahr</small></div>
+    <ul>
+      <li><strong>Ein ganzes Jahr voller Lesungen</strong></li>
+      <li>Fair Use: bis zu 60 Lesungen pro Monat</li>
+      <li>Verlängert sich jährlich, jederzeit kündbar</li>
+      <li>Erinnerungs-E-Mail vor jeder Verlängerung</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">In der App kaufen</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Toe Reading öffnen</a>
+<p class="noot">Gekauft wird in der App, nach dem Anmelden: So landet das Guthaben auf <em>deinem</em> Konto. Alle Preise inklusive Mehrwertsteuer. Zahlungen laufen sicher über unseren Zahlungspartner, den Merchant of Record. Volle Rückerstattung innerhalb von 14 Tagen, wenn das Guthaben ungenutzt ist; siehe die <a href="refund.html">Rückerstattungsrichtlinie</a>.</p>
+
+<h3>Gut zu wissen</h3>
+<p><strong>Was passiert mit meinen Fotos?</strong> Sie werden analysiert und sofort verworfen: niemals gespeichert, niemals zum Trainieren von KI genutzt. <a href="privacy.html">Datenschutzerklärung</a>.</p>
+<p><strong>Ist das medizinischer Rat?</strong> Nein. Toe Reading dient ausschließlich der Unterhaltung und Selbstreflexion; siehe unsere <a href="terms.html">Nutzungsbedingungen</a>.</p>
+<p><strong>Welches Guthaben wird zuerst verbraucht?</strong> Erst das gratis Guthaben, dann das Paket-Guthaben, dann dein Abo.</p>
+</main>
+<main lang-blok="fr">
+<h1>Des prix simples et honnêtes</h1>
+<p class="sub">Un crédit = une lecture complète : l'analyse de la photo plus l'interprétation intégrale, « Le miroir raconte ». En 15 langues.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Essaie gratuitement</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li><strong>3 lectures complètes</strong> à la création d'un compte</li>
+      <li>Aucune donnée de paiement demandée</li>
+      <li>Explore librement l'encyclopédie des orteils, sans compte</li>
+    </ul>
+    <a class="koop stil" href="./">Crée un compte gratuit</a>
+  </div>
+  <div class="kaart">
+    <h2>Pack de 10</h2>
+    <div class="prijs">€4,99 <small>en une fois</small></div>
+    <ul>
+      <li><strong>10 lectures complètes</strong></li>
+      <li>Les crédits n'expirent jamais</li>
+      <li>Rachètes-en quand tu veux</li>
+      <li>Parfait pour lire tes amis &amp; ta famille</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Acheter dans l'app</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">Meilleure offre</span>
+    <h2>Année</h2>
+    <div class="prijs">€39,99 <small>/ an</small></div>
+    <ul>
+      <li><strong>Une année entière de lectures</strong></li>
+      <li>Fair use : jusqu'à 60 lectures par mois</li>
+      <li>Renouvellement annuel, résiliable à tout moment</li>
+      <li>E-mail de rappel avant chaque renouvellement</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Acheter dans l'app</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Ouvrir Toe Reading</a>
+<p class="noot">L'achat se fait dans l'app, après connexion : ainsi les crédits arrivent sur <em>ton</em> compte. Tous les prix incluent la TVA. Les paiements sont traités en toute sécurité par notre partenaire de paiement, le Merchant of Record. Remboursement intégral sous 14 jours si les crédits sont inutilisés ; voir la <a href="refund.html">politique de remboursement</a>.</p>
+
+<h3>Bon à savoir</h3>
+<p><strong>Que deviennent mes photos ?</strong> Elles sont analysées puis immédiatement supprimées : jamais conservées, jamais utilisées pour entraîner l'IA. <a href="privacy.html">Politique de confidentialité</a>.</p>
+<p><strong>Est-ce un avis médical ?</strong> Non. Toe Reading est uniquement destiné au divertissement et à l'autoréflexion ; voir nos <a href="terms.html">conditions</a>.</p>
+<p><strong>Quels crédits sont utilisés en premier ?</strong> D'abord les gratuits, puis ceux du pack, puis ton abonnement.</p>
+</main>
+<main lang-blok="es">
+<h1>Precios simples y honestos</h1>
+<p class="sub">Un crédito = una lectura completa: el análisis de la foto más la interpretación íntegra, «El espejo habla». En 15 idiomas.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Pruébalo gratis</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li><strong>3 lecturas completas</strong> al crear una cuenta</li>
+      <li>Sin datos de pago</li>
+      <li>Explora la enciclopedia de los dedos libremente, sin necesidad de cuenta</li>
+    </ul>
+    <a class="koop stil" href="./">Crea una cuenta gratis</a>
+  </div>
+  <div class="kaart">
+    <h2>Pack de 10</h2>
+    <div class="prijs">€4,99 <small>pago único</small></div>
+    <ul>
+      <li><strong>10 lecturas completas</strong></li>
+      <li>Los créditos no caducan nunca</li>
+      <li>Vuelve a comprar cuando quieras</li>
+      <li>Ideal para leer a amigos &amp; familia</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Comprar en la app</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">La mejor opción</span>
+    <h2>Año</h2>
+    <div class="prijs">€39,99 <small>/ año</small></div>
+    <ul>
+      <li><strong>Un año entero de lecturas</strong></li>
+      <li>Fair use: hasta 60 lecturas al mes</li>
+      <li>Se renueva cada año, cancela cuando quieras</li>
+      <li>E-mail recordatorio antes de cada renovación</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Comprar en la app</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Abrir Toe Reading</a>
+<p class="noot">Compras dentro de la app, después de iniciar sesión: así los créditos llegan a <em>tu</em> cuenta. Todos los precios incluyen IVA. Los pagos se gestionan de forma segura a través de nuestro socio de pagos, el Merchant of Record. Reembolso completo en un plazo de 14 días si los créditos están sin usar; consulta la <a href="refund.html">política de reembolsos</a>.</p>
+
+<h3>Conviene saberlo</h3>
+<p><strong>¿Qué pasa con mis fotos?</strong> Se analizan y se descartan de inmediato: nunca se guardan, nunca se usan para entrenar IA. <a href="privacy.html">Política de privacidad</a>.</p>
+<p><strong>¿Es esto un consejo médico?</strong> No. Toe Reading es solo para entretenimiento y autorreflexión; consulta nuestros <a href="terms.html">términos</a>.</p>
+<p><strong>¿Qué créditos se usan primero?</strong> Primero los gratis, luego los del pack y después tu suscripción.</p>
+</main>
+<main lang-blok="it">
+<h1>Prezzi semplici e onesti</h1>
+<p class="sub">Un credito = una lettura completa: l'analisi della foto più l'interpretazione integrale, «Lo specchio racconta». In 15 lingue.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Provalo gratis</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li><strong>3 letture complete</strong> quando crei un account</li>
+      <li>Nessun dato di pagamento richiesto</li>
+      <li>Esplora liberamente l'enciclopedia delle dita, senza account</li>
+    </ul>
+    <a class="koop stil" href="./">Crea un account gratuito</a>
+  </div>
+  <div class="kaart">
+    <h2>Pacchetto da 10</h2>
+    <div class="prijs">€4,99 <small>una tantum</small></div>
+    <ul>
+      <li><strong>10 letture complete</strong></li>
+      <li>I crediti non scadono mai</li>
+      <li>Ricompra quando vuoi</li>
+      <li>Perfetto per leggere amici &amp; famiglia</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Acquista nell'app</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">Più conveniente</span>
+    <h2>Anno</h2>
+    <div class="prijs">€39,99 <small>/ anno</small></div>
+    <ul>
+      <li><strong>Un anno intero di letture</strong></li>
+      <li>Fair use: fino a 60 letture al mese</li>
+      <li>Si rinnova ogni anno, disdici quando vuoi</li>
+      <li>E-mail di promemoria prima di ogni rinnovo</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Acquista nell'app</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Apri Toe Reading</a>
+<p class="noot">Acquisti nell'app, dopo l'accesso: così i crediti finiscono sul <em>tuo</em> account. Tutti i prezzi includono l'IVA. I pagamenti sono gestiti in modo sicuro dal nostro partner di pagamento, il Merchant of Record. Rimborso completo entro 14 giorni se i crediti non sono stati usati; vedi la <a href="refund.html">politica di rimborso</a>.</p>
+
+<h3>Buono a sapersi</h3>
+<p><strong>Che fine fanno le mie foto?</strong> Vengono analizzate e subito eliminate: mai salvate, mai usate per addestrare l'IA. <a href="privacy.html">Informativa sulla privacy</a>.</p>
+<p><strong>È un consiglio medico?</strong> No. Toe Reading è pensato solo per intrattenimento e autoriflessione; vedi i nostri <a href="terms.html">termini</a>.</p>
+<p><strong>Quali crediti si usano per primi?</strong> Prima quelli gratis, poi quelli del pacchetto, poi il tuo abbonamento.</p>
+</main>
+<main lang-blok="pt">
+<h1>Preços simples e honestos</h1>
+<p class="sub">Um crédito = uma leitura completa: a análise da foto mais a interpretação integral, «O espelho conta». Em 15 línguas.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Experimenta grátis</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li><strong>3 leituras completas</strong> ao criares uma conta</li>
+      <li>Sem dados de pagamento</li>
+      <li>Explora livremente a enciclopédia dos dedos, sem precisares de conta</li>
+    </ul>
+    <a class="koop stil" href="./">Cria uma conta gratuita</a>
+  </div>
+  <div class="kaart">
+    <h2>Pacote de 10</h2>
+    <div class="prijs">€4,99 <small>pagamento único</small></div>
+    <ul>
+      <li><strong>10 leituras completas</strong></li>
+      <li>Os créditos nunca expiram</li>
+      <li>Compra de novo quando quiseres</li>
+      <li>Ideal para ler amigos &amp; família</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Comprar na app</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">Melhor valor</span>
+    <h2>Ano</h2>
+    <div class="prijs">€39,99 <small>/ ano</small></div>
+    <ul>
+      <li><strong>Um ano inteiro de leituras</strong></li>
+      <li>Fair use: até 60 leituras por mês</li>
+      <li>Renova-se todos os anos, cancela quando quiseres</li>
+      <li>E-mail de lembrete antes de cada renovação</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Comprar na app</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Abrir Toe Reading</a>
+<p class="noot">Compras dentro da app, depois de iniciares sessão: assim os créditos vão para a <em>tua</em> conta. Todos os preços incluem IVA. Os pagamentos são tratados em segurança pelo nosso parceiro de pagamentos, o Merchant of Record. Reembolso total no prazo de 14 dias se os créditos estiverem por usar; vê a <a href="refund.html">Política de Reembolso</a>.</p>
+
+<h3>Bom saber</h3>
+<p><strong>O que acontece às minhas fotos?</strong> São analisadas e imediatamente descartadas: nunca são guardadas, nunca são usadas para treinar IA. <a href="privacy.html">Política de Privacidade</a>.</p>
+<p><strong>Isto é aconselhamento médico?</strong> Não. O Toe Reading destina-se apenas a entretenimento e autorreflexão; vê os nossos <a href="terms.html">termos</a>.</p>
+<p><strong>Que créditos se gastam primeiro?</strong> Primeiro os grátis, depois os do pacote e por fim a tua subscrição.</p>
+</main>
+<main lang-blok="pl">
+<h1>Proste, uczciwe ceny</h1>
+<p class="sub">Jeden kredyt = jeden pełny odczyt: analiza zdjęcia plus cała interpretacja, „Lustro opowiada”. W 15 językach.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Wypróbuj za darmo</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li><strong>3 pełne odczyty</strong> przy założeniu konta</li>
+      <li>Bez danych płatniczych</li>
+      <li>Encyklopedię palców przeglądasz swobodnie, bez konta</li>
+    </ul>
+    <a class="koop stil" href="./">Załóż darmowe konto</a>
+  </div>
+  <div class="kaart">
+    <h2>Pakiet 10</h2>
+    <div class="prijs">€4,99 <small>jednorazowo</small></div>
+    <ul>
+      <li><strong>10 pełnych odczytów</strong></li>
+      <li>Kredyty nigdy nie wygasają</li>
+      <li>Dokupuj, kiedy chcesz</li>
+      <li>Świetne do czytania przyjaciół &amp; rodziny</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Kup w aplikacji</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">Najlepsza oferta</span>
+    <h2>Rok</h2>
+    <div class="prijs">€39,99 <small>/ rok</small></div>
+    <ul>
+      <li><strong>Cały rok odczytów</strong></li>
+      <li>Fair use: do 60 odczytów miesięcznie</li>
+      <li>Odnawia się co rok, możesz anulować w każdej chwili</li>
+      <li>Przypomnienie e-mailem przed każdym odnowieniem</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Kup w aplikacji</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Otwórz Toe Reading</a>
+<p class="noot">Kupujesz w aplikacji, po zalogowaniu: dzięki temu kredyty trafiają na <em>twoje</em> konto. Wszystkie ceny zawierają VAT. Płatności bezpiecznie obsługuje nasz partner płatniczy, Merchant of Record. Pełny zwrot pieniędzy w ciągu 14 dni, jeśli kredyty są niewykorzystane; zobacz <a href="refund.html">politykę zwrotów</a>.</p>
+
+<h3>Warto wiedzieć</h3>
+<p><strong>Co się dzieje z moimi zdjęciami?</strong> Są analizowane i od razu usuwane: nigdy nie są zapisywane ani używane do trenowania AI. <a href="privacy.html">Polityka prywatności</a>.</p>
+<p><strong>Czy to porada medyczna?</strong> Nie. Toe Reading służy wyłącznie rozrywce i autorefleksji; zobacz nasz <a href="terms.html">regulamin</a>.</p>
+<p><strong>Które kredyty zużywają się najpierw?</strong> Najpierw darmowe, potem te z pakietu, na końcu twoja subskrypcja.</p>
+</main>
+<main lang-blok="ru">
+<h1>Простые и честные цены</h1>
+<p class="sub">Один кредит = одно полное чтение: анализ фото плюс полная интерпретация, «Зеркало говорит». На 15 языках.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Попробуй бесплатно</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li><strong>3 полных чтения</strong> при создании аккаунта</li>
+      <li>Платёжные данные не нужны</li>
+      <li>Энциклопедию пальцев ног можно свободно изучать без аккаунта</li>
+    </ul>
+    <a class="koop stil" href="./">Создать бесплатный аккаунт</a>
+  </div>
+  <div class="kaart">
+    <h2>Набор из 10</h2>
+    <div class="prijs">€4.99 <small>разовый платёж</small></div>
+    <ul>
+      <li><strong>10 полных чтений</strong></li>
+      <li>Кредиты никогда не сгорают</li>
+      <li>Докупай, когда захочешь</li>
+      <li>Отлично подходит, чтобы читать друзей &amp; родных</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Купить в приложении</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">Выгоднее всего</span>
+    <h2>Год</h2>
+    <div class="prijs">€39.99 <small>/ год</small></div>
+    <ul>
+      <li><strong>Целый год чтений</strong></li>
+      <li>Fair use: до 60 чтений в месяц</li>
+      <li>Продлевается ежегодно, отменить можно в любой момент</li>
+      <li>Письмо-напоминание перед каждым продлением</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Купить в приложении</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Открыть Toe Reading</a>
+<p class="noot">Покупка происходит в приложении, после входа: так кредиты попадут на <em>твой</em> аккаунт. Все цены включают НДС. Платежи безопасно обрабатывает наш платёжный партнёр, Merchant of Record (официальный продавец). Полный возврат в течение 14 дней, если кредиты не использованы; см. <a href="refund.html">Политику возврата</a>.</p>
+
+<h3>Полезно знать</h3>
+<p><strong>Что происходит с моими фото?</strong> Они анализируются и сразу удаляются: никогда не хранятся и никогда не используются для обучения ИИ. <a href="privacy.html">Политика конфиденциальности</a>.</p>
+<p><strong>Это медицинский совет?</strong> Нет. Toe Reading создан только для развлечения и саморефлексии; см. наши <a href="terms.html">Условия</a>.</p>
+<p><strong>Какие кредиты расходуются первыми?</strong> Сначала бесплатные, потом кредиты из набора, потом твоя подписка.</p>
+</main>
+<main lang-blok="tr">
+<h1>Basit ve dürüst fiyatlar</h1>
+<p class="sub">Bir kredi = bir tam okuma: fotoğraf analizi artı eksiksiz yorum, "Ayna anlatıyor". 15 dilde.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Ücretsiz dene</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li>Hesap oluşturduğunda <strong>3 tam okuma</strong></li>
+      <li>Ödeme bilgisi gerekmez</li>
+      <li>Parmak ansiklopedisini hesap gerekmeden özgürce keşfet</li>
+    </ul>
+    <a class="koop stil" href="./">Ücretsiz hesap oluştur</a>
+  </div>
+  <div class="kaart">
+    <h2>10'lu paket</h2>
+    <div class="prijs">€4,99 <small>tek seferlik</small></div>
+    <ul>
+      <li><strong>10 tam okuma</strong></li>
+      <li>Krediler asla sona ermez</li>
+      <li>İstediğin zaman yeniden satın al</li>
+      <li>Arkadaşlarını &amp; aileni okumak için birebir</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Uygulamadan satın al</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">En avantajlı</span>
+    <h2>Yıllık</h2>
+    <div class="prijs">€39,99 <small>/ yıl</small></div>
+    <ul>
+      <li><strong>Koca bir yıl dolusu okuma</strong></li>
+      <li>Fair use: ayda en fazla 60 okuma</li>
+      <li>Her yıl yenilenir, istediğin zaman iptal edebilirsin</li>
+      <li>Her yenilemeden önce hatırlatma e-postası</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Uygulamadan satın al</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Toe Reading'i aç</a>
+<p class="noot">Satın alma işlemini uygulamada, giriş yaptıktan sonra yaparsın: böylece krediler <em>senin</em> hesabına geçer. Tüm fiyatlara KDV dahildir. Ödemeler, ödeme ortağımız Merchant of Record tarafından güvenle işlenir. Krediler kullanılmamışsa 14 gün içinde tam iade; bkz. <a href="refund.html">İade Politikası</a>.</p>
+
+<h3>Bilmekte yarar var</h3>
+<p><strong>Fotoğraflarıma ne oluyor?</strong> Analiz edilir ve hemen silinir: asla kaydedilmez, asla yapay zekâ eğitiminde kullanılmaz. <a href="privacy.html">Gizlilik Politikası</a>.</p>
+<p><strong>Bu tıbbi tavsiye mi?</strong> Hayır. Toe Reading yalnızca eğlence ve öz yansıma içindir; bkz. <a href="terms.html">Kullanım Koşulları</a>.</p>
+<p><strong>Önce hangi krediler kullanılır?</strong> Önce ücretsiz olanlar, sonra paket kredileri, en son aboneliğin.</p>
+</main>
+<main lang-blok="ar">
+<h1>أسعار بسيطة وواضحة</h1>
+<p class="sub">رصيد واحد = قراءة كاملة واحدة: تحليل الصورة مع التفسير الكامل، "المرآة تحكي". بـ 15 لغة.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>جرّب مجاناً</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li><strong>3 قراءات كاملة</strong> عند إنشاء حساب</li>
+      <li>لا حاجة إلى بيانات دفع</li>
+      <li>استكشف موسوعة أصابع القدم بحرّية، من دون حساب</li>
+    </ul>
+    <a class="koop stil" href="./">أنشئ حساباً مجانياً</a>
+  </div>
+  <div class="kaart">
+    <h2>باقة 10</h2>
+    <div class="prijs">€4.99 <small>دفعة واحدة</small></div>
+    <ul>
+      <li><strong>10 قراءات كاملة</strong></li>
+      <li>الرصيد لا تنتهي صلاحيته أبداً</li>
+      <li>اشترِ مجدداً متى شئت</li>
+      <li>رائعة لقراءة الأصدقاء &amp; العائلة</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">اشترِ داخل التطبيق</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">أفضل قيمة</span>
+    <h2>سنة</h2>
+    <div class="prijs">€39.99 <small>/ سنة</small></div>
+    <ul>
+      <li><strong>سنة كاملة من القراءات</strong></li>
+      <li>استخدام عادل: حتى 60 قراءة في الشهر</li>
+      <li>يتجدد سنوياً، ويمكنك الإلغاء في أي وقت</li>
+      <li>بريد تذكير قبل كل تجديد</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">اشترِ داخل التطبيق</a>
+  </div>
+</div>
+
+<a class="cta" href="./">افتح Toe Reading</a>
+<p class="noot">الشراء يتم داخل التطبيق بعد تسجيل الدخول: هكذا يُضاف الرصيد إلى حسابك <em>أنت</em>. جميع الأسعار تشمل ضريبة القيمة المضافة. تتم المدفوعات بأمان عبر شريك الدفع لدينا، Merchant of Record (البائع الرسمي). استرداد كامل خلال 14 يوماً إذا كان الرصيد غير مستخدم؛ راجع <a href="refund.html">سياسة الاسترداد</a>.</p>
+
+<h3>من المفيد أن تعرف</h3>
+<p><strong>ماذا يحدث لصوري؟</strong> تُحلَّل ثم تُحذف فوراً: لا تُخزَّن أبداً ولا تُستخدم أبداً لتدريب الذكاء الاصطناعي. <a href="privacy.html">سياسة الخصوصية</a>.</p>
+<p><strong>هل هذه نصيحة طبية؟</strong> لا. Toe Reading للترفيه والتأمل الذاتي فقط؛ راجع <a href="terms.html">الشروط</a>.</p>
+<p><strong>أي رصيد يُستخدم أولاً؟</strong> المجاني أولاً، ثم رصيد الباقة، ثم اشتراكك.</p>
+</main>
+<main lang-blok="zh">
+<h1>简单、透明的价格</h1>
+<p class="sub">1 个点数 = 1 次完整解读：照片分析加上完整的解读文字"镜子讲述"。支持 15 种语言。</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>免费试用</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li>注册账户即送 <strong>3 次完整解读</strong></li>
+      <li>无需填写付款信息</li>
+      <li>脚趾百科免费开放浏览，无需账户</li>
+    </ul>
+    <a class="koop stil" href="./">创建免费账户</a>
+  </div>
+  <div class="kaart">
+    <h2>10 次套餐</h2>
+    <div class="prijs">€4.99 <small>一次性付款</small></div>
+    <ul>
+      <li><strong>10 次完整解读</strong></li>
+      <li>点数永不过期</li>
+      <li>随时可以再次购买</li>
+      <li>很适合为朋友 &amp; 家人解读</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">在应用内购买</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">超值之选</span>
+    <h2>年度</h2>
+    <div class="prijs">€39.99 <small>/ 年</small></div>
+    <ul>
+      <li><strong>整整一年的解读</strong></li>
+      <li>合理使用：每月最多 60 次解读</li>
+      <li>按年续订，随时可取消</li>
+      <li>每次续订前都会发送提醒邮件</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">在应用内购买</a>
+  </div>
+</div>
+
+<a class="cta" href="./">打开 Toe Reading</a>
+<p class="noot">请登录后在应用内购买：这样点数才会计入<em>你自己</em>的账户。所有价格均含增值税。付款由我们的支付伙伴 Merchant of Record（登记商户）安全处理。14 天内点数未使用可全额退款；详见<a href="refund.html">退款政策</a>。</p>
+
+<h3>值得了解</h3>
+<p><strong>我的照片会怎么处理？</strong> 照片分析后立即丢弃：绝不存储，也绝不用于训练 AI。<a href="privacy.html">隐私政策</a>。</p>
+<p><strong>这是医疗建议吗？</strong> 不是。Toe Reading 仅供娱乐和自我反思；请见我们的<a href="terms.html">条款</a>。</p>
+<p><strong>先使用哪些点数？</strong> 先用免费点数，再用套餐点数，最后才是订阅。</p>
+</main>
+<main lang-blok="ja">
+<h1>シンプルで正直な料金</h1>
+<p class="sub">1クレジット = 1回の完全なリーディング：写真分析と完全な解説「鏡が語る」。15言語に対応しています。</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>無料で試す</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li>アカウント作成で<strong>3回の完全なリーディング</strong></li>
+      <li>支払い情報は不要です</li>
+      <li>足指事典はアカウントなしで自由に閲覧できます</li>
+    </ul>
+    <a class="koop stil" href="./">無料アカウントを作成</a>
+  </div>
+  <div class="kaart">
+    <h2>10回パック</h2>
+    <div class="prijs">€4.99 <small>買い切り</small></div>
+    <ul>
+      <li><strong>10回の完全なリーディング</strong></li>
+      <li>クレジットに有効期限はありません</li>
+      <li>好きなときに買い足せます</li>
+      <li>友だち &amp; 家族を読むのにぴったり</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">アプリ内で購入</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">一番お得</span>
+    <h2>年間プラン</h2>
+    <div class="prijs">€39.99 <small>/ 年</small></div>
+    <ul>
+      <li><strong>まる1年分のリーディング</strong></li>
+      <li>フェアユース：月に最大60回まで</li>
+      <li>毎年自動更新、いつでも解約できます</li>
+      <li>更新のたびに事前にリマインダーメールが届きます</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">アプリ内で購入</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Toe Reading を開く</a>
+<p class="noot">購入はログイン後にアプリ内で行います。そうすることでクレジットが<em>あなたの</em>アカウントに追加されます。価格はすべて VAT（付加価値税）込みです。お支払いは、決済パートナーである Merchant of Record（販売事業者）が安全に処理します。クレジットが未使用なら14日以内は全額返金。詳しくは<a href="refund.html">返金ポリシー</a>をご覧ください。</p>
+
+<h3>知っておきたいこと</h3>
+<p><strong>写真はどうなりますか？</strong> 分析後すぐに破棄されます。保存されることも、AI の学習に使われることも一切ありません。<a href="privacy.html">プライバシーポリシー</a>。</p>
+<p><strong>これは医療アドバイスですか？</strong> いいえ。Toe Reading はエンターテインメントと自己省察のためだけのものです。詳しくは<a href="terms.html">利用規約</a>をご覧ください。</p>
+<p><strong>どのクレジットから使われますか？</strong> まず無料分、次にパック分、最後にサブスクリプションです。</p>
+</main>
+<main lang-blok="ko">
+<h1>단순하고 정직한 가격</h1>
+<p class="sub">크레딧 1개 = 완전한 리딩 1회: 사진 분석과 전체 해석 "거울이 말하다"까지 포함돼요. 15개 언어로 제공돼요.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>무료로 체험하기</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li>계정을 만들면 <strong>완전한 리딩 3회</strong>를 드려요</li>
+      <li>결제 정보가 필요 없어요</li>
+      <li>발가락 백과는 계정 없이도 자유롭게 볼 수 있어요</li>
+    </ul>
+    <a class="koop stil" href="./">무료 계정 만들기</a>
+  </div>
+  <div class="kaart">
+    <h2>10회 팩</h2>
+    <div class="prijs">€4.99 <small>1회 결제</small></div>
+    <ul>
+      <li><strong>완전한 리딩 10회</strong></li>
+      <li>크레딧은 만료되지 않아요</li>
+      <li>원할 때마다 다시 구매할 수 있어요</li>
+      <li>친구 &amp; 가족을 읽어 주기에 딱 좋아요</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">앱에서 구매하기</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">최고의 가성비</span>
+    <h2>연간</h2>
+    <div class="prijs">€39.99 <small>/ 년</small></div>
+    <ul>
+      <li><strong>1년 내내 리딩</strong></li>
+      <li>공정 사용: 한 달에 최대 60회까지</li>
+      <li>매년 갱신되고 언제든 해지할 수 있어요</li>
+      <li>갱신 때마다 미리 알림 메일을 보내 드려요</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">앱에서 구매하기</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Toe Reading 열기</a>
+<p class="noot">구매는 로그인 후 앱 안에서 해요: 그래야 크레딧이 <em>내</em> 계정에 들어와요. 모든 가격은 부가가치세(VAT) 포함이에요. 결제는 저희 결제 파트너인 Merchant of Record(판매 책임 사업자)가 안전하게 처리해요. 크레딧을 사용하지 않았다면 14일 이내에 전액 환불돼요. 자세한 내용은 <a href="refund.html">환불 정책</a>을 확인해 주세요.</p>
+
+<h3>알아 두면 좋아요</h3>
+<p><strong>내 사진은 어떻게 되나요?</strong> 분석 후 바로 폐기돼요: 절대 저장하지 않고, AI 학습에도 쓰지 않아요. <a href="privacy.html">개인정보 처리방침</a>.</p>
+<p><strong>의학적 조언인가요?</strong> 아니요. Toe Reading은 오직 재미와 자기 성찰을 위한 것이에요. 자세한 내용은 <a href="terms.html">이용약관</a>을 봐 주세요.</p>
+<p><strong>어떤 크레딧부터 사용되나요?</strong> 무료 크레딧 먼저, 그다음 팩 크레딧, 마지막으로 구독이에요.</p>
+</main>
+<main lang-blok="hi">
+<h1>सीधी और ईमानदार कीमतें</h1>
+<p class="sub">1 क्रेडिट = 1 पूरी रीडिंग: फ़ोटो विश्लेषण और पूरी व्याख्या, "दर्पण बोलता है"। 15 भाषाओं में।</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>मुफ़्त में आज़माएँ</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li>खाता बनाने पर <strong>3 पूरी रीडिंग</strong></li>
+      <li>किसी भुगतान जानकारी की ज़रूरत नहीं</li>
+      <li>पैर की उँगलियों का विश्वकोश बिना खाते के भी खुलकर देखें</li>
+    </ul>
+    <a class="koop stil" href="./">मुफ़्त खाता बनाएँ</a>
+  </div>
+  <div class="kaart">
+    <h2>10 का पैक</h2>
+    <div class="prijs">€4.99 <small>एक बार का भुगतान</small></div>
+    <ul>
+      <li><strong>10 पूरी रीडिंग</strong></li>
+      <li>क्रेडिट कभी समाप्त नहीं होते</li>
+      <li>जब चाहें, फिर से खरीदें</li>
+      <li>दोस्तों &amp; परिवार की रीडिंग के लिए बढ़िया</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">ऐप में खरीदें</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">सबसे किफ़ायती</span>
+    <h2>वार्षिक</h2>
+    <div class="prijs">€39.99 <small>/ वर्ष</small></div>
+    <ul>
+      <li><strong>पूरे साल की रीडिंग</strong></li>
+      <li>उचित उपयोग: हर महीने अधिकतम 60 रीडिंग</li>
+      <li>हर साल नवीनीकरण, कभी भी रद्द करें</li>
+      <li>हर नवीनीकरण से पहले याद दिलाने वाला ई-मेल</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">ऐप में खरीदें</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Toe Reading खोलें</a>
+<p class="noot">खरीदारी ऐप के अंदर, साइन इन करने के बाद होती है: इस तरह क्रेडिट <em>आपके</em> खाते में जुड़ते हैं। सभी कीमतों में वैट शामिल है। भुगतान हमारे भुगतान साझेदार, Merchant of Record (आधिकारिक विक्रेता) के ज़रिए सुरक्षित रूप से होते हैं। क्रेडिट इस्तेमाल न हुए हों तो 14 दिनों के भीतर पूरा रिफ़ंड; देखें <a href="refund.html">रिफ़ंड नीति</a>।</p>
+
+<h3>जानने लायक बातें</h3>
+<p><strong>मेरी फ़ोटो का क्या होता है?</strong> उनका विश्लेषण होता है और वे तुरंत हटा दी जाती हैं: न कभी सेव होती हैं, न कभी AI को प्रशिक्षित करने में इस्तेमाल होती हैं। <a href="privacy.html">गोपनीयता नीति</a>।</p>
+<p><strong>क्या यह चिकित्सा सलाह है?</strong> नहीं। Toe Reading सिर्फ़ मनोरंजन और आत्म-चिंतन के लिए है; देखें हमारी <a href="terms.html">शर्तें</a>।</p>
+<p><strong>कौन से क्रेडिट पहले इस्तेमाल होते हैं?</strong> पहले मुफ़्त, फिर पैक के क्रेडिट, फिर आपकी सदस्यता।</p>
+</main>
+<main lang-blok="id">
+<h1>Harga sederhana dan jujur</h1>
+<p class="sub">Satu saldo = satu pembacaan lengkap: analisis foto plus interpretasi penuh, "Cermin bercerita". Dalam 15 bahasa.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Coba gratis</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li><strong>3 pembacaan lengkap</strong> saat kamu membuat akun</li>
+      <li>Tanpa perlu data pembayaran</li>
+      <li>Jelajahi ensiklopedia jari kaki dengan bebas, tanpa akun</li>
+    </ul>
+    <a class="koop stil" href="./">Buat akun gratis</a>
+  </div>
+  <div class="kaart">
+    <h2>Paket 10</h2>
+    <div class="prijs">€4.99 <small>sekali bayar</small></div>
+    <ul>
+      <li><strong>10 pembacaan lengkap</strong></li>
+      <li>Saldo tidak pernah kedaluwarsa</li>
+      <li>Beli lagi kapan pun kamu mau</li>
+      <li>Cocok untuk membaca teman &amp; keluarga</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Beli di dalam aplikasi</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">Paling hemat</span>
+    <h2>Tahunan</h2>
+    <div class="prijs">€39.99 <small>/ tahun</small></div>
+    <ul>
+      <li><strong>Setahun penuh pembacaan</strong></li>
+      <li>Fair use: hingga 60 pembacaan per bulan</li>
+      <li>Diperpanjang tiap tahun, bisa dibatalkan kapan saja</li>
+      <li>Email pengingat sebelum setiap perpanjangan</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Beli di dalam aplikasi</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Buka Toe Reading</a>
+<p class="noot">Pembelian dilakukan di dalam aplikasi, setelah masuk: dengan begitu saldo masuk ke akun <em>kamu</em> sendiri. Semua harga sudah termasuk PPN. Pembayaran ditangani dengan aman oleh mitra pembayaran kami, sang Merchant of Record. Pengembalian dana penuh dalam 14 hari jika saldo belum digunakan; lihat <a href="refund.html">Kebijakan Pengembalian Dana</a>.</p>
+
+<h3>Yang perlu kamu tahu</h3>
+<p><strong>Apa yang terjadi dengan fotoku?</strong> Foto dianalisis lalu langsung dibuang: tidak pernah disimpan, tidak pernah dipakai untuk melatih AI. <a href="privacy.html">Kebijakan Privasi</a>.</p>
+<p><strong>Apakah ini saran medis?</strong> Bukan. Toe Reading hanya untuk hiburan dan refleksi diri; lihat <a href="terms.html">Ketentuan</a> kami.</p>
+<p><strong>Saldo mana yang dipakai lebih dulu?</strong> Yang gratis dulu, lalu saldo paket, lalu langgananmu.</p>
+</main>
+<main lang-blok="vi">
+<h1>Giá đơn giản, trung thực</h1>
+<p class="sub">Một lượt = một bài đọc hoàn chỉnh: phần phân tích ảnh cộng với phần diễn giải đầy đủ, "Tấm gương kể chuyện". Có trong 15 ngôn ngữ.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Dùng thử miễn phí</h2>
+    <div class="prijs">€ 0</div>
+    <ul>
+      <li><strong>3 bài đọc đầy đủ</strong> khi bạn tạo tài khoản</li>
+      <li>Không cần thông tin thanh toán</li>
+      <li>Tự do khám phá bách khoa toàn thư về ngón chân, không cần tài khoản</li>
+    </ul>
+    <a class="koop stil" href="./">Tạo tài khoản miễn phí</a>
+  </div>
+  <div class="kaart">
+    <h2>Gói 10 lượt</h2>
+    <div class="prijs">€ 4,99 <small>một lần</small></div>
+    <ul>
+      <li><strong>10 bài đọc đầy đủ</strong></li>
+      <li>Lượt không bao giờ hết hạn</li>
+      <li>Mua thêm bất cứ khi nào bạn muốn</li>
+      <li>Rất hợp để đọc cho bạn bè &amp; người thân</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Mua trong ứng dụng</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">Đáng giá nhất</span>
+    <h2>Gói năm</h2>
+    <div class="prijs">€ 39,99 <small>/ năm</small></div>
+    <ul>
+      <li><strong>Trọn một năm bài đọc</strong></li>
+      <li>Fair use: tối đa 60 bài đọc mỗi tháng</li>
+      <li>Gia hạn hằng năm, hủy bất cứ lúc nào</li>
+      <li>Email nhắc trước mỗi lần gia hạn</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Mua trong ứng dụng</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Mở Toe Reading</a>
+<p class="noot">Bạn mua ngay trong ứng dụng, sau khi đăng nhập: nhờ vậy các lượt được cộng vào tài khoản <em>của bạn</em>. Mọi mức giá đã bao gồm VAT. Thanh toán được xử lý an toàn bởi đối tác thanh toán của chúng tôi, Merchant of Record. Hoàn tiền đầy đủ trong vòng 14 ngày nếu chưa dùng lượt nào; xem <a href="refund.html">Chính sách hoàn tiền</a>.</p>
+
+<h3>Những điều nên biết</h3>
+<p><strong>Điều gì xảy ra với ảnh của tôi?</strong> Ảnh được phân tích rồi loại bỏ ngay lập tức: không bao giờ được lưu, không bao giờ dùng để huấn luyện AI. <a href="privacy.html">Chính sách quyền riêng tư</a>.</p>
+<p><strong>Đây có phải lời khuyên y tế không?</strong> Không. Toe Reading chỉ dành cho giải trí và tự soi chiếu; xem <a href="terms.html">Điều khoản</a> của chúng tôi.</p>
+<p><strong>Lượt nào được dùng trước?</strong> Lượt miễn phí trước, rồi đến lượt trong gói, rồi đến thuê bao của bạn.</p>
+</main>
+<main lang-blok="th">
+<h1>ราคาเรียบง่าย ตรงไปตรงมา</h1>
+<p class="sub">หนึ่งเครดิต = หนึ่งผลการอ่านครบชุด: การวิเคราะห์รูปภาพบวกการตีความฉบับเต็ม "กระจกเล่าเรื่อง" มีให้ใน 15 ภาษา</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>ลองฟรี</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li><strong>ผลการอ่านฉบับเต็ม 3 ครั้ง</strong> เมื่อคุณสร้างบัญชี</li>
+      <li>ไม่ต้องใช้ข้อมูลการชำระเงิน</li>
+      <li>สำรวจสารานุกรมนิ้วเท้าได้อย่างอิสระ ไม่ต้องมีบัญชี</li>
+    </ul>
+    <a class="koop stil" href="./">สร้างบัญชีฟรี</a>
+  </div>
+  <div class="kaart">
+    <h2>แพ็ก 10 ครั้ง</h2>
+    <div class="prijs">€4.99 <small>จ่ายครั้งเดียว</small></div>
+    <ul>
+      <li><strong>ผลการอ่านฉบับเต็ม 10 ครั้ง</strong></li>
+      <li>เครดิตไม่มีวันหมดอายุ</li>
+      <li>ซื้อเพิ่มได้ทุกเมื่อที่ต้องการ</li>
+      <li>เหมาะสำหรับอ่านให้เพื่อน &amp; ครอบครัว</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">ซื้อในแอป</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">คุ้มค่าที่สุด</span>
+    <h2>รายปี</h2>
+    <div class="prijs">€39.99 <small>/ ปี</small></div>
+    <ul>
+      <li><strong>ผลการอ่านตลอดทั้งปี</strong></li>
+      <li>Fair use: สูงสุด 60 ครั้งต่อเดือน</li>
+      <li>ต่ออายุรายปี ยกเลิกได้ทุกเมื่อ</li>
+      <li>อีเมลแจ้งเตือนก่อนการต่ออายุทุกครั้ง</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">ซื้อในแอป</a>
+  </div>
+</div>
+
+<a class="cta" href="./">เปิด Toe Reading</a>
+<p class="noot">คุณซื้อภายในแอปหลังเข้าสู่ระบบ: เครดิตจึงเข้าบัญชี<em>ของคุณ</em>เอง ราคาทั้งหมดรวม VAT แล้ว การชำระเงินดำเนินการอย่างปลอดภัยโดยพาร์ตเนอร์รับชำระเงินของเรา (Merchant of Record) คืนเงินเต็มจำนวนภายใน 14 วันหากยังไม่ได้ใช้เครดิต ดูที่<a href="refund.html">นโยบายการคืนเงิน</a></p>
+
+<h3>เรื่องน่ารู้</h3>
+<p><strong>รูปถ่ายของฉันจะเป็นอย่างไร?</strong> รูปจะถูกวิเคราะห์แล้วทิ้งทันที: ไม่เคยถูกบันทึก ไม่เคยถูกใช้ฝึก AI <a href="privacy.html">นโยบายความเป็นส่วนตัว</a></p>
+<p><strong>นี่เป็นคำแนะนำทางการแพทย์หรือไม่?</strong> ไม่ใช่ Toe Reading มีไว้เพื่อความบันเทิงและการสะท้อนตัวเองเท่านั้น ดู<a href="terms.html">ข้อกำหนด</a>ของเรา</p>
+<p><strong>เครดิตไหนถูกใช้ก่อน?</strong> เครดิตฟรีก่อน แล้วจึงเครดิตจากแพ็ก จากนั้นจึงเป็นสมาชิกรายปีของคุณ</p>
+</main>
+<main lang-blok="uk">
+<h1>Прості та чесні ціни</h1>
+<p class="sub">Один кредит = одне повне читання: аналіз фото плюс повне тлумачення, «Дзеркало розповідає». 15 мовами.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Спробуй безкоштовно</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li><strong>3 повні читання</strong> при створенні акаунта</li>
+      <li>Платіжні дані не потрібні</li>
+      <li>Енциклопедію пальців ніг можна вільно переглядати без акаунта</li>
+    </ul>
+    <a class="koop stil" href="./">Створити безкоштовний акаунт</a>
+  </div>
+  <div class="kaart">
+    <h2>Набір із 10</h2>
+    <div class="prijs">€4.99 <small>одноразово</small></div>
+    <ul>
+      <li><strong>10 повних читань</strong></li>
+      <li>Кредити ніколи не згорають</li>
+      <li>Докуповуй, коли захочеш</li>
+      <li>Чудово підходить, щоб читати друзів &amp; рідних</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Купити в застосунку</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">Найвигідніше</span>
+    <h2>Рік</h2>
+    <div class="prijs">€39.99 <small>/ рік</small></div>
+    <ul>
+      <li><strong>Цілий рік читань</strong></li>
+      <li>Fair use: до 60 читань на місяць</li>
+      <li>Продовжується щороку, скасувати можна будь-коли</li>
+      <li>Лист-нагадування перед кожним продовженням</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Купити в застосунку</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Відкрити Toe Reading</a>
+<p class="noot">Купуєш у застосунку, після входу: так кредити потраплять на <em>твій</em> акаунт. Усі ціни включають ПДВ. Платежі безпечно обробляє наш платіжний партнер, Merchant of Record (офіційний продавець). Повне повернення коштів протягом 14 днів, якщо кредити не використані; див. <a href="refund.html">Політику повернення</a>.</p>
+
+<h3>Корисно знати</h3>
+<p><strong>Що відбувається з моїми фото?</strong> Вони аналізуються й одразу видаляються: ніколи не зберігаються і ніколи не використовуються для навчання ШІ. <a href="privacy.html">Політика конфіденційності</a>.</p>
+<p><strong>Це медична порада?</strong> Ні. Toe Reading створено лише для розваги та саморефлексії; див. наші <a href="terms.html">Умови</a>.</p>
+<p><strong>Які кредити витрачаються першими?</strong> Спершу безкоштовні, потім кредити з набору, потім твоя підписка.</p>
+</main>
+<main lang-blok="hu">
+<h1>Egyszerű, őszinte árak</h1>
+<p class="sub">Egy egység = egy teljes olvasat: fotóelemzés plusz a teljes értelmezés, "A tükör mesél". 15 nyelven.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Próbáld ki ingyen</h2>
+    <div class="prijs">0 €</div>
+    <ul>
+      <li><strong>3 teljes olvasat</strong> fiók létrehozásakor</li>
+      <li>Nem kell hozzá fizetési adat</li>
+      <li>A lábujj-enciklopédia szabadon böngészhető, fiók nélkül is</li>
+    </ul>
+    <a class="koop stil" href="./">Ingyenes fiók létrehozása</a>
+  </div>
+  <div class="kaart">
+    <h2>10-es csomag</h2>
+    <div class="prijs">4,99 € <small>egyszeri</small></div>
+    <ul>
+      <li><strong>10 teljes olvasat</strong></li>
+      <li>Az egyenleg soha nem jár le</li>
+      <li>Bármikor vásárolhatsz újra</li>
+      <li>Szuper barátok &amp; családtagok olvasásához</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Vásárlás az appban</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">A legjobb vétel</span>
+    <h2>Éves</h2>
+    <div class="prijs">39,99 € <small>/ év</small></div>
+    <ul>
+      <li><strong>Egy teljes évnyi olvasat</strong></li>
+      <li>Fair use: legfeljebb 60 olvasat havonta</li>
+      <li>Évente megújul, bármikor lemondhatod</li>
+      <li>Emlékeztető e-mail minden megújítás előtt</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Vásárlás az appban</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Toe Reading megnyitása</a>
+<p class="noot">A vásárlás az appban történik, bejelentkezés után: így az egyenleg a <em>te</em> fiókodra kerül. Minden ár tartalmazza az áfát. A fizetéseket biztonságosan fizetési partnerünk, a Merchant of Record kezeli. Teljes visszatérítés 14 napon belül, ha az egyenleg felhasználatlan; lásd a <a href="refund.html">visszatérítési szabályzatot</a>.</p>
+
+<h3>Jó tudni</h3>
+<p><strong>Mi történik a fotóimmal?</strong> Elemezzük, majd azonnal töröljük őket: soha nem tároljuk, soha nem használjuk AI tanítására. <a href="privacy.html">Adatvédelmi nyilatkozat</a>.</p>
+<p><strong>Orvosi tanács ez?</strong> Nem. A Toe Reading kizárólag szórakoztatásra és önreflexióra való; lásd a <a href="terms.html">feltételeinket</a>.</p>
+<p><strong>Melyik egyenleg fogy el először?</strong> Először az ingyenes, aztán a csomag egyenlege, végül az előfizetésed.</p>
+</main>
+<main lang-blok="bn">
+<h1>সহজ, সৎ মূল্য</h1>
+<p class="sub">একটি ক্রেডিট = একটি সম্পূর্ণ রিডিং: ছবির বিশ্লেষণ আর সঙ্গে পুরো ব্যাখ্যা, "আয়না কথা বলে"। ১৫টি ভাষায়।</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>বিনামূল্যে চেষ্টা করে দেখো</h2>
+    <div class="prijs">€ ০</div>
+    <ul>
+      <li><strong>৩টি সম্পূর্ণ রিডিং</strong> অ্যাকাউন্ট খুললেই</li>
+      <li>কোনো পেমেন্ট তথ্য লাগে না</li>
+      <li>পায়ের আঙুলের এনসাইক্লোপিডিয়া অবাধে ঘুরে দেখো, অ্যাকাউন্ট ছাড়াই</li>
+    </ul>
+    <a class="koop stil" href="./">বিনামূল্যে অ্যাকাউন্ট খোলো</a>
+  </div>
+  <div class="kaart">
+    <h2>১০-এর প্যাক</h2>
+    <div class="prijs">€ ৪.৯৯ <small>এককালীন</small></div>
+    <ul>
+      <li><strong>১০টি সম্পূর্ণ রিডিং</strong></li>
+      <li>ক্রেডিটের মেয়াদ কখনও শেষ হয় না</li>
+      <li>যখন খুশি আবার কেনো</li>
+      <li>বন্ধু &amp; পরিবারের রিডিং করার জন্য দারুণ</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">অ্যাপে কেনো</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">সেরা ডিল</span>
+    <h2>বছর</h2>
+    <div class="prijs">€ ৩৯.৯৯ <small>/ বছর</small></div>
+    <ul>
+      <li><strong>পুরো এক বছরের রিডিং</strong></li>
+      <li>ফেয়ার ইউজ: মাসে সর্বোচ্চ ৬০টি রিডিং</li>
+      <li>প্রতি বছর নবায়ন হয়, যেকোনো সময় বাতিল করা যায়</li>
+      <li>প্রতিটি নবায়নের আগে স্মরণ করিয়ে দেওয়া ইমেইল</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">অ্যাপে কেনো</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Toe Reading খোলো</a>
+<p class="noot">কেনাকাটা করবে অ্যাপের ভেতরে, লগ ইন করার পরে: তাতে ক্রেডিট <em>তোমার</em> অ্যাকাউন্টেই জমা হয়। সব দাম ভ্যাটসহ। পেমেন্ট নিরাপদে প্রক্রিয়া করে আমাদের পেমেন্ট পার্টনার, Merchant of Record। ক্রেডিট অব্যবহৃত থাকলে ১৪ দিনের মধ্যে পুরো টাকা ফেরত; দেখো <a href="refund.html">রিফান্ড নীতি</a>।</p>
+
+<h3>জেনে রাখা ভালো</h3>
+<p><strong>আমার ছবির কী হয়?</strong> ছবি বিশ্লেষণ করা হয় আর সঙ্গে সঙ্গে মুছে ফেলা হয়: কখনও সংরক্ষণ করা হয় না, কখনও AI প্রশিক্ষণে ব্যবহার হয় না। <a href="privacy.html">প্রাইভেসি নীতি</a>।</p>
+<p><strong>এটা কি চিকিৎসা পরামর্শ?</strong> না। Toe Reading শুধুই বিনোদন আর আত্ম-অনুধাবনের জন্য; দেখো আমাদের <a href="terms.html">ব্যবহারের শর্তাবলি</a>।</p>
+<p><strong>কোন ক্রেডিট আগে খরচ হয়?</strong> আগে বিনামূল্যের ক্রেডিট, তারপর প্যাকের ক্রেডিট, তারপর তোমার সাবস্ক্রিপশন।</p>
+</main>
+<main lang-blok="ur">
+<h1>سادہ اور دیانت دار قیمتیں</h1>
+<p class="sub">ایک کریڈٹ = ایک مکمل ریڈنگ: تصویر کا تجزیہ اور ساتھ میں مکمل تعبیر، "آئینہ بولتا ہے"۔ 15 زبانوں میں۔</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>مفت آزمائیں</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li>اکاؤنٹ بنانے پر <strong>3 مکمل ریڈنگز</strong></li>
+      <li>ادائیگی کی کسی تفصیل کی ضرورت نہیں</li>
+      <li>پیر کی انگلیوں کا انسائیکلوپیڈیا آزادانہ دیکھیں، اکاؤنٹ کے بغیر بھی</li>
+    </ul>
+    <a class="koop stil" href="./">مفت اکاؤنٹ بنائیں</a>
+  </div>
+  <div class="kaart">
+    <h2>10 کا پیکٹ</h2>
+    <div class="prijs">€4.99 <small>ایک بار</small></div>
+    <ul>
+      <li><strong>10 مکمل ریڈنگز</strong></li>
+      <li>کریڈٹ کی میعاد کبھی ختم نہیں ہوتی</li>
+      <li>جب چاہیں دوبارہ خریدیں</li>
+      <li>دوستوں &amp; گھر والوں کی ریڈنگ کے لیے بہترین</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">ایپ میں خریدیں</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">بہترین قیمت</span>
+    <h2>سال</h2>
+    <div class="prijs">€39.99 <small>/ سال</small></div>
+    <ul>
+      <li><strong>پورے ایک سال کی ریڈنگز</strong></li>
+      <li>منصفانہ استعمال: مہینے میں زیادہ سے زیادہ 60 ریڈنگز</li>
+      <li>ہر سال تجدید ہوتی ہے، کسی بھی وقت منسوخ کریں</li>
+      <li>ہر تجدید سے پہلے یاد دہانی کی ای میل</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">ایپ میں خریدیں</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Toe Reading کھولیں</a>
+<p class="noot">خریداری آپ ایپ کے اندر، لاگ ان کے بعد کرتے ہیں: اس طرح کریڈٹ <em>آپ کے</em> اکاؤنٹ میں جمع ہوتے ہیں۔ تمام قیمتیں VAT سمیت ہیں۔ ادائیگیاں ہمارا پیمنٹ پارٹنر، Merchant of Record، محفوظ طریقے سے پروسیس کرتا ہے۔ کریڈٹ استعمال نہ ہوئے ہوں تو 14 دنوں کے اندر مکمل رقم کی واپسی؛ دیکھیے <a href="refund.html">رقم کی واپسی کی پالیسی</a>۔</p>
+
+<h3>جاننے کی چند باتیں</h3>
+<p><strong>میری تصاویر کا کیا ہوتا ہے؟</strong> ان کا تجزیہ کیا جاتا ہے اور فوراً ضائع کر دی جاتی ہیں: نہ کبھی محفوظ ہوتی ہیں، نہ کبھی AI کی تربیت کے لیے استعمال ہوتی ہیں۔ <a href="privacy.html">پرائیویسی پالیسی</a>۔</p>
+<p><strong>کیا یہ طبی مشورہ ہے؟</strong> نہیں۔ Toe Reading صرف تفریح اور خود شناسی کے لیے ہے؛ دیکھیے ہماری <a href="terms.html">سروس کی شرائط</a>۔</p>
+<p><strong>کون سے کریڈٹ پہلے استعمال ہوتے ہیں؟</strong> پہلے مفت کریڈٹ، پھر پیکٹ کے کریڈٹ، پھر آپ کی رکنیت۔</p>
+</main>
+<main lang-blok="fa">
+<h1>قیمت‌گذاری ساده و صادقانه</h1>
+<p class="sub">یک اعتبار = یک خوانش کامل: تحلیل عکس به‌علاوه تفسیر کامل، "آینه سخن می‌گوید". به ۱۵ زبان.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>رایگان امتحان کن</h2>
+    <div class="prijs">۰ یورو</div>
+    <ul>
+      <li><strong>۳ خوانش کامل</strong> با ساختن حساب</li>
+      <li>به هیچ اطلاعات پرداختی نیاز نیست</li>
+      <li>دانشنامه انگشتان پا را آزادانه بگرد، بدون نیاز به حساب</li>
+    </ul>
+    <a class="koop stil" href="./">یک حساب رایگان بساز</a>
+  </div>
+  <div class="kaart">
+    <h2>بسته ۱۰تایی</h2>
+    <div class="prijs">۴٫۹۹ یورو <small>یک‌بار</small></div>
+    <ul>
+      <li><strong>۱۰ خوانش کامل</strong></li>
+      <li>اعتبارها هرگز منقضی نمی‌شوند</li>
+      <li>هر وقت خواستی دوباره بخر</li>
+      <li>عالی برای خواندن دوستان &amp; خانواده</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">در اپلیکیشن بخر</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">به‌صرفه‌ترین</span>
+    <h2>سالانه</h2>
+    <div class="prijs">۳۹٫۹۹ یورو <small>/ سال</small></div>
+    <ul>
+      <li><strong>یک سال کامل خوانش</strong></li>
+      <li>استفاده منصفانه: تا ۶۰ خوانش در ماه</li>
+      <li>هر سال تمدید می‌شود، هر وقت بخواهی لغو می‌کنی</li>
+      <li>ایمیل یادآوری پیش از هر تمدید</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">در اپلیکیشن بخر</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Toe Reading را باز کن</a>
+<p class="noot">خرید را داخل اپلیکیشن انجام می‌دهی، بعد از ورود: این‌طوری اعتبار به حساب <em>خودت</em> می‌نشیند. همه قیمت‌ها شامل مالیات بر ارزش افزوده است. پرداخت‌ها را شریک پرداخت ما، Merchant of Record (فروشنده رسمی)، به‌صورت امن پردازش می‌کند. اگر اعتبار استفاده نشده باشد، تا ۱۴ روز بازپرداخت کامل؛ <a href="refund.html">سیاست بازپرداخت</a> را ببین.</p>
+
+<h3>خوب است بدانی</h3>
+<p><strong>با عکس‌های من چه می‌شود؟</strong> تحلیل می‌شوند و بلافاصله دور ریخته می‌شوند: هرگز ذخیره نمی‌شوند، هرگز برای آموزش هوش مصنوعی به کار نمی‌روند. <a href="privacy.html">سیاست حریم خصوصی</a>.</p>
+<p><strong>آیا این توصیه پزشکی است؟</strong> نه. Toe Reading فقط برای سرگرمی و خوداندیشی است؛ <a href="terms.html">شرایط</a> ما را ببین.</p>
+<p><strong>کدام اعتبار اول مصرف می‌شود؟</strong> اول اعتبار رایگان، بعد اعتبار بسته، بعد اشتراکت.</p>
+</main>
+<main lang-blok="ms">
+<h1>Harga yang ringkas dan jujur</h1>
+<p class="sub">Satu kredit = satu bacaan lengkap: analisis foto serta pentafsiran penuh, "Cermin bercerita". Dalam 15 bahasa.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Cuba secara percuma</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li><strong>3 bacaan penuh</strong> apabila anda membuat akaun</li>
+      <li>Tiada butiran pembayaran diperlukan</li>
+      <li>Terokai ensiklopedia jari kaki dengan bebas, tanpa perlu akaun</li>
+    </ul>
+    <a class="koop stil" href="./">Buat akaun percuma</a>
+  </div>
+  <div class="kaart">
+    <h2>Pek 10</h2>
+    <div class="prijs">€4.99 <small>sekali bayar</small></div>
+    <ul>
+      <li><strong>10 bacaan penuh</strong></li>
+      <li>Kredit tidak pernah luput</li>
+      <li>Beli lagi bila-bila masa</li>
+      <li>Sesuai untuk membaca rakan &amp; keluarga</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Beli dalam aplikasi</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">Nilai terbaik</span>
+    <h2>Tahunan</h2>
+    <div class="prijs">€39.99 <small>/ tahun</small></div>
+    <ul>
+      <li><strong>Setahun penuh bacaan</strong></li>
+      <li>Penggunaan wajar: sehingga 60 bacaan sebulan</li>
+      <li>Diperbaharui setiap tahun, boleh dibatalkan bila-bila masa</li>
+      <li>E-mel peringatan sebelum setiap pembaharuan</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Beli dalam aplikasi</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Buka Toe Reading</a>
+<p class="noot">Anda membeli di dalam aplikasi, selepas log masuk: dengan itu kredit masuk terus ke akaun <em>anda</em> sendiri. Semua harga termasuk VAT. Pembayaran dikendalikan dengan selamat oleh rakan pembayaran kami, iaitu Merchant of Record (penjual rasmi). Bayaran balik penuh dalam masa 14 hari jika kredit belum digunakan; lihat <a href="refund.html">Dasar Bayaran Balik</a>.</p>
+
+<h3>Baik untuk diketahui</h3>
+<p><strong>Apa yang berlaku kepada foto saya?</strong> Foto dianalisis dan terus dibuang: tidak pernah disimpan, tidak pernah digunakan untuk melatih AI. <a href="privacy.html">Dasar Privasi</a>.</p>
+<p><strong>Adakah ini nasihat perubatan?</strong> Tidak. Toe Reading hanyalah untuk hiburan dan renungan diri; lihat <a href="terms.html">Terma</a> kami.</p>
+<p><strong>Kredit mana yang digunakan dahulu?</strong> Kredit percuma dahulu, kemudian kredit pek, kemudian langganan anda.</p>
+</main>
+<main lang-blok="tl">
+<h1>Simple at tapat na presyo</h1>
+<p class="sub">Isang credit = isang kumpletong pagbasa: pagsusuri ng larawan at ang buong interpretasyon, "Nagsasalita ang salamin". Sa 15 wika.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Subukan nang libre</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li><strong>3 buong pagbasa</strong> kapag gumawa ka ng account</li>
+      <li>Walang kailangang detalye ng pagbabayad</li>
+      <li>Malayang galugarin ang ensiklopedya ng mga daliri ng paa, hindi kailangan ng account</li>
+    </ul>
+    <a class="koop stil" href="./">Gumawa ng libreng account</a>
+  </div>
+  <div class="kaart">
+    <h2>10-pack</h2>
+    <div class="prijs">€4.99 <small>isang beses</small></div>
+    <ul>
+      <li><strong>10 buong pagbasa</strong></li>
+      <li>Hindi kailanman nag-e-expire ang mga credit</li>
+      <li>Bumili ulit kahit kailan mo gusto</li>
+      <li>Sakto para basahin ang mga kaibigan &amp; pamilya</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Bumili sa app</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">Pinakasulit</span>
+    <h2>Taon</h2>
+    <div class="prijs">€39.99 <small>/ taon</small></div>
+    <ul>
+      <li><strong>Isang buong taon ng mga pagbasa</strong></li>
+      <li>Fair use: hanggang 60 pagbasa bawat buwan</li>
+      <li>Nagre-renew taun-taon, kanselahin anumang oras</li>
+      <li>May paalala sa email bago ang bawat renewal</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Bumili sa app</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Buksan ang Toe Reading</a>
+<p class="noot">Sa loob ng app ka bumibili, pagkatapos mag-sign in: sa gayon, sa <em>iyong</em> account mapupunta ang mga credit. Kasama na ang VAT sa lahat ng presyo. Ligtas na pinoproseso ang mga bayad ng aming payment partner, ang Merchant of Record. Buong refund sa loob ng 14 araw kung hindi pa nagagamit ang mga credit; tingnan ang <a href="refund.html">Refund Policy</a>.</p>
+
+<h3>Mabuting malaman</h3>
+<p><strong>Ano ang nangyayari sa mga larawan ko?</strong> Sinusuri ang mga ito at agad na itinatapon: hindi kailanman iniimbak, hindi kailanman ginagamit para sanayin ang AI. <a href="privacy.html">Privacy Policy</a>.</p>
+<p><strong>Medikal na payo ba ito?</strong> Hindi. Ang Toe Reading ay para lamang sa libangan at pagninilay sa sarili; tingnan ang aming <a href="terms.html">Mga Tuntunin</a>.</p>
+<p><strong>Aling mga credit ang unang nagagamit?</strong> Una ang libre, tapos ang credit ng pack, tapos ang subscription mo.</p>
+</main>
+<main lang-blok="el">
+<h1>Απλές, τίμιες τιμές</h1>
+<p class="sub">Μία μονάδα = μία ολοκληρωμένη ανάγνωση: ανάλυση φωτογραφίας συν την πλήρη ερμηνεία, "Ο καθρέφτης μιλά". Σε 15 γλώσσες.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Δοκίμασε δωρεάν</h2>
+    <div class="prijs">0 €</div>
+    <ul>
+      <li><strong>3 πλήρεις αναγνώσεις</strong> όταν δημιουργείς λογαριασμό</li>
+      <li>Δεν χρειάζονται στοιχεία πληρωμής</li>
+      <li>Εξερεύνησε ελεύθερα την εγκυκλοπαίδεια των δαχτύλων, χωρίς λογαριασμό</li>
+    </ul>
+    <a class="koop stil" href="./">Δημιούργησε δωρεάν λογαριασμό</a>
+  </div>
+  <div class="kaart">
+    <h2>Πακέτο 10</h2>
+    <div class="prijs">4,99 € <small>εφάπαξ</small></div>
+    <ul>
+      <li><strong>10 πλήρεις αναγνώσεις</strong></li>
+      <li>Οι μονάδες δεν λήγουν ποτέ</li>
+      <li>Αγόρασε ξανά όποτε θέλεις</li>
+      <li>Ιδανικό για να διαβάζεις φίλους &amp; συγγενείς</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Αγορά μέσα στην εφαρμογή</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">Καλύτερη προσφορά</span>
+    <h2>Έτος</h2>
+    <div class="prijs">39,99 € <small>/ έτος</small></div>
+    <ul>
+      <li><strong>Ένας ολόκληρος χρόνος αναγνώσεων</strong></li>
+      <li>Εύλογη χρήση: έως 60 αναγνώσεις τον μήνα</li>
+      <li>Ανανεώνεται κάθε χρόνο, ακύρωση οποιαδήποτε στιγμή</li>
+      <li>E-mail υπενθύμισης πριν από κάθε ανανέωση</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Αγορά μέσα στην εφαρμογή</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Άνοιξε το Toe Reading</a>
+<p class="noot">Αγοράζεις μέσα στην εφαρμογή, αφού συνδεθείς: έτσι οι μονάδες πιστώνονται στον <em>δικό σου</em> λογαριασμό. Όλες οι τιμές περιλαμβάνουν ΦΠΑ. Οι πληρωμές διεκπεραιώνονται με ασφάλεια από τον συνεργάτη πληρωμών μας, τον Merchant of Record. Πλήρης επιστροφή χρημάτων εντός 14 ημερών αν οι μονάδες δεν έχουν χρησιμοποιηθεί· δες την <a href="refund.html">Πολιτική Επιστροφών Χρημάτων</a>.</p>
+
+<h3>Καλό να το ξέρεις</h3>
+<p><strong>Τι γίνεται με τις φωτογραφίες μου;</strong> Αναλύονται και απορρίπτονται αμέσως: δεν αποθηκεύονται ποτέ, δεν χρησιμοποιούνται ποτέ για εκπαίδευση AI. <a href="privacy.html">Πολιτική Απορρήτου</a>.</p>
+<p><strong>Είναι ιατρική συμβουλή;</strong> Όχι. Το Toe Reading προορίζεται αποκλειστικά για ψυχαγωγία και αυτογνωσία· δες τους <a href="terms.html">Όρους</a> μας.</p>
+<p><strong>Ποιες μονάδες χρησιμοποιούνται πρώτες;</strong> Πρώτα οι δωρεάν, μετά οι μονάδες του πακέτου, μετά η συνδρομή σου.</p>
+</main>
+<main lang-blok="cs">
+<h1>Jednoduché a poctivé ceny</h1>
+<p class="sub">Jeden kredit = jedno kompletní čtení: analýza fotky plus úplný výklad „Zrcadlo vypráví“. V 15 jazycích.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Vyzkoušej zdarma</h2>
+    <div class="prijs">0 €</div>
+    <ul>
+      <li><strong>3 plná čtení</strong> při založení účtu</li>
+      <li>Žádné platební údaje nejsou potřeba</li>
+      <li>Encyklopedii prstů můžeš volně procházet i bez účtu</li>
+    </ul>
+    <a class="koop stil" href="./">Založ si účet zdarma</a>
+  </div>
+  <div class="kaart">
+    <h2>Balíček 10</h2>
+    <div class="prijs">4,99 € <small>jednorázově</small></div>
+    <ul>
+      <li><strong>10 plných čtení</strong></li>
+      <li>Kredity nikdy nevyprší</li>
+      <li>Dokup si další, kdykoli budeš chtít</li>
+      <li>Skvělé na čtení přátel &amp; rodiny</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Koupit v aplikaci</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">Nejvýhodnější</span>
+    <h2>Rok</h2>
+    <div class="prijs">39,99 € <small>/ rok</small></div>
+    <ul>
+      <li><strong>Celý rok čtení</strong></li>
+      <li>Fair use: až 60 čtení měsíčně</li>
+      <li>Obnovuje se ročně, zrušit můžeš kdykoli</li>
+      <li>Připomínkový e-mail před každým obnovením</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Koupit v aplikaci</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Otevřít Toe Reading</a>
+<p class="noot">Nakupuješ v aplikaci, po přihlášení: kredity se tak připíšou na <em>tvůj</em> účet. Všechny ceny jsou včetně DPH. Platby bezpečně zpracovává náš platební partner, Merchant of Record. Plné vrácení peněz do 14 dnů, pokud jsou kredity nepoužité; viz <a href="refund.html">zásady vracení peněz</a>.</p>
+
+<h3>Dobré vědět</h3>
+<p><strong>Co se stane s mými fotkami?</strong> Analyzují se a hned poté zahodí: nikdy se neukládají, nikdy se nepoužívají k trénování AI. <a href="privacy.html">Zásady ochrany soukromí</a>.</p>
+<p><strong>Je tohle lékařská rada?</strong> Ne. Toe Reading slouží výhradně k zábavě a sebereflexi; viz naše <a href="terms.html">podmínky</a>.</p>
+<p><strong>Které kredity se čerpají první?</strong> Nejdřív ty zdarma, pak kredity z balíčku, nakonec tvé předplatné.</p>
+</main>
+<main lang-blok="ro">
+<h1>Prețuri simple și corecte</h1>
+<p class="sub">Un credit = o citire completă: analiza fotografiei plus interpretarea integrală, "Oglinda povestește". În 15 limbi.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Încearcă gratuit</h2>
+    <div class="prijs">0 €</div>
+    <ul>
+      <li><strong>3 citiri complete</strong> când îți creezi un cont</li>
+      <li>Nu e nevoie de date de plată</li>
+      <li>Explorează liber enciclopedia degetelor de la picioare, fără cont</li>
+    </ul>
+    <a class="koop stil" href="./">Creează un cont gratuit</a>
+  </div>
+  <div class="kaart">
+    <h2>Pachetul de 10</h2>
+    <div class="prijs">4,99 € <small>plată unică</small></div>
+    <ul>
+      <li><strong>10 citiri complete</strong></li>
+      <li>Creditele nu expiră niciodată</li>
+      <li>Cumpără din nou oricând vrei</li>
+      <li>Numai bun pentru a citi prieteni &amp; familie</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Cumpără în aplicație</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">Cea mai bună ofertă</span>
+    <h2>Anual</h2>
+    <div class="prijs">39,99 € <small>/ an</small></div>
+    <ul>
+      <li><strong>Un an întreg de citiri</strong></li>
+      <li>Fair use: până la 60 de citiri pe lună</li>
+      <li>Se reînnoiește anual, poți anula oricând</li>
+      <li>E-mail de reamintire înaintea fiecărei reînnoiri</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Cumpără în aplicație</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Deschide Toe Reading</a>
+<p class="noot">Cumperi din aplicație, după autentificare: așa creditele ajung în contul <em>tău</em>. Toate prețurile includ TVA. Plățile sunt gestionate în siguranță de partenerul nostru de plăți, Merchant of Record. Rambursare integrală în 14 zile dacă creditele sunt nefolosite; vezi <a href="refund.html">Politica de rambursare</a>.</p>
+
+<h3>Bine de știut</h3>
+<p><strong>Ce se întâmplă cu fotografiile mele?</strong> Sunt analizate și eliminate imediat: nu sunt niciodată salvate, niciodată folosite pentru antrenarea AI. <a href="privacy.html">Politica de confidențialitate</a>.</p>
+<p><strong>Este acesta un sfat medical?</strong> Nu. Toe Reading este doar pentru divertisment și autoreflecție; vezi <a href="terms.html">Termenii</a> noștri.</p>
+<p><strong>Care credite se folosesc primele?</strong> Întâi cele gratuite, apoi creditele din pachet, apoi abonamentul tău.</p>
+</main>
+<main lang-blok="sv">
+<h1>Enkla, ärliga priser</h1>
+<p class="sub">En kredit = en komplett läsning: fotoanalys plus den fullständiga tydningen, "Spegeln berättar". På 15 språk.</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>Prova gratis</h2>
+    <div class="prijs">0 €</div>
+    <ul>
+      <li><strong>3 fullständiga läsningar</strong> när du skapar ett konto</li>
+      <li>Inga betalningsuppgifter behövs</li>
+      <li>Utforska tåencyklopedin fritt, inget konto krävs</li>
+    </ul>
+    <a class="koop stil" href="./">Skapa ett gratis konto</a>
+  </div>
+  <div class="kaart">
+    <h2>10-paket</h2>
+    <div class="prijs">4,99 € <small>engångsbelopp</small></div>
+    <ul>
+      <li><strong>10 fullständiga läsningar</strong></li>
+      <li>Krediterna går aldrig ut</li>
+      <li>Köp fler när du vill</li>
+      <li>Perfekt för att läsa vänner &amp; familj</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">Köp i appen</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">Bäst värde</span>
+    <h2>År</h2>
+    <div class="prijs">39,99 € <small>/ år</small></div>
+    <ul>
+      <li><strong>Ett helt år av läsningar</strong></li>
+      <li>Fair use: upp till 60 läsningar per månad</li>
+      <li>Förnyas årligen, säg upp när som helst</li>
+      <li>Påminnelsemejl före varje förnyelse</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">Köp i appen</a>
+  </div>
+</div>
+
+<a class="cta" href="./">Öppna Toe Reading</a>
+<p class="noot">Du köper inne i appen, efter att du loggat in: då hamnar krediterna på <em>ditt</em> konto. Alla priser inkluderar moms. Betalningar hanteras säkert av vår betalpartner, Merchant of Record. Full återbetalning inom 14 dagar om krediterna är oanvända; se <a href="refund.html">återbetalningspolicyn</a>.</p>
+
+<h3>Bra att veta</h3>
+<p><strong>Vad händer med mina foton?</strong> De analyseras och kastas direkt: sparas aldrig, används aldrig för att träna AI. <a href="privacy.html">Integritetspolicy</a>.</p>
+<p><strong>Är det här medicinska råd?</strong> Nej. Toe Reading är enbart till för underhållning och självreflektion; se våra <a href="terms.html">villkor</a>.</p>
+<p><strong>Vilka krediter används först?</strong> Gratis först, sedan paketkrediter, sedan ditt abonnemang.</p>
+</main>
+<main lang-blok="zht">
+<h1>簡單、實在的價格</h1>
+<p class="sub">一個額度 = 一次完整解讀：照片分析加上完整的詮釋「鏡子這麼說」。支援 15 種語言。</p>
+
+<div class="kaarten">
+  <div class="kaart">
+    <h2>免費試用</h2>
+    <div class="prijs">€0</div>
+    <ul>
+      <li>建立帳戶即可獲得 <strong>3 次完整解讀</strong></li>
+      <li>無需付款資料</li>
+      <li>腳趾百科全書可自由瀏覽，無需帳戶</li>
+    </ul>
+    <a class="koop stil" href="./">建立免費帳戶</a>
+  </div>
+  <div class="kaart">
+    <h2>10 次組合包</h2>
+    <div class="prijs">€4.99 <small>一次性</small></div>
+    <ul>
+      <li><strong>10 次完整解讀</strong></li>
+      <li>額度永不過期</li>
+      <li>隨時可再購買</li>
+      <li>很適合為朋友 &amp; 家人解讀</li>
+    </ul>
+    <a class="koop" href="./?koop=pakket10">在應用程式內購買</a>
+  </div>
+  <div class="kaart uitgelicht">
+    <span class="badge">最超值</span>
+    <h2>年度</h2>
+    <div class="prijs">€39.99 <small>/ 年</small></div>
+    <ul>
+      <li><strong>一整年的解讀</strong></li>
+      <li>合理使用原則：每月最多 60 次解讀</li>
+      <li>每年續訂，隨時可取消</li>
+      <li>每次續訂前都會寄提醒電子郵件</li>
+    </ul>
+    <a class="koop" href="./?koop=jaar">在應用程式內購買</a>
+  </div>
+</div>
+
+<a class="cta" href="./">開啟 Toe Reading</a>
+<p class="noot">請登入後在應用程式內購買：這樣額度才會存入<em>你的</em>帳戶。所有價格均含加值稅（VAT）。付款由我們的付款合作夥伴（Merchant of Record，登記商家）安全處理。若額度尚未使用，購買後 14 天內可獲全額退款；詳見<a href="refund.html">退款政策</a>。</p>
+
+<h3>值得知道的事</h3>
+<p><strong>我的照片會怎麼處理？</strong>照片經分析後立即捨棄：絕不儲存，也絕不用於訓練 AI。<a href="privacy.html">隱私權政策</a>。</p>
+<p><strong>這是醫療建議嗎？</strong>不是。Toe Reading 僅供娛樂與自我省思；請見我們的<a href="terms.html">服務條款</a>。</p>
+<p><strong>哪些額度會先使用？</strong>先用免費額度，再用組合包額度，最後才是你的訂閱。</p>
 </main>
 
 <footer>
@@ -164,16 +1537,24 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 </div>
 <script>
 (function(){
+  var TALEN=["en","nl","de","fr","es","it","pt","pl","ru","tr","ar","zh","ja","ko","hi","id","vi","th","uk","hu","bn","ur","fa","ms","tl","el","cs","ro","sv","zht"];
+  var RTL={ar:1,ur:1,fa:1};
   var t='en';
-  try{ t = localStorage.legal_taal || ((localStorage.taal==='nl' || (navigator.language||'').slice(0,2).toLowerCase()==='nl')?'nl':'en'); }catch(e){}
-  if(t!=='nl') t='en';
+  try{
+    var app=localStorage.taal, kies=localStorage.legal_taal;
+    t = (TALEN.indexOf(app)>=0 ? app : (TALEN.indexOf(kies)>=0 ? kies : (navigator.language||'').slice(0,2).toLowerCase()));
+  }catch(e){}
+  if(TALEN.indexOf(t)<0) t='en';
+  var sel=document.getElementById('taalKeuze');
   function zet(x){
+    if(TALEN.indexOf(x)<0) x='en';
     document.documentElement.setAttribute('data-taal',x);
     document.documentElement.lang=x;
-    document.querySelectorAll('.talen button').forEach(function(b){b.classList.toggle('actief',b.getAttribute('data-t')===x);});
+    document.documentElement.dir=RTL[x]?'rtl':'ltr';
+    if(sel) sel.value=x;
     try{localStorage.legal_taal=x;}catch(e){}
   }
-  document.querySelectorAll('.talen button').forEach(function(b){b.onclick=function(){zet(b.getAttribute('data-t'));};});
+  if(sel) sel.onchange=function(){zet(sel.value);};
   zet(t);
 })();
 </script>

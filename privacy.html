@@ -37,13 +37,43 @@ th{background:var(--kaart)}
 [lang-blok]{display:none}
 html[data-taal="en"] [lang-blok="en"]{display:block}
 html[data-taal="nl"] [lang-blok="nl"]{display:block}
+html[data-taal="de"] [lang-blok="de"]{display:block}
+html[data-taal="fr"] [lang-blok="fr"]{display:block}
+html[data-taal="es"] [lang-blok="es"]{display:block}
+html[data-taal="it"] [lang-blok="it"]{display:block}
+html[data-taal="pt"] [lang-blok="pt"]{display:block}
+html[data-taal="pl"] [lang-blok="pl"]{display:block}
+html[data-taal="ru"] [lang-blok="ru"]{display:block}
+html[data-taal="tr"] [lang-blok="tr"]{display:block}
+html[data-taal="ar"] [lang-blok="ar"]{display:block}
+html[data-taal="zh"] [lang-blok="zh"]{display:block}
+html[data-taal="ja"] [lang-blok="ja"]{display:block}
+html[data-taal="ko"] [lang-blok="ko"]{display:block}
+html[data-taal="hi"] [lang-blok="hi"]{display:block}
+html[data-taal="id"] [lang-blok="id"]{display:block}
+html[data-taal="vi"] [lang-blok="vi"]{display:block}
+html[data-taal="th"] [lang-blok="th"]{display:block}
+html[data-taal="uk"] [lang-blok="uk"]{display:block}
+html[data-taal="hu"] [lang-blok="hu"]{display:block}
+html[data-taal="bn"] [lang-blok="bn"]{display:block}
+html[data-taal="ur"] [lang-blok="ur"]{display:block}
+html[data-taal="fa"] [lang-blok="fa"]{display:block}
+html[data-taal="ms"] [lang-blok="ms"]{display:block}
+html[data-taal="tl"] [lang-blok="tl"]{display:block}
+html[data-taal="el"] [lang-blok="el"]{display:block}
+html[data-taal="cs"] [lang-blok="cs"]{display:block}
+html[data-taal="ro"] [lang-blok="ro"]{display:block}
+html[data-taal="sv"] [lang-blok="sv"]{display:block}
+html[data-taal="zht"] [lang-blok="zht"]{display:block}
+html[dir="rtl"] main{direction:rtl;text-align:right}
+.talen select{border:1px solid var(--lijn);background:var(--kaart);color:var(--inkt);border-radius:8px;padding:6px 10px;font-family:'Karla',sans-serif;font-size:.9rem;max-width:180px}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header class="top">
   <a class="merk" href="./"><img src="icons/icon-192.png" alt=""><b>Toe Reading</b></a>
-  <nav class="talen"><button data-t="en">EN</button><button data-t="nl">NL</button></nav>
+  <nav class="talen"><select id="taalKeuze" aria-label="Language"><option value="en">English</option><option value="nl">Nederlands</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="es">Español</option><option value="it">Italiano</option><option value="pt">Português</option><option value="pl">Polski</option><option value="ru">Русский</option><option value="tr">Türkçe</option><option value="ar">العربية</option><option value="zh">中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="hi">हिन्दी</option><option value="id">Bahasa Indonesia</option><option value="vi">Tiếng Việt</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="hu">Magyar</option><option value="bn">বাংলা</option><option value="ur">اردو</option><option value="fa">فارسی</option><option value="ms">Bahasa Melayu</option><option value="tl">Filipino</option><option value="el">Ελληνικά</option><option value="cs">Čeština</option><option value="ro">Română</option><option value="sv">Svenska</option><option value="zht">繁體中文</option></select></nav>
 </header>
 
 <main lang-blok="en">
@@ -51,24 +81,24 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 <p class="datum">Effective date: 13 July 2026</p>
 
 <div class="kaartje groen">
-<p><strong>The short version:</strong> your foot photos are analysed and immediately discarded — never stored, never used to train AI. We keep only what an account needs: your name, e-mail, credit balance and (if you save them) your reading texts. No tracking, no ads, no analytics cookies.</p>
+<p><strong>The short version:</strong> your foot photos are analysed and immediately discarded: never stored, never used to train AI. We keep only what an account needs: your name, e-mail, credit balance and (if you save them) your reading texts. No tracking, no ads, no analytics cookies.</p>
 </div>
 
 <h2>1. Who is responsible</h2>
-<p>The controller for your personal data is <strong>Ferri Somogyi Productions</strong>, registered in the Netherlands (KvK no. 34286815, VAT ID NL001933433B06). Contact: <a href="mailto:support@toereading.app">support@toereading.app</a>. For purchases, <strong>Paddle.com</strong> acts as Merchant of Record and is an independent controller for the payment data it processes (see <a href="https://www.paddle.com/legal/privacy" rel="noopener">Paddle's privacy policy</a>).</p>
+<p>The controller for your personal data is <strong>Ferri Somogyi Productions</strong>, registered in the Netherlands (KvK no. 34286815, VAT ID NL001933433B06). Contact: <a href="mailto:support@toereading.app">support@toereading.app</a>. For purchases, our payment partner acts as Merchant of Record and is an independent controller for the payment data it processes; the partner's own privacy policy is linked at checkout and on your receipt.</p>
 
 <h2>2. What we process, and why</h2>
 <table>
 <tr><th>Data</th><th>Purpose</th><th>Legal basis</th></tr>
 <tr><td>Name, e-mail, password (stored as a secure hash)</td><td>Your account: login, e-mail verification, password reset</td><td>Contract</td></tr>
 <tr><td>Credit balance and usage counters</td><td>Knowing how many readings you can run (free / pack / subscription, fair-use counter)</td><td>Contract</td></tr>
-<tr><td><strong>Foot photos</strong></td><td>Generating the reading you request — nothing else. Processed in memory, sent encrypted to our AI provider, and <strong>not stored anywhere</strong> after the analysis completes. Not used to train AI models.</td><td>Contract (you actively request each analysis)</td></tr>
-<tr><td>Saved readings ("my readings")</td><td>Only the classification codes and reading texts — never photos. You can delete them at any time.</td><td>Contract</td></tr>
-<tr><td>Transaction metadata (product, amount, Paddle transaction ID)</td><td>Crediting your purchase, bookkeeping, fraud prevention. We never see or store your card details — Paddle handles payment.</td><td>Contract, legal obligation</td></tr>
+<tr><td><strong>Foot photos</strong></td><td>Generating the reading you request, nothing else. Processed in memory, sent encrypted to our AI provider, and <strong>not stored anywhere</strong> after the analysis completes. Not used to train AI models.</td><td>Contract (you actively request each analysis)</td></tr>
+<tr><td>Saved readings ("my readings")</td><td>Only the classification codes and reading texts, never photos. You can delete them at any time.</td><td>Contract</td></tr>
+<tr><td>Transaction metadata (product, amount, payment transaction ID)</td><td>Crediting your purchase, bookkeeping, fraud prevention. We never see or store your card details; our payment partner handles the payment.</td><td>Contract, legal obligation</td></tr>
 <tr><td>Technical logs (IP address, timestamps)</td><td>Security, rate limiting and abuse prevention on our servers</td><td>Legitimate interest</td></tr>
 <tr><td>Support e-mails</td><td>Helping you when you contact us</td><td>Legitimate interest</td></tr>
 </table>
-<p>We do not ask for your date of birth or any other data we don't need (data minimisation). We do not use advertising or analytics trackers. The app stores your session token and language preference in your browser's local storage — functional only.</p>
+<p>We do not ask for your date of birth or any other data we don't need (data minimisation). We do not use advertising or analytics trackers. The app stores your session token and language preference in your browser's local storage, functional only.</p>
 
 <h2>3. Who helps us process data</h2>
 <table>
@@ -76,7 +106,7 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 <tr><td>Supabase</td><td>Accounts and database hosting</td><td>EU (Frankfurt, Germany)</td></tr>
 <tr><td>Cloudflare</td><td>Analysis gateway (worker), DNS</td><td>EU/US, EU Data Privacy Framework &amp; SCCs</td></tr>
 <tr><td>Anthropic</td><td>AI analysis of your photo (Claude API); API data is not used to train models</td><td>US, protected by EU Standard Contractual Clauses / DPF</td></tr>
-<tr><td>Paddle</td><td>Payments (Merchant of Record, independent controller)</td><td>UK/EU (UK has an EU adequacy decision)</td></tr>
+<tr><td>Payment partner</td><td>Payments (Merchant of Record, independent controller)</td><td>EU/EEA or a country with an EU adequacy decision</td></tr>
 <tr><td>GitHub Pages</td><td>Hosting of the app's static files; may log IP addresses</td><td>US, DPF</td></tr>
 </table>
 <p>We have data processing agreements with our processors. We never sell personal data.</p>
@@ -85,7 +115,7 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 <p>Account data: until you delete your account. Saved readings: until you delete them (or your account). Photos: <strong>not kept at all</strong>. Transaction records: up to 7 years (Dutch tax law). Support e-mails: up to 2 years. Deleting your account removes your profile, credit balance and saved readings automatically (cascading delete).</p>
 
 <h2>5. Your rights</h2>
-<p>You can ask us for access, correction, deletion, restriction, portability, or object to processing — e-mail <a href="mailto:support@toereading.app">support@toereading.app</a> and we'll respond within a month. You can delete saved readings yourself in the app; for full account deletion, e-mail us (an in-app delete button is on its way). You can also complain to the Dutch supervisory authority, the <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
+<p>You can ask us for access, correction, deletion, restriction, portability, or object to processing: e-mail <a href="mailto:support@toereading.app">support@toereading.app</a> and we'll respond within a month. You can delete saved readings yourself in the app; for full account deletion, e-mail us (an in-app delete button is on its way). You can also complain to the Dutch supervisory authority, the <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
 
 <h2>6. Security</h2>
 <p>Data travels encrypted (TLS). Passwords are stored as secure hashes. Database access is protected with row-level security: your data is only readable by you. Server keys live only in server environments, never in the app. Should a data breach nevertheless occur that poses a risk to you, we will report it to the Autoriteit Persoonsgegevens within 72 hours and inform you when required.</p>
@@ -96,30 +126,29 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 <h2>8. Changes</h2>
 <p>If we change this policy in a meaningful way, we'll let you know in the app or by e-mail before the change takes effect.</p>
 </main>
-
 <main lang-blok="nl">
 <h1>Privacyverklaring</h1>
 <p class="datum">Ingangsdatum: 13 juli 2026</p>
 
 <div class="kaartje groen">
-<p><strong>De korte versie:</strong> je voetfoto's worden geanalyseerd en direct daarna weggegooid — nooit opgeslagen, nooit gebruikt om AI te trainen. We bewaren alleen wat een account nodig heeft: je naam, e-mail, tegoed en (als je ze bewaart) je lezingteksten. Geen tracking, geen advertenties, geen analytics-cookies.</p>
+<p><strong>De korte versie:</strong> je voetfoto's worden geanalyseerd en direct daarna weggegooid: nooit opgeslagen, nooit gebruikt om AI te trainen. We bewaren alleen wat een account nodig heeft: je naam, e-mail, tegoed en (als je ze bewaart) je lezingteksten. Geen tracking, geen advertenties, geen analytics-cookies.</p>
 </div>
 
 <h2>1. Wie is verantwoordelijk</h2>
-<p>De verwerkingsverantwoordelijke voor je persoonsgegevens is <strong>Ferri Somogyi Productions</strong>, gevestigd in Nederland (KvK-nummer 34286815, btw-id NL001933433B06). Contact: <a href="mailto:support@toereading.app">support@toereading.app</a>. Voor aankopen treedt <strong>Paddle.com</strong> op als Merchant of Record en is Paddle zelfstandig verantwoordelijk voor de betaalgegevens die zij verwerken (zie de <a href="https://www.paddle.com/legal/privacy" rel="noopener">privacyverklaring van Paddle</a>).</p>
+<p>De verwerkingsverantwoordelijke voor je persoonsgegevens is <strong>Ferri Somogyi Productions</strong>, gevestigd in Nederland (KvK-nummer 34286815, btw-id NL001933433B06). Contact: <a href="mailto:support@toereading.app">support@toereading.app</a>. Voor aankopen treedt onze betaalpartner op als Merchant of Record en is die partner zelfstandig verantwoordelijk voor de betaalgegevens die zij verwerken; de eigen privacyverklaring van de betaalpartner staat gelinkt bij het afrekenen en op je bon.</p>
 
 <h2>2. Wat we verwerken, en waarom</h2>
 <table>
 <tr><th>Gegevens</th><th>Doel</th><th>Grondslag</th></tr>
 <tr><td>Naam, e-mail, wachtwoord (opgeslagen als veilige hash)</td><td>Je account: inloggen, e-mailverificatie, wachtwoord-reset</td><td>Overeenkomst</td></tr>
 <tr><td>Tegoed en gebruiksteller</td><td>Weten hoeveel lezingen je kunt draaien (gratis / pakket / abonnement, fair-use-teller)</td><td>Overeenkomst</td></tr>
-<tr><td><strong>Voetfoto's</strong></td><td>Het genereren van de lezing die jij aanvraagt — niets anders. Verwerkt in het geheugen, versleuteld verstuurd naar onze AI-leverancier en <strong>nergens opgeslagen</strong> na afloop van de analyse. Niet gebruikt om AI-modellen te trainen.</td><td>Overeenkomst (jij vraagt elke analyse actief aan)</td></tr>
-<tr><td>Bewaarde lezingen ("mijn lezingen")</td><td>Alleen de classificatiecodes en lezingteksten — nooit foto's. Je kunt ze altijd verwijderen.</td><td>Overeenkomst</td></tr>
-<tr><td>Transactiegegevens (product, bedrag, Paddle-transactie-ID)</td><td>Je aankoop bijschrijven, administratie, fraudepreventie. Je kaartgegevens zien of bewaren we nooit — Paddle verzorgt de betaling.</td><td>Overeenkomst, wettelijke plicht</td></tr>
+<tr><td><strong>Voetfoto's</strong></td><td>Het genereren van de lezing die jij aanvraagt, niets anders. Verwerkt in het geheugen, versleuteld verstuurd naar onze AI-leverancier en <strong>nergens opgeslagen</strong> na afloop van de analyse. Niet gebruikt om AI-modellen te trainen.</td><td>Overeenkomst (jij vraagt elke analyse actief aan)</td></tr>
+<tr><td>Bewaarde lezingen ("mijn lezingen")</td><td>Alleen de classificatiecodes en lezingteksten, nooit foto's. Je kunt ze altijd verwijderen.</td><td>Overeenkomst</td></tr>
+<tr><td>Transactiegegevens (product, bedrag, transactie-ID van de betaling)</td><td>Je aankoop bijschrijven, administratie, fraudepreventie. Je kaartgegevens zien of bewaren we nooit; onze betaalpartner verzorgt de betaling.</td><td>Overeenkomst, wettelijke plicht</td></tr>
 <tr><td>Technische logs (IP-adres, tijdstippen)</td><td>Beveiliging, rate limiting en misbruikpreventie op onze servers</td><td>Gerechtvaardigd belang</td></tr>
 <tr><td>Support-e-mails</td><td>Je helpen als je contact opneemt</td><td>Gerechtvaardigd belang</td></tr>
 </table>
-<p>We vragen niet om je geboortedatum of andere gegevens die we niet nodig hebben (dataminimalisatie). We gebruiken geen advertentie- of analytics-trackers. De app bewaart je sessietoken en taalvoorkeur in de local storage van je browser — puur functioneel.</p>
+<p>We vragen niet om je geboortedatum of andere gegevens die we niet nodig hebben (dataminimalisatie). We gebruiken geen advertentie- of analytics-trackers. De app bewaart je sessietoken en taalvoorkeur in de local storage van je browser, puur functioneel.</p>
 
 <h2>3. Wie ons helpt met verwerken</h2>
 <table>
@@ -127,7 +156,7 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 <tr><td>Supabase</td><td>Accounts en database-hosting</td><td>EU (Frankfurt, Duitsland)</td></tr>
 <tr><td>Cloudflare</td><td>Analyse-poort (worker), DNS</td><td>EU/VS, EU Data Privacy Framework &amp; SCC's</td></tr>
 <tr><td>Anthropic</td><td>AI-analyse van je foto (Claude API); API-data wordt niet gebruikt om modellen te trainen</td><td>VS, beschermd via EU Standard Contractual Clauses / DPF</td></tr>
-<tr><td>Paddle</td><td>Betalingen (Merchant of Record, zelfstandig verantwoordelijke)</td><td>VK/EU (het VK heeft een EU-adequaatheidsbesluit)</td></tr>
+<tr><td>Betaalpartner</td><td>Betalingen (Merchant of Record, zelfstandig verantwoordelijke)</td><td>EU/EER of een land met een EU-adequaatheidsbesluit</td></tr>
 <tr><td>GitHub Pages</td><td>Hosting van de statische app-bestanden; kan IP-adressen loggen</td><td>VS, DPF</td></tr>
 </table>
 <p>Met onze verwerkers hebben we verwerkersovereenkomsten. We verkopen nooit persoonsgegevens.</p>
@@ -136,7 +165,7 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 <p>Accountgegevens: tot je je account verwijdert. Bewaarde lezingen: tot jij ze verwijdert (of je account). Foto's: <strong>helemaal niet bewaard</strong>. Transactiegegevens: tot 7 jaar (fiscale bewaarplicht). Support-e-mails: tot 2 jaar. Bij het verwijderen van je account verdwijnen je profiel, tegoed en bewaarde lezingen automatisch mee (cascade delete).</p>
 
 <h2>5. Je rechten</h2>
-<p>Je kunt ons vragen om inzage, correctie, verwijdering, beperking of overdracht van je gegevens, of bezwaar maken tegen verwerking — mail <a href="mailto:support@toereading.app">support@toereading.app</a>, we reageren binnen een maand. Bewaarde lezingen verwijder je zelf in de app; voor volledige accountverwijdering mail je ons (een verwijderknop in de app is onderweg). Klagen kan ook bij de <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
+<p>Je kunt ons vragen om inzage, correctie, verwijdering, beperking of overdracht van je gegevens, of bezwaar maken tegen verwerking: mail <a href="mailto:support@toereading.app">support@toereading.app</a>, we reageren binnen een maand. Bewaarde lezingen verwijder je zelf in de app; voor volledige accountverwijdering mail je ons (een verwijderknop in de app is onderweg). Klagen kan ook bij de <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
 
 <h2>6. Beveiliging</h2>
 <p>Gegevens reizen versleuteld (TLS). Wachtwoorden worden als veilige hash opgeslagen. Databasetoegang is beveiligd met row-level security: jouw gegevens zijn alleen voor jou leesbaar. Serversleutels leven uitsluitend in serveromgevingen, nooit in de app. Mocht er toch een datalek ontstaan met risico voor jou, dan melden we dat binnen 72 uur bij de Autoriteit Persoonsgegevens en informeren we je waar dat moet.</p>
@@ -146,6 +175,1406 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 
 <h2>8. Wijzigingen</h2>
 <p>Wijzigen we deze verklaring op een betekenisvolle manier, dan laten we dat vooraf weten in de app of per e-mail.</p>
+</main>
+<main lang-blok="de">
+<h1>Datenschutzerklärung</h1>
+<p class="datum">Gültig ab: 13. Juli 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Die Kurzfassung:</strong> Deine Fußfotos werden analysiert und sofort danach verworfen: niemals gespeichert, niemals zum Trainieren von KI genutzt. Wir behalten nur, was ein Konto braucht: deinen Namen, deine E-Mail, dein Guthaben und (wenn du sie speicherst) deine Lesungstexte. Kein Tracking, keine Werbung, keine Analyse-Cookies.</p>
+</div>
+
+<h2>1. Wer verantwortlich ist</h2>
+<p>Verantwortlicher für deine personenbezogenen Daten ist <strong>Ferri Somogyi Productions</strong>, eingetragen in den Niederlanden (KvK-Nr. 34286815, USt-ID NL001933433B06). Kontakt: <a href="mailto:support@toereading.app">support@toereading.app</a>. Bei Käufen tritt unser Zahlungspartner als Merchant of Record auf und ist eigenständiger Verantwortlicher für die Zahlungsdaten, die er verarbeitet; die eigene Datenschutzerklärung des Zahlungspartners ist an der Kasse und auf deinem Beleg verlinkt.</p>
+
+<h2>2. Was wir verarbeiten, und warum</h2>
+<table>
+<tr><th>Daten</th><th>Zweck</th><th>Rechtsgrundlage</th></tr>
+<tr><td>Name, E-Mail, Passwort (gespeichert als sicherer Hash)</td><td>Dein Konto: Anmeldung, E-Mail-Verifizierung, Passwort-Reset</td><td>Vertrag</td></tr>
+<tr><td>Guthaben und Nutzungszähler</td><td>Wissen, wie viele Lesungen du ausführen kannst (gratis / Paket / Abo, Fair-Use-Zähler)</td><td>Vertrag</td></tr>
+<tr><td><strong>Fußfotos</strong></td><td>Das Generieren der Lesung, die du anforderst, sonst nichts. Im Arbeitsspeicher verarbeitet, verschlüsselt an unseren KI-Anbieter gesendet und nach Abschluss der Analyse <strong>nirgendwo gespeichert</strong>. Nicht zum Trainieren von KI-Modellen genutzt.</td><td>Vertrag (du forderst jede Analyse aktiv an)</td></tr>
+<tr><td>Gespeicherte Lesungen („meine Lesungen“)</td><td>Nur die Klassifikationscodes und Lesungstexte, niemals Fotos. Du kannst sie jederzeit löschen.</td><td>Vertrag</td></tr>
+<tr><td>Transaktionsdaten (Produkt, Betrag, Transaktions-ID der Zahlung)</td><td>Deinen Kauf gutschreiben, Buchhaltung, Betrugsprävention. Deine Kartendaten sehen oder speichern wir nie; die Zahlung wickelt unser Zahlungspartner ab.</td><td>Vertrag, rechtliche Verpflichtung</td></tr>
+<tr><td>Technische Logs (IP-Adresse, Zeitstempel)</td><td>Sicherheit, Rate Limiting und Missbrauchsprävention auf unseren Servern</td><td>Berechtigtes Interesse</td></tr>
+<tr><td>Support-E-Mails</td><td>Dir helfen, wenn du uns kontaktierst</td><td>Berechtigtes Interesse</td></tr>
+</table>
+<p>Wir fragen nicht nach deinem Geburtsdatum oder anderen Daten, die wir nicht brauchen (Datenminimierung). Wir verwenden keine Werbe- oder Analyse-Tracker. Die App speichert dein Sitzungstoken und deine Spracheinstellung im Local Storage deines Browsers, rein funktional.</p>
+
+<h2>3. Wer uns bei der Verarbeitung hilft</h2>
+<table>
+<tr><th>Partei</th><th>Rolle</th><th>Standort</th></tr>
+<tr><td>Supabase</td><td>Konten und Datenbank-Hosting</td><td>EU (Frankfurt, Deutschland)</td></tr>
+<tr><td>Cloudflare</td><td>Analyse-Gateway (Worker), DNS</td><td>EU/USA, EU Data Privacy Framework &amp; SCCs</td></tr>
+<tr><td>Anthropic</td><td>KI-Analyse deines Fotos (Claude API); API-Daten werden nicht zum Trainieren von Modellen genutzt</td><td>USA, geschützt durch EU-Standardvertragsklauseln / DPF</td></tr>
+<tr><td>Zahlungspartner</td><td>Zahlungen (Merchant of Record, eigenständiger Verantwortlicher)</td><td>EU/EWR oder ein Land mit EU-Angemessenheitsbeschluss</td></tr>
+<tr><td>GitHub Pages</td><td>Hosting der statischen App-Dateien; kann IP-Adressen protokollieren</td><td>USA, DPF</td></tr>
+</table>
+<p>Mit unseren Auftragsverarbeitern haben wir Auftragsverarbeitungsverträge geschlossen. Wir verkaufen niemals personenbezogene Daten.</p>
+
+<h2>4. Wie lange wir Daten aufbewahren</h2>
+<p>Kontodaten: bis du dein Konto löschst. Gespeicherte Lesungen: bis du sie löschst (oder dein Konto). Fotos: <strong>überhaupt nicht aufbewahrt</strong>. Transaktionsdaten: bis zu 7 Jahre (niederländisches Steuerrecht). Support-E-Mails: bis zu 2 Jahre. Beim Löschen deines Kontos werden dein Profil, dein Guthaben und deine gespeicherten Lesungen automatisch mitgelöscht (Cascading Delete).</p>
+
+<h2>5. Deine Rechte</h2>
+<p>Du kannst von uns Auskunft, Berichtigung, Löschung, Einschränkung oder Übertragung deiner Daten verlangen oder der Verarbeitung widersprechen: Schreib an <a href="mailto:support@toereading.app">support@toereading.app</a>, wir antworten innerhalb eines Monats. Gespeicherte Lesungen kannst du selbst in der App löschen; für die vollständige Kontolöschung schreibst du uns eine E-Mail (ein Lösch-Button in der App ist unterwegs). Du kannst dich außerdem bei der niederländischen Datenschutzbehörde beschweren, der <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
+
+<h2>6. Sicherheit</h2>
+<p>Daten reisen verschlüsselt (TLS). Passwörter werden als sichere Hashes gespeichert. Der Datenbankzugriff ist mit Row-Level Security geschützt: Deine Daten sind nur für dich lesbar. Serverschlüssel leben ausschließlich in Serverumgebungen, niemals in der App. Sollte dennoch eine Datenpanne auftreten, die ein Risiko für dich darstellt, melden wir sie innerhalb von 72 Stunden der Autoriteit Persoonsgegevens (der niederländischen Datenschutzbehörde) und informieren dich, wo es erforderlich ist.</p>
+
+<h2>7. Kinder</h2>
+<p>Toe Reading ist nicht für Kinder unter 16 gedacht, und wir verarbeiten ihre Daten nicht wissentlich.</p>
+
+<h2>8. Änderungen</h2>
+<p>Wenn wir diese Erklärung in wesentlicher Weise ändern, informieren wir dich vorab in der App oder per E-Mail, bevor die Änderung in Kraft tritt.</p>
+</main>
+<main lang-blok="fr">
+<h1>Politique de confidentialité</h1>
+<p class="datum">Date d'entrée en vigueur : 13 juillet 2026</p>
+
+<div class="kaartje groen">
+<p><strong>La version courte :</strong> tes photos de pieds sont analysées puis immédiatement supprimées : jamais enregistrées, jamais utilisées pour entraîner l'IA. Nous ne conservons que ce dont un compte a besoin : ton nom, ton e-mail, ton crédit et (si tu les enregistres) tes textes de lecture. Pas de tracking, pas de publicité, pas de cookies d'analyse.</p>
+</div>
+
+<h2>1. Qui est responsable</h2>
+<p>Le responsable du traitement de tes données personnelles est <strong>Ferri Somogyi Productions</strong>, établi aux Pays-Bas (KvK n° 34286815, n° de TVA NL001933433B06). Contact : <a href="mailto:support@toereading.app">support@toereading.app</a>. Pour les achats, notre partenaire de paiement agit comme Merchant of Record (vendeur officiel) et est responsable de traitement indépendant pour les données de paiement qu'il traite ; le lien vers sa propre politique de confidentialité figure au moment du paiement et sur ton reçu.</p>
+
+<h2>2. Ce que nous traitons, et pourquoi</h2>
+<table>
+<tr><th>Données</th><th>Finalité</th><th>Base légale</th></tr>
+<tr><td>Nom, e-mail, mot de passe (stocké sous forme de hachage sécurisé)</td><td>Ton compte : connexion, vérification de l'e-mail, réinitialisation du mot de passe</td><td>Contrat</td></tr>
+<tr><td>Crédit et compteurs d'utilisation</td><td>Savoir combien de lectures tu peux lancer (gratuit / pack / abonnement, compteur d'usage raisonnable)</td><td>Contrat</td></tr>
+<tr><td><strong>Photos de pieds</strong></td><td>Générer la lecture que tu demandes, rien d'autre. Traitées en mémoire, envoyées chiffrées à notre fournisseur d'IA et <strong>stockées nulle part</strong> une fois l'analyse terminée. Non utilisées pour entraîner des modèles d'IA.</td><td>Contrat (tu demandes activement chaque analyse)</td></tr>
+<tr><td>Lectures enregistrées (« mes lectures »)</td><td>Uniquement les codes de classification et les textes de lecture, jamais de photos. Tu peux les supprimer à tout moment.</td><td>Contrat</td></tr>
+<tr><td>Métadonnées de transaction (produit, montant, identifiant de la transaction de paiement)</td><td>Créditer ton achat, comptabilité, prévention de la fraude. Nous ne voyons ni ne conservons jamais les données de ta carte ; notre partenaire de paiement gère le paiement.</td><td>Contrat, obligation légale</td></tr>
+<tr><td>Journaux techniques (adresse IP, horodatages)</td><td>Sécurité, limitation de débit et prévention des abus sur nos serveurs</td><td>Intérêt légitime</td></tr>
+<tr><td>E-mails au support</td><td>T'aider quand tu nous contactes</td><td>Intérêt légitime</td></tr>
+</table>
+<p>Nous ne demandons pas ta date de naissance ni aucune autre donnée dont nous n'avons pas besoin (minimisation des données). Nous n'utilisons aucun traceur publicitaire ou d'analyse. L'app conserve ton jeton de session et ta préférence de langue dans le stockage local de ton navigateur, à des fins purement fonctionnelles.</p>
+
+<h2>3. Qui nous aide à traiter les données</h2>
+<table>
+<tr><th>Partie</th><th>Rôle</th><th>Localisation</th></tr>
+<tr><td>Supabase</td><td>Comptes et hébergement de la base de données</td><td>UE (Francfort, Allemagne)</td></tr>
+<tr><td>Cloudflare</td><td>Passerelle d'analyse (worker), DNS</td><td>UE/États-Unis, EU Data Privacy Framework &amp; clauses contractuelles types (SCC)</td></tr>
+<tr><td>Anthropic</td><td>Analyse IA de ta photo (API Claude) ; les données de l'API ne servent pas à entraîner les modèles</td><td>États-Unis, protégé par les clauses contractuelles types de l'UE / le DPF</td></tr>
+<tr><td>Partenaire de paiement</td><td>Paiements (Merchant of Record, responsable de traitement indépendant)</td><td>UE/EEE ou un pays bénéficiant d'une décision d'adéquation de l'UE</td></tr>
+<tr><td>GitHub Pages</td><td>Hébergement des fichiers statiques de l'app ; peut journaliser les adresses IP</td><td>États-Unis, DPF</td></tr>
+</table>
+<p>Nous avons conclu des accords de traitement des données avec nos sous-traitants. Nous ne vendons jamais de données personnelles.</p>
+
+<h2>4. Combien de temps nous conservons les choses</h2>
+<p>Données de compte : jusqu'à la suppression de ton compte. Lectures enregistrées : jusqu'à ce que tu les supprimes (ou que tu supprimes ton compte). Photos : <strong>pas conservées du tout</strong>. Registres de transactions : jusqu'à 7 ans (droit fiscal néerlandais). E-mails au support : jusqu'à 2 ans. La suppression de ton compte efface automatiquement ton profil, ton crédit et tes lectures enregistrées (suppression en cascade).</p>
+
+<h2>5. Tes droits</h2>
+<p>Tu peux nous demander l'accès, la rectification, la suppression, la limitation ou la portabilité de tes données, ou t'opposer au traitement : écris à <a href="mailto:support@toereading.app">support@toereading.app</a> et nous répondrons sous un mois. Tu peux supprimer toi-même tes lectures enregistrées dans l'app ; pour la suppression complète de ton compte, écris-nous (un bouton de suppression dans l'app est en préparation). Tu peux aussi déposer une plainte auprès de l'autorité de contrôle néerlandaise, l'<a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a> (l'autorité néerlandaise de protection des données).</p>
+
+<h2>6. Sécurité</h2>
+<p>Les données voyagent chiffrées (TLS). Les mots de passe sont stockés sous forme de hachages sécurisés. L'accès à la base de données est protégé par une sécurité au niveau des lignes (row-level security) : tes données ne sont lisibles que par toi. Les clés serveur vivent uniquement dans les environnements serveur, jamais dans l'app. Si une fuite de données présentant un risque pour toi devait malgré tout se produire, nous la signalerions sous 72 heures à l'Autoriteit Persoonsgegevens et t'en informerions lorsque c'est requis.</p>
+
+<h2>7. Enfants</h2>
+<p>Toe Reading n'est pas destiné aux enfants de moins de 16 ans, et nous ne traitons pas sciemment leurs données.</p>
+
+<h2>8. Modifications</h2>
+<p>Si nous modifions cette politique de manière significative, nous te préviendrons dans l'app ou par e-mail avant l'entrée en vigueur du changement.</p>
+</main>
+<main lang-blok="es">
+<h1>Política de privacidad</h1>
+<p class="datum">Fecha de entrada en vigor: 13 de julio de 2026</p>
+
+<div class="kaartje groen">
+<p><strong>La versión corta:</strong> tus fotos de los pies se analizan y se descartan de inmediato: nunca se almacenan, nunca se usan para entrenar IA. Solo conservamos lo que una cuenta necesita: tu nombre, tu correo electrónico, tu saldo de créditos y (si las guardas) los textos de tus lecturas. Sin rastreo, sin publicidad, sin cookies de analítica.</p>
+</div>
+
+<h2>1. Quién es responsable</h2>
+<p>El responsable del tratamiento de tus datos personales es <strong>Ferri Somogyi Productions</strong>, registrada en los Países Bajos (n.º KvK 34286815, NIF-IVA NL001933433B06). Contacto: <a href="mailto:support@toereading.app">support@toereading.app</a>. Para las compras, nuestro socio de pagos actúa como Merchant of Record (vendedor oficial) y es responsable independiente de los datos de pago que trata; su propia política de privacidad está enlazada al pagar y en tu recibo.</p>
+
+<h2>2. Qué tratamos, y por qué</h2>
+<table>
+<tr><th>Datos</th><th>Finalidad</th><th>Base jurídica</th></tr>
+<tr><td>Nombre, correo electrónico, contraseña (almacenada como hash seguro)</td><td>Tu cuenta: inicio de sesión, verificación del correo, restablecimiento de la contraseña</td><td>Contrato</td></tr>
+<tr><td>Saldo de créditos y contadores de uso</td><td>Saber cuántas lecturas puedes realizar (gratis / pack / suscripción, contador de uso razonable)</td><td>Contrato</td></tr>
+<tr><td><strong>Fotos de los pies</strong></td><td>Generar la lectura que solicitas, nada más. Se procesan en memoria, se envían cifradas a nuestro proveedor de IA y <strong>no se almacenan en ningún sitio</strong> una vez completado el análisis. No se usan para entrenar modelos de IA.</td><td>Contrato (solicitas activamente cada análisis)</td></tr>
+<tr><td>Lecturas guardadas ("mis lecturas")</td><td>Solo los códigos de clasificación y los textos de las lecturas, nunca fotos. Puedes borrarlas en cualquier momento.</td><td>Contrato</td></tr>
+<tr><td>Metadatos de transacción (producto, importe, ID de la transacción de pago)</td><td>Abonar tu compra, contabilidad, prevención del fraude. Nunca vemos ni guardamos los datos de tu tarjeta; nuestro socio de pagos gestiona el pago.</td><td>Contrato, obligación legal</td></tr>
+<tr><td>Registros técnicos (dirección IP, marcas de tiempo)</td><td>Seguridad, limitación de velocidad y prevención de abusos en nuestros servidores</td><td>Interés legítimo</td></tr>
+<tr><td>Correos de soporte</td><td>Ayudarte cuando nos contactas</td><td>Interés legítimo</td></tr>
+</table>
+<p>No te pedimos la fecha de nacimiento ni ningún otro dato que no necesitemos (minimización de datos). No usamos rastreadores publicitarios ni de analítica. La app guarda tu token de sesión y tu preferencia de idioma en el almacenamiento local de tu navegador, con fines exclusivamente funcionales.</p>
+
+<h2>3. Quién nos ayuda a tratar los datos</h2>
+<table>
+<tr><th>Parte</th><th>Función</th><th>Ubicación</th></tr>
+<tr><td>Supabase</td><td>Cuentas y alojamiento de la base de datos</td><td>UE (Fráncfort, Alemania)</td></tr>
+<tr><td>Cloudflare</td><td>Pasarela de análisis (worker), DNS</td><td>UE/EE. UU., EU Data Privacy Framework &amp; cláusulas contractuales tipo (SCC)</td></tr>
+<tr><td>Anthropic</td><td>Análisis por IA de tu foto (API de Claude); los datos de la API no se usan para entrenar modelos</td><td>EE. UU., protegido por las cláusulas contractuales tipo de la UE / DPF</td></tr>
+<tr><td>Socio de pagos</td><td>Pagos (Merchant of Record, responsable independiente)</td><td>UE/EEE o un país con decisión de adecuación de la UE</td></tr>
+<tr><td>GitHub Pages</td><td>Alojamiento de los archivos estáticos de la app; puede registrar direcciones IP</td><td>EE. UU., DPF</td></tr>
+</table>
+<p>Tenemos acuerdos de encargo de tratamiento con nuestros encargados. Nunca vendemos datos personales.</p>
+
+<h2>4. Cuánto tiempo conservamos los datos</h2>
+<p>Datos de la cuenta: hasta que elimines tu cuenta. Lecturas guardadas: hasta que las borres (o borres tu cuenta). Fotos: <strong>no se conservan en absoluto</strong>. Registros de transacciones: hasta 7 años (legislación fiscal neerlandesa). Correos de soporte: hasta 2 años. Al eliminar tu cuenta se borran automáticamente tu perfil, tu saldo de créditos y tus lecturas guardadas (borrado en cascada).</p>
+
+<h2>5. Tus derechos</h2>
+<p>Puedes pedirnos acceso, rectificación, supresión, limitación o portabilidad, u oponerte al tratamiento: escribe a <a href="mailto:support@toereading.app">support@toereading.app</a> y te responderemos en el plazo de un mes. Las lecturas guardadas puedes borrarlas tú mismo en la app; para la eliminación completa de la cuenta, escríbenos (un botón de borrado dentro de la app está en camino). También puedes reclamar ante la autoridad de control neerlandesa, la <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a> (la autoridad neerlandesa de protección de datos).</p>
+
+<h2>6. Seguridad</h2>
+<p>Los datos viajan cifrados (TLS). Las contraseñas se almacenan como hashes seguros. El acceso a la base de datos está protegido con seguridad a nivel de fila: tus datos solo puedes leerlos tú. Las claves de servidor viven únicamente en entornos de servidor, nunca en la app. Si aun así se produjera una brecha de datos que suponga un riesgo para ti, la notificaremos a la Autoriteit Persoonsgegevens en un plazo de 72 horas y te informaremos cuando sea necesario.</p>
+
+<h2>7. Menores</h2>
+<p>Toe Reading no está destinada a menores de 16 años y no tratamos sus datos a sabiendas.</p>
+
+<h2>8. Cambios</h2>
+<p>Si cambiamos esta política de forma significativa, te lo comunicaremos en la app o por correo electrónico antes de que el cambio entre en vigor.</p>
+</main>
+<main lang-blok="it">
+<h1>Informativa sulla privacy</h1>
+<p class="datum">Data di entrata in vigore: 13 luglio 2026</p>
+
+<div class="kaartje groen">
+<p><strong>La versione breve:</strong> le foto dei tuoi piedi vengono analizzate e subito eliminate: mai salvate, mai usate per addestrare l'IA. Conserviamo solo ciò che serve a un account: il tuo nome, la tua e-mail, il tuo saldo crediti e (se li salvi) i testi delle tue letture. Niente tracciamento, niente pubblicità, niente cookie di analisi.</p>
+</div>
+
+<h2>1. Chi è responsabile</h2>
+<p>Il titolare del trattamento dei tuoi dati personali è <strong>Ferri Somogyi Productions</strong>, registrata nei Paesi Bassi (n. KvK 34286815, partita IVA NL001933433B06). Contatto: <a href="mailto:support@toereading.app">support@toereading.app</a>. Per gli acquisti, il nostro partner di pagamento agisce come Merchant of Record ed è titolare autonomo per i dati di pagamento che tratta; l'informativa sulla privacy del partner è linkata alla cassa e sulla tua ricevuta.</p>
+
+<h2>2. Che cosa trattiamo, e perché</h2>
+<table>
+<tr><th>Dati</th><th>Finalità</th><th>Base giuridica</th></tr>
+<tr><td>Nome, e-mail, password (salvata come hash sicuro)</td><td>Il tuo account: accesso, verifica dell'e-mail, reset della password</td><td>Contratto</td></tr>
+<tr><td>Saldo crediti e contatori di utilizzo</td><td>Sapere quante letture puoi eseguire (gratuite / pacchetto / abbonamento, contatore fair use)</td><td>Contratto</td></tr>
+<tr><td><strong>Foto dei piedi</strong></td><td>Generare la lettura che richiedi, nient'altro. Elaborate in memoria, inviate cifrate al nostro fornitore di IA e <strong>non salvate da nessuna parte</strong> al termine dell'analisi. Non usate per addestrare modelli di IA.</td><td>Contratto (ogni analisi la richiedi tu attivamente)</td></tr>
+<tr><td>Letture salvate ("le mie letture")</td><td>Solo i codici di classificazione e i testi delle letture, mai le foto. Puoi cancellarle in qualsiasi momento.</td><td>Contratto</td></tr>
+<tr><td>Metadati delle transazioni (prodotto, importo, ID della transazione di pagamento)</td><td>Accreditare il tuo acquisto, contabilità, prevenzione delle frodi. Non vediamo né conserviamo mai i dati della tua carta; il pagamento lo gestisce il nostro partner di pagamento.</td><td>Contratto, obbligo di legge</td></tr>
+<tr><td>Log tecnici (indirizzo IP, orari)</td><td>Sicurezza, limiti di frequenza e prevenzione degli abusi sui nostri server</td><td>Legittimo interesse</td></tr>
+<tr><td>E-mail di supporto</td><td>Aiutarti quando ci contatti</td><td>Legittimo interesse</td></tr>
+</table>
+<p>Non ti chiediamo la data di nascita né altri dati di cui non abbiamo bisogno (minimizzazione dei dati). Non usiamo tracker pubblicitari o di analisi. L'app conserva il tuo token di sessione e la tua preferenza di lingua nella local storage del browser, a scopo puramente funzionale.</p>
+
+<h2>3. Chi ci aiuta a trattare i dati</h2>
+<table>
+<tr><th>Parte</th><th>Ruolo</th><th>Sede</th></tr>
+<tr><td>Supabase</td><td>Account e hosting del database</td><td>UE (Francoforte, Germania)</td></tr>
+<tr><td>Cloudflare</td><td>Gateway di analisi (worker), DNS</td><td>UE/USA, EU Data Privacy Framework &amp; SCC</td></tr>
+<tr><td>Anthropic</td><td>Analisi IA della tua foto (API di Claude); i dati API non vengono usati per addestrare i modelli</td><td>USA, protetti da Clausole Contrattuali Standard UE / DPF</td></tr>
+<tr><td>Partner di pagamento</td><td>Pagamenti (Merchant of Record, titolare autonomo)</td><td>UE/SEE o un Paese con decisione di adeguatezza UE</td></tr>
+<tr><td>GitHub Pages</td><td>Hosting dei file statici dell'app; può registrare gli indirizzi IP</td><td>USA, DPF</td></tr>
+</table>
+<p>Con i nostri responsabili del trattamento abbiamo accordi sul trattamento dei dati. Non vendiamo mai dati personali.</p>
+
+<h2>4. Per quanto tempo conserviamo i dati</h2>
+<p>Dati dell'account: finché non elimini il tuo account. Letture salvate: finché non le cancelli tu (o non elimini l'account). Foto: <strong>non conservate affatto</strong>. Registri delle transazioni: fino a 7 anni (normativa fiscale olandese). E-mail di supporto: fino a 2 anni. Eliminando il tuo account, il tuo profilo, il saldo crediti e le letture salvate vengono rimossi automaticamente (eliminazione a cascata).</p>
+
+<h2>5. I tuoi diritti</h2>
+<p>Puoi chiederci accesso, rettifica, cancellazione, limitazione o portabilità dei tuoi dati, oppure opporti al trattamento: scrivi a <a href="mailto:support@toereading.app">support@toereading.app</a> e ti risponderemo entro un mese. Le letture salvate puoi cancellarle tu nell'app; per l'eliminazione completa dell'account scrivici (un pulsante di eliminazione nell'app è in arrivo). Puoi anche presentare reclamo all'autorità di controllo olandese, l'<a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a> (l'autorità olandese per la protezione dei dati).</p>
+
+<h2>6. Sicurezza</h2>
+<p>I dati viaggiano cifrati (TLS). Le password sono salvate come hash sicuri. L'accesso al database è protetto con row-level security: i tuoi dati sono leggibili solo da te. Le chiavi server vivono esclusivamente negli ambienti server, mai nell'app. Se nonostante tutto si verificasse una violazione dei dati che comporta un rischio per te, la segnaleremo entro 72 ore all'Autoriteit Persoonsgegevens e ti informeremo quando richiesto.</p>
+
+<h2>7. Bambini</h2>
+<p>Toe Reading non è destinata ai bambini sotto i 16 anni e non trattiamo consapevolmente i loro dati.</p>
+
+<h2>8. Modifiche</h2>
+<p>Se modifichiamo questa informativa in modo rilevante, te lo faremo sapere nell'app o per e-mail prima che la modifica entri in vigore.</p>
+</main>
+<main lang-blok="pt">
+<h1>Política de Privacidade</h1>
+<p class="datum">Data de entrada em vigor: 13 de julho de 2026</p>
+
+<div class="kaartje groen">
+<p><strong>A versão curta:</strong> as fotos dos teus pés são analisadas e imediatamente descartadas: nunca ficam guardadas, nunca são usadas para treinar IA. Guardamos apenas o que uma conta precisa: o teu nome, o teu e-mail, o teu saldo e (se as guardares) os textos das tuas leituras. Sem rastreio, sem anúncios, sem cookies de análise.</p>
+</div>
+
+<h2>1. Quem é o responsável</h2>
+<p>O responsável pelo tratamento dos teus dados pessoais é a <strong>Ferri Somogyi Productions</strong>, registada nos Países Baixos (KvK n.º 34286815, número de IVA NL001933433B06). Contacto: <a href="mailto:support@toereading.app">support@toereading.app</a>. Nas compras, o nosso parceiro de pagamentos atua como Merchant of Record (vendedor oficial) e é responsável independente pelo tratamento dos dados de pagamento que processa; a política de privacidade do próprio parceiro está ligada no momento do pagamento e no teu recibo.</p>
+
+<h2>2. O que tratamos, e porquê</h2>
+<table>
+<tr><th>Dados</th><th>Finalidade</th><th>Base jurídica</th></tr>
+<tr><td>Nome, e-mail, palavra-passe (guardada como hash seguro)</td><td>A tua conta: início de sessão, verificação do e-mail, reposição da palavra-passe</td><td>Contrato</td></tr>
+<tr><td>Saldo e contadores de utilização</td><td>Saber quantas leituras podes fazer (gratuito / pacote / subscrição, contador de utilização razoável)</td><td>Contrato</td></tr>
+<tr><td><strong>Fotos dos pés</strong></td><td>Gerar a leitura que pedes, nada mais. Processadas em memória, enviadas encriptadas ao nosso fornecedor de IA e <strong>não guardadas em lado nenhum</strong> depois de a análise terminar. Não são usadas para treinar modelos de IA.</td><td>Contrato (pedes ativamente cada análise)</td></tr>
+<tr><td>Leituras guardadas («as minhas leituras»)</td><td>Apenas os códigos de classificação e os textos das leituras, nunca fotos. Podes apagá-las a qualquer momento.</td><td>Contrato</td></tr>
+<tr><td>Metadados de transação (produto, montante, ID da transação de pagamento)</td><td>Creditar a tua compra, contabilidade, prevenção de fraude. Nunca vemos nem guardamos os dados do teu cartão; o pagamento é tratado pelo nosso parceiro de pagamentos.</td><td>Contrato, obrigação legal</td></tr>
+<tr><td>Registos técnicos (endereço IP, carimbos de data e hora)</td><td>Segurança, limitação de velocidade e prevenção de abusos nos nossos servidores</td><td>Interesse legítimo</td></tr>
+<tr><td>E-mails de apoio</td><td>Ajudar-te quando nos contactas</td><td>Interesse legítimo</td></tr>
+</table>
+<p>Não pedimos a tua data de nascimento nem quaisquer outros dados de que não precisamos (minimização dos dados). Não usamos rastreadores de publicidade nem de análise. A app guarda o teu token de sessão e a tua preferência de língua no armazenamento local do teu navegador, apenas para fins funcionais.</p>
+
+<h2>3. Quem nos ajuda a tratar os dados</h2>
+<table>
+<tr><th>Entidade</th><th>Função</th><th>Localização</th></tr>
+<tr><td>Supabase</td><td>Contas e alojamento da base de dados</td><td>UE (Frankfurt, Alemanha)</td></tr>
+<tr><td>Cloudflare</td><td>Gateway de análise (worker), DNS</td><td>UE/EUA, EU Data Privacy Framework &amp; cláusulas contratuais-tipo (SCC)</td></tr>
+<tr><td>Anthropic</td><td>Análise por IA da tua foto (API do Claude); os dados da API não são usados para treinar modelos</td><td>EUA, protegidos pelas Cláusulas Contratuais-Tipo da UE / DPF</td></tr>
+<tr><td>Parceiro de pagamentos</td><td>Pagamentos (Merchant of Record, responsável independente pelo tratamento)</td><td>UE/EEE ou um país com uma decisão de adequação da UE</td></tr>
+<tr><td>GitHub Pages</td><td>Alojamento dos ficheiros estáticos da app; pode registar endereços IP</td><td>EUA, DPF</td></tr>
+</table>
+<p>Temos acordos de tratamento de dados com os nossos subcontratantes. Nunca vendemos dados pessoais.</p>
+
+<h2>4. Durante quanto tempo guardamos as coisas</h2>
+<p>Dados da conta: até apagares a tua conta. Leituras guardadas: até as apagares (ou apagares a tua conta). Fotos: <strong>não são guardadas de todo</strong>. Registos de transações: até 7 anos (legislação fiscal neerlandesa). E-mails de apoio: até 2 anos. Apagar a tua conta remove automaticamente o teu perfil, o teu saldo e as leituras guardadas (eliminação em cascata).</p>
+
+<h2>5. Os teus direitos</h2>
+<p>Podes pedir-nos acesso, retificação, apagamento, limitação, portabilidade, ou opor-te ao tratamento: escreve para <a href="mailto:support@toereading.app">support@toereading.app</a> e respondemos no prazo de um mês. Podes apagar tu próprio as leituras guardadas na app; para a eliminação completa da conta, envia-nos um e-mail (um botão de eliminação na app está a caminho). Podes também apresentar queixa à autoridade de controlo neerlandesa, a <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a> (a autoridade neerlandesa de proteção de dados).</p>
+
+<h2>6. Segurança</h2>
+<p>Os dados viajam encriptados (TLS). As palavras-passe são guardadas como hashes seguros. O acesso à base de dados está protegido com segurança ao nível da linha: os teus dados só podem ser lidos por ti. As chaves de servidor vivem apenas em ambientes de servidor, nunca na app. Se, apesar de tudo, ocorrer uma violação de dados que represente um risco para ti, comunicamo-la à Autoriteit Persoonsgegevens no prazo de 72 horas e informamos-te quando tal for exigido.</p>
+
+<h2>7. Crianças</h2>
+<p>O Toe Reading não se destina a crianças com menos de 16 anos, e não tratamos conscientemente os dados delas.</p>
+
+<h2>8. Alterações</h2>
+<p>Se alterarmos esta política de forma relevante, avisamos-te na app ou por e-mail antes de a alteração entrar em vigor.</p>
+</main>
+<main lang-blok="pl">
+<h1>Polityka prywatności</h1>
+<p class="datum">Data wejścia w życie: 13 lipca 2026</p>
+
+<div class="kaartje groen">
+<p><strong>W skrócie:</strong> zdjęcia twoich stóp są analizowane i natychmiast po tym usuwane: nigdy nie są zapisywane, nigdy nie służą do trenowania AI. Przechowujemy tylko to, czego potrzebuje konto: twoje imię, e-mail, saldo analiz i (jeśli je zapisujesz) teksty odczytów. Bez śledzenia, bez reklam, bez cookies analitycznych.</p>
+</div>
+
+<h2>1. Kto odpowiada za dane</h2>
+<p>Administratorem twoich danych osobowych jest <strong>Ferri Somogyi Productions</strong>, z siedzibą w Niderlandach (KvK nr 34286815, identyfikator VAT NL001933433B06). Kontakt: <a href="mailto:support@toereading.app">support@toereading.app</a>. W przypadku zakupów nasz partner płatniczy występuje jako Merchant of Record (formalny sprzedawca) i jest niezależnym administratorem danych płatniczych, które przetwarza; link do własnej polityki prywatności partnera znajdziesz przy kasie i na potwierdzeniu zakupu.</p>
+
+<h2>2. Co przetwarzamy i dlaczego</h2>
+<table>
+<tr><th>Dane</th><th>Cel</th><th>Podstawa prawna</th></tr>
+<tr><td>Imię, e-mail, hasło (przechowywane jako bezpieczny hash)</td><td>Twoje konto: logowanie, weryfikacja e-maila, reset hasła</td><td>Umowa</td></tr>
+<tr><td>Saldo analiz i liczniki użycia</td><td>Wiedza o tym, ile odczytów możesz uruchomić (darmowe / pakiet / subskrypcja, licznik fair use)</td><td>Umowa</td></tr>
+<tr><td><strong>Zdjęcia stóp</strong></td><td>Wygenerowanie odczytu, o który prosisz, nic więcej. Przetwarzane w pamięci, wysyłane w postaci zaszyfrowanej do naszego dostawcy AI i <strong>nigdzie nie zapisywane</strong> po zakończeniu analizy. Nie służą do trenowania modeli AI.</td><td>Umowa (każdą analizę aktywnie zamawiasz)</td></tr>
+<tr><td>Zapisane odczyty („moje odczyty”)</td><td>Tylko kody klasyfikacji i teksty odczytów, nigdy zdjęcia. Możesz je usunąć w każdej chwili.</td><td>Umowa</td></tr>
+<tr><td>Metadane transakcji (produkt, kwota, identyfikator transakcji płatniczej)</td><td>Zaksięgowanie twojego zakupu, księgowość, zapobieganie oszustwom. Nigdy nie widzimy ani nie przechowujemy danych twojej karty; płatność obsługuje nasz partner płatniczy.</td><td>Umowa, obowiązek prawny</td></tr>
+<tr><td>Logi techniczne (adres IP, znaczniki czasu)</td><td>Bezpieczeństwo, limity szybkości i zapobieganie nadużyciom na naszych serwerach</td><td>Prawnie uzasadniony interes</td></tr>
+<tr><td>E-maile do wsparcia</td><td>Pomoc, gdy się z nami kontaktujesz</td><td>Prawnie uzasadniony interes</td></tr>
+</table>
+<p>Nie pytamy o twoją datę urodzenia ani o inne dane, których nie potrzebujemy (minimalizacja danych). Nie używamy trackerów reklamowych ani analitycznych. Aplikacja przechowuje twój token sesji i preferencję językową w local storage przeglądarki, wyłącznie w celach funkcjonalnych.</p>
+
+<h2>3. Kto pomaga nam przetwarzać dane</h2>
+<table>
+<tr><th>Podmiot</th><th>Rola</th><th>Lokalizacja</th></tr>
+<tr><td>Supabase</td><td>Konta i hosting bazy danych</td><td>UE (Frankfurt, Niemcy)</td></tr>
+<tr><td>Cloudflare</td><td>Brama analizy (worker), DNS</td><td>UE/USA, EU Data Privacy Framework &amp; standardowe klauzule umowne (SCC)</td></tr>
+<tr><td>Anthropic</td><td>Analiza AI twojego zdjęcia (Claude API); dane z API nie służą do trenowania modeli</td><td>USA, ochrona przez standardowe klauzule umowne UE / DPF</td></tr>
+<tr><td>Partner płatniczy</td><td>Płatności (Merchant of Record, niezależny administrator)</td><td>UE/EOG lub kraj objęty decyzją UE stwierdzającą odpowiedni stopień ochrony</td></tr>
+<tr><td>GitHub Pages</td><td>Hosting statycznych plików aplikacji; może logować adresy IP</td><td>USA, DPF</td></tr>
+</table>
+<p>Z naszymi podmiotami przetwarzającymi mamy zawarte umowy powierzenia przetwarzania. Nigdy nie sprzedajemy danych osobowych.</p>
+
+<h2>4. Jak długo przechowujemy dane</h2>
+<p>Dane konta: dopóki nie usuniesz konta. Zapisane odczyty: dopóki ich nie usuniesz (albo swojego konta). Zdjęcia: <strong>w ogóle nieprzechowywane</strong>. Dokumentacja transakcji: do 7 lat (niderlandzkie prawo podatkowe). E-maile do wsparcia: do 2 lat. Usunięcie konta automatycznie usuwa twój profil, saldo analiz i zapisane odczyty (usuwanie kaskadowe).</p>
+
+<h2>5. Twoje prawa</h2>
+<p>Możesz poprosić nas o dostęp do danych, ich sprostowanie, usunięcie, ograniczenie przetwarzania lub przeniesienie, a także wnieść sprzeciw wobec przetwarzania: napisz na <a href="mailto:support@toereading.app">support@toereading.app</a>, a odpowiemy w ciągu miesiąca. Zapisane odczyty możesz usunąć samodzielnie w aplikacji; aby całkowicie usunąć konto, napisz do nas (przycisk usuwania w aplikacji jest w drodze). Możesz też złożyć skargę do niderlandzkiego organu nadzorczego, którym jest <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a> (niderlandzki organ ochrony danych).</p>
+
+<h2>6. Bezpieczeństwo</h2>
+<p>Dane podróżują w postaci zaszyfrowanej (TLS). Hasła są przechowywane jako bezpieczne hashe. Dostęp do bazy danych chroni row-level security: twoje dane są czytelne tylko dla ciebie. Klucze serwerowe istnieją wyłącznie w środowiskach serwerowych, nigdy w aplikacji. Gdyby mimo to doszło do naruszenia ochrony danych stwarzającego dla ciebie ryzyko, zgłosimy je w ciągu 72 godzin do Autoriteit Persoonsgegevens i poinformujemy cię, gdy będzie to wymagane.</p>
+
+<h2>7. Dzieci</h2>
+<p>Toe Reading nie jest przeznaczone dla dzieci poniżej 16 lat i nie przetwarzamy świadomie ich danych.</p>
+
+<h2>8. Zmiany</h2>
+<p>Jeśli zmienimy tę politykę w istotny sposób, poinformujemy cię o tym w aplikacji lub e-mailem, zanim zmiana wejdzie w życie.</p>
+</main>
+<main lang-blok="ru">
+<h1>Политика конфиденциальности</h1>
+<p class="datum">Дата вступления в силу: 13 июля 2026 г.</p>
+
+<div class="kaartje groen">
+<p><strong>Коротко:</strong> фотографии твоих стоп анализируются и сразу же удаляются: они никогда не сохраняются и никогда не используются для обучения ИИ. Мы храним только то, что нужно аккаунту: твоё имя, адрес электронной почты, баланс кредитов и (если ты их сохраняешь) тексты твоих чтений. Никакого трекинга, никакой рекламы, никаких аналитических cookie.</p>
+</div>
+
+<h2>1. Кто отвечает за данные</h2>
+<p>Контролёром твоих персональных данных является <strong>Ferri Somogyi Productions</strong>, зарегистрированная в Нидерландах (номер KvK 34286815, идентификатор НДС NL001933433B06). Контакт: <a href="mailto:support@toereading.app">support@toereading.app</a>. При покупках наш платёжный партнёр выступает как Merchant of Record (официальный продавец) и является независимым контролёром платёжных данных, которые он обрабатывает; собственная политика конфиденциальности партнёра доступна по ссылке при оформлении заказа и в твоём чеке.</p>
+
+<h2>2. Что мы обрабатываем и зачем</h2>
+<table>
+<tr><th>Данные</th><th>Цель</th><th>Правовое основание</th></tr>
+<tr><td>Имя, адрес электронной почты, пароль (хранится в виде защищённого хеша)</td><td>Твой аккаунт: вход, подтверждение адреса электронной почты, сброс пароля</td><td>Договор</td></tr>
+<tr><td>Баланс кредитов и счётчики использования</td><td>Понимание того, сколько чтений ты можешь запустить (бесплатные / пакет / подписка, счётчик добросовестного использования)</td><td>Договор</td></tr>
+<tr><td><strong>Фотографии стоп</strong></td><td>Генерация запрошенного тобой чтения, и ничего больше. Обрабатываются в памяти, отправляются в зашифрованном виде нашему ИИ-провайдеру и <strong>нигде не сохраняются</strong> после завершения анализа. Не используются для обучения ИИ-моделей.</td><td>Договор (каждый анализ ты запрашиваешь сам, активно)</td></tr>
+<tr><td>Сохранённые чтения («мои чтения»)</td><td>Только коды классификации и тексты чтений, никогда не фотографии. Ты можешь удалить их в любой момент.</td><td>Договор</td></tr>
+<tr><td>Метаданные транзакций (продукт, сумма, идентификатор платёжной транзакции)</td><td>Зачисление твоей покупки, бухгалтерия, предотвращение мошенничества. Мы никогда не видим и не храним данные твоей карты; платёж обрабатывает наш платёжный партнёр.</td><td>Договор, юридическая обязанность</td></tr>
+<tr><td>Технические логи (IP-адрес, отметки времени)</td><td>Безопасность, ограничение частоты запросов и предотвращение злоупотреблений на наших серверах</td><td>Законный интерес</td></tr>
+<tr><td>Письма в поддержку</td><td>Помощь тебе, когда ты к нам обращаешься</td><td>Законный интерес</td></tr>
+</table>
+<p>Мы не запрашиваем дату рождения и любые другие данные, которые нам не нужны (минимизация данных). Мы не используем рекламные или аналитические трекеры. Приложение хранит твой токен сессии и языковую настройку в локальном хранилище браузера, исключительно в функциональных целях.</p>
+
+<h2>3. Кто помогает нам обрабатывать данные</h2>
+<table>
+<tr><th>Сторона</th><th>Роль</th><th>Расположение</th></tr>
+<tr><td>Supabase</td><td>Аккаунты и хостинг базы данных</td><td>ЕС (Франкфурт, Германия)</td></tr>
+<tr><td>Cloudflare</td><td>Шлюз анализа (worker), DNS</td><td>ЕС/США, EU Data Privacy Framework &amp; SCCs</td></tr>
+<tr><td>Anthropic</td><td>ИИ-анализ твоего фото (Claude API); данные API не используются для обучения моделей</td><td>США, защита через стандартные договорные положения ЕС / DPF</td></tr>
+<tr><td>Платёжный партнёр</td><td>Платежи (Merchant of Record, независимый контролёр)</td><td>ЕС/ЕЭЗ или страна с решением ЕС об адекватности защиты данных</td></tr>
+<tr><td>GitHub Pages</td><td>Хостинг статических файлов приложения; может логировать IP-адреса</td><td>США, DPF</td></tr>
+</table>
+<p>С нашими обработчиками у нас заключены соглашения об обработке данных. Мы никогда не продаём персональные данные.</p>
+
+<h2>4. Как долго мы храним данные</h2>
+<p>Данные аккаунта: пока ты не удалишь аккаунт. Сохранённые чтения: пока ты не удалишь их (или свой аккаунт). Фотографии: <strong>не хранятся вовсе</strong>. Записи о транзакциях: до 7 лет (налоговое законодательство Нидерландов). Письма в поддержку: до 2 лет. Удаление аккаунта автоматически удаляет твой профиль, баланс кредитов и сохранённые чтения (каскадное удаление).</p>
+
+<h2>5. Твои права</h2>
+<p>Ты можешь запросить у нас доступ, исправление, удаление, ограничение, переносимость данных или возразить против обработки: напиши на <a href="mailto:support@toereading.app">support@toereading.app</a>, и мы ответим в течение месяца. Сохранённые чтения ты можешь удалить сам в приложении; для полного удаления аккаунта напиши нам (кнопка удаления в приложении уже на подходе). Ты также можешь подать жалобу в нидерландский надзорный орган по защите данных <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
+
+<h2>6. Безопасность</h2>
+<p>Данные передаются в зашифрованном виде (TLS). Пароли хранятся в виде защищённых хешей. Доступ к базе данных защищён безопасностью на уровне строк: твои данные может читать только ты. Серверные ключи существуют только в серверных окружениях, никогда в приложении. Если, несмотря на это, произойдёт утечка данных, представляющая для тебя риск, мы сообщим о ней в Autoriteit Persoonsgegevens в течение 72 часов и проинформируем тебя, когда это требуется.</p>
+
+<h2>7. Дети</h2>
+<p>Toe Reading не предназначен для детей младше 16 лет, и мы сознательно не обрабатываем их данные.</p>
+
+<h2>8. Изменения</h2>
+<p>Если мы существенно изменим эту политику, мы сообщим тебе об этом в приложении или по электронной почте до вступления изменения в силу.</p>
+</main>
+<main lang-blok="tr">
+<h1>Gizlilik Politikası</h1>
+<p class="datum">Yürürlük tarihi: 13 Temmuz 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Kısa özet:</strong> ayak fotoğrafların analiz edilir ve hemen silinir: hiçbir zaman saklanmaz, hiçbir zaman yapay zekâ eğitiminde kullanılmaz. Yalnızca bir hesabın gerektirdiklerini tutarız: adın, e-postan, kredi bakiyen ve (kaydedersen) okuma metinlerin. Takip yok, reklam yok, analitik çerez yok.</p>
+</div>
+
+<h2>1. Sorumlu kim</h2>
+<p>Kişisel verilerinin sorumlusu, Hollanda'da kayıtlı <strong>Ferri Somogyi Productions</strong>'tır (KvK no. 34286815, KDV kimlik no. NL001933433B06). İletişim: <a href="mailto:support@toereading.app">support@toereading.app</a>. Satın almalarda ödeme ortağımız Merchant of Record (kayıtlı satıcı) olarak hareket eder ve işlediği ödeme verileri için bağımsız bir veri sorumlusudur; ortağın kendi gizlilik politikasının bağlantısı ödeme sayfasında ve makbuzunda yer alır.</p>
+
+<h2>2. Neyi, neden işliyoruz</h2>
+<table>
+<tr><th>Veri</th><th>Amaç</th><th>Hukuki dayanak</th></tr>
+<tr><td>Ad, e-posta, parola (güvenli bir karma olarak saklanır)</td><td>Hesabın: giriş, e-posta doğrulama, parola sıfırlama</td><td>Sözleşme</td></tr>
+<tr><td>Kredi bakiyesi ve kullanım sayaçları</td><td>Kaç okuma yapabileceğini bilmek (ücretsiz / paket / abonelik, adil kullanım sayacı)</td><td>Sözleşme</td></tr>
+<tr><td><strong>Ayak fotoğrafları</strong></td><td>Talep ettiğin okumayı üretmek, başka hiçbir şey. Bellekte işlenir, yapay zekâ sağlayıcımıza şifreli gönderilir ve analiz tamamlandıktan sonra <strong>hiçbir yerde saklanmaz</strong>. Yapay zekâ modellerini eğitmek için kullanılmaz.</td><td>Sözleşme (her analizi etkin olarak sen talep edersin)</td></tr>
+<tr><td>Kaydedilen okumalar ("okumalarım")</td><td>Yalnızca sınıflandırma kodları ve okuma metinleri, asla fotoğraflar değil. İstediğin zaman silebilirsin.</td><td>Sözleşme</td></tr>
+<tr><td>İşlem üstverileri (ürün, tutar, ödeme işlem kimliği)</td><td>Satın almanı hesabına işlemek, muhasebe, dolandırıcılığı önleme. Kart bilgilerini hiçbir zaman görmez ve saklamayız; ödemeyi ödeme ortağımız yürütür.</td><td>Sözleşme, yasal yükümlülük</td></tr>
+<tr><td>Teknik günlükler (IP adresi, zaman damgaları)</td><td>Sunucularımızda güvenlik, hız sınırlama ve kötüye kullanımı önleme</td><td>Meşru menfaat</td></tr>
+<tr><td>Destek e-postaları</td><td>Bize ulaştığında sana yardımcı olmak</td><td>Meşru menfaat</td></tr>
+</table>
+<p>Doğum tarihini ya da ihtiyacımız olmayan başka hiçbir veriyi istemeyiz (veri minimizasyonu). Reklam ya da analitik takipçiler kullanmayız. Uygulama, oturum belirtecini ve dil tercihini tarayıcının yerel depolamasında tutar; bunlar yalnızca işlevseldir.</p>
+
+<h2>3. Veri işlemede bize kim yardım ediyor</h2>
+<table>
+<tr><th>Taraf</th><th>Rol</th><th>Konum</th></tr>
+<tr><td>Supabase</td><td>Hesaplar ve veritabanı barındırma</td><td>AB (Frankfurt, Almanya)</td></tr>
+<tr><td>Cloudflare</td><td>Analiz geçidi (worker), DNS</td><td>AB/ABD, AB Veri Gizliliği Çerçevesi &amp; SCC'ler</td></tr>
+<tr><td>Anthropic</td><td>Fotoğrafının yapay zekâ analizi (Claude API); API verileri modelleri eğitmek için kullanılmaz</td><td>ABD, AB Standart Sözleşme Maddeleri / DPF ile korunur</td></tr>
+<tr><td>Ödeme ortağı</td><td>Ödemeler (Merchant of Record, bağımsız veri sorumlusu)</td><td>AB/AEA ya da AB yeterlilik kararı bulunan bir ülke</td></tr>
+<tr><td>GitHub Pages</td><td>Uygulamanın statik dosyalarının barındırılması; IP adreslerini günlüğe kaydedebilir</td><td>ABD, DPF</td></tr>
+</table>
+<p>İşleyicilerimizle veri işleme sözleşmelerimiz var. Kişisel verileri asla satmayız.</p>
+
+<h2>4. Verileri ne kadar tutuyoruz</h2>
+<p>Hesap verileri: hesabını silene kadar. Kaydedilen okumalar: onları (ya da hesabını) silene kadar. Fotoğraflar: <strong>hiç tutulmaz</strong>. İşlem kayıtları: 7 yıla kadar (Hollanda vergi hukuku). Destek e-postaları: 2 yıla kadar. Hesabını silmek profilini, kredi bakiyeni ve kaydedilen okumalarını otomatik olarak kaldırır (basamaklı silme).</p>
+
+<h2>5. Hakların</h2>
+<p>Bizden erişim, düzeltme, silme, kısıtlama, taşınabilirlik isteyebilir ya da işlemeye itiraz edebilirsin: <a href="mailto:support@toereading.app">support@toereading.app</a> adresine e-posta gönder, bir ay içinde yanıtlarız. Kaydedilen okumaları uygulamada kendin silebilirsin; hesabının tamamen silinmesi için bize e-posta gönder (uygulama içi silme düğmesi yolda). Ayrıca Hollanda denetim makamı olan <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>'e (Hollanda veri koruma otoritesi) şikâyette bulunabilirsin.</p>
+
+<h2>6. Güvenlik</h2>
+<p>Veriler şifreli olarak taşınır (TLS). Parolalar güvenli karmalar olarak saklanır. Veritabanı erişimi satır düzeyinde güvenlikle korunur: verilerin yalnızca senin tarafından okunabilir. Sunucu anahtarları yalnızca sunucu ortamlarında bulunur, uygulamada asla. Buna rağmen senin için risk oluşturan bir veri ihlali yaşanırsa, bunu 72 saat içinde Autoriteit Persoonsgegevens'e bildirir ve gerektiğinde seni bilgilendiririz.</p>
+
+<h2>7. Çocuklar</h2>
+<p>Toe Reading 16 yaş altı çocuklara yönelik değildir ve onların verilerini bilerek işlemeyiz.</p>
+
+<h2>8. Değişiklikler</h2>
+<p>Bu politikayı önemli bir biçimde değiştirirsek, değişiklik yürürlüğe girmeden önce seni uygulamada ya da e-postayla bilgilendiririz.</p>
+</main>
+<main lang-blok="ar">
+<h1>سياسة الخصوصية</h1>
+<p class="datum">تاريخ السريان: 13 يوليو 2026</p>
+
+<div class="kaartje groen">
+<p><strong>الخلاصة:</strong> صور قدميك تُحلَّل ثم تُحذف فورًا: لا تُخزَّن أبدًا، ولا تُستخدم أبدًا لتدريب الذكاء الاصطناعي. لا نحتفظ إلا بما يحتاجه الحساب: اسمك وبريدك الإلكتروني ورصيدك و(إن حفظتها) نصوص قراءاتك. لا تتبّع، ولا إعلانات، ولا ملفات تعريف ارتباط تحليلية.</p>
+</div>
+
+<h2>1. من المسؤول</h2>
+<p>الجهة المتحكمة في بياناتك الشخصية هي <strong>Ferri Somogyi Productions</strong>، المسجلة في هولندا (رقم KvK ‏34286815، الرقم الضريبي NL001933433B06). للتواصل: <a href="mailto:support@toereading.app">support@toereading.app</a>. أما المشتريات، فيتصرف شريك الدفع الخاص بنا بصفة Merchant of Record (البائع القانوني) وهو جهة متحكمة مستقلة فيما يخص بيانات الدفع التي يعالجها؛ وسياسة الخصوصية الخاصة بالشريك مرتبطة عند إتمام الشراء وعلى إيصالك.</p>
+
+<h2>2. ما الذي نعالجه، ولماذا</h2>
+<table>
+<tr><th>البيانات</th><th>الغرض</th><th>الأساس القانوني</th></tr>
+<tr><td>الاسم والبريد الإلكتروني وكلمة المرور (مخزنة كتجزئة آمنة)</td><td>حسابك: تسجيل الدخول، والتحقق من البريد الإلكتروني، وإعادة تعيين كلمة المرور</td><td>العقد</td></tr>
+<tr><td>الرصيد وعدّادات الاستخدام</td><td>معرفة عدد القراءات التي يمكنك إجراؤها (مجاني / باقة / اشتراك، عدّاد الاستخدام العادل)</td><td>العقد</td></tr>
+<tr><td><strong>صور القدمين</strong></td><td>توليد القراءة التي تطلبها، لا شيء غير ذلك. تُعالج في الذاكرة، وتُرسل مشفَّرة إلى مزوّد الذكاء الاصطناعي لدينا، و<strong>لا تُخزَّن في أي مكان</strong> بعد اكتمال التحليل. ولا تُستخدم لتدريب نماذج الذكاء الاصطناعي.</td><td>العقد (أنت تطلب كل تحليل بنفسك)</td></tr>
+<tr><td>القراءات المحفوظة («قراءاتي»)</td><td>رموز التصنيف ونصوص القراءات فقط، ولا صور أبدًا. يمكنك حذفها في أي وقت.</td><td>العقد</td></tr>
+<tr><td>بيانات المعاملات الوصفية (المنتج، والمبلغ، ومعرّف معاملة الدفع)</td><td>إضافة رصيد مشترياتك، ومسك الدفاتر، ومنع الاحتيال. لا نرى بيانات بطاقتك ولا نخزنها أبدًا؛ فشريك الدفع لدينا يتولى الدفع.</td><td>العقد، والتزام قانوني</td></tr>
+<tr><td>السجلات التقنية (عنوان IP، والطوابع الزمنية)</td><td>الأمان وتحديد المعدل ومنع إساءة الاستخدام على خوادمنا</td><td>المصلحة المشروعة</td></tr>
+<tr><td>رسائل الدعم</td><td>مساعدتك عندما تتواصل معنا</td><td>المصلحة المشروعة</td></tr>
+</table>
+<p>لا نطلب تاريخ ميلادك ولا أي بيانات أخرى لا نحتاجها (مبدأ تقليل البيانات). ولا نستخدم متتبعات إعلانية أو تحليلية. يخزّن التطبيق رمز جلستك وتفضيل اللغة في التخزين المحلي لمتصفحك، لأغراض وظيفية فقط.</p>
+
+<h2>3. من يساعدنا في معالجة البيانات</h2>
+<table>
+<tr><th>الجهة</th><th>الدور</th><th>الموقع</th></tr>
+<tr><td>Supabase</td><td>استضافة الحسابات وقاعدة البيانات</td><td>الاتحاد الأوروبي (فرانكفورت، ألمانيا)</td></tr>
+<tr><td>Cloudflare</td><td>بوابة التحليل (worker)، وخدمة DNS</td><td>الاتحاد الأوروبي/الولايات المتحدة، إطار خصوصية البيانات بين الاتحاد الأوروبي والولايات المتحدة &amp; البنود التعاقدية القياسية</td></tr>
+<tr><td>Anthropic</td><td>تحليل صورتك بالذكاء الاصطناعي (واجهة Claude البرمجية)؛ بيانات الواجهة البرمجية لا تُستخدم لتدريب النماذج</td><td>الولايات المتحدة، بحماية البنود التعاقدية القياسية للاتحاد الأوروبي / إطار خصوصية البيانات</td></tr>
+<tr><td>شريك الدفع</td><td>المدفوعات (Merchant of Record، جهة متحكمة مستقلة)</td><td>الاتحاد الأوروبي/المنطقة الاقتصادية الأوروبية أو بلد صادر بشأنه قرار ملاءمة من الاتحاد الأوروبي</td></tr>
+<tr><td>GitHub Pages</td><td>استضافة الملفات الثابتة للتطبيق؛ قد يسجل عناوين IP</td><td>الولايات المتحدة، إطار خصوصية البيانات</td></tr>
+</table>
+<p>لدينا اتفاقيات معالجة بيانات مع الجهات المعالجة لدينا. ولا نبيع البيانات الشخصية أبدًا.</p>
+
+<h2>4. مدة الاحتفاظ بالبيانات</h2>
+<p>بيانات الحساب: حتى تحذف حسابك. القراءات المحفوظة: حتى تحذفها (أو تحذف حسابك). الصور: <strong>لا نحتفظ بها إطلاقًا</strong>. سجلات المعاملات: حتى 7 سنوات (قانون الضرائب الهولندي). رسائل الدعم: حتى سنتين. حذف حسابك يزيل ملفك الشخصي ورصيدك وقراءاتك المحفوظة تلقائيًا (حذف متسلسل).</p>
+
+<h2>5. حقوقك</h2>
+<p>يمكنك أن تطلب منا الاطلاع أو التصحيح أو الحذف أو تقييد المعالجة أو نقل البيانات، أو الاعتراض على المعالجة: راسلنا على <a href="mailto:support@toereading.app">support@toereading.app</a> وسنرد خلال شهر. يمكنك حذف القراءات المحفوظة بنفسك في التطبيق؛ أما حذف الحساب بالكامل فراسلنا بالبريد الإلكتروني (زر حذف داخل التطبيق في الطريق). ويمكنك أيضًا تقديم شكوى إلى هيئة الرقابة الهولندية لحماية البيانات، <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
+
+<h2>6. الأمان</h2>
+<p>تنتقل البيانات مشفَّرة (TLS). وتُخزَّن كلمات المرور كتجزئات آمنة. والوصول إلى قاعدة البيانات محمي بأمان على مستوى الصفوف: بياناتك لا يقرؤها أحد سواك. ومفاتيح الخوادم موجودة في بيئات الخوادم فقط، وليست في التطبيق أبدًا. وإذا وقع رغم ذلك خرق للبيانات يشكّل خطرًا عليك، فسنبلغ عنه هيئة Autoriteit Persoonsgegevens خلال 72 ساعة ونعلمك بذلك عند الاقتضاء.</p>
+
+<h2>7. الأطفال</h2>
+<p>Toe Reading غير موجّه للأطفال دون 16 عامًا، ولا نعالج بياناتهم عن علم.</p>
+
+<h2>8. التغييرات</h2>
+<p>إذا غيّرنا هذه السياسة تغييرًا جوهريًا، فسنعلمك في التطبيق أو عبر البريد الإلكتروني قبل سريان التغيير.</p>
+</main>
+<main lang-blok="zh">
+<h1>隐私政策</h1>
+<p class="datum">生效日期：2026 年 7 月 13 日</p>
+
+<div class="kaartje groen">
+<p><strong>简短版本：</strong>你的脚部照片经分析后会被立即丢弃：绝不存储，也绝不用于训练 AI。我们只保留账户运转所必需的信息：你的姓名、邮箱、额度余额，以及（如果你选择保存）你的解读文本。没有追踪，没有广告，没有分析类 Cookie。</p>
+</div>
+
+<h2>1. 谁负责</h2>
+<p>你的个人数据的控制者是 <strong>Ferri Somogyi Productions</strong>，注册于荷兰（KvK 编号 34286815，增值税号 NL001933433B06）。联系方式：<a href="mailto:support@toereading.app">support@toereading.app</a>。就购买而言，我们的支付伙伴担任 Merchant of Record（登记商户），并就其处理的支付数据担任独立控制者；该伙伴自身的隐私政策会在结算时以及你的收据上给出链接。</p>
+
+<h2>2. 我们处理什么，为什么处理</h2>
+<table>
+<tr><th>数据</th><th>目的</th><th>法律依据</th></tr>
+<tr><td>姓名、邮箱、密码（以安全哈希形式存储）</td><td>你的账户：登录、邮箱验证、密码重置</td><td>合同</td></tr>
+<tr><td>额度余额与使用计数</td><td>了解你还能运行多少次解读（免费/套餐/订阅、合理使用计数器）</td><td>合同</td></tr>
+<tr><td><strong>脚部照片</strong></td><td>生成你所请求的解读，别无他用。在内存中处理，以加密方式发送给我们的 AI 提供商，分析完成后<strong>不在任何地方存储</strong>。不用于训练 AI 模型。</td><td>合同（每次分析均由你主动发起）</td></tr>
+<tr><td>已保存的解读（“我的解读”）</td><td>只保存分类代码和解读文本，绝不保存照片。你可以随时删除它们。</td><td>合同</td></tr>
+<tr><td>交易元数据（产品、金额、支付交易 ID）</td><td>为你的购买入账、记账、防范欺诈。我们绝不会看到或存储你的银行卡信息；付款由我们的支付伙伴处理。</td><td>合同、法定义务</td></tr>
+<tr><td>技术日志（IP 地址、时间戳）</td><td>我们服务器上的安全防护、频率限制与滥用防范</td><td>正当利益</td></tr>
+<tr><td>支持邮件</td><td>在你联系我们时为你提供帮助</td><td>正当利益</td></tr>
+</table>
+<p>我们不会询问你的出生日期或任何我们不需要的其他数据（数据最小化）。我们不使用广告或分析类追踪器。应用会在你浏览器的本地存储中保存你的会话令牌和语言偏好，仅用于功能目的。</p>
+
+<h2>3. 谁帮助我们处理数据</h2>
+<table>
+<tr><th>参与方</th><th>角色</th><th>所在地</th></tr>
+<tr><td>Supabase</td><td>账户与数据库托管</td><td>欧盟（德国法兰克福）</td></tr>
+<tr><td>Cloudflare</td><td>分析网关（worker）、DNS</td><td>欧盟/美国，欧盟数据隐私框架 &amp; 标准合同条款（SCC）</td></tr>
+<tr><td>Anthropic</td><td>对你的照片进行 AI 分析（Claude API）；API 数据不用于训练模型</td><td>美国，受欧盟标准合同条款（SCC）/DPF 保护</td></tr>
+<tr><td>支付伙伴</td><td>付款（Merchant of Record，独立控制者）</td><td>欧盟/欧洲经济区，或获得欧盟充分性认定的国家</td></tr>
+<tr><td>GitHub Pages</td><td>应用静态文件的托管；可能记录 IP 地址</td><td>美国，DPF</td></tr>
+</table>
+<p>我们与我们的处理者签有数据处理协议。我们绝不出售个人数据。</p>
+
+<h2>4. 我们保存多久</h2>
+<p>账户数据：保存至你删除账户为止。已保存的解读：保存至你删除它们（或删除账户）为止。照片：<strong>完全不保存</strong>。交易记录：最长 7 年（荷兰税法要求）。支持邮件：最长 2 年。删除账户会自动一并移除你的个人资料、额度余额和已保存的解读（级联删除）。</p>
+
+<h2>5. 你的权利</h2>
+<p>你可以向我们请求访问、更正、删除、限制处理、数据可携，或反对处理：请发邮件至 <a href="mailto:support@toereading.app">support@toereading.app</a>，我们会在一个月内回复。已保存的解读可由你自己在应用中删除；如需完整删除账户，请发邮件给我们（应用内删除按钮即将推出）。你也可以向荷兰监管机构 <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>（荷兰个人数据保护局）投诉。</p>
+
+<h2>6. 安全</h2>
+<p>数据以加密方式传输（TLS）。密码以安全哈希形式存储。数据库访问受行级安全（row-level security）保护：你的数据只有你能读取。服务器密钥只存在于服务器环境中，绝不放在应用里。如仍发生对你构成风险的数据泄露，我们将在 72 小时内向 Autoriteit Persoonsgegevens 报告，并在必要时通知你。</p>
+
+<h2>7. 儿童</h2>
+<p>Toe Reading 不面向 16 周岁以下的儿童，我们也不会有意处理他们的数据。</p>
+
+<h2>8. 变更</h2>
+<p>如果我们对本政策作出重要修改，我们会在修改生效前通过应用或电子邮件告知你。</p>
+</main>
+<main lang-blok="ja">
+<h1>プライバシーポリシー</h1>
+<p class="datum">発効日：2026年7月13日</p>
+
+<div class="kaartje groen">
+<p><strong>短くまとめると：</strong>足の写真は分析後すぐに破棄されます。保存されることも、AI の学習に使われることもありません。私たちが保管するのは、アカウントに必要なものだけです。名前、メールアドレス、クレジット残高、そして（保存を選んだ場合には）リーディングのテキストです。トラッキングなし、広告なし、分析用クッキーもなし。</p>
+</div>
+
+<h2>1. 責任者は誰か</h2>
+<p>あなたの個人データの管理者は、オランダで登記された <strong>Ferri Somogyi Productions</strong>（KvK 番号 34286815、VAT ID NL001933433B06）です。連絡先：<a href="mailto:support@toereading.app">support@toereading.app</a>。購入については、決済パートナーが Merchant of Record（記録上の販売者）として行動し、自らが処理する決済データについて独立した管理者となります。パートナー自身のプライバシーポリシーへのリンクは、チェックアウト画面とレシートにあります。</p>
+
+<h2>2. 何を、なぜ処理するのか</h2>
+<table>
+<tr><th>データ</th><th>目的</th><th>法的根拠</th></tr>
+<tr><td>名前、メールアドレス、パスワード（安全なハッシュとして保存）</td><td>あなたのアカウント：ログイン、メールアドレスの確認、パスワードの再設定</td><td>契約</td></tr>
+<tr><td>クレジット残高と利用カウンター</td><td>あと何回リーディングを実行できるかの把握（無料／パック／サブスクリプション、フェアユースのカウンター）</td><td>契約</td></tr>
+<tr><td><strong>足の写真</strong></td><td>あなたがリクエストしたリーディングの生成。それ以外には使いません。メモリ上で処理され、暗号化して AI プロバイダーに送信され、分析の完了後は<strong>どこにも保存されません</strong>。AI モデルの学習にも使われません。</td><td>契約（各分析はあなたが自ら依頼するものです）</td></tr>
+<tr><td>保存されたリーディング（「マイリーディング」）</td><td>分類コードとリーディングのテキストのみで、写真は決して含まれません。いつでも削除できます。</td><td>契約</td></tr>
+<tr><td>取引メタデータ（商品、金額、決済取引 ID）</td><td>購入分のクレジット付与、経理、不正防止。カード情報を私たちが見たり保存したりすることはありません。支払いは決済パートナーが処理します。</td><td>契約、法的義務</td></tr>
+<tr><td>技術ログ（IP アドレス、タイムスタンプ）</td><td>私たちのサーバーにおけるセキュリティ、レート制限、不正利用の防止</td><td>正当な利益</td></tr>
+<tr><td>サポートメール</td><td>お問い合わせいただいたときのサポート</td><td>正当な利益</td></tr>
+</table>
+<p>生年月日など、必要のないデータをお尋ねすることはありません（データ最小化）。広告用や分析用のトラッカーは使いません。アプリは、セッショントークンと言語設定をブラウザーのローカルストレージに保存しますが、これは機能上のものだけです。</p>
+
+<h2>3. データ処理を手伝ってくれるのは誰か</h2>
+<table>
+<tr><th>事業者</th><th>役割</th><th>所在地</th></tr>
+<tr><td>Supabase</td><td>アカウントとデータベースのホスティング</td><td>EU（ドイツ・フランクフルト）</td></tr>
+<tr><td>Cloudflare</td><td>分析ゲートウェイ（ワーカー）、DNS</td><td>EU/US、EU データプライバシーフレームワーク &amp; SCC</td></tr>
+<tr><td>Anthropic</td><td>写真の AI 分析（Claude API）。API のデータはモデルの学習に使われません</td><td>US、EU 標準契約条項／DPF により保護</td></tr>
+<tr><td>決済パートナー</td><td>決済（Merchant of Record、独立した管理者）</td><td>EU/EEA、または EU の十分性認定を受けた国</td></tr>
+<tr><td>GitHub Pages</td><td>アプリの静的ファイルのホスティング。IP アドレスが記録されることがあります</td><td>US、DPF</td></tr>
+</table>
+<p>処理者とはデータ処理契約を結んでいます。個人データを売ることは決してありません。</p>
+
+<h2>4. どのくらいの期間保管するのか</h2>
+<p>アカウントデータ：アカウントを削除するまで。保存されたリーディング：あなたが削除するまで（またはアカウントの削除まで）。写真：<strong>一切保管しません</strong>。取引記録：最長7年（オランダの税法による）。サポートメール：最長2年。アカウントを削除すると、プロフィール、クレジット残高、保存されたリーディングは自動的に削除されます（カスケード削除）。</p>
+
+<h2>5. あなたの権利</h2>
+<p>アクセス、訂正、削除、制限、データポータビリティを求めたり、処理に異議を申し立てたりすることができます。<a href="mailto:support@toereading.app">support@toereading.app</a> にメールをいただければ、1か月以内にお返事します。保存されたリーディングは、アプリ内でご自身で削除できます。アカウント全体の削除はメールでご依頼ください（アプリ内の削除ボタンは準備中です）。また、オランダの監督当局である <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>（オランダ個人データ保護局）に苦情を申し立てることもできます。</p>
+
+<h2>6. セキュリティ</h2>
+<p>データは暗号化されて送受信されます（TLS）。パスワードは安全なハッシュとして保存されます。データベースへのアクセスは行レベルセキュリティで守られており、あなたのデータを読めるのはあなただけです。サーバーキーはサーバー環境にのみ置かれ、アプリの中には決して置かれません。それでも万一、あなたにリスクを及ぼすデータ侵害が起きた場合には、72時間以内に Autoriteit Persoonsgegevens に報告し、必要な場合にはあなたにもお知らせします。</p>
+
+<h2>7. 子どもについて</h2>
+<p>Toe Reading は16歳未満の子どもを対象としておらず、そうした子どもたちのデータを故意に処理することはありません。</p>
+
+<h2>8. 変更</h2>
+<p>このポリシーを重要な点で変更する場合には、変更の発効前に、アプリ内またはメールでお知らせします。</p>
+</main>
+<main lang-blok="ko">
+<h1>개인정보 처리방침</h1>
+<p class="datum">시행일: 2026년 7월 13일</p>
+
+<div class="kaartje groen">
+<p><strong>짧은 버전:</strong> 발 사진은 분석된 뒤 곧바로 폐기돼요: 절대 저장되지 않고, AI 학습에도 절대 사용되지 않아요. 저희는 계정에 필요한 것만 보관해요: 이름, 이메일, 이용권 잔액, 그리고 (저장을 선택한 경우) 리딩 텍스트예요. 트래킹도, 광고도, 분석 쿠키도 없어요.</p>
+</div>
+
+<h2>1. 책임자는 누구인가요</h2>
+<p>당신의 개인정보에 대한 처리 책임자(컨트롤러)는 네덜란드에 등록된 <strong>Ferri Somogyi Productions</strong>예요(KvK 번호 34286815, 부가세 ID NL001933433B06). 문의: <a href="mailto:support@toereading.app">support@toereading.app</a>. 구매의 경우 저희 결제 파트너가 Merchant of Record(기록상 판매자)로서, 자신이 처리하는 결제 데이터에 대해 독립적인 컨트롤러예요. 결제 파트너 자체의 개인정보 처리방침은 결제 화면과 영수증에 링크되어 있어요.</p>
+
+<h2>2. 무엇을, 왜 처리하나요</h2>
+<table>
+<tr><th>데이터</th><th>목적</th><th>법적 근거</th></tr>
+<tr><td>이름, 이메일, 비밀번호(안전한 해시로 저장)</td><td>계정: 로그인, 이메일 확인, 비밀번호 재설정</td><td>계약</td></tr>
+<tr><td>이용권 잔액과 사용량 카운터</td><td>리딩을 몇 회 이용할 수 있는지 파악(무료 / 패키지 / 구독, 공정 이용 카운터)</td><td>계약</td></tr>
+<tr><td><strong>발 사진</strong></td><td>당신이 요청한 리딩을 생성하는 것, 그 밖에는 아무것도 없어요. 메모리에서 처리되고, 암호화되어 저희 AI 공급자에게 전송되며, 분석이 끝난 뒤에는 <strong>어디에도 저장되지 않아요</strong>. AI 모델 학습에 사용되지 않아요.</td><td>계약(각 분석은 당신이 직접 요청해요)</td></tr>
+<tr><td>저장된 리딩(“내 리딩”)</td><td>분류 코드와 리딩 텍스트만 저장하고, 사진은 절대 저장하지 않아요. 언제든지 삭제할 수 있어요.</td><td>계약</td></tr>
+<tr><td>거래 메타데이터(상품, 금액, 결제 거래 ID)</td><td>구매 내역 적립, 회계, 사기 방지. 카드 정보는 저희가 절대 보거나 저장하지 않아요. 결제는 저희 결제 파트너가 처리해요.</td><td>계약, 법적 의무</td></tr>
+<tr><td>기술 로그(IP 주소, 타임스탬프)</td><td>저희 서버의 보안, 속도 제한, 남용 방지</td><td>정당한 이익</td></tr>
+<tr><td>지원 이메일</td><td>문의하실 때 도와드리기 위해</td><td>정당한 이익</td></tr>
+</table>
+<p>생년월일 등 필요하지 않은 데이터는 요청하지 않아요(데이터 최소화). 광고 트래커나 분석 트래커는 사용하지 않아요. 앱은 세션 토큰과 언어 설정을 브라우저의 로컬 스토리지에 저장하는데, 순전히 기능적인 용도예요.</p>
+
+<h2>3. 데이터 처리를 돕는 곳</h2>
+<table>
+<tr><th>업체</th><th>역할</th><th>위치</th></tr>
+<tr><td>Supabase</td><td>계정 및 데이터베이스 호스팅</td><td>EU(독일 프랑크푸르트)</td></tr>
+<tr><td>Cloudflare</td><td>분석 게이트웨이(워커), DNS</td><td>EU/미국, EU Data Privacy Framework &amp; SCC</td></tr>
+<tr><td>Anthropic</td><td>사진의 AI 분석(Claude API). API 데이터는 모델 학습에 사용되지 않아요</td><td>미국, EU 표준계약조항(SCC)/DPF로 보호</td></tr>
+<tr><td>결제 파트너</td><td>결제(Merchant of Record, 독립적 컨트롤러)</td><td>EU/EEA 또는 EU 적정성 결정을 받은 국가</td></tr>
+<tr><td>GitHub Pages</td><td>앱 정적 파일의 호스팅. IP 주소를 기록할 수 있어요</td><td>미국, DPF</td></tr>
+</table>
+<p>처리자들과는 데이터 처리 계약을 맺고 있어요. 개인정보를 판매하는 일은 절대 없어요.</p>
+
+<h2>4. 얼마나 오래 보관하나요</h2>
+<p>계정 데이터: 계정을 삭제할 때까지. 저장된 리딩: 직접 삭제할 때까지(또는 계정을 삭제할 때까지). 사진: <strong>전혀 보관하지 않아요</strong>. 거래 기록: 최대 7년(네덜란드 세법). 지원 이메일: 최대 2년. 계정을 삭제하면 프로필, 이용권 잔액, 저장된 리딩이 자동으로 함께 삭제돼요(연쇄 삭제).</p>
+
+<h2>5. 당신의 권리</h2>
+<p>열람, 정정, 삭제, 처리 제한, 이동을 요청하거나 처리에 반대할 수 있어요: <a href="mailto:support@toereading.app">support@toereading.app</a>로 이메일을 보내 주시면 한 달 안에 답해 드려요. 저장된 리딩은 앱에서 직접 삭제할 수 있어요. 계정 전체를 삭제하려면 이메일을 보내 주세요(앱 내 삭제 버튼을 준비하고 있어요). 네덜란드 감독 기관인 <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>(네덜란드 개인정보 보호 당국)에 민원을 제기할 수도 있어요.</p>
+
+<h2>6. 보안</h2>
+<p>데이터는 암호화되어 이동해요(TLS). 비밀번호는 안전한 해시로 저장돼요. 데이터베이스 접근은 행 수준 보안(row-level security)으로 보호돼요: 당신의 데이터는 당신만 읽을 수 있어요. 서버 키는 서버 환경에만 존재하고, 앱에는 절대 담기지 않아요. 그럼에도 당신에게 위험이 되는 데이터 유출이 발생한다면, 72시간 이내에 Autoriteit Persoonsgegevens에 신고하고, 필요한 경우 당신에게도 알려 드려요.</p>
+
+<h2>7. 어린이</h2>
+<p>Toe Reading은 16세 미만 어린이를 위한 것이 아니며, 저희는 어린이의 데이터를 알면서 처리하지 않아요.</p>
+
+<h2>8. 변경</h2>
+<p>이 방침을 의미 있게 변경할 때는, 변경이 적용되기 전에 앱에서 또는 이메일로 알려 드려요.</p>
+</main>
+<main lang-blok="hi">
+<h1>गोपनीयता नीति</h1>
+<p class="datum">प्रभावी तिथि: 13 जुलाई 2026</p>
+
+<div class="kaartje groen">
+<p><strong>संक्षेप में:</strong> आपके पैरों की फ़ोटो का विश्लेषण होता है और वे तुरंत हटा दी जाती हैं: कभी सहेजी नहीं जातीं, कभी AI के प्रशिक्षण में इस्तेमाल नहीं होतीं। हम केवल वही रखते हैं जो एक खाते के लिए ज़रूरी है: आपका नाम, ईमेल, क्रेडिट-बैलेंस और (अगर आप उन्हें सहेजें तो) आपकी रीडिंग के पाठ। न ट्रैकिंग, न विज्ञापन, न एनालिटिक्स-कुकीज़।</p>
+</div>
+
+<h2>1. ज़िम्मेदार कौन है</h2>
+<p>आपके व्यक्तिगत डेटा का नियंत्रक (कंट्रोलर) <strong>Ferri Somogyi Productions</strong> है, जो नीदरलैंड्स में पंजीकृत है (KvK नंबर 34286815, VAT ID NL001933433B06)। संपर्क: <a href="mailto:support@toereading.app">support@toereading.app</a>। खरीद के मामले में हमारा भुगतान पार्टनर Merchant of Record (आधिकारिक विक्रेता) के रूप में कार्य करता है और अपने द्वारा संसाधित भुगतान-डेटा के लिए एक स्वतंत्र नियंत्रक है; पार्टनर की अपनी गोपनीयता नीति का लिंक चेकआउट पर और आपकी रसीद पर होता है।</p>
+
+<h2>2. हम क्या संसाधित करते हैं, और क्यों</h2>
+<table>
+<tr><th>डेटा</th><th>उद्देश्य</th><th>क़ानूनी आधार</th></tr>
+<tr><td>नाम, ईमेल, पासवर्ड (सुरक्षित हैश के रूप में संग्रहीत)</td><td>आपका खाता: लॉगिन, ईमेल-सत्यापन, पासवर्ड-रीसेट</td><td>अनुबंध</td></tr>
+<tr><td>क्रेडिट-बैलेंस और उपयोग-काउंटर</td><td>यह जानना कि आप कितनी रीडिंग चला सकते हैं (मुफ़्त / पैक / सब्सक्रिप्शन, फ़ेयर-यूज़ काउंटर)</td><td>अनुबंध</td></tr>
+<tr><td><strong>पैरों की फ़ोटो</strong></td><td>केवल आपकी अनुरोध की गई रीडिंग तैयार करना, और कुछ नहीं। मेमोरी में संसाधित, हमारे AI-प्रदाता को एन्क्रिप्ट होकर भेजी जाती हैं, और विश्लेषण पूरा होने के बाद <strong>कहीं भी संग्रहीत नहीं</strong> रहतीं। AI-मॉडलों के प्रशिक्षण में इस्तेमाल नहीं होतीं।</td><td>अनुबंध (हर विश्लेषण का अनुरोध आप स्वयं सक्रिय रूप से करते हैं)</td></tr>
+<tr><td>सहेजी गई रीडिंग ("मेरी रीडिंग")</td><td>केवल वर्गीकरण-कोड और रीडिंग के पाठ, फ़ोटो कभी नहीं। आप इन्हें कभी भी मिटा सकते हैं।</td><td>अनुबंध</td></tr>
+<tr><td>लेन-देन का मेटाडेटा (उत्पाद, राशि, भुगतान-लेनदेन ID)</td><td>आपकी खरीद का क्रेडिट जोड़ना, बहीखाता, धोखाधड़ी की रोकथाम। आपके कार्ड-विवरण हम न कभी देखते हैं, न संग्रहीत करते हैं; भुगतान हमारा भुगतान पार्टनर संभालता है।</td><td>अनुबंध, क़ानूनी दायित्व</td></tr>
+<tr><td>तकनीकी लॉग (IP-पता, टाइमस्टैम्प)</td><td>हमारे सर्वरों पर सुरक्षा, रेट-लिमिटिंग और दुरुपयोग की रोकथाम</td><td>वैध हित</td></tr>
+<tr><td>सहायता-ईमेल</td><td>जब आप हमसे संपर्क करें, तब आपकी मदद करना</td><td>वैध हित</td></tr>
+</table>
+<p>हम आपकी जन्मतिथि या कोई भी ऐसा डेटा नहीं माँगते जिसकी हमें ज़रूरत नहीं है (डेटा-न्यूनीकरण)। हम विज्ञापन- या एनालिटिक्स-ट्रैकर इस्तेमाल नहीं करते। ऐप आपका सत्र-टोकन और भाषा-वरीयता आपके ब्राउज़र के लोकल स्टोरेज में रखती है, केवल कार्यात्मक उद्देश्य से।</p>
+
+<h2>3. डेटा-प्रसंस्करण में हमारी मदद कौन करता है</h2>
+<table>
+<tr><th>पक्ष</th><th>भूमिका</th><th>स्थान</th></tr>
+<tr><td>Supabase</td><td>खाते और डेटाबेस-होस्टिंग</td><td>EU (फ़्रैंकफ़र्ट, जर्मनी)</td></tr>
+<tr><td>Cloudflare</td><td>विश्लेषण-गेटवे (वर्कर), DNS</td><td>EU/US, EU Data Privacy Framework &amp; SCCs</td></tr>
+<tr><td>Anthropic</td><td>आपकी फ़ोटो का AI-विश्लेषण (Claude API); API-डेटा मॉडलों के प्रशिक्षण में इस्तेमाल नहीं होता</td><td>US, EU Standard Contractual Clauses / DPF द्वारा संरक्षित</td></tr>
+<tr><td>भुगतान पार्टनर</td><td>भुगतान (Merchant of Record, स्वतंत्र नियंत्रक)</td><td>EU/EEA या EU के पर्याप्तता-निर्णय (adequacy decision) वाला कोई देश</td></tr>
+<tr><td>GitHub Pages</td><td>ऐप की स्टैटिक फ़ाइलों की होस्टिंग; IP-पते लॉग कर सकता है</td><td>US, DPF</td></tr>
+</table>
+<p>हमने अपने प्रोसेसरों के साथ डेटा-प्रसंस्करण समझौते किए हैं। हम व्यक्तिगत डेटा कभी नहीं बेचते।</p>
+
+<h2>4. हम चीज़ें कितने समय तक रखते हैं</h2>
+<p>खाता-डेटा: जब तक आप अपना खाता नहीं मिटाते। सहेजी गई रीडिंग: जब तक आप उन्हें (या अपना खाता) नहीं मिटाते। फ़ोटो: <strong>बिल्कुल नहीं रखी जातीं</strong>। लेन-देन के रिकॉर्ड: 7 वर्ष तक (डच कर-क़ानून)। सहायता-ईमेल: 2 वर्ष तक। खाता मिटाने पर आपकी प्रोफ़ाइल, क्रेडिट-बैलेंस और सहेजी गई रीडिंग अपने आप हट जाती हैं (कैस्केडिंग डिलीट)।</p>
+
+<h2>5. आपके अधिकार</h2>
+<p>आप हमसे अपने डेटा तक पहुँच, उसमें सुधार, उसे मिटाने, उसके प्रसंस्करण को सीमित करने या डेटा-पोर्टेबिलिटी की माँग कर सकते हैं, या प्रसंस्करण पर आपत्ति कर सकते हैं: <a href="mailto:support@toereading.app">support@toereading.app</a> पर ईमेल कीजिए और हम एक महीने के भीतर जवाब देंगे। सहेजी गई रीडिंग आप ऐप में स्वयं मिटा सकते हैं; पूरा खाता मिटाने के लिए हमें ईमेल कीजिए (ऐप के भीतर मिटाने का बटन जल्द आ रहा है)। आप डच पर्यवेक्षी प्राधिकरण <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a> के पास शिकायत भी कर सकते हैं।</p>
+
+<h2>6. सुरक्षा</h2>
+<p>डेटा एन्क्रिप्ट होकर (TLS) आता-जाता है। पासवर्ड सुरक्षित हैश के रूप में संग्रहीत होते हैं। डेटाबेस तक पहुँच row-level security से सुरक्षित है: आपका डेटा केवल आप ही पढ़ सकते हैं। सर्वर-कुंजियाँ केवल सर्वर-परिवेशों में रहती हैं, ऐप में कभी नहीं। इसके बावजूद अगर कभी ऐसा डेटा-उल्लंघन हो जाए जो आपके लिए जोखिम पैदा करे, तो हम 72 घंटों के भीतर Autoriteit Persoonsgegevens को उसकी सूचना देंगे और आवश्यक होने पर आपको भी सूचित करेंगे।</p>
+
+<h2>7. बच्चे</h2>
+<p>Toe Reading 16 वर्ष से कम उम्र के बच्चों के लिए नहीं है, और हम जानते-बूझते उनका डेटा संसाधित नहीं करते।</p>
+
+<h2>8. बदलाव</h2>
+<p>अगर हम इस नीति में कोई महत्वपूर्ण बदलाव करें, तो बदलाव लागू होने से पहले हम आपको ऐप में या ईमेल से बता देंगे।</p>
+</main>
+<main lang-blok="id">
+<h1>Kebijakan Privasi</h1>
+<p class="datum">Tanggal berlaku: 13 Juli 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Versi singkatnya:</strong> foto kakimu dianalisis lalu langsung dibuang: tidak pernah disimpan, tidak pernah digunakan untuk melatih AI. Kami hanya menyimpan apa yang dibutuhkan sebuah akun: nama, email, saldo analisismu, dan (jika kamu menyimpannya) teks pembacaanmu. Tanpa pelacakan, tanpa iklan, tanpa cookie analitik.</p>
+</div>
+
+<h2>1. Siapa yang bertanggung jawab</h2>
+<p>Pengendali data pribadimu adalah <strong>Ferri Somogyi Productions</strong>, terdaftar di Belanda (KvK no. 34286815, ID PPN NL001933433B06). Kontak: <a href="mailto:support@toereading.app">support@toereading.app</a>. Untuk pembelian, mitra pembayaran kami bertindak sebagai Merchant of Record (penjual resmi) dan merupakan pengendali independen atas data pembayaran yang diprosesnya; kebijakan privasi mitra tersebut tertaut di halaman pembayaran dan pada tanda terimamu.</p>
+
+<h2>2. Apa yang kami proses, dan mengapa</h2>
+<table>
+<tr><th>Data</th><th>Tujuan</th><th>Dasar hukum</th></tr>
+<tr><td>Nama, email, kata sandi (disimpan sebagai hash yang aman)</td><td>Akunmu: login, verifikasi email, reset kata sandi</td><td>Kontrak</td></tr>
+<tr><td>Saldo dan penghitung pemakaian</td><td>Mengetahui berapa banyak pembacaan yang bisa kamu jalankan (gratis / paket / langganan, penghitung pemakaian wajar)</td><td>Kontrak</td></tr>
+<tr><td><strong>Foto kaki</strong></td><td>Menghasilkan pembacaan yang kamu minta, tidak untuk hal lain. Diproses di memori, dikirim terenkripsi ke penyedia AI kami, dan <strong>tidak disimpan di mana pun</strong> setelah analisis selesai. Tidak digunakan untuk melatih model AI.</td><td>Kontrak (kamu secara aktif meminta setiap analisis)</td></tr>
+<tr><td>Pembacaan tersimpan ("pembacaanku")</td><td>Hanya kode klasifikasi dan teks pembacaan, tidak pernah foto. Kamu bisa menghapusnya kapan saja.</td><td>Kontrak</td></tr>
+<tr><td>Metadata transaksi (produk, jumlah, ID transaksi pembayaran)</td><td>Mengkreditkan pembelianmu, pembukuan, pencegahan penipuan. Kami tidak pernah melihat atau menyimpan detail kartumu; mitra pembayaran kami yang menangani pembayarannya.</td><td>Kontrak, kewajiban hukum</td></tr>
+<tr><td>Log teknis (alamat IP, stempel waktu)</td><td>Keamanan, pembatasan kecepatan (rate limiting), dan pencegahan penyalahgunaan di server kami</td><td>Kepentingan yang sah</td></tr>
+<tr><td>Email dukungan</td><td>Membantumu saat kamu menghubungi kami</td><td>Kepentingan yang sah</td></tr>
+</table>
+<p>Kami tidak menanyakan tanggal lahirmu atau data lain apa pun yang tidak kami perlukan (minimalisasi data). Kami tidak menggunakan pelacak iklan atau analitik. Aplikasi menyimpan token sesi dan preferensi bahasamu di penyimpanan lokal browsermu, murni fungsional.</p>
+
+<h2>3. Siapa yang membantu kami memproses data</h2>
+<table>
+<tr><th>Pihak</th><th>Peran</th><th>Lokasi</th></tr>
+<tr><td>Supabase</td><td>Hosting akun dan basis data</td><td>UE (Frankfurt, Jerman)</td></tr>
+<tr><td>Cloudflare</td><td>Gateway analisis (worker), DNS</td><td>UE/AS, EU Data Privacy Framework &amp; SCC</td></tr>
+<tr><td>Anthropic</td><td>Analisis AI atas fotomu (Claude API); data API tidak digunakan untuk melatih model</td><td>AS, dilindungi Klausul Kontraktual Standar UE / DPF</td></tr>
+<tr><td>Mitra pembayaran</td><td>Pembayaran (Merchant of Record, pengendali independen)</td><td>UE/EEA atau negara dengan keputusan kecukupan UE</td></tr>
+<tr><td>GitHub Pages</td><td>Hosting berkas statis aplikasi; dapat mencatat alamat IP</td><td>AS, DPF</td></tr>
+</table>
+<p>Kami memiliki perjanjian pemrosesan data dengan para pemroses kami. Kami tidak pernah menjual data pribadi.</p>
+
+<h2>4. Berapa lama kami menyimpannya</h2>
+<p>Data akun: sampai kamu menghapus akunmu. Pembacaan tersimpan: sampai kamu menghapusnya (atau akunmu). Foto: <strong>tidak disimpan sama sekali</strong>. Catatan transaksi: hingga 7 tahun (hukum pajak Belanda). Email dukungan: hingga 2 tahun. Menghapus akunmu otomatis menghapus profil, saldo, dan pembacaan tersimpanmu (cascading delete).</p>
+
+<h2>5. Hak-hakmu</h2>
+<p>Kamu dapat meminta kepada kami akses, koreksi, penghapusan, pembatasan, atau portabilitas data, atau mengajukan keberatan atas pemrosesan: kirim email ke <a href="mailto:support@toereading.app">support@toereading.app</a> dan kami akan menanggapi dalam waktu satu bulan. Pembacaan tersimpan bisa kamu hapus sendiri di aplikasi; untuk penghapusan akun sepenuhnya, kirimi kami email (tombol hapus di dalam aplikasi sedang disiapkan). Kamu juga bisa mengajukan keluhan kepada otoritas pengawas Belanda, <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
+
+<h2>6. Keamanan</h2>
+<p>Data berpindah secara terenkripsi (TLS). Kata sandi disimpan sebagai hash yang aman. Akses basis data dilindungi dengan row-level security: datamu hanya bisa dibaca olehmu. Kunci server hanya berada di lingkungan server, tidak pernah di aplikasi. Jika meskipun demikian terjadi kebocoran data yang menimbulkan risiko bagimu, kami akan melaporkannya kepada Autoriteit Persoonsgegevens dalam waktu 72 jam dan memberitahumu bila diwajibkan.</p>
+
+<h2>7. Anak-anak</h2>
+<p>Toe Reading tidak ditujukan untuk anak di bawah 16 tahun, dan kami tidak secara sengaja memproses data mereka.</p>
+
+<h2>8. Perubahan</h2>
+<p>Jika kami mengubah kebijakan ini secara berarti, kami akan memberitahumu di aplikasi atau lewat email sebelum perubahan itu berlaku.</p>
+</main>
+<main lang-blok="vi">
+<h1>Chính sách quyền riêng tư</h1>
+<p class="datum">Ngày hiệu lực: 13 tháng 7 năm 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Phiên bản ngắn gọn:</strong> ảnh bàn chân của bạn được phân tích rồi loại bỏ ngay lập tức: không bao giờ được lưu, không bao giờ được dùng để huấn luyện AI. Chúng tôi chỉ giữ những gì một tài khoản cần: tên, email, số dư lượt phân tích và (nếu bạn lưu chúng) các văn bản bài đọc của bạn. Không theo dõi, không quảng cáo, không cookie phân tích.</p>
+</div>
+
+<h2>1. Ai chịu trách nhiệm</h2>
+<p>Bên kiểm soát dữ liệu cá nhân của bạn là <strong>Ferri Somogyi Productions</strong>, đăng ký tại Hà Lan (số KvK 34286815, mã số thuế GTGT NL001933433B06). Liên hệ: <a href="mailto:support@toereading.app">support@toereading.app</a>. Đối với các giao dịch mua, đối tác thanh toán của chúng tôi đóng vai trò Merchant of Record (bên bán chính thức) và là bên kiểm soát độc lập đối với dữ liệu thanh toán mà họ xử lý; chính sách quyền riêng tư riêng của đối tác được liên kết tại trang thanh toán và trên biên lai của bạn.</p>
+
+<h2>2. Chúng tôi xử lý gì, và vì sao</h2>
+<table>
+<tr><th>Dữ liệu</th><th>Mục đích</th><th>Cơ sở pháp lý</th></tr>
+<tr><td>Tên, email, mật khẩu (được lưu dưới dạng mã băm an toàn)</td><td>Tài khoản của bạn: đăng nhập, xác minh email, đặt lại mật khẩu</td><td>Hợp đồng</td></tr>
+<tr><td>Số dư lượt phân tích và bộ đếm sử dụng</td><td>Biết bạn có thể chạy bao nhiêu bài đọc (miễn phí / gói / thuê bao, bộ đếm sử dụng hợp lý)</td><td>Hợp đồng</td></tr>
+<tr><td><strong>Ảnh bàn chân</strong></td><td>Tạo bài đọc bạn yêu cầu, không gì khác. Được xử lý trong bộ nhớ, gửi có mã hóa tới nhà cung cấp AI của chúng tôi, và <strong>không được lưu ở bất cứ đâu</strong> sau khi phân tích hoàn tất. Không được dùng để huấn luyện các mô hình AI.</td><td>Hợp đồng (bạn chủ động yêu cầu từng lần phân tích)</td></tr>
+<tr><td>Bài đọc đã lưu ("bài đọc của tôi")</td><td>Chỉ các mã phân loại và văn bản bài đọc, không bao giờ là ảnh. Bạn có thể xóa chúng bất cứ lúc nào.</td><td>Hợp đồng</td></tr>
+<tr><td>Siêu dữ liệu giao dịch (sản phẩm, số tiền, mã giao dịch thanh toán)</td><td>Ghi nhận giao dịch mua của bạn, sổ sách kế toán, phòng chống gian lận. Chúng tôi không bao giờ thấy hay lưu thông tin thẻ của bạn; đối tác thanh toán của chúng tôi xử lý việc thanh toán.</td><td>Hợp đồng, nghĩa vụ pháp lý</td></tr>
+<tr><td>Nhật ký kỹ thuật (địa chỉ IP, dấu thời gian)</td><td>Bảo mật, giới hạn tần suất và ngăn chặn lạm dụng trên máy chủ của chúng tôi</td><td>Lợi ích chính đáng</td></tr>
+<tr><td>Email hỗ trợ</td><td>Giúp bạn khi bạn liên hệ với chúng tôi</td><td>Lợi ích chính đáng</td></tr>
+</table>
+<p>Chúng tôi không hỏi ngày sinh của bạn hay bất kỳ dữ liệu nào khác mà chúng tôi không cần (tối thiểu hóa dữ liệu). Chúng tôi không dùng trình theo dõi quảng cáo hay phân tích. Ứng dụng lưu token phiên và tùy chọn ngôn ngữ của bạn trong bộ nhớ cục bộ (local storage) của trình duyệt, thuần túy phục vụ chức năng.</p>
+
+<h2>3. Ai giúp chúng tôi xử lý dữ liệu</h2>
+<table>
+<tr><th>Bên</th><th>Vai trò</th><th>Vị trí</th></tr>
+<tr><td>Supabase</td><td>Lưu trữ tài khoản và cơ sở dữ liệu</td><td>EU (Frankfurt, Đức)</td></tr>
+<tr><td>Cloudflare</td><td>Cổng phân tích (worker), DNS</td><td>EU/Mỹ, EU Data Privacy Framework &amp; SCC</td></tr>
+<tr><td>Anthropic</td><td>Phân tích AI đối với ảnh của bạn (Claude API); dữ liệu API không được dùng để huấn luyện các mô hình</td><td>Mỹ, được bảo vệ bởi các Điều khoản Hợp đồng Chuẩn của EU / DPF</td></tr>
+<tr><td>Đối tác thanh toán</td><td>Thanh toán (Merchant of Record, bên kiểm soát độc lập)</td><td>EU/EEA hoặc một quốc gia có quyết định công nhận mức bảo vệ tương đương của EU</td></tr>
+<tr><td>GitHub Pages</td><td>Lưu trữ các tệp tĩnh của ứng dụng; có thể ghi lại địa chỉ IP</td><td>Mỹ, DPF</td></tr>
+</table>
+<p>Chúng tôi có thỏa thuận xử lý dữ liệu với các bên xử lý của mình. Chúng tôi không bao giờ bán dữ liệu cá nhân.</p>
+
+<h2>4. Chúng tôi giữ dữ liệu trong bao lâu</h2>
+<p>Dữ liệu tài khoản: cho đến khi bạn xóa tài khoản. Bài đọc đã lưu: cho đến khi bạn xóa chúng (hoặc xóa tài khoản). Ảnh: <strong>hoàn toàn không được giữ lại</strong>. Hồ sơ giao dịch: tối đa 7 năm (theo luật thuế Hà Lan). Email hỗ trợ: tối đa 2 năm. Việc xóa tài khoản sẽ tự động xóa kèm hồ sơ, số dư lượt phân tích và các bài đọc đã lưu của bạn (xóa dây chuyền).</p>
+
+<h2>5. Quyền của bạn</h2>
+<p>Bạn có thể yêu cầu chúng tôi cho truy cập, chỉnh sửa, xóa, hạn chế xử lý, chuyển giao dữ liệu, hoặc phản đối việc xử lý: hãy email <a href="mailto:support@toereading.app">support@toereading.app</a> và chúng tôi sẽ phản hồi trong vòng một tháng. Bạn có thể tự xóa các bài đọc đã lưu ngay trong ứng dụng; để xóa toàn bộ tài khoản, hãy email cho chúng tôi (nút xóa trong ứng dụng đang được phát triển). Bạn cũng có thể khiếu nại với cơ quan giám sát của Hà Lan, <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a> (Cơ quan bảo vệ dữ liệu Hà Lan).</p>
+
+<h2>6. Bảo mật</h2>
+<p>Dữ liệu được truyền đi có mã hóa (TLS). Mật khẩu được lưu dưới dạng mã băm an toàn. Truy cập cơ sở dữ liệu được bảo vệ bằng bảo mật cấp hàng (row-level security): dữ liệu của bạn chỉ mình bạn đọc được. Các khóa máy chủ chỉ tồn tại trong môi trường máy chủ, không bao giờ nằm trong ứng dụng. Nếu dù vậy vẫn xảy ra một vụ rò rỉ dữ liệu gây rủi ro cho bạn, chúng tôi sẽ báo cáo cho Autoriteit Persoonsgegevens trong vòng 72 giờ và thông báo cho bạn khi luật yêu cầu.</p>
+
+<h2>7. Trẻ em</h2>
+<p>Toe Reading không dành cho trẻ em dưới 16 tuổi, và chúng tôi không cố ý xử lý dữ liệu của các em.</p>
+
+<h2>8. Thay đổi</h2>
+<p>Nếu chúng tôi thay đổi chính sách này một cách quan trọng, chúng tôi sẽ cho bạn biết trong ứng dụng hoặc qua email trước khi thay đổi có hiệu lực.</p>
+</main>
+<main lang-blok="th">
+<h1>นโยบายความเป็นส่วนตัว</h1>
+<p class="datum">วันที่มีผลบังคับใช้: 13 กรกฎาคม 2026</p>
+
+<div class="kaartje groen">
+<p><strong>ฉบับย่อ:</strong> รูปเท้าของคุณถูกวิเคราะห์แล้วทิ้งทันที: ไม่มีการจัดเก็บ และไม่ถูกใช้ฝึก AI เด็ดขาด เราเก็บเฉพาะสิ่งที่บัญชีจำเป็นต้องใช้: ชื่อ อีเมล ยอดเครดิต และ (หากคุณบันทึกไว้) ข้อความบทอ่านของคุณ ไม่มีการติดตาม ไม่มีโฆษณา ไม่มีคุกกี้วิเคราะห์</p>
+</div>
+
+<h2>1. ใครเป็นผู้รับผิดชอบ</h2>
+<p>ผู้ควบคุมข้อมูลส่วนบุคคลของคุณคือ <strong>Ferri Somogyi Productions</strong> จดทะเบียนในประเทศเนเธอร์แลนด์ (หมายเลข KvK 34286815, หมายเลขภาษีมูลค่าเพิ่ม NL001933433B06) ติดต่อ: <a href="mailto:support@toereading.app">support@toereading.app</a> สำหรับการซื้อ พาร์ตเนอร์รับชำระเงินของเราทำหน้าที่เป็น Merchant of Record (ผู้ขายอย่างเป็นทางการ) และเป็นผู้ควบคุมข้อมูลอิสระสำหรับข้อมูลการชำระเงินที่ตนประมวลผล นโยบายความเป็นส่วนตัวของพาร์ตเนอร์เองมีลิงก์อยู่ที่หน้าชำระเงินและบนใบเสร็จของคุณ</p>
+
+<h2>2. เราประมวลผลอะไร และเพราะอะไร</h2>
+<table>
+<tr><th>ข้อมูล</th><th>วัตถุประสงค์</th><th>ฐานทางกฎหมาย</th></tr>
+<tr><td>ชื่อ อีเมล รหัสผ่าน (จัดเก็บเป็นแฮชที่ปลอดภัย)</td><td>บัญชีของคุณ: การเข้าสู่ระบบ การยืนยันอีเมล การรีเซ็ตรหัสผ่าน</td><td>สัญญา</td></tr>
+<tr><td>ยอดเครดิตและตัวนับการใช้งาน</td><td>เพื่อรู้ว่าคุณใช้งานบทอ่านได้อีกกี่ครั้ง (ฟรี / แพ็ก / สมาชิก, ตัวนับการใช้งานอย่างเป็นธรรม)</td><td>สัญญา</td></tr>
+<tr><td><strong>รูปเท้า</strong></td><td>สร้างบทอ่านที่คุณร้องขอ ไม่มีอย่างอื่น ประมวลผลในหน่วยความจำ ส่งแบบเข้ารหัสไปยังผู้ให้บริการ AI ของเรา และ<strong>ไม่ถูกจัดเก็บที่ใดทั้งสิ้น</strong>หลังการวิเคราะห์เสร็จสิ้น ไม่ถูกใช้ฝึกโมเดล AI</td><td>สัญญา (คุณเป็นผู้ร้องขอการวิเคราะห์แต่ละครั้งเอง)</td></tr>
+<tr><td>บทอ่านที่บันทึกไว้ ("บทอ่านของฉัน")</td><td>เก็บเฉพาะรหัสการจำแนกและข้อความบทอ่านเท่านั้น ไม่เก็บรูปภาพเด็ดขาด คุณลบได้ทุกเมื่อ</td><td>สัญญา</td></tr>
+<tr><td>ข้อมูลเมตาของธุรกรรม (สินค้า จำนวนเงิน รหัสธุรกรรมการชำระเงิน)</td><td>เติมเครดิตจากการซื้อของคุณ การทำบัญชี การป้องกันการฉ้อโกง เราไม่เห็นและไม่จัดเก็บข้อมูลบัตรของคุณเด็ดขาด พาร์ตเนอร์รับชำระเงินของเราเป็นผู้ดูแลการชำระเงิน</td><td>สัญญา, ภาระหน้าที่ตามกฎหมาย</td></tr>
+<tr><td>บันทึกทางเทคนิค (ที่อยู่ IP, เวลาประทับ)</td><td>ความปลอดภัย การจำกัดอัตราการใช้งาน และการป้องกันการใช้งานในทางที่ผิดบนเซิร์ฟเวอร์ของเรา</td><td>ประโยชน์อันชอบธรรม</td></tr>
+<tr><td>อีเมลฝ่ายสนับสนุน</td><td>ช่วยเหลือคุณเมื่อคุณติดต่อเรา</td><td>ประโยชน์อันชอบธรรม</td></tr>
+</table>
+<p>เราไม่ขอวันเกิดของคุณหรือข้อมูลอื่นใดที่เราไม่จำเป็นต้องใช้ (การเก็บข้อมูลให้น้อยที่สุด) เราไม่ใช้ตัวติดตามเพื่อการโฆษณาหรือการวิเคราะห์ แอปเก็บโทเคนเซสชันและภาษาที่คุณเลือกไว้ใน local storage ของเบราว์เซอร์ของคุณ เพื่อการทำงานของแอปเท่านั้น</p>
+
+<h2>3. ใครช่วยเราประมวลผลข้อมูล</h2>
+<table>
+<tr><th>ฝ่าย</th><th>บทบาท</th><th>ที่ตั้ง</th></tr>
+<tr><td>Supabase</td><td>โฮสติงบัญชีและฐานข้อมูล</td><td>EU (แฟรงก์เฟิร์ต เยอรมนี)</td></tr>
+<tr><td>Cloudflare</td><td>เกตเวย์การวิเคราะห์ (worker), DNS</td><td>EU/US, EU Data Privacy Framework &amp; SCCs</td></tr>
+<tr><td>Anthropic</td><td>การวิเคราะห์รูปภาพของคุณด้วย AI (Claude API) ข้อมูลผ่าน API ไม่ถูกใช้ฝึกโมเดล</td><td>US, คุ้มครองโดย EU Standard Contractual Clauses / DPF</td></tr>
+<tr><td>พาร์ตเนอร์รับชำระเงิน</td><td>การชำระเงิน (Merchant of Record, ผู้ควบคุมข้อมูลอิสระ)</td><td>EU/EEA หรือประเทศที่มีคำวินิจฉัยความคุ้มครองเพียงพอของ EU</td></tr>
+<tr><td>GitHub Pages</td><td>โฮสติงไฟล์สแตติกของแอป อาจบันทึกที่อยู่ IP</td><td>US, DPF</td></tr>
+</table>
+<p>เรามีข้อตกลงการประมวลผลข้อมูลกับผู้ประมวลผลของเรา เราไม่ขายข้อมูลส่วนบุคคลเด็ดขาด</p>
+
+<h2>4. เราเก็บข้อมูลไว้นานแค่ไหน</h2>
+<p>ข้อมูลบัญชี: จนกว่าคุณจะลบบัญชี บทอ่านที่บันทึกไว้: จนกว่าคุณจะลบบทอ่านนั้น (หรือลบบัญชี) รูปภาพ: <strong>ไม่มีการเก็บเลย</strong> บันทึกธุรกรรม: สูงสุด 7 ปี (กฎหมายภาษีของเนเธอร์แลนด์) อีเมลฝ่ายสนับสนุน: สูงสุด 2 ปี การลบบัญชีจะลบโปรไฟล์ ยอดเครดิต และบทอ่านที่บันทึกไว้ของคุณโดยอัตโนมัติ (การลบแบบต่อเนื่อง)</p>
+
+<h2>5. สิทธิ์ของคุณ</h2>
+<p>คุณขอเข้าถึง แก้ไข ลบ จำกัดการประมวลผล ขอโอนย้ายข้อมูล หรือคัดค้านการประมวลผลได้: อีเมลมาที่ <a href="mailto:support@toereading.app">support@toereading.app</a> แล้วเราจะตอบภายในหนึ่งเดือน คุณลบบทอ่านที่บันทึกไว้ได้เองในแอป ส่วนการลบบัญชีทั้งหมด ให้อีเมลมาหาเรา (ปุ่มลบในแอปกำลังจะมาเร็ว ๆ นี้) คุณยังร้องเรียนต่อหน่วยงานกำกับดูแลของเนเธอร์แลนด์ <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a> (หน่วยงานคุ้มครองข้อมูลส่วนบุคคลของเนเธอร์แลนด์) ได้อีกด้วย</p>
+
+<h2>6. ความปลอดภัย</h2>
+<p>ข้อมูลเดินทางแบบเข้ารหัส (TLS) รหัสผ่านถูกจัดเก็บเป็นแฮชที่ปลอดภัย การเข้าถึงฐานข้อมูลถูกป้องกันด้วย row-level security: ข้อมูลของคุณอ่านได้โดยคุณเท่านั้น กุญแจเซิร์ฟเวอร์อยู่เฉพาะในสภาพแวดล้อมฝั่งเซิร์ฟเวอร์ ไม่อยู่ในแอปเด็ดขาด หากถึงกระนั้นยังเกิดการรั่วไหลของข้อมูลที่เป็นความเสี่ยงต่อคุณ เราจะรายงานต่อ Autoriteit Persoonsgegevens ภายใน 72 ชั่วโมง และแจ้งให้คุณทราบเมื่อจำเป็นต้องแจ้ง</p>
+
+<h2>7. เด็ก</h2>
+<p>Toe Reading ไม่ได้มีไว้สำหรับเด็กอายุต่ำกว่า 16 ปี และเราไม่ประมวลผลข้อมูลของเด็กโดยเจตนา</p>
+
+<h2>8. การเปลี่ยนแปลง</h2>
+<p>หากเราเปลี่ยนนโยบายนี้อย่างมีนัยสำคัญ เราจะแจ้งให้คุณทราบในแอปหรือทางอีเมลก่อนการเปลี่ยนแปลงมีผลบังคับใช้</p>
+</main>
+<main lang-blok="uk">
+<h1>Політика конфіденційності</h1>
+<p class="datum">Дата набрання чинності: 13 липня 2026 року</p>
+
+<div class="kaartje groen">
+<p><strong>Коротка версія:</strong> фото твоїх стоп аналізуються і одразу видаляються: вони ніколи не зберігаються і ніколи не використовуються для навчання ШІ. Ми зберігаємо лише те, що потрібно обліковому запису: твоє ім'я, електронну пошту, баланс кредитів і (якщо ти їх зберігаєш) тексти твоїх читань. Без відстеження, без реклами, без аналітичних cookie.</p>
+</div>
+
+<h2>1. Хто відповідає за дані</h2>
+<p>Контролером твоїх персональних даних є <strong>Ferri Somogyi Productions</strong>, підприємство, зареєстроване в Нідерландах (номер KvK 34286815, номер платника ПДВ NL001933433B06). Контакт: <a href="mailto:support@toereading.app">support@toereading.app</a>. Щодо покупок наш платіжний партнер виступає як Merchant of Record (юридичний продавець) і є незалежним контролером платіжних даних, які він обробляє; посилання на власну політику конфіденційності партнера є на касі та у твоїй квитанції.</p>
+
+<h2>2. Що ми обробляємо і навіщо</h2>
+<table>
+<tr><th>Дані</th><th>Мета</th><th>Правова підстава</th></tr>
+<tr><td>Ім'я, електронна пошта, пароль (зберігається як захищений геш)</td><td>Твій обліковий запис: вхід, підтвердження електронної пошти, скидання пароля</td><td>Договір</td></tr>
+<tr><td>Баланс кредитів і лічильники використання</td><td>Знати, скільки читань ти можеш запустити (безплатні / пакет / підписка, лічильник добросовісного використання)</td><td>Договір</td></tr>
+<tr><td><strong>Фото стоп</strong></td><td>Створення читання, яке ти замовляєш, і більше нічого. Обробляються в пам'яті, надсилаються в зашифрованому вигляді нашому провайдеру ШІ і після завершення аналізу <strong>ніде не зберігаються</strong>. Не використовуються для навчання моделей ШІ.</td><td>Договір (кожен аналіз ти замовляєш сам)</td></tr>
+<tr><td>Збережені читання («мої читання»)</td><td>Лише коди класифікації та тексти читань, ніколи не фото. Ти можеш стерти їх будь-коли.</td><td>Договір</td></tr>
+<tr><td>Метадані транзакцій (продукт, сума, ідентифікатор платіжної транзакції)</td><td>Зарахування твоєї покупки, бухгалтерський облік, запобігання шахрайству. Ми ніколи не бачимо і не зберігаємо дані твоєї картки; оплату обробляє наш платіжний партнер.</td><td>Договір, юридичний обов'язок</td></tr>
+<tr><td>Технічні журнали (IP-адреса, часові позначки)</td><td>Безпека, обмеження частоти запитів і запобігання зловживанням на наших серверах</td><td>Законний інтерес</td></tr>
+<tr><td>Листи в підтримку</td><td>Допомога тобі, коли ти звертаєшся до нас</td><td>Законний інтерес</td></tr>
+</table>
+<p>Ми не питаємо дату народження чи будь-які інші дані, яких не потребуємо (мінімізація даних). Ми не використовуємо рекламні чи аналітичні трекери. Застосунок зберігає в локальному сховищі твого браузера токен сесії та мовне налаштування, суто для функціональності.</p>
+
+<h2>3. Хто допомагає нам обробляти дані</h2>
+<table>
+<tr><th>Сторона</th><th>Роль</th><th>Розташування</th></tr>
+<tr><td>Supabase</td><td>Облікові записи та хостинг бази даних</td><td>ЄС (Франкфурт, Німеччина)</td></tr>
+<tr><td>Cloudflare</td><td>Шлюз аналізу (worker), DNS</td><td>ЄС/США, EU Data Privacy Framework &amp; SCC</td></tr>
+<tr><td>Anthropic</td><td>ШІ-аналіз твого фото (Claude API); дані API не використовуються для навчання моделей</td><td>США, захищено Стандартними договірними положеннями ЄС / DPF</td></tr>
+<tr><td>Платіжний партнер</td><td>Платежі (Merchant of Record, незалежний контролер)</td><td>ЄС/ЄЕЗ або країна з рішенням ЄС про адекватність</td></tr>
+<tr><td>GitHub Pages</td><td>Хостинг статичних файлів застосунку; може журналювати IP-адреси</td><td>США, DPF</td></tr>
+</table>
+<p>З нашими обробниками укладено договори про обробку даних. Ми ніколи не продаємо персональні дані.</p>
+
+<h2>4. Скільки ми все зберігаємо</h2>
+<p>Дані облікового запису: доки ти не видалиш обліковий запис. Збережені читання: доки ти не зітреш їх (або свій обліковий запис). Фото: <strong>не зберігаються взагалі</strong>. Записи про транзакції: до 7 років (податкове право Нідерландів). Листи в підтримку: до 2 років. Видалення облікового запису автоматично прибирає твій профіль, баланс кредитів і збережені читання (каскадне видалення).</p>
+
+<h2>5. Твої права</h2>
+<p>Ти можеш просити в нас доступ, виправлення, видалення, обмеження обробки, перенесення даних або заперечити проти обробки: напиши на <a href="mailto:support@toereading.app">support@toereading.app</a>, і ми відповімо протягом місяця. Збережені читання ти можеш стерти сам у застосунку; для повного видалення облікового запису напиши нам (кнопка видалення в застосунку вже в дорозі). Ти також можеш поскаржитися до нідерландського наглядового органу, яким є <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a> (нідерландське управління із захисту персональних даних).</p>
+
+<h2>6. Безпека</h2>
+<p>Дані передаються в зашифрованому вигляді (TLS). Паролі зберігаються як захищені геші. Доступ до бази даних захищено безпекою на рівні рядків: твої дані може читати лише ти. Серверні ключі живуть тільки в серверних середовищах, ніколи в застосунку. Якщо все ж станеться витік даних, що становить ризик для тебе, ми повідомимо Autoriteit Persoonsgegevens протягом 72 годин і поінформуємо тебе, коли це вимагається.</p>
+
+<h2>7. Діти</h2>
+<p>Toe Reading не призначений для дітей до 16 років, і ми свідомо не обробляємо їхні дані.</p>
+
+<h2>8. Зміни</h2>
+<p>Якщо ми суттєво змінимо цю політику, ми повідомимо тебе в застосунку або електронною поштою до набрання зміною чинності.</p>
+</main>
+<main lang-blok="hu">
+<h1>Adatvédelmi tájékoztató</h1>
+<p class="datum">Hatálybalépés: 2026. július 13.</p>
+
+<div class="kaartje groen">
+<p><strong>A rövid változat:</strong> a lábfotóidat elemezzük, majd azonnal eldobjuk: soha nem tároljuk, és soha nem használjuk AI tanítására. Csak azt őrizzük meg, amire egy fióknak szüksége van: a nevedet, az e-mail-címedet, az egyenlegedet és (ha elmented őket) az olvasataid szövegét. Nincs követés, nincsenek hirdetések, nincsenek analitikai sütik.</p>
+</div>
+
+<h2>1. Ki a felelős</h2>
+<p>A személyes adataid kezelője a <strong>Ferri Somogyi Productions</strong>, Hollandiában bejegyezve (KvK-szám: 34286815, áfaazonosító: NL001933433B06). Kapcsolat: <a href="mailto:support@toereading.app">support@toereading.app</a>. A vásárlásoknál fizetési partnerünk Merchant of Record-ként (hivatalos eladóként) jár el, és az általa feldolgozott fizetési adatok önálló adatkezelője; a partner saját adatvédelmi tájékoztatójára mutató link a pénztárnál és a nyugtádon található.</p>
+
+<h2>2. Mit kezelünk, és miért</h2>
+<table>
+<tr><th>Adat</th><th>Cél</th><th>Jogalap</th></tr>
+<tr><td>Név, e-mail, jelszó (biztonságos hashként tárolva)</td><td>A fiókod: bejelentkezés, e-mail-megerősítés, jelszó-visszaállítás</td><td>Szerződés</td></tr>
+<tr><td>Egyenleg és használati számlálók</td><td>Hogy tudjuk, hány olvasatot futtathatsz (ingyenes / csomag / előfizetés, fair use számláló)</td><td>Szerződés</td></tr>
+<tr><td><strong>Lábfotók</strong></td><td>Az általad kért olvasat elkészítése, semmi más. A feldolgozás a memóriában történik, a fotót titkosítva küldjük az AI-szolgáltatónknak, és az elemzés befejezése után <strong>sehol sem tároljuk</strong>. AI-modellek tanítására nem használjuk.</td><td>Szerződés (minden elemzést te magad kérsz)</td></tr>
+<tr><td>Mentett olvasatok ("olvasataim")</td><td>Csak az osztályozási kódok és az olvasatszövegek, fotók soha. Bármikor törölheted őket.</td><td>Szerződés</td></tr>
+<tr><td>Tranzakciós metaadatok (termék, összeg, fizetési tranzakcióazonosító)</td><td>A vásárlásod jóváírása, könyvelés, csalásmegelőzés. A kártyaadataidat soha nem látjuk és nem tároljuk; a fizetést fizetési partnerünk kezeli.</td><td>Szerződés, jogi kötelezettség</td></tr>
+<tr><td>Technikai naplók (IP-cím, időbélyegek)</td><td>Biztonság, sebességkorlátozás és visszaélés-megelőzés a szervereinken</td><td>Jogos érdek</td></tr>
+<tr><td>Támogatási e-mailek</td><td>Segítünk neked, amikor kapcsolatba lépsz velünk</td><td>Jogos érdek</td></tr>
+</table>
+<p>Nem kérjük a születési dátumodat, sem más olyan adatot, amelyre nincs szükségünk (adattakarékosság). Nem használunk hirdetési vagy analitikai követőket. Az app a munkamenet-tokenedet és a nyelvi beállításodat a böngésződ helyi tárolójában őrzi, kizárólag működési célból.</p>
+
+<h2>3. Kik segítenek nekünk az adatkezelésben</h2>
+<table>
+<tr><th>Partner</th><th>Szerep</th><th>Helyszín</th></tr>
+<tr><td>Supabase</td><td>Fiókok és adatbázis-üzemeltetés</td><td>EU (Frankfurt, Németország)</td></tr>
+<tr><td>Cloudflare</td><td>Elemzési átjáró (worker), DNS</td><td>EU/USA, EU Data Privacy Framework &amp; SCC-k</td></tr>
+<tr><td>Anthropic</td><td>A fotód AI-elemzése (Claude API); az API-adatokat nem használják modellek tanítására</td><td>USA, az EU általános szerződési feltételei (SCC) / a DPF védelme alatt</td></tr>
+<tr><td>Fizetési partner</td><td>Fizetések (Merchant of Record, önálló adatkezelő)</td><td>EU/EGT vagy EU-s megfelelőségi határozattal rendelkező ország</td></tr>
+<tr><td>GitHub Pages</td><td>Az app statikus fájljainak tárhelye; IP-címeket naplózhat</td><td>USA, DPF</td></tr>
+</table>
+<p>Adatfeldolgozóinkkal adatfeldolgozási megállapodásokat kötöttünk. Személyes adatokat soha nem adunk el.</p>
+
+<h2>4. Meddig őrizzük az adatokat</h2>
+<p>Fiókadatok: amíg nem törlöd a fiókodat. Mentett olvasatok: amíg nem törlöd őket (vagy a fiókodat). Fotók: <strong>egyáltalán nem őrizzük</strong>. Tranzakciós nyilvántartás: legfeljebb 7 évig (holland adójog). Támogatási e-mailek: legfeljebb 2 évig. A fiókod törlésekor a profilod, az egyenleged és a mentett olvasataid automatikusan törlődnek (kaszkádolt törlés).</p>
+
+<h2>5. A jogaid</h2>
+<p>Kérheted tőlünk az adataidhoz való hozzáférést, azok helyesbítését, törlését, korlátozását vagy hordozását, illetve tiltakozhatsz a kezelésük ellen: írj a <a href="mailto:support@toereading.app">support@toereading.app</a> címre, és egy hónapon belül válaszolunk. A mentett olvasataidat magad is törölheted az appban; a fiók teljes törléséhez írj nekünk (az appon belüli törlőgomb már úton van). Panaszt tehetsz a holland felügyeleti hatóságnál, az <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>-nél (a holland adatvédelmi hatóságnál) is.</p>
+
+<h2>6. Biztonság</h2>
+<p>Az adatok titkosítva utaznak (TLS). A jelszavakat biztonságos hashként tároljuk. Az adatbázis-hozzáférést sorszintű biztonság (row-level security) védi: az adataidat csak te olvashatod. A szerverkulcsok kizárólag szerverkörnyezetekben élnek, az appban soha. Ha mégis olyan adatvédelmi incidens történne, amely rád nézve kockázatot jelent, azt 72 órán belül bejelentjük az Autoriteit Persoonsgegevens-nek, és ha szükséges, téged is értesítünk.</p>
+
+<h2>7. Gyerekek</h2>
+<p>A Toe Reading nem 16 év alatti gyerekeknek készült, és tudatosan nem kezeljük az adataikat.</p>
+
+<h2>8. Változások</h2>
+<p>Ha ezt a tájékoztatót lényeges módon módosítjuk, a változás hatálybalépése előtt szólunk az appban vagy e-mailben.</p>
+</main>
+<main lang-blok="bn">
+<h1>প্রাইভেসি নীতি</h1>
+<p class="datum">কার্যকর হওয়ার তারিখ: ১৩ জুলাই ২০২৬</p>
+
+<div class="kaartje groen">
+<p><strong>সংক্ষিপ্ত সংস্করণ:</strong> তোমার পায়ের ছবি বিশ্লেষণ করা হয় এবং সঙ্গে সঙ্গেই মুছে ফেলা হয়: কখনও সংরক্ষণ করা হয় না, কখনও AI প্রশিক্ষণে ব্যবহার হয় না। আমরা শুধু তা-ই রাখি যা একটি অ্যাকাউন্টের দরকার: তোমার নাম, ইমেইল, ক্রেডিট ব্যালেন্স এবং (তুমি সংরক্ষণ করলে) তোমার রিডিংয়ের লেখা। কোনো ট্র্যাকিং নেই, বিজ্ঞাপন নেই, অ্যানালিটিক্স কুকি নেই।</p>
+</div>
+
+<h2>১. দায়িত্ব কার</h2>
+<p>তোমার ব্যক্তিগত তথ্যের নিয়ন্ত্রক (controller) হলো <strong>Ferri Somogyi Productions</strong>, নেদারল্যান্ডসে নিবন্ধিত (KvK নম্বর 34286815, VAT আইডি NL001933433B06)। যোগাযোগ: <a href="mailto:support@toereading.app">support@toereading.app</a>। কেনাকাটার ক্ষেত্রে আমাদের পেমেন্ট পার্টনার Merchant of Record হিসেবে কাজ করে এবং যে পেমেন্ট-তথ্য তারা প্রক্রিয়া করে তার জন্য তারা স্বাধীন নিয়ন্ত্রক; পার্টনারের নিজস্ব প্রাইভেসি নীতির লিংক থাকে চেকআউটে এবং তোমার রসিদে।</p>
+
+<h2>২. আমরা কী প্রক্রিয়া করি, আর কেন</h2>
+<table>
+<tr><th>তথ্য</th><th>উদ্দেশ্য</th><th>আইনি ভিত্তি</th></tr>
+<tr><td>নাম, ইমেইল, পাসওয়ার্ড (নিরাপদ হ্যাশ হিসেবে সংরক্ষিত)</td><td>তোমার অ্যাকাউন্ট: লগইন, ইমেইল যাচাই, পাসওয়ার্ড রিসেট</td><td>চুক্তি</td></tr>
+<tr><td>ক্রেডিট ব্যালেন্স ও ব্যবহারের কাউন্টার</td><td>তুমি কতগুলো রিডিং চালাতে পারো তা জানা (বিনামূল্যে / প্যাক / সাবস্ক্রিপশন, ফেয়ার-ইউজ কাউন্টার)</td><td>চুক্তি</td></tr>
+<tr><td><strong>পায়ের ছবি</strong></td><td>তোমার চাওয়া রিডিংটি তৈরি করা, আর কিছু নয়। মেমোরিতে প্রক্রিয়া করা হয়, এনক্রিপ্ট করে আমাদের AI সরবরাহকারীর কাছে পাঠানো হয়, এবং বিশ্লেষণ শেষ হওয়ার পর <strong>কোথাও সংরক্ষণ করা হয় না</strong>। AI মডেল প্রশিক্ষণে ব্যবহার হয় না।</td><td>চুক্তি (প্রতিটি বিশ্লেষণ তুমি নিজে সক্রিয়ভাবে চাও)</td></tr>
+<tr><td>সংরক্ষিত রিডিং ("আমার রিডিং")</td><td>শুধু শ্রেণিবিন্যাসের কোড ও রিডিংয়ের লেখা, কখনও ছবি নয়। যেকোনো সময় মুছে ফেলতে পারো।</td><td>চুক্তি</td></tr>
+<tr><td>লেনদেনের মেটাডেটা (পণ্য, পরিমাণ, পেমেন্ট লেনদেনের আইডি)</td><td>তোমার কেনাকাটা ব্যালেন্সে যোগ করা, হিসাবরক্ষণ, জালিয়াতি প্রতিরোধ। তোমার কার্ডের তথ্য আমরা কখনও দেখি না বা রাখি না; পেমেন্ট সামলায় আমাদের পেমেন্ট পার্টনার।</td><td>চুক্তি, আইনি বাধ্যবাধকতা</td></tr>
+<tr><td>প্রযুক্তিগত লগ (IP ঠিকানা, সময়)</td><td>আমাদের সার্ভারে নিরাপত্তা, রেট লিমিটিং ও অপব্যবহার প্রতিরোধ</td><td>বৈধ স্বার্থ</td></tr>
+<tr><td>সাপোর্ট ইমেইল</td><td>তুমি যোগাযোগ করলে তোমাকে সাহায্য করা</td><td>বৈধ স্বার্থ</td></tr>
+</table>
+<p>আমরা তোমার জন্মতারিখ বা অপ্রয়োজনীয় অন্য কোনো তথ্য চাই না (ডেটা মিনিমাইজেশন)। আমরা বিজ্ঞাপন বা অ্যানালিটিক্স ট্র্যাকার ব্যবহার করি না। অ্যাপ তোমার সেশন টোকেন ও ভাষার পছন্দ তোমার ব্রাউজারের লোকাল স্টোরেজে রাখে, শুধুই কার্যকারিতার জন্য।</p>
+
+<h2>৩. তথ্য প্রক্রিয়ায় কারা আমাদের সাহায্য করে</h2>
+<table>
+<tr><th>পক্ষ</th><th>ভূমিকা</th><th>অবস্থান</th></tr>
+<tr><td>Supabase</td><td>অ্যাকাউন্ট ও ডেটাবেস হোস্টিং</td><td>EU (ফ্রাঙ্কফুর্ট, জার্মানি)</td></tr>
+<tr><td>Cloudflare</td><td>বিশ্লেষণ গেটওয়ে (worker), DNS</td><td>EU/US, EU Data Privacy Framework &amp; SCC</td></tr>
+<tr><td>Anthropic</td><td>তোমার ছবির AI-বিশ্লেষণ (Claude API); API-র তথ্য মডেল প্রশিক্ষণে ব্যবহার হয় না</td><td>US, EU Standard Contractual Clauses / DPF দিয়ে সুরক্ষিত</td></tr>
+<tr><td>পেমেন্ট পার্টনার</td><td>পেমেন্ট (Merchant of Record, স্বাধীন নিয়ন্ত্রক)</td><td>EU/EEA বা EU-র পর্যাপ্ততা-সিদ্ধান্তপ্রাপ্ত কোনো দেশ</td></tr>
+<tr><td>GitHub Pages</td><td>অ্যাপের স্ট্যাটিক ফাইলের হোস্টিং; IP ঠিকানা লগ করতে পারে</td><td>US, DPF</td></tr>
+</table>
+<p>আমাদের প্রসেসরদের সঙ্গে ডেটা-প্রসেসিং চুক্তি আছে। আমরা কখনও ব্যক্তিগত তথ্য বিক্রি করি না।</p>
+
+<h2>৪. কতদিন আমরা কী রাখি</h2>
+<p>অ্যাকাউন্টের তথ্য: তুমি অ্যাকাউন্ট মুছে না ফেলা পর্যন্ত। সংরক্ষিত রিডিং: তুমি সেগুলো (বা তোমার অ্যাকাউন্ট) মুছে না ফেলা পর্যন্ত। ছবি: <strong>একেবারেই রাখা হয় না</strong>। লেনদেনের রেকর্ড: সর্বোচ্চ ৭ বছর (ডাচ কর আইন)। সাপোর্ট ইমেইল: সর্বোচ্চ ২ বছর। অ্যাকাউন্ট মুছে ফেললে তোমার প্রোফাইল, ক্রেডিট ব্যালেন্স ও সংরক্ষিত রিডিং নিজে থেকেই মুছে যায় (ক্যাসকেডিং ডিলিট)।</p>
+
+<h2>৫. তোমার অধিকার</h2>
+<p>তুমি আমাদের কাছে চাইতে পারো তথ্য দেখা, সংশোধন, মুছে ফেলা, সীমিতকরণ, স্থানান্তরযোগ্যতা, বা প্রক্রিয়াকরণে আপত্তি জানাতে পারো: ইমেইল করো <a href="mailto:support@toereading.app">support@toereading.app</a> ঠিকানায়, আমরা এক মাসের মধ্যে উত্তর দেব। সংরক্ষিত রিডিং তুমি নিজেই অ্যাপে মুছতে পারো; পুরো অ্যাকাউন্ট মুছতে আমাদের ইমেইল করো (অ্যাপের ভেতরে একটি ডিলিট বোতাম আসছে)। অভিযোগ জানাতে পারো ডাচ তত্ত্বাবধায়ক সংস্থা <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>-এর (নেদারল্যান্ডসের তথ্য-সুরক্ষা নিয়ন্ত্রক) কাছেও।</p>
+
+<h2>৬. নিরাপত্তা</h2>
+<p>তথ্য চলাচল করে এনক্রিপ্ট হয়ে (TLS)। পাসওয়ার্ড সংরক্ষিত হয় নিরাপদ হ্যাশ হিসেবে। ডেটাবেস অ্যাক্সেস সুরক্ষিত row-level security দিয়ে: তোমার তথ্য শুধু তুমিই পড়তে পারো। সার্ভারের কী (key) থাকে শুধু সার্ভার-পরিবেশে, কখনও অ্যাপে নয়। তবু যদি এমন কোনো ডেটা লিক ঘটে যা তোমার জন্য ঝুঁকি তৈরি করে, আমরা ৭২ ঘণ্টার মধ্যে Autoriteit Persoonsgegevens-কে জানাব এবং প্রয়োজনে তোমাকেও জানাব।</p>
+
+<h2>৭. শিশু</h2>
+<p>Toe Reading ১৬ বছরের কম বয়সী শিশুদের জন্য নয়, এবং আমরা জেনেশুনে তাদের তথ্য প্রক্রিয়া করি না।</p>
+
+<h2>৮. পরিবর্তন</h2>
+<p>এই নীতিতে অর্থবহ কোনো পরিবর্তন করলে, তা কার্যকর হওয়ার আগে অ্যাপে বা ইমেইলে তোমাকে জানাব।</p>
+</main>
+<main lang-blok="ur">
+<h1>پرائیویسی پالیسی</h1>
+<p class="datum">نفاذ کی تاریخ: 13 جولائی 2026</p>
+
+<div class="kaartje groen">
+<p><strong>مختصر خلاصہ:</strong> آپ کے پاؤں کی تصاویر کا تجزیہ ہوتا ہے اور وہ فوراً حذف کر دی جاتی ہیں: نہ کبھی محفوظ ہوتی ہیں، نہ کبھی AI کی تربیت کے لیے استعمال۔ ہم صرف وہی رکھتے ہیں جو اکاؤنٹ کے لیے ضروری ہے: آپ کا نام، ای میل، کریڈٹ بیلنس اور (اگر آپ انہیں محفوظ کریں) آپ کی ریڈنگ کے متن۔ نہ ٹریکنگ، نہ اشتہار، نہ اینالیٹکس کوکیز۔</p>
+</div>
+
+<h2>1. ذمہ دار کون ہے</h2>
+<p>آپ کے ذاتی ڈیٹا کا کنٹرولر <strong>Ferri Somogyi Productions</strong> ہے، جو نیدرلینڈز میں رجسٹرڈ ہے (KvK نمبر 34286815، VAT شناخت NL001933433B06)۔ رابطہ: <a href="mailto:support@toereading.app">support@toereading.app</a>۔ خریداریوں کے لیے ہمارا پیمنٹ پارٹنر بطور Merchant of Record کام کرتا ہے اور جس ادائیگی کے ڈیٹا کو وہ پروسیس کرتا ہے اس کے لیے وہ ایک خود مختار کنٹرولر ہے؛ پارٹنر کی اپنی پرائیویسی پالیسی کا لنک چیک آؤٹ پر اور آپ کی رسید پر موجود ہوتا ہے۔</p>
+
+<h2>2. ہم کیا پروسیس کرتے ہیں، اور کیوں</h2>
+<table>
+<tr><th>ڈیٹا</th><th>مقصد</th><th>قانونی بنیاد</th></tr>
+<tr><td>نام، ای میل، پاس ورڈ (محفوظ ہیش کے طور پر ذخیرہ شدہ)</td><td>آپ کا اکاؤنٹ: لاگ ان، ای میل کی تصدیق، پاس ورڈ ری سیٹ</td><td>معاہدہ</td></tr>
+<tr><td>کریڈٹ بیلنس اور استعمال کے کاؤنٹر</td><td>یہ جاننا کہ آپ کتنی ریڈنگز چلا سکتے ہیں (مفت / پیکٹ / رکنیت، مناسب استعمال کا کاؤنٹر)</td><td>معاہدہ</td></tr>
+<tr><td><strong>پاؤں کی تصاویر</strong></td><td>صرف اُس ریڈنگ کی تیاری جس کی آپ درخواست کرتے ہیں، اور کچھ نہیں۔ میموری میں پروسیس ہوتی ہیں، خفیہ کاری کے ساتھ ہمارے AI فراہم کنندہ کو بھیجی جاتی ہیں، اور تجزیہ مکمل ہونے کے بعد <strong>کہیں بھی محفوظ نہیں کی جاتیں</strong>۔ AI ماڈلز کی تربیت کے لیے استعمال نہیں ہوتیں۔</td><td>معاہدہ (ہر تجزیے کی درخواست آپ خود کرتے ہیں)</td></tr>
+<tr><td>محفوظ شدہ ریڈنگز ("میری ریڈنگز")</td><td>صرف درجہ بندی کے کوڈ اور ریڈنگ کے متن، تصاویر کبھی نہیں۔ آپ انہیں کسی بھی وقت مٹا سکتے ہیں۔</td><td>معاہدہ</td></tr>
+<tr><td>لین دین کا میٹا ڈیٹا (پروڈکٹ، رقم، ادائیگی کی ٹرانزیکشن ID)</td><td>آپ کی خریداری کا کریڈٹ دینا، حساب کتاب، دھوکا دہی سے بچاؤ۔ آپ کے کارڈ کی تفصیلات ہم کبھی نہ دیکھتے ہیں نہ محفوظ کرتے ہیں؛ ادائیگی ہمارا پیمنٹ پارٹنر سنبھالتا ہے۔</td><td>معاہدہ، قانونی ذمہ داری</td></tr>
+<tr><td>تکنیکی لاگز (IP ایڈریس، ٹائم اسٹیمپ)</td><td>ہمارے سرورز پر سکیورٹی، ریٹ لمٹنگ اور غلط استعمال کی روک تھام</td><td>جائز مفاد</td></tr>
+<tr><td>سپورٹ ای میلز</td><td>جب آپ ہم سے رابطہ کریں تو آپ کی مدد کرنا</td><td>جائز مفاد</td></tr>
+</table>
+<p>ہم آپ کی تاریخ پیدائش یا کوئی بھی ایسا ڈیٹا نہیں مانگتے جس کی ہمیں ضرورت نہیں (ڈیٹا کم سے کم رکھنے کا اصول)۔ ہم اشتہاری یا اینالیٹکس ٹریکر استعمال نہیں کرتے۔ ایپ آپ کا سیشن ٹوکن اور زبان کی ترجیح آپ کے براؤزر کی لوکل اسٹوریج میں رکھتی ہے، صرف فنکشنل مقصد کے لیے۔</p>
+
+<h2>3. ڈیٹا پروسیس کرنے میں ہماری مدد کون کرتا ہے</h2>
+<table>
+<tr><th>فریق</th><th>کردار</th><th>مقام</th></tr>
+<tr><td>Supabase</td><td>اکاؤنٹس اور ڈیٹا بیس ہوسٹنگ</td><td>EU (فرینکفرٹ، جرمنی)</td></tr>
+<tr><td>Cloudflare</td><td>تجزیے کا گیٹ وے (worker)، DNS</td><td>EU/US، EU Data Privacy Framework &amp; SCCs</td></tr>
+<tr><td>Anthropic</td><td>آپ کی تصویر کا AI تجزیہ (Claude API)؛ API کا ڈیٹا ماڈلز کی تربیت کے لیے استعمال نہیں ہوتا</td><td>US، EU Standard Contractual Clauses / DPF کے تحت محفوظ</td></tr>
+<tr><td>پیمنٹ پارٹنر</td><td>ادائیگیاں (Merchant of Record، خود مختار کنٹرولر)</td><td>EU/EEA یا ایسا ملک جس کے لیے EU کا مطابقتی فیصلہ موجود ہے</td></tr>
+<tr><td>GitHub Pages</td><td>ایپ کی سٹیٹک فائلوں کی ہوسٹنگ؛ IP ایڈریس لاگ کر سکتا ہے</td><td>US، DPF</td></tr>
+</table>
+<p>ہمارے پروسیسرز کے ساتھ ڈیٹا پروسیسنگ کے معاہدے موجود ہیں۔ ہم ذاتی ڈیٹا کبھی نہیں بیچتے۔</p>
+
+<h2>4. ہم چیزیں کتنی دیر رکھتے ہیں</h2>
+<p>اکاؤنٹ کا ڈیٹا: جب تک آپ اپنا اکاؤنٹ حذف نہیں کرتے۔ محفوظ شدہ ریڈنگز: جب تک آپ انہیں (یا اپنا اکاؤنٹ) حذف نہیں کرتے۔ تصاویر: <strong>بالکل نہیں رکھی جاتیں</strong>۔ لین دین کے ریکارڈ: 7 سال تک (ڈچ ٹیکس قانون)۔ سپورٹ ای میلز: 2 سال تک۔ اکاؤنٹ حذف کرنے سے آپ کا پروفائل، کریڈٹ بیلنس اور محفوظ شدہ ریڈنگز خود بخود ہٹ جاتے ہیں (cascading delete)۔</p>
+
+<h2>5. آپ کے حقوق</h2>
+<p>آپ ہم سے رسائی، تصحیح، حذف، پابندی یا منتقلی (پورٹیبلٹی) کی درخواست کر سکتے ہیں، یا پروسیسنگ پر اعتراض کر سکتے ہیں: <a href="mailto:support@toereading.app">support@toereading.app</a> پر ای میل کریں، ہم ایک مہینے کے اندر جواب دیں گے۔ محفوظ شدہ ریڈنگز آپ ایپ میں خود مٹا سکتے ہیں؛ اکاؤنٹ کے مکمل حذف کے لیے ہمیں ای میل کریں (ایپ کے اندر حذف کا بٹن جلد آ رہا ہے)۔ آپ ڈچ نگران ادارے <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a> کو شکایت بھی کر سکتے ہیں۔</p>
+
+<h2>6. سکیورٹی</h2>
+<p>ڈیٹا خفیہ کاری کے ساتھ سفر کرتا ہے (TLS)۔ پاس ورڈ محفوظ ہیش کے طور پر ذخیرہ ہوتے ہیں۔ ڈیٹا بیس تک رسائی row-level security سے محفوظ ہے: آپ کا ڈیٹا صرف آپ ہی پڑھ سکتے ہیں۔ سرور کیز صرف سرور ماحول میں رہتی ہیں، ایپ میں کبھی نہیں۔ اگر اس کے باوجود کوئی ایسا ڈیٹا بریچ ہو جائے جس سے آپ کو خطرہ ہو، تو ہم اسے 72 گھنٹوں کے اندر Autoriteit Persoonsgegevens کو رپورٹ کریں گے اور جہاں ضروری ہو آپ کو مطلع کریں گے۔</p>
+
+<h2>7. بچے</h2>
+<p>Toe Reading سولہ (16) سال سے کم عمر بچوں کے لیے نہیں ہے، اور ہم جانتے بوجھتے ان کا ڈیٹا پروسیس نہیں کرتے۔</p>
+
+<h2>8. تبدیلیاں</h2>
+<p>اگر ہم اس پالیسی میں کوئی اہم تبدیلی کریں تو تبدیلی کے نافذ ہونے سے پہلے ہم آپ کو ایپ میں یا ای میل کے ذریعے بتا دیں گے۔</p>
+</main>
+<main lang-blok="fa">
+<h1>سیاست حریم خصوصی</h1>
+<p class="datum">تاریخ اجرا: ۱۳ ژوئیه ۲۰۲۶</p>
+
+<div class="kaartje groen">
+<p><strong>خلاصه ماجرا:</strong> عکس‌های پایت تحلیل و بلافاصله دور ریخته می‌شوند: هرگز ذخیره نمی‌شوند، هرگز برای آموزش هوش مصنوعی به کار نمی‌روند. فقط همان چیزی را نگه می‌داریم که یک حساب لازم دارد: نام، ایمیل، مانده اعتبار و (اگر ذخیره‌شان کنی) متن خوانش‌هایت. نه ردیابی، نه تبلیغ، نه کوکی تحلیلی.</p>
+</div>
+
+<h2>1. چه کسی مسئول است</h2>
+<p>کنترل‌کننده داده‌های شخصی تو <strong>Ferri Somogyi Productions</strong> است، ثبت‌شده در هلند (شماره KvK‏ 34286815، شناسه مالیات بر ارزش افزوده NL001933433B06). تماس: <a href="mailto:support@toereading.app">support@toereading.app</a>. برای خریدها، شریک پرداخت ما به‌عنوان Merchant of Record (فروشنده رسمی) عمل می‌کند و برای داده‌های پرداختی که پردازش می‌کند کنترل‌کننده مستقل است؛ پیوند سیاست حریم خصوصی خودِ این شریک هنگام پرداخت و روی رسیدت آمده است.</p>
+
+<h2>2. چه چیزهایی را پردازش می‌کنیم، و چرا</h2>
+<table>
+<tr><th>داده</th><th>هدف</th><th>مبنای حقوقی</th></tr>
+<tr><td>نام، ایمیل، رمز عبور (به‌صورت هش امن ذخیره می‌شود)</td><td>حساب تو: ورود، تأیید ایمیل، بازنشانی رمز عبور</td><td>قرارداد</td></tr>
+<tr><td>مانده اعتبار و شمارنده‌های مصرف</td><td>دانستن اینکه چند خوانش می‌توانی اجرا کنی (رایگان / بسته / اشتراک، شمارنده استفاده منصفانه)</td><td>قرارداد</td></tr>
+<tr><td><strong>عکس‌های پا</strong></td><td>تولید خوانشی که درخواست می‌کنی، همین و بس. در حافظه پردازش می‌شود، رمزگذاری‌شده به ارائه‌دهنده هوش مصنوعی ما فرستاده می‌شود و پس از پایان تحلیل <strong>هیچ‌جا ذخیره نمی‌شود</strong>. برای آموزش مدل‌های هوش مصنوعی به کار نمی‌رود.</td><td>قرارداد (هر تحلیل را خودت فعالانه درخواست می‌کنی)</td></tr>
+<tr><td>خوانش‌های ذخیره‌شده («خوانش‌های من»)</td><td>فقط کدهای دسته‌بندی و متن خوانش‌ها، هرگز عکس‌ها. هر وقت بخواهی می‌توانی پاکشان کنی.</td><td>قرارداد</td></tr>
+<tr><td>فراداده تراکنش (محصول، مبلغ، شناسه تراکنش پرداخت)</td><td>ثبت اعتبارِ خریدت، حسابداری، پیشگیری از کلاهبرداری. ما اطلاعات کارتت را هرگز نه می‌بینیم و نه ذخیره می‌کنیم؛ پرداخت را شریک پرداخت ما انجام می‌دهد.</td><td>قرارداد، الزام قانونی</td></tr>
+<tr><td>لاگ‌های فنی (نشانی IP، زمان‌ها)</td><td>امنیت، محدودسازی سرعت و پیشگیری از سوءاستفاده روی سرورهای ما</td><td>منافع مشروع</td></tr>
+<tr><td>ایمیل‌های پشتیبانی</td><td>کمک به تو وقتی با ما تماس می‌گیری</td><td>منافع مشروع</td></tr>
+</table>
+<p>تاریخ تولدت یا هیچ داده دیگری را که لازم نداریم نمی‌پرسیم (کمینه‌سازی داده). از ردیاب‌های تبلیغاتی یا تحلیلی استفاده نمی‌کنیم. اپ توکن نشست و زبان دلخواهت را در حافظه محلی مرورگرت نگه می‌دارد، صرفاً برای کارکرد اپ.</p>
+
+<h2>3. چه کسانی در پردازش داده به ما کمک می‌کنند</h2>
+<table>
+<tr><th>طرف</th><th>نقش</th><th>مکان</th></tr>
+<tr><td>Supabase</td><td>میزبانی حساب‌ها و پایگاه داده</td><td>اتحادیه اروپا (فرانکفورت، آلمان)</td></tr>
+<tr><td>Cloudflare</td><td>دروازه تحلیل (worker)، DNS</td><td>اتحادیه اروپا/آمریکا، چارچوب حریم خصوصی داده اتحادیه اروپا (DPF) &amp; بندهای SCC</td></tr>
+<tr><td>Anthropic</td><td>تحلیل هوش مصنوعی عکست (Claude API)؛ داده API برای آموزش مدل‌ها به کار نمی‌رود</td><td>آمریکا، محافظت‌شده با بندهای قراردادی استاندارد اتحادیه اروپا / DPF</td></tr>
+<tr><td>شریک پرداخت</td><td>پرداخت‌ها (Merchant of Record، کنترل‌کننده مستقل)</td><td>اتحادیه اروپا/منطقه اقتصادی اروپا یا کشوری با تصمیم کفایت اتحادیه اروپا</td></tr>
+<tr><td>GitHub Pages</td><td>میزبانی فایل‌های ایستای اپ؛ ممکن است نشانی‌های IP را ثبت کند</td><td>آمریکا، DPF</td></tr>
+</table>
+<p>با پردازشگرهای‌مان قرارداد پردازش داده داریم. هرگز داده شخصی نمی‌فروشیم.</p>
+
+<h2>4. چه مدت نگه می‌داریم</h2>
+<p>داده حساب: تا وقتی حسابت را پاک کنی. خوانش‌های ذخیره‌شده: تا وقتی خودشان (یا حسابت) را پاک کنی. عکس‌ها: <strong>اصلاً نگه داشته نمی‌شوند</strong>. سوابق تراکنش: تا ۷ سال (قانون مالیاتی هلند). ایمیل‌های پشتیبانی: تا ۲ سال. پاک کردن حسابت، پروفایل، مانده اعتبار و خوانش‌های ذخیره‌شده‌ات را خودکار حذف می‌کند (حذف زنجیره‌ای).</p>
+
+<h2>5. حقوق تو</h2>
+<p>می‌توانی از ما دسترسی، اصلاح، حذف، محدودسازی یا انتقال‌پذیری بخواهی، یا به پردازش اعتراض کنی: به <a href="mailto:support@toereading.app">support@toereading.app</a> ایمیل بزن و ظرف یک ماه پاسخ می‌دهیم. خوانش‌های ذخیره‌شده را خودت می‌توانی در اپ پاک کنی؛ برای حذف کامل حساب به ما ایمیل بزن (دکمه حذف داخل اپ در راه است). همچنین می‌توانی به نهاد ناظر هلند، <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>، شکایت کنی.</p>
+
+<h2>6. امنیت</h2>
+<p>داده‌ها رمزگذاری‌شده جابه‌جا می‌شوند (TLS). رمزهای عبور به‌صورت هش امن ذخیره می‌شوند. دسترسی به پایگاه داده با امنیت سطح ردیف محافظت می‌شود: داده تو فقط برای خودت خواندنی است. کلیدهای سرور فقط در محیط‌های سرور نگه داشته می‌شوند، هرگز در اپ. اگر با این حال نشت داده‌ای رخ دهد که برای تو خطری داشته باشد، ظرف ۷۲ ساعت آن را به Autoriteit Persoonsgegevens (نهاد ناظر هلند) گزارش می‌کنیم و در صورت لزوم به خودت خبر می‌دهیم.</p>
+
+<h2>7. کودکان</h2>
+<p>Toe Reading برای کودکان زیر ۱۶ سال در نظر گرفته نشده است و ما آگاهانه داده‌های آن‌ها را پردازش نمی‌کنیم.</p>
+
+<h2>8. تغییرها</h2>
+<p>اگر این سیاست را به شکلی مهم تغییر دهیم، پیش از اجرایی شدن تغییر در اپ یا با ایمیل خبرت می‌کنیم.</p>
+</main>
+<main lang-blok="ms">
+<h1>Dasar Privasi</h1>
+<p class="datum">Tarikh berkuat kuasa: 13 Julai 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Versi ringkas:</strong> foto kaki anda dianalisis dan terus dibuang: tidak pernah disimpan, tidak pernah digunakan untuk melatih AI. Kami hanya menyimpan apa yang diperlukan oleh sebuah akaun: nama anda, e-mel, baki kredit dan (jika anda menyimpannya) teks bacaan anda. Tiada penjejakan, tiada iklan, tiada kuki analitik.</p>
+</div>
+
+<h2>1. Siapa yang bertanggungjawab</h2>
+<p>Pengawal data peribadi anda ialah <strong>Ferri Somogyi Productions</strong>, berdaftar di Belanda (no. KvK 34286815, ID VAT NL001933433B06). Hubungi: <a href="mailto:support@toereading.app">support@toereading.app</a>. Bagi pembelian, rakan pembayaran kami bertindak sebagai Merchant of Record (penjual rasmi) dan merupakan pengawal bebas bagi data pembayaran yang diprosesnya; dasar privasi rakan pembayaran itu sendiri dipautkan ketika pembayaran dan pada resit anda.</p>
+
+<h2>2. Apa yang kami proses, dan mengapa</h2>
+<table>
+<tr><th>Data</th><th>Tujuan</th><th>Asas undang-undang</th></tr>
+<tr><td>Nama, e-mel, kata laluan (disimpan sebagai cincangan selamat)</td><td>Akaun anda: log masuk, pengesahan e-mel, penetapan semula kata laluan</td><td>Kontrak</td></tr>
+<tr><td>Baki kredit dan kaunter penggunaan</td><td>Mengetahui berapa banyak bacaan yang boleh anda jalankan (percuma / pek / langganan, kaunter penggunaan wajar)</td><td>Kontrak</td></tr>
+<tr><td><strong>Foto kaki</strong></td><td>Menjana bacaan yang anda minta, tiada yang lain. Diproses dalam memori, dihantar secara disulitkan kepada pembekal AI kami, dan <strong>tidak disimpan di mana-mana</strong> selepas analisis selesai. Tidak digunakan untuk melatih model AI.</td><td>Kontrak (anda sendiri meminta setiap analisis secara aktif)</td></tr>
+<tr><td>Bacaan yang disimpan ("bacaan saya")</td><td>Hanya kod klasifikasi dan teks bacaan, tidak pernah foto. Anda boleh memadamkannya pada bila-bila masa.</td><td>Kontrak</td></tr>
+<tr><td>Metadata transaksi (produk, jumlah, ID transaksi pembayaran)</td><td>Mengkreditkan pembelian anda, simpan kira, pencegahan penipuan. Kami tidak pernah melihat atau menyimpan butiran kad anda; rakan pembayaran kami menguruskan pembayaran.</td><td>Kontrak, kewajipan undang-undang</td></tr>
+<tr><td>Log teknikal (alamat IP, cap masa)</td><td>Keselamatan, pengehadan kadar dan pencegahan penyalahgunaan pada pelayan kami</td><td>Kepentingan sah</td></tr>
+<tr><td>E-mel sokongan</td><td>Membantu anda apabila anda menghubungi kami</td><td>Kepentingan sah</td></tr>
+</table>
+<p>Kami tidak meminta tarikh lahir anda atau apa-apa data lain yang tidak kami perlukan (peminimuman data). Kami tidak menggunakan penjejak iklan atau analitik. Aplikasi ini menyimpan token sesi dan pilihan bahasa anda dalam storan setempat pelayar anda, semata-mata untuk fungsi.</p>
+
+<h2>3. Siapa yang membantu kami memproses data</h2>
+<table>
+<tr><th>Pihak</th><th>Peranan</th><th>Lokasi</th></tr>
+<tr><td>Supabase</td><td>Akaun dan pengehosan pangkalan data</td><td>EU (Frankfurt, Jerman)</td></tr>
+<tr><td>Cloudflare</td><td>Gerbang analisis (worker), DNS</td><td>EU/AS, EU Data Privacy Framework &amp; SCC</td></tr>
+<tr><td>Anthropic</td><td>Analisis AI foto anda (Claude API); data API tidak digunakan untuk melatih model</td><td>AS, dilindungi oleh Klausa Kontrak Standard EU / DPF</td></tr>
+<tr><td>Rakan pembayaran</td><td>Pembayaran (Merchant of Record, pengawal bebas)</td><td>EU/EEA atau negara dengan keputusan kecukupan EU</td></tr>
+<tr><td>GitHub Pages</td><td>Pengehosan fail statik aplikasi; mungkin melog alamat IP</td><td>AS, DPF</td></tr>
+</table>
+<p>Kami mempunyai perjanjian pemprosesan data dengan pemproses kami. Kami tidak pernah menjual data peribadi.</p>
+
+<h2>4. Berapa lama kami menyimpan sesuatu</h2>
+<p>Data akaun: sehingga anda memadamkan akaun anda. Bacaan yang disimpan: sehingga anda memadamkannya (atau akaun anda). Foto: <strong>langsung tidak disimpan</strong>. Rekod transaksi: sehingga 7 tahun (undang-undang cukai Belanda). E-mel sokongan: sehingga 2 tahun. Memadamkan akaun anda turut membuang profil, baki kredit dan bacaan tersimpan anda secara automatik (pemadaman berlata).</p>
+
+<h2>5. Hak anda</h2>
+<p>Anda boleh meminta daripada kami akses, pembetulan, pemadaman, pengehadan atau kemudahalihan data anda, atau membantah pemprosesan: e-mel <a href="mailto:support@toereading.app">support@toereading.app</a> dan kami akan membalas dalam masa sebulan. Anda boleh memadamkan bacaan tersimpan sendiri dalam aplikasi; untuk pemadaman akaun sepenuhnya, e-mel kami (butang padam dalam aplikasi sedang disediakan). Anda juga boleh membuat aduan kepada pihak berkuasa penyeliaan Belanda, iaitu <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
+
+<h2>6. Keselamatan</h2>
+<p>Data bergerak secara disulitkan (TLS). Kata laluan disimpan sebagai cincangan selamat. Akses pangkalan data dilindungi dengan keselamatan peringkat baris: data anda hanya boleh dibaca oleh anda. Kunci pelayan hanya wujud dalam persekitaran pelayan, tidak pernah dalam aplikasi. Sekiranya berlaku juga pelanggaran data yang menimbulkan risiko kepada anda, kami akan melaporkannya kepada Autoriteit Persoonsgegevens dalam masa 72 jam dan memaklumkan anda apabila diperlukan.</p>
+
+<h2>7. Kanak-kanak</h2>
+<p>Toe Reading tidak ditujukan untuk kanak-kanak bawah 16 tahun, dan kami tidak memproses data mereka secara sedar.</p>
+
+<h2>8. Perubahan</h2>
+<p>Jika kami mengubah dasar ini secara bermakna, kami akan memberitahu anda dalam aplikasi atau melalui e-mel sebelum perubahan itu berkuat kuasa.</p>
+</main>
+<main lang-blok="tl">
+<h1>Privacy Policy</h1>
+<p class="datum">Petsa ng pagkakabisa: 13 Hulyo 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Ang maikling bersyon:</strong> ang mga larawan ng iyong paa ay sinusuri at agad na itinatapon: hindi kailanman iniimbak, hindi kailanman ginagamit para mag-train ng AI. Iniimbak lang namin ang kailangan ng isang account: ang iyong pangalan, email, balanse ng credit at (kung ise-save mo) ang mga teksto ng iyong pagbasa. Walang tracking, walang ads, walang analytics cookies.</p>
+</div>
+
+<h2>1. Kung sino ang responsable</h2>
+<p>Ang controller para sa iyong personal na data ay ang <strong>Ferri Somogyi Productions</strong>, nakarehistro sa Netherlands (KvK no. 34286815, VAT ID NL001933433B06). Kontak: <a href="mailto:support@toereading.app">support@toereading.app</a>. Para sa mga pagbili, ang aming payment partner ay kumikilos bilang Merchant of Record (ang legal na nagbebenta) at isang independiyenteng controller para sa payment data na pinoproseso nito; naka-link ang sariling privacy policy ng partner sa checkout at sa iyong resibo.</p>
+
+<h2>2. Ano ang pinoproseso namin, at bakit</h2>
+<table>
+<tr><th>Data</th><th>Layunin</th><th>Legal na batayan</th></tr>
+<tr><td>Pangalan, email, password (iniimbak bilang secure na hash)</td><td>Ang iyong account: pag-login, email verification, pag-reset ng password</td><td>Kontrata</td></tr>
+<tr><td>Balanse ng credit at mga usage counter</td><td>Pag-alam kung ilang pagbasa pa ang maaari mong patakbuhin (libre / pack / subscription, fair-use counter)</td><td>Kontrata</td></tr>
+<tr><td><strong>Mga larawan ng paa</strong></td><td>Pagbuo ng pagbasang hiniling mo, wala nang iba. Pinoproseso sa memory, ipinapadala nang naka-encrypt sa aming AI provider, at <strong>hindi iniimbak kahit saan</strong> pagkatapos makumpleto ang pagsusuri. Hindi ginagamit para mag-train ng mga AI model.</td><td>Kontrata (aktibo mong hinihiling ang bawat pagsusuri)</td></tr>
+<tr><td>Mga naka-save na pagbasa ("aking mga pagbasa")</td><td>Ang mga classification code at teksto ng pagbasa lang, hindi kailanman mga larawan. Maaari mo itong burahin anumang oras.</td><td>Kontrata</td></tr>
+<tr><td>Transaction metadata (produkto, halaga, payment transaction ID)</td><td>Pag-credit ng iyong binili, bookkeeping, pag-iwas sa panloloko. Hindi namin kailanman nakikita o iniimbak ang detalye ng iyong card; ang aming payment partner ang humahawak sa bayad.</td><td>Kontrata, legal na obligasyon</td></tr>
+<tr><td>Mga technical log (IP address, mga timestamp)</td><td>Seguridad, rate limiting at pag-iwas sa pang-aabuso sa aming mga server</td><td>Lehitimong interes</td></tr>
+<tr><td>Mga support email</td><td>Pagtulong sa iyo kapag nakipag-ugnayan ka sa amin</td><td>Lehitimong interes</td></tr>
+</table>
+<p>Hindi namin hinihingi ang petsa ng iyong kapanganakan o anumang iba pang data na hindi namin kailangan (data minimisation). Hindi kami gumagamit ng mga tracker para sa advertising o analytics. Iniimbak ng app ang iyong session token at kagustuhan sa wika sa local storage ng iyong browser, functional lamang.</p>
+
+<h2>3. Sino ang tumutulong sa aming magproseso ng data</h2>
+<table>
+<tr><th>Partido</th><th>Papel</th><th>Lokasyon</th></tr>
+<tr><td>Supabase</td><td>Hosting ng mga account at database</td><td>EU (Frankfurt, Germany)</td></tr>
+<tr><td>Cloudflare</td><td>Gateway ng pagsusuri (worker), DNS</td><td>EU/US, EU Data Privacy Framework &amp; SCCs</td></tr>
+<tr><td>Anthropic</td><td>AI na pagsusuri ng iyong larawan (Claude API); hindi ginagamit ang API data para mag-train ng mga model</td><td>US, protektado ng EU Standard Contractual Clauses / DPF</td></tr>
+<tr><td>Payment partner</td><td>Mga bayad (Merchant of Record, independiyenteng controller)</td><td>EU/EEA o bansang may EU adequacy decision</td></tr>
+<tr><td>GitHub Pages</td><td>Hosting ng mga static na file ng app; maaaring mag-log ng mga IP address</td><td>US, DPF</td></tr>
+</table>
+<p>May mga data processing agreement kami sa aming mga processor. Hindi namin kailanman ibinebenta ang personal na data.</p>
+
+<h2>4. Gaano katagal namin iniimbak ang mga bagay</h2>
+<p>Data ng account: hanggang burahin mo ang iyong account. Mga naka-save na pagbasa: hanggang burahin mo ang mga ito (o ang iyong account). Mga larawan: <strong>hindi iniimbak sa anumang paraan</strong>. Mga rekord ng transaksyon: hanggang 7 taon (batas sa buwis ng Netherlands). Mga support email: hanggang 2 taon. Ang pagbura ng iyong account ay awtomatikong nag-aalis ng iyong profile, balanse ng credit at mga naka-save na pagbasa (cascading delete).</p>
+
+<h2>5. Ang iyong mga karapatan</h2>
+<p>Maaari mong hilingin sa amin ang access, pagtatama, pagbura, paghihigpit, portability, o tumutol sa pagproseso: mag-email sa <a href="mailto:support@toereading.app">support@toereading.app</a> at sasagot kami sa loob ng isang buwan. Maaari mong burahin mismo ang mga naka-save na pagbasa sa app; para sa buong pagbura ng account, mag-email sa amin (paparating na ang delete button sa loob ng app). Maaari ka ring magreklamo sa Dutch na awtoridad sa pangangasiwa, ang <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a> (ang tagapangasiwa ng proteksyon ng data sa Netherlands).</p>
+
+<h2>6. Seguridad</h2>
+<p>Ang data ay naglalakbay nang naka-encrypt (TLS). Ang mga password ay iniimbak bilang mga secure na hash. Ang access sa database ay protektado ng row-level security: ang iyong data ay mababasa mo lang. Ang mga server key ay nasa mga server environment lang, hindi kailanman sa app. Kung sakaling magkaroon pa rin ng data breach na naglalagay sa iyo sa panganib, iuulat namin ito sa Autoriteit Persoonsgegevens sa loob ng 72 oras at aabisuhan ka kapag kinakailangan.</p>
+
+<h2>7. Mga bata</h2>
+<p>Ang Toe Reading ay hindi inilaan para sa mga batang wala pang 16 taong gulang, at hindi namin sadyang pinoproseso ang kanilang data.</p>
+
+<h2>8. Mga pagbabago</h2>
+<p>Kung babaguhin namin ang policy na ito sa makabuluhang paraan, ipapaalam namin sa iyo sa app o sa email bago magkabisa ang pagbabago.</p>
+</main>
+<main lang-blok="el">
+<h1>Πολιτική Απορρήτου</h1>
+<p class="datum">Ημερομηνία ισχύος: 13 Ιουλίου 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Η σύντομη εκδοχή:</strong> οι φωτογραφίες των ποδιών σου αναλύονται και αμέσως μετά απορρίπτονται: δεν αποθηκεύονται ποτέ, δεν χρησιμοποιούνται ποτέ για εκπαίδευση AI. Κρατάμε μόνο ό,τι χρειάζεται ένας λογαριασμός: το όνομά σου, το e-mail σου, το υπόλοιπο μονάδων και (αν τα αποθηκεύσεις) τα κείμενα των αναγνώσεών σου. Χωρίς παρακολούθηση, χωρίς διαφημίσεις, χωρίς cookies στατιστικών.</p>
+</div>
+
+<h2>1. Ποιος είναι υπεύθυνος</h2>
+<p>Υπεύθυνος επεξεργασίας των προσωπικών σου δεδομένων είναι η <strong>Ferri Somogyi Productions</strong>, καταχωρισμένη στην Ολλανδία (αρ. KvK 34286815, αριθμός ΦΠΑ NL001933433B06). Επικοινωνία: <a href="mailto:support@toereading.app">support@toereading.app</a>. Για τις αγορές, ο συνεργάτης πληρωμών μας ενεργεί ως Merchant of Record (ο νόμιμος πωλητής) και είναι ανεξάρτητος υπεύθυνος επεξεργασίας για τα δεδομένα πληρωμών που επεξεργάζεται· η δική του πολιτική απορρήτου είναι συνδεδεμένη στο ταμείο και στην απόδειξή σου.</p>
+
+<h2>2. Τι επεξεργαζόμαστε, και γιατί</h2>
+<table>
+<tr><th>Δεδομένα</th><th>Σκοπός</th><th>Νομική βάση</th></tr>
+<tr><td>Όνομα, e-mail, κωδικός πρόσβασης (αποθηκεύεται ως ασφαλές hash)</td><td>Ο λογαριασμός σου: σύνδεση, επαλήθευση e-mail, επαναφορά κωδικού</td><td>Σύμβαση</td></tr>
+<tr><td>Υπόλοιπο μονάδων και μετρητές χρήσης</td><td>Να ξέρουμε πόσες αναγνώσεις μπορείς να τρέξεις (δωρεάν / πακέτο / συνδρομή, μετρητής εύλογης χρήσης)</td><td>Σύμβαση</td></tr>
+<tr><td><strong>Φωτογραφίες ποδιών</strong></td><td>Η δημιουργία της ανάγνωσης που ζητάς, τίποτα άλλο. Επεξεργάζονται στη μνήμη, αποστέλλονται κρυπτογραφημένες στον πάροχο AI μας και <strong>δεν αποθηκεύονται πουθενά</strong> μετά την ολοκλήρωση της ανάλυσης. Δεν χρησιμοποιούνται για την εκπαίδευση μοντέλων AI.</td><td>Σύμβαση (ζητάς ενεργά κάθε ανάλυση)</td></tr>
+<tr><td>Αποθηκευμένες αναγνώσεις ("οι αναγνώσεις μου")</td><td>Μόνο οι κωδικοί ταξινόμησης και τα κείμενα των αναγνώσεων, ποτέ φωτογραφίες. Μπορείς να τις διαγράψεις οποιαδήποτε στιγμή.</td><td>Σύμβαση</td></tr>
+<tr><td>Μεταδεδομένα συναλλαγών (προϊόν, ποσό, αναγνωριστικό συναλλαγής πληρωμής)</td><td>Η πίστωση της αγοράς σου, λογιστική, πρόληψη απάτης. Δεν βλέπουμε ούτε αποθηκεύουμε ποτέ τα στοιχεία της κάρτας σου· την πληρωμή τη χειρίζεται ο συνεργάτης πληρωμών μας.</td><td>Σύμβαση, νομική υποχρέωση</td></tr>
+<tr><td>Τεχνικά αρχεία καταγραφής (διεύθυνση IP, χρονικές σημάνσεις)</td><td>Ασφάλεια, όρια ρυθμού και πρόληψη κατάχρησης στους διακομιστές μας</td><td>Έννομο συμφέρον</td></tr>
+<tr><td>E-mail υποστήριξης</td><td>Να σε βοηθάμε όταν επικοινωνείς μαζί μας</td><td>Έννομο συμφέρον</td></tr>
+</table>
+<p>Δεν ζητάμε την ημερομηνία γέννησής σου ούτε άλλα δεδομένα που δεν χρειαζόμαστε (ελαχιστοποίηση δεδομένων). Δεν χρησιμοποιούμε διαφημιστικούς ή στατιστικούς ιχνηλάτες. Η εφαρμογή αποθηκεύει το token συνεδρίας και την προτίμηση γλώσσας σου στο local storage του browser σου, αμιγώς για λειτουργικούς λόγους.</p>
+
+<h2>3. Ποιοι μας βοηθούν στην επεξεργασία</h2>
+<table>
+<tr><th>Μέρος</th><th>Ρόλος</th><th>Τοποθεσία</th></tr>
+<tr><td>Supabase</td><td>Λογαριασμοί και φιλοξενία βάσης δεδομένων</td><td>ΕΕ (Φρανκφούρτη, Γερμανία)</td></tr>
+<tr><td>Cloudflare</td><td>Πύλη ανάλυσης (worker), DNS</td><td>ΕΕ/ΗΠΑ, EU Data Privacy Framework &amp; SCC</td></tr>
+<tr><td>Anthropic</td><td>Ανάλυση AI της φωτογραφίας σου (Claude API)· τα δεδομένα του API δεν χρησιμοποιούνται για εκπαίδευση μοντέλων</td><td>ΗΠΑ, με προστασία μέσω των Τυποποιημένων Συμβατικών Ρητρών της ΕΕ / DPF</td></tr>
+<tr><td>Συνεργάτης πληρωμών</td><td>Πληρωμές (Merchant of Record, ανεξάρτητος υπεύθυνος επεξεργασίας)</td><td>ΕΕ/ΕΟΧ ή χώρα με απόφαση επάρκειας της ΕΕ</td></tr>
+<tr><td>GitHub Pages</td><td>Φιλοξενία των στατικών αρχείων της εφαρμογής· μπορεί να καταγράφει διευθύνσεις IP</td><td>ΗΠΑ, DPF</td></tr>
+</table>
+<p>Με τους εκτελούντες την επεξεργασία έχουμε συνάψει συμβάσεις επεξεργασίας δεδομένων. Δεν πουλάμε ποτέ προσωπικά δεδομένα.</p>
+
+<h2>4. Για πόσο καιρό κρατάμε τα δεδομένα</h2>
+<p>Δεδομένα λογαριασμού: μέχρι να διαγράψεις τον λογαριασμό σου. Αποθηκευμένες αναγνώσεις: μέχρι να τις διαγράψεις (ή να διαγράψεις τον λογαριασμό σου). Φωτογραφίες: <strong>δεν φυλάσσονται καθόλου</strong>. Αρχεία συναλλαγών: έως 7 χρόνια (ολλανδική φορολογική νομοθεσία). E-mail υποστήριξης: έως 2 χρόνια. Η διαγραφή του λογαριασμού σου αφαιρεί αυτόματα το προφίλ σου, το υπόλοιπο μονάδων και τις αποθηκευμένες αναγνώσεις σου (διαδοχική διαγραφή).</p>
+
+<h2>5. Τα δικαιώματά σου</h2>
+<p>Μπορείς να μας ζητήσεις πρόσβαση, διόρθωση, διαγραφή, περιορισμό ή φορητότητα των δεδομένων σου, ή να αντιταχθείς στην επεξεργασία: στείλε e-mail στο <a href="mailto:support@toereading.app">support@toereading.app</a> και θα απαντήσουμε εντός ενός μήνα. Τις αποθηκευμένες αναγνώσεις μπορείς να τις διαγράψεις απευθείας στην εφαρμογή· για πλήρη διαγραφή λογαριασμού, στείλε μας e-mail (ένα κουμπί διαγραφής μέσα στην εφαρμογή είναι καθ' οδόν). Μπορείς επίσης να υποβάλεις καταγγελία στην ολλανδική εποπτική αρχή, την <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
+
+<h2>6. Ασφάλεια</h2>
+<p>Τα δεδομένα ταξιδεύουν κρυπτογραφημένα (TLS). Οι κωδικοί πρόσβασης αποθηκεύονται ως ασφαλή hash. Η πρόσβαση στη βάση δεδομένων προστατεύεται με row-level security: τα δεδομένα σου είναι αναγνώσιμα μόνο από σένα. Τα κλειδιά διακομιστή ζουν αποκλειστικά σε περιβάλλοντα διακομιστή, ποτέ στην εφαρμογή. Αν παρ' όλα αυτά συμβεί παραβίαση δεδομένων που ενέχει κίνδυνο για σένα, θα την αναφέρουμε στην Autoriteit Persoonsgegevens εντός 72 ωρών και θα σε ενημερώσουμε όπου απαιτείται.</p>
+
+<h2>7. Παιδιά</h2>
+<p>Το Toe Reading δεν προορίζεται για παιδιά κάτω των 16 ετών και δεν επεξεργαζόμαστε εν γνώσει μας τα δεδομένα τους.</p>
+
+<h2>8. Αλλαγές</h2>
+<p>Αν αλλάξουμε αυτή την πολιτική με ουσιώδη τρόπο, θα σε ενημερώσουμε στην εφαρμογή ή με e-mail πριν τεθεί σε ισχύ η αλλαγή.</p>
+</main>
+<main lang-blok="cs">
+<h1>Zásady ochrany soukromí</h1>
+<p class="datum">Datum účinnosti: 13. července 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Krátká verze:</strong> fotky tvých nohou se analyzují a hned poté zahodí: nikdy se neukládají, nikdy se nepoužívají k trénování AI. Uchováváme jen to, co účet potřebuje: tvé jméno, e-mail, zůstatek kreditů a (pokud si je uložíš) texty tvých čtení. Žádné sledování, žádné reklamy, žádné analytické cookies.</p>
+</div>
+
+<h2>1. Kdo je odpovědný</h2>
+<p>Správcem tvých osobních údajů je <strong>Ferri Somogyi Productions</strong>, registrovaná v Nizozemsku (KvK č. 34286815, DIČ NL001933433B06). Kontakt: <a href="mailto:support@toereading.app">support@toereading.app</a>. U nákupů vystupuje náš platební partner jako Merchant of Record (obchodník v záznamu) a je samostatným správcem platebních údajů, které zpracovává; vlastní zásady ochrany soukromí partnera jsou odkazovány u pokladny a na tvé účtence.</p>
+
+<h2>2. Co zpracováváme, a proč</h2>
+<table>
+<tr><th>Údaje</th><th>Účel</th><th>Právní základ</th></tr>
+<tr><td>Jméno, e-mail, heslo (uloženo jako bezpečný hash)</td><td>Tvůj účet: přihlášení, ověření e-mailu, obnova hesla</td><td>Smlouva</td></tr>
+<tr><td>Zůstatek kreditů a počítadla využití</td><td>Abychom věděli, kolik čtení můžeš spustit (zdarma / balíček / předplatné, počítadlo fair use)</td><td>Smlouva</td></tr>
+<tr><td><strong>Fotky nohou</strong></td><td>Vygenerování čtení, o které požádáš, nic jiného. Zpracovávají se v paměti, šifrovaně se odesílají našemu poskytovateli AI a po dokončení analýzy <strong>nejsou nikde uloženy</strong>. Nepoužívají se k trénování AI modelů.</td><td>Smlouva (o každou analýzu aktivně žádáš ty)</td></tr>
+<tr><td>Uložená čtení („moje čtení“)</td><td>Jen klasifikační kódy a texty čtení, nikdy fotky. Kdykoli je můžeš smazat.</td><td>Smlouva</td></tr>
+<tr><td>Metadata transakcí (produkt, částka, ID platební transakce)</td><td>Připsání tvého nákupu, účetnictví, prevence podvodů. Údaje o tvé kartě nikdy nevidíme ani neukládáme; platbu zajišťuje náš platební partner.</td><td>Smlouva, zákonná povinnost</td></tr>
+<tr><td>Technické logy (IP adresa, časová razítka)</td><td>Zabezpečení, rate limiting a prevence zneužití na našich serverech</td><td>Oprávněný zájem</td></tr>
+<tr><td>E-maily podpoře</td><td>Pomoc, když se na nás obrátíš</td><td>Oprávněný zájem</td></tr>
+</table>
+<p>Nežádáme tvé datum narození ani jiné údaje, které nepotřebujeme (minimalizace údajů). Nepoužíváme reklamní ani analytické trackery. Aplikace ukládá tvůj token relace a jazykovou preferenci v local storage tvého prohlížeče, čistě funkčně.</p>
+
+<h2>3. Kdo nám pomáhá se zpracováním</h2>
+<table>
+<tr><th>Strana</th><th>Role</th><th>Umístění</th></tr>
+<tr><td>Supabase</td><td>Účty a hosting databáze</td><td>EU (Frankfurt, Německo)</td></tr>
+<tr><td>Cloudflare</td><td>Brána analýzy (worker), DNS</td><td>EU/USA, EU Data Privacy Framework &amp; SCC</td></tr>
+<tr><td>Anthropic</td><td>AI analýza tvé fotky (Claude API); data z API se nepoužívají k trénování modelů</td><td>USA, chráněno standardními smluvními doložkami EU / DPF</td></tr>
+<tr><td>Platební partner</td><td>Platby (Merchant of Record, samostatný správce)</td><td>EU/EHP nebo země s rozhodnutím EU o odpovídající ochraně</td></tr>
+<tr><td>GitHub Pages</td><td>Hosting statických souborů aplikace; může logovat IP adresy</td><td>USA, DPF</td></tr>
+</table>
+<p>S našimi zpracovateli máme uzavřené smlouvy o zpracování údajů. Osobní údaje nikdy neprodáváme.</p>
+
+<h2>4. Jak dlouho co uchováváme</h2>
+<p>Údaje o účtu: dokud svůj účet nesmažeš. Uložená čtení: dokud je nesmažeš (nebo dokud nesmažeš účet). Fotky: <strong>neuchovávají se vůbec</strong>. Záznamy o transakcích: až 7 let (nizozemské daňové právo). E-maily podpoře: až 2 roky. Smazáním účtu se automaticky odstraní tvůj profil, zůstatek kreditů i uložená čtení (kaskádové mazání).</p>
+
+<h2>5. Tvá práva</h2>
+<p>Můžeš nás požádat o přístup, opravu, výmaz, omezení, přenositelnost, nebo vznést námitku proti zpracování: napiš na <a href="mailto:support@toereading.app">support@toereading.app</a> a odpovíme do měsíce. Uložená čtení si můžeš smazat sám/sama v aplikaci; o úplné smazání účtu nás požádej e-mailem (tlačítko pro smazání přímo v aplikaci je na cestě). Stížnost můžeš podat i u nizozemského dozorového úřadu, <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
+
+<h2>6. Zabezpečení</h2>
+<p>Data cestují šifrovaně (TLS). Hesla se ukládají jako bezpečné hashe. Přístup do databáze je chráněn row-level security: tvá data jsou čitelná jen pro tebe. Serverové klíče žijí výhradně v serverových prostředích, nikdy v aplikaci. Pokud by přesto došlo k úniku dat, který pro tebe představuje riziko, nahlásíme ho do 72 hodin úřadu Autoriteit Persoonsgegevens a tam, kde je to vyžadováno, tě budeme informovat.</p>
+
+<h2>7. Děti</h2>
+<p>Toe Reading není určen dětem do 16 let a jejich údaje vědomě nezpracováváme.</p>
+
+<h2>8. Změny</h2>
+<p>Pokud tyto zásady podstatně změníme, dáme ti vědět v aplikaci nebo e-mailem předtím, než změna nabude účinnosti.</p>
+</main>
+<main lang-blok="ro">
+<h1>Politica de confidențialitate</h1>
+<p class="datum">Data intrării în vigoare: 13 iulie 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Versiunea scurtă:</strong> fotografiile picioarelor tale sunt analizate și eliminate imediat: nu sunt salvate niciodată, nu sunt folosite niciodată pentru antrenarea AI. Păstrăm doar ce are nevoie un cont: numele tău, e-mailul, soldul de credite și (dacă le salvezi) textele citirilor tale. Fără urmărire, fără reclame, fără cookie-uri de analiză.</p>
+</div>
+
+<h2>1. Cine este responsabil</h2>
+<p>Operatorul datelor tale personale este <strong>Ferri Somogyi Productions</strong>, înregistrată în Țările de Jos (KvK nr. 34286815, cod TVA NL001933433B06). Contact: <a href="mailto:support@toereading.app">support@toereading.app</a>. Pentru achiziții, partenerul nostru de plăți acționează ca Merchant of Record (vânzător oficial) și este operator independent pentru datele de plată pe care le prelucrează; politica de confidențialitate proprie a partenerului este legată la finalizarea plății și pe bonul tău.</p>
+
+<h2>2. Ce prelucrăm, și de ce</h2>
+<table>
+<tr><th>Date</th><th>Scop</th><th>Temei juridic</th></tr>
+<tr><td>Nume, e-mail, parolă (stocată ca hash securizat)</td><td>Contul tău: conectare, verificarea e-mailului, resetarea parolei</td><td>Contract</td></tr>
+<tr><td>Soldul de credite și contoarele de utilizare</td><td>Să știm câte citiri poți rula (gratuit / pachet / abonament, contorul de utilizare rezonabilă)</td><td>Contract</td></tr>
+<tr><td><strong>Fotografiile picioarelor</strong></td><td>Generarea citirii pe care o ceri, nimic altceva. Prelucrate în memorie, trimise criptat furnizorului nostru de AI și <strong>nesalvate nicăieri</strong> după finalizarea analizei. Nu sunt folosite pentru antrenarea modelelor AI.</td><td>Contract (tu ceri activ fiecare analiză)</td></tr>
+<tr><td>Citiri salvate ("citirile mele")</td><td>Doar codurile de clasificare și textele citirilor, niciodată fotografii. Le poți șterge oricând.</td><td>Contract</td></tr>
+<tr><td>Metadate ale tranzacțiilor (produs, sumă, ID-ul tranzacției de plată)</td><td>Creditarea achiziției tale, contabilitate, prevenirea fraudei. Nu vedem și nu stocăm niciodată datele cardului tău; partenerul nostru de plăți se ocupă de plată.</td><td>Contract, obligație legală</td></tr>
+<tr><td>Jurnale tehnice (adresă IP, marcaje de timp)</td><td>Securitate, limitarea frecvenței și prevenirea abuzurilor pe serverele noastre</td><td>Interes legitim</td></tr>
+<tr><td>E-mailuri de asistență</td><td>Să te ajutăm atunci când ne contactezi</td><td>Interes legitim</td></tr>
+</table>
+<p>Nu îți cerem data nașterii și nici alte date de care nu avem nevoie (minimizarea datelor). Nu folosim trackere de publicitate sau de analiză. Aplicația stochează tokenul tău de sesiune și preferința de limbă în stocarea locală a browserului, exclusiv funcțional.</p>
+
+<h2>3. Cine ne ajută la prelucrarea datelor</h2>
+<table>
+<tr><th>Parte</th><th>Rol</th><th>Locație</th></tr>
+<tr><td>Supabase</td><td>Găzduirea conturilor și a bazei de date</td><td>UE (Frankfurt, Germania)</td></tr>
+<tr><td>Cloudflare</td><td>Gateway de analiză (worker), DNS</td><td>UE/SUA, EU Data Privacy Framework &amp; clauze contractuale standard (SCC)</td></tr>
+<tr><td>Anthropic</td><td>Analiza AI a fotografiei tale (API-ul Claude); datele din API nu sunt folosite pentru antrenarea modelelor</td><td>SUA, protejat prin clauzele contractuale standard ale UE / DPF</td></tr>
+<tr><td>Partenerul de plăți</td><td>Plăți (Merchant of Record, operator independent)</td><td>UE/SEE sau o țară cu o decizie de adecvare a UE</td></tr>
+<tr><td>GitHub Pages</td><td>Găzduirea fișierelor statice ale aplicației; poate înregistra adrese IP</td><td>SUA, DPF</td></tr>
+</table>
+<p>Avem acorduri de prelucrare a datelor cu persoanele noastre împuternicite. Nu vindem niciodată date personale.</p>
+
+<h2>4. Cât timp păstrăm datele</h2>
+<p>Datele contului: până când îți ștergi contul. Citirile salvate: până când le ștergi (sau îți ștergi contul). Fotografiile: <strong>nu sunt păstrate deloc</strong>. Evidențele tranzacțiilor: până la 7 ani (legislația fiscală neerlandeză). E-mailurile de asistență: până la 2 ani. Ștergerea contului îți elimină automat profilul, soldul de credite și citirile salvate (ștergere în cascadă).</p>
+
+<h2>5. Drepturile tale</h2>
+<p>Ne poți cere acces, rectificare, ștergere, restricționare, portabilitate sau te poți opune prelucrării: scrie la <a href="mailto:support@toereading.app">support@toereading.app</a> și îți răspundem în termen de o lună. Citirile salvate le poți șterge singur în aplicație; pentru ștergerea completă a contului, scrie-ne (un buton de ștergere în aplicație este pe drum). Poți depune și o plângere la autoritatea neerlandeză de supraveghere, <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
+
+<h2>6. Securitate</h2>
+<p>Datele circulă criptat (TLS). Parolele sunt stocate ca hashuri securizate. Accesul la baza de date este protejat prin securitate la nivel de rând: datele tale pot fi citite doar de tine. Cheile de server există doar în medii de server, niciodată în aplicație. Dacă totuși s-ar produce o breșă de date care prezintă un risc pentru tine, o vom raporta către Autoriteit Persoonsgegevens în termen de 72 de ore și te vom informa atunci când este necesar.</p>
+
+<h2>7. Copii</h2>
+<p>Toe Reading nu este destinată copiilor sub 16 ani și nu prelucrăm cu bună știință datele lor.</p>
+
+<h2>8. Modificări</h2>
+<p>Dacă modificăm această politică într-un mod important, te vom anunța în aplicație sau prin e-mail înainte ca schimbarea să intre în vigoare.</p>
+</main>
+<main lang-blok="sv">
+<h1>Integritetspolicy</h1>
+<p class="datum">Gäller från: 13 juli 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Den korta versionen:</strong> dina fotfoton analyseras och kastas direkt: sparas aldrig, används aldrig för att träna AI. Vi behåller bara det ett konto behöver: ditt namn, din e-postadress, ditt saldo och (om du sparar dem) dina läsningstexter. Ingen spårning, inga annonser, inga analyskakor.</p>
+</div>
+
+<h2>1. Vem som är ansvarig</h2>
+<p>Personuppgiftsansvarig för dina personuppgifter är <strong>Ferri Somogyi Productions</strong>, registrerad i Nederländerna (KvK-nr 34286815, momsregistreringsnummer NL001933433B06). Kontakt: <a href="mailto:support@toereading.app">support@toereading.app</a>. Vid köp agerar vår betalpartner som Merchant of Record (juridiskt sett säljaren) och är självständigt personuppgiftsansvarig för de betaluppgifter den behandlar; partnerns egen integritetspolicy länkas i kassan och på ditt kvitto.</p>
+
+<h2>2. Vad vi behandlar, och varför</h2>
+<table>
+<tr><th>Uppgifter</th><th>Ändamål</th><th>Rättslig grund</th></tr>
+<tr><td>Namn, e-post, lösenord (lagras som en säker hash)</td><td>Ditt konto: inloggning, e-postverifiering, återställning av lösenord</td><td>Avtal</td></tr>
+<tr><td>Saldo och användningsräknare</td><td>Att veta hur många läsningar du kan köra (gratis / paket / abonnemang, fair use-räknare)</td><td>Avtal</td></tr>
+<tr><td><strong>Fotfoton</strong></td><td>Att generera den läsning du begär, inget annat. Behandlas i minnet, skickas krypterat till vår AI-leverantör och <strong>sparas ingenstans</strong> efter att analysen är klar. Används inte för att träna AI-modeller.</td><td>Avtal (du begär aktivt varje analys)</td></tr>
+<tr><td>Sparade läsningar ("mina läsningar")</td><td>Endast klassificeringskoderna och läsningstexterna, aldrig foton. Du kan radera dem när som helst.</td><td>Avtal</td></tr>
+<tr><td>Transaktionsmetadata (produkt, belopp, betalningstransaktions-ID)</td><td>Att kreditera ditt köp, bokföring, förebyggande av bedrägeri. Vi ser eller sparar aldrig dina kortuppgifter; vår betalpartner hanterar betalningen.</td><td>Avtal, rättslig förpliktelse</td></tr>
+<tr><td>Tekniska loggar (IP-adress, tidsstämplar)</td><td>Säkerhet, hastighetsbegränsning och skydd mot missbruk på våra servrar</td><td>Berättigat intresse</td></tr>
+<tr><td>Supportmejl</td><td>Att hjälpa dig när du kontaktar oss</td><td>Berättigat intresse</td></tr>
+</table>
+<p>Vi frågar inte efter ditt födelsedatum eller andra uppgifter vi inte behöver (uppgiftsminimering). Vi använder inga annons- eller analysspårare. Appen lagrar din sessionstoken och ditt språkval i webbläsarens lokala lagring, enbart funktionellt.</p>
+
+<h2>3. Vilka som hjälper oss att behandla uppgifter</h2>
+<table>
+<tr><th>Part</th><th>Roll</th><th>Plats</th></tr>
+<tr><td>Supabase</td><td>Konton och databashosting</td><td>EU (Frankfurt, Tyskland)</td></tr>
+<tr><td>Cloudflare</td><td>Analysgateway (worker), DNS</td><td>EU/USA, EU:s Data Privacy Framework &amp; standardavtalsklausuler</td></tr>
+<tr><td>Anthropic</td><td>AI-analys av ditt foto (Claude API); API-data används inte för att träna modeller</td><td>USA, skyddat genom EU:s standardavtalsklausuler / DPF</td></tr>
+<tr><td>Betalpartner</td><td>Betalningar (Merchant of Record, självständigt personuppgiftsansvarig)</td><td>EU/EES eller ett land med EU-beslut om adekvat skyddsnivå</td></tr>
+<tr><td>GitHub Pages</td><td>Hosting av appens statiska filer; kan logga IP-adresser</td><td>USA, DPF</td></tr>
+</table>
+<p>Vi har personuppgiftsbiträdesavtal med våra biträden. Vi säljer aldrig personuppgifter.</p>
+
+<h2>4. Hur länge vi sparar saker</h2>
+<p>Kontouppgifter: tills du raderar ditt konto. Sparade läsningar: tills du raderar dem (eller ditt konto). Foton: <strong>sparas inte alls</strong>. Transaktionsunderlag: upp till 7 år (nederländsk skattelagstiftning). Supportmejl: upp till 2 år. När du raderar ditt konto tas din profil, ditt saldo och dina sparade läsningar bort automatiskt (kaskadradering).</p>
+
+<h2>5. Dina rättigheter</h2>
+<p>Du kan be oss om tillgång, rättelse, radering, begränsning eller dataportabilitet, eller invända mot behandling: mejla <a href="mailto:support@toereading.app">support@toereading.app</a> så svarar vi inom en månad. Sparade läsningar kan du radera själv i appen; för fullständig radering av kontot mejlar du oss (en raderingsknapp i appen är på väg). Du kan också klaga hos den nederländska tillsynsmyndigheten, <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
+
+<h2>6. Säkerhet</h2>
+<p>Uppgifter färdas krypterat (TLS). Lösenord lagras som säkra hashar. Databasåtkomsten skyddas med säkerhet på radnivå: dina uppgifter kan bara läsas av dig. Servernycklar finns bara i servermiljöer, aldrig i appen. Skulle det trots allt inträffa en dataincident som innebär en risk för dig anmäler vi den till Autoriteit Persoonsgegevens inom 72 timmar och informerar dig när det krävs.</p>
+
+<h2>7. Barn</h2>
+<p>Toe Reading är inte avsedd för barn under 16 år, och vi behandlar inte medvetet deras uppgifter.</p>
+
+<h2>8. Ändringar</h2>
+<p>Om vi ändrar den här policyn på ett betydande sätt meddelar vi dig i appen eller via e-post innan ändringen träder i kraft.</p>
+</main>
+<main lang-blok="zht">
+<h1>隱私權政策</h1>
+<p class="datum">生效日期：2026 年 7 月 13 日</p>
+
+<div class="kaartje groen">
+<p><strong>簡短版本：</strong>你的腳部照片經分析後會立即銷毀：絕不儲存，絕不用於訓練 AI。我們只保留帳戶運作所需的資料：你的姓名、電子郵件、額度餘額，以及（如果你選擇儲存）你的解讀文字。沒有追蹤，沒有廣告，沒有分析用 Cookie。</p>
+</div>
+
+<h2>1. 誰負責</h2>
+<p>你個人資料的控管者是 <strong>Ferri Somogyi Productions</strong>，在荷蘭登記（KvK 編號 34286815，加值稅編號 NL001933433B06）。聯絡方式：<a href="mailto:support@toereading.app">support@toereading.app</a>。就購買而言，我們的付款合作夥伴以 Merchant of Record（登記商家）身分行事，並就其處理的付款資料作為獨立的控管者；該夥伴自身的隱私權政策連結載於結帳頁面及你的收據上。</p>
+
+<h2>2. 我們處理什麼資料，為什麼</h2>
+<table>
+<tr><th>資料</th><th>目的</th><th>法律依據</th></tr>
+<tr><td>姓名、電子郵件、密碼（以安全雜湊方式儲存）</td><td>你的帳戶：登入、電子郵件驗證、密碼重設</td><td>契約</td></tr>
+<tr><td>額度餘額與使用計數器</td><td>得知你還能執行多少次解讀（免費／組合包／訂閱、合理使用計數器）</td><td>契約</td></tr>
+<tr><td><strong>腳部照片</strong></td><td>產生你所請求的解讀，僅此而已。在記憶體中處理，以加密方式傳送給我們的 AI 供應商，分析完成後<strong>不儲存於任何地方</strong>。不用於訓練 AI 模型。</td><td>契約（每次分析都由你主動請求）</td></tr>
+<tr><td>已儲存的解讀（「我的解讀」）</td><td>只有分類代碼與解讀文字，絕不含照片。你可以隨時刪除。</td><td>契約</td></tr>
+<tr><td>交易中繼資料（產品、金額、付款交易 ID）</td><td>為你的購買入帳、記帳、防範詐欺。我們絕不會看到或儲存你的卡片資料；付款由我們的付款合作夥伴處理。</td><td>契約、法定義務</td></tr>
+<tr><td>技術記錄（IP 位址、時間戳記）</td><td>我們伺服器上的安全防護、速率限制與濫用防範</td><td>正當利益</td></tr>
+<tr><td>客服電子郵件</td><td>在你與我們聯絡時提供協助</td><td>正當利益</td></tr>
+</table>
+<p>我們不會詢問你的出生日期或任何其他我們不需要的資料（資料最小化）。我們不使用廣告或分析追蹤器。本應用程式只在你瀏覽器的本機儲存空間中存放你的工作階段權杖與語言偏好，純屬功能性用途。</p>
+
+<h2>3. 誰協助我們處理資料</h2>
+<table>
+<tr><th>對象</th><th>角色</th><th>地點</th></tr>
+<tr><td>Supabase</td><td>帳戶與資料庫代管</td><td>歐盟（德國法蘭克福）</td></tr>
+<tr><td>Cloudflare</td><td>分析閘道（worker）、DNS</td><td>歐盟／美國，歐盟資料隱私框架 &amp; 標準契約條款</td></tr>
+<tr><td>Anthropic</td><td>對你照片的 AI 分析（Claude API）；API 資料不用於訓練模型</td><td>美國，受歐盟標準契約條款／DPF 保護</td></tr>
+<tr><td>付款合作夥伴</td><td>付款（Merchant of Record，獨立控管者）</td><td>歐盟／歐洲經濟區，或具歐盟適足性認定的國家</td></tr>
+<tr><td>GitHub Pages</td><td>應用程式靜態檔案的代管；可能記錄 IP 位址</td><td>美國，DPF</td></tr>
+</table>
+<p>我們與各資料處理者簽有資料處理協議。我們絕不出售個人資料。</p>
+
+<h2>4. 我們保存資料多久</h2>
+<p>帳戶資料：直到你刪除帳戶為止。已儲存的解讀：直到你刪除它們（或你的帳戶）為止。照片：<strong>完全不保存</strong>。交易紀錄：最長 7 年（荷蘭稅法）。客服電子郵件：最長 2 年。刪除帳戶會自動移除你的個人資料、額度餘額與已儲存的解讀（連鎖刪除）。</p>
+
+<h2>5. 你的權利</h2>
+<p>你可以向我們請求查閱、更正、刪除、限制處理、資料可攜，或表示反對處理：請寄電子郵件到 <a href="mailto:support@toereading.app">support@toereading.app</a>，我們會在一個月內回覆。你可以在應用程式中自行刪除已儲存的解讀；若要完整刪除帳戶，請寄電子郵件給我們（應用程式內的刪除按鈕即將推出）。你也可以向荷蘭監管機構 <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>（荷蘭個人資料保護局）提出申訴。</p>
+
+<h2>6. 安全</h2>
+<p>資料以加密方式傳輸（TLS）。密碼以安全雜湊方式儲存。資料庫存取受列級安全防護保護：你的資料只有你能讀取。伺服器金鑰只存在於伺服器環境中，絕不放在應用程式裡。萬一仍發生對你構成風險的資料外洩事件，我們會在 72 小時內向 Autoriteit Persoonsgegevens 通報，並在必要時通知你。</p>
+
+<h2>7. 兒童</h2>
+<p>Toe Reading 不適用於未滿 16 歲的兒童，我們也不會在知情的情況下處理他們的資料。</p>
+
+<h2>8. 變更</h2>
+<p>如果我們對本政策做出重大變更，我們會在變更生效前透過應用程式或電子郵件通知你。</p>
 </main>
 
 <footer>
@@ -161,16 +1590,24 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 </div>
 <script>
 (function(){
+  var TALEN=["en","nl","de","fr","es","it","pt","pl","ru","tr","ar","zh","ja","ko","hi","id","vi","th","uk","hu","bn","ur","fa","ms","tl","el","cs","ro","sv","zht"];
+  var RTL={ar:1,ur:1,fa:1};
   var t='en';
-  try{ t = localStorage.legal_taal || ((localStorage.taal==='nl' || (navigator.language||'').slice(0,2).toLowerCase()==='nl')?'nl':'en'); }catch(e){}
-  if(t!=='nl') t='en';
+  try{
+    var app=localStorage.taal, kies=localStorage.legal_taal;
+    t = (TALEN.indexOf(app)>=0 ? app : (TALEN.indexOf(kies)>=0 ? kies : (navigator.language||'').slice(0,2).toLowerCase()));
+  }catch(e){}
+  if(TALEN.indexOf(t)<0) t='en';
+  var sel=document.getElementById('taalKeuze');
   function zet(x){
+    if(TALEN.indexOf(x)<0) x='en';
     document.documentElement.setAttribute('data-taal',x);
     document.documentElement.lang=x;
-    document.querySelectorAll('.talen button').forEach(function(b){b.classList.toggle('actief',b.getAttribute('data-t')===x);});
+    document.documentElement.dir=RTL[x]?'rtl':'ltr';
+    if(sel) sel.value=x;
     try{localStorage.legal_taal=x;}catch(e){}
   }
-  document.querySelectorAll('.talen button').forEach(function(b){b.onclick=function(){zet(b.getAttribute('data-t'));};});
+  if(sel) sel.onchange=function(){zet(sel.value);};
   zet(t);
 })();
 </script>

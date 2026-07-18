@@ -34,13 +34,43 @@ footer nav{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:10px}
 [lang-blok]{display:none}
 html[data-taal="en"] [lang-blok="en"]{display:block}
 html[data-taal="nl"] [lang-blok="nl"]{display:block}
+html[data-taal="de"] [lang-blok="de"]{display:block}
+html[data-taal="fr"] [lang-blok="fr"]{display:block}
+html[data-taal="es"] [lang-blok="es"]{display:block}
+html[data-taal="it"] [lang-blok="it"]{display:block}
+html[data-taal="pt"] [lang-blok="pt"]{display:block}
+html[data-taal="pl"] [lang-blok="pl"]{display:block}
+html[data-taal="ru"] [lang-blok="ru"]{display:block}
+html[data-taal="tr"] [lang-blok="tr"]{display:block}
+html[data-taal="ar"] [lang-blok="ar"]{display:block}
+html[data-taal="zh"] [lang-blok="zh"]{display:block}
+html[data-taal="ja"] [lang-blok="ja"]{display:block}
+html[data-taal="ko"] [lang-blok="ko"]{display:block}
+html[data-taal="hi"] [lang-blok="hi"]{display:block}
+html[data-taal="id"] [lang-blok="id"]{display:block}
+html[data-taal="vi"] [lang-blok="vi"]{display:block}
+html[data-taal="th"] [lang-blok="th"]{display:block}
+html[data-taal="uk"] [lang-blok="uk"]{display:block}
+html[data-taal="hu"] [lang-blok="hu"]{display:block}
+html[data-taal="bn"] [lang-blok="bn"]{display:block}
+html[data-taal="ur"] [lang-blok="ur"]{display:block}
+html[data-taal="fa"] [lang-blok="fa"]{display:block}
+html[data-taal="ms"] [lang-blok="ms"]{display:block}
+html[data-taal="tl"] [lang-blok="tl"]{display:block}
+html[data-taal="el"] [lang-blok="el"]{display:block}
+html[data-taal="cs"] [lang-blok="cs"]{display:block}
+html[data-taal="ro"] [lang-blok="ro"]{display:block}
+html[data-taal="sv"] [lang-blok="sv"]{display:block}
+html[data-taal="zht"] [lang-blok="zht"]{display:block}
+html[dir="rtl"] main{direction:rtl;text-align:right}
+.talen select{border:1px solid var(--lijn);background:var(--kaart);color:var(--inkt);border-radius:8px;padding:6px 10px;font-family:'Karla',sans-serif;font-size:.9rem;max-width:180px}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header class="top">
   <a class="merk" href="./"><img src="icons/icon-192.png" alt=""><b>Toe Reading</b></a>
-  <nav class="talen"><button data-t="en">EN</button><button data-t="nl">NL</button></nav>
+  <nav class="talen"><select id="taalKeuze" aria-label="Language"><option value="en">English</option><option value="nl">Nederlands</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="es">Español</option><option value="it">Italiano</option><option value="pt">Português</option><option value="pl">Polski</option><option value="ru">Русский</option><option value="tr">Türkçe</option><option value="ar">العربية</option><option value="zh">中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="hi">हिन्दी</option><option value="id">Bahasa Indonesia</option><option value="vi">Tiếng Việt</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="hu">Magyar</option><option value="bn">বাংলা</option><option value="ur">اردو</option><option value="fa">فارسی</option><option value="ms">Bahasa Melayu</option><option value="tl">Filipino</option><option value="el">Ελληνικά</option><option value="cs">Čeština</option><option value="ro">Română</option><option value="sv">Svenska</option><option value="zht">繁體中文</option></select></nav>
 </header>
 
 <main lang-blok="en">
@@ -51,9 +81,9 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 
 <h2>1. Who we are</h2>
 <p>Toe Reading is operated by <strong>Ferri Somogyi Productions</strong>, a sole proprietorship registered in the Netherlands (Chamber of Commerce / KvK no. 34286815, VAT ID NL001933433B06). Contact: <a href="mailto:support@toereading.app">support@toereading.app</a>. Registered address available on request.</p>
-<p>Our order process is conducted by our online reseller <strong>Paddle.com</strong>. Paddle.com is the Merchant of Record for all our orders: Paddle is legally the seller of the purchase, handles payment, VAT/sales tax, invoices and refund processing, and provides related customer service.</p>
+<p>Our order process is conducted by our payment partner, which acts as <strong>Merchant of Record</strong> for all our orders: the payment partner is legally the seller of the purchase, handles payment, VAT/sales tax, invoices and refund processing, and provides related customer service. The current payment partner is named at checkout and on your receipt.</p>
 
-<h2>2. What Toe Reading is — and is not</h2>
+<h2>2. What Toe Reading is, and is not</h2>
 <div class="kaartje let-op">
 <p><strong>Toe Reading is for entertainment and self-reflection only.</strong> It is not a medical, psychological, diagnostic or therapeutic service, and its readings are not advice of any kind. Nothing in the app can detect, diagnose, treat or predict any health condition. If you have concerns about your feet or your health, please see a doctor or qualified professional.</p>
 </div>
@@ -65,14 +95,14 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 <h2>4. Credits and subscriptions</h2>
 <p>Readings run on credits ("analyses"):</p>
 <ul>
-<li><strong>Free credits</strong> — new accounts receive 3 free readings. Free credits have no monetary value.</li>
-<li><strong>10-pack</strong> — a one-time purchase of 10 readings (€4.99). Pack credits do not expire.</li>
-<li><strong>Annual subscription</strong> — one year of readings (€39.99/year), subject to fair use of <strong>60 readings per calendar month</strong>. The counter is visible in the app and resets monthly.</li>
+<li><strong>Free credits</strong>: new accounts receive 3 free readings. Free credits have no monetary value.</li>
+<li><strong>10-pack</strong>: a one-time purchase of 10 readings (€4.99). Pack credits do not expire.</li>
+<li><strong>Annual subscription</strong>: one year of readings (€39.99/year), subject to fair use of <strong>60 readings per calendar month</strong>. The counter is visible in the app and resets monthly.</li>
 </ul>
 <p>One credit covers one complete reading: the photo analysis plus the full interpretation ("The mirror speaks"). Credits are personal, non-transferable and cannot be exchanged for money. Current prices are always shown on our <a href="pricing.html">pricing page</a>; all consumer prices include VAT where applicable.</p>
 
 <h2>5. Payments, renewal and cancellation</h2>
-<p>Payments are processed by Paddle (see section 1). The annual subscription <strong>renews automatically</strong> each year at the then-current price; you will receive a reminder e-mail before renewal. You can cancel at any time via the link in your Paddle receipt or by e-mailing <a href="mailto:support@toereading.app">support@toereading.app</a> — cancellation stops the next renewal, and your subscription stays active until the end of the paid term. We may change prices for future purchases and renewals; we will announce changes before they affect you.</p>
+<p>Payments are processed by our payment partner (see section 1). The annual subscription <strong>renews automatically</strong> each year at the then-current price; you will receive a reminder e-mail before renewal. You can cancel at any time via the link in your payment confirmation e-mail or by e-mailing <a href="mailto:support@toereading.app">support@toereading.app</a>; cancellation stops the next renewal, and your subscription stays active until the end of the paid term. We may change prices for future purchases and renewals; we will announce changes before they affect you.</p>
 
 <h2>6. Refunds</h2>
 <p>Our <a href="refund.html">Refund Policy</a> applies: in short, a full refund within 14 days as long as the purchased credits have not been used. Your statutory rights as a consumer are never limited by these terms.</p>
@@ -99,9 +129,8 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 <p>Dutch law applies. Disputes go to the competent court in the Netherlands; if you are a consumer, mandatory consumer protections of your country of residence remain unaffected.</p>
 
 <h2>14. Contact</h2>
-<p>Questions? E-mail <a href="mailto:support@toereading.app">support@toereading.app</a> — a real person reads it.</p>
+<p>Questions? E-mail <a href="mailto:support@toereading.app">support@toereading.app</a>; a real person reads it.</p>
 </main>
-
 <main lang-blok="nl">
 <h1>Algemene voorwaarden</h1>
 <p class="datum">Ingangsdatum: 13 juli 2026</p>
@@ -110,11 +139,11 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 
 <h2>1. Wie wij zijn</h2>
 <p>Toe Reading wordt aangeboden door <strong>Ferri Somogyi Productions</strong>, een eenmanszaak gevestigd in Nederland (KvK-nummer 34286815, btw-id NL001933433B06). Contact: <a href="mailto:support@toereading.app">support@toereading.app</a>. Vestigingsadres op verzoek beschikbaar.</p>
-<p>Onze bestellingen lopen via onze online reseller <strong>Paddle.com</strong>. Paddle is de Merchant of Record: juridisch de verkoper van je aankoop. Paddle verzorgt de betaling, btw, facturen en de uitvoering van terugbetalingen, en biedt daarbij klantenservice.</p>
+<p>Onze bestellingen lopen via onze betaalpartner, die optreedt als <strong>Merchant of Record</strong>: juridisch de verkoper van je aankoop. De betaalpartner verzorgt de betaling, btw, facturen en de uitvoering van terugbetalingen, en biedt daarbij klantenservice. De actuele betaalpartner staat bij het afrekenen en op je bon vermeld.</p>
 
-<h2>2. Wat Toe Reading is — en niet is</h2>
+<h2>2. Wat Toe Reading is, en wat niet</h2>
 <div class="kaartje let-op">
-<p><strong>Toe Reading is uitsluitend bedoeld voor entertainment en zelfreflectie.</strong> Het is geen medische, psychologische, diagnostische of therapeutische dienst, en de duidingen zijn geen advies. Niets in de app kan een gezondheidsprobleem vaststellen, behandelen of voorspellen. Zit je ergens mee — met je voeten of je gezondheid — ga dan naar een arts of een gekwalificeerde professional.</p>
+<p><strong>Toe Reading is uitsluitend bedoeld voor entertainment en zelfreflectie.</strong> Het is geen medische, psychologische, diagnostische of therapeutische dienst, en de duidingen zijn geen advies. Niets in de app kan een gezondheidsprobleem vaststellen, behandelen of voorspellen. Zit je ergens mee, met je voeten of je gezondheid, ga dan naar een arts of een gekwalificeerde professional.</p>
 </div>
 <p>Met de app fotografeer je je voeten, worden zichtbare kenmerken van je tenen geclassificeerd en wordt met behulp van AI (Claude van Anthropic) een verhalende "lezing" gegenereerd. Lezingen zijn gegenereerde tekst: zie ze als een spiegel voor je eigen reflectie, niet als feiten over jou.</p>
 
@@ -124,14 +153,14 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 <h2>4. Tegoed en abonnement</h2>
 <p>Lezingen werken met tegoed ("analyses"):</p>
 <ul>
-<li><strong>Gratis tegoed</strong> — nieuwe accounts krijgen 3 gratis lezingen. Gratis tegoed heeft geen geldwaarde.</li>
-<li><strong>10-pakket</strong> — eenmalige aankoop van 10 lezingen (€ 4,99). Pakket-tegoed verloopt niet.</li>
-<li><strong>Jaarabonnement</strong> — een jaar lang lezingen (€ 39,99/jaar), met een fair-use-grens van <strong>60 lezingen per kalendermaand</strong>. De teller is zichtbaar in de app en reset maandelijks.</li>
+<li><strong>Gratis tegoed</strong>: nieuwe accounts krijgen 3 gratis lezingen. Gratis tegoed heeft geen geldwaarde.</li>
+<li><strong>10-pakket</strong>: eenmalige aankoop van 10 lezingen (€ 4,99). Pakket-tegoed verloopt niet.</li>
+<li><strong>Jaarabonnement</strong>: een jaar lang lezingen (€ 39,99/jaar), met een fair-use-grens van <strong>60 lezingen per kalendermaand</strong>. De teller is zichtbaar in de app en reset maandelijks.</li>
 </ul>
 <p>Eén tegoed dekt één complete lezing: de foto-analyse plus de volledige duiding ("De spiegel vertelt"). Tegoed is persoonlijk, niet overdraagbaar en niet inwisselbaar voor geld. Actuele prijzen staan altijd op onze <a href="pricing.html">prijzenpagina</a>; alle consumentenprijzen zijn inclusief btw waar van toepassing.</p>
 
 <h2>5. Betalen, verlenging en opzeggen</h2>
-<p>Betalingen verlopen via Paddle (zie punt 1). Het jaarabonnement <strong>verlengt automatisch</strong> per jaar tegen de dan geldende prijs; je ontvangt vooraf een herinneringsmail. Opzeggen kan altijd via de link in je Paddle-bon of per mail aan <a href="mailto:support@toereading.app">support@toereading.app</a> — opzeggen stopt de volgende verlenging en je abonnement blijft actief tot het einde van de betaalde periode. Prijzen kunnen wijzigen voor toekomstige aankopen en verlengingen; we kondigen dat aan vóór het jou raakt.</p>
+<p>Betalingen verlopen via onze betaalpartner (zie punt 1). Het jaarabonnement <strong>verlengt automatisch</strong> per jaar tegen de dan geldende prijs; je ontvangt vooraf een herinneringsmail. Opzeggen kan altijd via de link in je betaalbevestiging of per mail aan <a href="mailto:support@toereading.app">support@toereading.app</a>; opzeggen stopt de volgende verlenging en je abonnement blijft actief tot het einde van de betaalde periode. Prijzen kunnen wijzigen voor toekomstige aankopen en verlengingen; we kondigen dat aan vóór het jou raakt.</p>
 
 <h2>6. Terugbetalingen</h2>
 <p>Ons <a href="refund.html">terugbetalingsbeleid</a> geldt: kort gezegd volledige terugbetaling binnen 14 dagen zolang het gekochte tegoed niet is gebruikt. Je wettelijke rechten als consument worden door deze voorwaarden nooit beperkt.</p>
@@ -158,7 +187,1631 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 <p>Nederlands recht is van toepassing. Geschillen gaan naar de bevoegde rechter in Nederland; ben je consument, dan blijven de dwingende consumentenbeschermingen van je woonland gelden.</p>
 
 <h2>14. Contact</h2>
-<p>Vragen? Mail <a href="mailto:support@toereading.app">support@toereading.app</a> — er leest een echt mens mee.</p>
+<p>Vragen? Mail <a href="mailto:support@toereading.app">support@toereading.app</a>; er leest een echt mens mee.</p>
+</main>
+<main lang-blok="de">
+<h1>Nutzungsbedingungen</h1>
+<p class="datum">Gültig ab: 13. Juli 2026</p>
+
+<p>Willkommen bei Toe Reading (auf Niederländisch: <em>Tenenspiegel</em>), einer Web-App für spielerische Selbstreflexion über die Formen deiner Zehen. Diese Bedingungen sind eine Vereinbarung in klarer Sprache zwischen dir und uns. Indem du ein Konto erstellst oder die App nutzt, stimmst du ihnen zu.</p>
+
+<h2>1. Wer wir sind</h2>
+<p>Toe Reading wird betrieben von <strong>Ferri Somogyi Productions</strong>, einem in den Niederlanden eingetragenen Einzelunternehmen (niederländische Handelskammer / KvK-Nr. 34286815, USt-ID NL001933433B06). Kontakt: <a href="mailto:support@toereading.app">support@toereading.app</a>. Geschäftsadresse auf Anfrage erhältlich.</p>
+<p>Unser Bestellvorgang läuft über unseren Zahlungspartner, der für alle unsere Bestellungen als <strong>Merchant of Record</strong> (eingetragener Händler) auftritt: Der Zahlungspartner ist rechtlich der Verkäufer deines Kaufs, wickelt Zahlung, Mehrwert- bzw. Umsatzsteuer, Rechnungen und Rückerstattungen ab und bietet den zugehörigen Kundenservice. Der aktuelle Zahlungspartner wird an der Kasse und auf deinem Beleg genannt.</p>
+
+<h2>2. Was Toe Reading ist, und was nicht</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading dient ausschließlich der Unterhaltung und Selbstreflexion.</strong> Es ist kein medizinischer, psychologischer, diagnostischer oder therapeutischer Dienst, und seine Lesungen sind keinerlei Ratschlag. Nichts in der App kann eine gesundheitliche Beschwerde erkennen, diagnostizieren, behandeln oder vorhersagen. Wenn du dir Sorgen um deine Füße oder deine Gesundheit machst, geh bitte zu einem Arzt oder einer qualifizierten Fachperson.</p>
+</div>
+<p>Mit der App fotografierst du deine Füße, sichtbare Merkmale deiner Zehen werden klassifiziert, und mithilfe von KI (Claude von Anthropic) wird eine reflektierende, erzählende „Lesung“ generiert. Lesungen sind generierter Text: Betrachte sie als Spiegel für deine eigene Reflexion, nicht als Fakten über dich.</p>
+
+<h2>3. Dein Konto</h2>
+<p>Um Lesungen auszuführen, brauchst du ein Konto (Name, E-Mail, Passwort). Du musst <strong>16 Jahre oder älter</strong> sein. Halte deine Zugangsdaten sicher; du bist verantwortlich für die Aktivitäten über dein Konto. Gib korrekte Daten an und halte sie aktuell. Ein Konto pro Person, bitte.</p>
+
+<h2>4. Guthaben und Abonnements</h2>
+<p>Lesungen laufen über Guthaben („Analysen“):</p>
+<ul>
+<li><strong>Gratis-Guthaben</strong>: Neue Konten erhalten 3 kostenlose Lesungen. Gratis-Guthaben hat keinen Geldwert.</li>
+<li><strong>10er-Paket</strong>: ein einmaliger Kauf von 10 Lesungen (€ 4,99). Paket-Guthaben verfällt nicht.</li>
+<li><strong>Jahresabo</strong>: ein Jahr Lesungen (€ 39,99/Jahr), mit einer Fair-Use-Grenze von <strong>60 Lesungen pro Kalendermonat</strong>. Der Zähler ist in der App sichtbar und wird monatlich zurückgesetzt.</li>
+</ul>
+<p>Ein Guthaben deckt eine vollständige Lesung ab: die Fotoanalyse plus die vollständige Deutung („Der Spiegel erzählt“). Guthaben ist persönlich, nicht übertragbar und nicht gegen Geld eintauschbar. Die aktuellen Preise stehen immer auf unserer <a href="pricing.html">Preisseite</a>; alle Verbraucherpreise verstehen sich inklusive MwSt., wo anwendbar.</p>
+
+<h2>5. Zahlung, Verlängerung und Kündigung</h2>
+<p>Zahlungen werden von unserem Zahlungspartner abgewickelt (siehe Punkt 1). Das Jahresabo <strong>verlängert sich automatisch</strong> jedes Jahr zum dann gültigen Preis; vor der Verlängerung erhältst du eine Erinnerungs-E-Mail. Kündigen kannst du jederzeit über den Link in deiner Zahlungsbestätigungs-E-Mail oder per E-Mail an <a href="mailto:support@toereading.app">support@toereading.app</a>; die Kündigung stoppt die nächste Verlängerung, und dein Abo bleibt bis zum Ende des bezahlten Zeitraums aktiv. Wir können Preise für künftige Käufe und Verlängerungen ändern; wir kündigen Änderungen an, bevor sie dich betreffen.</p>
+
+<h2>6. Rückerstattungen</h2>
+<p>Es gilt unsere <a href="refund.html">Rückerstattungsrichtlinie</a>: kurz gesagt, volle Rückerstattung innerhalb von 14 Tagen, solange das gekaufte Guthaben nicht genutzt wurde. Deine gesetzlichen Rechte als Verbraucher werden durch diese Bedingungen niemals eingeschränkt.</p>
+
+<h2>7. Deine Fotos</h2>
+<p>Fotos, die du einsendest, werden ausschließlich verwendet, um die von dir angeforderte Lesung auszuführen. Sie werden verschlüsselt übertragen, <strong>niemals gespeichert</strong> und nicht zum Trainieren von KI-Modellen genutzt. Sende nur Fotos deiner eigenen Füße ein, oder von jemandem, der dir dafür die Erlaubnis gegeben hat. Details findest du in unserer <a href="privacy.html">Datenschutzerklärung</a>.</p>
+
+<h2>8. Faire und zulässige Nutzung</h2>
+<p>Bitte unterlasse Folgendes: die App für etwas Rechtswidriges zu nutzen; Bilder einzusenden, die keine Füße zeigen oder die rechtswidrig oder schädlich sind; Guthabenprüfungen, Ratenbegrenzungen oder andere technische Maßnahmen zu umgehen; Bots oder automatisierte Zugriffe zu verwenden; Lesungen ohne unsere schriftliche Zustimmung als kommerziellen Dienst weiterzuverkaufen; oder den Dienst zurückzuentwickeln (Reverse Engineering). Wir dürfen technische Limits anwenden (etwa Rate Limits), um den Dienst gesund zu halten, und Konten sperren, die ihn missbrauchen.</p>
+
+<h2>9. Geistiges Eigentum</h2>
+<p>Die App, ihre Wissensbasis, Texte, ihr Design und ihre Software gehören uns (oder unseren Lizenzgebern). Deine persönlichen Lesungen darfst du für eigene Zwecke frei verwenden. Du darfst die Inhalte oder die Wissensbasis der App nicht in großem Umfang kopieren oder weiterveröffentlichen.</p>
+
+<h2>10. Verfügbarkeit und Änderungen</h2>
+<p>Wir betreiben Toe Reading mit Sorgfalt, bieten es aber „wie besehen“ (as is) an: Eine ununterbrochene Verfügbarkeit können wir nicht versprechen. Einige Sprachen sind als Beta gekennzeichnet. Wir können Funktionen verbessern, ändern oder einstellen; sollten wir den bezahlten Dienst jemals einstellen, erstatten wir ungenutztes bezahltes Guthaben und den ungenutzten Teil von Abonnements.</p>
+
+<h2>11. Haftung</h2>
+<p>Soweit gesetzlich zulässig, ist unsere gesamte Haftung für Ansprüche im Zusammenhang mit dem Dienst auf den Betrag begrenzt, den du uns in den 12 Monaten vor dem Anspruch gezahlt hast. Für indirekte Schäden haften wir nicht. Nichts in diesen Bedingungen schließt eine Haftung aus, die gesetzlich nicht ausgeschlossen werden kann (etwa bei Vorsatz oder grober Fahrlässigkeit).</p>
+
+<h2>12. Änderungen dieser Bedingungen</h2>
+<p>Wir können diese Bedingungen aktualisieren. Über wesentliche Änderungen informieren wir dich in der App oder per E-Mail, bevor sie in Kraft treten. Nutzt du den Dienst danach weiter, gelten die neuen Bedingungen.</p>
+
+<h2>13. Anwendbares Recht</h2>
+<p>Es gilt niederländisches Recht. Streitigkeiten gehören vor das zuständige Gericht in den Niederlanden; bist du Verbraucher, bleiben die zwingenden Verbraucherschutzbestimmungen deines Wohnsitzlandes unberührt.</p>
+
+<h2>14. Kontakt</h2>
+<p>Fragen? Schreib an <a href="mailto:support@toereading.app">support@toereading.app</a>; ein echter Mensch liest mit.</p>
+</main>
+<main lang-blok="fr">
+<h1>Conditions générales d'utilisation</h1>
+<p class="datum">Date d'entrée en vigueur : 13 juillet 2026</p>
+
+<p>Bienvenue sur Toe Reading (en néerlandais : <em>Tenenspiegel</em>), une application web d'autoréflexion ludique à travers les formes de tes orteils. Ces conditions sont un accord en langage clair entre toi et nous. En créant un compte ou en utilisant l'app, tu les acceptes.</p>
+
+<h2>1. Qui nous sommes</h2>
+<p>Toe Reading est exploité par <strong>Ferri Somogyi Productions</strong>, une entreprise individuelle immatriculée aux Pays-Bas (registre du commerce néerlandais / KvK n° 34286815, n° de TVA NL001933433B06). Contact : <a href="mailto:support@toereading.app">support@toereading.app</a>. Adresse du siège disponible sur demande.</p>
+<p>Notre processus de commande est assuré par notre partenaire de paiement, qui agit comme <strong>Merchant of Record</strong> (vendeur officiel) pour toutes nos commandes : le partenaire de paiement est juridiquement le vendeur de ton achat, gère le paiement, la TVA et les taxes de vente, les factures et le traitement des remboursements, et assure le service client correspondant. Le partenaire de paiement actuel est indiqué au moment du paiement et sur ton reçu.</p>
+
+<h2>2. Ce que Toe Reading est, et n'est pas</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading est destiné uniquement au divertissement et à l'autoréflexion.</strong> Ce n'est pas un service médical, psychologique, diagnostique ou thérapeutique, et ses lectures ne constituent en aucun cas un conseil. Rien dans l'app ne peut détecter, diagnostiquer, traiter ou prédire un problème de santé. Si tu t'inquiètes pour tes pieds ou ta santé, consulte un médecin ou un professionnel qualifié.</p>
+</div>
+<p>L'app te permet de photographier tes pieds, classe les caractéristiques visibles de tes orteils et génère, avec l'aide de l'IA (Claude d'Anthropic), une « lecture » narrative et réflexive. Les lectures sont du texte généré : vois-les comme un miroir pour ta propre réflexion, pas comme des faits te concernant.</p>
+
+<h2>3. Ton compte</h2>
+<p>Pour lancer des lectures, tu as besoin d'un compte (nom, e-mail, mot de passe). Tu dois avoir <strong>16 ans ou plus</strong>. Garde tes identifiants en sécurité ; tu es responsable de l'activité sur ton compte. Fournis des informations exactes et tiens-les à jour. Un seul compte par personne, s'il te plaît.</p>
+
+<h2>4. Crédit et abonnement</h2>
+<p>Les lectures fonctionnent avec du crédit (« analyses ») :</p>
+<ul>
+<li><strong>Crédit gratuit</strong> : les nouveaux comptes reçoivent 3 lectures gratuites. Le crédit gratuit n'a aucune valeur monétaire.</li>
+<li><strong>Pack de 10</strong> : un achat unique de 10 lectures (€ 4,99). Le crédit du pack n'expire pas.</li>
+<li><strong>Abonnement annuel</strong> : un an de lectures (€ 39,99/an), avec une limite d'usage raisonnable de <strong>60 lectures par mois civil</strong>. Le compteur est visible dans l'app et se remet à zéro chaque mois.</li>
+</ul>
+<p>Un crédit couvre une lecture complète : l'analyse photo plus l'interprétation intégrale (« Le miroir raconte »). Le crédit est personnel, non transférable et ne peut pas être échangé contre de l'argent. Les prix actuels figurent toujours sur notre <a href="pricing.html">page des tarifs</a> ; tous les prix consommateurs incluent la TVA lorsqu'elle s'applique.</p>
+
+<h2>5. Paiement, renouvellement et résiliation</h2>
+<p>Les paiements sont traités par notre partenaire de paiement (voir le point 1). L'abonnement annuel <strong>se renouvelle automatiquement</strong> chaque année au prix alors en vigueur ; tu recevras un e-mail de rappel avant le renouvellement. Tu peux résilier à tout moment via le lien dans ton e-mail de confirmation de paiement ou en écrivant à <a href="mailto:support@toereading.app">support@toereading.app</a> ; la résiliation arrête le prochain renouvellement, et ton abonnement reste actif jusqu'à la fin de la période payée. Nous pouvons modifier les prix pour les achats et renouvellements futurs ; nous annoncerons les changements avant qu'ils ne te concernent.</p>
+
+<h2>6. Remboursements</h2>
+<p>Notre <a href="refund.html">politique de remboursement</a> s'applique : en bref, remboursement intégral sous 14 jours tant que le crédit acheté n'a pas été utilisé. Tes droits légaux de consommateur ne sont jamais limités par ces conditions.</p>
+
+<h2>7. Tes photos</h2>
+<p>Les photos que tu envoies servent uniquement à réaliser la lecture que tu as demandée. Elles sont transmises chiffrées, <strong>jamais enregistrées</strong>, et ne servent pas à entraîner des modèles d'IA. N'envoie que des photos de tes propres pieds, ou de quelqu'un qui t'en a donné la permission. Consulte notre <a href="privacy.html">politique de confidentialité</a> pour les détails.</p>
+
+<h2>8. Usage loyal et autorisé</h2>
+<p>Merci de ne pas : utiliser l'app à des fins illégales ; envoyer des images qui ne sont pas des pieds ou qui sont illicites ou nuisibles ; tenter de contourner les contrôles de crédit, les limites de débit ou d'autres mesures techniques ; utiliser des bots ou un accès automatisé ; revendre des lectures comme service commercial sans notre accord écrit ; ou pratiquer l'ingénierie inverse du service. Nous pouvons appliquer des limites techniques (comme des limites de débit) pour garder le service en bonne santé, et suspendre les comptes qui en abusent.</p>
+
+<h2>9. Propriété intellectuelle</h2>
+<p>L'app, sa base de connaissances, ses textes, son design et son logiciel nous appartiennent (ou appartiennent à nos concédants de licence). Tu peux utiliser librement tes lectures personnelles à tes propres fins. Tu ne peux pas copier ni republier à grande échelle le contenu de l'app ou sa base de connaissances.</p>
+
+<h2>10. Disponibilité et modifications</h2>
+<p>Nous gérons Toe Reading avec soin, mais l'offrons « en l'état » : nous ne pouvons pas promettre une disponibilité ininterrompue. Certaines langues sont marquées bêta. Nous pouvons améliorer, modifier ou supprimer des fonctionnalités ; si nous devions un jour arrêter le service payant, nous rembourserions le crédit payé non utilisé et la partie non utilisée des abonnements.</p>
+
+<h2>11. Responsabilité</h2>
+<p>Dans la mesure permise par la loi, notre responsabilité totale pour toute réclamation liée au service est limitée au montant que tu nous as payé au cours des 12 mois précédant la réclamation. Nous ne sommes pas responsables des dommages indirects. Rien dans ces conditions n'exclut une responsabilité qui ne peut pas être légalement exclue (comme en cas de faute intentionnelle ou de négligence grave).</p>
+
+<h2>12. Modification de ces conditions</h2>
+<p>Nous pouvons mettre à jour ces conditions. Pour les changements significatifs, nous te préviendrons dans l'app ou par e-mail avant leur entrée en vigueur. Si tu continues ensuite à utiliser le service, les nouvelles conditions s'appliquent.</p>
+
+<h2>13. Droit applicable</h2>
+<p>Le droit néerlandais s'applique. Les litiges relèvent du tribunal compétent aux Pays-Bas ; si tu es consommateur, les protections impératives des consommateurs de ton pays de résidence restent applicables.</p>
+
+<h2>14. Contact</h2>
+<p>Des questions ? Écris à <a href="mailto:support@toereading.app">support@toereading.app</a> ; c'est une vraie personne qui te lit.</p>
+</main>
+<main lang-blok="es">
+<h1>Condiciones del servicio</h1>
+<p class="datum">Fecha de entrada en vigor: 13 de julio de 2026</p>
+
+<p>Bienvenido a Toe Reading (en neerlandés: <em>Tenenspiegel</em>), una aplicación web para la autorreflexión lúdica a través de las formas de tus dedos de los pies. Estas condiciones son un acuerdo en lenguaje llano entre tú y nosotros. Al crear una cuenta o usar la app, las aceptas.</p>
+
+<h2>1. Quiénes somos</h2>
+<p>Toe Reading está operada por <strong>Ferri Somogyi Productions</strong>, una empresa unipersonal registrada en los Países Bajos (Cámara de Comercio / n.º KvK 34286815, NIF-IVA NL001933433B06). Contacto: <a href="mailto:support@toereading.app">support@toereading.app</a>. Dirección registrada disponible previa solicitud.</p>
+<p>Nuestro proceso de pedido lo gestiona nuestro socio de pagos, que actúa como <strong>Merchant of Record</strong> (vendedor oficial) de todos nuestros pedidos: el socio de pagos es jurídicamente el vendedor de la compra, se encarga del pago, del IVA o impuestos sobre las ventas, de las facturas y de la tramitación de los reembolsos, y presta el servicio de atención al cliente correspondiente. El socio de pagos actual se indica al pagar y en tu recibo.</p>
+
+<h2>2. Qué es Toe Reading, y qué no</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading está pensada únicamente para el entretenimiento y la autorreflexión.</strong> No es un servicio médico, psicológico, diagnóstico ni terapéutico, y sus lecturas no constituyen consejo de ningún tipo. Nada en la app puede detectar, diagnosticar, tratar ni predecir ningún problema de salud. Si algo te preocupa de tus pies o de tu salud, acude a un médico o a un profesional cualificado.</p>
+</div>
+<p>La app te permite fotografiar tus pies, clasifica los rasgos visibles de tus dedos y genera, con ayuda de IA (Claude, de Anthropic), una "lectura" narrativa y reflexiva. Las lecturas son texto generado: tómalas como un espejo para tu propia reflexión, no como hechos sobre ti.</p>
+
+<h2>3. Tu cuenta</h2>
+<p>Necesitas una cuenta (nombre, correo electrónico, contraseña) para realizar lecturas. Debes tener <strong>16 años o más</strong>. Guarda bien tus datos de acceso; eres responsable de la actividad de tu cuenta. Facilita información correcta y mantenla actualizada. Una cuenta por persona, por favor.</p>
+
+<h2>4. Créditos y suscripciones</h2>
+<p>Las lecturas funcionan con créditos ("análisis"):</p>
+<ul>
+<li><strong>Créditos gratis</strong>: las cuentas nuevas reciben 3 lecturas gratis. Los créditos gratis no tienen valor monetario.</li>
+<li><strong>Pack de 10</strong>: una compra única de 10 lecturas (€ 4,99). Los créditos del pack no caducan.</li>
+<li><strong>Suscripción anual</strong>: un año de lecturas (€ 39,99/año), sujeto a un uso razonable de <strong>60 lecturas por mes natural</strong>. El contador es visible en la app y se reinicia cada mes.</li>
+</ul>
+<p>Un crédito cubre una lectura completa: el análisis de la foto más la interpretación íntegra ("El espejo habla"). Los créditos son personales, intransferibles y no se pueden canjear por dinero. Los precios actuales se muestran siempre en nuestra <a href="pricing.html">página de precios</a>; todos los precios al consumidor incluyen IVA cuando corresponde.</p>
+
+<h2>5. Pagos, renovación y cancelación</h2>
+<p>Los pagos los procesa nuestro socio de pagos (véase el punto 1). La suscripción anual <strong>se renueva automáticamente</strong> cada año al precio vigente en ese momento; recibirás un correo recordatorio antes de la renovación. Puedes cancelar en cualquier momento mediante el enlace de tu correo de confirmación de pago o escribiendo a <a href="mailto:support@toereading.app">support@toereading.app</a>; la cancelación detiene la siguiente renovación y tu suscripción sigue activa hasta el final del periodo pagado. Podemos cambiar los precios de futuras compras y renovaciones; anunciaremos los cambios antes de que te afecten.</p>
+
+<h2>6. Reembolsos</h2>
+<p>Se aplica nuestra <a href="refund.html">política de reembolsos</a>: en resumen, reembolso íntegro dentro de los 14 días siempre que los créditos comprados no se hayan usado. Estas condiciones no limitan nunca tus derechos legales como consumidor.</p>
+
+<h2>7. Tus fotos</h2>
+<p>Las fotos que envías se usan únicamente para realizar la lectura que solicitas. Se transmiten cifradas, <strong>nunca se almacenan</strong> y no se usan para entrenar modelos de IA. Envía solo fotos de tus propios pies, o de alguien que te haya dado permiso. Consulta nuestra <a href="privacy.html">política de privacidad</a> para más detalles.</p>
+
+<h2>8. Uso justo y aceptable</h2>
+<p>Por favor, no: uses la app para nada ilegal; envíes imágenes que no sean pies o que sean ilícitas o dañinas; intentes eludir los controles de créditos, los límites de velocidad u otras medidas técnicas; uses bots o accesos automatizados; revendas lecturas como servicio comercial sin nuestro acuerdo por escrito; ni sometas el servicio a ingeniería inversa. Podemos aplicar límites técnicos (como límites de velocidad) para mantener sano el servicio, y podemos suspender las cuentas que abusen de él.</p>
+
+<h2>9. Propiedad intelectual</h2>
+<p>La app, su base de conocimiento, los textos, el diseño y el software son nuestros (o de nuestros licenciantes). Puedes usar libremente tus lecturas personales para tus propios fines. No puedes copiar ni republicar a gran escala el contenido de la app ni su base de conocimiento.</p>
+
+<h2>10. Disponibilidad y cambios</h2>
+<p>Gestionamos Toe Reading con cuidado, pero lo ofrecemos "tal cual": no podemos prometer una disponibilidad ininterrumpida. Algunos idiomas están marcados como beta. Podemos mejorar, cambiar o retirar funciones; si algún día retiramos el servicio de pago, reembolsaremos los créditos de pago no usados y la parte no usada de las suscripciones.</p>
+
+<h2>11. Responsabilidad</h2>
+<p>En la medida en que la ley lo permita, nuestra responsabilidad total por cualquier reclamación relacionada con el servicio se limita al importe que nos hayas pagado en los 12 meses anteriores a la reclamación. No somos responsables de daños indirectos. Nada en estas condiciones excluye la responsabilidad que legalmente no pueda excluirse (como en caso de dolo o negligencia grave).</p>
+
+<h2>12. Cambios en estas condiciones</h2>
+<p>Podemos actualizar estas condiciones. En caso de cambios significativos te avisaremos en la app o por correo electrónico antes de que entren en vigor. Si después sigues usando el servicio, se aplican las nuevas condiciones.</p>
+
+<h2>13. Legislación aplicable</h2>
+<p>Se aplica el Derecho neerlandés. Los litigios se someten al tribunal competente de los Países Bajos; si eres consumidor, las protecciones imperativas de consumo de tu país de residencia no se ven afectadas.</p>
+
+<h2>14. Contacto</h2>
+<p>¿Preguntas? Escribe a <a href="mailto:support@toereading.app">support@toereading.app</a>; lo lee una persona de verdad.</p>
+</main>
+<main lang-blok="it">
+<h1>Termini di servizio</h1>
+<p class="datum">Data di entrata in vigore: 13 luglio 2026</p>
+
+<p>Benvenuto su Toe Reading (in olandese: <em>Tenenspiegel</em>), una web app per un'autoriflessione giocosa attraverso le forme delle dita dei piedi. Questi termini sono un accordo in linguaggio semplice tra te e noi. Creando un account o usando l'app, li accetti.</p>
+
+<h2>1. Chi siamo</h2>
+<p>Toe Reading è gestita da <strong>Ferri Somogyi Productions</strong>, una ditta individuale registrata nei Paesi Bassi (Camera di Commercio / n. KvK 34286815, partita IVA NL001933433B06). Contatto: <a href="mailto:support@toereading.app">support@toereading.app</a>. Indirizzo della sede disponibile su richiesta.</p>
+<p>Il nostro processo d'ordine è gestito dal nostro partner di pagamento, che agisce come <strong>Merchant of Record</strong> per tutti i nostri ordini: il partner di pagamento è giuridicamente il venditore dell'acquisto, gestisce il pagamento, l'IVA e le imposte sulle vendite, le fatture e l'elaborazione dei rimborsi, e fornisce la relativa assistenza clienti. Il partner di pagamento attuale è indicato alla cassa e sulla tua ricevuta.</p>
+
+<h2>2. Che cosa è Toe Reading, e che cosa non è</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading è pensata esclusivamente per l'intrattenimento e l'autoriflessione.</strong> Non è un servizio medico, psicologico, diagnostico o terapeutico, e le sue letture non sono consigli di alcun tipo. Nulla nell'app può rilevare, diagnosticare, trattare o prevedere alcuna condizione di salute. Se hai dubbi sui tuoi piedi o sulla tua salute, rivolgiti a un medico o a un professionista qualificato.</p>
+</div>
+<p>L'app ti permette di fotografare i tuoi piedi, classifica le caratteristiche visibili delle dita e genera, con l'aiuto dell'IA (Claude di Anthropic), una "lettura" riflessiva e narrativa. Le letture sono testo generato: trattale come uno specchio per la tua riflessione, non come fatti su di te.</p>
+
+<h2>3. Il tuo account</h2>
+<p>Per eseguire le letture hai bisogno di un account (nome, e-mail, password). Devi avere <strong>16 anni o più</strong>. Custodisci con cura i tuoi dati di accesso; sei responsabile dell'attività sul tuo account. Fornisci informazioni corrette e tienile aggiornate. Un solo account a persona, per favore.</p>
+
+<h2>4. Crediti e abbonamenti</h2>
+<p>Le letture funzionano a crediti ("analisi"):</p>
+<ul>
+<li><strong>Crediti gratuiti</strong>: i nuovi account ricevono 3 letture gratuite. I crediti gratuiti non hanno valore monetario.</li>
+<li><strong>Pacchetto da 10</strong>: un acquisto una tantum di 10 letture (€ 4,99). I crediti del pacchetto non scadono.</li>
+<li><strong>Abbonamento annuale</strong>: un anno di letture (€ 39,99/anno), con un limite di fair use di <strong>60 letture per mese di calendario</strong>. Il contatore è visibile nell'app e si azzera ogni mese.</li>
+</ul>
+<p>Un credito copre una lettura completa: l'analisi della foto più l'interpretazione integrale ("Lo specchio racconta"). I crediti sono personali, non trasferibili e non convertibili in denaro. I prezzi attuali sono sempre indicati sulla nostra <a href="pricing.html">pagina dei prezzi</a>; tutti i prezzi al consumo sono IVA inclusa ove applicabile.</p>
+
+<h2>5. Pagamenti, rinnovo e disdetta</h2>
+<p>I pagamenti sono elaborati dal nostro partner di pagamento (vedi punto 1). L'abbonamento annuale si <strong>rinnova automaticamente</strong> ogni anno al prezzo allora in vigore; prima del rinnovo riceverai un'e-mail di promemoria. Puoi disdire in qualsiasi momento tramite il link nella tua e-mail di conferma del pagamento o scrivendo a <a href="mailto:support@toereading.app">support@toereading.app</a>; la disdetta blocca il rinnovo successivo e il tuo abbonamento resta attivo fino alla fine del periodo pagato. Possiamo modificare i prezzi per acquisti e rinnovi futuri; annunceremo le modifiche prima che ti riguardino.</p>
+
+<h2>6. Rimborsi</h2>
+<p>Si applica la nostra <a href="refund.html">politica di rimborso</a>: in breve, rimborso completo entro 14 giorni finché i crediti acquistati non sono stati usati. I tuoi diritti di legge come consumatore non vengono mai limitati da questi termini.</p>
+
+<h2>7. Le tue foto</h2>
+<p>Le foto che invii vengono usate esclusivamente per eseguire la lettura che hai richiesto. Vengono trasmesse in forma cifrata, <strong>mai salvate</strong> e non usate per addestrare modelli di IA. Invia solo foto dei tuoi piedi, o di qualcuno che ti ha dato il permesso. Per i dettagli vedi la nostra <a href="privacy.html">informativa sulla privacy</a>.</p>
+
+<h2>8. Uso corretto e consentito</h2>
+<p>Per favore, non: usare l'app per scopi illeciti; inviare immagini che non sono piedi o che sono illecite o dannose; tentare di aggirare i controlli sui crediti, i limiti di frequenza o altre misure tecniche; usare bot o accessi automatizzati; rivendere le letture come servizio commerciale senza il nostro accordo scritto; o fare reverse engineering del servizio. Possiamo applicare limiti tecnici (come i limiti di frequenza) per mantenere il servizio in salute, e possiamo sospendere gli account che ne abusano.</p>
+
+<h2>9. Proprietà intellettuale</h2>
+<p>L'app, la sua base di conoscenza, i testi, il design e il software sono nostri (o dei nostri licenzianti). Puoi usare liberamente le tue letture personali per i tuoi scopi. Non puoi copiare o ripubblicare su larga scala i contenuti o la base di conoscenza dell'app.</p>
+
+<h2>10. Disponibilità e modifiche</h2>
+<p>Gestiamo Toe Reading con cura, ma la offriamo "così com'è": non possiamo promettere una disponibilità ininterrotta. Alcune lingue sono contrassegnate come beta. Possiamo migliorare, modificare o interrompere delle funzioni; se un giorno dovessimo cessare il servizio a pagamento, rimborseremo i crediti a pagamento non usati e la parte non goduta degli abbonamenti.</p>
+
+<h2>11. Responsabilità</h2>
+<p>Nella misura consentita dalla legge, la nostra responsabilità totale per qualsiasi pretesa legata al servizio è limitata all'importo che ci hai pagato nei 12 mesi precedenti la pretesa. Non siamo responsabili per danni indiretti. Nulla in questi termini esclude responsabilità che per legge non possono essere escluse (come in caso di dolo o colpa grave).</p>
+
+<h2>12. Modifiche a questi termini</h2>
+<p>Possiamo aggiornare questi termini. Per le modifiche rilevanti ti avviseremo nell'app o per e-mail prima che entrino in vigore. Se dopo continui a usare il servizio, si applicano i nuovi termini.</p>
+
+<h2>13. Legge applicabile</h2>
+<p>Si applica il diritto olandese. Le controversie vanno al giudice competente nei Paesi Bassi; se sei un consumatore, restano salve le tutele imperative dei consumatori del tuo Paese di residenza.</p>
+
+<h2>14. Contatto</h2>
+<p>Domande? Scrivi a <a href="mailto:support@toereading.app">support@toereading.app</a>; a leggerti è una persona vera.</p>
+</main>
+<main lang-blok="pt">
+<h1>Termos de Utilização</h1>
+<p class="datum">Data de entrada em vigor: 13 de julho de 2026</p>
+
+<p>Bem-vindo ao Toe Reading (em neerlandês: <em>Tenenspiegel</em>), uma aplicação web para autorreflexão lúdica através das formas dos teus dedos dos pés. Estes termos são um acordo em linguagem simples entre ti e nós. Ao criares uma conta ou ao usares a app, concordas com eles.</p>
+
+<h2>1. Quem somos</h2>
+<p>O Toe Reading é operado pela <strong>Ferri Somogyi Productions</strong>, uma empresa em nome individual registada nos Países Baixos (Câmara de Comércio / KvK n.º 34286815, número de IVA NL001933433B06). Contacto: <a href="mailto:support@toereading.app">support@toereading.app</a>. Morada da sede disponível mediante pedido.</p>
+<p>O nosso processo de encomenda é conduzido pelo nosso parceiro de pagamentos, que atua como <strong>Merchant of Record</strong> (vendedor oficial) de todas as nossas encomendas: o parceiro de pagamentos é, juridicamente, o vendedor da compra, trata do pagamento, do IVA/impostos sobre vendas, das faturas e do processamento de reembolsos, e presta o respetivo serviço de apoio ao cliente. O parceiro de pagamentos atual é indicado no momento do pagamento e no teu recibo.</p>
+
+<h2>2. O que o Toe Reading é, e o que não é</h2>
+<div class="kaartje let-op">
+<p><strong>O Toe Reading destina-se exclusivamente a entretenimento e autorreflexão.</strong> Não é um serviço médico, psicológico, de diagnóstico ou terapêutico, e as suas leituras não são aconselhamento de nenhum tipo. Nada na app consegue detetar, diagnosticar, tratar ou prever qualquer problema de saúde. Se tiveres preocupações com os teus pés ou com a tua saúde, consulta um médico ou um profissional qualificado.</p>
+</div>
+<p>A app permite-te fotografar os teus pés, classifica características visíveis dos teus dedos e gera, com a ajuda de IA (o Claude, da Anthropic), uma «leitura» reflexiva e narrativa. As leituras são texto gerado: trata-as como um espelho para a tua própria reflexão, não como factos sobre ti.</p>
+
+<h2>3. A tua conta</h2>
+<p>Precisas de uma conta (nome, e-mail, palavra-passe) para fazer leituras. Tens de ter <strong>16 anos ou mais</strong>. Guarda os teus dados de acesso em segurança; és responsável pela atividade na tua conta. Indica dados corretos e mantém-nos atualizados. Uma conta por pessoa, por favor.</p>
+
+<h2>4. Saldo e subscrições</h2>
+<p>As leituras funcionam com saldo («análises»):</p>
+<ul>
+<li><strong>Saldo gratuito</strong>: as contas novas recebem 3 leituras gratuitas. O saldo gratuito não tem valor monetário.</li>
+<li><strong>Pacote de 10</strong>: uma compra única de 10 leituras (€ 4,99). O saldo do pacote não expira.</li>
+<li><strong>Subscrição anual</strong>: um ano de leituras (€ 39,99/ano), sujeita a uma utilização razoável de <strong>60 leituras por mês de calendário</strong>. O contador é visível na app e é reposto todos os meses.</li>
+</ul>
+<p>Uma análise do saldo cobre uma leitura completa: a análise da foto mais a interpretação integral («O espelho conta»). O saldo é pessoal, intransmissível e não pode ser trocado por dinheiro. Os preços atuais estão sempre na nossa <a href="pricing.html">página de preços</a>; todos os preços ao consumidor incluem IVA, quando aplicável.</p>
+
+<h2>5. Pagamentos, renovação e cancelamento</h2>
+<p>Os pagamentos são processados pelo nosso parceiro de pagamentos (ver ponto 1). A subscrição anual <strong>renova-se automaticamente</strong> todos os anos, ao preço então em vigor; antes da renovação recebes um e-mail de lembrete. Podes cancelar a qualquer momento através da ligação no e-mail de confirmação do pagamento ou escrevendo para <a href="mailto:support@toereading.app">support@toereading.app</a>; o cancelamento impede a renovação seguinte, e a subscrição mantém-se ativa até ao fim do período pago. Podemos alterar os preços de compras e renovações futuras; anunciamos as alterações antes de te afetarem.</p>
+
+<h2>6. Reembolsos</h2>
+<p>Aplica-se a nossa <a href="refund.html">Política de Reembolso</a>: em resumo, reembolso integral no prazo de 14 dias, desde que o saldo comprado não tenha sido usado. Os teus direitos legais como consumidor nunca são limitados por estes termos.</p>
+
+<h2>7. As tuas fotos</h2>
+<p>As fotos que envias são usadas exclusivamente para realizar a leitura que pediste. São transmitidas encriptadas, <strong>nunca ficam guardadas</strong> e não são usadas para treinar modelos de IA. Envia apenas fotos dos teus próprios pés, ou de alguém que te tenha dado autorização. Consulta a nossa <a href="privacy.html">Política de Privacidade</a> para os detalhes.</p>
+
+<h2>8. Utilização correta e aceitável</h2>
+<p>Por favor, não: uses a app para nada de ilegal; envies imagens que não sejam pés ou que sejam ilícitas ou nocivas; tentes contornar as verificações de saldo, os limites de velocidade ou outras medidas técnicas; uses bots ou acesso automatizado; revendas leituras como serviço comercial sem o nosso acordo escrito; nem faças engenharia inversa do serviço. Podemos aplicar limites técnicos (como limites de velocidade) para manter o serviço saudável, e podemos suspender contas que dele abusem.</p>
+
+<h2>9. Propriedade intelectual</h2>
+<p>A app, a sua base de conhecimento, os textos, o design e o software são nossos (ou dos nossos licenciantes). Podes usar livremente as tuas leituras pessoais para fins próprios. Não podes copiar nem republicar em grande escala o conteúdo ou a base de conhecimento da app.</p>
+
+<h2>10. Disponibilidade e alterações</h2>
+<p>Gerimos o Toe Reading com cuidado, mas oferecemo-lo «tal como está»: não podemos prometer disponibilidade ininterrupta. Algumas línguas estão marcadas como beta. Podemos melhorar, alterar ou descontinuar funcionalidades; se algum dia descontinuarmos o serviço pago, reembolsamos o saldo pago não utilizado e a parte não utilizada das subscrições.</p>
+
+<h2>11. Responsabilidade</h2>
+<p>Na medida permitida pela lei, a nossa responsabilidade total por quaisquer reclamações relacionadas com o serviço está limitada ao montante que nos pagaste nos 12 meses anteriores à reclamação. Não somos responsáveis por danos indiretos. Nada nestes termos exclui responsabilidade que legalmente não possa ser excluída (como em caso de dolo ou negligência grave).</p>
+
+<h2>12. Alterações a estes termos</h2>
+<p>Podemos atualizar estes termos. Em caso de alterações relevantes, avisamos-te na app ou por e-mail antes de entrarem em vigor. Se depois disso continuares a usar o serviço, aplicam-se os novos termos.</p>
+
+<h2>13. Lei aplicável</h2>
+<p>Aplica-se o direito neerlandês. Os litígios são submetidos ao tribunal competente nos Países Baixos; se fores consumidor, as proteções imperativas do consumidor do teu país de residência mantêm-se inalteradas.</p>
+
+<h2>14. Contacto</h2>
+<p>Perguntas? Escreve para <a href="mailto:support@toereading.app">support@toereading.app</a>; quem lê é uma pessoa real.</p>
+</main>
+<main lang-blok="pl">
+<h1>Regulamin</h1>
+<p class="datum">Data wejścia w życie: 13 lipca 2026</p>
+
+<p>Witamy w Toe Reading (po niderlandzku: <em>Tenenspiegel</em>), aplikacji internetowej służącej zabawie i autorefleksji poprzez kształty palców twoich stóp. Ten regulamin to umowa w prostym języku między tobą a nami. Zakładając konto lub korzystając z aplikacji, akceptujesz jego postanowienia.</p>
+
+<h2>1. Kim jesteśmy</h2>
+<p>Toe Reading prowadzi <strong>Ferri Somogyi Productions</strong>, jednoosobowa działalność gospodarcza zarejestrowana w Niderlandach (rejestr handlowy / KvK nr 34286815, identyfikator VAT NL001933433B06). Kontakt: <a href="mailto:support@toereading.app">support@toereading.app</a>. Adres siedziby dostępny na życzenie.</p>
+<p>Proces zamówień obsługuje nasz partner płatniczy, który występuje jako <strong>Merchant of Record</strong> (formalny sprzedawca) wszystkich naszych zamówień: partner płatniczy jest prawnie sprzedawcą twojego zakupu, obsługuje płatność, VAT/podatek od sprzedaży, faktury i realizację zwrotów pieniędzy oraz zapewnia związaną z tym obsługę klienta. Aktualny partner płatniczy jest wskazany przy kasie i na twoim potwierdzeniu zakupu.</p>
+
+<h2>2. Czym Toe Reading jest, a czym nie jest</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading służy wyłącznie rozrywce i autorefleksji.</strong> Nie jest usługą medyczną, psychologiczną, diagnostyczną ani terapeutyczną, a odczyty nie stanowią żadnej formy porady. Nic w aplikacji nie potrafi wykryć, zdiagnozować, leczyć ani przewidzieć żadnego stanu zdrowia. Jeśli martwisz się o swoje stopy lub zdrowie, udaj się do lekarza lub wykwalifikowanego specjalisty.</p>
+</div>
+<p>Aplikacja pozwala ci sfotografować stopy, klasyfikuje widoczne cechy palców i generuje refleksyjny, narracyjny „odczyt” z pomocą AI (Claude firmy Anthropic). Odczyty to wygenerowany tekst: traktuj je jak lustro dla własnej refleksji, a nie jak fakty o tobie.</p>
+
+<h2>3. Twoje konto</h2>
+<p>Do uruchamiania odczytów potrzebujesz konta (imię, e-mail, hasło). Musisz mieć <strong>ukończone 16 lat</strong>. Chroń swoje dane logowania; odpowiadasz za aktywność na swoim koncie. Podawaj prawdziwe dane i dbaj o ich aktualność. Jedno konto na osobę, prosimy.</p>
+
+<h2>4. Analizy i subskrypcje</h2>
+<p>Odczyty korzystają z kredytów („analiz”):</p>
+<ul>
+<li><strong>Darmowe analizy</strong>: nowe konta otrzymują 3 darmowe odczyty. Darmowe analizy nie mają wartości pieniężnej.</li>
+<li><strong>Pakiet 10</strong>: jednorazowy zakup 10 odczytów (€ 4,99). Analizy z pakietu nie wygasają.</li>
+<li><strong>Subskrypcja roczna</strong>: rok odczytów (€ 39,99/rok), z limitem fair use wynoszącym <strong>60 odczytów na miesiąc kalendarzowy</strong>. Licznik jest widoczny w aplikacji i resetuje się co miesiąc.</li>
+</ul>
+<p>Jedna analiza obejmuje jeden kompletny odczyt: analizę zdjęcia plus pełną interpretację („Lustro opowiada”). Analizy są osobiste, nieprzenoszalne i nie podlegają wymianie na pieniądze. Aktualne ceny znajdziesz zawsze na naszej <a href="pricing.html">stronie z cennikiem</a>; wszystkie ceny konsumenckie zawierają VAT tam, gdzie ma on zastosowanie.</p>
+
+<h2>5. Płatności, odnowienie i rezygnacja</h2>
+<p>Płatności obsługuje nasz partner płatniczy (zob. punkt 1). Subskrypcja roczna <strong>odnawia się automatycznie</strong> co roku po cenie obowiązującej w danym momencie; przed odnowieniem otrzymasz e-mail z przypomnieniem. Zrezygnować możesz w każdej chwili przez link w e-mailu z potwierdzeniem płatności lub pisząc na <a href="mailto:support@toereading.app">support@toereading.app</a>; rezygnacja zatrzymuje kolejne odnowienie, a subskrypcja pozostaje aktywna do końca opłaconego okresu. Możemy zmieniać ceny przyszłych zakupów i odnowień; ogłosimy zmiany, zanim zaczną cię dotyczyć.</p>
+
+<h2>6. Zwroty pieniędzy</h2>
+<p>Obowiązuje nasza <a href="refund.html">polityka zwrotów</a>: w skrócie, pełny zwrot pieniędzy w ciągu 14 dni, o ile zakupione analizy nie zostały wykorzystane. Twoje ustawowe prawa konsumenta nigdy nie są ograniczane przez ten regulamin.</p>
+
+<h2>7. Twoje zdjęcia</h2>
+<p>Zdjęcia, które przesyłasz, służą wyłącznie do wykonania odczytu, o który prosisz. Są przesyłane w postaci zaszyfrowanej, <strong>nigdy nie są zapisywane</strong> i nie są używane do trenowania modeli AI. Przesyłaj wyłącznie zdjęcia własnych stóp albo stóp osoby, która dała ci na to zgodę. Szczegóły znajdziesz w naszej <a href="privacy.html">polityce prywatności</a>.</p>
+
+<h2>8. Uczciwe i dozwolone korzystanie</h2>
+<p>Prosimy: nie używaj aplikacji do niczego niezgodnego z prawem; nie przesyłaj obrazów, które nie przedstawiają stóp albo są bezprawne lub szkodliwe; nie próbuj omijać kontroli analiz, limitów szybkości ani innych zabezpieczeń technicznych; nie korzystaj z botów ani ze zautomatyzowanego dostępu; nie odsprzedawaj odczytów jako usługi komercyjnej bez naszej pisemnej zgody; nie stosuj wobec usługi inżynierii wstecznej. Możemy wprowadzać limity techniczne (takie jak limity liczby żądań), aby utrzymać usługę w dobrej kondycji, i możemy zawieszać konta, które jej nadużywają.</p>
+
+<h2>9. Własność intelektualna</h2>
+<p>Aplikacja, jej baza wiedzy, teksty, projekt i oprogramowanie należą do nas (lub naszych licencjodawców). Swoje osobiste odczyty możesz swobodnie wykorzystywać do własnych celów. Nie wolno na dużą skalę kopiować ani ponownie publikować treści aplikacji ani jej bazy wiedzy.</p>
+
+<h2>10. Dostępność i zmiany</h2>
+<p>Prowadzimy Toe Reading z dbałością, ale oferujemy je w stanie „takim, jaki jest” („as is”): nie możemy obiecać nieprzerwanej dostępności. Niektóre języki są oznaczone jako beta. Możemy ulepszać, zmieniać lub wycofywać funkcje; jeśli kiedykolwiek zakończymy świadczenie płatnej usługi, zwrócimy pieniądze za niewykorzystane płatne analizy oraz za niewykorzystaną część subskrypcji.</p>
+
+<h2>11. Odpowiedzialność</h2>
+<p>W zakresie dozwolonym przez prawo nasza łączna odpowiedzialność z tytułu wszelkich roszczeń związanych z usługą jest ograniczona do kwoty zapłaconej nam przez ciebie w ciągu 12 miesięcy poprzedzających roszczenie. Nie odpowiadamy za szkody pośrednie. Nic w tym regulaminie nie wyłącza odpowiedzialności, której zgodnie z prawem wyłączyć nie można (na przykład za winę umyślną lub rażące niedbalstwo).</p>
+
+<h2>12. Zmiany tego regulaminu</h2>
+<p>Możemy aktualizować ten regulamin. O istotnych zmianach poinformujemy cię w aplikacji lub e-mailem, zanim wejdą w życie. Jeśli po tym nadal korzystasz z usługi, obowiązuje nowy regulamin.</p>
+
+<h2>13. Prawo właściwe</h2>
+<p>Zastosowanie ma prawo niderlandzkie. Spory rozstrzyga właściwy sąd w Niderlandach; jeśli jesteś konsumentem, bezwzględnie obowiązujące przepisy o ochronie konsumentów kraju twojego zamieszkania pozostają nienaruszone.</p>
+
+<h2>14. Kontakt</h2>
+<p>Masz pytania? Napisz na <a href="mailto:support@toereading.app">support@toereading.app</a>; czyta je prawdziwy człowiek.</p>
+</main>
+<main lang-blok="ru">
+<h1>Условия использования</h1>
+<p class="datum">Дата вступления в силу: 13 июля 2026 г.</p>
+
+<p>Добро пожаловать в Toe Reading (по-нидерландски: <em>Tenenspiegel</em>), веб-приложение для игровой саморефлексии через формы твоих пальцев ног. Эти условия представляют собой соглашение на простом языке между тобой и нами. Создавая аккаунт или используя приложение, ты соглашаешься с ними.</p>
+
+<h2>1. Кто мы</h2>
+<p>Toe Reading предоставляется компанией <strong>Ferri Somogyi Productions</strong>, индивидуальным предприятием, зарегистрированным в Нидерландах (номер в Торговой палате / KvK 34286815, идентификатор НДС NL001933433B06). Контакт: <a href="mailto:support@toereading.app">support@toereading.app</a>. Адрес регистрации предоставляется по запросу.</p>
+<p>Процесс заказа ведёт наш платёжный партнёр, который выступает как <strong>Merchant of Record</strong> (официальный продавец) по всем нашим заказам: платёжный партнёр юридически является продавцом покупки, обрабатывает оплату, НДС и налоги с продаж, счета и возвраты средств, а также предоставляет связанную с этим клиентскую поддержку. Актуальный платёжный партнёр указывается при оформлении заказа и в твоём чеке.</p>
+
+<h2>2. Что такое Toe Reading, а что нет</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading предназначен только для развлечения и саморефлексии.</strong> Это не медицинская, психологическая, диагностическая или терапевтическая услуга, а его чтения не являются советом какого-либо рода. Ничто в приложении не может выявить, диагностировать, вылечить или предсказать какое-либо состояние здоровья. Если тебя беспокоят твои стопы или здоровье, пожалуйста, обратись к врачу или квалифицированному специалисту.</p>
+</div>
+<p>Приложение позволяет тебе сфотографировать свои стопы, классифицирует видимые особенности твоих пальцев и с помощью ИИ (Claude от Anthropic) генерирует рефлексивное повествовательное «чтение». Чтения представляют собой сгенерированный текст: воспринимай их как зеркало для собственной рефлексии, а не как факты о тебе.</p>
+
+<h2>3. Твой аккаунт</h2>
+<p>Чтобы запускать чтения, нужен аккаунт (имя, адрес электронной почты, пароль). Тебе должно быть <strong>16 лет или больше</strong>. Береги свои данные для входа; ты отвечаешь за действия в своём аккаунте. Указывай точные данные и поддерживай их в актуальном виде. Пожалуйста, один аккаунт на человека.</p>
+
+<h2>4. Кредиты и подписки</h2>
+<p>Чтения работают на кредитах («анализах»):</p>
+<ul>
+<li><strong>Бесплатные кредиты</strong>: новые аккаунты получают 3 бесплатных чтения. Бесплатные кредиты не имеют денежной стоимости.</li>
+<li><strong>Пакет из 10</strong>: разовая покупка 10 чтений (€ 4,99). Кредиты из пакета не сгорают.</li>
+<li><strong>Годовая подписка</strong>: год чтений (€ 39,99/год) в рамках добросовестного использования, не более <strong>60 чтений в календарный месяц</strong>. Счётчик виден в приложении и обнуляется ежемесячно.</li>
+</ul>
+<p>Один кредит покрывает одно полное чтение: анализ фото плюс полное толкование («Зеркало рассказывает»). Кредиты персональны, непередаваемы и не обмениваются на деньги. Актуальные цены всегда указаны на нашей <a href="pricing.html">странице цен</a>; все потребительские цены включают НДС там, где он применим.</p>
+
+<h2>5. Платежи, продление и отмена</h2>
+<p>Платежи обрабатывает наш платёжный партнёр (см. раздел 1). Годовая подписка <strong>продлевается автоматически</strong> каждый год по действующей на тот момент цене; перед продлением ты получишь письмо-напоминание. Отменить подписку можно в любой момент по ссылке в письме с подтверждением оплаты или написав на <a href="mailto:support@toereading.app">support@toereading.app</a>; отмена останавливает следующее продление, а подписка остаётся активной до конца оплаченного срока. Мы можем изменять цены для будущих покупок и продлений; об изменениях мы объявим до того, как они тебя коснутся.</p>
+
+<h2>6. Возврат средств</h2>
+<p>Действует наша <a href="refund.html">политика возврата средств</a>: коротко говоря, полный возврат в течение 14 дней, пока купленные кредиты не использованы. Твои законные права потребителя никогда не ограничиваются этими условиями.</p>
+
+<h2>7. Твои фотографии</h2>
+<p>Фотографии, которые ты отправляешь, используются исключительно для выполнения запрошенного тобой чтения. Они передаются в зашифрованном виде, <strong>никогда не сохраняются</strong> и не используются для обучения ИИ-моделей. Отправляй только фото собственных стоп или стоп человека, который дал тебе на это разрешение. Подробности смотри в нашей <a href="privacy.html">политике конфиденциальности</a>.</p>
+
+<h2>8. Честное и допустимое использование</h2>
+<p>Пожалуйста, не делай следующего: не используй приложение для чего-либо незаконного; не отправляй изображения, которые не являются стопами либо являются незаконными или вредными; не пытайся обходить проверки кредитов, ограничения частоты запросов или другие технические меры; не используй ботов или автоматизированный доступ; не перепродавай чтения как коммерческую услугу без нашего письменного согласия; не занимайся обратной разработкой сервиса. Мы можем применять технические ограничения (например, лимиты частоты запросов), чтобы сервис оставался в здоровом состоянии, и можем приостанавливать аккаунты, которые им злоупотребляют.</p>
+
+<h2>9. Интеллектуальная собственность</h2>
+<p>Приложение, его база знаний, тексты, дизайн и программное обеспечение принадлежат нам (или нашим лицензиарам). Свои персональные чтения ты можешь свободно использовать в собственных целях. Нельзя копировать или переиздавать контент или базу знаний приложения в больших масштабах.</p>
+
+<h2>10. Доступность и изменения</h2>
+<p>Мы ведём Toe Reading с заботой, но предоставляем его «как есть»: бесперебойную доступность обещать мы не можем. Некоторые языки помечены как бета-версии. Мы можем улучшать, изменять или прекращать отдельные функции; если мы когда-либо прекратим платный сервис, мы вернём деньги за неиспользованные платные кредиты и неиспользованную часть подписок.</p>
+
+<h2>11. Ответственность</h2>
+<p>В той мере, в какой это допускает закон, наша совокупная ответственность по любым претензиям, связанным с сервисом, ограничена суммой, которую ты заплатил нам за 12 месяцев до претензии. Мы не несём ответственности за косвенные убытки. Ничто в этих условиях не исключает ответственность, которую нельзя исключить по закону (например, за умысел или грубую небрежность).</p>
+
+<h2>12. Изменения этих условий</h2>
+<p>Мы можем обновлять эти условия. О существенных изменениях мы уведомим тебя в приложении или по электронной почте до их вступления в силу. Если после этого ты продолжишь пользоваться сервисом, действуют новые условия.</p>
+
+<h2>13. Применимое право</h2>
+<p>Применяется право Нидерландов. Споры рассматривает компетентный суд в Нидерландах; если ты потребитель, обязательные нормы защиты потребителей страны твоего проживания остаются в силе.</p>
+
+<h2>14. Контакт</h2>
+<p>Вопросы? Напиши на <a href="mailto:support@toereading.app">support@toereading.app</a>; письмо прочитает живой человек.</p>
+</main>
+<main lang-blok="tr">
+<h1>Hizmet Koşulları</h1>
+<p class="datum">Yürürlük tarihi: 13 Temmuz 2026</p>
+
+<p>Toe Reading'e (Felemenkçe adıyla <em>Tenenspiegel</em>) hoş geldin: ayak parmaklarının biçimleri üzerinden oyunlu bir öz düşünüm sunan bir web uygulaması. Bu koşullar, seninle bizim aramızda sade bir dille yazılmış bir sözleşmedir. Bir hesap oluşturarak ya da uygulamayı kullanarak bunları kabul etmiş olursun.</p>
+
+<h2>1. Biz kimiz</h2>
+<p>Toe Reading, Hollanda'da kayıtlı bir şahıs işletmesi olan <strong>Ferri Somogyi Productions</strong> tarafından işletilir (Ticaret Odası / KvK no. 34286815, KDV kimlik no. NL001933433B06). İletişim: <a href="mailto:support@toereading.app">support@toereading.app</a>. Kayıtlı adres istek üzerine paylaşılır.</p>
+<p>Sipariş sürecimiz, tüm siparişlerimiz için <strong>Merchant of Record</strong> (kayıtlı satıcı) olarak hareket eden ödeme ortağımız tarafından yürütülür: ödeme ortağı, satın alma işleminin hukuken satıcısıdır; ödemeyi, KDV/satış vergisini, faturaları ve iade işlemlerini yürütür ve bunlarla ilgili müşteri hizmeti sunar. Güncel ödeme ortağı, ödeme sayfasında ve makbuzunda belirtilir.</p>
+
+<h2>2. Toe Reading nedir, ne değildir</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading yalnızca eğlence ve öz düşünüm içindir.</strong> Tıbbi, psikolojik, tanısal ya da terapötik bir hizmet değildir ve okumaları hiçbir türden tavsiye sayılmaz. Uygulamadaki hiçbir şey herhangi bir sağlık durumunu saptayamaz, teşhis edemez, tedavi edemez ya da öngöremez. Ayaklarınla ya da sağlığınla ilgili bir endişen varsa lütfen bir doktora ya da nitelikli bir uzmana git.</p>
+</div>
+<p>Uygulama ayaklarını fotoğraflamanı sağlar, ayak parmaklarının görünür özelliklerini sınıflandırır ve yapay zekâ (Anthropic'in Claude'u) yardımıyla düşünmeye çağıran, anlatısal bir "okuma" üretir. Okumalar üretilmiş metindir: onları hakkında gerçekler olarak değil, kendi düşünümün için bir ayna olarak gör.</p>
+
+<h2>3. Hesabın</h2>
+<p>Okuma yapabilmek için bir hesaba (ad, e-posta, parola) ihtiyacın var. <strong>16 yaşında ya da daha büyük</strong> olmalısın. Giriş bilgilerini güvende tut; hesabındaki etkinlikten sen sorumlusun. Doğru bilgi ver ve güncel tut. Kişi başına bir hesap, lütfen.</p>
+
+<h2>4. Krediler ve abonelikler</h2>
+<p>Okumalar kredilerle ("analizler") çalışır:</p>
+<ul>
+<li><strong>Ücretsiz krediler</strong>: yeni hesaplara 3 ücretsiz okuma verilir. Ücretsiz kredilerin parasal değeri yoktur.</li>
+<li><strong>10'lu paket</strong>: 10 okumalık tek seferlik satın alma (€ 4,99). Paket kredilerinin süresi dolmaz.</li>
+<li><strong>Yıllık abonelik</strong>: bir yıl boyunca okuma (€ 39,99/yıl), <strong>takvim ayı başına 60 okuma</strong> adil kullanım sınırına tabidir. Sayaç uygulamada görünür ve her ay sıfırlanır.</li>
+</ul>
+<p>Bir kredi, eksiksiz bir okumayı kapsar: fotoğraf analizi artı tam yorum ("Ayna anlatıyor"). Krediler kişiseldir, devredilemez ve paraya çevrilemez. Güncel fiyatlar her zaman <a href="pricing.html">fiyat sayfamızda</a> gösterilir; tüm tüketici fiyatlarına, geçerli olduğu durumlarda KDV dahildir.</p>
+
+<h2>5. Ödemeler, yenileme ve iptal</h2>
+<p>Ödemeler, ödeme ortağımız tarafından işlenir (bkz. bölüm 1). Yıllık abonelik her yıl, o an geçerli fiyat üzerinden <strong>otomatik olarak yenilenir</strong>; yenilemeden önce bir hatırlatma e-postası alırsın. İstediğin zaman, ödeme onayı e-postandaki bağlantıdan ya da <a href="mailto:support@toereading.app">support@toereading.app</a> adresine e-posta göndererek iptal edebilirsin; iptal, bir sonraki yenilemeyi durdurur ve aboneliğin ödenmiş dönemin sonuna kadar etkin kalır. Gelecekteki satın almalar ve yenilemeler için fiyatları değiştirebiliriz; değişiklikleri seni etkilemeden önce duyururuz.</p>
+
+<h2>6. İadeler</h2>
+<p><a href="refund.html">İade Politikamız</a> geçerlidir: kısacası, satın alınan krediler kullanılmadığı sürece 14 gün içinde tam iade. Tüketici olarak yasal hakların bu koşullarla hiçbir zaman sınırlanmaz.</p>
+
+<h2>7. Fotoğrafların</h2>
+<p>Gönderdiğin fotoğraflar yalnızca talep ettiğin okumayı gerçekleştirmek için kullanılır. Şifreli olarak iletilir, <strong>hiçbir zaman saklanmaz</strong> ve yapay zekâ modellerini eğitmek için kullanılmaz. Yalnızca kendi ayaklarının ya da sana izin vermiş birinin ayaklarının fotoğraflarını gönder. Ayrıntılar için <a href="privacy.html">Gizlilik Politikamıza</a> bak.</p>
+
+<h2>8. Adil ve kabul edilebilir kullanım</h2>
+<p>Lütfen şunları yapma: uygulamayı hukuka aykırı herhangi bir amaçla kullanmak; ayak olmayan ya da hukuka aykırı veya zararlı görseller göndermek; kredi denetimlerini, hız sınırlarını ya da diğer teknik önlemleri aşmaya çalışmak; bot ya da otomatik erişim kullanmak; yazılı onayımız olmadan okumaları ticari bir hizmet olarak yeniden satmak; ya da hizmete tersine mühendislik uygulamak. Hizmeti sağlıklı tutmak için teknik sınırlar (hız sınırları gibi) uygulayabilir ve kötüye kullanan hesapları askıya alabiliriz.</p>
+
+<h2>9. Fikri mülkiyet</h2>
+<p>Uygulama, bilgi tabanı, metinler, tasarım ve yazılım bize (ya da lisans verenlerimize) aittir. Kişisel okumalarını kendi amaçların için özgürce kullanabilirsin. Uygulamanın içeriğini ya da bilgi tabanını büyük ölçekte kopyalayamaz ya da yeniden yayımlayamazsın.</p>
+
+<h2>10. Kullanılabilirlik ve değişiklikler</h2>
+<p>Toe Reading'i özenle yürütüyoruz, ama "olduğu gibi" sunuyoruz: kesintisiz kullanılabilirlik sözü veremeyiz. Bazı diller beta olarak işaretlidir. Özellikleri iyileştirebilir, değiştirebilir ya da sonlandırabiliriz; ücretli hizmeti bir gün sonlandırırsak, kullanılmamış ücretli kredileri ve aboneliklerin kullanılmamış bölümünü iade ederiz.</p>
+
+<h2>11. Sorumluluk</h2>
+<p>Yasaların izin verdiği ölçüde, hizmetle ilgili her türlü talep için toplam sorumluluğumuz, talepten önceki 12 ay içinde bize ödediğin tutarla sınırlıdır. Dolaylı zararlardan sorumlu değiliz. Bu koşullardaki hiçbir şey, hukuken hariç tutulamayacak sorumluluğu (kasıt ya da ağır ihmal gibi) hariç tutmaz.</p>
+
+<h2>12. Bu koşullardaki değişiklikler</h2>
+<p>Bu koşulları güncelleyebiliriz. Önemli değişikliklerde, yürürlüğe girmeden önce seni uygulamada ya da e-postayla bilgilendiririz. Sonrasında hizmeti kullanmaya devam edersen, yeni koşullar geçerli olur.</p>
+
+<h2>13. Uygulanacak hukuk</h2>
+<p>Hollanda hukuku uygulanır. Uyuşmazlıklar Hollanda'daki yetkili mahkemeye gider; tüketiciysen, yaşadığın ülkenin emredici tüketici korumaları saklı kalır.</p>
+
+<h2>14. İletişim</h2>
+<p>Soruların mı var? <a href="mailto:support@toereading.app">support@toereading.app</a> adresine yaz; gerçek bir insan okur.</p>
+</main>
+<main lang-blok="ar">
+<h1>شروط الخدمة</h1>
+<p class="datum">تاريخ السريان: 13 يوليو 2026</p>
+
+<p>مرحبًا بك في Toe Reading (بالهولندية: <em>Tenenspiegel</em>)، تطبيق ويب للتأمل الذاتي بروح مرحة من خلال أشكال أصابع قدميك. هذه الشروط اتفاق بلغة واضحة بينك وبيننا. بإنشائك حسابًا أو استخدامك التطبيق، فأنت توافق عليها.</p>
+
+<h2>1. من نحن</h2>
+<p>يُشغَّل Toe Reading من قبل <strong>Ferri Somogyi Productions</strong>، وهي مؤسسة فردية مسجلة في هولندا (غرفة التجارة الهولندية / رقم KvK ‏34286815، الرقم الضريبي NL001933433B06). للتواصل: <a href="mailto:support@toereading.app">support@toereading.app</a>. العنوان المسجل متاح عند الطلب.</p>
+<p>تتم عملية الطلب لدينا عبر شريك الدفع الخاص بنا، الذي يعمل بصفة <strong>Merchant of Record</strong> (البائع القانوني) لجميع طلباتنا: فشريك الدفع هو قانونيًا بائع ما تشتريه، ويتولى الدفع وضريبة القيمة المضافة/ضريبة المبيعات والفواتير ومعالجة المبالغ المستردة، ويقدم خدمة العملاء المتصلة بذلك. يُذكر اسم شريك الدفع الحالي عند إتمام الشراء وعلى إيصالك.</p>
+
+<h2>2. ما هو Toe Reading، وما ليس هو</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading مخصص للترفيه والتأمل الذاتي فقط.</strong> فهو ليس خدمة طبية أو نفسية أو تشخيصية أو علاجية، وقراءاته ليست نصيحة من أي نوع. لا شيء في التطبيق يمكنه اكتشاف أي حالة صحية أو تشخيصها أو علاجها أو التنبؤ بها. إذا كانت لديك مخاوف بشأن قدميك أو صحتك، فيرجى مراجعة طبيب أو مختص مؤهل.</p>
+</div>
+<p>يتيح لك التطبيق تصوير قدميك، ويصنّف السمات المرئية لأصابع قدميك، ويولّد «قراءة» تأملية سردية بمساعدة الذكاء الاصطناعي (Claude من Anthropic). القراءات نصوص مولَّدة: تعامل معها كمرآة لتأملك الذاتي، لا كحقائق عنك.</p>
+
+<h2>3. حسابك</h2>
+<p>تحتاج إلى حساب (الاسم والبريد الإلكتروني وكلمة المرور) لإجراء القراءات. يجب أن يكون عمرك <strong>16 عامًا أو أكثر</strong>. احتفظ ببيانات دخولك في مكان آمن؛ فأنت المسؤول عن النشاط على حسابك. قدّم معلومات صحيحة وحدّثها باستمرار. حساب واحد لكل شخص، من فضلك.</p>
+
+<h2>4. الرصيد والاشتراكات</h2>
+<p>تعمل القراءات برصيد («تحليلات»):</p>
+<ul>
+<li><strong>الرصيد المجاني</strong>: تحصل الحسابات الجديدة على 3 قراءات مجانية. الرصيد المجاني ليست له قيمة نقدية.</li>
+<li><strong>باقة العشرة</strong>: شراء لمرة واحدة لعشر قراءات (€4.99). رصيد الباقة لا تنتهي صلاحيته.</li>
+<li><strong>الاشتراك السنوي</strong>: عام كامل من القراءات (€39.99/سنة)، مع حد استخدام عادل قدره <strong>60 قراءة في الشهر الميلادي</strong>. العدّاد ظاهر في التطبيق ويُعاد ضبطه شهريًا.</li>
+</ul>
+<p>يغطي الرصيد الواحد قراءة واحدة كاملة: تحليل الصورة إضافةً إلى التأويل الكامل («المرآة تحكي»). الرصيد شخصي وغير قابل للتحويل ولا يمكن استبداله بمال. الأسعار الحالية معروضة دائمًا على <a href="pricing.html">صفحة الأسعار</a>؛ وجميع أسعار المستهلكين تشمل ضريبة القيمة المضافة حيثما تنطبق.</p>
+
+<h2>5. الدفع والتجديد والإلغاء</h2>
+<p>تُعالج المدفوعات عبر شريك الدفع الخاص بنا (انظر البند 1). الاشتراك السنوي <strong>يتجدد تلقائيًا</strong> كل عام بالسعر الساري حينها؛ وستصلك رسالة تذكير بالبريد الإلكتروني قبل التجديد. يمكنك الإلغاء في أي وقت عبر الرابط الموجود في رسالة تأكيد الدفع أو بمراسلتنا على <a href="mailto:support@toereading.app">support@toereading.app</a>؛ يوقف الإلغاء التجديد التالي، ويبقى اشتراكك فعالًا حتى نهاية المدة المدفوعة. يجوز لنا تغيير الأسعار للمشتريات والتجديدات المستقبلية؛ وسنعلن عن التغييرات قبل أن تمسّك.</p>
+
+<h2>6. استرداد المبالغ</h2>
+<p>تنطبق <a href="refund.html">سياسة الاسترداد</a> الخاصة بنا: باختصار، استرداد كامل خلال 14 يومًا ما دام الرصيد المشترى لم يُستخدم. حقوقك القانونية كمستهلك لا تُقيَّد أبدًا بهذه الشروط.</p>
+
+<h2>7. صورك</h2>
+<p>الصور التي ترسلها تُستخدم حصرًا لإجراء القراءة التي طلبتها. تُنقل مشفَّرة، و<strong>لا تُخزَّن أبدًا</strong>، ولا تُستخدم لتدريب نماذج الذكاء الاصطناعي. لا ترسل إلا صور قدميك أنت، أو قدمي شخص أعطاك إذنه بذلك. انظر <a href="privacy.html">سياسة الخصوصية</a> للتفاصيل.</p>
+
+<h2>8. الاستخدام العادل والمقبول</h2>
+<p>من فضلك لا تفعل الآتي: استخدام التطبيق لأي غرض غير قانوني؛ أو إرسال صور ليست لأقدام أو صور غير مشروعة أو ضارة؛ أو محاولة تجاوز فحوصات الرصيد أو حدود المعدل أو غيرها من التدابير التقنية؛ أو استخدام برامج آلية (بوتات) أو وصول مؤتمت؛ أو إعادة بيع القراءات كخدمة تجارية دون اتفاق كتابي معنا؛ أو إجراء هندسة عكسية للخدمة. يجوز لنا تطبيق حدود تقنية (مثل حدود المعدل) للحفاظ على سلامة الخدمة، وقد نعلّق الحسابات التي تسيء استخدامها.</p>
+
+<h2>9. الملكية الفكرية</h2>
+<p>التطبيق وقاعدة معارفه ونصوصه وتصميمه وبرمجياته ملك لنا (أو لمانحي التراخيص لنا). يمكنك استخدام قراءاتك الشخصية بحرية لأغراضك الخاصة. ولا يجوز لك نسخ محتوى التطبيق أو قاعدة معارفه أو إعادة نشرهما على نطاق واسع.</p>
+
+<h2>10. التوافر والتغييرات</h2>
+<p>نُشغّل Toe Reading بعناية، لكننا نقدمه «كما هو»: لا يمكننا أن نعد بتوافر دون انقطاع. بعض اللغات موسومة بأنها تجريبية (بيتا). قد نحسّن الميزات أو نغيّرها أو نوقفها؛ وإذا أوقفنا الخدمة المدفوعة يومًا ما، فسنردّ قيمة الرصيد المدفوع غير المستخدم والجزء غير المستخدم من الاشتراكات.</p>
+
+<h2>11. المسؤولية</h2>
+<p>إلى الحد الذي يسمح به القانون، تقتصر مسؤوليتنا الإجمالية عن أي مطالبات متصلة بالخدمة على المبلغ الذي دفعته لنا خلال الاثني عشر شهرًا السابقة للمطالبة. ولسنا مسؤولين عن الأضرار غير المباشرة. لا شيء في هذه الشروط يستبعد مسؤولية لا يمكن استبعادها قانونًا (كالمسؤولية عن التعمد أو الإهمال الجسيم).</p>
+
+<h2>12. تغيير هذه الشروط</h2>
+<p>قد نحدّث هذه الشروط. عند إجراء تغييرات جوهرية سنخطرك في التطبيق أو عبر البريد الإلكتروني قبل سريانها. وإذا واصلت استخدام الخدمة بعد ذلك، فإن الشروط الجديدة تنطبق عليك.</p>
+
+<h2>13. القانون الواجب التطبيق</h2>
+<p>يسري القانون الهولندي. تُحال النزاعات إلى المحكمة المختصة في هولندا؛ وإذا كنت مستهلكًا، فتبقى الحمايات الاستهلاكية الإلزامية في بلد إقامتك غير متأثرة.</p>
+
+<h2>14. التواصل</h2>
+<p>لديك أسئلة؟ راسلنا على <a href="mailto:support@toereading.app">support@toereading.app</a>؛ إنسان حقيقي يقرأ رسالتك.</p>
+</main>
+<main lang-blok="zh">
+<h1>服务条款</h1>
+<p class="datum">生效日期：2026 年 7 月 13 日</p>
+
+<p>欢迎使用 Toe Reading（荷兰语名：<em>Tenenspiegel</em>），一款通过脚趾形状进行趣味自省的网页应用。本条款是你与我们之间以平实语言写成的约定。创建账户或使用本应用，即表示你同意本条款。</p>
+
+<h2>1. 我们是谁</h2>
+<p>Toe Reading 由 <strong>Ferri Somogyi Productions</strong> 运营，这是一家在荷兰注册的个人独资企业（商会/KvK 编号 34286815，增值税号 NL001933433B06）。联系方式：<a href="mailto:support@toereading.app">support@toereading.app</a>。注册地址可应要求提供。</p>
+<p>我们的订购流程由我们的支付伙伴执行，其就我们的所有订单担任 <strong>Merchant of Record</strong>（登记商户）：支付伙伴在法律上是该笔购买的卖方，负责处理付款、增值税/销售税、发票和退款事宜，并提供相关客户服务。当前的支付伙伴会在结算时以及你的收据上注明。</p>
+
+<h2>2. Toe Reading 是什么，不是什么</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading 仅用于娱乐和自省。</strong>它不是医疗、心理、诊断或治疗服务，其解读也不构成任何形式的建议。应用中的任何内容都无法检测、诊断、治疗或预测任何健康状况。如果你对自己的脚或健康有顾虑，请咨询医生或合格的专业人士。</p>
+</div>
+<p>通过本应用，你可以拍摄自己的脚，应用会对脚趾的可见特征进行分类，并借助 AI（Anthropic 的 Claude）生成一段反思性、叙述式的“解读”。解读是生成的文本：请把它当作供你自省的一面镜子，而不是关于你的事实。</p>
+
+<h2>3. 你的账户</h2>
+<p>运行解读需要一个账户（姓名、邮箱、密码）。你必须<strong>年满 16 周岁</strong>。请妥善保管你的登录信息；你对账户上发生的活动负责。请提供准确的信息并保持更新。每人限一个账户，谢谢。</p>
+
+<h2>4. 额度与订阅</h2>
+<p>解读依靠额度（“分析”）运行：</p>
+<ul>
+<li><strong>免费额度</strong>：新账户可获赠 3 次免费解读。免费额度不具有货币价值。</li>
+<li><strong>10 次套餐</strong>：一次性购买 10 次解读（€4.99）。套餐额度不会过期。</li>
+<li><strong>年度订阅</strong>：一整年的解读（€39.99/年），并适用<strong>每个日历月 60 次解读</strong>的合理使用限制。计数器在应用中可见，并按月重置。</li>
+</ul>
+<p>一个额度对应一次完整的解读：照片分析加上完整的解读文本（“听镜子说”）。额度为个人专属，不可转让，也不能兑换成金钱。当前价格始终显示在我们的<a href="pricing.html">价格页面</a>；所有面向消费者的价格在适用的范围内均含增值税。</p>
+
+<h2>5. 付款、续订与取消</h2>
+<p>付款由我们的支付伙伴处理（见第 1 条）。年度订阅每年<strong>自动续订</strong>，按当时有效的价格收取；续订前你会收到提醒邮件。你可以随时通过付款确认邮件中的链接，或发邮件至 <a href="mailto:support@toereading.app">support@toereading.app</a> 取消订阅；取消会停止下一次续订，你的订阅在已付费期限结束前保持有效。我们可能会调整未来购买和续订的价格；在调整影响到你之前，我们会提前告知。</p>
+
+<h2>6. 退款</h2>
+<p>适用我们的<a href="refund.html">退款政策</a>：简而言之，只要所购额度尚未使用，购买后 14 天内可全额退款。本条款绝不限制你作为消费者的法定权利。</p>
+
+<h2>7. 你的照片</h2>
+<p>你提交的照片仅用于执行你所请求的解读。照片以加密方式传输，<strong>绝不存储</strong>，也不会用于训练 AI 模型。请只提交你自己的脚部照片，或已获得本人许可者的脚部照片。详情请见我们的<a href="privacy.html">隐私政策</a>。</p>
+
+<h2>8. 合理与可接受的使用</h2>
+<p>请不要：将本应用用于任何违法目的；提交并非脚部、或违法或有害的图片；试图绕过额度检查、频率限制或其他技术措施；使用机器人或自动化访问；未经我们书面同意将解读作为商业服务转售；或对本服务进行逆向工程。为保持服务健康运行，我们可能采用技术限制（如频率限制），并可能暂停滥用服务的账户。</p>
+
+<h2>9. 知识产权</h2>
+<p>本应用及其知识库、文本、设计和软件归我们（或我们的许可方）所有。你可以为个人目的自由使用你的个人解读。不得大规模复制或转载本应用的内容或知识库。</p>
+
+<h2>10. 可用性与变更</h2>
+<p>我们用心运营 Toe Reading，但按“现状”提供服务：我们无法承诺不间断的可用性。部分语言被标记为测试版。我们可能改进、更改或停用某些功能；如果我们停止付费服务，将退还未使用的付费额度以及订阅中未使用的部分。</p>
+
+<h2>11. 责任</h2>
+<p>在法律允许的范围内，我们就与本服务相关的任何索赔所承担的全部责任，以你在索赔前 12 个月内向我们支付的金额为限。我们不对间接损失承担责任。本条款中的任何内容均不排除依法不可排除的责任（例如因故意或重大过失产生的责任）。</p>
+
+<h2>12. 本条款的变更</h2>
+<p>我们可能更新本条款。对于重要变更，我们会在生效前通过应用或电子邮件通知你。如果你在此之后继续使用本服务，则适用新条款。</p>
+
+<h2>13. 适用法律</h2>
+<p>适用荷兰法律。争议由荷兰有管辖权的法院审理；如果你是消费者，你居住国的强制性消费者保护规定不受影响。</p>
+
+<h2>14. 联系</h2>
+<p>有问题？请发邮件至 <a href="mailto:support@toereading.app">support@toereading.app</a>；会有真人阅读。</p>
+</main>
+<main lang-blok="ja">
+<h1>利用規約</h1>
+<p class="datum">発効日：2026年7月13日</p>
+
+<p>Toe Reading（オランダ語では <em>Tenenspiegel</em>）へようこそ。足の指の形を通して、遊び心のある自己省察を楽しむウェブアプリです。本規約は、あなたと私たちとの間の、わかりやすい言葉で書かれた取り決めです。アカウントを作成するか、アプリを利用することで、本規約に同意したことになります。</p>
+
+<h2>1. 私たちについて</h2>
+<p>Toe Reading は、オランダで登記された個人事業 <strong>Ferri Somogyi Productions</strong>（商業登記／KvK 番号 34286815、VAT ID NL001933433B06）が運営しています。連絡先：<a href="mailto:support@toereading.app">support@toereading.app</a>。所在地はご請求に応じてお知らせします。</p>
+<p>注文手続きは、すべての注文について <strong>Merchant of Record</strong>（記録上の販売者）として行動する決済パートナーが行います。決済パートナーは法的に購入の売主となり、支払い、VAT／売上税、請求書、返金処理を担当し、これらに関するカスタマーサービスを提供します。現在の決済パートナーは、チェックアウト画面とレシートに表示されます。</p>
+
+<h2>2. Toe Reading とは何か、そして何でないか</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading は、エンターテインメントと自己省察のためだけのものです。</strong>医療、心理、診断、治療のいずれのサービスでもなく、そのリーディングはいかなる種類のアドバイスでもありません。アプリの中のどの機能も、健康状態を発見、診断、治療、予測することはできません。足や健康について気になることがあれば、医師または資格のある専門家にご相談ください。</p>
+</div>
+<p>このアプリでは、足を撮影すると、足の指の目に見える特徴が分類され、AI（Anthropic の Claude）の助けを借りて、内省をうながす物語調の「リーディング」が生成されます。リーディングは生成されたテキストです。自分自身をふり返るための鏡として受け止め、あなたについての事実として受け取らないでください。</p>
+
+<h2>3. あなたのアカウント</h2>
+<p>リーディングを行うにはアカウント（名前、メールアドレス、パスワード）が必要です。<strong>16歳以上</strong>であることが条件です。ログイン情報は安全に保管してください。アカウント上で行われることについては、あなたが責任を負います。正確な情報を入力し、最新の状態に保ってください。アカウントはお一人につき一つでお願いします。</p>
+
+<h2>4. クレジットとサブスクリプション</h2>
+<p>リーディングはクレジット（「分析」）で動きます：</p>
+<ul>
+<li><strong>無料クレジット</strong>：新規アカウントには無料のリーディングが3回分つきます。無料クレジットに金銭的価値はありません。</li>
+<li><strong>10回パック</strong>：リーディング10回分の買い切り（€4.99）。パックのクレジットに有効期限はありません。</li>
+<li><strong>年間サブスクリプション</strong>：1年間のリーディング（€39.99/年）。<strong>暦月あたり60回まで</strong>のフェアユースが条件です。カウンターはアプリ内で確認でき、毎月リセットされます。</li>
+</ul>
+<p>クレジット1回分で、写真の分析と完全な解釈（「鏡が語る」）を含む、1回のリーディング全体をカバーします。クレジットは個人のものであり、譲渡できず、お金と交換することもできません。最新の価格は常に<a href="pricing.html">料金ページ</a>に掲載されています。消費者向け価格はすべて、適用される場合には VAT 込みです。</p>
+
+<h2>5. 支払い、更新、解約</h2>
+<p>支払いは、私たちの決済パートナーが処理します（第1条をご覧ください）。年間サブスクリプションは、その時点の価格で毎年<strong>自動更新</strong>されます。更新の前にはリマインダーメールが届きます。解約は、支払い確認メール内のリンクから、または <a href="mailto:support@toereading.app">support@toereading.app</a> へのメールで、いつでも行えます。解約すると次回の更新が止まり、サブスクリプションは支払い済みの期間の終わりまで有効です。将来の購入や更新について価格を変更することがありますが、あなたに影響が及ぶ前にお知らせします。</p>
+
+<h2>6. 返金</h2>
+<p>私たちの<a href="refund.html">返金ポリシー</a>が適用されます。要するに、購入したクレジットが未使用である限り、14日以内であれば全額返金します。消費者としてのあなたの法定の権利が、本規約によって制限されることは決してありません。</p>
+
+<h2>7. あなたの写真</h2>
+<p>送信された写真は、あなたがリクエストしたリーディングを行うためだけに使用されます。写真は暗号化して送信され、<strong>保存されることは決してなく</strong>、AI モデルの学習にも使われません。ご自身の足、または許可をくれた方の足の写真だけを送信してください。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+
+<h2>8. 公正で適切な利用</h2>
+<p>次の行為はご遠慮ください。アプリを違法な目的に使うこと。足以外の画像や、違法または有害な画像を送信すること。クレジットの確認、レート制限その他の技術的措置を回避しようとすること。ボットや自動アクセスを使うこと。私たちの書面による同意なしに、リーディングを商用サービスとして転売すること。サービスをリバースエンジニアリングすること。サービスを健全に保つため、技術的な制限（レート制限など）を適用することがあり、悪用のあるアカウントを停止することがあります。</p>
+
+<h2>9. 知的財産</h2>
+<p>アプリ、そのナレッジベース、テキスト、デザイン、ソフトウェアは、私たち（または私たちのライセンサー）のものです。あなた個人のリーディングは、ご自身の目的のために自由にお使いいただけます。ただし、アプリのコンテンツやナレッジベースを大規模に複製したり再公開したりすることはできません。</p>
+
+<h2>10. 可用性と変更</h2>
+<p>私たちは心を込めて Toe Reading を運営していますが、提供は「現状のまま」です。中断のない利用をお約束することはできません。一部の言語にはベータの表示があります。機能を改善、変更、終了することがあります。万一、有料サービスを終了する場合には、未使用の有料クレジットと、サブスクリプションの未使用分を返金します。</p>
+
+<h2>11. 責任</h2>
+<p>法律で認められる範囲で、本サービスに関連するあらゆる請求についての私たちの責任の総額は、請求前の12か月間にあなたが私たちに支払った金額を上限とします。間接損害については責任を負いません。本規約のいかなる条項も、法律上除外できない責任（故意または重大な過失によるものなど）を除外するものではありません。</p>
+
+<h2>12. 本規約の変更</h2>
+<p>本規約は更新されることがあります。重要な変更については、発効前にアプリ内またはメールでお知らせします。その後もサービスを使い続けた場合には、新しい規約が適用されます。</p>
+
+<h2>13. 準拠法</h2>
+<p>オランダ法が適用されます。紛争はオランダの管轄裁判所で扱われます。あなたが消費者である場合、居住国の強行的な消費者保護規定は影響を受けません。</p>
+
+<h2>14. お問い合わせ</h2>
+<p>ご質問は <a href="mailto:support@toereading.app">support@toereading.app</a> までメールでどうぞ。生身の人間が読んでいます。</p>
+</main>
+<main lang-blok="ko">
+<h1>이용약관</h1>
+<p class="datum">시행일: 2026년 7월 13일</p>
+
+<p>Toe Reading(네덜란드어로는 <em>Tenenspiegel</em>)에 오신 것을 환영해요. 발가락의 모양을 통해 즐겁게 자신을 돌아보는 웹 앱이에요. 이 약관은 당신과 저희 사이의, 쉬운 말로 쓴 약속이에요. 계정을 만들거나 앱을 사용하면 이 약관에 동의하는 거예요.</p>
+
+<h2>1. 저희는 누구인가요</h2>
+<p>Toe Reading은 네덜란드에 등록된 개인사업체 <strong>Ferri Somogyi Productions</strong>가 운영해요(상공회의소/KvK 번호 34286815, 부가세 ID NL001933433B06). 문의: <a href="mailto:support@toereading.app">support@toereading.app</a>. 사업장 주소는 요청하시면 알려 드려요.</p>
+<p>주문 절차는 저희 결제 파트너가 진행해요. 이 파트너는 저희의 모든 주문에 대해 <strong>Merchant of Record</strong>(기록상 판매자)로서, 법적으로 구매의 판매자이며 결제, 부가세·판매세, 인보이스, 환불 처리를 담당하고 관련 고객 서비스를 제공해요. 현재의 결제 파트너는 결제 화면과 영수증에 표시돼요.</p>
+
+<h2>2. Toe Reading은 무엇이고, 무엇이 아닌가요</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading은 오직 엔터테인먼트와 자기 성찰을 위한 것이에요.</strong> 의학적·심리학적·진단적·치료적 서비스가 아니고, 리딩은 어떤 종류의 조언도 아니에요. 앱의 그 무엇도 건강 상태를 발견하거나 진단하거나 치료하거나 예측할 수 없어요. 발이나 건강이 걱정된다면 의사나 자격 있는 전문가를 찾아 주세요.</p>
+</div>
+<p>앱으로 발을 촬영하면, 앱이 발가락의 눈에 보이는 특징을 분류하고 AI(Anthropic의 Claude)의 도움으로 성찰적인 이야기 형식의 “리딩”을 생성해요. 리딩은 생성된 텍스트예요: 자신을 비춰 보는 거울로 여기고, 당신에 대한 사실로 받아들이지 마세요.</p>
+
+<h2>3. 당신의 계정</h2>
+<p>리딩을 하려면 계정(이름, 이메일, 비밀번호)이 필요해요. <strong>16세 이상</strong>이어야 해요. 로그인 정보를 안전하게 보관해 주세요. 계정에서 일어나는 활동은 본인 책임이에요. 정확한 정보를 입력하고 최신 상태로 유지해 주세요. 계정은 한 사람당 하나만 부탁드려요.</p>
+
+<h2>4. 이용권과 구독</h2>
+<p>리딩은 이용권(“분석”)으로 작동해요:</p>
+<ul>
+<li><strong>무료 이용권</strong>: 새 계정에는 무료 리딩 3회가 제공돼요. 무료 이용권은 금전적 가치가 없어요.</li>
+<li><strong>10회 패키지</strong>: 리딩 10회의 일회성 구매예요(€ 4,99). 패키지 이용권은 만료되지 않아요.</li>
+<li><strong>연간 구독</strong>: 1년 동안의 리딩이에요(€ 39,99/년). <strong>매달(역월 기준) 리딩 60회</strong>의 공정 이용 한도가 적용돼요. 카운터는 앱에서 볼 수 있고 매달 초기화돼요.</li>
+</ul>
+<p>이용권 1회는 완전한 리딩 1회를 포함해요: 사진 분석과 전체 풀이(“거울이 들려주는 이야기”)까지요. 이용권은 개인에게 귀속되고, 양도할 수 없으며, 돈으로 교환할 수 없어요. 현재 가격은 언제나 저희 <a href="pricing.html">가격 페이지</a>에 표시돼요. 모든 소비자 가격은 해당되는 경우 부가세를 포함해요.</p>
+
+<h2>5. 결제, 갱신, 해지</h2>
+<p>결제는 저희 결제 파트너가 처리해요(1항 참조). 연간 구독은 매년 그 시점의 가격으로 <strong>자동 갱신</strong>돼요. 갱신 전에 알림 이메일을 받게 돼요. 해지는 결제 확인 이메일에 있는 링크로, 또는 <a href="mailto:support@toereading.app">support@toereading.app</a>로 이메일을 보내 언제든지 할 수 있어요. 해지하면 다음 갱신이 멈추고, 구독은 결제한 기간이 끝날 때까지 유지돼요. 향후 구매와 갱신의 가격은 변경될 수 있어요. 변경이 당신에게 적용되기 전에 미리 알려 드려요.</p>
+
+<h2>6. 환불</h2>
+<p>저희 <a href="refund.html">환불 정책</a>이 적용돼요: 간단히 말해, 구매한 이용권을 사용하지 않은 한 14일 이내에 전액 환불해 드려요. 소비자로서의 법적 권리는 이 약관으로 결코 제한되지 않아요.</p>
+
+<h2>7. 당신의 사진</h2>
+<p>제출한 사진은 오직 당신이 요청한 리딩을 수행하는 데만 사용돼요. 사진은 암호화되어 전송되고, <strong>절대 저장되지 않으며</strong>, AI 모델을 학습시키는 데 사용되지 않아요. 본인의 발 사진, 또는 허락을 받은 사람의 발 사진만 제출해 주세요. 자세한 내용은 저희 <a href="privacy.html">개인정보 처리방침</a>을 참고해 주세요.</p>
+
+<h2>8. 공정하고 허용된 사용</h2>
+<p>이런 일은 하지 말아 주세요: 불법적인 목적으로 앱을 사용하는 것, 발이 아니거나 불법적이거나 유해한 이미지를 제출하는 것, 이용권 확인·속도 제한이나 그 밖의 기술적 조치를 우회하려는 시도, 봇이나 자동화된 접근의 사용, 저희의 서면 동의 없이 리딩을 상업 서비스로 재판매하는 것, 서비스의 리버스 엔지니어링. 저희는 서비스를 건강하게 유지하기 위해 기술적 제한(예: 속도 제한)을 적용할 수 있고, 남용하는 계정은 정지할 수 있어요.</p>
+
+<h2>9. 지식재산권</h2>
+<p>앱과 그 지식 베이스, 텍스트, 디자인, 소프트웨어는 저희(또는 저희 라이선스 제공자)의 것이에요. 개인 리딩은 본인의 목적을 위해 자유롭게 사용해도 돼요. 다만 앱의 콘텐츠나 지식 베이스를 대규모로 복사하거나 재게시할 수는 없어요.</p>
+
+<h2>10. 가용성과 변경</h2>
+<p>저희는 Toe Reading을 정성껏 운영하지만, “있는 그대로(as is)” 제공해요: 중단 없는 가용성은 약속할 수 없어요. 일부 언어는 베타로 표시되어 있어요. 저희는 기능을 개선하거나 변경하거나 중단할 수 있어요. 유료 서비스를 언젠가 종료하게 된다면, 사용하지 않은 유료 이용권과 구독의 미사용 부분을 환불해 드려요.</p>
+
+<h2>11. 책임</h2>
+<p>법이 허용하는 범위 내에서, 서비스와 관련된 모든 청구에 대한 저희의 총 책임은 청구 전 12개월 동안 당신이 저희에게 지불한 금액으로 제한돼요. 간접 손해에 대해서는 책임지지 않아요. 이 약관의 어떤 내용도 법적으로 배제할 수 없는 책임(예: 고의 또는 중대한 과실)을 배제하지 않아요.</p>
+
+<h2>12. 이 약관의 변경</h2>
+<p>저희는 이 약관을 업데이트할 수 있어요. 의미 있는 변경이 있을 때는 시행되기 전에 앱에서 또는 이메일로 알려 드려요. 그 이후에도 서비스를 계속 사용하면 새 약관이 적용돼요.</p>
+
+<h2>13. 준거법</h2>
+<p>네덜란드 법이 적용돼요. 분쟁은 네덜란드의 관할 법원에서 다뤄요. 소비자인 경우, 거주 국가의 강행적 소비자 보호 규정은 그대로 유지돼요.</p>
+
+<h2>14. 문의</h2>
+<p>궁금한 점이 있나요? <a href="mailto:support@toereading.app">support@toereading.app</a>로 이메일을 보내 주세요. 실제 사람이 읽어요.</p>
+</main>
+<main lang-blok="hi">
+<h1>सेवा की शर्तें</h1>
+<p class="datum">प्रभावी तिथि: 13 जुलाई 2026</p>
+
+<p>Toe Reading (डच में: <em>Tenenspiegel</em>) में आपका स्वागत है। यह आपके पैर की उँगलियों के आकारों के ज़रिए खेल-भरे आत्म-चिंतन के लिए बनी एक वेब-ऐप है। ये शर्तें आपके और हमारे बीच सरल भाषा में लिखा एक समझौता हैं। खाता बनाकर या ऐप का उपयोग करके आप इनसे सहमत होते हैं।</p>
+
+<h2>1. हम कौन हैं</h2>
+<p>Toe Reading का संचालन <strong>Ferri Somogyi Productions</strong> करता है, जो नीदरलैंड्स में पंजीकृत एक एकल स्वामित्व वाला व्यवसाय है (Chamber of Commerce / KvK नंबर 34286815, VAT ID NL001933433B06)। संपर्क: <a href="mailto:support@toereading.app">support@toereading.app</a>। पंजीकृत पता अनुरोध पर उपलब्ध है।</p>
+<p>हमारी ऑर्डर-प्रक्रिया हमारे भुगतान पार्टनर के माध्यम से चलती है, जो हमारे सभी ऑर्डर के लिए <strong>Merchant of Record</strong> (यानी क़ानूनी रूप से आधिकारिक विक्रेता) के रूप में कार्य करता है: भुगतान पार्टनर ही क़ानूनी तौर पर आपकी खरीद का विक्रेता है, वही भुगतान, VAT/बिक्री-कर, चालान (इनवॉइस) और रिफ़ंड की प्रक्रिया संभालता है, और उससे जुड़ी ग्राहक सेवा भी देता है। वर्तमान भुगतान पार्टनर का नाम चेकआउट पर और आपकी रसीद पर लिखा होता है।</p>
+
+<h2>2. Toe Reading क्या है, और क्या नहीं</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading केवल मनोरंजन और आत्म-चिंतन के लिए है।</strong> यह कोई चिकित्सकीय, मनोवैज्ञानिक, नैदानिक या चिकित्सीय (थेरेप्यूटिक) सेवा नहीं है, और इसकी रीडिंग किसी भी प्रकार की सलाह नहीं हैं। ऐप में ऐसा कुछ नहीं है जो किसी स्वास्थ्य-समस्या का पता लगा सके, उसका निदान या इलाज कर सके या उसकी भविष्यवाणी कर सके। अपने पैरों या सेहत को लेकर कोई चिंता हो, तो कृपया डॉक्टर या किसी योग्य पेशेवर से मिलिए।</p>
+</div>
+<p>ऐप में आप अपने पैरों की फ़ोटो लेते हैं, आपकी उँगलियों की दिखाई देने वाली विशेषताओं का वर्गीकरण किया जाता है, और AI (Anthropic का Claude) की मदद से एक चिंतनशील, कथात्मक "रीडिंग" तैयार होती है। रीडिंग जनरेट किया हुआ पाठ है: उसे अपने आत्म-चिंतन का आईना समझिए, अपने बारे में तथ्य नहीं।</p>
+
+<h2>3. आपका खाता</h2>
+<p>रीडिंग चलाने के लिए आपको एक खाता चाहिए (नाम, ईमेल, पासवर्ड)। आपकी आयु <strong>16 वर्ष या उससे अधिक</strong> होनी चाहिए। अपने लॉगिन-विवरण सुरक्षित रखिए; आपके खाते पर होने वाली गतिविधि की ज़िम्मेदारी आपकी है। सही जानकारी दीजिए और उसे अद्यतन रखिए। कृपया प्रति व्यक्ति एक ही खाता।</p>
+
+<h2>4. क्रेडिट और सब्सक्रिप्शन</h2>
+<p>रीडिंग क्रेडिट ("विश्लेषण") पर चलती हैं:</p>
+<ul>
+<li><strong>मुफ़्त क्रेडिट</strong>: नए खातों को 3 मुफ़्त रीडिंग मिलती हैं। मुफ़्त क्रेडिट का कोई मौद्रिक मूल्य नहीं है।</li>
+<li><strong>10-पैक</strong>: 10 रीडिंग की एकमुश्त खरीद (€4.99)। पैक के क्रेडिट की कोई समाप्ति-अवधि नहीं है।</li>
+<li><strong>वार्षिक सब्सक्रिप्शन</strong>: एक वर्ष भर रीडिंग (€39.99/वर्ष), <strong>प्रति कैलेंडर माह 60 रीडिंग</strong> की उचित-उपयोग (फ़ेयर-यूज़) सीमा के अधीन। काउंटर ऐप में दिखता है और हर महीने रीसेट होता है।</li>
+</ul>
+<p>एक क्रेडिट एक पूरी रीडिंग को कवर करता है: फ़ोटो-विश्लेषण और पूरी व्याख्या ("आईना बोलता है")। क्रेडिट व्यक्तिगत हैं, किसी और को हस्तांतरित नहीं किए जा सकते और पैसे में नहीं बदले जा सकते। वर्तमान क़ीमतें हमेशा हमारे <a href="pricing.html">मूल्य-पृष्ठ</a> पर दिखती हैं; जहाँ लागू हो, सभी उपभोक्ता-क़ीमतों में VAT शामिल है।</p>
+
+<h2>5. भुगतान, नवीनीकरण और रद्द करना</h2>
+<p>भुगतान हमारा भुगतान पार्टनर संसाधित करता है (देखिए धारा 1)। वार्षिक सब्सक्रिप्शन हर वर्ष उस समय लागू क़ीमत पर <strong>अपने आप नवीनीकृत</strong> होता है; नवीनीकरण से पहले आपको एक स्मरण-ईमेल मिलेगा। आप कभी भी रद्द कर सकते हैं: अपनी भुगतान-पुष्टि वाले ईमेल के लिंक से या <a href="mailto:support@toereading.app">support@toereading.app</a> पर ईमेल भेजकर। रद्द करने से अगला नवीनीकरण रुक जाता है, और आपका सब्सक्रिप्शन भुगतान की गई अवधि के अंत तक सक्रिय रहता है। भविष्य की खरीद और नवीनीकरणों के लिए हम क़ीमतें बदल सकते हैं; बदलाव आप पर लागू होने से पहले हम उनकी घोषणा करेंगे।</p>
+
+<h2>6. रिफ़ंड</h2>
+<p>हमारी <a href="refund.html">रिफ़ंड नीति</a> लागू होती है: संक्षेप में, खरीद के 14 दिनों के भीतर पूरा रिफ़ंड, बशर्ते खरीदे गए क्रेडिट इस्तेमाल न हुए हों। उपभोक्ता के रूप में आपके वैधानिक अधिकार इन शर्तों से कभी सीमित नहीं होते।</p>
+
+<h2>7. आपकी फ़ोटो</h2>
+<p>आपकी भेजी गई फ़ोटो केवल उसी रीडिंग के लिए इस्तेमाल होती हैं जिसका आपने अनुरोध किया है। वे एन्क्रिप्ट होकर भेजी जाती हैं, <strong>कभी सहेजी नहीं जातीं</strong>, और AI-मॉडलों के प्रशिक्षण में इस्तेमाल नहीं होतीं। केवल अपने पैरों की फ़ोटो भेजिए, या उस व्यक्ति की जिसने आपको इसकी अनुमति दी हो। विवरण के लिए हमारी <a href="privacy.html">गोपनीयता नीति</a> देखिए।</p>
+
+<h2>8. उचित और स्वीकार्य उपयोग</h2>
+<p>कृपया ये काम न कीजिए: ऐप का उपयोग किसी गैर-क़ानूनी काम के लिए करना; ऐसी छवियाँ भेजना जो पैर नहीं हैं या जो गैर-क़ानूनी या हानिकारक हैं; क्रेडिट-जाँच, रेट-लिमिट या अन्य तकनीकी उपायों को दरकिनार करने की कोशिश करना; बॉट या स्वचालित पहुँच का उपयोग करना; हमारी लिखित सहमति के बिना रीडिंग को व्यावसायिक सेवा के रूप में आगे बेचना; या सेवा को रिवर्स-इंजीनियर करना। सेवा को स्वस्थ रखने के लिए हम तकनीकी सीमाएँ (जैसे रेट-लिमिट) लागू कर सकते हैं, और दुरुपयोग करने वाले खातों को निलंबित कर सकते हैं।</p>
+
+<h2>9. बौद्धिक संपदा</h2>
+<p>ऐप, उसका ज्ञान-आधार, पाठ, डिज़ाइन और सॉफ़्टवेयर हमारे (या हमारे लाइसेंसदाताओं के) हैं। अपनी व्यक्तिगत रीडिंग आप अपने उद्देश्यों के लिए स्वतंत्र रूप से उपयोग कर सकते हैं। ऐप की सामग्री या ज्ञान-आधार को बड़े पैमाने पर कॉपी या पुनर्प्रकाशित करने की अनुमति नहीं है।</p>
+
+<h2>10. उपलब्धता और बदलाव</h2>
+<p>हम Toe Reading को पूरी सावधानी से चलाते हैं, लेकिन इसे "जैसा है" ("as is") आधार पर देते हैं: निर्बाध उपलब्धता का वादा हम नहीं कर सकते। कुछ भाषाएँ बीटा के रूप में चिह्नित हैं। हम सुविधाओं को बेहतर बना सकते हैं, बदल सकते हैं या बंद कर सकते हैं; अगर हम कभी सशुल्क सेवा बंद कर दें, तो इस्तेमाल न हुए सशुल्क क्रेडिट और सब्सक्रिप्शन के इस्तेमाल न हुए हिस्से का पैसा हम लौटा देंगे।</p>
+
+<h2>11. दायित्व</h2>
+<p>क़ानून द्वारा अनुमत सीमा तक, सेवा से जुड़े किसी भी दावे के लिए हमारा कुल दायित्व उस राशि तक सीमित है जो आपने दावे से पहले के 12 महीनों में हमें चुकाई है। अप्रत्यक्ष नुकसान के लिए हम उत्तरदायी नहीं हैं। इन शर्तों में ऐसा कुछ नहीं है जो उस दायित्व को बाहर रखे जिसे क़ानूनन बाहर नहीं रखा जा सकता (जैसे जान-बूझकर किए गए कृत्य या घोर लापरवाही के मामलों में)।</p>
+
+<h2>12. इन शर्तों में बदलाव</h2>
+<p>हम इन शर्तों को अद्यतन कर सकते हैं। महत्वपूर्ण बदलावों की सूचना हम उनके लागू होने से पहले ऐप में या ईमेल से देंगे। उसके बाद भी अगर आप सेवा का उपयोग जारी रखते हैं, तो नई शर्तें लागू होती हैं।</p>
+
+<h2>13. लागू क़ानून</h2>
+<p>डच (नीदरलैंड्स का) क़ानून लागू होता है। विवाद नीदरलैंड्स की सक्षम अदालत में जाते हैं; अगर आप उपभोक्ता हैं, तो आपके निवास-देश के अनिवार्य उपभोक्ता-संरक्षण अप्रभावित रहते हैं।</p>
+
+<h2>14. संपर्क</h2>
+<p>कोई सवाल? <a href="mailto:support@toereading.app">support@toereading.app</a> पर ईमेल कीजिए; उसे एक सचमुच का इंसान पढ़ता है।</p>
+</main>
+<main lang-blok="id">
+<h1>Ketentuan Layanan</h1>
+<p class="datum">Tanggal berlaku: 13 Juli 2026</p>
+
+<p>Selamat datang di Toe Reading (dalam bahasa Belanda: <em>Tenenspiegel</em>), sebuah aplikasi web untuk refleksi diri yang menyenangkan melalui bentuk jari-jari kakimu. Ketentuan ini adalah kesepakatan dalam bahasa sehari-hari antara kamu dan kami. Dengan membuat akun atau menggunakan aplikasi ini, kamu menyetujuinya.</p>
+
+<h2>1. Siapa kami</h2>
+<p>Toe Reading dioperasikan oleh <strong>Ferri Somogyi Productions</strong>, sebuah usaha perseorangan yang terdaftar di Belanda (Kamar Dagang Belanda / KvK no. 34286815, ID PPN NL001933433B06). Kontak: <a href="mailto:support@toereading.app">support@toereading.app</a>. Alamat terdaftar tersedia atas permintaan.</p>
+<p>Proses pemesanan kami dijalankan oleh mitra pembayaran kami, yang bertindak sebagai <strong>Merchant of Record</strong> (penjual resmi) untuk semua pesanan kami: secara hukum mitra pembayaran adalah penjual dari pembelianmu, menangani pembayaran, PPN/pajak penjualan, faktur, dan pemrosesan pengembalian dana, serta menyediakan layanan pelanggan terkait. Mitra pembayaran yang berlaku saat ini disebutkan di halaman pembayaran dan pada tanda terimamu.</p>
+
+<h2>2. Apa itu Toe Reading, dan apa yang bukan</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading hanya untuk hiburan dan refleksi diri.</strong> Ini bukan layanan medis, psikologis, diagnostik, atau terapeutik, dan pembacaannya bukan nasihat dalam bentuk apa pun. Tidak ada bagian dari aplikasi ini yang dapat mendeteksi, mendiagnosis, mengobati, atau memprediksi kondisi kesehatan apa pun. Jika kamu punya kekhawatiran tentang kaki atau kesehatanmu, temuilah dokter atau tenaga profesional yang berkualifikasi.</p>
+</div>
+<p>Aplikasi ini memungkinkanmu memotret kakimu, mengklasifikasikan ciri-ciri yang terlihat pada jari kakimu, dan menghasilkan "pembacaan" naratif yang reflektif dengan bantuan AI (Claude dari Anthropic). Pembacaan adalah teks yang dihasilkan: perlakukan sebagai cermin untuk refleksimu sendiri, bukan sebagai fakta tentang dirimu.</p>
+
+<h2>3. Akunmu</h2>
+<p>Kamu memerlukan akun (nama, email, kata sandi) untuk menjalankan pembacaan. Kamu harus berusia <strong>16 tahun atau lebih</strong>. Jaga kerahasiaan data loginmu; kamu bertanggung jawab atas aktivitas di akunmu. Berikan informasi yang akurat dan selalu perbarui. Satu akun per orang, ya.</p>
+
+<h2>4. Saldo dan langganan</h2>
+<p>Pembacaan berjalan dengan saldo ("analisis"):</p>
+<ul>
+<li><strong>Saldo gratis</strong>: akun baru menerima 3 pembacaan gratis. Saldo gratis tidak memiliki nilai uang.</li>
+<li><strong>Paket 10</strong>: pembelian satu kali berisi 10 pembacaan (€4.99). Saldo paket tidak kedaluwarsa.</li>
+<li><strong>Langganan tahunan</strong>: satu tahun pembacaan (€39.99/tahun), dengan batas pemakaian wajar <strong>60 pembacaan per bulan kalender</strong>. Penghitungnya terlihat di aplikasi dan direset setiap bulan.</li>
+</ul>
+<p>Satu saldo mencakup satu pembacaan lengkap: analisis foto plus interpretasi penuh ("Cermin bercerita"). Saldo bersifat pribadi, tidak dapat dipindahtangankan, dan tidak dapat ditukar dengan uang. Harga terkini selalu tercantum di <a href="pricing.html">halaman harga</a> kami; semua harga konsumen sudah termasuk PPN bila berlaku.</p>
+
+<h2>5. Pembayaran, perpanjangan, dan pembatalan</h2>
+<p>Pembayaran diproses oleh mitra pembayaran kami (lihat bagian 1). Langganan tahunan <strong>diperpanjang otomatis</strong> setiap tahun dengan harga yang berlaku saat itu; kamu akan menerima email pengingat sebelum perpanjangan. Kamu bisa membatalkan kapan saja lewat tautan di email konfirmasi pembayaranmu atau dengan mengirim email ke <a href="mailto:support@toereading.app">support@toereading.app</a>; pembatalan menghentikan perpanjangan berikutnya, dan langgananmu tetap aktif hingga akhir masa berlangganan yang sudah dibayar. Kami dapat mengubah harga untuk pembelian dan perpanjangan di masa mendatang; kami akan mengumumkan perubahan sebelum itu berdampak padamu.</p>
+
+<h2>6. Pengembalian dana</h2>
+<p><a href="refund.html">Kebijakan Pengembalian Dana</a> kami berlaku: singkatnya, pengembalian dana penuh dalam 14 hari selama saldo yang dibeli belum digunakan. Hak-hak hukummu sebagai konsumen tidak pernah dibatasi oleh ketentuan ini.</p>
+
+<h2>7. Fotomu</h2>
+<p>Foto yang kamu kirimkan hanya digunakan untuk menjalankan pembacaan yang kamu minta. Foto dikirim terenkripsi, <strong>tidak pernah disimpan</strong>, dan tidak digunakan untuk melatih model AI. Kirimkan hanya foto kakimu sendiri, atau foto kaki orang yang telah memberimu izin. Lihat <a href="privacy.html">Kebijakan Privasi</a> kami untuk detailnya.</p>
+
+<h2>8. Penggunaan yang wajar dan diperbolehkan</h2>
+<p>Mohon jangan: menggunakan aplikasi untuk hal yang melanggar hukum; mengirimkan gambar yang bukan kaki atau yang melanggar hukum atau berbahaya; mencoba menerobos pemeriksaan saldo, batas kecepatan (rate limit), atau langkah teknis lainnya; menggunakan bot atau akses otomatis; menjual kembali pembacaan sebagai layanan komersial tanpa persetujuan tertulis dari kami; atau merekayasa balik layanan ini. Kami dapat menerapkan batasan teknis (seperti rate limit) untuk menjaga layanan tetap sehat, dan kami dapat menangguhkan akun yang menyalahgunakannya.</p>
+
+<h2>9. Kekayaan intelektual</h2>
+<p>Aplikasi ini, basis pengetahuannya, teks, desain, dan perangkat lunaknya adalah milik kami (atau pemberi lisensi kami). Kamu boleh menggunakan pembacaan pribadimu secara bebas untuk keperluanmu sendiri. Kamu tidak boleh menyalin atau menerbitkan ulang konten atau basis pengetahuan aplikasi ini dalam skala besar.</p>
+
+<h2>10. Ketersediaan dan perubahan</h2>
+<p>Kami menjalankan Toe Reading dengan cermat, tetapi menawarkannya "apa adanya": kami tidak bisa menjanjikan ketersediaan tanpa gangguan. Beberapa bahasa ditandai sebagai beta. Kami dapat memperbaiki, mengubah, atau menghentikan fitur; jika suatu saat kami menghentikan layanan berbayar, kami akan mengembalikan dana untuk saldo berbayar yang belum digunakan dan bagian langganan yang belum terpakai.</p>
+
+<h2>11. Tanggung jawab</h2>
+<p>Sejauh diizinkan oleh hukum, total tanggung jawab kami atas segala klaim terkait layanan ini terbatas pada jumlah yang kamu bayarkan kepada kami dalam 12 bulan sebelum klaim tersebut. Kami tidak bertanggung jawab atas kerugian tidak langsung. Tidak ada bagian dari ketentuan ini yang mengecualikan tanggung jawab yang secara hukum tidak dapat dikecualikan (misalnya untuk kesengajaan atau kelalaian berat).</p>
+
+<h2>12. Perubahan ketentuan ini</h2>
+<p>Kami dapat memperbarui ketentuan ini. Untuk perubahan yang berarti, kami akan memberitahumu di aplikasi atau lewat email sebelum perubahan itu berlaku. Jika setelah itu kamu tetap menggunakan layanan, ketentuan yang baru berlaku.</p>
+
+<h2>13. Hukum yang berlaku</h2>
+<p>Hukum Belanda berlaku. Sengketa diajukan ke pengadilan yang berwenang di Belanda; jika kamu adalah konsumen, perlindungan konsumen yang bersifat wajib di negara tempat tinggalmu tetap berlaku.</p>
+
+<h2>14. Kontak</h2>
+<p>Ada pertanyaan? Kirim email ke <a href="mailto:support@toereading.app">support@toereading.app</a>; ada manusia sungguhan yang membacanya.</p>
+</main>
+<main lang-blok="vi">
+<h1>Điều khoản dịch vụ</h1>
+<p class="datum">Ngày hiệu lực: 13 tháng 7 năm 2026</p>
+
+<p>Chào mừng bạn đến với Toe Reading (tiếng Hà Lan: <em>Tenenspiegel</em>), một ứng dụng web để tự nhìn lại mình một cách vui tươi qua hình dáng các ngón chân của bạn. Các điều khoản này là một thỏa thuận bằng ngôn ngữ giản dị giữa bạn và chúng tôi. Bằng việc tạo tài khoản hoặc sử dụng ứng dụng, bạn đồng ý với các điều khoản này.</p>
+
+<h2>1. Chúng tôi là ai</h2>
+<p>Toe Reading được vận hành bởi <strong>Ferri Somogyi Productions</strong>, một doanh nghiệp cá thể đăng ký tại Hà Lan (số đăng ký Phòng Thương mại Hà Lan / KvK 34286815, mã số thuế GTGT NL001933433B06). Liên hệ: <a href="mailto:support@toereading.app">support@toereading.app</a>. Địa chỉ đăng ký được cung cấp khi có yêu cầu.</p>
+<p>Quy trình đặt mua của chúng tôi được thực hiện qua đối tác thanh toán, đơn vị đóng vai trò <strong>Merchant of Record</strong> (bên bán chính thức) cho mọi đơn hàng của chúng tôi: về mặt pháp lý, đối tác thanh toán là bên bán của giao dịch mua, xử lý việc thanh toán, thuế GTGT/thuế bán hàng, hóa đơn và việc hoàn tiền, đồng thời cung cấp dịch vụ khách hàng liên quan. Tên đối tác thanh toán hiện tại được nêu tại trang thanh toán và trên biên lai của bạn.</p>
+
+<h2>2. Toe Reading là gì, và không là gì</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading chỉ dành cho mục đích giải trí và tự nhìn lại mình.</strong> Đây không phải là dịch vụ y khoa, tâm lý, chẩn đoán hay trị liệu, và các bài đọc không phải là lời khuyên dưới bất kỳ hình thức nào. Không điều gì trong ứng dụng có thể phát hiện, chẩn đoán, điều trị hay dự đoán bất kỳ tình trạng sức khỏe nào. Nếu bạn lo lắng về bàn chân hay sức khỏe của mình, hãy đến gặp bác sĩ hoặc chuyên gia có chuyên môn.</p>
+</div>
+<p>Ứng dụng cho phép bạn chụp ảnh bàn chân, phân loại các đặc điểm nhìn thấy được của các ngón chân, và tạo ra một "bài đọc" mang tính soi chiếu, kể chuyện với sự trợ giúp của AI (Claude của Anthropic). Bài đọc là văn bản do máy tạo ra: hãy xem chúng như một tấm gương cho sự tự nhìn lại của chính bạn, không phải như những sự thật về bạn.</p>
+
+<h2>3. Tài khoản của bạn</h2>
+<p>Bạn cần một tài khoản (tên, email, mật khẩu) để chạy các bài đọc. Bạn phải <strong>từ 16 tuổi trở lên</strong>. Hãy giữ an toàn thông tin đăng nhập; bạn chịu trách nhiệm về hoạt động trên tài khoản của mình. Hãy cung cấp thông tin chính xác và luôn cập nhật. Vui lòng chỉ dùng một tài khoản cho mỗi người.</p>
+
+<h2>4. Lượt phân tích và gói thuê bao</h2>
+<p>Bài đọc chạy bằng lượt ("phân tích"):</p>
+<ul>
+<li><strong>Lượt miễn phí</strong>: tài khoản mới nhận 3 bài đọc miễn phí. Lượt miễn phí không có giá trị tiền tệ.</li>
+<li><strong>Gói 10 lượt</strong>: mua một lần 10 bài đọc (€ 4,99). Lượt trong gói không hết hạn.</li>
+<li><strong>Thuê bao năm</strong>: một năm bài đọc (€ 39,99/năm), với giới hạn sử dụng hợp lý là <strong>60 bài đọc mỗi tháng dương lịch</strong>. Bộ đếm hiển thị trong ứng dụng và được đặt lại hằng tháng.</li>
+</ul>
+<p>Một lượt bao trọn một bài đọc hoàn chỉnh: phần phân tích ảnh cộng với phần diễn giải đầy đủ ("Tấm gương kể chuyện"). Lượt phân tích mang tính cá nhân, không thể chuyển nhượng và không thể quy đổi thành tiền. Giá hiện hành luôn được hiển thị trên <a href="pricing.html">trang giá</a> của chúng tôi; mọi giá dành cho người tiêu dùng đã bao gồm thuế GTGT nơi áp dụng.</p>
+
+<h2>5. Thanh toán, gia hạn và hủy</h2>
+<p>Các khoản thanh toán được đối tác thanh toán của chúng tôi xử lý (xem mục 1). Thuê bao năm <strong>tự động gia hạn</strong> mỗi năm theo giá áp dụng tại thời điểm đó; bạn sẽ nhận một email nhắc trước khi gia hạn. Bạn có thể hủy bất cứ lúc nào qua liên kết trong email xác nhận thanh toán hoặc bằng cách email tới <a href="mailto:support@toereading.app">support@toereading.app</a>; việc hủy dừng lần gia hạn kế tiếp, và thuê bao của bạn vẫn hoạt động đến hết kỳ hạn đã trả. Chúng tôi có thể thay đổi giá cho các lần mua và gia hạn trong tương lai; chúng tôi sẽ thông báo trước khi thay đổi ảnh hưởng đến bạn.</p>
+
+<h2>6. Hoàn tiền</h2>
+<p><a href="refund.html">Chính sách hoàn tiền</a> của chúng tôi được áp dụng: nói ngắn gọn, hoàn tiền đầy đủ trong vòng 14 ngày miễn là các lượt đã mua chưa được sử dụng. Các quyền theo luật định của bạn với tư cách người tiêu dùng không bao giờ bị các điều khoản này giới hạn.</p>
+
+<h2>7. Ảnh của bạn</h2>
+<p>Ảnh bạn gửi lên chỉ được dùng để thực hiện bài đọc mà bạn yêu cầu. Ảnh được truyền đi có mã hóa, <strong>không bao giờ được lưu</strong> và không được dùng để huấn luyện các mô hình AI. Chỉ gửi ảnh bàn chân của chính bạn, hoặc của người đã cho phép bạn. Xem <a href="privacy.html">Chính sách quyền riêng tư</a> của chúng tôi để biết chi tiết.</p>
+
+<h2>8. Sử dụng công bằng và được chấp nhận</h2>
+<p>Xin đừng: dùng ứng dụng cho bất cứ điều gì trái pháp luật; gửi lên những hình ảnh không phải bàn chân hoặc trái pháp luật hay gây hại; tìm cách vượt qua việc kiểm tra lượt, giới hạn tần suất hay các biện pháp kỹ thuật khác; dùng bot hay truy cập tự động; bán lại bài đọc như một dịch vụ thương mại mà không có thỏa thuận bằng văn bản với chúng tôi; hoặc dịch ngược (reverse-engineer) dịch vụ. Chúng tôi có thể áp dụng các giới hạn kỹ thuật (như giới hạn tần suất) để giữ dịch vụ vận hành lành mạnh, và có thể tạm khóa các tài khoản lạm dụng dịch vụ.</p>
+
+<h2>9. Sở hữu trí tuệ</h2>
+<p>Ứng dụng, cơ sở tri thức, các văn bản, thiết kế và phần mềm thuộc về chúng tôi (hoặc các bên cấp phép cho chúng tôi). Bạn được tự do sử dụng các bài đọc cá nhân của mình cho mục đích riêng. Bạn không được sao chép hay đăng lại nội dung hoặc cơ sở tri thức của ứng dụng ở quy mô lớn.</p>
+
+<h2>10. Tính khả dụng và các thay đổi</h2>
+<p>Chúng tôi vận hành Toe Reading một cách cẩn trọng, nhưng cung cấp dịch vụ "nguyên trạng": chúng tôi không thể hứa dịch vụ luôn sẵn sàng không gián đoạn. Một số ngôn ngữ được đánh dấu là bản beta. Chúng tôi có thể cải tiến, thay đổi hoặc ngừng các tính năng; nếu có lúc nào chúng tôi ngừng hẳn dịch vụ trả phí, chúng tôi sẽ hoàn tiền cho các lượt trả phí chưa dùng và phần chưa dùng của các gói thuê bao.</p>
+
+<h2>11. Trách nhiệm pháp lý</h2>
+<p>Trong phạm vi pháp luật cho phép, tổng trách nhiệm pháp lý của chúng tôi đối với mọi khiếu nại liên quan đến dịch vụ được giới hạn ở số tiền bạn đã trả cho chúng tôi trong 12 tháng trước khiếu nại đó. Chúng tôi không chịu trách nhiệm cho các thiệt hại gián tiếp. Không điều gì trong các điều khoản này loại trừ trách nhiệm pháp lý mà theo luật không thể loại trừ (chẳng hạn với hành vi cố ý hay sơ suất nghiêm trọng).</p>
+
+<h2>12. Thay đổi các điều khoản này</h2>
+<p>Chúng tôi có thể cập nhật các điều khoản này. Với những thay đổi quan trọng, chúng tôi sẽ thông báo cho bạn trong ứng dụng hoặc qua email trước khi chúng có hiệu lực. Nếu sau đó bạn tiếp tục sử dụng dịch vụ, các điều khoản mới sẽ được áp dụng.</p>
+
+<h2>13. Luật áp dụng</h2>
+<p>Luật pháp Hà Lan được áp dụng. Tranh chấp được đưa ra tòa án có thẩm quyền tại Hà Lan; nếu bạn là người tiêu dùng, các quy định bảo vệ người tiêu dùng mang tính bắt buộc của quốc gia nơi bạn cư trú vẫn không bị ảnh hưởng.</p>
+
+<h2>14. Liên hệ</h2>
+<p>Có câu hỏi? Hãy email <a href="mailto:support@toereading.app">support@toereading.app</a>; sẽ có một con người thật đọc thư của bạn.</p>
+</main>
+<main lang-blok="th">
+<h1>ข้อกำหนดในการให้บริการ</h1>
+<p class="datum">วันที่มีผลบังคับใช้: 13 กรกฎาคม 2026</p>
+
+<p>ยินดีต้อนรับสู่ Toe Reading (ภาษาดัตช์: <em>Tenenspiegel</em>) เว็บแอปสำหรับการทบทวนตัวเองอย่างสนุกสนานผ่านรูปทรงนิ้วเท้าของคุณ ข้อกำหนดนี้คือข้อตกลงในภาษาที่เข้าใจง่ายระหว่างคุณกับเรา เมื่อคุณสร้างบัญชีหรือใช้งานแอป ถือว่าคุณยอมรับข้อกำหนดเหล่านี้</p>
+
+<h2>1. เราคือใคร</h2>
+<p>Toe Reading ดำเนินการโดย <strong>Ferri Somogyi Productions</strong> กิจการเจ้าของคนเดียวที่จดทะเบียนในประเทศเนเธอร์แลนด์ (ทะเบียนหอการค้า / หมายเลข KvK 34286815, หมายเลขภาษีมูลค่าเพิ่ม NL001933433B06) ติดต่อ: <a href="mailto:support@toereading.app">support@toereading.app</a> ที่อยู่จดทะเบียนแจ้งให้ทราบได้เมื่อร้องขอ</p>
+<p>กระบวนการสั่งซื้อของเราดำเนินการโดยพาร์ตเนอร์รับชำระเงินของเรา ซึ่งทำหน้าที่เป็น <strong>Merchant of Record</strong> (ผู้ขายอย่างเป็นทางการ) สำหรับคำสั่งซื้อทั้งหมดของเรา: ในทางกฎหมาย พาร์ตเนอร์รับชำระเงินคือผู้ขายของการซื้อนั้น เป็นผู้ดูแลการชำระเงิน ภาษีมูลค่าเพิ่ม/ภาษีขาย ใบแจ้งหนี้ และการดำเนินการคืนเงิน รวมถึงให้บริการลูกค้าในเรื่องเหล่านี้ ชื่อพาร์ตเนอร์รับชำระเงินรายปัจจุบันแสดงอยู่ที่หน้าชำระเงินและบนใบเสร็จของคุณ</p>
+
+<h2>2. Toe Reading คืออะไร และไม่ใช่อะไร</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading มีไว้เพื่อความบันเทิงและการทบทวนตัวเองเท่านั้น</strong> ไม่ใช่บริการทางการแพทย์ จิตวิทยา การวินิจฉัย หรือการบำบัด และบทอ่านไม่ใช่คำแนะนำใด ๆ ทั้งสิ้น ไม่มีสิ่งใดในแอปที่สามารถตรวจหา วินิจฉัย รักษา หรือทำนายภาวะสุขภาพใด ๆ ได้ หากคุณกังวลเกี่ยวกับเท้าหรือสุขภาพของคุณ โปรดพบแพทย์หรือผู้เชี่ยวชาญที่มีคุณวุฒิ</p>
+</div>
+<p>แอปนี้ให้คุณถ่ายรูปเท้าของคุณ จำแนกลักษณะที่มองเห็นได้ของนิ้วเท้า และสร้าง "บทอ่าน" เชิงเล่าเรื่องเพื่อการสะท้อนตัวเองด้วยความช่วยเหลือของ AI (Claude ของ Anthropic) บทอ่านคือข้อความที่ถูกสร้างขึ้น: มองเป็นกระจกสำหรับการทบทวนตัวเองของคุณ ไม่ใช่ข้อเท็จจริงเกี่ยวกับตัวคุณ</p>
+
+<h2>3. บัญชีของคุณ</h2>
+<p>คุณต้องมีบัญชี (ชื่อ อีเมล รหัสผ่าน) เพื่อใช้งานบทอ่าน คุณต้องมีอายุ <strong>16 ปีขึ้นไป</strong> เก็บข้อมูลเข้าสู่ระบบของคุณให้ปลอดภัย คุณเป็นผู้รับผิดชอบต่อกิจกรรมที่เกิดขึ้นในบัญชีของคุณ กรุณากรอกข้อมูลที่ถูกต้องและอัปเดตให้เป็นปัจจุบันอยู่เสมอ หนึ่งบัญชีต่อหนึ่งคนนะ</p>
+
+<h2>4. เครดิตและสมาชิกรายปี</h2>
+<p>บทอ่านทำงานด้วยเครดิต ("การวิเคราะห์"):</p>
+<ul>
+<li><strong>เครดิตฟรี</strong>: บัญชีใหม่ได้รับบทอ่านฟรี 3 ครั้ง เครดิตฟรีไม่มีมูลค่าเป็นเงิน</li>
+<li><strong>แพ็ก 10 ครั้ง</strong>: การซื้อครั้งเดียวได้บทอ่าน 10 ครั้ง (€4.99) เครดิตจากแพ็กไม่มีวันหมดอายุ</li>
+<li><strong>สมาชิกรายปี</strong>: บทอ่านตลอดหนึ่งปี (€39.99/ปี) ภายใต้การใช้งานอย่างเป็นธรรมที่ <strong>60 บทอ่านต่อเดือนปฏิทิน</strong> ตัวนับแสดงอยู่ในแอปและรีเซ็ตทุกเดือน</li>
+</ul>
+<p>หนึ่งเครดิตครอบคลุมบทอ่านที่สมบูรณ์หนึ่งครั้ง: การวิเคราะห์รูปภาพบวกการตีความฉบับเต็ม ("กระจกเล่าเรื่อง") เครดิตเป็นของส่วนบุคคล โอนให้ผู้อื่นไม่ได้ และแลกเปลี่ยนเป็นเงินไม่ได้ ราคาปัจจุบันแสดงอยู่เสมอบน<a href="pricing.html">หน้าราคา</a>ของเรา ราคาสำหรับผู้บริโภคทั้งหมดรวมภาษีมูลค่าเพิ่มแล้วในกรณีที่มีการเรียกเก็บ</p>
+
+<h2>5. การชำระเงิน การต่ออายุ และการยกเลิก</h2>
+<p>การชำระเงินดำเนินการโดยพาร์ตเนอร์รับชำระเงินของเรา (ดูข้อ 1) สมาชิกรายปี<strong>ต่ออายุอัตโนมัติ</strong>ทุกปีตามราคาที่ใช้อยู่ ณ เวลานั้น คุณจะได้รับอีเมลแจ้งเตือนก่อนการต่ออายุ คุณยกเลิกได้ทุกเมื่อผ่านลิงก์ในอีเมลยืนยันการชำระเงิน หรือส่งอีเมลมาที่ <a href="mailto:support@toereading.app">support@toereading.app</a> การยกเลิกจะหยุดการต่ออายุครั้งถัดไป และสมาชิกของคุณยังใช้งานได้จนสิ้นสุดระยะเวลาที่ชำระแล้ว เราอาจปรับราคาสำหรับการซื้อและการต่ออายุในอนาคต โดยจะประกาศการเปลี่ยนแปลงก่อนที่จะมีผลกับคุณ</p>
+
+<h2>6. การคืนเงิน</h2>
+<p><a href="refund.html">นโยบายการคืนเงิน</a>ของเรามีผลบังคับใช้: กล่าวโดยย่อ คืนเงินเต็มจำนวนภายใน 14 วัน ตราบใดที่เครดิตที่ซื้อยังไม่ถูกใช้ สิทธิ์ตามกฎหมายของคุณในฐานะผู้บริโภคจะไม่ถูกจำกัดโดยข้อกำหนดเหล่านี้เด็ดขาด</p>
+
+<h2>7. รูปภาพของคุณ</h2>
+<p>รูปภาพที่คุณส่งเข้ามาถูกใช้เพื่อทำบทอ่านที่คุณร้องขอเท่านั้น รูปภาพถูกส่งแบบเข้ารหัส <strong>ไม่มีการจัดเก็บเด็ดขาด</strong> และไม่ถูกใช้ฝึกโมเดล AI ส่งเฉพาะรูปเท้าของคุณเอง หรือของคนที่ให้อนุญาตคุณแล้วเท่านั้น ดูรายละเอียดใน<a href="privacy.html">นโยบายความเป็นส่วนตัว</a>ของเรา</p>
+
+<h2>8. การใช้งานอย่างเป็นธรรมและเหมาะสม</h2>
+<p>โปรดอย่า: ใช้แอปเพื่อสิ่งที่ผิดกฎหมาย ส่งรูปภาพที่ไม่ใช่เท้าหรือที่ผิดกฎหมายหรือเป็นอันตราย พยายามหลบเลี่ยงการตรวจสอบเครดิต การจำกัดอัตราการใช้งาน หรือมาตรการทางเทคนิคอื่น ๆ ใช้บอตหรือการเข้าถึงแบบอัตโนมัติ ขายต่อบทอ่านเป็นบริการเชิงพาณิชย์โดยไม่มีข้อตกลงเป็นลายลักษณ์อักษรจากเรา หรือทำวิศวกรรมย้อนกลับกับบริการ เราอาจใช้ขีดจำกัดทางเทคนิค (เช่น การจำกัดอัตราการใช้งาน) เพื่อรักษาบริการให้แข็งแรง และอาจระงับบัญชีที่ใช้งานในทางที่ผิด</p>
+
+<h2>9. ทรัพย์สินทางปัญญา</h2>
+<p>แอป ฐานความรู้ ข้อความ งานออกแบบ และซอฟต์แวร์เป็นของเรา (หรือของผู้ให้อนุญาตของเรา) คุณใช้บทอ่านส่วนตัวของคุณเพื่อวัตถุประสงค์ของคุณเองได้อย่างอิสระ แต่คุณไม่อาจคัดลอกหรือเผยแพร่ซ้ำเนื้อหาหรือฐานความรู้ของแอปในวงกว้าง</p>
+
+<h2>10. ความพร้อมใช้งานและการเปลี่ยนแปลง</h2>
+<p>เราดูแล Toe Reading ด้วยความใส่ใจ แต่ให้บริการ "ตามสภาพ" (as is): เราไม่สามารถสัญญาได้ว่าบริการจะพร้อมใช้งานโดยไม่สะดุด บางภาษาถูกระบุว่าเป็นรุ่นเบตา เราอาจปรับปรุง เปลี่ยนแปลง หรือยุติฟีเจอร์ต่าง ๆ หากวันหนึ่งเรายุติบริการแบบชำระเงิน เราจะคืนเงินสำหรับเครดิตแบบชำระเงินที่ยังไม่ได้ใช้ และส่วนของสมาชิกที่ยังไม่ได้ใช้</p>
+
+<h2>11. ความรับผิด</h2>
+<p>ภายในขอบเขตที่กฎหมายอนุญาต ความรับผิดรวมของเราต่อข้อเรียกร้องใด ๆ ที่เกี่ยวข้องกับบริการจำกัดอยู่ที่จำนวนเงินที่คุณชำระให้เราในช่วง 12 เดือนก่อนข้อเรียกร้องนั้น เราไม่รับผิดต่อความเสียหายทางอ้อม ไม่มีสิ่งใดในข้อกำหนดเหล่านี้ที่ยกเว้นความรับผิดซึ่งตามกฎหมายไม่อาจยกเว้นได้ (เช่น กรณีเจตนาหรือความประมาทเลินเล่ออย่างร้ายแรง)</p>
+
+<h2>12. การเปลี่ยนแปลงข้อกำหนดเหล่านี้</h2>
+<p>เราอาจปรับปรุงข้อกำหนดเหล่านี้ สำหรับการเปลี่ยนแปลงที่มีนัยสำคัญ เราจะแจ้งให้คุณทราบในแอปหรือทางอีเมลก่อนมีผลบังคับใช้ หากคุณยังใช้บริการต่อหลังจากนั้น ถือว่าข้อกำหนดใหม่มีผลกับคุณ</p>
+
+<h2>13. กฎหมายที่ใช้บังคับ</h2>
+<p>กฎหมายเนเธอร์แลนด์มีผลใช้บังคับ ข้อพิพาทให้ยื่นต่อศาลที่มีเขตอำนาจในประเทศเนเธอร์แลนด์ หากคุณเป็นผู้บริโภค การคุ้มครองผู้บริโภคภาคบังคับของประเทศที่คุณพำนักยังคงมีผลไม่เปลี่ยนแปลง</p>
+
+<h2>14. ติดต่อเรา</h2>
+<p>มีคำถาม? อีเมลมาที่ <a href="mailto:support@toereading.app">support@toereading.app</a> มีคนจริง ๆ อ่านอยู่</p>
+</main>
+<main lang-blok="uk">
+<h1>Умови надання послуг</h1>
+<p class="datum">Дата набрання чинності: 13 липня 2026 року</p>
+
+<p>Вітаємо в Toe Reading (нідерландською: <em>Tenenspiegel</em>), вебзастосунку для ігрової саморефлексії через форми твоїх пальців ніг. Ці умови є домовленістю простою мовою між тобою і нами. Створюючи обліковий запис або користуючись застосунком, ти погоджуєшся з ними.</p>
+
+<h2>1. Хто ми</h2>
+<p>Toe Reading надає <strong>Ferri Somogyi Productions</strong>, одноосібне підприємство, зареєстроване в Нідерландах (номер у Торговій палаті / KvK 34286815, номер платника ПДВ NL001933433B06). Контакт: <a href="mailto:support@toereading.app">support@toereading.app</a>. Юридичну адресу надаємо на запит.</p>
+<p>Процес замовлення здійснює наш платіжний партнер, який виступає як <strong>Merchant of Record</strong> (юридичний продавець) для всіх наших замовлень: платіжний партнер юридично є продавцем твоєї покупки, обробляє оплату, ПДВ/податок із продажів, рахунки-фактури та повернення коштів, а також надає пов'язану з цим клієнтську підтримку. Актуального платіжного партнера названо на касі та у твоїй квитанції.</p>
+
+<h2>2. Чим Toe Reading є, а чим ні</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading призначений виключно для розваги та саморефлексії.</strong> Це не медична, психологічна, діагностична чи терапевтична послуга, а його читання не є порадою жодного роду. Ніщо в застосунку не може виявити, діагностувати, лікувати чи передбачити будь-який стан здоров'я. Якщо тебе непокоять твої стопи чи здоров'я, звернися до лікаря або кваліфікованого фахівця.</p>
+</div>
+<p>Застосунок дає тобі змогу сфотографувати свої стопи, класифікує видимі особливості пальців і за допомогою ШІ (Claude від Anthropic) створює рефлексивне, оповідне «читання». Читання є згенерованим текстом: сприймай його як дзеркало для власної рефлексії, а не як факти про тебе.</p>
+
+<h2>3. Твій обліковий запис</h2>
+<p>Щоб запускати читання, потрібен обліковий запис (ім'я, електронна пошта, пароль). Тобі має бути <strong>16 років або більше</strong>. Бережи свої дані для входу; ти відповідаєш за дії у своєму обліковому записі. Вказуй точні дані та підтримуй їх актуальними. Будь ласка, один обліковий запис на людину.</p>
+
+<h2>4. Кредити та підписки</h2>
+<p>Читання працюють на кредитах («аналізах»):</p>
+<ul>
+<li><strong>Безплатні кредити</strong>: нові облікові записи отримують 3 безплатні читання. Безплатні кредити не мають грошової вартості.</li>
+<li><strong>Пакет із 10</strong>: одноразова покупка 10 читань (€ 4,99). Кредити з пакета не мають строку дії.</li>
+<li><strong>Річна підписка</strong>: рік читань (€ 39,99/рік) за умови добросовісного використання в межах <strong>60 читань на календарний місяць</strong>. Лічильник видно в застосунку, і він скидається щомісяця.</li>
+</ul>
+<p>Один кредит покриває одне повне читання: аналіз фото плюс повне тлумачення («Дзеркало розповідає»). Кредити персональні, не передаються іншим і не обмінюються на гроші. Актуальні ціни завжди наведено на нашій <a href="pricing.html">сторінці цін</a>; усі споживчі ціни включають ПДВ, де це застосовно.</p>
+
+<h2>5. Оплата, поновлення та скасування</h2>
+<p>Платежі обробляє наш платіжний партнер (див. розділ 1). Річна підписка <strong>поновлюється автоматично</strong> щороку за чинною на той момент ціною; перед поновленням ти отримаєш лист-нагадування. Скасувати можна будь-коли через посилання в листі з підтвердженням оплати або написавши на <a href="mailto:support@toereading.app">support@toereading.app</a>; скасування зупиняє наступне поновлення, а підписка лишається активною до кінця оплаченого періоду. Ми можемо змінювати ціни для майбутніх покупок і поновлень; про зміни ми оголосимо, перш ніж вони тебе торкнуться.</p>
+
+<h2>6. Повернення коштів</h2>
+<p>Діє наша <a href="refund.html">Політика повернення коштів</a>: якщо коротко, повне повернення протягом 14 днів, доки куплені кредити не використано. Твої законні права як споживача ці умови ніколи не обмежують.</p>
+
+<h2>7. Твої фото</h2>
+<p>Фото, які ти надсилаєш, використовуються виключно для виконання читання, яке ти замовив. Вони передаються в зашифрованому вигляді, <strong>ніколи не зберігаються</strong> і не використовуються для навчання моделей ШІ. Надсилай лише фото власних стоп або стоп людини, яка дала тобі на це дозвіл. Деталі дивись у нашій <a href="privacy.html">Політиці конфіденційності</a>.</p>
+
+<h2>8. Чесне та прийнятне користування</h2>
+<p>Будь ласка, не роби такого: не використовуй застосунок для чогось незаконного; не надсилай зображення, які не є стопами або які є протиправними чи шкідливими; не намагайся обійти перевірки кредитів, обмеження частоти запитів чи інші технічні заходи; не використовуй ботів чи автоматизований доступ; не перепродавай читання як комерційну послугу без нашої письмової згоди; не займайся зворотною розробкою сервісу. Ми можемо застосовувати технічні обмеження (наприклад, ліміти частоти запитів), щоб підтримувати сервіс здоровим, і можемо призупиняти облікові записи, які ним зловживають.</p>
+
+<h2>9. Інтелектуальна власність</h2>
+<p>Застосунок, його база знань, тексти, дизайн і програмне забезпечення належать нам (або нашим ліцензіарам). Своїми персональними читаннями ти можеш вільно користуватися для власних цілей. Не можна копіювати чи повторно публікувати вміст застосунку або його базу знань у великих обсягах.</p>
+
+<h2>10. Доступність і зміни</h2>
+<p>Ми ведемо Toe Reading із турботою, але надаємо його «як є»: безперервної доступності обіцяти не можемо. Деякі мови позначено як бета. Ми можемо вдосконалювати, змінювати чи припиняти функції; якщо ми колись припинимо платний сервіс, то повернемо кошти за невикористані платні кредити та за невикористану частину підписок.</p>
+
+<h2>11. Відповідальність</h2>
+<p>У межах, дозволених законом, наша сукупна відповідальність за будь-які претензії, пов'язані з сервісом, обмежується сумою, яку ти сплатив нам за 12 місяців перед претензією. Ми не відповідаємо за непрямі збитки. Ніщо в цих умовах не виключає відповідальності, яку за законом виключити не можна (наприклад, за умисел чи грубу недбалість).</p>
+
+<h2>12. Зміни цих умов</h2>
+<p>Ми можемо оновлювати ці умови. Про суттєві зміни ми повідомимо тебе в застосунку або електронною поштою до набрання ними чинності. Якщо після цього ти продовжуєш користуватися сервісом, діють нові умови.</p>
+
+<h2>13. Застосовне право</h2>
+<p>Застосовується право Нідерландів. Спори розглядає компетентний суд у Нідерландах; якщо ти споживач, обов'язкові норми захисту прав споживачів країни твого проживання лишаються чинними.</p>
+
+<h2>14. Контакт</h2>
+<p>Є запитання? Напиши на <a href="mailto:support@toereading.app">support@toereading.app</a>; листа читає жива людина.</p>
+</main>
+<main lang-blok="hu">
+<h1>Felhasználási feltételek</h1>
+<p class="datum">Hatálybalépés: 2026. július 13.</p>
+
+<p>Üdvözlünk a Toe Readingben (hollandul: <em>Tenenspiegel</em>), a webappban, amely a lábujjaid formáin keresztül kínál játékos önreflexiót. Ezek a feltételek közérthető nyelven megfogalmazott megállapodást jelentenek közted és köztünk. A fiók létrehozásával vagy az app használatával elfogadod őket.</p>
+
+<h2>1. Kik vagyunk</h2>
+<p>A Toe Readinget a <strong>Ferri Somogyi Productions</strong> üzemelteti, egy Hollandiában bejegyzett egyéni vállalkozás (holland kereskedelmi kamarai / KvK-szám: 34286815, áfaazonosító: NL001933433B06). Kapcsolat: <a href="mailto:support@toereading.app">support@toereading.app</a>. A székhely címe kérésre elérhető.</p>
+<p>A megrendelési folyamatot fizetési partnerünk bonyolítja, amely minden megrendelésünknél <strong>Merchant of Record</strong>-ként (hivatalos eladóként) jár el: jogilag a fizetési partner a vásárlás eladója, ő kezeli a fizetést, az áfát/forgalmi adót, a számlákat és a visszatérítések feldolgozását, és ehhez kapcsolódó ügyfélszolgálatot is nyújt. Az aktuális fizetési partner neve a pénztárnál és a nyugtádon szerepel.</p>
+
+<h2>2. Mi a Toe Reading, és mi nem</h2>
+<div class="kaartje let-op">
+<p><strong>A Toe Reading kizárólag szórakozásra és önreflexióra szolgál.</strong> Nem orvosi, pszichológiai, diagnosztikai vagy terápiás szolgáltatás, és az olvasatai semmilyen értelemben nem minősülnek tanácsnak. Az appban semmi sem képes egészségügyi állapotot felismerni, diagnosztizálni, kezelni vagy előre jelezni. Ha a lábaddal vagy az egészségeddel kapcsolatban aggodalmad van, fordulj orvoshoz vagy képzett szakemberhez.</p>
+</div>
+<p>Az appban lefotózod a lábadat, az app osztályozza a lábujjaid látható jellemzőit, és AI (az Anthropic Claude modellje) segítségével elgondolkodtató, elbeszélő "olvasatot" készít. Az olvasatok generált szövegek: tekintsd őket a saját önreflexiód tükrének, ne rólad szóló tényeknek.</p>
+
+<h2>3. A fiókod</h2>
+<p>Az olvasatok futtatásához fiókra van szükséged (név, e-mail, jelszó). Ehhez <strong>legalább 16 évesnek</strong> kell lenned. Vigyázz a belépési adataidra; a fiókodon zajló tevékenységért te felelsz. Adj meg pontos adatokat, és tartsd őket naprakészen. Fejenként egy fiókot kérünk.</p>
+
+<h2>4. Egyenleg és előfizetés</h2>
+<p>Az olvasatok egyenleggel ("elemzésekkel") működnek:</p>
+<ul>
+<li><strong>Ingyenes egyenleg</strong>: az új fiókok 3 ingyenes olvasatot kapnak. Az ingyenes egyenlegnek nincs pénzbeli értéke.</li>
+<li><strong>10-es csomag</strong>: egyszeri vásárlás, 10 olvasat (4,99 €). A csomag egyenlege nem jár le.</li>
+<li><strong>Éves előfizetés</strong>: egy évnyi olvasat (39,99 €/év), fair use keretben: <strong>naptári havonta 60 olvasat</strong>. A számláló az appban látható, és havonta nullázódik.</li>
+</ul>
+<p>Egy egység egy teljes olvasatot fedez: a fotóelemzést és a teljes értelmezést ("A tükör mesél"). Az egyenleg személyes, másra nem ruházható át, és pénzre nem váltható. Az aktuális árak mindig az <a href="pricing.html">árak oldalunkon</a> szerepelnek; minden fogyasztói ár tartalmazza az áfát, ahol az alkalmazandó.</p>
+
+<h2>5. Fizetés, megújítás és lemondás</h2>
+<p>A fizetéseket fizetési partnerünk dolgozza fel (lásd az 1. pontot). Az éves előfizetés évente <strong>automatikusan megújul</strong> az akkor érvényes áron; a megújítás előtt emlékeztető e-mailt kapsz. Bármikor lemondhatod a fizetési visszaigazoló e-mailben található linkkel vagy a <a href="mailto:support@toereading.app">support@toereading.app</a> címre írt levéllel; a lemondás a következő megújítást állítja le, és az előfizetésed a kifizetett időszak végéig aktív marad. A jövőbeli vásárlások és megújítások árát módosíthatjuk; a változásokat azelőtt jelentjük be, hogy téged érintenének.</p>
+
+<h2>6. Visszatérítések</h2>
+<p>A <a href="refund.html">visszatérítési szabályzatunk</a> érvényes: röviden, teljes visszatérítés 14 napon belül, amíg a megvásárolt egyenleget nem használtad fel. A fogyasztóként téged megillető törvényes jogokat ezek a feltételek soha nem korlátozzák.</p>
+
+<h2>7. A fotóid</h2>
+<p>A beküldött fotókat kizárólag az általad kért olvasat elkészítéséhez használjuk. Titkosítva továbbítjuk őket, <strong>soha nem tároljuk</strong>, és AI-modellek tanítására sem használjuk. Csak a saját lábadról küldj be fotót, vagy olyasvalakiéről, aki ehhez engedélyt adott neked. A részleteket az <a href="privacy.html">adatvédelmi tájékoztatónkban</a> találod.</p>
+
+<h2>8. Tisztességes és megengedett használat</h2>
+<p>Kérjük, ne tedd a következőket: ne használd az appot semmilyen jogellenes célra; ne küldj be olyan képeket, amelyek nem lábakat ábrázolnak, vagy amelyek jogsértők vagy károsak; ne próbáld megkerülni az egyenleg-ellenőrzést, a sebességkorlátokat vagy más technikai intézkedéseket; ne használj botokat vagy automatizált hozzáférést; írásos megállapodásunk nélkül ne értékesítsd tovább az olvasatokat kereskedelmi szolgáltatásként; és ne fejtsd vissza a szolgáltatást. A szolgáltatás egészségének megőrzése érdekében technikai korlátokat (például sebességkorlátokat) alkalmazhatunk, és felfüggeszthetjük a visszaélő fiókokat.</p>
+
+<h2>9. Szellemi tulajdon</h2>
+<p>Az app, a tudásbázisa, a szövegei, a dizájnja és a szoftvere a miénk (vagy licencadóinké). A személyes olvasataidat szabadon használhatod saját céljaidra. Az app tartalmát vagy tudásbázisát nem másolhatod le és nem publikálhatod újra nagy léptékben.</p>
+
+<h2>10. Elérhetőség és változások</h2>
+<p>A Toe Readinget gondosan üzemeltetjük, de "adott állapotában" kínáljuk: megszakítás nélküli elérhetőséget nem ígérhetünk. Egyes nyelvek béta jelölést viselnek. A funkciókat fejleszthetjük, módosíthatjuk vagy megszüntethetjük; ha valaha megszüntetnénk a fizetős szolgáltatást, a fel nem használt, megvásárolt egyenleget és az előfizetések fel nem használt részét visszatérítjük.</p>
+
+<h2>11. Felelősség</h2>
+<p>A jogszabályok által megengedett mértékben a szolgáltatással kapcsolatos bármely igényért fennálló teljes felelősségünk arra az összegre korlátozódik, amelyet az igényt megelőző 12 hónapban fizettél nekünk. Közvetett károkért nem felelünk. E feltételek egyetlen rendelkezése sem zárja ki az olyan felelősséget, amely jogszerűen nem zárható ki (például szándékosság vagy súlyos gondatlanság esetén).</p>
+
+<h2>12. E feltételek módosítása</h2>
+<p>Ezeket a feltételeket időnként frissíthetjük. Lényeges változás esetén a hatálybalépés előtt értesítünk az appban vagy e-mailben. Ha ezután is használod a szolgáltatást, az új feltételek érvényesek.</p>
+
+<h2>13. Irányadó jog</h2>
+<p>A holland jog az irányadó. A jogviták a hollandiai illetékes bíróság elé tartoznak; ha fogyasztó vagy, a lakóhelyed szerinti ország kötelező fogyasztóvédelmi szabályai változatlanul megilletnek.</p>
+
+<h2>14. Kapcsolat</h2>
+<p>Kérdésed van? Írj a <a href="mailto:support@toereading.app">support@toereading.app</a> címre; valódi ember olvassa.</p>
+</main>
+<main lang-blok="bn">
+<h1>ব্যবহারের শর্তাবলি</h1>
+<p class="datum">কার্যকর হওয়ার তারিখ: ১৩ জুলাই ২০২৬</p>
+
+<p>Toe Reading-এ স্বাগত (ডাচ ভাষায়: <em>Tenenspiegel</em>), পায়ের আঙুলের আকৃতির মাধ্যমে খেলাচ্ছলে আত্ম-প্রতিফলনের একটি ওয়েব অ্যাপ। এই শর্তাবলি তোমার আর আমাদের মধ্যে সহজ ভাষায় লেখা একটি চুক্তি। অ্যাকাউন্ট খুললে বা অ্যাপ ব্যবহার করলে তুমি এতে সম্মত হচ্ছ।</p>
+
+<h2>১. আমরা কারা</h2>
+<p>Toe Reading পরিচালনা করে <strong>Ferri Somogyi Productions</strong>, নেদারল্যান্ডসে নিবন্ধিত একটি একক মালিকানার প্রতিষ্ঠান (Chamber of Commerce / KvK নম্বর 34286815, VAT আইডি NL001933433B06)। যোগাযোগ: <a href="mailto:support@toereading.app">support@toereading.app</a>। নিবন্ধিত ঠিকানা অনুরোধে পাওয়া যায়।</p>
+<p>আমাদের অর্ডার প্রক্রিয়া পরিচালনা করে আমাদের পেমেন্ট পার্টনার, যারা আমাদের সব অর্ডারের জন্য <strong>Merchant of Record</strong> (অর্থাৎ আইনগতভাবে বিক্রেতা) হিসেবে কাজ করে: পেমেন্ট পার্টনারই আইনের চোখে তোমার কেনাকাটার বিক্রেতা, তারা পেমেন্ট, ভ্যাট/বিক্রয়কর, ইনভয়েস ও রিফান্ড প্রক্রিয়া সামলায় এবং সংশ্লিষ্ট গ্রাহকসেবা দেয়। বর্তমান পেমেন্ট পার্টনারের নাম চেকআউটে এবং তোমার রসিদে লেখা থাকে।</p>
+
+<h2>২. Toe Reading কী, আর কী নয়</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading শুধুই বিনোদন ও আত্ম-প্রতিফলনের জন্য।</strong> এটি কোনো চিকিৎসা, মনস্তাত্ত্বিক, রোগনির্ণয়মূলক বা থেরাপিউটিক পরিষেবা নয়, এবং এর রিডিংগুলো কোনো ধরনের পরামর্শ নয়। অ্যাপের কোনো কিছুই কোনো স্বাস্থ্য-সমস্যা শনাক্ত, নির্ণয়, চিকিৎসা বা পূর্বাভাস করতে পারে না। তোমার পা বা স্বাস্থ্য নিয়ে দুশ্চিন্তা থাকলে ডাক্তার বা যোগ্য পেশাদারের কাছে যাও।</p>
+</div>
+<p>এই অ্যাপে তুমি তোমার পায়ের ছবি তোলো, তোমার আঙুলের দৃশ্যমান বৈশিষ্ট্যগুলো শ্রেণিবদ্ধ করা হয়, এবং AI-এর সাহায্যে (Anthropic-এর Claude) একটি প্রতিফলনধর্মী, গল্পের ঢঙে লেখা "রিডিং" তৈরি হয়। রিডিং হলো জেনারেট করা লেখা: একে দেখো নিজের প্রতিফলনের আয়না হিসেবে, তোমার সম্পর্কে তথ্য-প্রমাণ হিসেবে নয়।</p>
+
+<h2>৩. তোমার অ্যাকাউন্ট</h2>
+<p>রিডিং চালাতে একটি অ্যাকাউন্ট (নাম, ইমেইল, পাসওয়ার্ড) দরকার। তোমার বয়স হতে হবে <strong>১৬ বছর বা তার বেশি</strong>। লগইন তথ্য নিরাপদে রেখো; তোমার অ্যাকাউন্টে যা ঘটে তার দায় তোমার। সঠিক তথ্য দাও এবং তা হালনাগাদ রেখো। জনপ্রতি একটি অ্যাকাউন্ট, অনুরোধ রইল।</p>
+
+<h2>৪. ক্রেডিট ও সাবস্ক্রিপশন</h2>
+<p>রিডিং চলে ক্রেডিট ("বিশ্লেষণ") দিয়ে:</p>
+<ul>
+<li><strong>বিনামূল্যের ক্রেডিট</strong>: নতুন অ্যাকাউন্ট পায় ৩টি বিনামূল্যের রিডিং। বিনামূল্যের ক্রেডিটের কোনো আর্থিক মূল্য নেই।</li>
+<li><strong>১০-এর প্যাক</strong>: ১০টি রিডিংয়ের এককালীন কেনাকাটা (€ ৪.৯৯)। প্যাকের ক্রেডিটের মেয়াদ শেষ হয় না।</li>
+<li><strong>বার্ষিক সাবস্ক্রিপশন</strong>: এক বছরের রিডিং (€ ৩৯.৯৯/বছর), ফেয়ার ইউজ সাপেক্ষে: <strong>প্রতি ক্যালেন্ডার মাসে ৬০টি রিডিং</strong>। কাউন্টারটি অ্যাপে দেখা যায় এবং প্রতি মাসে রিসেট হয়।</li>
+</ul>
+<p>একটি ক্রেডিটে হয় একটি সম্পূর্ণ রিডিং: ছবির বিশ্লেষণ এবং পুরো ব্যাখ্যা ("আয়না বলে")। ক্রেডিট ব্যক্তিগত, হস্তান্তরযোগ্য নয় এবং টাকায় বদলানো যায় না। বর্তমান দাম সবসময় দেখা যায় আমাদের <a href="pricing.html">মূল্যের পাতায়</a>; সব ভোক্তামূল্যে প্রযোজ্য ক্ষেত্রে ভ্যাট অন্তর্ভুক্ত।</p>
+
+<h2>৫. পেমেন্ট, নবায়ন ও বাতিল</h2>
+<p>পেমেন্ট প্রক্রিয়া করে আমাদের পেমেন্ট পার্টনার (দেখো ধারা ১)। বার্ষিক সাবস্ক্রিপশন প্রতি বছর তখনকার প্রচলিত দামে <strong>নিজে থেকেই নবায়ন হয়</strong>; নবায়নের আগে তুমি একটি স্মরণ করিয়ে দেওয়া ইমেইল পাবে। যেকোনো সময় বাতিল করতে পারো তোমার পেমেন্ট নিশ্চিতকরণ ইমেইলের লিংক দিয়ে, অথবা <a href="mailto:support@toereading.app">support@toereading.app</a> ঠিকানায় ইমেইল করে; বাতিল করলে পরের নবায়নটি বন্ধ হয়, এবং পরিশোধিত মেয়াদের শেষ পর্যন্ত তোমার সাবস্ক্রিপশন সচল থাকে। ভবিষ্যতের কেনাকাটা ও নবায়নের জন্য আমরা দাম বদলাতে পারি; তোমার ওপর প্রভাব পড়ার আগেই আমরা পরিবর্তন জানিয়ে দেব।</p>
+
+<h2>৬. রিফান্ড</h2>
+<p>আমাদের <a href="refund.html">রিফান্ড নীতি</a> প্রযোজ্য: সংক্ষেপে, কেনা ক্রেডিট ব্যবহার না করা থাকলে ১৪ দিনের মধ্যে পুরো টাকা ফেরত। ভোক্তা হিসেবে তোমার আইনি অধিকার এই শর্তাবলি দিয়ে কখনও সীমিত হয় না।</p>
+
+<h2>৭. তোমার ছবি</h2>
+<p>তুমি যে ছবি জমা দাও তা শুধু তোমার চাওয়া রিডিংটি করার জন্যই ব্যবহার হয়। ছবি এনক্রিপ্ট করে পাঠানো হয়, <strong>কখনও সংরক্ষণ করা হয় না</strong>, এবং AI মডেল প্রশিক্ষণেও ব্যবহার হয় না। শুধু নিজের পায়ের ছবি জমা দাও, অথবা এমন কারও, যে তোমাকে অনুমতি দিয়েছে। বিস্তারিত জানতে দেখো আমাদের <a href="privacy.html">প্রাইভেসি নীতি</a>।</p>
+
+<h2>৮. ন্যায্য ও গ্রহণযোগ্য ব্যবহার</h2>
+<p>দয়া করে এগুলো কোরো না: অ্যাপকে কোনো বেআইনি কাজে ব্যবহার করা; এমন ছবি জমা দেওয়া যা পায়ের নয় বা যা বেআইনি বা ক্ষতিকর; ক্রেডিট যাচাই, রেট লিমিট বা অন্য প্রযুক্তিগত ব্যবস্থা এড়ানোর চেষ্টা করা; বট বা স্বয়ংক্রিয় অ্যাক্সেস ব্যবহার করা; আমাদের লিখিত সম্মতি ছাড়া রিডিংকে বাণিজ্যিক পরিষেবা হিসেবে পুনর্বিক্রি করা; বা পরিষেবাটি রিভার্স-ইঞ্জিনিয়ার করা। পরিষেবাকে সুস্থ রাখতে আমরা প্রযুক্তিগত সীমা (যেমন রেট লিমিট) প্রয়োগ করতে পারি, এবং অপব্যবহারকারী অ্যাকাউন্ট স্থগিত করতে পারি।</p>
+
+<h2>৯. মেধাস্বত্ব</h2>
+<p>অ্যাপ, এর জ্ঞানভান্ডার, লেখা, ডিজাইন ও সফটওয়্যার আমাদের (বা আমাদের লাইসেন্সদাতাদের)। তোমার ব্যক্তিগত রিডিং তুমি নিজের কাজে স্বাধীনভাবে ব্যবহার করতে পারো। অ্যাপের বিষয়বস্তু বা জ্ঞানভান্ডার বড় পরিসরে কপি বা পুনঃপ্রকাশ করা যাবে না।</p>
+
+<h2>১০. প্রাপ্যতা ও পরিবর্তন</h2>
+<p>আমরা Toe Reading যত্ন নিয়ে চালাই, কিন্তু এটি "যেমন আছে তেমন" ভিত্তিতে দিই: নিরবচ্ছিন্ন প্রাপ্যতার প্রতিশ্রুতি দিতে পারি না। কিছু ভাষা বিটা হিসেবে চিহ্নিত। আমরা ফিচার উন্নত, পরিবর্তন বা বন্ধ করতে পারি; কখনও যদি পেইড পরিষেবা বন্ধ করি, তাহলে অব্যবহৃত পেইড ক্রেডিট এবং সাবস্ক্রিপশনের অব্যবহৃত অংশ ফেরত দেব।</p>
+
+<h2>১১. দায়</h2>
+<p>আইনে যতটা অনুমোদিত, এই পরিষেবা-সংক্রান্ত যেকোনো দাবির জন্য আমাদের মোট দায় সীমাবদ্ধ থাকবে দাবির আগের ১২ মাসে তুমি আমাদের যে অর্থ দিয়েছ সেই পরিমাণে। পরোক্ষ ক্ষতির জন্য আমরা দায়ী নই। যে দায় আইনত বাদ দেওয়া যায় না (যেমন ইচ্ছাকৃত ক্ষতি বা গুরুতর অবহেলা), এই শর্তাবলির কোনো কিছুই তা বাদ দেয় না।</p>
+
+<h2>১২. এই শর্তাবলির পরিবর্তন</h2>
+<p>আমরা এই শর্তাবলি হালনাগাদ করতে পারি। অর্থবহ পরিবর্তনের ক্ষেত্রে কার্যকর হওয়ার আগে অ্যাপে বা ইমেইলে তোমাকে জানাব। এরপরও পরিষেবা ব্যবহার চালিয়ে গেলে নতুন শর্তাবলি প্রযোজ্য হবে।</p>
+
+<h2>১৩. প্রযোজ্য আইন</h2>
+<p>ডাচ আইন প্রযোজ্য। বিরোধ যাবে নেদারল্যান্ডসের উপযুক্ত আদালতে; তুমি ভোক্তা হলে তোমার বসবাসের দেশের বাধ্যতামূলক ভোক্তা-সুরক্ষা অক্ষুণ্ণ থাকবে।</p>
+
+<h2>১৪. যোগাযোগ</h2>
+<p>প্রশ্ন আছে? ইমেইল করো <a href="mailto:support@toereading.app">support@toereading.app</a> ঠিকানায়; একজন সত্যিকারের মানুষ সেটা পড়ে।</p>
+</main>
+<main lang-blok="ur">
+<h1>سروس کی شرائط</h1>
+<p class="datum">نفاذ کی تاریخ: 13 جولائی 2026</p>
+
+<p>Toe Reading میں خوش آمدید (ڈچ زبان میں: <em>Tenenspiegel</em>)، یہ ایک ویب ایپ ہے جو آپ کی انگلیوں کی شکلوں کے ذریعے کھیل کھیل میں خود شناسی کے لیے بنائی گئی ہے۔ یہ شرائط آپ کے اور ہمارے درمیان سیدھی سادی زبان میں ایک معاہدہ ہیں۔ اکاؤنٹ بنا کر یا ایپ استعمال کر کے آپ ان سے اتفاق کرتے ہیں۔</p>
+
+<h2>1. ہم کون ہیں</h2>
+<p>Toe Reading کو <strong>Ferri Somogyi Productions</strong> چلاتا ہے، جو نیدرلینڈز میں رجسٹرڈ ایک انفرادی کاروبار ہے (چیمبر آف کامرس / KvK نمبر 34286815، VAT شناخت NL001933433B06)۔ رابطہ: <a href="mailto:support@toereading.app">support@toereading.app</a>۔ رجسٹرڈ پتہ درخواست پر دستیاب ہے۔</p>
+<p>ہمارے آرڈر کا عمل ہمارا پیمنٹ پارٹنر انجام دیتا ہے، جو ہمارے تمام آرڈرز کے لیے بطور <strong>Merchant of Record</strong> کام کرتا ہے: یعنی قانونی طور پر خریداری کا فروخت کنندہ وہی ہے۔ وہ ادائیگی، VAT/سیلز ٹیکس، رسیدیں اور رقم کی واپسی کے عمل کو سنبھالتا ہے اور اس سے متعلق کسٹمر سروس فراہم کرتا ہے۔ موجودہ پیمنٹ پارٹنر کا نام چیک آؤٹ پر اور آپ کی رسید پر درج ہوتا ہے۔</p>
+
+<h2>2. Toe Reading کیا ہے، اور کیا نہیں</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading صرف تفریح اور خود شناسی کے لیے ہے۔</strong> یہ کوئی طبی، نفسیاتی، تشخیصی یا علاجی سروس نہیں ہے، اور اس کی ریڈنگز کسی قسم کا مشورہ نہیں ہیں۔ ایپ میں موجود کوئی بھی چیز کسی بیماری یا صحت کی حالت کا پتا لگا، تشخیص کر، علاج کر یا پیش گوئی نہیں کر سکتی۔ اگر آپ کو اپنے پاؤں یا صحت کے بارے میں فکر ہے تو براہ کرم کسی ڈاکٹر یا مستند پیشہ ور سے رجوع کریں۔</p>
+</div>
+<p>ایپ سے آپ اپنے پاؤں کی تصویر بناتے ہیں، آپ کی انگلیوں کی نظر آنے والی خصوصیات کی درجہ بندی کی جاتی ہے، اور AI (Anthropic کا Claude) کی مدد سے ایک غور و فکر پر مبنی، کہانی نما "ریڈنگ" تیار ہوتی ہے۔ ریڈنگز تیار کردہ متن ہیں: انہیں اپنی خود شناسی کا آئینہ سمجھیں، اپنے بارے میں حقائق نہیں۔</p>
+
+<h2>3. آپ کا اکاؤنٹ</h2>
+<p>ریڈنگز چلانے کے لیے آپ کو اکاؤنٹ درکار ہے (نام، ای میل، پاس ورڈ)۔ آپ کی عمر <strong>16 سال یا اس سے زیادہ</strong> ہونی چاہیے۔ اپنی لاگ ان تفصیلات محفوظ رکھیں؛ اپنے اکاؤنٹ پر ہونے والی سرگرمی کے ذمہ دار آپ ہیں۔ درست معلومات درج کریں اور انہیں تازہ رکھیں۔ براہ کرم فی شخص ایک اکاؤنٹ۔</p>
+
+<h2>4. کریڈٹ اور رکنیت</h2>
+<p>ریڈنگز کریڈٹ ("تجزیوں") پر چلتی ہیں:</p>
+<ul>
+<li><strong>مفت کریڈٹ</strong>: نئے اکاؤنٹس کو 3 مفت ریڈنگز ملتی ہیں۔ مفت کریڈٹ کی کوئی مالی قیمت نہیں۔</li>
+<li><strong>10 کا پیکٹ</strong>: 10 ریڈنگز کی یک بارگی خریداری (€4.99)۔ پیکٹ کے کریڈٹ کی کوئی میعاد ختم نہیں ہوتی۔</li>
+<li><strong>سالانہ رکنیت</strong>: ایک سال کے لیے ریڈنگز (€39.99 فی سال)، مناسب استعمال کی شرط کے ساتھ: <strong>ہر کیلنڈر مہینے میں 60 ریڈنگز</strong>۔ کاؤنٹر ایپ میں نظر آتا ہے اور ہر مہینے ری سیٹ ہوتا ہے۔</li>
+</ul>
+<p>ایک کریڈٹ ایک مکمل ریڈنگ کے لیے ہے: تصویر کا تجزیہ اور پوری تعبیر ("آئینہ سناتا ہے")۔ کریڈٹ ذاتی ہے، منتقل نہیں ہو سکتا اور رقم سے تبدیل نہیں کیا جا سکتا۔ موجودہ قیمتیں ہمیشہ ہمارے <a href="pricing.html">قیمتوں کے صفحے</a> پر درج ہوتی ہیں؛ جہاں لاگو ہو، تمام صارف قیمتیں VAT سمیت ہیں۔</p>
+
+<h2>5. ادائیگی، تجدید اور منسوخی</h2>
+<p>ادائیگیاں ہمارا پیمنٹ پارٹنر پروسیس کرتا ہے (دیکھیں سیکشن 1)۔ سالانہ رکنیت ہر سال اُس وقت کی رائج قیمت پر <strong>خود بخود تجدید</strong> ہوتی ہے؛ تجدید سے پہلے آپ کو یاد دہانی کی ای میل ملے گی۔ آپ کسی بھی وقت اپنی ادائیگی کی تصدیقی ای میل میں موجود لنک کے ذریعے یا <a href="mailto:support@toereading.app">support@toereading.app</a> پر ای میل کر کے منسوخ کر سکتے ہیں؛ منسوخی اگلی تجدید کو روک دیتی ہے، اور آپ کی رکنیت ادا شدہ مدت کے آخر تک فعال رہتی ہے۔ ہم آئندہ خریداریوں اور تجدیدوں کے لیے قیمتیں بدل سکتے ہیں؛ اس کا اطلاق آپ پر ہونے سے پہلے ہم اس کا اعلان کریں گے۔</p>
+
+<h2>6. رقم کی واپسی</h2>
+<p>ہماری <a href="refund.html">رقم کی واپسی کی پالیسی</a> لاگو ہوتی ہے: مختصراً، 14 دنوں کے اندر مکمل رقم کی واپسی، بشرطیکہ خریدے گئے کریڈٹ استعمال نہ ہوئے ہوں۔ بطور صارف آپ کے قانونی حقوق ان شرائط سے کبھی محدود نہیں ہوتے۔</p>
+
+<h2>7. آپ کی تصاویر</h2>
+<p>آپ کی بھیجی گئی تصاویر صرف اسی ریڈنگ کے لیے استعمال ہوتی ہیں جس کی آپ نے درخواست کی۔ وہ خفیہ کاری (اینکرپشن) کے ساتھ منتقل ہوتی ہیں، <strong>کبھی محفوظ نہیں کی جاتیں</strong>، اور AI ماڈلز کی تربیت کے لیے استعمال نہیں ہوتیں۔ صرف اپنے پاؤں کی، یا ایسے شخص کے پاؤں کی تصاویر بھیجیں جس نے آپ کو اجازت دی ہو۔ تفصیل کے لیے ہماری <a href="privacy.html">پرائیویسی پالیسی</a> دیکھیں۔</p>
+
+<h2>8. منصفانہ اور قابل قبول استعمال</h2>
+<p>براہ کرم یہ نہ کریں: ایپ کو کسی غیر قانونی کام کے لیے استعمال کرنا؛ ایسی تصاویر بھیجنا جو پاؤں نہ ہوں یا جو غیر قانونی یا نقصان دہ ہوں؛ کریڈٹ چیک، ریٹ لمٹ یا دیگر تکنیکی اقدامات کو چکما دینے کی کوشش کرنا؛ بوٹس یا خودکار رسائی استعمال کرنا؛ ہماری تحریری رضامندی کے بغیر ریڈنگز کو تجارتی سروس کے طور پر دوبارہ بیچنا؛ یا سروس کو ریورس انجینئر کرنا۔ سروس کو صحت مند رکھنے کے لیے ہم تکنیکی حدیں (جیسے ریٹ لمٹ) لگا سکتے ہیں، اور غلط استعمال کرنے والے اکاؤنٹس معطل کر سکتے ہیں۔</p>
+
+<h2>9. دانشورانہ ملکیت</h2>
+<p>ایپ، اس کی نالج بیس، متون، ڈیزائن اور سافٹ ویئر ہمارے ہیں (یا ہمارے لائسنس دہندگان کے)۔ آپ اپنی ذاتی ریڈنگز اپنے مقاصد کے لیے آزادانہ استعمال کر سکتے ہیں۔ ایپ کے مواد یا نالج بیس کو بڑے پیمانے پر کاپی یا دوبارہ شائع کرنے کی اجازت نہیں۔</p>
+
+<h2>10. دستیابی اور تبدیلیاں</h2>
+<p>ہم Toe Reading کو پوری توجہ سے چلاتے ہیں، مگر اسے "جیسا ہے" کی بنیاد پر پیش کرتے ہیں: بلاتعطل دستیابی کا وعدہ ہم نہیں کر سکتے۔ کچھ زبانوں پر بیٹا کا نشان لگا ہے۔ ہم فیچرز کو بہتر بنا، بدل یا بند کر سکتے ہیں؛ اگر ہم کبھی ادائیگی والی سروس بند کریں تو غیر استعمال شدہ خریدا ہوا کریڈٹ اور رکنیتوں کا غیر استعمال شدہ حصہ واپس کر دیں گے۔</p>
+
+<h2>11. ذمہ داری</h2>
+<p>قانون کی اجازت کی حد تک، سروس سے متعلق کسی بھی دعوے کے لیے ہماری کُل ذمہ داری اس رقم تک محدود ہے جو آپ نے دعوے سے پہلے کے 12 مہینوں میں ہمیں ادا کی۔ بالواسطہ نقصانات کے ہم ذمہ دار نہیں۔ ان شرائط میں کوئی بات ایسی ذمہ داری کو خارج نہیں کرتی جسے قانوناً خارج نہیں کیا جا سکتا (جیسے ارادی عمل یا سنگین غفلت)۔</p>
+
+<h2>12. ان شرائط میں تبدیلی</h2>
+<p>ہم یہ شرائط اپ ڈیٹ کر سکتے ہیں۔ اہم تبدیلیوں کی صورت میں ہم ان کے نافذ ہونے سے پہلے ایپ میں یا ای میل کے ذریعے آپ کو مطلع کریں گے۔ اگر آپ اس کے بعد بھی سروس استعمال کرتے رہیں تو نئی شرائط لاگو ہوں گی۔</p>
+
+<h2>13. لاگو قانون</h2>
+<p>ڈچ قانون لاگو ہوتا ہے۔ تنازعات نیدرلینڈز کی بااختیار عدالت میں جاتے ہیں؛ اگر آپ صارف ہیں تو آپ کے ملکِ رہائش کے لازمی صارف تحفظات برقرار رہتے ہیں۔</p>
+
+<h2>14. رابطہ</h2>
+<p>سوالات؟ <a href="mailto:support@toereading.app">support@toereading.app</a> پر ای میل کریں؛ اسے ایک حقیقی انسان پڑھتا ہے۔</p>
+</main>
+<main lang-blok="fa">
+<h1>شرایط استفاده از خدمات</h1>
+<p class="datum">تاریخ اجرا: ۱۳ ژوئیه ۲۰۲۶</p>
+
+<p>به Toe Reading خوش آمدی (به هلندی: <em>Tenenspiegel</em>)، یک وب‌اپ برای خودشناسیِ بازیگوشانه از راه شکل انگشتان پایت. این شرایط توافقی به زبان ساده میان تو و ماست. با ساختن حساب یا استفاده از اپ، آن‌ها را می‌پذیری.</p>
+
+<h2>1. ما کیستیم</h2>
+<p>Toe Reading را <strong>Ferri Somogyi Productions</strong> اداره می‌کند، یک کسب‌وکار انفرادی ثبت‌شده در هلند (شماره ثبت اتاق بازرگانی هلند / KvK‏ 34286815، شناسه مالیات بر ارزش افزوده NL001933433B06). تماس: <a href="mailto:support@toereading.app">support@toereading.app</a>. نشانی ثبت‌شده در صورت درخواست در دسترس است.</p>
+<p>روند سفارش ما را شریک پرداخت ما انجام می‌دهد که برای همه سفارش‌های ما به‌عنوان <strong>Merchant of Record</strong> (فروشنده رسمی) عمل می‌کند: شریک پرداخت از نظر حقوقی فروشنده خرید توست، پرداخت، مالیات بر ارزش افزوده/مالیات فروش، فاکتورها و پردازش بازپرداخت‌ها را بر عهده دارد و خدمات مشتریان مربوط به آن را هم ارائه می‌دهد. نام شریک پرداخت فعلی هنگام پرداخت و روی رسیدت آمده است.</p>
+
+<h2>2. Toe Reading چه هست، و چه نیست</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading فقط برای سرگرمی و خودشناسی است.</strong> این یک خدمت پزشکی، روان‌شناختی، تشخیصی یا درمانی نیست و خوانش‌هایش هیچ‌گونه توصیه به شمار نمی‌آیند. هیچ‌چیز در این اپ نمی‌تواند هیچ وضعیت سلامتی را کشف، تشخیص، درمان یا پیش‌بینی کند. اگر درباره پاها یا سلامتی‌ات نگرانی داری، لطفاً پیش پزشک یا متخصص واجد شرایط برو.</p>
+</div>
+<p>اپ می‌گذارد از پاهایت عکس بگیری، ویژگی‌های دیدنیِ انگشتانت را دسته‌بندی می‌کند و با کمک هوش مصنوعی (Claude ساخت Anthropic) یک «خوانش» بازتابی و روایی تولید می‌کند. خوانش‌ها متنِ تولیدشده‌اند: آن‌ها را آینه‌ای برای تأمل خودت بدان، نه واقعیت‌هایی درباره تو.</p>
+
+<h2>3. حساب تو</h2>
+<p>برای اجرای خوانش‌ها به حساب نیاز داری (نام، ایمیل، رمز عبور). باید <strong>۱۶ سال یا بیشتر</strong> داشته باشی. اطلاعات ورودت را امن نگه دار؛ مسئول فعالیت حسابت خودت هستی. اطلاعات درست بده و آن را به‌روز نگه دار. لطفاً هر نفر یک حساب.</p>
+
+<h2>4. اعتبار و اشتراک</h2>
+<p>خوانش‌ها با اعتبار («تحلیل») کار می‌کنند:</p>
+<ul>
+<li><strong>اعتبار رایگان</strong>: حساب‌های تازه ۳ خوانش رایگان می‌گیرند. اعتبار رایگان ارزش پولی ندارد.</li>
+<li><strong>بسته ۱۰تایی</strong>: خرید یک‌باره ۱۰ خوانش (۴٫۹۹ یورو). اعتبار بسته منقضی نمی‌شود.</li>
+<li><strong>اشتراک سالانه</strong>: یک سال خوانش (۳۹٫۹۹ یورو در سال)، با شرط استفاده منصفانه <strong>۶۰ خوانش در هر ماه تقویمی</strong>. شمارنده در اپ دیده می‌شود و هر ماه صفر می‌شود.</li>
+</ul>
+<p>یک اعتبار یک خوانش کامل را پوشش می‌دهد: تحلیل عکس به‌علاوه تفسیر کامل («آینه سخن می‌گوید»). اعتبار شخصی است، انتقال‌پذیر نیست و با پول عوض نمی‌شود. قیمت‌های روز همیشه در <a href="pricing.html">صفحه قیمت‌ها</a> آمده است؛ همه قیمت‌های مصرف‌کننده، هر جا لازم باشد، شامل مالیات بر ارزش افزوده است.</p>
+
+<h2>5. پرداخت، تمدید و لغو</h2>
+<p>پرداخت‌ها را شریک پرداخت ما پردازش می‌کند (بند ۱ را ببین). اشتراک سالانه هر سال <strong>خودکار تمدید می‌شود</strong>، به قیمتِ جاری در همان زمان؛ پیش از تمدید یک ایمیل یادآوری می‌گیری. هر وقت بخواهی می‌توانی لغو کنی، از راه پیوند داخل ایمیل تأیید پرداخت یا با ایمیل به <a href="mailto:support@toereading.app">support@toereading.app</a>؛ لغو، تمدید بعدی را متوقف می‌کند و اشتراکت تا پایان دوره پرداخت‌شده فعال می‌ماند. ممکن است قیمت‌ها را برای خریدها و تمدیدهای آینده تغییر دهیم؛ تغییرها را پیش از آنکه به تو برسند اعلام می‌کنیم.</p>
+
+<h2>6. بازپرداخت‌ها</h2>
+<p><a href="refund.html">سیاست بازپرداخت</a> ما برقرار است: خلاصه‌اش، بازپرداخت کامل تا ۱۴ روز، تا وقتی اعتبار خریداری‌شده استفاده نشده باشد. حقوق قانونی تو به‌عنوان مصرف‌کننده هرگز با این شرایط محدود نمی‌شود.</p>
+
+<h2>7. عکس‌های تو</h2>
+<p>عکس‌هایی که می‌فرستی فقط برای انجام خوانشی که درخواست کرده‌ای استفاده می‌شوند. رمزگذاری‌شده منتقل می‌شوند، <strong>هرگز ذخیره نمی‌شوند</strong> و برای آموزش مدل‌های هوش مصنوعی به کار نمی‌روند. فقط عکس پاهای خودت را بفرست، یا پاهای کسی که به تو اجازه داده است. برای جزئیات <a href="privacy.html">سیاست حریم خصوصی</a> ما را ببین.</p>
+
+<h2>8. استفاده منصفانه و مجاز</h2>
+<p>لطفاً این کارها را نکن: اپ را برای کاری غیرقانونی به کار نبر؛ تصویرهایی نفرست که پا نیستند یا غیرقانونی یا آسیب‌زننده‌اند؛ تلاش نکن بررسی اعتبار، محدودیت سرعت یا دیگر تدبیرهای فنی را دور بزنی؛ از بات یا دسترسی خودکار استفاده نکن؛ بدون توافق کتبی ما خوانش‌ها را به‌صورت خدمات تجاری بازفروشی نکن؛ و سرویس را مهندسی معکوس نکن. برای سالم نگه داشتن سرویس ممکن است محدودیت‌های فنی (مثل محدودیت سرعت) اعمال کنیم، و حساب‌هایی را که از آن سوءاستفاده می‌کنند معلق کنیم.</p>
+
+<h2>9. مالکیت فکری</h2>
+<p>اپ، پایگاه دانش آن، متن‌ها، طراحی و نرم‌افزار مال ماست (یا صاحبان مجوز ما). خوانش‌های شخصی‌ات را می‌توانی آزادانه برای مقاصد خودت به کار ببری. کپی یا بازنشر گسترده محتوای اپ یا پایگاه دانش آن مجاز نیست.</p>
+
+<h2>10. دسترس‌پذیری و تغییرها</h2>
+<p>ما Toe Reading را با دقت اداره می‌کنیم، اما آن را «همان‌گونه که هست» ارائه می‌دهیم: نمی‌توانیم دسترس‌پذیری بی‌وقفه را قول بدهیم. برخی زبان‌ها برچسب آزمایشی (بتا) دارند. ممکن است قابلیت‌ها را بهتر یا عوض کنیم یا کنار بگذاریم؛ اگر روزی خدمات پولی را متوقف کنیم، اعتبار پولیِ استفاده‌نشده و بخش استفاده‌نشده اشتراک‌ها را بازپرداخت می‌کنیم.</p>
+
+<h2>11. مسئولیت</h2>
+<p>تا جایی که قانون اجازه می‌دهد، کل مسئولیت ما برای هر ادعای مربوط به سرویس محدود است به مبلغی که در ۱۲ ماهِ پیش از ادعا به ما پرداخته‌ای. ما مسئول زیان‌های غیرمستقیم نیستیم. هیچ‌چیز در این شرایط مسئولیتی را که قانوناً نمی‌شود کنار گذاشت، کنار نمی‌گذارد (مثل مسئولیت ناشی از عمد یا سهل‌انگاری فاحش).</p>
+
+<h2>12. تغییر این شرایط</h2>
+<p>ممکن است این شرایط را به‌روز کنیم. برای تغییرهای مهم، پیش از اجرایی شدن، در اپ یا با ایمیل خبرت می‌کنیم. اگر پس از آن باز هم از سرویس استفاده کنی، شرایط تازه برقرار است.</p>
+
+<h2>13. قانون حاکم</h2>
+<p>قانون هلند حاکم است. اختلاف‌ها به دادگاه صالح در هلند می‌روند؛ اگر مصرف‌کننده باشی، حمایت‌های الزام‌آور مصرف‌کننده در کشور محل زندگی‌ات دست‌نخورده می‌مانند.</p>
+
+<h2>14. تماس</h2>
+<p>پرسشی داری؟ به <a href="mailto:support@toereading.app">support@toereading.app</a> ایمیل بزن؛ یک انسان واقعی آن را می‌خواند.</p>
+</main>
+<main lang-blok="ms">
+<h1>Terma Perkhidmatan</h1>
+<p class="datum">Tarikh berkuat kuasa: 13 Julai 2026</p>
+
+<p>Selamat datang ke Toe Reading (dalam bahasa Belanda: <em>Tenenspiegel</em>), aplikasi web untuk refleksi diri yang santai melalui bentuk jari kaki anda. Terma ini ialah perjanjian dalam bahasa mudah antara anda dan kami. Dengan membuat akaun atau menggunakan aplikasi ini, anda bersetuju dengannya.</p>
+
+<h2>1. Siapa kami</h2>
+<p>Toe Reading dikendalikan oleh <strong>Ferri Somogyi Productions</strong>, sebuah milikan tunggal yang berdaftar di Belanda (Dewan Perdagangan Belanda / no. KvK 34286815, ID VAT NL001933433B06). Hubungi: <a href="mailto:support@toereading.app">support@toereading.app</a>. Alamat berdaftar tersedia atas permintaan.</p>
+<p>Proses pesanan kami dikendalikan oleh rakan pembayaran kami, yang bertindak sebagai <strong>Merchant of Record</strong> (penjual rasmi) bagi semua pesanan kami: dari segi undang-undang, rakan pembayaran ialah penjual pembelian anda, menguruskan pembayaran, VAT/cukai jualan, invois dan pemprosesan bayaran balik, serta menyediakan khidmat pelanggan yang berkaitan. Rakan pembayaran semasa dinamakan ketika pembayaran dan pada resit anda.</p>
+
+<h2>2. Apakah Toe Reading, dan apa yang bukan</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading adalah untuk hiburan dan refleksi diri sahaja.</strong> Ia bukan perkhidmatan perubatan, psikologi, diagnostik atau terapeutik, dan bacaannya bukan nasihat dalam apa jua bentuk. Tiada apa-apa dalam aplikasi ini yang boleh mengesan, mendiagnosis, merawat atau meramal sebarang keadaan kesihatan. Jika anda mempunyai kebimbangan tentang kaki atau kesihatan anda, sila berjumpa doktor atau profesional yang berkelayakan.</p>
+</div>
+<p>Aplikasi ini membolehkan anda mengambil foto kaki anda, mengklasifikasikan ciri jari kaki yang kelihatan, dan menjana "bacaan" naratif yang reflektif dengan bantuan AI (Claude daripada Anthropic). Bacaan ialah teks yang dijana: anggaplah ia sebagai cermin untuk refleksi anda sendiri, bukan fakta tentang diri anda.</p>
+
+<h2>3. Akaun anda</h2>
+<p>Anda memerlukan akaun (nama, e-mel, kata laluan) untuk menjalankan bacaan. Anda mestilah berumur <strong>16 tahun atau lebih</strong>. Simpan maklumat log masuk anda dengan selamat; anda bertanggungjawab atas aktiviti pada akaun anda. Berikan maklumat yang tepat dan pastikan ia sentiasa terkini. Satu akaun bagi setiap orang, ya.</p>
+
+<h2>4. Kredit dan langganan</h2>
+<p>Bacaan berjalan dengan kredit ("analisis"):</p>
+<ul>
+<li><strong>Kredit percuma</strong>: akaun baharu menerima 3 bacaan percuma. Kredit percuma tidak mempunyai nilai wang.</li>
+<li><strong>Pek 10</strong>: pembelian sekali sahaja untuk 10 bacaan (€4.99). Kredit pek tidak luput.</li>
+<li><strong>Langganan tahunan</strong>: bacaan selama setahun (€39.99/tahun), tertakluk pada penggunaan wajar <strong>60 bacaan setiap bulan kalendar</strong>. Kaunter boleh dilihat dalam aplikasi dan diset semula setiap bulan.</li>
+</ul>
+<p>Satu kredit meliputi satu bacaan lengkap: analisis foto berserta tafsiran penuh ("Cermin bercerita"). Kredit bersifat peribadi, tidak boleh dipindah milik dan tidak boleh ditukar dengan wang. Harga semasa sentiasa dipaparkan pada <a href="pricing.html">halaman harga</a> kami; semua harga pengguna termasuk VAT jika berkenaan.</p>
+
+<h2>5. Pembayaran, pembaharuan dan pembatalan</h2>
+<p>Pembayaran diproses oleh rakan pembayaran kami (lihat bahagian 1). Langganan tahunan <strong>diperbaharui secara automatik</strong> setiap tahun pada harga semasa ketika itu; anda akan menerima e-mel peringatan sebelum pembaharuan. Anda boleh membatalkan pada bila-bila masa melalui pautan dalam e-mel pengesahan pembayaran anda atau dengan menghantar e-mel ke <a href="mailto:support@toereading.app">support@toereading.app</a>; pembatalan menghentikan pembaharuan yang seterusnya, dan langganan anda kekal aktif sehingga akhir tempoh yang telah dibayar. Kami mungkin mengubah harga untuk pembelian dan pembaharuan akan datang; kami akan mengumumkan perubahan sebelum ia memberi kesan kepada anda.</p>
+
+<h2>6. Bayaran balik</h2>
+<p><a href="refund.html">Dasar Bayaran Balik</a> kami terpakai: ringkasnya, bayaran balik penuh dalam masa 14 hari selagi kredit yang dibeli belum digunakan. Hak statutori anda sebagai pengguna tidak sekali-kali dihadkan oleh terma ini.</p>
+
+<h2>7. Foto anda</h2>
+<p>Foto yang anda hantar digunakan semata-mata untuk melaksanakan bacaan yang anda minta. Ia dihantar secara disulitkan, <strong>tidak pernah disimpan</strong>, dan tidak digunakan untuk melatih model AI. Hantar hanya foto kaki anda sendiri, atau kaki seseorang yang telah memberi anda kebenaran. Lihat <a href="privacy.html">Dasar Privasi</a> kami untuk butirannya.</p>
+
+<h2>8. Penggunaan yang adil dan wajar</h2>
+<p>Tolong jangan: menggunakan aplikasi ini untuk apa-apa yang menyalahi undang-undang; menghantar imej yang bukan kaki atau yang menyalahi undang-undang atau berbahaya; cuba memintas semakan kredit, had kadar atau langkah teknikal lain; menggunakan bot atau akses automatik; menjual semula bacaan sebagai perkhidmatan komersial tanpa persetujuan bertulis kami; atau melakukan kejuruteraan songsang terhadap perkhidmatan ini. Kami mungkin mengenakan had teknikal (seperti had kadar) untuk memastikan perkhidmatan kekal sihat, dan kami mungkin menggantung akaun yang menyalahgunakannya.</p>
+
+<h2>9. Harta intelek</h2>
+<p>Aplikasi ini, pangkalan pengetahuannya, teks, reka bentuk dan perisiannya adalah milik kami (atau pemberi lesen kami). Anda bebas menggunakan bacaan peribadi anda untuk tujuan anda sendiri. Anda tidak boleh menyalin atau menerbitkan semula kandungan atau pangkalan pengetahuan aplikasi ini secara besar-besaran.</p>
+
+<h2>10. Ketersediaan dan perubahan</h2>
+<p>Kami mengendalikan Toe Reading dengan cermat, tetapi menawarkannya "seadanya": kami tidak dapat menjanjikan ketersediaan tanpa gangguan. Sesetengah bahasa ditandakan sebagai beta. Kami mungkin menambah baik, mengubah atau menghentikan sesuatu ciri; jika kami menghentikan perkhidmatan berbayar sepenuhnya, kami akan membayar balik kredit berbayar yang belum digunakan dan bahagian langganan yang belum digunakan.</p>
+
+<h2>11. Liabiliti</h2>
+<p>Setakat yang dibenarkan oleh undang-undang, jumlah liabiliti kami bagi sebarang tuntutan berkaitan perkhidmatan ini terhad kepada jumlah yang anda bayar kepada kami dalam tempoh 12 bulan sebelum tuntutan itu. Kami tidak bertanggungjawab atas kerugian tidak langsung. Tiada apa-apa dalam terma ini yang mengecualikan liabiliti yang tidak boleh dikecualikan di sisi undang-undang (seperti bagi perbuatan sengaja atau kecuaian melampau).</p>
+
+<h2>12. Perubahan pada terma ini</h2>
+<p>Kami mungkin mengemas kini terma ini. Bagi perubahan yang bermakna, kami akan memberitahu anda dalam aplikasi atau melalui e-mel sebelum ia berkuat kuasa. Jika anda terus menggunakan perkhidmatan selepas itu, terma baharu terpakai.</p>
+
+<h2>13. Undang-undang yang terpakai</h2>
+<p>Undang-undang Belanda terpakai. Pertikaian dibawa ke mahkamah yang berbidang kuasa di Belanda; jika anda seorang pengguna, perlindungan pengguna yang wajib di negara tempat tinggal anda kekal tidak terjejas.</p>
+
+<h2>14. Hubungi kami</h2>
+<p>Ada soalan? E-mel <a href="mailto:support@toereading.app">support@toereading.app</a>; ia dibaca oleh manusia sebenar.</p>
+</main>
+<main lang-blok="tl">
+<h1>Mga Tuntunin ng Serbisyo</h1>
+<p class="datum">Petsa ng pagkakabisa: 13 Hulyo 2026</p>
+
+<p>Maligayang pagdating sa Toe Reading (sa Dutch: <em>Tenenspiegel</em>), isang web app para sa masayang pagninilay sa sarili sa pamamagitan ng mga hugis ng mga daliri ng iyong paa. Ang mga tuntuning ito ay isang kasunduan sa simpleng wika sa pagitan mo at namin. Sa paggawa ng account o paggamit ng app, sumasang-ayon ka sa mga ito.</p>
+
+<h2>1. Kung sino kami</h2>
+<p>Ang Toe Reading ay pinapatakbo ng <strong>Ferri Somogyi Productions</strong>, isang sole proprietorship na nakarehistro sa Netherlands (Chamber of Commerce / KvK no. 34286815, VAT ID NL001933433B06). Kontak: <a href="mailto:support@toereading.app">support@toereading.app</a>. Makukuha ang rehistradong address kapag hiniling.</p>
+<p>Ang aming proseso ng pag-order ay isinasagawa ng aming payment partner, na kumikilos bilang <strong>Merchant of Record</strong> (ang legal na nagbebenta) para sa lahat ng aming order: ang payment partner ang legal na nagbebenta ng biniling produkto, humahawak sa pagbabayad, VAT/sales tax, mga invoice at pagproseso ng refund, at nagbibigay ng kaugnay na customer service. Ang kasalukuyang payment partner ay nakapangalan sa checkout at sa iyong resibo.</p>
+
+<h2>2. Kung ano ang Toe Reading, at kung ano ang hindi</h2>
+<div class="kaartje let-op">
+<p><strong>Ang Toe Reading ay para lang sa libangan at pagninilay sa sarili.</strong> Hindi ito serbisyong medikal, sikolohikal, pandiagnostiko o panterapiya, at ang mga pagbasa nito ay hindi payo sa anumang paraan. Walang anuman sa app ang kayang tumuklas, mag-diagnose, gumamot o manghula ng anumang kondisyon ng kalusugan. Kung may alalahanin ka tungkol sa iyong mga paa o kalusugan, magpatingin sa doktor o kuwalipikadong propesyonal.</p>
+</div>
+<p>Sa app, maaari mong kunan ng larawan ang iyong mga paa; kinaklasipika nito ang mga nakikitang katangian ng mga daliri ng iyong paa, at bumubuo ito ng isang mapagninilay at salaysay na "pagbasa" sa tulong ng AI (Claude ng Anthropic). Ang mga pagbasa ay tekstong binuo ng makina: ituring ang mga ito bilang salamin para sa sarili mong pagninilay, hindi bilang mga katotohanan tungkol sa iyo.</p>
+
+<h2>3. Ang iyong account</h2>
+<p>Kailangan mo ng account (pangalan, email, password) para magpatakbo ng mga pagbasa. Dapat ikaw ay <strong>16 taong gulang pataas</strong>. Ingatan ang iyong login details; responsable ka sa aktibidad sa iyong account. Magbigay ng tumpak na impormasyon at panatilihin itong napapanahon. Isang account bawat tao, pakiusap.</p>
+
+<h2>4. Mga credit at subscription</h2>
+<p>Ang mga pagbasa ay tumatakbo sa mga credit ("mga pagsusuri"):</p>
+<ul>
+<li><strong>Mga libreng credit</strong>: ang mga bagong account ay tumatanggap ng 3 libreng pagbasa. Ang mga libreng credit ay walang halagang pera.</li>
+<li><strong>10-pack</strong>: isang beses na pagbili ng 10 pagbasa (€4.99). Hindi nag-e-expire ang mga credit ng pack.</li>
+<li><strong>Taunang subscription</strong>: isang taon ng mga pagbasa (€39.99/taon), sakop ng fair use na <strong>60 pagbasa bawat buwan ng kalendaryo</strong>. Makikita ang counter sa app at nagre-reset ito buwan-buwan.</li>
+</ul>
+<p>Ang isang credit ay sumasakop sa isang kumpletong pagbasa: ang pagsusuri ng larawan kasama ang buong interpretasyon ("Nagkukuwento ang salamin"). Ang mga credit ay personal, hindi naililipat at hindi maaaring ipagpalit sa pera. Ang kasalukuyang mga presyo ay laging nakalagay sa aming <a href="pricing.html">pahina ng mga presyo</a>; lahat ng presyo para sa consumer ay kasama na ang VAT kung naaangkop.</p>
+
+<h2>5. Mga bayad, renewal at pagkansela</h2>
+<p>Ang mga bayad ay pinoproseso ng aming payment partner (tingnan ang seksyon 1). Ang taunang subscription ay <strong>awtomatikong nagre-renew</strong> bawat taon sa presyong umiiral sa panahong iyon; makakatanggap ka ng paalala sa email bago ang renewal. Maaari kang magkansela anumang oras sa pamamagitan ng link sa iyong payment confirmation email o sa pag-email sa <a href="mailto:support@toereading.app">support@toereading.app</a>; pinipigilan ng pagkansela ang susunod na renewal, at mananatiling aktibo ang iyong subscription hanggang sa katapusan ng bayad na termino. Maaari naming baguhin ang mga presyo para sa mga bibilhin at renewal sa hinaharap; iaanunsyo namin ang mga pagbabago bago ka nito maapektuhan.</p>
+
+<h2>6. Mga refund</h2>
+<p>Nalalapat ang aming <a href="refund.html">Refund Policy</a>: sa madaling salita, buong refund sa loob ng 14 araw hangga't hindi pa nagagamit ang mga biniling credit. Ang iyong mga karapatang itinakda ng batas bilang consumer ay hindi kailanman nililimitahan ng mga tuntuning ito.</p>
+
+<h2>7. Ang iyong mga larawan</h2>
+<p>Ang mga larawang isinusumite mo ay ginagamit lang para isagawa ang pagbasang hiniling mo. Ipinapadala ang mga ito nang naka-encrypt, <strong>hindi kailanman iniimbak</strong>, at hindi ginagamit para mag-train ng mga AI model. Magsumite lang ng mga larawan ng sarili mong mga paa, o ng taong nagbigay sa iyo ng pahintulot. Tingnan ang aming <a href="privacy.html">Privacy Policy</a> para sa mga detalye.</p>
+
+<h2>8. Patas at katanggap-tanggap na paggamit</h2>
+<p>Pakiusap, huwag: gamitin ang app para sa anumang labag sa batas; magsumite ng mga larawang hindi paa o labag sa batas o nakakapinsala; subukang lampasan ang mga credit check, rate limit o iba pang teknikal na hakbang; gumamit ng mga bot o automated na access; ibenta muli ang mga pagbasa bilang komersyal na serbisyo nang walang nakasulat naming pagsang-ayon; o i-reverse-engineer ang serbisyo. Maaari kaming maglapat ng mga teknikal na limitasyon (gaya ng mga rate limit) para mapanatiling maayos ang serbisyo, at maaari naming i-suspend ang mga account na umaabuso rito.</p>
+
+<h2>9. Intellectual property</h2>
+<p>Ang app, ang knowledge base nito, mga teksto, disenyo at software ay amin (o sa aming mga tagapaglisensya). Malaya mong magagamit ang iyong mga personal na pagbasa para sa sarili mong layunin. Hindi mo maaaring kopyahin o ilathala muli nang malawakan ang nilalaman o knowledge base ng app.</p>
+
+<h2>10. Availability at mga pagbabago</h2>
+<p>Pinapatakbo namin ang Toe Reading nang may pag-iingat, pero inaalok ito "as is": hindi namin maipapangako ang walang patid na availability. Ang ilang wika ay may markang beta. Maaari naming pagbutihin, baguhin o itigil ang mga feature; kung sakaling itigil namin ang bayad na serbisyo, ire-refund namin ang mga hindi nagamit na bayad na credit at ang hindi nagamit na bahagi ng mga subscription.</p>
+
+<h2>11. Pananagutan</h2>
+<p>Hangga't pinapayagan ng batas, ang aming kabuuang pananagutan para sa anumang paghahabol kaugnay ng serbisyo ay limitado sa halagang binayaran mo sa amin sa 12 buwan bago ang paghahabol. Hindi kami mananagot sa mga di-tuwirang pinsala. Walang anuman sa mga tuntuning ito ang nag-aalis ng pananagutang hindi legal na maaaring alisin (gaya ng para sa sadyang pagkakamali o matinding kapabayaan).</p>
+
+<h2>12. Mga pagbabago sa mga tuntuning ito</h2>
+<p>Maaari naming i-update ang mga tuntuning ito. Para sa mga makabuluhang pagbabago, aabisuhan ka namin sa app o sa email bago magkabisa ang mga ito. Kung patuloy mong gagamitin ang serbisyo pagkatapos noon, nalalapat ang mga bagong tuntunin.</p>
+
+<h2>13. Batas na namamahala</h2>
+<p>Nalalapat ang batas ng Netherlands. Ang mga hidwaan ay dadalhin sa may hurisdiksyong hukuman sa Netherlands; kung ikaw ay consumer, mananatiling hindi apektado ang mga mandatoryong proteksyon para sa consumer ng bansang tinitirhan mo.</p>
+
+<h2>14. Kontak</h2>
+<p>May mga tanong? Mag-email sa <a href="mailto:support@toereading.app">support@toereading.app</a>; totoong tao ang magbabasa nito.</p>
+</main>
+<main lang-blok="el">
+<h1>Όροι Χρήσης</h1>
+<p class="datum">Ημερομηνία ισχύος: 13 Ιουλίου 2026</p>
+
+<p>Καλώς ήρθες στο Toe Reading (στα ολλανδικά: <em>Tenenspiegel</em>), μια διαδικτυακή εφαρμογή για παιχνιδιάρικη αυτογνωσία μέσα από τα σχήματα των δαχτύλων των ποδιών σου. Αυτοί οι όροι είναι μια συμφωνία σε απλή γλώσσα ανάμεσα σε σένα και σε εμάς. Δημιουργώντας λογαριασμό ή χρησιμοποιώντας την εφαρμογή, τους αποδέχεσαι.</p>
+
+<h2>1. Ποιοι είμαστε</h2>
+<p>Το Toe Reading λειτουργεί από την <strong>Ferri Somogyi Productions</strong>, ατομική επιχείρηση καταχωρισμένη στην Ολλανδία (Εμπορικό Επιμελητήριο / αρ. KvK 34286815, αριθμός ΦΠΑ NL001933433B06). Επικοινωνία: <a href="mailto:support@toereading.app">support@toereading.app</a>. Η διεύθυνση της έδρας είναι διαθέσιμη κατόπιν αιτήματος.</p>
+<p>Η διαδικασία παραγγελίας διεκπεραιώνεται από τον συνεργάτη πληρωμών μας, ο οποίος ενεργεί ως <strong>Merchant of Record</strong> (δηλαδή ο νόμιμος πωλητής) για όλες τις παραγγελίες μας: ο συνεργάτης πληρωμών είναι νομικά ο πωλητής της αγοράς σου, χειρίζεται την πληρωμή, τον ΦΠΑ/φόρο πωλήσεων, τα τιμολόγια και τη διεκπεραίωση των επιστροφών χρημάτων, και παρέχει τη σχετική εξυπηρέτηση πελατών. Ο τρέχων συνεργάτης πληρωμών αναφέρεται στο ταμείο και στην απόδειξή σου.</p>
+
+<h2>2. Τι είναι το Toe Reading, και τι δεν είναι</h2>
+<div class="kaartje let-op">
+<p><strong>Το Toe Reading προορίζεται αποκλειστικά για ψυχαγωγία και αυτογνωσία.</strong> Δεν είναι ιατρική, ψυχολογική, διαγνωστική ή θεραπευτική υπηρεσία, και οι αναγνώσεις του δεν αποτελούν συμβουλή κανενός είδους. Τίποτα στην εφαρμογή δεν μπορεί να ανιχνεύσει, να διαγνώσει, να θεραπεύσει ή να προβλέψει οποιοδήποτε πρόβλημα υγείας. Αν έχεις ανησυχίες για τα πόδια σου ή την υγεία σου, πήγαινε σε γιατρό ή σε καταρτισμένο επαγγελματία.</p>
+</div>
+<p>Με την εφαρμογή φωτογραφίζεις τα πόδια σου, ταξινομούνται ορατά χαρακτηριστικά των δαχτύλων σου και δημιουργείται μια στοχαστική, αφηγηματική "ανάγνωση" με τη βοήθεια AI (το Claude της Anthropic). Οι αναγνώσεις είναι κείμενο που παράγεται αυτόματα: δες τες ως καθρέφτη για τον δικό σου αναστοχασμό, όχι ως γεγονότα για σένα.</p>
+
+<h2>3. Ο λογαριασμός σου</h2>
+<p>Για να τρέξεις αναγνώσεις χρειάζεσαι λογαριασμό (όνομα, e-mail, κωδικό πρόσβασης). Πρέπει να είσαι <strong>τουλάχιστον 16 ετών</strong>. Φύλαξε τα στοιχεία σύνδεσής σου με ασφάλεια· εσύ φέρεις την ευθύνη για τη δραστηριότητα στον λογαριασμό σου. Δώσε ακριβή στοιχεία και κράτα τα ενημερωμένα. Ένας λογαριασμός ανά άτομο, παρακαλούμε.</p>
+
+<h2>4. Μονάδες και συνδρομές</h2>
+<p>Οι αναγνώσεις λειτουργούν με μονάδες ("αναλύσεις"):</p>
+<ul>
+<li><strong>Δωρεάν μονάδες</strong>: οι νέοι λογαριασμοί λαμβάνουν 3 δωρεάν αναγνώσεις. Οι δωρεάν μονάδες δεν έχουν χρηματική αξία.</li>
+<li><strong>Πακέτο 10</strong>: εφάπαξ αγορά 10 αναγνώσεων (4,99 €). Οι μονάδες του πακέτου δεν λήγουν.</li>
+<li><strong>Ετήσια συνδρομή</strong>: ένας χρόνος αναγνώσεων (39,99 €/έτος), με όριο εύλογης χρήσης <strong>60 αναγνώσεις ανά ημερολογιακό μήνα</strong>. Ο μετρητής είναι ορατός στην εφαρμογή και μηδενίζεται κάθε μήνα.</li>
+</ul>
+<p>Μία μονάδα καλύπτει μία πλήρη ανάγνωση: την ανάλυση της φωτογραφίας συν την πλήρη ερμηνεία ("Ο καθρέφτης αφηγείται"). Οι μονάδες είναι προσωπικές, δεν μεταβιβάζονται και δεν ανταλλάσσονται με χρήματα. Οι τρέχουσες τιμές εμφανίζονται πάντα στη <a href="pricing.html">σελίδα τιμών</a> μας· όλες οι τιμές καταναλωτή περιλαμβάνουν ΦΠΑ όπου ισχύει.</p>
+
+<h2>5. Πληρωμές, ανανέωση και ακύρωση</h2>
+<p>Οι πληρωμές διεκπεραιώνονται από τον συνεργάτη πληρωμών μας (βλ. ενότητα 1). Η ετήσια συνδρομή <strong>ανανεώνεται αυτόματα</strong> κάθε χρόνο στην εκάστοτε ισχύουσα τιμή· θα λάβεις e-mail υπενθύμισης πριν από την ανανέωση. Μπορείς να ακυρώσεις οποιαδήποτε στιγμή μέσω του συνδέσμου στο e-mail επιβεβαίωσης της πληρωμής σου ή στέλνοντας e-mail στο <a href="mailto:support@toereading.app">support@toereading.app</a>· η ακύρωση σταματά την επόμενη ανανέωση, και η συνδρομή σου παραμένει ενεργή έως το τέλος της πληρωμένης περιόδου. Μπορεί να αλλάξουμε τις τιμές για μελλοντικές αγορές και ανανεώσεις· θα ανακοινώσουμε τις αλλαγές πριν σε επηρεάσουν.</p>
+
+<h2>6. Επιστροφές χρημάτων</h2>
+<p>Ισχύει η <a href="refund.html">Πολιτική Επιστροφών Χρημάτων</a> μας: εν συντομία, πλήρης επιστροφή εντός 14 ημερών, εφόσον οι αγορασμένες μονάδες δεν έχουν χρησιμοποιηθεί. Τα νόμιμα δικαιώματά σου ως καταναλωτή δεν περιορίζονται ποτέ από αυτούς τους όρους.</p>
+
+<h2>7. Οι φωτογραφίες σου</h2>
+<p>Οι φωτογραφίες που στέλνεις χρησιμοποιούνται αποκλειστικά για την εκτέλεση της ανάγνωσης που ζήτησες. Μεταδίδονται κρυπτογραφημένες, <strong>δεν αποθηκεύονται ποτέ</strong> και δεν χρησιμοποιούνται για την εκπαίδευση μοντέλων AI. Στείλε μόνο φωτογραφίες των δικών σου ποδιών, ή κάποιου που σου έχει δώσει την άδειά του. Δες την <a href="privacy.html">Πολιτική Απορρήτου</a> μας για τις λεπτομέρειες.</p>
+
+<h2>8. Δίκαιη και αποδεκτή χρήση</h2>
+<p>Σε παρακαλούμε: μη χρησιμοποιείς την εφαρμογή για οτιδήποτε παράνομο· μη στέλνεις εικόνες που δεν είναι πόδια ή που είναι παράνομες ή επιβλαβείς· μην επιχειρείς να παρακάμψεις τους ελέγχους μονάδων, τα όρια ρυθμού ή άλλα τεχνικά μέτρα· μη χρησιμοποιείς bots ή αυτοματοποιημένη πρόσβαση· μη μεταπωλείς αναγνώσεις ως εμπορική υπηρεσία χωρίς γραπτή συμφωνία μαζί μας· και μην κάνεις αποσυμπίληση (reverse engineering) της υπηρεσίας. Μπορεί να εφαρμόσουμε τεχνικά όρια (όπως όρια ρυθμού) για να κρατήσουμε την υπηρεσία υγιή, και μπορεί να αναστείλουμε λογαριασμούς που την καταχρώνται.</p>
+
+<h2>9. Πνευματική ιδιοκτησία</h2>
+<p>Η εφαρμογή, η βάση γνώσης της, τα κείμενα, ο σχεδιασμός και το λογισμικό ανήκουν σε εμάς (ή στους δικαιοπαρόχους μας). Μπορείς να χρησιμοποιείς ελεύθερα τις προσωπικές σου αναγνώσεις για δικούς σου σκοπούς. Δεν επιτρέπεται να αντιγράφεις ή να αναδημοσιεύεις το περιεχόμενο ή τη βάση γνώσης της εφαρμογής σε μεγάλη κλίμακα.</p>
+
+<h2>10. Διαθεσιμότητα και αλλαγές</h2>
+<p>Λειτουργούμε το Toe Reading με φροντίδα, αλλά το προσφέρουμε "ως έχει": δεν μπορούμε να υποσχεθούμε αδιάλειπτη διαθεσιμότητα. Ορισμένες γλώσσες επισημαίνονται ως βήτα. Μπορεί να βελτιώσουμε, να αλλάξουμε ή να καταργήσουμε λειτουργίες· αν ποτέ σταματήσουμε την επί πληρωμή υπηρεσία, θα επιστρέψουμε τα χρήματα για τις αχρησιμοποίητες πληρωμένες μονάδες και το αχρησιμοποίητο μέρος των συνδρομών.</p>
+
+<h2>11. Ευθύνη</h2>
+<p>Στον βαθμό που επιτρέπεται από τον νόμο, η συνολική μας ευθύνη για οποιεσδήποτε αξιώσεις σχετικές με την υπηρεσία περιορίζεται στο ποσό που μας κατέβαλες τους 12 μήνες πριν από την αξίωση. Δεν ευθυνόμαστε για έμμεσες ζημίες. Τίποτα σε αυτούς τους όρους δεν αποκλείει ευθύνη που δεν μπορεί νομίμως να αποκλειστεί (όπως για δόλο ή βαριά αμέλεια).</p>
+
+<h2>12. Αλλαγές σε αυτούς τους όρους</h2>
+<p>Μπορεί να ενημερώνουμε αυτούς τους όρους. Για ουσιώδεις αλλαγές θα σε ειδοποιήσουμε στην εφαρμογή ή με e-mail πριν τεθούν σε ισχύ. Αν συνεχίσεις να χρησιμοποιείς την υπηρεσία μετά από αυτό, ισχύουν οι νέοι όροι.</p>
+
+<h2>13. Εφαρμοστέο δίκαιο</h2>
+<p>Εφαρμόζεται το ολλανδικό δίκαιο. Οι διαφορές υπάγονται στο αρμόδιο δικαστήριο στην Ολλανδία· αν είσαι καταναλωτής, οι αναγκαστικού δικαίου διατάξεις προστασίας καταναλωτή της χώρας διαμονής σου παραμένουν ανεπηρέαστες.</p>
+
+<h2>14. Επικοινωνία</h2>
+<p>Ερωτήσεις; Στείλε e-mail στο <a href="mailto:support@toereading.app">support@toereading.app</a>· το διαβάζει πραγματικός άνθρωπος.</p>
+</main>
+<main lang-blok="cs">
+<h1>Podmínky služby</h1>
+<p class="datum">Datum účinnosti: 13. července 2026</p>
+
+<p>Vítej v aplikaci Toe Reading (nizozemsky: <em>Tenenspiegel</em>), webové aplikaci pro hravou sebereflexi skrze tvary prstů na tvých nohou. Tyto podmínky jsou dohoda mezi tebou a námi, sepsaná srozumitelným jazykem. Vytvořením účtu nebo používáním aplikace s nimi souhlasíš.</p>
+
+<h2>1. Kdo jsme</h2>
+<p>Aplikaci Toe Reading provozuje <strong>Ferri Somogyi Productions</strong>, živnost (podnik jednotlivce) registrovaná v Nizozemsku (obchodní komora / KvK č. 34286815, DIČ NL001933433B06). Kontakt: <a href="mailto:support@toereading.app">support@toereading.app</a>. Sídlo sdělíme na vyžádání.</p>
+<p>Náš objednávkový proces zajišťuje náš platební partner, který u všech našich objednávek vystupuje jako <strong>Merchant of Record</strong> (obchodník v záznamu): platební partner je právně prodávajícím tvého nákupu, zajišťuje platbu, DPH/prodejní daň, faktury a vyřizování vrácení peněz a poskytuje související zákaznický servis. Aktuální platební partner je uveden u pokladny a na tvé účtence.</p>
+
+<h2>2. Co Toe Reading je, a co není</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading slouží výhradně k zábavě a sebereflexi.</strong> Není to lékařská, psychologická, diagnostická ani terapeutická služba a jeho čtení nejsou poradenstvím žádného druhu. Nic v aplikaci nedokáže odhalit, diagnostikovat, léčit ani předpovědět žádný zdravotní stav. Pokud máš obavy o své nohy nebo o své zdraví, obrať se prosím na lékaře nebo kvalifikovaného odborníka.</p>
+</div>
+<p>V aplikaci si vyfotíš nohy, aplikace klasifikuje viditelné znaky tvých prstů a s pomocí AI (Claude od společnosti Anthropic) vygeneruje reflexivní, vyprávěné „čtení“. Čtení jsou generovaný text: ber je jako zrcadlo pro vlastní reflexi, ne jako fakta o tobě.</p>
+
+<h2>3. Tvůj účet</h2>
+<p>Ke spouštění čtení potřebuješ účet (jméno, e-mail, heslo). Musí ti být <strong>16 let nebo více</strong>. Chraň své přihlašovací údaje; za dění na svém účtu odpovídáš ty. Uváděj správné údaje a udržuj je aktuální. Jeden účet na osobu, prosím.</p>
+
+<h2>4. Kredity a předplatné</h2>
+<p>Čtení fungují na kredity („analýzy“):</p>
+<ul>
+<li><strong>Kredity zdarma</strong>: nové účty dostanou 3 čtení zdarma. Kredity zdarma nemají peněžní hodnotu.</li>
+<li><strong>Balíček 10</strong>: jednorázový nákup 10 čtení (4,99 €). Kredity z balíčku nepropadají.</li>
+<li><strong>Roční předplatné</strong>: rok čtení (39,99 €/rok) v rámci fair use <strong>60 čtení za kalendářní měsíc</strong>. Počítadlo je vidět v aplikaci a každý měsíc se nuluje.</li>
+</ul>
+<p>Jeden kredit pokrývá jedno kompletní čtení: analýzu fotky plus úplný výklad („Zrcadlo vypráví“). Kredity jsou osobní, nepřenosné a nelze je směnit za peníze. Aktuální ceny jsou vždy uvedeny na naší <a href="pricing.html">stránce s cenami</a>; všechny spotřebitelské ceny zahrnují DPH, pokud se uplatní.</p>
+
+<h2>5. Platby, obnovení a zrušení</h2>
+<p>Platby zpracovává náš platební partner (viz bod 1). Roční předplatné se <strong>obnovuje automaticky</strong> každý rok za cenu platnou v danou chvíli; před obnovením ti přijde připomínací e-mail. Zrušit ho můžeš kdykoli přes odkaz v potvrzení platby nebo e-mailem na <a href="mailto:support@toereading.app">support@toereading.app</a>; zrušení zastaví příští obnovení a tvé předplatné zůstává aktivní do konce zaplaceného období. Ceny budoucích nákupů a obnovení můžeme změnit; změny oznámíme dřív, než se tě dotknou.</p>
+
+<h2>6. Vrácení peněz</h2>
+<p>Platí naše <a href="refund.html">zásady vracení peněz</a>: ve zkratce, plné vrácení peněz do 14 dnů, pokud zakoupené kredity nebyly použity. Tvá zákonná práva spotřebitele nejsou těmito podmínkami nikdy omezena.</p>
+
+<h2>7. Tvé fotky</h2>
+<p>Fotky, které odešleš, se používají výhradně k provedení čtení, o které jsi požádal(a). Přenášejí se šifrovaně, <strong>nikdy se neukládají</strong> a nepoužívají se k trénování AI modelů. Odesílej jen fotky vlastních nohou, nebo nohou někoho, kdo ti k tomu dal svolení. Podrobnosti najdeš v našich <a href="privacy.html">zásadách ochrany soukromí</a>.</p>
+
+<h2>8. Poctivé a přijatelné používání</h2>
+<p>Prosím nedělej tohle: nepoužívej aplikaci k ničemu nezákonnému; neodesílej obrázky, které nejsou nohy nebo které jsou protiprávní či škodlivé; nepokoušej se obcházet kontroly kreditů, rychlostní limity ani jiná technická opatření; nepoužívej boty ani automatizovaný přístup; nepřeprodávej čtení jako komerční službu bez naší písemné dohody; a neprováděj reverzní inženýrství služby. Můžeme uplatňovat technické limity (například rate limity), aby služba zůstala zdravá, a můžeme pozastavit účty, které ji zneužívají.</p>
+
+<h2>9. Duševní vlastnictví</h2>
+<p>Aplikace, její znalostní báze, texty, design a software patří nám (nebo našim poskytovatelům licencí). Svá osobní čtení můžeš volně používat pro vlastní účely. Obsah ani znalostní bázi aplikace nesmíš ve velkém kopírovat ani znovu publikovat.</p>
+
+<h2>10. Dostupnost a změny</h2>
+<p>Toe Reading provozujeme s péčí, ale nabízíme ho „tak, jak je“: nepřerušovanou dostupnost slíbit nemůžeme. Některé jazyky jsou označeny jako beta. Funkce můžeme vylepšovat, měnit nebo ukončovat; pokud bychom placenou službu někdy ukončili, vrátíme peníze za nepoužité zaplacené kredity a nevyužitou část předplatných.</p>
+
+<h2>11. Odpovědnost</h2>
+<p>V rozsahu povoleném zákonem je naše celková odpovědnost za jakékoli nároky související se službou omezena na částku, kterou jsi nám zaplatil(a) během 12 měsíců před vznikem nároku. Neodpovídáme za nepřímé škody. Nic v těchto podmínkách nevylučuje odpovědnost, kterou ze zákona vyloučit nelze (například za úmysl nebo hrubou nedbalost).</p>
+
+<h2>12. Změny těchto podmínek</h2>
+<p>Tyto podmínky můžeme aktualizovat. O podstatných změnách tě budeme informovat v aplikaci nebo e-mailem předtím, než nabudou účinnosti. Pokud službu poté dál používáš, platí nové podmínky.</p>
+
+<h2>13. Rozhodné právo</h2>
+<p>Platí nizozemské právo. Spory řeší příslušný soud v Nizozemsku; pokud jsi spotřebitel(ka), kogentní spotřebitelská ochrana země tvého bydliště zůstává nedotčena.</p>
+
+<h2>14. Kontakt</h2>
+<p>Otázky? Napiš na <a href="mailto:support@toereading.app">support@toereading.app</a>; čte to skutečný člověk.</p>
+</main>
+<main lang-blok="ro">
+<h1>Termeni și condiții</h1>
+<p class="datum">Data intrării în vigoare: 13 iulie 2026</p>
+
+<p>Bine ai venit la Toe Reading (în neerlandeză: <em>Tenenspiegel</em>), o aplicație web pentru autoreflecție jucăușă prin formele degetelor de la picioare. Acești termeni sunt un acord, formulat în limbaj simplu, între tine și noi. Prin crearea unui cont sau prin folosirea aplicației, ești de acord cu ei.</p>
+
+<h2>1. Cine suntem</h2>
+<p>Toe Reading este operată de <strong>Ferri Somogyi Productions</strong>, o întreprindere individuală înregistrată în Țările de Jos (Camera de Comerț / KvK nr. 34286815, cod TVA NL001933433B06). Contact: <a href="mailto:support@toereading.app">support@toereading.app</a>. Adresa sediului este disponibilă la cerere.</p>
+<p>Procesul de comandă este derulat de partenerul nostru de plăți, care acționează ca <strong>Merchant of Record</strong> (vânzător oficial) pentru toate comenzile noastre: partenerul de plăți este, din punct de vedere juridic, vânzătorul achiziției, se ocupă de plată, TVA/taxe de vânzare, facturi și procesarea rambursărilor și oferă serviciul de asistență aferent. Partenerul de plăți actual este menționat la finalizarea plății și pe bonul tău.</p>
+
+<h2>2. Ce este Toe Reading, și ce nu este</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading este destinată exclusiv divertismentului și autoreflecției.</strong> Nu este un serviciu medical, psihologic, de diagnostic sau terapeutic, iar citirile sale nu constituie sfaturi de niciun fel. Nimic din aplicație nu poate detecta, diagnostica, trata sau prezice vreo afecțiune de sănătate. Dacă ai îngrijorări legate de picioarele sau de sănătatea ta, mergi la un medic sau la un specialist calificat.</p>
+</div>
+<p>Aplicația îți permite să îți fotografiezi picioarele, clasifică trăsăturile vizibile ale degetelor tale și generează, cu ajutorul AI (Claude de la Anthropic), o "citire" narativă, de reflecție. Citirile sunt text generat: privește-le ca pe o oglindă pentru propria ta reflecție, nu ca pe fapte despre tine.</p>
+
+<h2>3. Contul tău</h2>
+<p>Pentru citiri ai nevoie de un cont (nume, e-mail, parolă). Trebuie să ai <strong>16 ani sau mai mult</strong>. Păstrează-ți datele de conectare în siguranță; ești responsabil pentru activitatea din contul tău. Oferă informații corecte și menține-le actualizate. Un singur cont de persoană, te rugăm.</p>
+
+<h2>4. Credite și abonamente</h2>
+<p>Citirile funcționează pe bază de credite ("analize"):</p>
+<ul>
+<li><strong>Credite gratuite</strong>: conturile noi primesc 3 citiri gratuite. Creditele gratuite nu au valoare monetară.</li>
+<li><strong>Pachetul de 10</strong>: o achiziție unică de 10 citiri (4,99 €). Creditele din pachet nu expiră.</li>
+<li><strong>Abonament anual</strong>: un an de citiri (39,99 €/an), cu o limită de utilizare rezonabilă de <strong>60 de citiri pe lună calendaristică</strong>. Contorul este vizibil în aplicație și se resetează lunar.</li>
+</ul>
+<p>Un credit acoperă o citire completă: analiza fotografiei plus interpretarea integrală ("Oglinda povestește"). Creditele sunt personale, netransferabile și nu pot fi preschimbate în bani. Prețurile actuale sunt afișate întotdeauna pe <a href="pricing.html">pagina noastră de prețuri</a>; toate prețurile pentru consumatori includ TVA, acolo unde se aplică.</p>
+
+<h2>5. Plăți, reînnoire și anulare</h2>
+<p>Plățile sunt procesate de partenerul nostru de plăți (vezi punctul 1). Abonamentul anual <strong>se reînnoiește automat</strong> în fiecare an, la prețul valabil în acel moment; vei primi un e-mail de reamintire înainte de reînnoire. Poți anula oricând prin linkul din e-mailul de confirmare a plății sau scriind la <a href="mailto:support@toereading.app">support@toereading.app</a>; anularea oprește următoarea reînnoire, iar abonamentul rămâne activ până la sfârșitul perioadei plătite. Putem modifica prețurile pentru achiziții și reînnoiri viitoare; vom anunța schimbările înainte ca ele să te afecteze.</p>
+
+<h2>6. Rambursări</h2>
+<p>Se aplică <a href="refund.html">Politica noastră de rambursare</a>: pe scurt, rambursare integrală în termen de 14 zile, atât timp cât creditele cumpărate nu au fost folosite. Drepturile tale legale de consumator nu sunt niciodată limitate de acești termeni.</p>
+
+<h2>7. Fotografiile tale</h2>
+<p>Fotografiile pe care le trimiți sunt folosite exclusiv pentru realizarea citirii pe care ai cerut-o. Sunt transmise criptat, <strong>nu sunt salvate niciodată</strong> și nu sunt folosite pentru antrenarea modelelor AI. Trimite doar fotografii ale propriilor tale picioare sau ale unei persoane care ți-a dat permisiunea. Vezi <a href="privacy.html">Politica noastră de confidențialitate</a> pentru detalii.</p>
+
+<h2>8. Utilizare corectă și acceptabilă</h2>
+<p>Te rugăm să nu: folosești aplicația pentru ceva ilegal; trimiți imagini care nu sunt picioare sau care sunt ilegale ori dăunătoare; încerci să ocolești verificările de credit, limitele de utilizare sau alte măsuri tehnice; folosești boți sau acces automatizat; revinzi citirile ca serviciu comercial fără acordul nostru scris; sau faci inginerie inversă asupra serviciului. Putem aplica limite tehnice (cum ar fi limite de frecvență) pentru a menține serviciul sănătos și putem suspenda conturile care abuzează de el.</p>
+
+<h2>9. Proprietate intelectuală</h2>
+<p>Aplicația, baza sa de cunoștințe, textele, designul și software-ul ne aparțin nouă (sau licențiatorilor noștri). Îți poți folosi liber citirile personale în scopuri proprii. Nu ai voie să copiezi sau să republici la scară largă conținutul aplicației sau baza de cunoștințe.</p>
+
+<h2>10. Disponibilitate și modificări</h2>
+<p>Administrăm Toe Reading cu grijă, dar o oferim "ca atare": nu putem promite disponibilitate neîntreruptă. Unele limbi sunt marcate beta. Putem îmbunătăți, modifica sau întrerupe funcții; dacă vreodată întrerupem serviciul plătit, vom rambursa creditele plătite nefolosite și partea nefolosită a abonamentelor.</p>
+
+<h2>11. Răspundere</h2>
+<p>În măsura permisă de lege, răspunderea noastră totală pentru orice pretenții legate de serviciu este limitată la suma pe care ne-ai plătit-o în cele 12 luni dinaintea pretenției. Nu răspundem pentru daune indirecte. Nimic din acești termeni nu exclude răspunderea care nu poate fi exclusă legal (cum ar fi cea pentru intenție sau neglijență gravă).</p>
+
+<h2>12. Modificări ale acestor termeni</h2>
+<p>Putem actualiza acești termeni. Pentru schimbări importante te vom anunța în aplicație sau prin e-mail înainte ca ele să intre în vigoare. Dacă după aceea continui să folosești serviciul, se aplică noii termeni.</p>
+
+<h2>13. Legea aplicabilă</h2>
+<p>Se aplică legea neerlandeză. Litigiile revin instanței competente din Țările de Jos; dacă ești consumator, protecțiile obligatorii pentru consumatori din țara ta de reședință rămân neatinse.</p>
+
+<h2>14. Contact</h2>
+<p>Întrebări? Scrie la <a href="mailto:support@toereading.app">support@toereading.app</a>; un om în carne și oase citește mesajul.</p>
+</main>
+<main lang-blok="sv">
+<h1>Användarvillkor</h1>
+<p class="datum">Gäller från: 13 juli 2026</p>
+
+<p>Välkommen till Toe Reading (på nederländska: <em>Tenenspiegel</em>), en webbapp för lekfull självreflektion via formerna på dina tår. De här villkoren är en överenskommelse på vanligt språk mellan dig och oss. Genom att skapa ett konto eller använda appen godkänner du dem.</p>
+
+<h2>1. Vilka vi är</h2>
+<p>Toe Reading drivs av <strong>Ferri Somogyi Productions</strong>, en enskild firma registrerad i Nederländerna (handelskammarnummer / KvK-nr 34286815, momsregistreringsnummer NL001933433B06). Kontakt: <a href="mailto:support@toereading.app">support@toereading.app</a>. Registrerad adress lämnas ut på begäran.</p>
+<p>Vår beställningsprocess sköts av vår betalpartner, som agerar <strong>Merchant of Record</strong> (juridiskt sett säljaren) för alla våra beställningar: betalpartnern är juridiskt säljare av köpet, hanterar betalning, moms, fakturor och genomförandet av återbetalningar, och står för tillhörande kundservice. Vilken betalpartner som gäller anges i kassan och på ditt kvitto.</p>
+
+<h2>2. Vad Toe Reading är, och inte är</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading är enbart till för underhållning och självreflektion.</strong> Det är ingen medicinsk, psykologisk, diagnostisk eller terapeutisk tjänst, och läsningarna är inte råd av något slag. Ingenting i appen kan upptäcka, diagnostisera, behandla eller förutsäga något hälsotillstånd. Om du är orolig för dina fötter eller din hälsa, kontakta en läkare eller en kvalificerad yrkesperson.</p>
+</div>
+<p>Med appen fotograferar du dina fötter, synliga drag hos dina tår klassificeras, och en reflekterande, berättande "läsning" genereras med hjälp av AI (Anthropics Claude). Läsningar är genererad text: se dem som en spegel för din egen reflektion, inte som fakta om dig.</p>
+
+<h2>3. Ditt konto</h2>
+<p>Du behöver ett konto (namn, e-post, lösenord) för att köra läsningar. Du måste vara <strong>16 år eller äldre</strong>. Håll dina inloggningsuppgifter säkra; du ansvarar för aktiviteten på ditt konto. Ange korrekta uppgifter och håll dem uppdaterade. Ett konto per person, tack.</p>
+
+<h2>4. Saldo och abonnemang</h2>
+<p>Läsningar körs på krediter ("analyser"):</p>
+<ul>
+<li><strong>Gratiskrediter</strong>: nya konton får 3 gratis läsningar. Gratiskrediter har inget penningvärde.</li>
+<li><strong>10-paket</strong>: ett engångsköp av 10 läsningar (4,99 €). Paketkrediter går aldrig ut.</li>
+<li><strong>Årsabonnemang</strong>: ett år med läsningar (39,99 €/år), med en fair use-gräns på <strong>60 läsningar per kalendermånad</strong>. Räknaren syns i appen och nollställs varje månad.</li>
+</ul>
+<p>En kredit täcker en komplett läsning: fotoanalysen plus den fullständiga tydningen ("Spegeln berättar"). Krediter är personliga, kan inte överlåtas och kan inte växlas in mot pengar. Aktuella priser visas alltid på vår <a href="pricing.html">prissida</a>; alla konsumentpriser inkluderar moms där det är tillämpligt.</p>
+
+<h2>5. Betalning, förnyelse och uppsägning</h2>
+<p>Betalningar hanteras av vår betalpartner (se punkt 1). Årsabonnemanget <strong>förnyas automatiskt</strong> varje år till det då gällande priset; du får ett påminnelsemejl före förnyelsen. Du kan säga upp när som helst via länken i din betalningsbekräftelse eller genom att mejla <a href="mailto:support@toereading.app">support@toereading.app</a>; uppsägningen stoppar nästa förnyelse, och ditt abonnemang förblir aktivt till slutet av den betalda perioden. Vi kan ändra priser för framtida köp och förnyelser; vi meddelar ändringar innan de påverkar dig.</p>
+
+<h2>6. Återbetalningar</h2>
+<p>Vår <a href="refund.html">återbetalningspolicy</a> gäller: i korthet full återbetalning inom 14 dagar, så länge de köpta krediterna inte har använts. Dina lagstadgade rättigheter som konsument begränsas aldrig av dessa villkor.</p>
+
+<h2>7. Dina foton</h2>
+<p>Foton du skickar in används enbart för att genomföra den läsning du begärt. De överförs krypterat, <strong>sparas aldrig</strong> och används inte för att träna AI-modeller. Skicka bara in foton av dina egna fötter, eller av någon som har gett dig tillåtelse. Se vår <a href="privacy.html">integritetspolicy</a> för detaljerna.</p>
+
+<h2>8. Rimlig och tillåten användning</h2>
+<p>Gör inte det här, tack: använda appen för något olagligt; skicka in bilder som inte är fötter eller som är olagliga eller skadliga; försöka kringgå kreditkontroller, hastighetsbegränsningar eller andra tekniska åtgärder; använda bottar eller automatiserad åtkomst; sälja läsningar vidare som kommersiell tjänst utan skriftlig överenskommelse med oss; eller baklängeskonstruera tjänsten. Vi kan tillämpa tekniska gränser (som hastighetsbegränsningar) för att hålla tjänsten frisk, och vi kan stänga av konton som missbrukar den.</p>
+
+<h2>9. Immateriella rättigheter</h2>
+<p>Appen, dess kunskapsbank, texter, design och programvara tillhör oss (eller våra licensgivare). Dina personliga läsningar får du använda fritt för egna ändamål. Du får inte kopiera eller återpublicera appens innehåll eller kunskapsbank i stor skala.</p>
+
+<h2>10. Tillgänglighet och ändringar</h2>
+<p>Vi driver Toe Reading med omsorg, men erbjuder appen "i befintligt skick": vi kan inte lova oavbruten tillgänglighet. Vissa språk är märkta som beta. Vi kan förbättra, ändra eller avveckla funktioner; om vi någon gång avvecklar den betalda tjänsten återbetalar vi oanvända köpta krediter och den oanvända delen av abonnemang.</p>
+
+<h2>11. Ansvar</h2>
+<p>I den utsträckning lagen tillåter är vårt totala ansvar för alla anspråk kopplade till tjänsten begränsat till det belopp du har betalat oss under de 12 månaderna före anspråket. Vi ansvarar inte för indirekta skador. Ingenting i dessa villkor utesluter ansvar som inte lagligen kan uteslutas (till exempel vid uppsåt eller grov vårdslöshet).</p>
+
+<h2>12. Ändringar av dessa villkor</h2>
+<p>Vi kan uppdatera dessa villkor. Vid betydande ändringar meddelar vi dig i appen eller via e-post innan de träder i kraft. Fortsätter du använda tjänsten därefter gäller de nya villkoren.</p>
+
+<h2>13. Tillämplig lag</h2>
+<p>Nederländsk lag gäller. Tvister avgörs av behörig domstol i Nederländerna; är du konsument påverkas inte det tvingande konsumentskyddet i ditt hemland.</p>
+
+<h2>14. Kontakt</h2>
+<p>Frågor? Mejla <a href="mailto:support@toereading.app">support@toereading.app</a>; en riktig människa läser det.</p>
+</main>
+<main lang-blok="zht">
+<h1>服務條款</h1>
+<p class="datum">生效日期：2026 年 7 月 13 日</p>
+
+<p>歡迎使用 Toe Reading（荷蘭文名稱：<em>Tenenspiegel</em>），這是一款透過腳趾形狀進行趣味自我省思的網頁應用程式。本條款是你與我們之間以淺白語言寫成的協議。建立帳戶或使用本應用程式，即表示你同意本條款。</p>
+
+<h2>1. 我們是誰</h2>
+<p>Toe Reading 由 <strong>Ferri Somogyi Productions</strong> 營運，這是一家在荷蘭登記的獨資企業（荷蘭商會 / KvK 編號 34286815，加值稅編號 NL001933433B06）。聯絡方式：<a href="mailto:support@toereading.app">support@toereading.app</a>。登記地址可依請求提供。</p>
+<p>我們的訂購流程由我們的付款合作夥伴執行，該夥伴以 <strong>Merchant of Record</strong>（登記商家，即法律上的賣方）身分處理我們的所有訂單：付款合作夥伴在法律上是該筆交易的賣方，負責處理付款、加值稅／銷售稅、發票與退款作業，並提供相關客戶服務。目前的付款合作夥伴會在結帳頁面及你的收據上載明。</p>
+
+<h2>2. Toe Reading 是什麼，不是什麼</h2>
+<div class="kaartje let-op">
+<p><strong>Toe Reading 僅供娛樂與自我省思之用。</strong>它不是醫療、心理、診斷或治療服務，其解讀也不構成任何形式的建議。本應用程式中的任何內容都無法偵測、診斷、治療或預測任何健康狀況。如果你對自己的雙腳或健康有疑慮，請諮詢醫師或合格的專業人員。</p>
+</div>
+<p>本應用程式讓你拍攝自己的雙腳，對腳趾的可見特徵進行分類，並在 AI（Anthropic 的 Claude）協助下產生一段反思性的敘事「解讀」。解讀是生成的文字：請把它當作供你自我省思的一面鏡子，而不是關於你的事實。</p>
+
+<h2>3. 你的帳戶</h2>
+<p>你需要一個帳戶（姓名、電子郵件、密碼）才能執行解讀。你必須<strong>年滿 16 歲</strong>。請妥善保管你的登入資訊；你對帳戶上的活動負責。請提供正確的資訊並保持更新。請每人只使用一個帳戶。</p>
+
+<h2>4. 額度與訂閱</h2>
+<p>解讀以額度（「分析」）計算：</p>
+<ul>
+<li><strong>免費額度</strong>：新帳戶可獲得 3 次免費解讀。免費額度不具金錢價值。</li>
+<li><strong>10 次組合包</strong>：一次性購買 10 次解讀（€4.99）。組合包額度不會過期。</li>
+<li><strong>年度訂閱</strong>：一年的解讀（€39.99／年），適用合理使用原則，即<strong>每曆月最多 60 次解讀</strong>。計數器可在應用程式中查看，並按月重置。</li>
+</ul>
+<p>一個額度涵蓋一次完整的解讀：照片分析加上完整的詮釋（「聽鏡子說」）。額度屬於個人，不可轉讓，也不能兌換成金錢。目前價格一律顯示在我們的<a href="pricing.html">價格頁面</a>；所有消費者價格在適用情況下均含加值稅。</p>
+
+<h2>5. 付款、續訂與取消</h2>
+<p>付款由我們的付款合作夥伴處理（見第 1 條）。年度訂閱會以屆時的現行價格<strong>每年自動續訂</strong>；續訂前你會收到提醒電子郵件。你可以隨時透過付款確認電子郵件中的連結，或寄信到 <a href="mailto:support@toereading.app">support@toereading.app</a> 取消；取消會停止下一次續訂，你的訂閱在已付費期間結束前仍保持有效。我們可能調整未來購買與續訂的價格；在調整影響到你之前，我們會事先公告。</p>
+
+<h2>6. 退款</h2>
+<p>我們的<a href="refund.html">退款政策</a>適用：簡而言之，只要所購額度尚未使用，購買後 14 天內可獲全額退款。本條款絕不限制你作為消費者的法定權利。</p>
+
+<h2>7. 你的照片</h2>
+<p>你提交的照片僅用於執行你所請求的解讀。照片以加密方式傳輸，<strong>絕不儲存</strong>，也不會用於訓練 AI 模型。請只提交你自己雙腳的照片，或已獲得本人同意者的照片。詳情請見我們的<a href="privacy.html">隱私權政策</a>。</p>
+
+<h2>8. 合理與正當使用</h2>
+<p>請不要：將本應用程式用於任何違法用途；提交非腳部影像或違法、有害的影像；試圖規避額度檢查、速率限制或其他技術措施；使用機器人或自動化存取；未經我們書面同意，將解讀作為商業服務轉售；或對本服務進行逆向工程。為維持服務健全，我們可能施加技術性限制（例如速率限制），並可能停用濫用服務的帳戶。</p>
+
+<h2>9. 智慧財產權</h2>
+<p>本應用程式及其知識庫、文字、設計與軟體屬於我們（或我們的授權方）。你可以自由將你的個人解讀用於自己的目的。你不得大規模複製或轉載本應用程式的內容或知識庫。</p>
+
+<h2>10. 可用性與變更</h2>
+<p>我們用心營運 Toe Reading，但以「現狀」提供服務：我們無法承諾服務不中斷。部分語言標示為測試版。我們可能改進、變更或停止某些功能；如果我們終止付費服務，我們會退還未使用的付費額度以及訂閱中未使用的部分。</p>
+
+<h2>11. 責任</h2>
+<p>在法律允許的範圍內，我們對與本服務相關的任何請求所承擔的總責任，以你在該請求提出前 12 個月內支付給我們的金額為上限。我們不對間接損害負責。本條款不排除依法不得排除的責任（例如故意或重大過失）。</p>
+
+<h2>12. 本條款的變更</h2>
+<p>我們可能更新本條款。對於重大變更，我們會在生效前透過應用程式或電子郵件通知你。如果你在此之後繼續使用本服務，即適用新條款。</p>
+
+<h2>13. 準據法</h2>
+<p>適用荷蘭法律。爭議由荷蘭具管轄權的法院審理；如果你是消費者，你居住國的強制性消費者保護規定不受影響。</p>
+
+<h2>14. 聯絡方式</h2>
+<p>有問題嗎？請寄電子郵件到 <a href="mailto:support@toereading.app">support@toereading.app</a>；會有真人閱讀。</p>
 </main>
 
 <footer>
@@ -174,16 +1827,24 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 </div>
 <script>
 (function(){
+  var TALEN=["en","nl","de","fr","es","it","pt","pl","ru","tr","ar","zh","ja","ko","hi","id","vi","th","uk","hu","bn","ur","fa","ms","tl","el","cs","ro","sv","zht"];
+  var RTL={ar:1,ur:1,fa:1};
   var t='en';
-  try{ t = localStorage.legal_taal || ((localStorage.taal==='nl' || (navigator.language||'').slice(0,2).toLowerCase()==='nl')?'nl':'en'); }catch(e){}
-  if(t!=='nl') t='en';
+  try{
+    var app=localStorage.taal, kies=localStorage.legal_taal;
+    t = (TALEN.indexOf(app)>=0 ? app : (TALEN.indexOf(kies)>=0 ? kies : (navigator.language||'').slice(0,2).toLowerCase()));
+  }catch(e){}
+  if(TALEN.indexOf(t)<0) t='en';
+  var sel=document.getElementById('taalKeuze');
   function zet(x){
+    if(TALEN.indexOf(x)<0) x='en';
     document.documentElement.setAttribute('data-taal',x);
     document.documentElement.lang=x;
-    document.querySelectorAll('.talen button').forEach(function(b){b.classList.toggle('actief',b.getAttribute('data-t')===x);});
+    document.documentElement.dir=RTL[x]?'rtl':'ltr';
+    if(sel) sel.value=x;
     try{localStorage.legal_taal=x;}catch(e){}
   }
-  document.querySelectorAll('.talen button').forEach(function(b){b.onclick=function(){zet(b.getAttribute('data-t'));};});
+  if(sel) sel.onchange=function(){zet(sel.value);};
   zet(t);
 })();
 </script>

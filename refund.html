@@ -33,13 +33,43 @@ footer nav{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:10px}
 [lang-blok]{display:none}
 html[data-taal="en"] [lang-blok="en"]{display:block}
 html[data-taal="nl"] [lang-blok="nl"]{display:block}
+html[data-taal="de"] [lang-blok="de"]{display:block}
+html[data-taal="fr"] [lang-blok="fr"]{display:block}
+html[data-taal="es"] [lang-blok="es"]{display:block}
+html[data-taal="it"] [lang-blok="it"]{display:block}
+html[data-taal="pt"] [lang-blok="pt"]{display:block}
+html[data-taal="pl"] [lang-blok="pl"]{display:block}
+html[data-taal="ru"] [lang-blok="ru"]{display:block}
+html[data-taal="tr"] [lang-blok="tr"]{display:block}
+html[data-taal="ar"] [lang-blok="ar"]{display:block}
+html[data-taal="zh"] [lang-blok="zh"]{display:block}
+html[data-taal="ja"] [lang-blok="ja"]{display:block}
+html[data-taal="ko"] [lang-blok="ko"]{display:block}
+html[data-taal="hi"] [lang-blok="hi"]{display:block}
+html[data-taal="id"] [lang-blok="id"]{display:block}
+html[data-taal="vi"] [lang-blok="vi"]{display:block}
+html[data-taal="th"] [lang-blok="th"]{display:block}
+html[data-taal="uk"] [lang-blok="uk"]{display:block}
+html[data-taal="hu"] [lang-blok="hu"]{display:block}
+html[data-taal="bn"] [lang-blok="bn"]{display:block}
+html[data-taal="ur"] [lang-blok="ur"]{display:block}
+html[data-taal="fa"] [lang-blok="fa"]{display:block}
+html[data-taal="ms"] [lang-blok="ms"]{display:block}
+html[data-taal="tl"] [lang-blok="tl"]{display:block}
+html[data-taal="el"] [lang-blok="el"]{display:block}
+html[data-taal="cs"] [lang-blok="cs"]{display:block}
+html[data-taal="ro"] [lang-blok="ro"]{display:block}
+html[data-taal="sv"] [lang-blok="sv"]{display:block}
+html[data-taal="zht"] [lang-blok="zht"]{display:block}
+html[dir="rtl"] main{direction:rtl;text-align:right}
+.talen select{border:1px solid var(--lijn);background:var(--kaart);color:var(--inkt);border-radius:8px;padding:6px 10px;font-family:'Karla',sans-serif;font-size:.9rem;max-width:180px}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header class="top">
   <a class="merk" href="./"><img src="icons/icon-192.png" alt=""><b>Toe Reading</b></a>
-  <nav class="talen"><button data-t="en">EN</button><button data-t="nl">NL</button></nav>
+  <nav class="talen"><select id="taalKeuze" aria-label="Language"><option value="en">English</option><option value="nl">Nederlands</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="es">Español</option><option value="it">Italiano</option><option value="pt">Português</option><option value="pl">Polski</option><option value="ru">Русский</option><option value="tr">Türkçe</option><option value="ar">العربية</option><option value="zh">中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="hi">हिन्दी</option><option value="id">Bahasa Indonesia</option><option value="vi">Tiếng Việt</option><option value="th">ไทย</option><option value="uk">Українська</option><option value="hu">Magyar</option><option value="bn">বাংলা</option><option value="ur">اردو</option><option value="fa">فارسی</option><option value="ms">Bahasa Melayu</option><option value="tl">Filipino</option><option value="el">Ελληνικά</option><option value="cs">Čeština</option><option value="ro">Română</option><option value="sv">Svenska</option><option value="zht">繁體中文</option></select></nav>
 </header>
 
 <main lang-blok="en">
@@ -47,7 +77,7 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 <p class="datum">Effective date: 13 July 2026</p>
 
 <div class="kaartje groen">
-<p><strong>The short version:</strong> full refund within 14 days of purchase, as long as you haven't used the purchased credits. Refunds are processed by Paddle, our Merchant of Record, back to your original payment method.</p>
+<p><strong>The short version:</strong> full refund within 14 days of purchase, as long as you haven't used the purchased credits. Refunds are processed by our payment partner (the Merchant of Record) back to your original payment method.</p>
 </div>
 
 <h2>1. The 14-day right of withdrawal</h2>
@@ -59,21 +89,20 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 </ul>
 
 <h2>2. How to request a refund</h2>
-<p>E-mail <a href="mailto:support@toereading.app">support@toereading.app</a> with your order number (it's in your Paddle receipt), or use the link in the Paddle receipt e-mail itself. Paddle processes approved refunds to your original payment method, usually within 5–10 business days. When a purchase is refunded, the corresponding credits are removed from your account.</p>
+<p>E-mail <a href="mailto:support@toereading.app">support@toereading.app</a> with your order number (it's in your payment confirmation e-mail), or use the link in that e-mail. Our payment partner processes approved refunds to your original payment method, usually within 5–10 business days. When a purchase is refunded, the corresponding credits are removed from your account.</p>
 
 <h2>3. If something is wrong on our side</h2>
-<p>If the service is faulty — a purchase wasn't credited, readings fail through no fault of yours — contact us and we'll make it right: we fix it, re-credit you, or refund you. Your statutory rights as a consumer always remain intact and are never limited by this policy.</p>
+<p>If the service is faulty (a purchase wasn't credited, readings fail through no fault of yours), contact us and we'll make it right: we fix it, re-credit you, or refund you. Your statutory rights as a consumer always remain intact and are never limited by this policy.</p>
 
 <h2>4. Cancelling your subscription</h2>
-<p>Cancelling is not the same as a refund request: cancel any time via the link in your Paddle receipt or by e-mailing us. You keep access until the end of the period you paid for, and the subscription simply doesn't renew. You'll receive a reminder e-mail before each renewal.</p>
+<p>Cancelling is not the same as a refund request: cancel any time via the link in your payment confirmation e-mail or by e-mailing us. You keep access until the end of the period you paid for, and the subscription simply doesn't renew. You'll receive a reminder e-mail before each renewal.</p>
 </main>
-
 <main lang-blok="nl">
 <h1>Terugbetalingsbeleid</h1>
 <p class="datum">Ingangsdatum: 13 juli 2026</p>
 
 <div class="kaartje groen">
-<p><strong>De korte versie:</strong> volledige terugbetaling binnen 14 dagen na aankoop, zolang je het gekochte tegoed niet hebt gebruikt. Terugbetalingen worden uitgevoerd door Paddle, onze Merchant of Record, op je oorspronkelijke betaalmethode.</p>
+<p><strong>De korte versie:</strong> volledige terugbetaling binnen 14 dagen na aankoop, zolang je het gekochte tegoed niet hebt gebruikt. Terugbetalingen worden uitgevoerd door onze betaalpartner (de Merchant of Record) op je oorspronkelijke betaalmethode.</p>
 </div>
 
 <h2>1. De 14 dagen bedenktijd</h2>
@@ -85,13 +114,713 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 </ul>
 
 <h2>2. Zo vraag je een terugbetaling aan</h2>
-<p>Mail <a href="mailto:support@toereading.app">support@toereading.app</a> met je bestelnummer (staat in je Paddle-bon), of gebruik de link in de Paddle-bevestigingsmail zelf. Paddle verwerkt goedgekeurde terugbetalingen op je oorspronkelijke betaalmethode, meestal binnen 5–10 werkdagen. Bij een terugbetaling wordt het bijbehorende tegoed van je account gehaald.</p>
+<p>Mail <a href="mailto:support@toereading.app">support@toereading.app</a> met je bestelnummer (staat in je betaalbevestiging), of gebruik de link in die mail zelf. Onze betaalpartner verwerkt goedgekeurde terugbetalingen op je oorspronkelijke betaalmethode, meestal binnen 5–10 werkdagen. Bij een terugbetaling wordt het bijbehorende tegoed van je account gehaald.</p>
 
 <h2>3. Als er iets mis is aan onze kant</h2>
-<p>Werkt de dienst niet goed — een aankoop is niet bijgeschreven, lezingen mislukken buiten jouw schuld — neem dan contact op en we maken het in orde: we lossen het op, schrijven tegoed bij of betalen terug. Je wettelijke rechten als consument blijven altijd intact en worden door dit beleid nooit beperkt.</p>
+<p>Werkt de dienst niet goed (een aankoop is niet bijgeschreven, lezingen mislukken buiten jouw schuld), neem dan contact op en we maken het in orde: we lossen het op, schrijven tegoed bij of betalen terug. Je wettelijke rechten als consument blijven altijd intact en worden door dit beleid nooit beperkt.</p>
 
 <h2>4. Je abonnement opzeggen</h2>
-<p>Opzeggen is iets anders dan een terugbetaling: opzeggen kan altijd via de link in je Paddle-bon of per mail aan ons. Je houdt toegang tot het einde van de betaalde periode en het abonnement verlengt simpelweg niet. Vóór elke verlenging krijg je een herinneringsmail.</p>
+<p>Opzeggen is iets anders dan een terugbetaling: opzeggen kan altijd via de link in je betaalbevestiging of per mail aan ons. Je houdt toegang tot het einde van de betaalde periode en het abonnement verlengt simpelweg niet. Vóór elke verlenging krijg je een herinneringsmail.</p>
+</main>
+<main lang-blok="de">
+<h1>Rückerstattungsrichtlinie</h1>
+<p class="datum">Gültig ab: 13. Juli 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Die Kurzfassung:</strong> volle Rückerstattung innerhalb von 14 Tagen nach dem Kauf, solange du das gekaufte Guthaben nicht genutzt hast. Rückerstattungen werden von unserem Zahlungspartner (dem Merchant of Record) auf deine ursprüngliche Zahlungsmethode ausgeführt.</p>
+</div>
+
+<h2>1. Das 14-tägige Widerrufsrecht</h2>
+<p>Als Verbraucher in der EU, im EWR oder im Vereinigten Königreich hast du das gesetzliche Recht, einen Kauf innerhalb von 14 Tagen zu widerrufen. Weil Guthaben digitale Inhalte sind, die sofort verfügbar werden, stimmst du an der Kasse zu, dass wir sofort mit der Lieferung beginnen. In der Praxis bedeutet das:</p>
+<ul>
+<li><strong>10er-Paket (€ 4,99):</strong> volle Rückerstattung innerhalb von 14 Tagen nach dem Kauf, wenn keines der 10 Guthaben genutzt wurde. Sobald du ein oder mehrere Guthaben aus dem Paket nutzt, erlischt das Widerrufsrecht.</li>
+<li><strong>Jahresabo (€ 39,99/Jahr):</strong> volle Rückerstattung innerhalb von 14 Tagen nach dem Kauf (oder nach einer Verlängerungsabbuchung), wenn du in diesem neuen Zeitraum noch keine Lesungen ausgeführt hast. Nach den 14 Tagen kannst du jederzeit kündigen: Dein Zugang läuft bis zum Ende des bezahlten Jahres weiter, und für den Rest gibt es keine anteilige Rückerstattung.</li>
+<li><strong>Gratis-Guthaben:</strong> hat keinen Geldwert und kann nicht erstattet werden.</li>
+</ul>
+
+<h2>2. So beantragst du eine Rückerstattung</h2>
+<p>Schreib an <a href="mailto:support@toereading.app">support@toereading.app</a> und nenne deine Bestellnummer (sie steht in deiner Zahlungsbestätigungs-E-Mail), oder nutze den Link in dieser E-Mail. Unser Zahlungspartner führt genehmigte Rückerstattungen auf deine ursprüngliche Zahlungsmethode aus, in der Regel innerhalb von 5–10 Werktagen. Wird ein Kauf erstattet, wird das zugehörige Guthaben von deinem Konto entfernt.</p>
+
+<h2>3. Wenn auf unserer Seite etwas schiefläuft</h2>
+<p>Wenn der Dienst fehlerhaft ist (ein Kauf wurde nicht gutgeschrieben, Lesungen scheitern ohne dein Zutun), melde dich bei uns und wir bringen es in Ordnung: Wir beheben es, schreiben dir Guthaben gut oder erstatten dir den Betrag. Deine gesetzlichen Rechte als Verbraucher bleiben immer bestehen und werden durch diese Richtlinie niemals eingeschränkt.</p>
+
+<h2>4. Dein Abo kündigen</h2>
+<p>Kündigen ist nicht dasselbe wie eine Rückerstattungsanfrage: Kündigen kannst du jederzeit über den Link in deiner Zahlungsbestätigungs-E-Mail oder per E-Mail an uns. Du behältst den Zugang bis zum Ende des Zeitraums, den du bezahlt hast, und das Abo verlängert sich einfach nicht. Vor jeder Verlängerung erhältst du eine Erinnerungs-E-Mail.</p>
+</main>
+<main lang-blok="fr">
+<h1>Politique de remboursement</h1>
+<p class="datum">Date d'entrée en vigueur : 13 juillet 2026</p>
+
+<div class="kaartje groen">
+<p><strong>La version courte :</strong> remboursement intégral dans les 14 jours suivant l'achat, tant que tu n'as pas utilisé le crédit acheté. Les remboursements sont effectués par notre partenaire de paiement (le Merchant of Record) sur ton moyen de paiement d'origine.</p>
+</div>
+
+<h2>1. Le droit de rétractation de 14 jours</h2>
+<p>Si tu es consommateur dans l'UE/l'EEE ou au Royaume-Uni, tu disposes d'un droit légal de rétractation de 14 jours après un achat. Comme le crédit est un contenu numérique disponible immédiatement, tu acceptes au moment du paiement que la livraison commence tout de suite. Concrètement, cela signifie :</p>
+<ul>
+<li><strong>Pack de 10 (€ 4,99) :</strong> remboursement intégral dans les 14 jours suivant l'achat si aucun des 10 crédits n'a été utilisé. Dès que tu utilises un ou plusieurs crédits du pack, le droit de rétractation s'éteint.</li>
+<li><strong>Abonnement annuel (€ 39,99/an) :</strong> remboursement intégral dans les 14 jours suivant l'achat (ou un prélèvement de renouvellement) si tu n'as lancé aucune lecture dans cette nouvelle période. Passé ces 14 jours, tu peux résilier à tout moment : ton accès continue jusqu'à la fin de l'année payée, et aucun remboursement partiel n'est accordé pour le reste.</li>
+<li><strong>Crédit gratuit :</strong> n'a aucune valeur monétaire et ne peut pas être remboursé.</li>
+</ul>
+
+<h2>2. Comment demander un remboursement</h2>
+<p>Écris à <a href="mailto:support@toereading.app">support@toereading.app</a> en indiquant ton numéro de commande (il figure dans ton e-mail de confirmation de paiement), ou utilise le lien dans cet e-mail. Notre partenaire de paiement traite les remboursements approuvés sur ton moyen de paiement d'origine, généralement sous 5–10 jours ouvrés. Quand un achat est remboursé, le crédit correspondant est retiré de ton compte.</p>
+
+<h2>3. Si quelque chose ne va pas de notre côté</h2>
+<p>Si le service est défaillant (un achat n'a pas été crédité, des lectures échouent sans que tu y sois pour rien), contacte-nous et nous arrangerons les choses : nous corrigeons le problème, nous te recréditons ou nous te remboursons. Tes droits légaux de consommateur restent toujours intacts et ne sont jamais limités par cette politique.</p>
+
+<h2>4. Résilier ton abonnement</h2>
+<p>Résilier n'est pas la même chose que demander un remboursement : tu peux résilier à tout moment via le lien dans ton e-mail de confirmation de paiement ou en nous écrivant. Tu gardes l'accès jusqu'à la fin de la période payée, et l'abonnement ne se renouvelle simplement pas. Tu recevras un e-mail de rappel avant chaque renouvellement.</p>
+</main>
+<main lang-blok="es">
+<h1>Política de reembolsos</h1>
+<p class="datum">Fecha de entrada en vigor: 13 de julio de 2026</p>
+
+<div class="kaartje groen">
+<p><strong>La versión corta:</strong> reembolso íntegro dentro de los 14 días siguientes a la compra, siempre que no hayas usado los créditos comprados. Los reembolsos los tramita nuestro socio de pagos (el Merchant of Record) a tu método de pago original.</p>
+</div>
+
+<h2>1. El derecho de desistimiento de 14 días</h2>
+<p>Si eres consumidor en la UE/EEE o el Reino Unido, tienes un derecho legal a desistir de una compra en un plazo de 14 días. Como los créditos son contenido digital que queda disponible de inmediato, al pagar aceptas que empecemos a entregarlos enseguida. Qué significa esto en la práctica:</p>
+<ul>
+<li><strong>Pack de 10 (€ 4,99):</strong> reembolso íntegro dentro de los 14 días siguientes a la compra si no se ha usado ninguno de los 10 créditos. En cuanto uses uno o más créditos del pack, el derecho de desistimiento se extingue.</li>
+<li><strong>Suscripción anual (€ 39,99/año):</strong> reembolso íntegro dentro de los 14 días siguientes a la compra (o a un cargo de renovación) si no has realizado ninguna lectura en ese nuevo periodo. Pasados los 14 días, puedes cancelar en cualquier momento: tu acceso continúa hasta el final del año pagado y no se conceden reembolsos parciales por el tiempo restante.</li>
+<li><strong>Créditos gratis:</strong> no tienen valor monetario y no pueden reembolsarse.</li>
+</ul>
+
+<h2>2. Cómo solicitar un reembolso</h2>
+<p>Escribe a <a href="mailto:support@toereading.app">support@toereading.app</a> con tu número de pedido (está en tu correo de confirmación de pago) o usa el enlace de ese correo. Nuestro socio de pagos tramita los reembolsos aprobados a tu método de pago original, normalmente en un plazo de 5–10 días laborables. Cuando se reembolsa una compra, los créditos correspondientes se retiran de tu cuenta.</p>
+
+<h2>3. Si algo falla por nuestra parte</h2>
+<p>Si el servicio presenta un fallo (una compra no se abonó, las lecturas fallan sin que sea culpa tuya), contáctanos y lo arreglaremos: lo corregimos, te devolvemos los créditos o te reembolsamos. Tus derechos legales como consumidor permanecen siempre intactos y esta política nunca los limita.</p>
+
+<h2>4. Cancelar tu suscripción</h2>
+<p>Cancelar no es lo mismo que solicitar un reembolso: puedes cancelar en cualquier momento mediante el enlace de tu correo de confirmación de pago o escribiéndonos. Conservas el acceso hasta el final del periodo que pagaste y la suscripción simplemente no se renueva. Recibirás un correo recordatorio antes de cada renovación.</p>
+</main>
+<main lang-blok="it">
+<h1>Politica di rimborso</h1>
+<p class="datum">Data di entrata in vigore: 13 luglio 2026</p>
+
+<div class="kaartje groen">
+<p><strong>La versione breve:</strong> rimborso completo entro 14 giorni dall'acquisto, purché tu non abbia usato i crediti acquistati. I rimborsi sono elaborati dal nostro partner di pagamento (il Merchant of Record) sul tuo metodo di pagamento originale.</p>
+</div>
+
+<h2>1. Il diritto di recesso di 14 giorni</h2>
+<p>Se sei un consumatore nell'UE/SEE o nel Regno Unito, hai per legge il diritto di recedere da un acquisto entro 14 giorni. Poiché i crediti sono contenuto digitale che diventa disponibile immediatamente, alla cassa acconsenti a che la consegna inizi subito. In pratica significa:</p>
+<ul>
+<li><strong>Pacchetto da 10 (€ 4,99):</strong> rimborso completo entro 14 giorni dall'acquisto se nessuno dei 10 crediti è stato usato. Una volta usati uno o più crediti del pacchetto, il diritto di recesso decade.</li>
+<li><strong>Abbonamento annuale (€ 39,99/anno):</strong> rimborso completo entro 14 giorni dall'acquisto (o da un addebito di rinnovo) se in quel nuovo periodo non hai ancora eseguito alcuna lettura. Trascorsi i 14 giorni, puoi disdire in qualsiasi momento: il tuo accesso continua fino alla fine dell'anno pagato e per il periodo restante non sono previsti rimborsi parziali.</li>
+<li><strong>Crediti gratuiti:</strong> non hanno valore monetario e non possono essere rimborsati.</li>
+</ul>
+
+<h2>2. Come richiedere un rimborso</h2>
+<p>Scrivi a <a href="mailto:support@toereading.app">support@toereading.app</a> indicando il numero d'ordine (lo trovi nella tua e-mail di conferma del pagamento), oppure usa il link in quella stessa e-mail. Il nostro partner di pagamento elabora i rimborsi approvati sul tuo metodo di pagamento originale, di norma entro 5–10 giorni lavorativi. Quando un acquisto viene rimborsato, i crediti corrispondenti vengono rimossi dal tuo account.</p>
+
+<h2>3. Se qualcosa non va da parte nostra</h2>
+<p>Se il servizio è difettoso (un acquisto non è stato accreditato, le letture falliscono senza colpa tua), contattaci e sistemeremo le cose: risolviamo il problema, ti riaccreditiamo il credito o ti rimborsiamo. I tuoi diritti di legge come consumatore restano sempre intatti e non vengono mai limitati da questa politica.</p>
+
+<h2>4. Disdire l'abbonamento</h2>
+<p>Disdire non è la stessa cosa che chiedere un rimborso: puoi disdire in qualsiasi momento tramite il link nella tua e-mail di conferma del pagamento o scrivendoci. Mantieni l'accesso fino alla fine del periodo che hai pagato e l'abbonamento semplicemente non si rinnova. Prima di ogni rinnovo riceverai un'e-mail di promemoria.</p>
+</main>
+<main lang-blok="pt">
+<h1>Política de Reembolso</h1>
+<p class="datum">Data de entrada em vigor: 13 de julho de 2026</p>
+
+<div class="kaartje groen">
+<p><strong>A versão curta:</strong> reembolso integral no prazo de 14 dias após a compra, desde que não tenhas usado o saldo comprado. Os reembolsos são processados pelo nosso parceiro de pagamentos (o Merchant of Record) para o teu método de pagamento original.</p>
+</div>
+
+<h2>1. O direito de livre resolução de 14 dias</h2>
+<p>Se fores consumidor na UE/EEE ou no Reino Unido, tens o direito legal de te retratares de uma compra no prazo de 14 dias. Como o saldo é conteúdo digital que fica disponível de imediato, concordas no momento do pagamento com o início imediato do fornecimento. Na prática, isto significa:</p>
+<ul>
+<li><strong>Pacote de 10 (€ 4,99):</strong> reembolso integral no prazo de 14 dias após a compra se nenhuma das 10 análises tiver sido usada. Assim que usares uma ou mais análises do pacote, o direito de livre resolução caduca.</li>
+<li><strong>Subscrição anual (€ 39,99/ano):</strong> reembolso integral no prazo de 14 dias após a compra (ou após uma cobrança de renovação) se não tiveres feito nenhuma leitura nesse novo período. Depois dos 14 dias, podes cancelar a qualquer momento: o teu acesso continua até ao fim do ano pago, e não há reembolsos parciais pelo tempo restante.</li>
+<li><strong>Saldo gratuito:</strong> não tem valor monetário e não pode ser reembolsado.</li>
+</ul>
+
+<h2>2. Como pedir um reembolso</h2>
+<p>Escreve para <a href="mailto:support@toereading.app">support@toereading.app</a> com o teu número de encomenda (está no e-mail de confirmação do pagamento), ou usa a ligação nesse mesmo e-mail. O nosso parceiro de pagamentos processa os reembolsos aprovados para o teu método de pagamento original, normalmente no prazo de 5–10 dias úteis. Quando uma compra é reembolsada, o saldo correspondente é retirado da tua conta.</p>
+
+<h2>3. Se algo estiver mal do nosso lado</h2>
+<p>Se o serviço tiver uma falha (uma compra não foi creditada, as leituras falham sem culpa tua), contacta-nos e resolvemos: corrigimos o problema, repomos o saldo ou reembolsamos-te. Os teus direitos legais como consumidor mantêm-se sempre intactos e nunca são limitados por esta política.</p>
+
+<h2>4. Cancelar a tua subscrição</h2>
+<p>Cancelar não é o mesmo que pedir um reembolso: podes cancelar a qualquer momento através da ligação no e-mail de confirmação do pagamento ou escrevendo-nos. Manténs o acesso até ao fim do período que pagaste, e a subscrição simplesmente não se renova. Antes de cada renovação recebes um e-mail de lembrete.</p>
+</main>
+<main lang-blok="pl">
+<h1>Polityka zwrotów</h1>
+<p class="datum">Data wejścia w życie: 13 lipca 2026</p>
+
+<div class="kaartje groen">
+<p><strong>W skrócie:</strong> pełny zwrot pieniędzy w ciągu 14 dni od zakupu, o ile zakupione analizy nie zostały wykorzystane. Zwroty realizuje nasz partner płatniczy (Merchant of Record, formalny sprzedawca) na twoją pierwotną metodę płatności.</p>
+</div>
+
+<h2>1. 14-dniowe prawo odstąpienia</h2>
+<p>Jeśli jesteś konsumentem w UE/EOG lub Wielkiej Brytanii, masz ustawowe prawo odstąpienia od zakupu w ciągu 14 dni. Ponieważ analizy to treści cyfrowe, które stają się dostępne natychmiast, przy kasie zgadzasz się, że dostarczanie zaczynamy od razu. W praktyce oznacza to:</p>
+<ul>
+<li><strong>Pakiet 10 (€ 4,99):</strong> pełny zwrot w ciągu 14 dni od zakupu, jeśli żadna z 10 analiz nie została wykorzystana. Gdy wykorzystasz jedną lub więcej analiz z pakietu, prawo odstąpienia wygasa.</li>
+<li><strong>Subskrypcja roczna (€ 39,99/rok):</strong> pełny zwrot w ciągu 14 dni od zakupu (lub od obciążenia za odnowienie), jeśli w tym nowym okresie nie zostały jeszcze uruchomione żadne odczyty. Po upływie tych 14 dni możesz zrezygnować w każdej chwili: twój dostęp trwa do końca opłaconego roku, a za pozostałą część nie przysługują częściowe zwroty.</li>
+<li><strong>Darmowe analizy:</strong> nie mają wartości pieniężnej i nie podlegają zwrotowi.</li>
+</ul>
+
+<h2>2. Jak poprosić o zwrot</h2>
+<p>Napisz na <a href="mailto:support@toereading.app">support@toereading.app</a>, podając numer zamówienia (znajdziesz go w e-mailu z potwierdzeniem płatności), albo skorzystaj z linku w tym e-mailu. Nasz partner płatniczy realizuje zatwierdzone zwroty na twoją pierwotną metodę płatności, zwykle w ciągu 5–10 dni roboczych. Gdy zakup zostaje zwrócony, odpowiadające mu analizy są usuwane z twojego konta.</p>
+
+<h2>3. Jeśli coś jest nie tak po naszej stronie</h2>
+<p>Jeśli usługa działa wadliwie (zakup nie został zaksięgowany, odczyty nie udają się bez twojej winy), skontaktuj się z nami, a doprowadzimy to do porządku: naprawimy problem, przywrócimy analizy albo zwrócimy pieniądze. Twoje ustawowe prawa konsumenta zawsze pozostają nienaruszone i nigdy nie są ograniczane przez tę politykę.</p>
+
+<h2>4. Rezygnacja z subskrypcji</h2>
+<p>Rezygnacja to nie to samo co wniosek o zwrot: zrezygnować możesz w każdej chwili przez link w e-mailu z potwierdzeniem płatności albo pisząc do nas. Zachowujesz dostęp do końca opłaconego okresu, a subskrypcja po prostu się nie odnawia. Przed każdym odnowieniem otrzymasz e-mail z przypomnieniem.</p>
+</main>
+<main lang-blok="ru">
+<h1>Политика возврата средств</h1>
+<p class="datum">Дата вступления в силу: 13 июля 2026 г.</p>
+
+<div class="kaartje groen">
+<p><strong>Коротко:</strong> полный возврат в течение 14 дней после покупки, пока ты не использовал купленные кредиты. Возвраты обрабатывает наш платёжный партнёр (Merchant of Record, официальный продавец) на твой исходный способ оплаты.</p>
+</div>
+
+<h2>1. Право на отказ в течение 14 дней</h2>
+<p>Если ты потребитель в ЕС/ЕЭЗ или Великобритании, у тебя есть законное право отказаться от покупки в течение 14 дней. Поскольку кредиты представляют собой цифровой контент, который становится доступен сразу, при оформлении заказа ты соглашаешься с тем, что мы начинаем доставку немедленно. На практике это означает:</p>
+<ul>
+<li><strong>Пакет из 10 (€ 4,99):</strong> полный возврат в течение 14 дней после покупки, если ни один из 10 кредитов не использован. Как только ты используешь один или несколько кредитов из пакета, право на отказ утрачивается.</li>
+<li><strong>Годовая подписка (€ 39,99/год):</strong> полный возврат в течение 14 дней после покупки (или после списания за продление), если в этом новом периоде ты ещё не запускал чтений. По истечении этих 14 дней ты можешь отменить подписку в любой момент: доступ сохраняется до конца оплаченного года, а частичные возвраты за оставшийся срок не производятся.</li>
+<li><strong>Бесплатные кредиты:</strong> не имеют денежной стоимости и возврату не подлежат.</li>
+</ul>
+
+<h2>2. Как запросить возврат</h2>
+<p>Напиши на <a href="mailto:support@toereading.app">support@toereading.app</a>, указав номер заказа (он есть в письме с подтверждением оплаты), или воспользуйся ссылкой в том же письме. Наш платёжный партнёр обрабатывает одобренные возвраты на твой исходный способ оплаты, обычно в течение 5–10 рабочих дней. При возврате средств за покупку соответствующие кредиты снимаются с твоего аккаунта.</p>
+
+<h2>3. Если что-то не так с нашей стороны</h2>
+<p>Если сервис работает неисправно (покупка не была зачислена, чтения не выполняются не по твоей вине), свяжись с нами, и мы всё уладим: устраним проблему, начислим кредиты заново или вернём деньги. Твои законные права потребителя всегда остаются в силе и никогда не ограничиваются этой политикой.</p>
+
+<h2>4. Отмена подписки</h2>
+<p>Отмена не то же самое, что запрос возврата: отменить подписку можно в любой момент по ссылке в письме с подтверждением оплаты или написав нам. Ты сохраняешь доступ до конца оплаченного периода, а подписка просто не продлевается. Перед каждым продлением ты будешь получать письмо-напоминание.</p>
+</main>
+<main lang-blok="tr">
+<h1>İade Politikası</h1>
+<p class="datum">Yürürlük tarihi: 13 Temmuz 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Kısa özet:</strong> satın alınan kredileri kullanmadığın sürece, satın almadan itibaren 14 gün içinde tam iade. İadeler, ödeme ortağımız (Merchant of Record) tarafından orijinal ödeme yöntemine işlenir.</p>
+</div>
+
+<h2>1. 14 günlük cayma hakkı</h2>
+<p>AB/AEA'da ya da Birleşik Krallık'ta tüketiciysen, bir satın almadan 14 gün içinde cayma konusunda yasal bir hakkın vardır. Krediler hemen kullanıma açılan dijital içerik olduğundan, ödeme sırasında teslimata hemen başlamamızı kabul edersin. Bunun pratikteki anlamı:</p>
+<ul>
+<li><strong>10'lu paket (€ 4,99):</strong> 10 kredinin hiçbiri kullanılmadıysa, satın almadan itibaren 14 gün içinde tam iade. Paketten bir ya da daha fazla kredi kullandığında cayma hakkı düşer.</li>
+<li><strong>Yıllık abonelik (€ 39,99/yıl):</strong> o yeni dönemde hiç okuma yapmadıysan, satın almadan (ya da bir yenileme tahsilatından) itibaren 14 gün içinde tam iade. 14 gün geçtikten sonra istediğin zaman iptal edebilirsin: erişimin ödenmiş yılın sonuna kadar sürer ve kalan bölüm için kısmi iade yapılmaz.</li>
+<li><strong>Ücretsiz krediler:</strong> parasal değeri yoktur ve iade edilemez.</li>
+</ul>
+
+<h2>2. İade nasıl talep edilir</h2>
+<p>Sipariş numaranla (ödeme onayı e-postanda bulunur) <a href="mailto:support@toereading.app">support@toereading.app</a> adresine e-posta gönder ya da o e-postadaki bağlantıyı kullan. Ödeme ortağımız, onaylanan iadeleri genellikle 5–10 iş günü içinde orijinal ödeme yöntemine işler. Bir satın alma iade edildiğinde, karşılık gelen krediler hesabından kaldırılır.</p>
+
+<h2>3. Bizim tarafımızda bir sorun varsa</h2>
+<p>Hizmet kusurluysa (bir satın alma hesabına işlenmediyse, okumalar senin hatan olmadan başarısız oluyorsa), bize ulaş, düzeltelim: sorunu gideririz, kredini yeniden yükleriz ya da paranı iade ederiz. Tüketici olarak yasal hakların her zaman saklı kalır ve bu politikayla hiçbir zaman sınırlanmaz.</p>
+
+<h2>4. Aboneliğini iptal etme</h2>
+<p>İptal, iade talebiyle aynı şey değildir: istediğin zaman, ödeme onayı e-postandaki bağlantıdan ya da bize e-posta göndererek iptal edebilirsin. Ödediğin dönemin sonuna kadar erişimini korursun ve abonelik yalnızca yenilenmez. Her yenilemeden önce bir hatırlatma e-postası alırsın.</p>
+</main>
+<main lang-blok="ar">
+<h1>سياسة الاسترداد</h1>
+<p class="datum">تاريخ السريان: 13 يوليو 2026</p>
+
+<div class="kaartje groen">
+<p><strong>الخلاصة:</strong> استرداد كامل خلال 14 يومًا من الشراء، ما دمت لم تستخدم الرصيد المشترى. يعالج شريك الدفع الخاص بنا (بصفته Merchant of Record، أي البائع القانوني) المبالغ المستردة ويعيدها إلى وسيلة الدفع الأصلية.</p>
+</div>
+
+<h2>1. حق الرجوع خلال 14 يومًا</h2>
+<p>إذا كنت مستهلكًا في الاتحاد الأوروبي/المنطقة الاقتصادية الأوروبية أو المملكة المتحدة، فلك حق قانوني في الرجوع عن الشراء خلال 14 يومًا. ولأن الرصيد محتوى رقمي يصبح متاحًا فورًا، فإنك توافق عند إتمام الشراء على أن نبدأ التسليم في الحال. وما يعنيه ذلك عمليًا:</p>
+<ul>
+<li><strong>باقة العشرة (€4.99):</strong> استرداد كامل خلال 14 يومًا من الشراء إذا لم يُستخدم أي من الأرصدة العشرة. وبمجرد استخدامك رصيدًا واحدًا أو أكثر من الباقة، يسقط حق الرجوع.</li>
+<li><strong>الاشتراك السنوي (€39.99/سنة):</strong> استرداد كامل خلال 14 يومًا من الشراء (أو من خصم التجديد) إذا لم تُجرِ أي قراءات في تلك المدة الجديدة. وبعد الأيام الأربعة عشر، يمكنك الإلغاء في أي وقت: يستمر وصولك حتى نهاية السنة المدفوعة، ولا تُمنح مبالغ مستردة جزئية عن المدة المتبقية.</li>
+<li><strong>الرصيد المجاني:</strong> ليست له قيمة نقدية ولا يمكن استرداده.</li>
+</ul>
+
+<h2>2. كيف تطلب استرداد المبلغ</h2>
+<p>راسلنا على <a href="mailto:support@toereading.app">support@toereading.app</a> مع رقم طلبك (تجده في رسالة تأكيد الدفع)، أو استخدم الرابط الموجود في تلك الرسالة. يعالج شريك الدفع الخاص بنا المبالغ المستردة الموافق عليها ويعيدها إلى وسيلة الدفع الأصلية، عادةً خلال 5–10 أيام عمل. وعند استرداد مبلغ عملية شراء، تُزال الأرصدة المقابلة من حسابك.</p>
+
+<h2>3. إذا كان الخلل من جانبنا</h2>
+<p>إذا كانت الخدمة معيبة (لم يُضف رصيد عملية شراء، أو فشلت القراءات دون خطأ منك)، فتواصل معنا وسنصحح الأمر: نصلحه، أو نعيد إضافة رصيدك، أو نردّ لك المبلغ. حقوقك القانونية كمستهلك تبقى دائمًا كاملة ولا تُقيَّد أبدًا بهذه السياسة.</p>
+
+<h2>4. إلغاء اشتراكك</h2>
+<p>الإلغاء ليس هو نفسه طلب الاسترداد: يمكنك الإلغاء في أي وقت عبر الرابط الموجود في رسالة تأكيد الدفع أو بمراسلتنا بالبريد الإلكتروني. تحتفظ بوصولك حتى نهاية المدة التي دفعت مقابلها، ولا يتجدد الاشتراك بعدها ببساطة. وستصلك رسالة تذكير بالبريد الإلكتروني قبل كل تجديد.</p>
+</main>
+<main lang-blok="zh">
+<h1>退款政策</h1>
+<p class="datum">生效日期：2026 年 7 月 13 日</p>
+
+<div class="kaartje groen">
+<p><strong>简短版本：</strong>只要你尚未使用所购额度，购买后 14 天内可全额退款。退款由我们的支付伙伴（Merchant of Record，即登记商户）处理，退回你原来的付款方式。</p>
+</div>
+
+<h2>1. 14 天撤回权</h2>
+<p>如果你是欧盟/欧洲经济区或英国的消费者，你依法享有在 14 天内撤回购买的权利。由于额度属于立即可用的数字内容，你在结算时同意我们立即开始交付。在实践中这意味着：</p>
+<ul>
+<li><strong>10 次套餐（€4.99）：</strong>购买后 14 天内，如 10 次额度均未使用，可全额退款。一旦你使用了套餐中的一次或多次额度，撤回权即失效。</li>
+<li><strong>年度订阅（€39.99/年）：</strong>购买后（或续订扣款后）14 天内，如你在该新周期内尚未运行任何解读，可全额退款。14 天之后，你可以随时取消：你的访问权持续到已付费年度结束，剩余部分不作按比例退款。</li>
+<li><strong>免费额度：</strong>不具有货币价值，无法退款。</li>
+</ul>
+
+<h2>2. 如何申请退款</h2>
+<p>请发邮件至 <a href="mailto:support@toereading.app">support@toereading.app</a> 并附上你的订单号（在你的付款确认邮件中），或使用该邮件中的链接。我们的支付伙伴会将获批的退款退回你原来的付款方式，通常在 5–10 个工作日内到账。购买被退款后，相应额度会从你的账户中扣除。</p>
+
+<h2>3. 如果问题出在我们这边</h2>
+<p>如果服务出现故障（购买未入账、解读因非你的过错而失败），请联系我们，我们会妥善解决：修复问题、重新为你补上额度，或退款给你。你作为消费者的法定权利始终不受影响，也绝不因本政策受到限制。</p>
+
+<h2>4. 取消你的订阅</h2>
+<p>取消订阅不同于申请退款：你可以随时通过付款确认邮件中的链接或发邮件给我们来取消。你在已付费期限结束前保留访问权，订阅只是不再续订。每次续订前你都会收到提醒邮件。</p>
+</main>
+<main lang-blok="ja">
+<h1>返金ポリシー</h1>
+<p class="datum">発効日：2026年7月13日</p>
+
+<div class="kaartje groen">
+<p><strong>短くまとめると：</strong>購入したクレジットを使っていない限り、購入から14日以内であれば全額返金します。返金は、決済パートナー（Merchant of Record）が元のお支払い方法へ処理します。</p>
+</div>
+
+<h2>1. 14日間の撤回権</h2>
+<p>EU/EEA または英国の消費者には、購入から14日以内に契約を撤回する法定の権利があります。クレジットはすぐに利用できるようになるデジタルコンテンツなので、チェックアウト時に、私たちが直ちに提供を開始することに同意していただきます。実際には次のようになります：</p>
+<ul>
+<li><strong>10回パック（€4.99）：</strong>10回分のクレジットが一つも使われていなければ、購入から14日以内は全額返金します。パックのクレジットを1回分でも使うと、撤回権は消滅します。</li>
+<li><strong>年間サブスクリプション（€39.99/年）：</strong>その新しい期間内にリーディングを一度も実行していなければ、購入（または更新の請求）から14日以内は全額返金します。14日を過ぎたあとも、いつでも解約できます。アクセスは支払い済みの1年の終わりまで続き、残りの期間についての一部返金はありません。</li>
+<li><strong>無料クレジット：</strong>金銭的価値がなく、返金の対象にはなりません。</li>
+</ul>
+
+<h2>2. 返金をリクエストするには</h2>
+<p><a href="mailto:support@toereading.app">support@toereading.app</a> に注文番号（支払い確認メールに記載されています）を添えてメールを送るか、そのメール内のリンクをご利用ください。承認された返金は、決済パートナーが元のお支払い方法へ処理し、通常は5～10営業日以内に完了します。購入が返金されると、対応するクレジットはアカウントから取り除かれます。</p>
+
+<h2>3. 私たちの側に問題があった場合</h2>
+<p>サービスに不具合がある場合（購入分のクレジットが付与されなかった、あなたに落ち度がないのにリーディングが失敗するなど）は、ご連絡ください。きちんと対応します。不具合を直す、クレジットを再付与する、または返金します。消費者としてのあなたの法定の権利は常に有効であり、このポリシーによって制限されることは決してありません。</p>
+
+<h2>4. サブスクリプションの解約</h2>
+<p>解約は、返金のリクエストとは別のものです。支払い確認メール内のリンクから、または私たちへのメールで、いつでも解約できます。支払い済みの期間の終わりまでアクセスは続き、サブスクリプションが更新されなくなるだけです。各更新の前にはリマインダーメールが届きます。</p>
+</main>
+<main lang-blok="ko">
+<h1>환불 정책</h1>
+<p class="datum">시행일: 2026년 7월 13일</p>
+
+<div class="kaartje groen">
+<p><strong>짧은 버전:</strong> 구매한 이용권을 사용하지 않았다면, 구매 후 14일 이내에 전액 환불해 드려요. 환불은 저희 결제 파트너(Merchant of Record)가 원래 결제 수단으로 처리해요.</p>
+</div>
+
+<h2>1. 14일 철회권</h2>
+<p>EU/EEA 또는 영국의 소비자라면, 구매 후 14일 이내에 구매를 철회할 법적 권리가 있어요. 이용권은 즉시 이용할 수 있게 되는 디지털 콘텐츠이기 때문에, 결제 시 저희가 곧바로 제공을 시작하는 데 동의하게 돼요. 실제로는 이런 의미예요:</p>
+<ul>
+<li><strong>10회 패키지(€ 4,99):</strong> 10회의 이용권 중 하나도 사용하지 않았다면 구매 후 14일 이내에 전액 환불돼요. 패키지의 이용권을 한 번이라도 사용하면 철회권은 소멸해요.</li>
+<li><strong>연간 구독(€ 39,99/년):</strong> 새 기간에 리딩을 한 번도 실행하지 않았다면, 구매(또는 갱신 결제) 후 14일 이내에 전액 환불돼요. 그 14일이 지난 뒤에는 언제든지 해지할 수 있어요: 결제한 1년이 끝날 때까지 이용은 계속되고, 남은 기간에 대한 부분 환불은 없어요.</li>
+<li><strong>무료 이용권:</strong> 금전적 가치가 없어 환불되지 않아요.</li>
+</ul>
+
+<h2>2. 환불 신청 방법</h2>
+<p><a href="mailto:support@toereading.app">support@toereading.app</a>로 주문 번호(결제 확인 이메일에 있어요)를 적어 이메일을 보내거나, 그 이메일에 있는 링크를 사용해 주세요. 승인된 환불은 저희 결제 파트너가 원래 결제 수단으로 처리하고, 보통 영업일 기준 5–10일 안에 완료돼요. 구매가 환불되면 해당 이용권은 계정에서 제거돼요.</p>
+
+<h2>3. 저희 쪽에 문제가 있다면</h2>
+<p>서비스에 결함이 있다면(구매가 적립되지 않았거나, 당신의 잘못이 아닌데 리딩이 실패하는 경우), 연락해 주시면 바로잡아 드려요: 문제를 해결하거나, 이용권을 다시 적립하거나, 환불해 드려요. 소비자로서의 법적 권리는 언제나 그대로 유지되며, 이 정책으로 결코 제한되지 않아요.</p>
+
+<h2>4. 구독 해지</h2>
+<p>해지는 환불 요청과는 달라요: 결제 확인 이메일에 있는 링크로, 또는 저희에게 이메일을 보내 언제든지 해지할 수 있어요. 결제한 기간이 끝날 때까지 이용을 유지하고, 구독은 그저 갱신되지 않을 뿐이에요. 매 갱신 전에 알림 이메일을 받게 돼요.</p>
+</main>
+<main lang-blok="hi">
+<h1>रिफ़ंड नीति</h1>
+<p class="datum">प्रभावी तिथि: 13 जुलाई 2026</p>
+
+<div class="kaartje groen">
+<p><strong>संक्षेप में:</strong> खरीद के 14 दिनों के भीतर पूरा रिफ़ंड, बशर्ते आपने खरीदे गए क्रेडिट इस्तेमाल न किए हों। रिफ़ंड हमारा भुगतान पार्टनर (Merchant of Record) संसाधित करता है और राशि आपकी मूल भुगतान-विधि में वापस जाती है।</p>
+</div>
+
+<h2>1. खरीद से पीछे हटने (विदड्रॉअल) का 14 दिनों का अधिकार</h2>
+<p>अगर आप EU/EEA या UK में उपभोक्ता हैं, तो आपके पास 14 दिनों के भीतर खरीद से पीछे हटने का वैधानिक अधिकार है। चूँकि क्रेडिट ऐसा डिजिटल कंटेंट है जो तुरंत उपलब्ध हो जाता है, आप चेकआउट पर सहमति देते हैं कि हम डिलीवरी तुरंत शुरू कर दें। व्यवहार में इसका मतलब:</p>
+<ul>
+<li><strong>10-पैक (€4.99):</strong> खरीद के 14 दिनों के भीतर पूरा रिफ़ंड, अगर 10 में से कोई भी क्रेडिट इस्तेमाल नहीं हुआ है। जैसे ही आप पैक का एक या अधिक क्रेडिट इस्तेमाल कर लेते हैं, पीछे हटने का अधिकार समाप्त हो जाता है।</li>
+<li><strong>वार्षिक सब्सक्रिप्शन (€39.99/वर्ष):</strong> खरीद (या नवीनीकरण-शुल्क) के 14 दिनों के भीतर पूरा रिफ़ंड, अगर आपने उस नई अवधि में कोई रीडिंग नहीं चलाई है। 14 दिनों के बाद आप कभी भी रद्द कर सकते हैं: आपकी पहुँच भुगतान किए गए वर्ष के अंत तक जारी रहती है, और बची हुई अवधि के लिए कोई आंशिक रिफ़ंड नहीं दिया जाता।</li>
+<li><strong>मुफ़्त क्रेडिट:</strong> इनका कोई मौद्रिक मूल्य नहीं है और इन्हें रिफ़ंड नहीं किया जा सकता।</li>
+</ul>
+
+<h2>2. रिफ़ंड का अनुरोध कैसे करें</h2>
+<p><a href="mailto:support@toereading.app">support@toereading.app</a> पर अपने ऑर्डर-नंबर के साथ ईमेल कीजिए (वह आपकी भुगतान-पुष्टि वाले ईमेल में है), या उसी ईमेल के लिंक का उपयोग कीजिए। स्वीकृत रिफ़ंड हमारा भुगतान पार्टनर आपकी मूल भुगतान-विधि में संसाधित करता है, आम तौर पर 5–10 कार्य-दिवसों के भीतर। जब किसी खरीद का रिफ़ंड होता है, तो उससे जुड़े क्रेडिट आपके खाते से हटा दिए जाते हैं।</p>
+
+<h2>3. अगर गड़बड़ी हमारी ओर से हो</h2>
+<p>अगर सेवा में कोई खामी हो (कोई खरीद क्रेडिट न हुई हो, आपकी किसी गलती के बिना रीडिंग विफल हो रही हों), तो हमसे संपर्क कीजिए और हम उसे ठीक कर देंगे: हम समस्या सुलझाते हैं, आपको फिर से क्रेडिट देते हैं, या रिफ़ंड करते हैं। उपभोक्ता के रूप में आपके वैधानिक अधिकार हमेशा बरकरार रहते हैं और इस नीति से कभी सीमित नहीं होते।</p>
+
+<h2>4. अपना सब्सक्रिप्शन रद्द करना</h2>
+<p>रद्द करना रिफ़ंड-अनुरोध जैसा नहीं है: आप कभी भी अपनी भुगतान-पुष्टि वाले ईमेल के लिंक से या हमें ईमेल भेजकर रद्द कर सकते हैं। जिस अवधि का आपने भुगतान किया है, उसके अंत तक आपकी पहुँच बनी रहती है, और सब्सक्रिप्शन बस आगे नवीनीकृत नहीं होता। हर नवीनीकरण से पहले आपको एक स्मरण-ईमेल मिलेगा।</p>
+</main>
+<main lang-blok="id">
+<h1>Kebijakan Pengembalian Dana</h1>
+<p class="datum">Tanggal berlaku: 13 Juli 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Versi singkatnya:</strong> pengembalian dana penuh dalam 14 hari sejak pembelian, selama kamu belum menggunakan saldo yang dibeli. Pengembalian dana diproses oleh mitra pembayaran kami (sang Merchant of Record) kembali ke metode pembayaran awalmu.</p>
+</div>
+
+<h2>1. Hak menarik diri dalam 14 hari</h2>
+<p>Jika kamu konsumen di UE/EEA atau Inggris Raya, kamu memiliki hak hukum untuk menarik diri dari pembelian dalam 14 hari. Karena saldo adalah konten digital yang langsung tersedia, saat pembayaran kamu menyetujui bahwa kami langsung mulai mengirimkannya. Artinya dalam praktiknya:</p>
+<ul>
+<li><strong>Paket 10 (€4.99):</strong> pengembalian dana penuh dalam 14 hari sejak pembelian jika tidak satu pun dari 10 saldo telah digunakan. Begitu kamu menggunakan satu saldo atau lebih dari paket itu, hak menarik diri gugur.</li>
+<li><strong>Langganan tahunan (€39.99/thn):</strong> pengembalian dana penuh dalam 14 hari sejak pembelian (atau sejak tagihan perpanjangan) jika kamu belum menjalankan pembacaan apa pun dalam periode baru itu. Setelah 14 hari itu, kamu bisa membatalkan kapan saja: aksesmu berlanjut hingga akhir tahun yang telah dibayar, dan tidak ada pengembalian dana sebagian untuk sisanya.</li>
+<li><strong>Saldo gratis:</strong> tidak memiliki nilai uang dan tidak dapat dikembalikan dananya.</li>
+</ul>
+
+<h2>2. Cara meminta pengembalian dana</h2>
+<p>Kirim email ke <a href="mailto:support@toereading.app">support@toereading.app</a> dengan menyertakan nomor pesananmu (ada di email konfirmasi pembayaranmu), atau gunakan tautan di email itu. Mitra pembayaran kami memproses pengembalian dana yang disetujui ke metode pembayaran awalmu, biasanya dalam 5–10 hari kerja. Saat sebuah pembelian dikembalikan dananya, saldo yang bersangkutan dihapus dari akunmu.</p>
+
+<h2>3. Jika ada yang salah di pihak kami</h2>
+<p>Jika layanan bermasalah (pembelian tidak dikreditkan, pembacaan gagal bukan karena kesalahanmu), hubungi kami dan kami akan membereskannya: kami memperbaikinya, mengkreditkanmu kembali, atau mengembalikan danamu. Hak-hak hukummu sebagai konsumen selalu tetap utuh dan tidak pernah dibatasi oleh kebijakan ini.</p>
+
+<h2>4. Membatalkan langgananmu</h2>
+<p>Membatalkan tidak sama dengan meminta pengembalian dana: kamu bisa membatalkan kapan saja lewat tautan di email konfirmasi pembayaranmu atau dengan mengirimi kami email. Kamu tetap punya akses hingga akhir periode yang telah kamu bayar, dan langganannya sekadar tidak diperpanjang. Kamu akan menerima email pengingat sebelum setiap perpanjangan.</p>
+</main>
+<main lang-blok="vi">
+<h1>Chính sách hoàn tiền</h1>
+<p class="datum">Ngày hiệu lực: 13 tháng 7 năm 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Phiên bản ngắn gọn:</strong> hoàn tiền đầy đủ trong vòng 14 ngày kể từ khi mua, miễn là bạn chưa dùng các lượt đã mua. Việc hoàn tiền do đối tác thanh toán của chúng tôi (Merchant of Record, bên bán chính thức) thực hiện, trả về phương thức thanh toán ban đầu của bạn.</p>
+</div>
+
+<h2>1. Quyền rút lại trong 14 ngày</h2>
+<p>Nếu bạn là người tiêu dùng tại EU/EEA hoặc Vương quốc Anh, bạn có quyền theo luật định được rút lại một giao dịch mua trong vòng 14 ngày. Vì lượt phân tích là nội dung số được cung cấp ngay lập tức, tại trang thanh toán bạn đồng ý để chúng tôi bắt đầu giao ngay. Trên thực tế điều đó có nghĩa là:</p>
+<ul>
+<li><strong>Gói 10 lượt (€ 4,99):</strong> hoàn tiền đầy đủ trong vòng 14 ngày kể từ khi mua nếu chưa dùng lượt nào trong 10 lượt. Khi bạn dùng một hay nhiều lượt trong gói, quyền rút lại chấm dứt.</li>
+<li><strong>Thuê bao năm (€ 39,99/năm):</strong> hoàn tiền đầy đủ trong vòng 14 ngày kể từ khi mua (hoặc kể từ một lần thu phí gia hạn) nếu bạn chưa chạy bài đọc nào trong kỳ hạn mới đó. Sau 14 ngày này, bạn vẫn có thể hủy bất cứ lúc nào: quyền truy cập của bạn tiếp tục đến hết năm đã trả, và không có hoàn tiền một phần cho khoảng thời gian còn lại.</li>
+<li><strong>Lượt miễn phí:</strong> không có giá trị tiền tệ và không thể được hoàn tiền.</li>
+</ul>
+
+<h2>2. Cách yêu cầu hoàn tiền</h2>
+<p>Hãy email <a href="mailto:support@toereading.app">support@toereading.app</a> kèm mã đơn hàng của bạn (có trong email xác nhận thanh toán), hoặc dùng liên kết trong chính email đó. Đối tác thanh toán của chúng tôi xử lý các khoản hoàn tiền được chấp thuận về phương thức thanh toán ban đầu của bạn, thường trong vòng 5–10 ngày làm việc. Khi một giao dịch mua được hoàn tiền, các lượt tương ứng sẽ bị gỡ khỏi tài khoản của bạn.</p>
+
+<h2>3. Nếu có gì đó sai từ phía chúng tôi</h2>
+<p>Nếu dịch vụ có lỗi (một giao dịch mua không được ghi nhận, bài đọc thất bại không do lỗi của bạn), hãy liên hệ với chúng tôi và chúng tôi sẽ khắc phục thỏa đáng: chúng tôi sửa lỗi, cấp lại lượt cho bạn, hoặc hoàn tiền cho bạn. Các quyền theo luật định của bạn với tư cách người tiêu dùng luôn được giữ nguyên và không bao giờ bị chính sách này giới hạn.</p>
+
+<h2>4. Hủy gói thuê bao của bạn</h2>
+<p>Hủy không giống với một yêu cầu hoàn tiền: bạn có thể hủy bất cứ lúc nào qua liên kết trong email xác nhận thanh toán hoặc bằng cách email cho chúng tôi. Bạn giữ quyền truy cập đến hết kỳ hạn đã trả, và gói thuê bao đơn giản là không gia hạn nữa. Bạn sẽ nhận một email nhắc trước mỗi lần gia hạn.</p>
+</main>
+<main lang-blok="th">
+<h1>นโยบายการคืนเงิน</h1>
+<p class="datum">วันที่มีผลบังคับใช้: 13 กรกฎาคม 2026</p>
+
+<div class="kaartje groen">
+<p><strong>ฉบับย่อ:</strong> คืนเงินเต็มจำนวนภายใน 14 วันหลังการซื้อ ตราบใดที่คุณยังไม่ได้ใช้เครดิตที่ซื้อ การคืนเงินดำเนินการโดยพาร์ตเนอร์รับชำระเงินของเรา (Merchant of Record) กลับไปยังวิธีการชำระเงินเดิมของคุณ</p>
+</div>
+
+<h2>1. สิทธิ์เพิกถอนภายใน 14 วัน</h2>
+<p>หากคุณเป็นผู้บริโภคใน EU/EEA หรือสหราชอาณาจักร คุณมีสิทธิ์ตามกฎหมายในการเพิกถอนการซื้อภายใน 14 วัน เนื่องจากเครดิตเป็นเนื้อหาดิจิทัลที่พร้อมใช้งานทันที คุณจึงตกลง ณ ตอนชำระเงินว่าเราเริ่มส่งมอบทันที ในทางปฏิบัติหมายความว่า:</p>
+<ul>
+<li><strong>แพ็ก 10 ครั้ง (€4.99):</strong> คืนเงินเต็มจำนวนภายใน 14 วันหลังการซื้อ หากยังไม่มีการใช้เครดิตใดเลยจากทั้ง 10 ครั้ง เมื่อคุณใช้เครดิตจากแพ็กไปหนึ่งครั้งขึ้นไป สิทธิ์ในการเพิกถอนจะสิ้นสุดลง</li>
+<li><strong>สมาชิกรายปี (€39.99/ปี):</strong> คืนเงินเต็มจำนวนภายใน 14 วันหลังการซื้อ (หรือหลังการเรียกเก็บค่าต่ออายุ) หากคุณยังไม่ได้ใช้งานบทอ่านใด ๆ ในรอบใหม่นั้น หลังพ้น 14 วัน คุณยกเลิกได้ทุกเมื่อ: สิทธิ์เข้าใช้งานของคุณดำเนินต่อจนสิ้นสุดปีที่ชำระแล้ว และไม่มีการคืนเงินบางส่วนสำหรับช่วงเวลาที่เหลือ</li>
+<li><strong>เครดิตฟรี:</strong> ไม่มีมูลค่าเป็นเงินและคืนเงินไม่ได้</li>
+</ul>
+
+<h2>2. วิธีขอคืนเงิน</h2>
+<p>อีเมลมาที่ <a href="mailto:support@toereading.app">support@toereading.app</a> พร้อมหมายเลขคำสั่งซื้อของคุณ (อยู่ในอีเมลยืนยันการชำระเงิน) หรือใช้ลิงก์ในอีเมลฉบับนั้น พาร์ตเนอร์รับชำระเงินของเราจะดำเนินการคืนเงินที่อนุมัติแล้วกลับไปยังวิธีการชำระเงินเดิมของคุณ โดยปกติภายใน 5–10 วันทำการ เมื่อการซื้อถูกคืนเงิน เครดิตที่เกี่ยวข้องจะถูกนำออกจากบัญชีของคุณ</p>
+
+<h2>3. หากมีอะไรผิดพลาดจากฝั่งเรา</h2>
+<p>หากบริการมีข้อบกพร่อง (การซื้อไม่ถูกเติมเครดิต บทอ่านล้มเหลวโดยไม่ใช่ความผิดของคุณ) ติดต่อเรามา แล้วเราจะทำให้ถูกต้อง: เราแก้ไขปัญหา เติมเครดิตให้ใหม่ หรือคืนเงินให้คุณ สิทธิ์ตามกฎหมายของคุณในฐานะผู้บริโภคยังคงอยู่ครบถ้วนเสมอ และไม่ถูกจำกัดโดยนโยบายนี้เด็ดขาด</p>
+
+<h2>4. การยกเลิกสมาชิกของคุณ</h2>
+<p>การยกเลิกไม่ใช่สิ่งเดียวกับการขอคืนเงิน: ยกเลิกได้ทุกเมื่อผ่านลิงก์ในอีเมลยืนยันการชำระเงิน หรือส่งอีเมลมาหาเรา คุณยังเข้าใช้งานได้จนสิ้นสุดช่วงเวลาที่คุณชำระแล้ว และสมาชิกก็เพียงแค่ไม่ต่ออายุ คุณจะได้รับอีเมลแจ้งเตือนก่อนการต่ออายุแต่ละครั้ง</p>
+</main>
+<main lang-blok="uk">
+<h1>Політика повернення коштів</h1>
+<p class="datum">Дата набрання чинності: 13 липня 2026 року</p>
+
+<div class="kaartje groen">
+<p><strong>Коротка версія:</strong> повне повернення коштів протягом 14 днів після покупки, доки ти не використав куплені кредити. Повернення обробляє наш платіжний партнер (Merchant of Record, юридичний продавець) на твій початковий спосіб оплати.</p>
+</div>
+
+<h2>1. 14-денне право на відмову</h2>
+<p>Якщо ти споживач у ЄС/ЄЕЗ чи Великій Британії, ти маєш законне право відмовитися від покупки протягом 14 днів. Оскільки кредити є цифровим вмістом, що стає доступним одразу, на касі ти погоджуєшся, що ми починаємо постачання негайно. Що це означає на практиці:</p>
+<ul>
+<li><strong>Пакет із 10 (€ 4,99):</strong> повне повернення протягом 14 днів після покупки, якщо жоден із 10 кредитів не використано. Щойно ти використаєш один чи більше кредитів із пакета, право на відмову втрачається.</li>
+<li><strong>Річна підписка (€ 39,99/рік):</strong> повне повернення протягом 14 днів після покупки (або після списання за поновлення), якщо в цьому новому періоді ти не запускав жодних читань. Після 14 днів ти можеш скасувати будь-коли: твій доступ триває до кінця оплаченого року, а часткові повернення за залишок не надаються.</li>
+<li><strong>Безплатні кредити:</strong> не мають грошової вартості, і повернути за них кошти не можна.</li>
+</ul>
+
+<h2>2. Як запросити повернення коштів</h2>
+<p>Напиши на <a href="mailto:support@toereading.app">support@toereading.app</a>, вказавши номер замовлення (він у листі з підтвердженням оплати), або скористайся посиланням у тому листі. Схвалені повернення наш платіжний партнер обробляє на твій початковий спосіб оплати, зазвичай протягом 5–10 робочих днів. Коли кошти за покупку повернуто, відповідні кредити знімаються з твого облікового запису.</p>
+
+<h2>3. Якщо щось не так з нашого боку</h2>
+<p>Якщо сервіс несправний (покупку не зараховано, читання не вдаються не з твоєї вини), звернися до нас, і ми все виправимо: полагодимо, повторно зарахуємо кредити або повернемо кошти. Твої законні права як споживача завжди лишаються чинними, і ця політика їх ніколи не обмежує.</p>
+
+<h2>4. Скасування підписки</h2>
+<p>Скасувати підписку не означає запросити повернення коштів: скасувати можна будь-коли через посилання в листі з підтвердженням оплати або написавши нам. Ти зберігаєш доступ до кінця оплаченого періоду, а підписка просто не поновлюється. Перед кожним поновленням ти отримаєш лист-нагадування.</p>
+</main>
+<main lang-blok="hu">
+<h1>Visszatérítési szabályzat</h1>
+<p class="datum">Hatálybalépés: 2026. július 13.</p>
+
+<div class="kaartje groen">
+<p><strong>A rövid változat:</strong> teljes visszatérítés a vásárlástól számított 14 napon belül, amíg a megvásárolt egyenleget nem használtad fel. A visszatérítéseket fizetési partnerünk (a Merchant of Record, a hivatalos eladó) dolgozza fel, az eredeti fizetési módodra.</p>
+</div>
+
+<h2>1. A 14 napos elállási jog</h2>
+<p>Ha az EU/EGT-ben vagy az Egyesült Királyságban élő fogyasztó vagy, törvényes jogod van 14 napon belül elállni a vásárlástól. Mivel az egyenleg azonnal elérhetővé váló digitális tartalom, a pénztárnál hozzájárulsz ahhoz, hogy a teljesítést azonnal megkezdjük. A gyakorlatban ez a következőt jelenti:</p>
+<ul>
+<li><strong>10-es csomag (4,99 €):</strong> teljes visszatérítés a vásárlástól számított 14 napon belül, ha a 10 egységből egyet sem használtál fel. Amint a csomagból egy vagy több egységet felhasználsz, az elállási jog megszűnik.</li>
+<li><strong>Éves előfizetés (39,99 €/év):</strong> teljes visszatérítés a vásárlástól (vagy a megújítási terheléstől) számított 14 napon belül, ha az új időszakban még nem futtattál olvasatot. A 14 nap letelte után bármikor lemondhatsz: a hozzáférésed a kifizetett év végéig megmarad, és a hátralévő részre részleges visszatérítés nem jár.</li>
+<li><strong>Ingyenes egyenleg:</strong> nincs pénzbeli értéke, és nem téríthető vissza.</li>
+</ul>
+
+<h2>2. Így kérhetsz visszatérítést</h2>
+<p>Írj a <a href="mailto:support@toereading.app">support@toereading.app</a> címre a rendelési számoddal (a fizetési visszaigazoló e-mailben találod), vagy használd az abban a levélben lévő linket. A jóváhagyott visszatérítéseket fizetési partnerünk az eredeti fizetési módodra dolgozza fel, általában 5–10 munkanapon belül. Visszatérített vásárlás esetén a hozzá tartozó egyenleg lekerül a fiókodról.</p>
+
+<h2>3. Ha valami a mi oldalunkon romlott el</h2>
+<p>Ha a szolgáltatás hibás (egy vásárlás nem került jóváírásra, az olvasatok rajtad kívül álló okból hiúsulnak meg), lépj velünk kapcsolatba, és rendbe hozzuk: kijavítjuk, újra jóváírjuk, vagy visszatérítjük. A fogyasztóként téged megillető törvényes jogok mindig érintetlenek maradnak, és ez a szabályzat soha nem korlátozza őket.</p>
+
+<h2>4. Az előfizetésed lemondása</h2>
+<p>A lemondás nem ugyanaz, mint a visszatérítési kérelem: lemondani bármikor lehet a fizetési visszaigazoló e-mailben lévő linkkel vagy nekünk írt e-maillel. A kifizetett időszak végéig megmarad a hozzáférésed, és az előfizetés egyszerűen nem újul meg. Minden megújítás előtt emlékeztető e-mailt kapsz.</p>
+</main>
+<main lang-blok="bn">
+<h1>রিফান্ড নীতি</h1>
+<p class="datum">কার্যকর হওয়ার তারিখ: ১৩ জুলাই ২০২৬</p>
+
+<div class="kaartje groen">
+<p><strong>সংক্ষিপ্ত সংস্করণ:</strong> কেনার ১৪ দিনের মধ্যে পুরো টাকা ফেরত, যতক্ষণ তুমি কেনা ক্রেডিট ব্যবহার না করেছ। রিফান্ড প্রক্রিয়া করে আমাদের পেমেন্ট পার্টনার (Merchant of Record), তোমার মূল পেমেন্ট মাধ্যমে ফেরত দিয়ে।</p>
+</div>
+
+<h2>১. ১৪ দিনের প্রত্যাহারের অধিকার</h2>
+<p>তুমি EU/EEA বা UK-র ভোক্তা হলে, কেনার ১৪ দিনের মধ্যে কেনাকাটা প্রত্যাহারের আইনি অধিকার তোমার আছে। ক্রেডিট যেহেতু ডিজিটাল কনটেন্ট যা সঙ্গে সঙ্গেই পাওয়া যায়, তাই চেকআউটে তুমি সম্মত হও যে আমরা তৎক্ষণাৎ সরবরাহ শুরু করি। বাস্তবে এর মানে:</p>
+<ul>
+<li><strong>১০-এর প্যাক (€ ৪.৯৯):</strong> ১০টি ক্রেডিটের একটিও ব্যবহার না হয়ে থাকলে কেনার ১৪ দিনের মধ্যে পুরো টাকা ফেরত। প্যাক থেকে এক বা একাধিক ক্রেডিট ব্যবহার করলেই প্রত্যাহারের অধিকার শেষ হয়ে যায়।</li>
+<li><strong>বার্ষিক সাবস্ক্রিপশন (€ ৩৯.৯৯/বছর):</strong> কেনার (বা নবায়নের চার্জের) ১৪ দিনের মধ্যে পুরো টাকা ফেরত, যদি সেই নতুন মেয়াদে তুমি কোনো রিডিং না চালিয়ে থাকো। ১৪ দিন পার হলে যেকোনো সময় বাতিল করতে পারো: পরিশোধিত বছরের শেষ পর্যন্ত তোমার অ্যাক্সেস চলবে, আর বাকি অংশের জন্য আংশিক ফেরত দেওয়া হয় না।</li>
+<li><strong>বিনামূল্যের ক্রেডিট:</strong> এর কোনো আর্থিক মূল্য নেই এবং ফেরতযোগ্য নয়।</li>
+</ul>
+
+<h2>২. রিফান্ড যেভাবে চাইবে</h2>
+<p>তোমার অর্ডার নম্বরসহ (পেমেন্ট নিশ্চিতকরণ ইমেইলে পাবে) ইমেইল করো <a href="mailto:support@toereading.app">support@toereading.app</a> ঠিকানায়, অথবা সেই ইমেইলের লিংকটিই ব্যবহার করো। অনুমোদিত রিফান্ড আমাদের পেমেন্ট পার্টনার তোমার মূল পেমেন্ট মাধ্যমে ফেরত দেয়, সাধারণত ৫–১০ কর্মদিবসের মধ্যে। কোনো কেনাকাটা রিফান্ড হলে সংশ্লিষ্ট ক্রেডিট তোমার অ্যাকাউন্ট থেকে সরিয়ে নেওয়া হয়।</p>
+
+<h2>৩. আমাদের দিকে কিছু ভুল হলে</h2>
+<p>পরিষেবায় ত্রুটি থাকলে (কোনো কেনাকাটা ব্যালেন্সে যোগ হয়নি, তোমার কোনো দোষ ছাড়াই রিডিং ব্যর্থ হচ্ছে), আমাদের সঙ্গে যোগাযোগ করো, আমরা ঠিক করে দেব: সমস্যাটা সারিয়ে দিই, ক্রেডিট ফিরিয়ে দিই, বা টাকা ফেরত দিই। ভোক্তা হিসেবে তোমার আইনি অধিকার সবসময় অটুট থাকে এবং এই নীতি দিয়ে কখনও সীমিত হয় না।</p>
+
+<h2>৪. তোমার সাবস্ক্রিপশন বাতিল করা</h2>
+<p>বাতিল করা আর রিফান্ড চাওয়া এক জিনিস নয়: যেকোনো সময় বাতিল করতে পারো তোমার পেমেন্ট নিশ্চিতকরণ ইমেইলের লিংক দিয়ে বা আমাদের ইমেইল করে। যে মেয়াদের জন্য টাকা দিয়েছ তার শেষ পর্যন্ত অ্যাক্সেস থাকবে, আর সাবস্ক্রিপশনটি স্রেফ আর নবায়ন হবে না। প্রতিটি নবায়নের আগে তুমি একটি স্মরণ করিয়ে দেওয়া ইমেইল পাবে।</p>
+</main>
+<main lang-blok="ur">
+<h1>رقم کی واپسی کی پالیسی</h1>
+<p class="datum">نفاذ کی تاریخ: 13 جولائی 2026</p>
+
+<div class="kaartje groen">
+<p><strong>مختصر خلاصہ:</strong> خریداری کے 14 دنوں کے اندر مکمل رقم کی واپسی، بشرطیکہ آپ نے خریدے گئے کریڈٹ استعمال نہ کیے ہوں۔ رقم کی واپسی ہمارا پیمنٹ پارٹنر (Merchant of Record) آپ کے اصل ادائیگی کے طریقے پر پروسیس کرتا ہے۔</p>
+</div>
+
+<h2>1. دستبرداری کا 14 دن کا حق</h2>
+<p>اگر آپ EU/EEA یا UK میں صارف ہیں تو آپ کو 14 دنوں کے اندر خریداری سے دستبردار ہونے کا قانونی حق حاصل ہے۔ چونکہ کریڈٹ ڈیجیٹل مواد ہے جو فوراً دستیاب ہو جاتا ہے، اس لیے آپ چیک آؤٹ پر اتفاق کرتے ہیں کہ ہم فوری فراہمی شروع کر دیں۔ عملی طور پر اس کا مطلب یہ ہے:</p>
+<ul>
+<li><strong>10 کا پیکٹ (€4.99):</strong> خریداری کے 14 دنوں کے اندر مکمل رقم کی واپسی، اگر 10 میں سے کوئی کریڈٹ استعمال نہ ہوا ہو۔ جیسے ہی آپ پیکٹ کا ایک یا زیادہ کریڈٹ استعمال کر لیں، دستبرداری کا حق ختم ہو جاتا ہے۔</li>
+<li><strong>سالانہ رکنیت (€39.99 فی سال):</strong> خریداری (یا تجدید کی چارجنگ) کے 14 دنوں کے اندر مکمل رقم کی واپسی، اگر آپ نے اُس نئی مدت میں کوئی ریڈنگ نہ چلائی ہو۔ 14 دنوں کے بعد آپ کسی بھی وقت منسوخ کر سکتے ہیں: آپ کی رسائی ادا شدہ سال کے آخر تک جاری رہتی ہے، اور باقی مدت کے لیے جزوی رقم واپس نہیں کی جاتی۔</li>
+<li><strong>مفت کریڈٹ:</strong> اس کی کوئی مالی قیمت نہیں اور اس کی رقم واپس نہیں ہو سکتی۔</li>
+</ul>
+
+<h2>2. رقم کی واپسی کی درخواست کیسے کریں</h2>
+<p>اپنے آرڈر نمبر کے ساتھ (یہ آپ کی ادائیگی کی تصدیقی ای میل میں ہے) <a href="mailto:support@toereading.app">support@toereading.app</a> پر ای میل کریں، یا اسی ای میل میں موجود لنک استعمال کریں۔ منظور شدہ واپسیاں ہمارا پیمنٹ پارٹنر آپ کے اصل ادائیگی کے طریقے پر پروسیس کرتا ہے، عام طور پر 5–10 کاروباری دنوں کے اندر۔ جب کسی خریداری کی رقم واپس کی جاتی ہے تو اس سے متعلق کریڈٹ آپ کے اکاؤنٹ سے ہٹا دیے جاتے ہیں۔</p>
+
+<h2>3. اگر خرابی ہماری طرف سے ہو</h2>
+<p>اگر سروس میں خرابی ہو (خریداری کا کریڈٹ نہ ملا ہو، ریڈنگز آپ کی کسی غلطی کے بغیر ناکام ہوں) تو ہم سے رابطہ کریں، ہم معاملہ ٹھیک کریں گے: ہم خرابی دور کرتے ہیں، آپ کو دوبارہ کریڈٹ دیتے ہیں، یا رقم واپس کرتے ہیں۔ بطور صارف آپ کے قانونی حقوق ہمیشہ برقرار رہتے ہیں اور اس پالیسی سے کبھی محدود نہیں ہوتے۔</p>
+
+<h2>4. اپنی رکنیت منسوخ کرنا</h2>
+<p>منسوخی رقم کی واپسی کی درخواست جیسی چیز نہیں: آپ کسی بھی وقت اپنی ادائیگی کی تصدیقی ای میل میں موجود لنک کے ذریعے یا ہمیں ای میل کر کے منسوخ کر سکتے ہیں۔ جس مدت کی آپ نے ادائیگی کی ہے اس کے آخر تک رسائی آپ کے پاس رہتی ہے، اور رکنیت بس تجدید نہیں ہوتی۔ ہر تجدید سے پہلے آپ کو یاد دہانی کی ای میل ملے گی۔</p>
+</main>
+<main lang-blok="fa">
+<h1>سیاست بازپرداخت</h1>
+<p class="datum">تاریخ اجرا: ۱۳ ژوئیه ۲۰۲۶</p>
+
+<div class="kaartje groen">
+<p><strong>خلاصه ماجرا:</strong> بازپرداخت کامل تا ۱۴ روز پس از خرید، تا وقتی اعتبار خریداری‌شده را استفاده نکرده باشی. بازپرداخت‌ها را شریک پرداخت ما (Merchant of Record، فروشنده رسمی) به همان روش پرداخت اولیه‌ات برمی‌گرداند.</p>
+</div>
+
+<h2>1. حق انصراف ۱۴روزه</h2>
+<p>اگر مصرف‌کننده‌ای در اتحادیه اروپا/منطقه اقتصادی اروپا یا بریتانیا باشی، قانوناً حق داری تا ۱۴ روز از خرید انصراف بدهی. چون اعتبار محتوای دیجیتالی است که بلافاصله در دسترس قرار می‌گیرد، هنگام پرداخت موافقت می‌کنی که ما فوراً تحویل را شروع کنیم. در عمل یعنی:</p>
+<ul>
+<li><strong>بسته ۱۰تایی (۴٫۹۹ یورو):</strong> بازپرداخت کامل تا ۱۴ روز پس از خرید، اگر هیچ‌کدام از ۱۰ اعتبار استفاده نشده باشد. به محض اینکه یک یا چند اعتبار از بسته را استفاده کنی، حق انصراف از میان می‌رود.</li>
+<li><strong>اشتراک سالانه (۳۹٫۹۹ یورو در سال):</strong> بازپرداخت کامل تا ۱۴ روز پس از خرید (یا پس از برداشتِ مبلغ تمدید)، اگر در آن دوره تازه هیچ خوانشی اجرا نکرده باشی. پس از این ۱۴ روز، هر وقت بخواهی می‌توانی لغو کنی: دسترسی‌ات تا پایان سالِ پرداخت‌شده ادامه دارد و برای باقی‌مانده، بازپرداخت جزئی داده نمی‌شود.</li>
+<li><strong>اعتبار رایگان:</strong> ارزش پولی ندارد و بازپرداخت‌شدنی نیست.</li>
+</ul>
+
+<h2>2. چطور درخواست بازپرداخت بدهی</h2>
+<p>به <a href="mailto:support@toereading.app">support@toereading.app</a> ایمیل بزن و شماره سفارشت را بنویس (در ایمیل تأیید پرداختت هست)، یا از پیوند داخل همان ایمیل استفاده کن. شریک پرداخت ما بازپرداخت‌های تأییدشده را به همان روش پرداخت اولیه‌ات برمی‌گرداند، معمولاً ظرف ۵ تا ۱۰ روز کاری. وقتی خریدی بازپرداخت شود، اعتبار مربوط به آن از حسابت برداشته می‌شود.</p>
+
+<h2>3. اگر مشکلی از سمت ما باشد</h2>
+<p>اگر سرویس درست کار نکند (خریدی به حسابت نیامده، خوانش‌ها بدون تقصیر تو خراب می‌شوند)، با ما تماس بگیر تا درستش کنیم: مشکل را رفع می‌کنیم، اعتبارت را دوباره شارژ می‌کنیم یا پولت را پس می‌دهیم. حقوق قانونی‌ات به‌عنوان مصرف‌کننده همیشه پابرجا می‌ماند و با این سیاست هرگز محدود نمی‌شود.</p>
+
+<h2>4. لغو اشتراکت</h2>
+<p>لغو با درخواست بازپرداخت یکی نیست: هر وقت بخواهی می‌توانی لغو کنی، از راه پیوند داخل ایمیل تأیید پرداخت یا با ایمیل به ما. تا پایان دوره‌ای که پولش را داده‌ای دسترسی داری و اشتراک به‌سادگی دیگر تمدید نمی‌شود. پیش از هر تمدید یک ایمیل یادآوری می‌گیری.</p>
+</main>
+<main lang-blok="ms">
+<h1>Dasar Bayaran Balik</h1>
+<p class="datum">Tarikh berkuat kuasa: 13 Julai 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Versi ringkas:</strong> bayaran balik penuh dalam masa 14 hari selepas pembelian, selagi anda belum menggunakan kredit yang dibeli. Bayaran balik diproses oleh rakan pembayaran kami (Merchant of Record, penjual rasmi) kembali ke kaedah pembayaran asal anda.</p>
+</div>
+
+<h2>1. Hak penarikan diri 14 hari</h2>
+<p>Jika anda pengguna di EU/EEA atau UK, anda mempunyai hak statutori untuk menarik diri daripada sesuatu pembelian dalam masa 14 hari. Oleh sebab kredit ialah kandungan digital yang tersedia serta-merta, anda bersetuju ketika pembayaran bahawa kami mula menyampaikannya dengan segera. Maksudnya dalam praktik:</p>
+<ul>
+<li><strong>Pek 10 (€4.99):</strong> bayaran balik penuh dalam masa 14 hari selepas pembelian jika tiada satu pun daripada 10 kredit itu telah digunakan. Sebaik sahaja anda menggunakan satu atau lebih kredit daripada pek itu, hak penarikan diri luput.</li>
+<li><strong>Langganan tahunan (€39.99/tahun):</strong> bayaran balik penuh dalam masa 14 hari selepas pembelian (atau selepas caj pembaharuan) jika anda belum menjalankan sebarang bacaan dalam tempoh baharu itu. Selepas 14 hari itu, anda boleh membatalkan pada bila-bila masa: akses anda berterusan sehingga akhir tahun yang telah dibayar, dan tiada bayaran balik separa diberikan untuk baki tempoh itu.</li>
+<li><strong>Kredit percuma:</strong> tidak mempunyai nilai wang dan tidak boleh dibayar balik.</li>
+</ul>
+
+<h2>2. Cara memohon bayaran balik</h2>
+<p>E-mel <a href="mailto:support@toereading.app">support@toereading.app</a> dengan nombor pesanan anda (terdapat dalam e-mel pengesahan pembayaran anda), atau gunakan pautan dalam e-mel itu. Rakan pembayaran kami memproses bayaran balik yang diluluskan ke kaedah pembayaran asal anda, biasanya dalam masa 5–10 hari bekerja. Apabila sesuatu pembelian dibayar balik, kredit yang berkaitan dikeluarkan daripada akaun anda.</p>
+
+<h2>3. Jika ada yang tidak kena di pihak kami</h2>
+<p>Jika perkhidmatan bermasalah (pembelian tidak dikreditkan, bacaan gagal bukan kerana kesilapan anda), hubungi kami dan kami akan membetulkannya: kami membaikinya, mengkreditkan anda semula, atau membayar balik. Hak statutori anda sebagai pengguna sentiasa kekal utuh dan tidak sekali-kali dihadkan oleh dasar ini.</p>
+
+<h2>4. Membatalkan langganan anda</h2>
+<p>Pembatalan tidak sama dengan permohonan bayaran balik: batalkan pada bila-bila masa melalui pautan dalam e-mel pengesahan pembayaran anda atau dengan menghantar e-mel kepada kami. Anda mengekalkan akses sehingga akhir tempoh yang telah anda bayar, dan langganan itu hanya tidak diperbaharui. Anda akan menerima e-mel peringatan sebelum setiap pembaharuan.</p>
+</main>
+<main lang-blok="tl">
+<h1>Refund Policy</h1>
+<p class="datum">Petsa ng pagkakabisa: 13 Hulyo 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Ang maikling bersyon:</strong> buong refund sa loob ng 14 araw mula sa pagbili, hangga't hindi mo pa nagagamit ang mga biniling credit. Ang mga refund ay pinoproseso ng aming payment partner (ang Merchant of Record, ang legal na nagbebenta) pabalik sa orihinal mong paraan ng pagbabayad.</p>
+</div>
+
+<h2>1. Ang 14 na araw na karapatang umatras</h2>
+<p>Kung ikaw ay consumer sa EU/EEA o UK, may karapatan kang itinakda ng batas na umatras sa isang pagbili sa loob ng 14 araw. Dahil ang mga credit ay digital na nilalaman na agad nagiging available, sumasang-ayon ka sa checkout na agad kaming magsisimulang maghatid. Ang ibig sabihin niyan sa praktika:</p>
+<ul>
+<li><strong>10-pack (€4.99):</strong> buong refund sa loob ng 14 araw mula sa pagbili kung wala pang nagagamit sa 10 credit. Kapag nakagamit ka na ng isa o higit pang credit mula sa pack, nawawala ang karapatang umatras.</li>
+<li><strong>Taunang subscription (€39.99/taon):</strong> buong refund sa loob ng 14 araw mula sa pagbili (o mula sa singil ng renewal) kung wala ka pang pinatakbong pagbasa sa bagong terminong iyon. Pagkalipas ng 14 araw, maaari kang magkansela anumang oras: magpapatuloy ang iyong access hanggang sa katapusan ng bayad na taon, at walang ibinibigay na bahagyang refund para sa natitira.</li>
+<li><strong>Mga libreng credit:</strong> walang halagang pera at hindi maaaring i-refund.</li>
+</ul>
+
+<h2>2. Paano humiling ng refund</h2>
+<p>Mag-email sa <a href="mailto:support@toereading.app">support@toereading.app</a> kasama ang iyong order number (nasa iyong payment confirmation email ito), o gamitin ang link sa email na iyon. Pinoproseso ng aming payment partner ang mga aprubadong refund pabalik sa orihinal mong paraan ng pagbabayad, karaniwan sa loob ng 5–10 business day. Kapag ni-refund ang isang pagbili, inaalis sa iyong account ang mga kaukulang credit.</p>
+
+<h2>3. Kung may mali sa aming panig</h2>
+<p>Kung may sira ang serbisyo (hindi na-credit ang isang pagbili, nabibigo ang mga pagbasa nang wala kang kasalanan), makipag-ugnayan sa amin at itatama namin ito: aayusin namin, ibabalik ang credit sa iyo, o ire-refund ka. Ang iyong mga karapatang itinakda ng batas bilang consumer ay laging nananatiling buo at hindi kailanman nililimitahan ng policy na ito.</p>
+
+<h2>4. Pagkansela ng iyong subscription</h2>
+<p>Ang pagkansela ay hindi kapareho ng paghiling ng refund: magkansela anumang oras sa pamamagitan ng link sa iyong payment confirmation email o sa pag-email sa amin. Mananatili ang iyong access hanggang sa katapusan ng panahong binayaran mo, at hindi na lang magre-renew ang subscription. Makakatanggap ka ng paalala sa email bago ang bawat renewal.</p>
+</main>
+<main lang-blok="el">
+<h1>Πολιτική Επιστροφών Χρημάτων</h1>
+<p class="datum">Ημερομηνία ισχύος: 13 Ιουλίου 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Η σύντομη εκδοχή:</strong> πλήρης επιστροφή χρημάτων εντός 14 ημερών από την αγορά, εφόσον δεν έχεις χρησιμοποιήσει τις αγορασμένες μονάδες. Οι επιστροφές διεκπεραιώνονται από τον συνεργάτη πληρωμών μας (τον Merchant of Record, δηλαδή τον νόμιμο πωλητή) στην αρχική σου μέθοδο πληρωμής.</p>
+</div>
+
+<h2>1. Το 14ήμερο δικαίωμα υπαναχώρησης</h2>
+<p>Αν είσαι καταναλωτής στην ΕΕ/τον ΕΟΧ ή το Ηνωμένο Βασίλειο, έχεις νόμιμο δικαίωμα υπαναχώρησης από μια αγορά εντός 14 ημερών. Επειδή οι μονάδες είναι ψηφιακό περιεχόμενο που γίνεται αμέσως διαθέσιμο, συμφωνείς στο ταμείο να ξεκινήσουμε αμέσως την παράδοση. Τι σημαίνει αυτό στην πράξη:</p>
+<ul>
+<li><strong>Πακέτο 10 (4,99 €):</strong> πλήρης επιστροφή εντός 14 ημερών από την αγορά, αν δεν έχει χρησιμοποιηθεί καμία από τις 10 μονάδες. Μόλις χρησιμοποιήσεις μία ή περισσότερες μονάδες από το πακέτο, το δικαίωμα υπαναχώρησης παύει να ισχύει.</li>
+<li><strong>Ετήσια συνδρομή (39,99 €/έτος):</strong> πλήρης επιστροφή εντός 14 ημερών από την αγορά (ή από μια χρέωση ανανέωσης), αν δεν έχεις τρέξει καμία ανάγνωση σε αυτή τη νέα περίοδο. Μετά τις 14 ημέρες μπορείς να ακυρώσεις οποιαδήποτε στιγμή: η πρόσβασή σου συνεχίζεται έως το τέλος του πληρωμένου έτους, και δεν δίνονται μερικές επιστροφές για το υπόλοιπο διάστημα.</li>
+<li><strong>Δωρεάν μονάδες:</strong> δεν έχουν χρηματική αξία και δεν επιστρέφονται.</li>
+</ul>
+
+<h2>2. Πώς να ζητήσεις επιστροφή χρημάτων</h2>
+<p>Στείλε e-mail στο <a href="mailto:support@toereading.app">support@toereading.app</a> με τον αριθμό της παραγγελίας σου (βρίσκεται στο e-mail επιβεβαίωσης της πληρωμής σου), ή χρησιμοποίησε τον σύνδεσμο σε εκείνο το e-mail. Ο συνεργάτης πληρωμών μας διεκπεραιώνει τις εγκεκριμένες επιστροφές στην αρχική σου μέθοδο πληρωμής, συνήθως εντός 5–10 εργάσιμων ημερών. Όταν μια αγορά επιστρέφεται, οι αντίστοιχες μονάδες αφαιρούνται από τον λογαριασμό σου.</p>
+
+<h2>3. Αν κάτι πάει στραβά από τη δική μας πλευρά</h2>
+<p>Αν η υπηρεσία δεν λειτουργεί σωστά (μια αγορά δεν πιστώθηκε, αναγνώσεις αποτυγχάνουν χωρίς δική σου υπαιτιότητα), επικοινώνησε μαζί μας και θα το τακτοποιήσουμε: το διορθώνουμε, σε πιστώνουμε ξανά ή σου επιστρέφουμε τα χρήματα. Τα νόμιμα δικαιώματά σου ως καταναλωτή παραμένουν πάντα ανέπαφα και δεν περιορίζονται ποτέ από αυτή την πολιτική.</p>
+
+<h2>4. Ακύρωση της συνδρομής σου</h2>
+<p>Η ακύρωση δεν είναι το ίδιο με ένα αίτημα επιστροφής χρημάτων: μπορείς να ακυρώσεις οποιαδήποτε στιγμή μέσω του συνδέσμου στο e-mail επιβεβαίωσης της πληρωμής σου ή στέλνοντάς μας e-mail. Κρατάς την πρόσβαση έως το τέλος της περιόδου που έχεις πληρώσει, και η συνδρομή απλώς δεν ανανεώνεται. Πριν από κάθε ανανέωση θα λαμβάνεις e-mail υπενθύμισης.</p>
+</main>
+<main lang-blok="cs">
+<h1>Zásady vracení peněz</h1>
+<p class="datum">Datum účinnosti: 13. července 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Krátká verze:</strong> plné vrácení peněz do 14 dnů od nákupu, pokud jsi zakoupené kredity nepoužil(a). Vrácení peněz zpracovává náš platební partner (Merchant of Record) zpět na tvou původní platební metodu.</p>
+</div>
+
+<h2>1. Právo na odstoupení do 14 dnů</h2>
+<p>Pokud jsi spotřebitel(ka) v EU/EHP nebo Spojeném království, máš zákonné právo odstoupit od nákupu do 14 dnů. Protože kredity jsou digitální obsah, který je dostupný okamžitě, souhlasíš u pokladny s tím, že s dodáním začneme hned. Co to znamená v praxi:</p>
+<ul>
+<li><strong>Balíček 10 (4,99 €):</strong> plné vrácení peněz do 14 dnů od nákupu, pokud nebyl použit žádný z 10 kreditů. Jakmile z balíčku použiješ jeden nebo více kreditů, právo na odstoupení zaniká.</li>
+<li><strong>Roční předplatné (39,99 €/rok):</strong> plné vrácení peněz do 14 dnů od nákupu (nebo od stržení platby za obnovení), pokud jsi v tom novém období nespustil(a) žádné čtení. Po uplynutí 14 dnů můžeš kdykoli zrušit: přístup ti běží dál do konce zaplaceného roku a za zbytek se částečně nevrací.</li>
+<li><strong>Kredity zdarma:</strong> nemají peněžní hodnotu a nelze je proplatit.</li>
+</ul>
+
+<h2>2. Jak požádat o vrácení peněz</h2>
+<p>Napiš na <a href="mailto:support@toereading.app">support@toereading.app</a> a uveď číslo objednávky (najdeš ho v e-mailu s potvrzením platby), nebo použij odkaz přímo v tom e-mailu. Schválená vrácení peněz zpracuje náš platební partner na tvou původní platební metodu, obvykle do 5–10 pracovních dnů. Při vrácení peněz za nákup se odpovídající kredity odeberou z tvého účtu.</p>
+
+<h2>3. Když je něco špatně na naší straně</h2>
+<p>Pokud služba nefunguje správně (nákup nebyl připsán, čtení selhávají bez tvého zavinění), ozvi se nám a dáme to do pořádku: opravíme to, připíšeme ti kredit znovu, nebo ti vrátíme peníze. Tvá zákonná práva spotřebitele zůstávají vždy nedotčena a tyto zásady je nikdy neomezují.</p>
+
+<h2>4. Zrušení předplatného</h2>
+<p>Zrušení není totéž co žádost o vrácení peněz: zrušit můžeš kdykoli přes odkaz v e-mailu s potvrzením platby, nebo e-mailem nám. Přístup ti zůstává do konce zaplaceného období a předplatné se prostě neobnoví. Před každým obnovením ti přijde připomínací e-mail.</p>
+</main>
+<main lang-blok="ro">
+<h1>Politica de rambursare</h1>
+<p class="datum">Data intrării în vigoare: 13 iulie 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Versiunea scurtă:</strong> rambursare integrală în termen de 14 zile de la achiziție, atât timp cât nu ai folosit creditele cumpărate. Rambursările sunt procesate de partenerul nostru de plăți (Merchant of Record, vânzătorul oficial) înapoi pe metoda ta de plată inițială.</p>
+</div>
+
+<h2>1. Dreptul de retragere de 14 zile</h2>
+<p>Dacă ești consumator în UE/SEE sau în Regatul Unit, ai dreptul legal de a te retrage dintr-o achiziție în termen de 14 zile. Deoarece creditele sunt conținut digital care devine disponibil imediat, la finalizarea plății ești de acord ca noi să începem livrarea pe loc. Ce înseamnă asta în practică:</p>
+<ul>
+<li><strong>Pachetul de 10 (4,99 €):</strong> rambursare integrală în termen de 14 zile de la achiziție, dacă niciunul dintre cele 10 credite nu a fost folosit. Odată ce folosești unul sau mai multe credite din pachet, dreptul de retragere se stinge.</li>
+<li><strong>Abonamentul anual (39,99 €/an):</strong> rambursare integrală în termen de 14 zile de la achiziție (sau de la o taxare de reînnoire), dacă nu ai rulat nicio citire în acea nouă perioadă. După cele 14 zile, poți anula oricând: accesul tău continuă până la sfârșitul anului plătit, iar pentru restul perioadei nu se acordă rambursări parțiale.</li>
+<li><strong>Creditele gratuite:</strong> nu au valoare monetară și nu pot fi rambursate.</li>
+</ul>
+
+<h2>2. Cum ceri o rambursare</h2>
+<p>Scrie la <a href="mailto:support@toereading.app">support@toereading.app</a> cu numărul comenzii tale (îl găsești în e-mailul de confirmare a plății) sau folosește linkul din acel e-mail. Partenerul nostru de plăți procesează rambursările aprobate pe metoda ta de plată inițială, de obicei în 5–10 zile lucrătoare. Când o achiziție este rambursată, creditele corespunzătoare sunt eliminate din contul tău.</p>
+
+<h2>3. Dacă ceva nu e în regulă din partea noastră</h2>
+<p>Dacă serviciul funcționează defectuos (o achiziție nu a fost creditată, citirile eșuează fără vreo vină a ta), contactează-ne și îndreptăm lucrurile: reparăm problema, îți recredităm contul sau îți rambursăm banii. Drepturile tale legale de consumator rămân întotdeauna intacte și nu sunt niciodată limitate de această politică.</p>
+
+<h2>4. Anularea abonamentului</h2>
+<p>Anularea nu este același lucru cu o cerere de rambursare: poți anula oricând prin linkul din e-mailul de confirmare a plății sau scriindu-ne. Îți păstrezi accesul până la sfârșitul perioadei pe care ai plătit-o, iar abonamentul pur și simplu nu se mai reînnoiește. Vei primi un e-mail de reamintire înaintea fiecărei reînnoiri.</p>
+</main>
+<main lang-blok="sv">
+<h1>Återbetalningspolicy</h1>
+<p class="datum">Gäller från: 13 juli 2026</p>
+
+<div class="kaartje groen">
+<p><strong>Den korta versionen:</strong> full återbetalning inom 14 dagar från köpet, så länge du inte har använt de köpta krediterna. Återbetalningar hanteras av vår betalpartner (Merchant of Record, juridiskt sett säljaren) tillbaka till ditt ursprungliga betalsätt.</p>
+</div>
+
+<h2>1. Ångerrätten på 14 dagar</h2>
+<p>Om du är konsument i EU/EES eller Storbritannien har du en lagstadgad rätt att ångra ett köp inom 14 dagar. Eftersom krediter är digitalt innehåll som blir tillgängligt direkt godkänner du i kassan att vi börjar leverera omedelbart. Vad det innebär i praktiken:</p>
+<ul>
+<li><strong>10-paket (4,99 €):</strong> full återbetalning inom 14 dagar från köpet om ingen av de 10 krediterna har använts. Så snart du använder en eller flera krediter ur paketet upphör ångerrätten.</li>
+<li><strong>Årsabonnemang (39,99 €/år):</strong> full återbetalning inom 14 dagar från köpet (eller från en förnyelsedebitering) om du inte har kört några läsningar under den nya perioden. Efter de 14 dagarna kan du säga upp när som helst: din åtkomst fortsätter till slutet av det betalda året, och ingen delåterbetalning ges för det som återstår.</li>
+<li><strong>Gratiskrediter:</strong> har inget penningvärde och kan inte återbetalas.</li>
+</ul>
+
+<h2>2. Så begär du en återbetalning</h2>
+<p>Mejla <a href="mailto:support@toereading.app">support@toereading.app</a> med ditt ordernummer (det står i din betalningsbekräftelse), eller använd länken i det mejlet. Vår betalpartner genomför godkända återbetalningar till ditt ursprungliga betalsätt, vanligtvis inom 5–10 arbetsdagar. När ett köp återbetalas tas motsvarande krediter bort från ditt konto.</p>
+
+<h2>3. Om något är fel på vår sida</h2>
+<p>Om tjänsten inte fungerar som den ska (ett köp krediterades inte, läsningar misslyckas utan att det är ditt fel), kontakta oss så ställer vi det till rätta: vi åtgärdar felet, återför dina krediter eller återbetalar dig. Dina lagstadgade rättigheter som konsument gäller alltid och begränsas aldrig av denna policy.</p>
+
+<h2>4. Säga upp ditt abonnemang</h2>
+<p>Att säga upp är inte samma sak som att begära återbetalning: säg upp när som helst via länken i din betalningsbekräftelse eller genom att mejla oss. Du behåller åtkomsten till slutet av den period du har betalat för, och abonnemanget förnyas helt enkelt inte. Du får ett påminnelsemejl före varje förnyelse.</p>
+</main>
+<main lang-blok="zht">
+<h1>退款政策</h1>
+<p class="datum">生效日期：2026 年 7 月 13 日</p>
+
+<div class="kaartje groen">
+<p><strong>簡短版本：</strong>只要你尚未使用所購額度，購買後 14 天內可獲全額退款。退款由我們的付款合作夥伴（Merchant of Record，登記商家）處理，退回你原本的付款方式。</p>
+</div>
+
+<h2>1. 14 天撤回權</h2>
+<p>如果你是歐盟／歐洲經濟區或英國的消費者，你依法享有在 14 天內撤回購買的權利。由於額度是立即可用的數位內容，你在結帳時同意我們立即開始交付。實務上這代表：</p>
+<ul>
+<li><strong>10 次組合包（€4.99）：</strong>若 10 個額度都尚未使用，購買後 14 天內可獲全額退款。一旦你使用了組合包中的一個或多個額度，撤回權即告失效。</li>
+<li><strong>年度訂閱（€39.99／年）：</strong>若你在新的訂閱期間內尚未執行任何解讀，購買（或續訂扣款）後 14 天內可獲全額退款。14 天過後，你可以隨時取消：你的使用權持續到已付費年度結束為止，剩餘期間不提供部分退款。</li>
+<li><strong>免費額度：</strong>不具金錢價值，無法退款。</li>
+</ul>
+
+<h2>2. 如何申請退款</h2>
+<p>請寄電子郵件到 <a href="mailto:support@toereading.app">support@toereading.app</a> 並附上你的訂單編號（在你的付款確認電子郵件中），或使用該郵件中的連結。核准的退款由我們的付款合作夥伴退回你原本的付款方式，通常在 5 至 10 個工作天內完成。當一筆購買獲得退款時，相應的額度會從你的帳戶中移除。</p>
+
+<h2>3. 如果是我們這邊出了問題</h2>
+<p>如果服務有瑕疵（購買後未入帳、非因你的過失導致解讀失敗），請與我們聯絡，我們會把事情做對：修正問題、補回額度，或退款給你。你作為消費者的法定權利始終不受影響，也絕不受本政策限制。</p>
+
+<h2>4. 取消訂閱</h2>
+<p>取消與退款申請不是同一回事：你可以隨時透過付款確認電子郵件中的連結，或寄電子郵件給我們來取消。你保有使用權直到已付費期間結束，訂閱只是不再續訂。每次續訂前你都會收到提醒電子郵件。</p>
 </main>
 
 <footer>
@@ -107,16 +836,24 @@ html[data-taal="nl"] [lang-blok="nl"]{display:block}
 </div>
 <script>
 (function(){
+  var TALEN=["en","nl","de","fr","es","it","pt","pl","ru","tr","ar","zh","ja","ko","hi","id","vi","th","uk","hu","bn","ur","fa","ms","tl","el","cs","ro","sv","zht"];
+  var RTL={ar:1,ur:1,fa:1};
   var t='en';
-  try{ t = localStorage.legal_taal || ((localStorage.taal==='nl' || (navigator.language||'').slice(0,2).toLowerCase()==='nl')?'nl':'en'); }catch(e){}
-  if(t!=='nl') t='en';
+  try{
+    var app=localStorage.taal, kies=localStorage.legal_taal;
+    t = (TALEN.indexOf(app)>=0 ? app : (TALEN.indexOf(kies)>=0 ? kies : (navigator.language||'').slice(0,2).toLowerCase()));
+  }catch(e){}
+  if(TALEN.indexOf(t)<0) t='en';
+  var sel=document.getElementById('taalKeuze');
   function zet(x){
+    if(TALEN.indexOf(x)<0) x='en';
     document.documentElement.setAttribute('data-taal',x);
     document.documentElement.lang=x;
-    document.querySelectorAll('.talen button').forEach(function(b){b.classList.toggle('actief',b.getAttribute('data-t')===x);});
+    document.documentElement.dir=RTL[x]?'rtl':'ltr';
+    if(sel) sel.value=x;
     try{localStorage.legal_taal=x;}catch(e){}
   }
-  document.querySelectorAll('.talen button').forEach(function(b){b.onclick=function(){zet(b.getAttribute('data-t'));};});
+  if(sel) sel.onchange=function(){zet(sel.value);};
   zet(t);
 })();
 </script>
