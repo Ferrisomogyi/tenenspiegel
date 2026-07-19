@@ -441,6 +441,7 @@ html[dir="rtl"] .accx{right:auto;left:12px}
     <div class="spiegel-acties">
       <button class="knop knop-licht" id="kopieer" data-t="ui.btn_kopieer">Kopieer mijn analyse</button>
       <button class="knop knop-licht" id="pdfKnop" data-t="ui.btn_pdf">Opslaan als PDF</button>
+      <button class="knop knop-licht" id="deelKnop" data-t="ui.btn_deel">Deel</button>
       <button class="knop knop-ghost" id="reset" data-t="ui.btn_reset">Begin opnieuw</button>
     </div>
     <div class="disclaimer" data-t="ui.disclaimer_spiegel">Tenen lezen spiegelt persoonlijkheid, houding en gedrag. Niets meer en niets minder. Het stelt géén medische of psychologische diagnoses; daarvoor ga je naar een arts of therapeut. Wees mild in je interpretatie: "rare" tenen bestaan niet, alleen tenen die bij jou passen.</div>
@@ -451,6 +452,7 @@ html[dir="rtl"] .accx{right:auto;left:12px}
   <div class="bron" data-t="ui.footer_bron">Gebaseerd op Tenen Lezen I · II · III en Babyteentjes Lezen · Imre &amp; Margriet Somogyi</div>
   <div data-t="ui.footer_versie">Tenenspiegel · v9.8 · installeerbaar als app (PWA) · uitgebreide lezing, kleurenkaarten &amp; De spiegel vertelt</div>
   <div class="legallinks"><a href="./pricing.html" data-t="ui.leg_prijzen">Prijzen</a> · <a href="./terms.html" data-t="ui.leg_voorwaarden">Voorwaarden</a> · <a href="./privacy.html" data-t="ui.leg_privacy">Privacy</a> · <a href="./refund.html" data-t="ui.leg_refund">Terugbetaling</a></div>
+  <div><button class="acclink" id="deelApp" data-t="ui.deel_app" style="display:inline;margin-top:6px">Deel deze app</button></div>
   <div class="disclaimer" data-t="ui.footer_disclaimer"><b>Goed om te weten.</b> De Tenenspiegel is een spel- en spiegelinstrument voor zelfreflectie, gebaseerd op de boeken van Imre &amp; Margriet Somogyi. De app en de AI-analyse geven geen garanties over juistheid of volledigheid en stellen geen medische, psychologische of andere diagnoses; aan de uitkomsten kunnen geen rechten worden ontleend. Gebruik is volledig op eigen verantwoordelijkheid: de maker van deze app aanvaardt geen enkele aansprakelijkheid voor conclusies of beslissingen die op basis van de app worden genomen. Zorgen over je gezondheid? Ga naar je huisarts of pedicure.</div>
 </footer>
 <div id="printUit"></div>
@@ -622,6 +624,8 @@ const EXTRA_TALEN = {
 for(const t in EXTRA_TALEN){ if(TALEN[t] && TALEN[t].ui) Object.assign(TALEN[t].ui, EXTRA_TALEN[t]); }
 const PDF_TALEN = { "nl":"Opslaan als PDF", "en":"Save as PDF", "de":"Als PDF speichern", "fr":"Enregistrer en PDF", "es":"Guardar como PDF", "it":"Salva come PDF", "pt":"Guardar como PDF", "pl":"Zapisz jako PDF", "ru":"Сохранить как PDF", "tr":"PDF olarak kaydet", "ar":"احفظ بصيغة PDF", "zh":"另存为 PDF", "ja":"PDFとして保存", "ko":"PDF로 저장", "hi":"PDF के रूप में सेव कीजिए", "id":"Simpan sebagai PDF", "vi":"Lưu dưới dạng PDF", "th":"บันทึกเป็น PDF", "uk":"Зберегти як PDF", "hu":"Mentés PDF-ként", "bn":"PDF হিসেবে সেভ করো", "ur":"PDF کے طور پر محفوظ کریں", "fa":"ذخیره به‌عنوان PDF", "ms":"Simpan sebagai PDF", "tl":"I-save bilang PDF", "el":"Αποθήκευσε ως PDF", "cs":"Uložit jako PDF", "ro":"Salvează ca PDF", "sv":"Spara som PDF", "zht":"另存為 PDF" };
 for(const t in PDF_TALEN){ if(TALEN[t] && TALEN[t].ui) TALEN[t].ui.btn_pdf = PDF_TALEN[t]; }
+const DEEL_TALEN = { "nl":{"btn_deel": "Deel", "deel_app": "Deel deze app", "deel_app_tekst": "Wat vertellen jouw tenen over jou? Ontdek het met Toe Reading."}, "en":{"btn_deel": "Share", "deel_app": "Share this app", "deel_app_tekst": "What do your toes say about you? Find out with Toe Reading."}, "de":{"btn_deel": "Teilen", "deel_app": "Diese App teilen", "deel_app_tekst": "Was verraten deine Zehen über dich? Finde es mit Toe Reading heraus."}, "fr":{"btn_deel": "Partager", "deel_app": "Partager cette appli", "deel_app_tekst": "Que racontent tes orteils sur toi ? Découvre-le avec Toe Reading."}, "es":{"btn_deel": "Compartir", "deel_app": "Compartir esta app", "deel_app_tekst": "¿Qué dicen tus dedos de los pies sobre ti? Descúbrelo con Toe Reading."}, "it":{"btn_deel": "Condividi", "deel_app": "Condividi questa app", "deel_app_tekst": "Cosa dicono di te le dita dei tuoi piedi? Scoprilo con Toe Reading."}, "pt":{"btn_deel": "Partilhar", "deel_app": "Partilhar esta app", "deel_app_tekst": "O que dizem os teus dedos dos pés sobre ti? Descobre com Toe Reading."}, "pl":{"btn_deel": "Udostępnij", "deel_app": "Udostępnij tę aplikację", "deel_app_tekst": "Co twoje palce u stóp mówią o tobie? Przekonaj się z Toe Reading."}, "ru":{"btn_deel": "Поделиться", "deel_app": "Поделиться приложением", "deel_app_tekst": "Что пальцы твоих ног расскажут о тебе? Узнай с Toe Reading."}, "tr":{"btn_deel": "Paylaş", "deel_app": "Bu uygulamayı paylaş", "deel_app_tekst": "Ayak parmakların senin hakkında ne anlatıyor? Toe Reading ile keşfet."}, "ar":{"btn_deel": "مشاركة", "deel_app": "شارك هذا التطبيق", "deel_app_tekst": "ماذا تقول أصابع قدميك عنك؟ اكتشف ذلك مع Toe Reading."}, "zh":{"btn_deel": "分享", "deel_app": "分享这个应用", "deel_app_tekst": "你的脚趾透露了你的什么秘密？用 Toe Reading 来发现吧。"}, "ja":{"btn_deel": "共有", "deel_app": "このアプリを共有", "deel_app_tekst": "あなたの足の指は何を語る？Toe Reading で確かめてみよう。"}, "ko":{"btn_deel": "공유", "deel_app": "이 앱 공유하기", "deel_app_tekst": "당신의 발가락은 당신에 대해 무엇을 말해줄까요? Toe Reading으로 알아보세요."}, "hi":{"btn_deel": "शेयर करें", "deel_app": "यह ऐप शेयर कीजिए", "deel_app_tekst": "आपके पैर की उंगलियाँ आपके बारे में क्या बताती हैं? Toe Reading के साथ जानिए।"}, "id":{"btn_deel": "Bagikan", "deel_app": "Bagikan aplikasi ini", "deel_app_tekst": "Apa cerita jari kakimu tentang dirimu? Cari tahu dengan Toe Reading."}, "vi":{"btn_deel": "Chia sẻ", "deel_app": "Chia sẻ ứng dụng này", "deel_app_tekst": "Ngón chân của bạn nói gì về bạn? Hãy khám phá cùng Toe Reading."}, "th":{"btn_deel": "แชร์", "deel_app": "แชร์แอปนี้", "deel_app_tekst": "นิ้วเท้าของคุณบอกอะไรเกี่ยวกับตัวคุณบ้าง ลองค้นหาคำตอบกับ Toe Reading"}, "uk":{"btn_deel": "Поділитися", "deel_app": "Поділитися цим застосунком", "deel_app_tekst": "Що пальці ваших стоп можуть розповісти про вас? Дізнайтеся з Toe Reading."}, "hu":{"btn_deel": "Megosztás", "deel_app": "Oszd meg ezt az appot", "deel_app_tekst": "Mit árulnak el rólad a lábujjaid? Derítsd ki a Toe Reading segítségével."}, "bn":{"btn_deel": "শেয়ার করো", "deel_app": "এই অ্যাপটি শেয়ার করো", "deel_app_tekst": "তোমার পায়ের আঙুলগুলো তোমার সম্পর্কে কী বলে? Toe Reading দিয়ে জেনে নাও।"}, "ur":{"btn_deel": "شیئر کریں", "deel_app": "یہ ایپ شیئر کریں", "deel_app_tekst": "آپ کے پاؤں کی انگلیاں آپ کے بارے میں کیا بتاتی ہیں؟ Toe Reading کے ساتھ جانیے۔"}, "fa":{"btn_deel": "اشتراک‌گذاری", "deel_app": "این اپ را به اشتراک بگذار", "deel_app_tekst": "انگشت‌های پایت درباره‌ات چه می‌گویند؟ با Toe Reading کشف کن."}, "ms":{"btn_deel": "Kongsi", "deel_app": "Kongsi aplikasi ini", "deel_app_tekst": "Apa yang diceritakan oleh jari kaki anda tentang diri anda? Temui jawapannya dengan Toe Reading."}, "tl":{"btn_deel": "I-share", "deel_app": "I-share ang app na ito", "deel_app_tekst": "Ano ang sinasabi ng iyong mga daliri sa paa tungkol sa iyo? Alamin ito gamit ang Toe Reading."}, "el":{"btn_deel": "Κοινοποίηση", "deel_app": "Μοιράσου αυτή την εφαρμογή", "deel_app_tekst": "Τι λένε τα δάχτυλα των ποδιών σου για σένα; Ανακάλυψέ το με το Toe Reading."}, "cs":{"btn_deel": "Sdílet", "deel_app": "Sdílet tuto aplikaci", "deel_app_tekst": "Co o tobě prozrazují prsty u nohou? Zjisti to s aplikací Toe Reading."}, "ro":{"btn_deel": "Distribuie", "deel_app": "Distribuie această aplicație", "deel_app_tekst": "Ce spun degetele tale de la picioare despre tine? Află cu Toe Reading."}, "sv":{"btn_deel": "Dela", "deel_app": "Dela den här appen", "deel_app_tekst": "Vad säger dina tår om dig? Ta reda på det med Toe Reading."}, "zht":{"btn_deel": "分享", "deel_app": "分享這個 App", "deel_app_tekst": "你的腳趾述說著怎樣的你？用 Toe Reading 一探究竟。"} };
+for(const t in DEEL_TALEN){ if(TALEN[t] && TALEN[t].ui) Object.assign(TALEN[t].ui, DEEL_TALEN[t]); }
 const VRAAG_TALEN = {
   nl: {
     vr_kop: "Stel een vraag",
@@ -2571,7 +2575,7 @@ document.getElementById('reset').addEventListener('click',()=>{
   renderTeenPaneel();renderCatalogus();renderSpiegel();
   document.getElementById('stap1').scrollIntoView({behavior:'smooth'});
 });
-document.getElementById('kopieer').addEventListener('click',async()=>{
+function bouwLezingTekst(metVertelt){
   let txt=T('ui.kopieer_kop')+'\n\n';
   for(const voet of ['R','L']){
     let blok='';
@@ -2582,13 +2586,37 @@ document.getElementById('kopieer').addEventListener('click',async()=>{
     }
     if(blok) txt+=(voet==='R'?T('ui.kopieer_voet_r'):T('ui.kopieer_voet_l'))+'\n'+blok+'\n';
   }
+  if(metVertelt && laatsteVertelt){
+    const v=laatsteVertelt;
+    txt+='\n'+(laatsteDiepgang==='uitgebreid'?T('ui.vkop_lang'):T('ui.vkop_kort'))+'\n';
+    if(v.eerste) txt+='\n'+v.eerste+'\n';
+    for(const kant of ['R','L']) for(let t=1;t<=5;t++){
+      const key=kant+t; const tk=v.tenen&&v.tenen[key];
+      if(tk) txt+='\n'+(kant==='R'?T('ui.rechts'):T('ui.links'))+' · '+String(TEENNAAM[t]).toLowerCase()+':\n'+tk+'\n';
+    }
+    if(v.samenhang) txt+='\n'+v.samenhang+'\n';
+  }
   txt+='\n'+T('ui.kopieer_bron');
   txt+='\n'+T('ui.kopieer_disclaimer');
+  return txt;
+}
+async function kopieerFallback(knopId,txt){
   try{
     await navigator.clipboard.writeText(txt);
-    const b=document.getElementById('kopieer');const oud=b.textContent;
+    const b=document.getElementById(knopId);const oud=b.textContent;
     b.textContent=T('ui.gekopieerd');setTimeout(()=>b.textContent=oud,1600);
   }catch(e){alert(txt);}
+}
+document.getElementById('kopieer').addEventListener('click',()=>kopieerFallback('kopieer',bouwLezingTekst(false)));
+document.getElementById('deelKnop').addEventListener('click',async()=>{
+  const txt=bouwLezingTekst(true)+'\n\n'+T('ui.deel_app_tekst')+'\nhttps://toereading.app';
+  if(navigator.share){ try{ await navigator.share({text:txt}); }catch(e){} }
+  else kopieerFallback('deelKnop',txt);
+});
+document.getElementById('deelApp').addEventListener('click',async()=>{
+  const txt=T('ui.deel_app_tekst');
+  if(navigator.share){ try{ await navigator.share({title:'Toe Reading', text:txt, url:'https://toereading.app'}); }catch(e){} }
+  else kopieerFallback('deelApp',txt+'\nhttps://toereading.app');
 });
 document.getElementById('pdfKnop').addEventListener('click',()=>{
   const uit=document.getElementById('printUit');
