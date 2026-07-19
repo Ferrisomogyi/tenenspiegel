@@ -287,6 +287,17 @@ html[dir="rtl"] .accx{right:auto;left:12px}
 .accbewaar{display:flex;gap:10px;align-items:flex-start;margin-top:14px;padding:10px 12px;border:1.5px solid var(--lijn);border-radius:10px;font-size:13px;background:#F7F1E1;cursor:pointer}
 .accbewaar input{margin-top:2px;flex:none}
 .accbewaar b{font-size:13.5px}
+/* ---- Opslaan als PDF (print) ---- */
+#printUit{display:none}
+@media print{
+  body > :not(#printUit){display:none !important}
+  #printUit{display:block !important;font-family:'Karla',sans-serif;color:#000;background:#fff}
+  #printUit .p-kop{font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin-bottom:4px}
+  #printUit .p-datum{font-size:12px;color:#444;margin-bottom:14px}
+  #printUit .p-bron{margin-top:16px;padding-top:8px;border-top:1px solid #999;font-size:11px;color:#333}
+  #printUit .spiegel-teen,#printUit .vteen{break-inside:avoid}
+  #printUit .vraagsectie,#printUit .foto-acties{display:none !important}
+}
 </style>
 </head>
 <body>
@@ -429,6 +440,7 @@ html[dir="rtl"] .accx{right:auto;left:12px}
     <div id="spiegelInhoud"><div class="spiegel-leeg" data-t="ui.spiegel_leeg">Je spiegel is nog leeg. Kies vormen bij je tenen en hier verschijnt je verhaal.</div></div>
     <div class="spiegel-acties">
       <button class="knop knop-licht" id="kopieer" data-t="ui.btn_kopieer">Kopieer mijn analyse</button>
+      <button class="knop knop-licht" id="pdfKnop" data-t="ui.btn_pdf">Opslaan als PDF</button>
       <button class="knop knop-ghost" id="reset" data-t="ui.btn_reset">Begin opnieuw</button>
     </div>
     <div class="disclaimer" data-t="ui.disclaimer_spiegel">Tenen lezen spiegelt persoonlijkheid, houding en gedrag. Niets meer en niets minder. Het stelt géén medische of psychologische diagnoses; daarvoor ga je naar een arts of therapeut. Wees mild in je interpretatie: "rare" tenen bestaan niet, alleen tenen die bij jou passen.</div>
@@ -441,6 +453,7 @@ html[dir="rtl"] .accx{right:auto;left:12px}
   <div class="legallinks"><a href="./pricing.html" data-t="ui.leg_prijzen">Prijzen</a> · <a href="./terms.html" data-t="ui.leg_voorwaarden">Voorwaarden</a> · <a href="./privacy.html" data-t="ui.leg_privacy">Privacy</a> · <a href="./refund.html" data-t="ui.leg_refund">Terugbetaling</a></div>
   <div class="disclaimer" data-t="ui.footer_disclaimer"><b>Goed om te weten.</b> De Tenenspiegel is een spel- en spiegelinstrument voor zelfreflectie, gebaseerd op de boeken van Imre &amp; Margriet Somogyi. De app en de AI-analyse geven geen garanties over juistheid of volledigheid en stellen geen medische, psychologische of andere diagnoses; aan de uitkomsten kunnen geen rechten worden ontleend. Gebruik is volledig op eigen verantwoordelijkheid: de maker van deze app aanvaardt geen enkele aansprakelijkheid voor conclusies of beslissingen die op basis van de app worden genomen. Zorgen over je gezondheid? Ga naar je huisarts of pedicure.</div>
 </footer>
+<div id="printUit"></div>
 <script>
 /* ================= i18n (v8) ================= */
 const TALEN = {
@@ -607,6 +620,8 @@ const EXTRA_TALEN = {
   "zht": {"wacht_1":"鏡子先靜靜地看著你的大拇趾……","wacht_2":"每根腳趾都是一根天線；鏡子正一根一根地細細聆聽……","wacht_3":"形狀、趾甲、姿態：一切都被溫柔地細細端詳……","wacht_4":"右腳訴說著你的思考，左腳訴說著你的感受……","wacht_5":"快好了：鏡子正在拼上最後幾塊拼圖……","pwa_hint":"小提示：把這個 App 加入主畫面，鏡子就能像真正的 App 一樣開啟。","pwa_knop":"安裝","pwa_ios":"點一下「分享」，再選擇「加入主畫面」。","pwa_weg":"暫時不用","acc_verwijder":"刪除帳號","acc_verwijder_uitleg":"這會永久刪除你的帳號：你的點數、你儲存的解讀與對話，以及你的個人資料。此操作無法復原。","acc_verwijder_bevestig":"是的，永久刪除我的帳號","acc_verwijder_terug":"不用了，還是算了","acc_verwijder_klaar":"你的帳號已刪除。謝謝你曾經來過；隨時歡迎你回來。","acc_verwijder_fout":"刪除沒有成功。請稍後再試一次，或來信 support@toereading.app。"}
 };
 for(const t in EXTRA_TALEN){ if(TALEN[t] && TALEN[t].ui) Object.assign(TALEN[t].ui, EXTRA_TALEN[t]); }
+const PDF_TALEN = { "nl":"Opslaan als PDF", "en":"Save as PDF", "de":"Als PDF speichern", "fr":"Enregistrer en PDF", "es":"Guardar como PDF", "it":"Salva come PDF", "pt":"Guardar como PDF", "pl":"Zapisz jako PDF", "ru":"Сохранить как PDF", "tr":"PDF olarak kaydet", "ar":"احفظ بصيغة PDF", "zh":"另存为 PDF", "ja":"PDFとして保存", "ko":"PDF로 저장", "hi":"PDF के रूप में सेव कीजिए", "id":"Simpan sebagai PDF", "vi":"Lưu dưới dạng PDF", "th":"บันทึกเป็น PDF", "uk":"Зберегти як PDF", "hu":"Mentés PDF-ként", "bn":"PDF হিসেবে সেভ করো", "ur":"PDF کے طور پر محفوظ کریں", "fa":"ذخیره به‌عنوان PDF", "ms":"Simpan sebagai PDF", "tl":"I-save bilang PDF", "el":"Αποθήκευσε ως PDF", "cs":"Uložit jako PDF", "ro":"Salvează ca PDF", "sv":"Spara som PDF", "zht":"另存為 PDF" };
+for(const t in PDF_TALEN){ if(TALEN[t] && TALEN[t].ui) TALEN[t].ui.btn_pdf = PDF_TALEN[t]; }
 const VRAAG_TALEN = {
   nl: {
     vr_kop: "Stel een vraag",
@@ -2574,6 +2589,18 @@ document.getElementById('kopieer').addEventListener('click',async()=>{
     const b=document.getElementById('kopieer');const oud=b.textContent;
     b.textContent=T('ui.gekopieerd');setTimeout(()=>b.textContent=oud,1600);
   }catch(e){alert(txt);}
+});
+document.getElementById('pdfKnop').addEventListener('click',()=>{
+  const uit=document.getElementById('printUit');
+  const loc=({zht:'zh-Hant',tl:'fil'})[TAAL]||TAAL;
+  let dat; try{dat=new Date().toLocaleDateString(loc,{year:'numeric',month:'long',day:'numeric'});}catch(e){dat=new Date().toLocaleDateString();}
+  let html='<div class="p-kop">'+esc(T('ui.kopieer_kop')).replace(/\n/g,'<br>')+'</div><div class="p-datum">'+esc(dat)+'</div>';
+  if(Object.values(sel).some(x=>x.size>0)) html+='<div class="p-spiegel">'+document.getElementById('spiegelInhoud').innerHTML+'</div>';
+  const vd=document.querySelector('#verteltUit .vertelt');
+  if(vd){const k=vd.cloneNode(true);k.querySelectorAll('.vraagsectie,button,input,textarea,.foto-acties').forEach(n=>n.remove());html+='<div class="p-vertelt">'+k.outerHTML+'</div>';}
+  html+='<div class="p-bron">'+esc(T('ui.kopieer_bron'))+'<br>'+esc(T('ui.kopieer_disclaimer'))+'</div>';
+  uit.innerHTML=html;
+  window.print();
 });
 
 /* ================= FOTO-ANALYSE (fase 2) ================= */
