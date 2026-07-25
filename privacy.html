@@ -100,13 +100,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>We do not ask for your date of birth or any other data we don't need (data minimisation). We do not use advertising or analytics trackers. The app stores your session token and language preference in your browser's local storage, functional only.</p>
 
+<p><strong>Ask a question.</strong> If you ask the mirror a question, your question and the answer are processed only to generate that answer; we store the content nowhere, not in our database and not in logs. The conversation simply stays on your screen in the app while you are at it, so you can ask follow-up questions. Close the app and it is gone, unless you have the save switch turned on.</p>
+
+<p><strong>Save switch.</strong> If you turn on the switch "Save my readings and conversations", we store your question conversations alongside your reading texts with your account. This is off by default. You can always delete: per conversation, per reading, or all at once via your account.</p>
+
+<p><strong>Duo analysis.</strong> With a duo analysis you also upload someone else's feet. The same promises apply: photos are never stored, and we only keep the comparative reading if you have the save switch turned on, under your account. Names and relationship you enter are never stored. Only upload someone else's feet if that person knows about it and agrees; for children, the parent or guardian decides. Are you the second person in a duo analysis and would you like a saved comparative reading to be deleted? Email us at <a href="mailto:support@toereading.app">support@toereading.app</a> and tell us who made the analysis, and we will take care of it.</p>
+
 <h2>3. Who helps us process data</h2>
 <table>
 <tr><th>Party</th><th>Role</th><th>Location</th></tr>
 <tr><td>Supabase</td><td>Accounts and database hosting</td><td>EU (Frankfurt, Germany)</td></tr>
 <tr><td>Cloudflare</td><td>Analysis gateway (worker), DNS</td><td>EU/US, EU Data Privacy Framework &amp; SCCs</td></tr>
 <tr><td>Anthropic</td><td>AI analysis of your photo (Claude API); API data is not used to train models</td><td>US, protected by EU Standard Contractual Clauses / DPF</td></tr>
-<tr><td>Payment partner</td><td>Payments (Merchant of Record, independent controller)</td><td>EU/EEA or a country with an EU adequacy decision</td></tr>
+<tr><td>Stripe / Link</td><td>Payments via Stripe Managed Payments; Link acts as Merchant of Record and is independently responsible for payment data</td><td>EU/US, EU Data Privacy Framework &amp; SCCs</td></tr>
+<tr><td>Brevo</td><td>Sending account emails (verification, password reset)</td><td>EU</td></tr>
 <tr><td>GitHub Pages</td><td>Hosting of the app's static files; may log IP addresses</td><td>US, DPF</td></tr>
 </table>
 <p>We have data processing agreements with our processors. We never sell personal data.</p>
@@ -150,13 +157,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>We vragen niet om je geboortedatum of andere gegevens die we niet nodig hebben (dataminimalisatie). We gebruiken geen advertentie- of analytics-trackers. De app bewaart je sessietoken en taalvoorkeur in de local storage van je browser, puur functioneel.</p>
 
+<p><strong>Stel een vraag.</strong> Stel je de spiegel een vraag, dan worden je vraag en het antwoord alleen verwerkt om te kunnen antwoorden; wij slaan de inhoud nergens op, niet in onze database en niet in logs. Het gesprek blijft gewoon in de app op je scherm staan zolang je bezig bent, zodat je kunt doorvragen. Sluit je de app, dan is het weg, tenzij je de bewaar-schakelaar aan hebt staan.</p>
+
+<p><strong>Bewaar-schakelaar.</strong> Zet je de schakelaar "Bewaar mijn lezingen en gesprekken" aan, dan bewaren we naast je lezingteksten ook je vraaggesprekken bij je account. Standaard staat dit uit. Wissen kan altijd: per gesprek, per lezing of in één keer via je account.</p>
+
+<p><strong>Duo-analyse.</strong> Bij een duo-analyse upload je ook de voeten van iemand anders. Daarvoor gelden dezelfde beloftes: foto's worden nooit opgeslagen, en de vergelijkende lezing bewaren we alleen als jij de bewaar-schakelaar aan hebt staan, onder jouw account. Ingevulde namen en relatie worden nooit opgeslagen. Upload andermans voeten alleen als die persoon dat weet en goed vindt; bij kinderen beslist de ouder of voogd. Sta jij als tweede persoon in een duo-analyse en wil je dat een bewaarde vergelijkende lezing wordt gewist? Mail ons op <a href="mailto:support@toereading.app">support@toereading.app</a> en vertel erbij wie de analyse heeft gemaakt, dan zorgen we daarvoor.</p>
+
 <h2>3. Wie ons helpt met verwerken</h2>
 <table>
 <tr><th>Partij</th><th>Rol</th><th>Locatie</th></tr>
 <tr><td>Supabase</td><td>Accounts en database-hosting</td><td>EU (Frankfurt, Duitsland)</td></tr>
 <tr><td>Cloudflare</td><td>Analyse-poort (worker), DNS</td><td>EU/VS, EU Data Privacy Framework &amp; SCC's</td></tr>
 <tr><td>Anthropic</td><td>AI-analyse van je foto (Claude API); API-data wordt niet gebruikt om modellen te trainen</td><td>VS, beschermd via EU Standard Contractual Clauses / DPF</td></tr>
-<tr><td>Betaalpartner</td><td>Betalingen (Merchant of Record, zelfstandig verantwoordelijke)</td><td>EU/EER of een land met een EU-adequaatheidsbesluit</td></tr>
+<tr><td>Stripe / Link</td><td>Betalingen via Stripe Managed Payments; Link treedt op als Merchant of Record en is zelfstandig verantwoordelijk voor de betaalgegevens</td><td>EU/VS, EU Data Privacy Framework &amp; SCC's</td></tr>
+<tr><td>Brevo</td><td>Versturen van accountmails (verificatie, wachtwoord-reset)</td><td>EU</td></tr>
 <tr><td>GitHub Pages</td><td>Hosting van de statische app-bestanden; kan IP-adressen loggen</td><td>VS, DPF</td></tr>
 </table>
 <p>Met onze verwerkers hebben we verwerkersovereenkomsten. We verkopen nooit persoonsgegevens.</p>
@@ -200,13 +214,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>Wir fragen nicht nach deinem Geburtsdatum oder anderen Daten, die wir nicht brauchen (Datenminimierung). Wir verwenden keine Werbe- oder Analyse-Tracker. Die App speichert dein Sitzungstoken und deine Spracheinstellung im Local Storage deines Browsers, rein funktional.</p>
 
+<p><strong>Stell eine Frage.</strong> Stellst du dem Spiegel eine Frage, werden deine Frage und die Antwort ausschließlich verarbeitet, um dir antworten zu können; wir speichern die Inhalte nirgendwo, weder in unserer Datenbank noch in Logs. Das Gespräch bleibt einfach in der App auf deinem Bildschirm stehen, solange du dabei bist, damit du nachfragen kannst. Schließt du die App, ist es weg, es sei denn, du hast den Speicher-Schalter eingeschaltet.</p>
+
+<p><strong>Speicher-Schalter.</strong> Schaltest du den Schalter „Meine Lesungen und Gespräche speichern“ ein, bewahren wir neben deinen Lesungstexten auch deine Fragegespräche bei deinem Konto auf. Standardmäßig ist das ausgeschaltet. Löschen kannst du jederzeit: pro Gespräch, pro Lesung oder alles auf einmal über dein Konto.</p>
+
+<p><strong>Duo-Analyse.</strong> Bei einer Duo-Analyse lädst du auch die Füße einer anderen Person hoch. Dafür gelten dieselben Versprechen: Fotos werden niemals gespeichert, und die vergleichende Lesung bewahren wir nur auf, wenn du den Speicher-Schalter eingeschaltet hast, unter deinem Konto. Eingetragene Namen und die Beziehung werden niemals gespeichert. Lade die Füße einer anderen Person nur hoch, wenn sie davon weiß und einverstanden ist; bei Kindern entscheidet der Elternteil oder Vormund. Bist du die zweite Person in einer Duo-Analyse und möchtest du, dass eine gespeicherte vergleichende Lesung gelöscht wird? Schreib uns an <a href="mailto:support@toereading.app">support@toereading.app</a> und sag dazu, wer die Analyse erstellt hat, dann kümmern wir uns darum.</p>
+
 <h2>3. Wer uns bei der Verarbeitung hilft</h2>
 <table>
 <tr><th>Partei</th><th>Rolle</th><th>Standort</th></tr>
 <tr><td>Supabase</td><td>Konten und Datenbank-Hosting</td><td>EU (Frankfurt, Deutschland)</td></tr>
 <tr><td>Cloudflare</td><td>Analyse-Gateway (Worker), DNS</td><td>EU/USA, EU Data Privacy Framework &amp; SCCs</td></tr>
 <tr><td>Anthropic</td><td>KI-Analyse deines Fotos (Claude API); API-Daten werden nicht zum Trainieren von Modellen genutzt</td><td>USA, geschützt durch EU-Standardvertragsklauseln / DPF</td></tr>
-<tr><td>Zahlungspartner</td><td>Zahlungen (Merchant of Record, eigenständiger Verantwortlicher)</td><td>EU/EWR oder ein Land mit EU-Angemessenheitsbeschluss</td></tr>
+<tr><td>Stripe / Link</td><td>Zahlungen über Stripe Managed Payments; Link tritt als Merchant of Record auf und ist eigenständiger Verantwortlicher für die Zahlungsdaten</td><td>EU/USA, EU Data Privacy Framework &amp; SCCs</td></tr>
+<tr><td>Brevo</td><td>Versand von Konto-E-Mails (Verifizierung, Passwort-Reset)</td><td>EU</td></tr>
 <tr><td>GitHub Pages</td><td>Hosting der statischen App-Dateien; kann IP-Adressen protokollieren</td><td>USA, DPF</td></tr>
 </table>
 <p>Mit unseren Auftragsverarbeitern haben wir Auftragsverarbeitungsverträge geschlossen. Wir verkaufen niemals personenbezogene Daten.</p>
@@ -250,13 +271,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>Nous ne demandons pas ta date de naissance ni aucune autre donnée dont nous n'avons pas besoin (minimisation des données). Nous n'utilisons aucun traceur publicitaire ou d'analyse. L'app conserve ton jeton de session et ta préférence de langue dans le stockage local de ton navigateur, à des fins purement fonctionnelles.</p>
 
+<p><strong>Pose une question.</strong> Si tu poses une question au miroir, ta question et la réponse sont traitées uniquement pour générer cette réponse ; nous n'en conservons le contenu nulle part, ni dans notre base de données ni dans les journaux. La conversation reste simplement affichée à l'écran dans l'app tant que tu l'utilises, pour que tu puisses poser des questions de suivi. Si tu fermes l'app, elle disparaît, sauf si tu as activé l'interrupteur d'enregistrement.</p>
+
+<p><strong>Interrupteur d'enregistrement.</strong> Si tu actives l'interrupteur « Enregistrer mes lectures et mes conversations », nous conservons aussi tes conversations de questions, en plus de tes textes de lecture, dans ton compte. Cette option est désactivée par défaut. Tu peux toujours tout effacer : par conversation, par lecture, ou tout d'un coup via ton compte.</p>
+
+<p><strong>Analyse duo.</strong> Lors d'une analyse duo, tu envoies aussi les pieds de quelqu'un d'autre. Les mêmes promesses s'appliquent : les photos ne sont jamais enregistrées, et nous ne conservons la lecture comparative que si tu as activé l'interrupteur d'enregistrement, dans ton compte. Les noms et la relation que tu indiques ne sont jamais enregistrés. N'envoie les pieds de quelqu'un d'autre que si cette personne est au courant et d'accord ; pour les enfants, c'est le parent ou le tuteur qui décide. Tu es la deuxième personne d'une analyse duo et tu souhaites qu'une lecture comparative enregistrée soit effacée ? Écris-nous à <a href="mailto:support@toereading.app">support@toereading.app</a> en précisant qui a réalisé l'analyse, et nous nous en occuperons.</p>
+
 <h2>3. Qui nous aide à traiter les données</h2>
 <table>
 <tr><th>Partie</th><th>Rôle</th><th>Localisation</th></tr>
 <tr><td>Supabase</td><td>Comptes et hébergement de la base de données</td><td>UE (Francfort, Allemagne)</td></tr>
 <tr><td>Cloudflare</td><td>Passerelle d'analyse (worker), DNS</td><td>UE/États-Unis, EU Data Privacy Framework &amp; clauses contractuelles types (SCC)</td></tr>
 <tr><td>Anthropic</td><td>Analyse IA de ta photo (API Claude) ; les données de l'API ne servent pas à entraîner les modèles</td><td>États-Unis, protégé par les clauses contractuelles types de l'UE / le DPF</td></tr>
-<tr><td>Partenaire de paiement</td><td>Paiements (Merchant of Record, responsable de traitement indépendant)</td><td>UE/EEE ou un pays bénéficiant d'une décision d'adéquation de l'UE</td></tr>
+<tr><td>Stripe / Link</td><td>Paiements via Stripe Managed Payments ; Link agit comme Merchant of Record et est responsable de traitement indépendant pour les données de paiement</td><td>UE/États-Unis, EU Data Privacy Framework &amp; clauses contractuelles types (SCC)</td></tr>
+<tr><td>Brevo</td><td>Envoi des e-mails de compte (vérification, réinitialisation du mot de passe)</td><td>UE</td></tr>
 <tr><td>GitHub Pages</td><td>Hébergement des fichiers statiques de l'app ; peut journaliser les adresses IP</td><td>États-Unis, DPF</td></tr>
 </table>
 <p>Nous avons conclu des accords de traitement des données avec nos sous-traitants. Nous ne vendons jamais de données personnelles.</p>
@@ -300,13 +328,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>No te pedimos la fecha de nacimiento ni ningún otro dato que no necesitemos (minimización de datos). No usamos rastreadores publicitarios ni de analítica. La app guarda tu token de sesión y tu preferencia de idioma en el almacenamiento local de tu navegador, con fines exclusivamente funcionales.</p>
 
+<p><strong>Haz una pregunta.</strong> Si le haces una pregunta al espejo, tu pregunta y la respuesta se procesan únicamente para generar esa respuesta; no guardamos el contenido en ningún sitio, ni en nuestra base de datos ni en los registros. La conversación simplemente permanece en tu pantalla dentro de la app mientras la usas, para que puedas seguir preguntando. Si cierras la app, desaparece, salvo que tengas activado el interruptor de guardado.</p>
+
+<p><strong>Interruptor de guardado.</strong> Si activas el interruptor "Guardar mis lecturas y conversaciones", además de los textos de tus lecturas guardamos también tus conversaciones de preguntas junto a tu cuenta. Por defecto está desactivado. Puedes borrarlas siempre que quieras: por conversación, por lectura o todas de una vez desde tu cuenta.</p>
+
+<p><strong>Análisis a dúo.</strong> En un análisis a dúo subes también los pies de otra persona. Se aplican las mismas promesas: las fotos no se almacenan nunca, y la lectura comparativa solo la conservamos si tienes activado el interruptor de guardado, bajo tu cuenta. Los nombres y la relación que indicas no se almacenan nunca. Sube los pies de otra persona solo si esa persona lo sabe y está de acuerdo; en el caso de los niños, decide el padre, la madre o el tutor. ¿Eres la segunda persona de un análisis a dúo y quieres que se borre una lectura comparativa guardada? Escríbenos a <a href="mailto:support@toereading.app">support@toereading.app</a> indicando quién realizó el análisis y nos encargaremos de ello.</p>
+
 <h2>3. Quién nos ayuda a tratar los datos</h2>
 <table>
 <tr><th>Parte</th><th>Función</th><th>Ubicación</th></tr>
 <tr><td>Supabase</td><td>Cuentas y alojamiento de la base de datos</td><td>UE (Fráncfort, Alemania)</td></tr>
 <tr><td>Cloudflare</td><td>Pasarela de análisis (worker), DNS</td><td>UE/EE. UU., EU Data Privacy Framework &amp; cláusulas contractuales tipo (SCC)</td></tr>
 <tr><td>Anthropic</td><td>Análisis por IA de tu foto (API de Claude); los datos de la API no se usan para entrenar modelos</td><td>EE. UU., protegido por las cláusulas contractuales tipo de la UE / DPF</td></tr>
-<tr><td>Socio de pagos</td><td>Pagos (Merchant of Record, responsable independiente)</td><td>UE/EEE o un país con decisión de adecuación de la UE</td></tr>
+<tr><td>Stripe / Link</td><td>Pagos a través de Stripe Managed Payments; Link actúa como Merchant of Record y es responsable independiente de los datos de pago</td><td>UE/EE. UU., EU Data Privacy Framework &amp; cláusulas contractuales tipo (SCC)</td></tr>
+<tr><td>Brevo</td><td>Envío de los correos de la cuenta (verificación, restablecimiento de la contraseña)</td><td>UE</td></tr>
 <tr><td>GitHub Pages</td><td>Alojamiento de los archivos estáticos de la app; puede registrar direcciones IP</td><td>EE. UU., DPF</td></tr>
 </table>
 <p>Tenemos acuerdos de encargo de tratamiento con nuestros encargados. Nunca vendemos datos personales.</p>
@@ -350,13 +385,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>Non ti chiediamo la data di nascita né altri dati di cui non abbiamo bisogno (minimizzazione dei dati). Non usiamo tracker pubblicitari o di analisi. L'app conserva il tuo token di sessione e la tua preferenza di lingua nella local storage del browser, a scopo puramente funzionale.</p>
 
+<p><strong>Fai una domanda.</strong> Se fai una domanda allo specchio, la tua domanda e la risposta vengono trattate solo per generare quella risposta; non ne salviamo il contenuto da nessuna parte, né nel nostro database né nei log. La conversazione resta semplicemente sullo schermo, nell'app, mentre la usi, così puoi fare altre domande. Se chiudi l'app, sparisce, a meno che tu non abbia attivato l'interruttore di salvataggio.</p>
+
+<p><strong>Interruttore di salvataggio.</strong> Se attivi l'interruttore "Salva le mie letture e conversazioni", oltre ai testi delle tue letture conserviamo nel tuo account anche le conversazioni con le tue domande. Per impostazione predefinita è disattivato. Puoi cancellare in qualsiasi momento: per singola conversazione, per singola lettura o tutto in una volta tramite il tuo account.</p>
+
+<p><strong>Analisi duo.</strong> Con un'analisi duo carichi anche i piedi di un'altra persona. Valgono le stesse promesse: le foto non vengono mai salvate, e la lettura comparativa la conserviamo solo se hai attivato l'interruttore di salvataggio, nel tuo account. I nomi e la relazione che inserisci non vengono mai salvati. Carica i piedi di un'altra persona solo se quella persona lo sa ed è d'accordo; per i bambini decide il genitore o il tutore. Sei la seconda persona di un'analisi duo e vuoi che una lettura comparativa salvata venga cancellata? Scrivici a <a href="mailto:support@toereading.app">support@toereading.app</a> indicando chi ha creato l'analisi e ce ne occuperemo noi.</p>
+
 <h2>3. Chi ci aiuta a trattare i dati</h2>
 <table>
 <tr><th>Parte</th><th>Ruolo</th><th>Sede</th></tr>
 <tr><td>Supabase</td><td>Account e hosting del database</td><td>UE (Francoforte, Germania)</td></tr>
 <tr><td>Cloudflare</td><td>Gateway di analisi (worker), DNS</td><td>UE/USA, EU Data Privacy Framework &amp; SCC</td></tr>
 <tr><td>Anthropic</td><td>Analisi IA della tua foto (API di Claude); i dati API non vengono usati per addestrare i modelli</td><td>USA, protetti da Clausole Contrattuali Standard UE / DPF</td></tr>
-<tr><td>Partner di pagamento</td><td>Pagamenti (Merchant of Record, titolare autonomo)</td><td>UE/SEE o un Paese con decisione di adeguatezza UE</td></tr>
+<tr><td>Stripe / Link</td><td>Pagamenti tramite Stripe Managed Payments; Link agisce come Merchant of Record ed è titolare autonomo per i dati di pagamento</td><td>UE/USA, EU Data Privacy Framework &amp; SCC</td></tr>
+<tr><td>Brevo</td><td>Invio delle e-mail dell'account (verifica, reset della password)</td><td>UE</td></tr>
 <tr><td>GitHub Pages</td><td>Hosting dei file statici dell'app; può registrare gli indirizzi IP</td><td>USA, DPF</td></tr>
 </table>
 <p>Con i nostri responsabili del trattamento abbiamo accordi sul trattamento dei dati. Non vendiamo mai dati personali.</p>
@@ -400,13 +442,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>Não pedimos a tua data de nascimento nem quaisquer outros dados de que não precisamos (minimização dos dados). Não usamos rastreadores de publicidade nem de análise. A app guarda o teu token de sessão e a tua preferência de língua no armazenamento local do teu navegador, apenas para fins funcionais.</p>
 
+<p><strong>Faz uma pergunta.</strong> Se fizeres uma pergunta ao espelho, a tua pergunta e a resposta são tratadas apenas para gerar essa resposta; não guardamos o conteúdo em lado nenhum, nem na nossa base de dados nem nos registos. A conversa fica simplesmente no ecrã, dentro da app, enquanto estiveres a usá-la, para poderes fazer mais perguntas. Se fechares a app, desaparece, a menos que tenhas o interruptor de guardar ligado.</p>
+
+<p><strong>Interruptor de guardar.</strong> Se ligares o interruptor «Guardar as minhas leituras e conversas», guardamos na tua conta, além dos textos das tuas leituras, também as tuas conversas de perguntas. Por predefinição, está desligado. Podes apagar sempre que quiseres: conversa a conversa, leitura a leitura ou tudo de uma vez através da tua conta.</p>
+
+<p><strong>Análise a dois.</strong> Numa análise a dois, envias também os pés de outra pessoa. Aplicam-se as mesmas promessas: as fotos nunca ficam guardadas, e só conservamos a leitura comparativa se tiveres o interruptor de guardar ligado, na tua conta. Os nomes e a relação que preencheres nunca são guardados. Envia os pés de outra pessoa apenas se essa pessoa souber e concordar; no caso das crianças, decide o pai, a mãe ou o tutor. És a segunda pessoa numa análise a dois e queres que uma leitura comparativa guardada seja apagada? Escreve-nos para <a href="mailto:support@toereading.app">support@toereading.app</a>, diz-nos quem fez a análise, e nós tratamos disso.</p>
+
 <h2>3. Quem nos ajuda a tratar os dados</h2>
 <table>
 <tr><th>Entidade</th><th>Função</th><th>Localização</th></tr>
 <tr><td>Supabase</td><td>Contas e alojamento da base de dados</td><td>UE (Frankfurt, Alemanha)</td></tr>
 <tr><td>Cloudflare</td><td>Gateway de análise (worker), DNS</td><td>UE/EUA, EU Data Privacy Framework &amp; cláusulas contratuais-tipo (SCC)</td></tr>
 <tr><td>Anthropic</td><td>Análise por IA da tua foto (API do Claude); os dados da API não são usados para treinar modelos</td><td>EUA, protegidos pelas Cláusulas Contratuais-Tipo da UE / DPF</td></tr>
-<tr><td>Parceiro de pagamentos</td><td>Pagamentos (Merchant of Record, responsável independente pelo tratamento)</td><td>UE/EEE ou um país com uma decisão de adequação da UE</td></tr>
+<tr><td>Stripe / Link</td><td>Pagamentos através do Stripe Managed Payments; o Link atua como Merchant of Record e é responsável independente pelo tratamento dos dados de pagamento</td><td>UE/EUA, EU Data Privacy Framework &amp; cláusulas contratuais-tipo (SCC)</td></tr>
+<tr><td>Brevo</td><td>Envio dos e-mails de conta (verificação, reposição da palavra-passe)</td><td>UE</td></tr>
 <tr><td>GitHub Pages</td><td>Alojamento dos ficheiros estáticos da app; pode registar endereços IP</td><td>EUA, DPF</td></tr>
 </table>
 <p>Temos acordos de tratamento de dados com os nossos subcontratantes. Nunca vendemos dados pessoais.</p>
@@ -450,13 +499,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>Nie pytamy o twoją datę urodzenia ani o inne dane, których nie potrzebujemy (minimalizacja danych). Nie używamy trackerów reklamowych ani analitycznych. Aplikacja przechowuje twój token sesji i preferencję językową w local storage przeglądarki, wyłącznie w celach funkcjonalnych.</p>
 
+<p><strong>Zadaj pytanie.</strong> Gdy zadajesz lustru pytanie, twoje pytanie i odpowiedź są przetwarzane wyłącznie po to, aby tę odpowiedź wygenerować; ich treści nie zapisujemy nigdzie, ani w naszej bazie danych, ani w logach. Rozmowa po prostu pozostaje na ekranie w aplikacji, dopóki z niej korzystasz, więc możesz zadawać kolejne pytania. Gdy zamkniesz aplikację, rozmowa znika, chyba że masz włączony przełącznik zapisywania.</p>
+
+<p><strong>Przełącznik zapisywania.</strong> Jeśli włączysz przełącznik „Zapisuj moje odczyty i rozmowy”, obok tekstów odczytów przechowujemy przy twoim koncie także twoje rozmowy z pytaniami. Domyślnie ta opcja jest wyłączona. Usunąć możesz zawsze: pojedynczą rozmowę, pojedynczy odczyt albo wszystko naraz przez swoje konto.</p>
+
+<p><strong>Analiza duo.</strong> Przy analizie duo przesyłasz także zdjęcia stóp innej osoby. Obowiązują te same obietnice: zdjęcia nigdy nie są zapisywane, a porównawczy odczyt przechowujemy tylko wtedy, gdy masz włączony przełącznik zapisywania, na twoim koncie. Wpisane imiona i relacja nigdy nie są zapisywane. Przesyłaj zdjęcia stóp innej osoby tylko wtedy, gdy ta osoba o tym wie i się na to zgadza; w przypadku dzieci decyduje rodzic lub opiekun. Jesteś drugą osobą w analizie duo i chcesz, aby zapisany odczyt porównawczy został usunięty? Napisz do nas na <a href="mailto:support@toereading.app">support@toereading.app</a> i podaj, kto wykonał analizę, a zajmiemy się tym.</p>
+
 <h2>3. Kto pomaga nam przetwarzać dane</h2>
 <table>
 <tr><th>Podmiot</th><th>Rola</th><th>Lokalizacja</th></tr>
 <tr><td>Supabase</td><td>Konta i hosting bazy danych</td><td>UE (Frankfurt, Niemcy)</td></tr>
 <tr><td>Cloudflare</td><td>Brama analizy (worker), DNS</td><td>UE/USA, EU Data Privacy Framework &amp; standardowe klauzule umowne (SCC)</td></tr>
 <tr><td>Anthropic</td><td>Analiza AI twojego zdjęcia (Claude API); dane z API nie służą do trenowania modeli</td><td>USA, ochrona przez standardowe klauzule umowne UE / DPF</td></tr>
-<tr><td>Partner płatniczy</td><td>Płatności (Merchant of Record, niezależny administrator)</td><td>UE/EOG lub kraj objęty decyzją UE stwierdzającą odpowiedni stopień ochrony</td></tr>
+<tr><td>Stripe / Link</td><td>Płatności przez Stripe Managed Payments; Link występuje jako Merchant of Record i jest niezależnym administratorem danych płatniczych</td><td>UE/USA, EU Data Privacy Framework &amp; standardowe klauzule umowne (SCC)</td></tr>
+<tr><td>Brevo</td><td>Wysyłka e-maili dotyczących konta (weryfikacja, reset hasła)</td><td>UE</td></tr>
 <tr><td>GitHub Pages</td><td>Hosting statycznych plików aplikacji; może logować adresy IP</td><td>USA, DPF</td></tr>
 </table>
 <p>Z naszymi podmiotami przetwarzającymi mamy zawarte umowy powierzenia przetwarzania. Nigdy nie sprzedajemy danych osobowych.</p>
@@ -500,13 +556,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>Мы не запрашиваем дату рождения и любые другие данные, которые нам не нужны (минимизация данных). Мы не используем рекламные или аналитические трекеры. Приложение хранит твой токен сессии и языковую настройку в локальном хранилище браузера, исключительно в функциональных целях.</p>
 
+<p><strong>Задай вопрос.</strong> Если ты задаёшь зеркалу вопрос, твой вопрос и ответ обрабатываются только для того, чтобы сгенерировать этот ответ; их содержание мы нигде не сохраняем: ни в нашей базе данных, ни в логах. Пока ты пользуешься приложением, разговор просто остаётся на экране, так что можно задавать уточняющие вопросы. Закроешь приложение, и он исчезнет, если только у тебя не включён переключатель сохранения.</p>
+
+<p><strong>Переключатель сохранения.</strong> Если ты включишь переключатель «Сохранять мои чтения и разговоры», мы будем хранить в твоём аккаунте не только тексты чтений, но и твои разговоры с зеркалом. По умолчанию он выключен. Удалить можно в любой момент: отдельный разговор, отдельное чтение или всё сразу через аккаунт.</p>
+
+<p><strong>Парный анализ.</strong> При парном анализе ты загружаешь также фотографии стоп другого человека. Для них действуют те же обещания: фотографии никогда не сохраняются, а сравнительное чтение мы храним только в том случае, если у тебя включён переключатель сохранения, и только в твоём аккаунте. Указанные имена и характер отношений никогда не сохраняются. Загружай чужие стопы только тогда, когда этот человек знает об этом и согласен; за детей решает родитель или опекун. Ты второй участник парного анализа и хочешь, чтобы сохранённое сравнительное чтение было удалено? Напиши нам на <a href="mailto:support@toereading.app">support@toereading.app</a>, укажи, кто делал анализ, и мы обо всём позаботимся.</p>
+
 <h2>3. Кто помогает нам обрабатывать данные</h2>
 <table>
 <tr><th>Сторона</th><th>Роль</th><th>Расположение</th></tr>
 <tr><td>Supabase</td><td>Аккаунты и хостинг базы данных</td><td>ЕС (Франкфурт, Германия)</td></tr>
 <tr><td>Cloudflare</td><td>Шлюз анализа (worker), DNS</td><td>ЕС/США, EU Data Privacy Framework &amp; SCCs</td></tr>
 <tr><td>Anthropic</td><td>ИИ-анализ твоего фото (Claude API); данные API не используются для обучения моделей</td><td>США, защита через стандартные договорные положения ЕС / DPF</td></tr>
-<tr><td>Платёжный партнёр</td><td>Платежи (Merchant of Record, независимый контролёр)</td><td>ЕС/ЕЭЗ или страна с решением ЕС об адекватности защиты данных</td></tr>
+<tr><td>Stripe / Link</td><td>Платежи через Stripe Managed Payments; Link выступает как Merchant of Record и является независимым контролёром платёжных данных</td><td>ЕС/США, EU Data Privacy Framework &amp; SCCs</td></tr>
+<tr><td>Brevo</td><td>Отправка писем, связанных с аккаунтом (подтверждение адреса электронной почты, сброс пароля)</td><td>ЕС</td></tr>
 <tr><td>GitHub Pages</td><td>Хостинг статических файлов приложения; может логировать IP-адреса</td><td>США, DPF</td></tr>
 </table>
 <p>С нашими обработчиками у нас заключены соглашения об обработке данных. Мы никогда не продаём персональные данные.</p>
@@ -550,13 +613,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>Doğum tarihini ya da ihtiyacımız olmayan başka hiçbir veriyi istemeyiz (veri minimizasyonu). Reklam ya da analitik takipçiler kullanmayız. Uygulama, oturum belirtecini ve dil tercihini tarayıcının yerel depolamasında tutar; bunlar yalnızca işlevseldir.</p>
 
+<p><strong>Soru sor.</strong> Aynaya bir soru sorduğunda, sorun ve verilen yanıt yalnızca o yanıtı üretebilmek için işlenir; içeriği hiçbir yerde saklamayız, ne veritabanımızda ne de günlüklerde. Konuşma, sen uygulamadayken ekranında kalır; böylece ek sorular sorabilirsin. Kaydetme anahtarı açık değilse, uygulamayı kapattığında konuşma kaybolur.</p>
+
+<p><strong>Kaydetme anahtarı.</strong> "Okumalarımı ve konuşmalarımı kaydet" anahtarını açarsan, okuma metinlerinin yanı sıra soru konuşmalarını da hesabında saklarız. Bu ayar varsayılan olarak kapalıdır. Silmek her zaman mümkün: konuşma bazında, okuma bazında ya da hesabın üzerinden tümünü tek seferde.</p>
+
+<p><strong>İkili analiz.</strong> İkili analizde bir başkasının ayaklarını da yüklersin. Aynı sözler burada da geçerlidir: fotoğraflar hiçbir zaman saklanmaz ve karşılaştırmalı okumayı yalnızca kaydetme anahtarın açıksa, senin hesabında saklarız. Girilen adlar ve ilişki bilgisi hiçbir zaman kaydedilmez. Başkasının ayaklarını yalnızca o kişi bunu biliyorsa ve onaylıyorsa yükle; çocuklarda kararı ebeveyn ya da vasi verir. İkili analizdeki ikinci kişi sensen ve kaydedilmiş karşılaştırmalı okumanın silinmesini istiyorsan, <a href="mailto:support@toereading.app">support@toereading.app</a> adresine e-posta gönder ve analizi kimin yaptığını belirt; gerisini biz hallederiz.</p>
+
 <h2>3. Veri işlemede bize kim yardım ediyor</h2>
 <table>
 <tr><th>Taraf</th><th>Rol</th><th>Konum</th></tr>
 <tr><td>Supabase</td><td>Hesaplar ve veritabanı barındırma</td><td>AB (Frankfurt, Almanya)</td></tr>
 <tr><td>Cloudflare</td><td>Analiz geçidi (worker), DNS</td><td>AB/ABD, AB Veri Gizliliği Çerçevesi &amp; SCC'ler</td></tr>
 <tr><td>Anthropic</td><td>Fotoğrafının yapay zekâ analizi (Claude API); API verileri modelleri eğitmek için kullanılmaz</td><td>ABD, AB Standart Sözleşme Maddeleri / DPF ile korunur</td></tr>
-<tr><td>Ödeme ortağı</td><td>Ödemeler (Merchant of Record, bağımsız veri sorumlusu)</td><td>AB/AEA ya da AB yeterlilik kararı bulunan bir ülke</td></tr>
+<tr><td>Stripe / Link</td><td>Stripe Managed Payments üzerinden ödemeler; Link, Merchant of Record (kayıtlı satıcı) olarak hareket eder ve ödeme verileri için bağımsız veri sorumlusudur</td><td>AB/ABD, AB Veri Gizliliği Çerçevesi &amp; SCC'ler</td></tr>
+<tr><td>Brevo</td><td>Hesap e-postalarının gönderilmesi (doğrulama, parola sıfırlama)</td><td>AB</td></tr>
 <tr><td>GitHub Pages</td><td>Uygulamanın statik dosyalarının barındırılması; IP adreslerini günlüğe kaydedebilir</td><td>ABD, DPF</td></tr>
 </table>
 <p>İşleyicilerimizle veri işleme sözleşmelerimiz var. Kişisel verileri asla satmayız.</p>
@@ -600,13 +670,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>لا نطلب تاريخ ميلادك ولا أي بيانات أخرى لا نحتاجها (مبدأ تقليل البيانات). ولا نستخدم متتبعات إعلانية أو تحليلية. يخزّن التطبيق رمز جلستك وتفضيل اللغة في التخزين المحلي لمتصفحك، لأغراض وظيفية فقط.</p>
 
+<p><strong>اطرح سؤالًا.</strong> إذا طرحت على المرآة سؤالًا، فلا يُعالج سؤالك وجوابه إلا لتوليد ذلك الجواب؛ ولا نخزّن المحتوى في أي مكان، لا في قاعدة بياناتنا ولا في السجلات. تبقى المحادثة ببساطة معروضة على شاشتك في التطبيق ما دمت تستخدمه، حتى تتمكن من طرح أسئلة متابعة. وحين تغلق التطبيق تختفي، إلا إذا كان مفتاح الحفظ لديك مفعّلًا.</p>
+
+<p><strong>مفتاح الحفظ.</strong> إذا فعّلت مفتاح «احفظ قراءاتي ومحادثاتي»، فإننا نحفظ في حسابك محادثات أسئلتك إلى جانب نصوص قراءاتك. هذا الخيار متوقف افتراضيًا. ويمكنك المسح في أي وقت: محادثة بعينها، أو قراءة بعينها، أو الكل دفعة واحدة عبر حسابك.</p>
+
+<p><strong>التحليل الثنائي.</strong> في التحليل الثنائي ترفع أيضًا صور قدمي شخص آخر. وتنطبق هنا الوعود نفسها: الصور لا تُخزَّن أبدًا، ولا نحتفظ بالقراءة المقارنة إلا إذا كان مفتاح الحفظ لديك مفعّلًا، وفي حسابك أنت. أما الأسماء وصلة القرابة التي تُدخلها فلا تُخزَّن أبدًا. لا ترفع صور قدمي شخص آخر إلا إذا كان يعلم بذلك ويوافق عليه؛ وفي حالة الأطفال، القرار للوالدين أو الوصي. هل أنت الشخص الثاني في تحليل ثنائي وتود حذف قراءة مقارنة محفوظة؟ راسلنا على <a href="mailto:support@toereading.app">support@toereading.app</a> واذكر لنا من أجرى التحليل، وسنتولى الأمر.</p>
+
 <h2>3. من يساعدنا في معالجة البيانات</h2>
 <table>
 <tr><th>الجهة</th><th>الدور</th><th>الموقع</th></tr>
 <tr><td>Supabase</td><td>استضافة الحسابات وقاعدة البيانات</td><td>الاتحاد الأوروبي (فرانكفورت، ألمانيا)</td></tr>
 <tr><td>Cloudflare</td><td>بوابة التحليل (worker)، وخدمة DNS</td><td>الاتحاد الأوروبي/الولايات المتحدة، إطار خصوصية البيانات بين الاتحاد الأوروبي والولايات المتحدة &amp; البنود التعاقدية القياسية</td></tr>
 <tr><td>Anthropic</td><td>تحليل صورتك بالذكاء الاصطناعي (واجهة Claude البرمجية)؛ بيانات الواجهة البرمجية لا تُستخدم لتدريب النماذج</td><td>الولايات المتحدة، بحماية البنود التعاقدية القياسية للاتحاد الأوروبي / إطار خصوصية البيانات</td></tr>
-<tr><td>شريك الدفع</td><td>المدفوعات (Merchant of Record، جهة متحكمة مستقلة)</td><td>الاتحاد الأوروبي/المنطقة الاقتصادية الأوروبية أو بلد صادر بشأنه قرار ملاءمة من الاتحاد الأوروبي</td></tr>
+<tr><td>Stripe / Link</td><td>المدفوعات عبر Stripe Managed Payments؛ يعمل Link بصفة Merchant of Record وهو جهة متحكمة مستقلة فيما يخص بيانات الدفع</td><td>الاتحاد الأوروبي/الولايات المتحدة، إطار خصوصية البيانات بين الاتحاد الأوروبي والولايات المتحدة &amp; البنود التعاقدية القياسية</td></tr>
+<tr><td>Brevo</td><td>إرسال رسائل الحساب بالبريد الإلكتروني (التحقق من البريد، وإعادة تعيين كلمة المرور)</td><td>الاتحاد الأوروبي</td></tr>
 <tr><td>GitHub Pages</td><td>استضافة الملفات الثابتة للتطبيق؛ قد يسجل عناوين IP</td><td>الولايات المتحدة، إطار خصوصية البيانات</td></tr>
 </table>
 <p>لدينا اتفاقيات معالجة بيانات مع الجهات المعالجة لدينا. ولا نبيع البيانات الشخصية أبدًا.</p>
@@ -650,13 +727,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>我们不会询问你的出生日期或任何我们不需要的其他数据（数据最小化）。我们不使用广告或分析类追踪器。应用会在你浏览器的本地存储中保存你的会话令牌和语言偏好，仅用于功能目的。</p>
 
+<p><strong>提个问题。</strong>如果你向镜子提出问题，你的问题和回答只会被用来生成这一次的回答；我们不会在任何地方存储其内容，既不存入数据库，也不写入日志。在你使用期间，对话只是留在应用的屏幕上，方便你继续追问。关闭应用后，对话就消失了，除非你打开了保存开关。</p>
+
+<p><strong>保存开关。</strong>如果你打开“保存我的解读和对话”这个开关，我们会把你的提问对话连同解读文本一起保存在你的账户中。该开关默认关闭。你随时可以删除：按对话删、按解读删，或通过账户一次性全部删除。</p>
+
+<p><strong>双人分析。</strong>进行双人分析时，你还会上传另一个人的脚部照片。同样的承诺依然适用：照片绝不存储，比较解读也只有在你打开保存开关时才会保存在你的账户之下。你填写的姓名和关系信息绝不会被存储。请只在对方知情并同意的情况下上传他人的脚部照片；如涉及儿童，则由其父母或监护人决定。如果你是双人分析中的另一位，并希望删除一份已保存的比较解读，请发邮件至 <a href="mailto:support@toereading.app">support@toereading.app</a> 并告知这次分析是由谁创建的，我们会为你处理。</p>
+
 <h2>3. 谁帮助我们处理数据</h2>
 <table>
 <tr><th>参与方</th><th>角色</th><th>所在地</th></tr>
 <tr><td>Supabase</td><td>账户与数据库托管</td><td>欧盟（德国法兰克福）</td></tr>
 <tr><td>Cloudflare</td><td>分析网关（worker）、DNS</td><td>欧盟/美国，欧盟数据隐私框架 &amp; 标准合同条款（SCC）</td></tr>
 <tr><td>Anthropic</td><td>对你的照片进行 AI 分析（Claude API）；API 数据不用于训练模型</td><td>美国，受欧盟标准合同条款（SCC）/DPF 保护</td></tr>
-<tr><td>支付伙伴</td><td>付款（Merchant of Record，独立控制者）</td><td>欧盟/欧洲经济区，或获得欧盟充分性认定的国家</td></tr>
+<tr><td>Stripe / Link</td><td>通过 Stripe Managed Payments 处理付款；Link 担任 Merchant of Record（登记商户），并就支付数据担任独立控制者</td><td>欧盟/美国，欧盟数据隐私框架 &amp; 标准合同条款（SCC）</td></tr>
+<tr><td>Brevo</td><td>发送账户邮件（验证、密码重置）</td><td>欧盟</td></tr>
 <tr><td>GitHub Pages</td><td>应用静态文件的托管；可能记录 IP 地址</td><td>美国，DPF</td></tr>
 </table>
 <p>我们与我们的处理者签有数据处理协议。我们绝不出售个人数据。</p>
@@ -700,13 +784,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>生年月日など、必要のないデータをお尋ねすることはありません（データ最小化）。広告用や分析用のトラッカーは使いません。アプリは、セッショントークンと言語設定をブラウザーのローカルストレージに保存しますが、これは機能上のものだけです。</p>
 
+<p><strong>質問する。</strong>鏡に質問をすると、あなたの質問とその回答は、回答を生成するためだけに処理されます。内容をどこかに保存することはありません。私たちのデータベースにも、ログにも残りません。会話は、あなたが使っている間だけアプリの画面に表示され、続けて質問することができます。アプリを閉じれば消えます。ただし、保存スイッチをオンにしている場合は別です。</p>
+
+<p><strong>保存スイッチ。</strong>「リーディングと会話を保存する」のスイッチをオンにすると、リーディングのテキストに加えて、質問の会話もあなたのアカウントに保存されます。初期設定ではオフになっています。削除はいつでもできます。会話ごと、リーディングごと、またはアカウントからまとめて一度に削除できます。</p>
+
+<p><strong>デュオ分析。</strong>デュオ分析では、ほかの人の足の写真もアップロードします。その場合も同じ約束が守られます。写真は決して保存されず、比較リーディングも、あなたが保存スイッチをオンにしている場合にのみ、あなたのアカウントのもとで保存されます。入力した名前や間柄が保存されることはありません。ほかの人の足をアップロードするのは、その人がそのことを知っていて同意している場合だけにしてください。子どもの場合は、親または保護者が判断します。あなたがデュオ分析のもう一人の当事者で、保存された比較リーディングの削除を望む場合は、<a href="mailto:support@toereading.app">support@toereading.app</a> まで、誰がその分析を行ったかを添えてメールをください。私たちが対応します。</p>
+
 <h2>3. データ処理を手伝ってくれるのは誰か</h2>
 <table>
 <tr><th>事業者</th><th>役割</th><th>所在地</th></tr>
 <tr><td>Supabase</td><td>アカウントとデータベースのホスティング</td><td>EU（ドイツ・フランクフルト）</td></tr>
 <tr><td>Cloudflare</td><td>分析ゲートウェイ（ワーカー）、DNS</td><td>EU/US、EU データプライバシーフレームワーク &amp; SCC</td></tr>
 <tr><td>Anthropic</td><td>写真の AI 分析（Claude API）。API のデータはモデルの学習に使われません</td><td>US、EU 標準契約条項／DPF により保護</td></tr>
-<tr><td>決済パートナー</td><td>決済（Merchant of Record、独立した管理者）</td><td>EU/EEA、または EU の十分性認定を受けた国</td></tr>
+<tr><td>Stripe / Link</td><td>Stripe Managed Payments による決済。Link が Merchant of Record（記録上の販売者）として行動し、決済データについて独立した管理者となります</td><td>EU/US、EU データプライバシーフレームワーク &amp; SCC</td></tr>
+<tr><td>Brevo</td><td>アカウント関連メールの送信（メールアドレスの確認、パスワードの再設定）</td><td>EU</td></tr>
 <tr><td>GitHub Pages</td><td>アプリの静的ファイルのホスティング。IP アドレスが記録されることがあります</td><td>US、DPF</td></tr>
 </table>
 <p>処理者とはデータ処理契約を結んでいます。個人データを売ることは決してありません。</p>
@@ -750,13 +841,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>생년월일 등 필요하지 않은 데이터는 요청하지 않아요(데이터 최소화). 광고 트래커나 분석 트래커는 사용하지 않아요. 앱은 세션 토큰과 언어 설정을 브라우저의 로컬 스토리지에 저장하는데, 순전히 기능적인 용도예요.</p>
 
+<p><strong>질문하기.</strong> 거울에게 질문을 하면, 질문과 그 답변은 오직 답변을 생성하는 데만 처리돼요. 그 내용은 어디에도 저장하지 않아요: 저희 데이터베이스에도, 로그에도요. 대화는 앱을 사용하는 동안 화면에 그대로 남아 있어서, 이어서 더 물어볼 수 있어요. 앱을 닫으면 사라져요. 저장 스위치를 켜 둔 경우만 예외예요.</p>
+
+<p><strong>저장 스위치.</strong> “내 리딩과 대화 저장하기” 스위치를 켜면, 리딩 텍스트와 함께 질문 대화도 계정에 저장돼요. 기본 설정은 꺼짐이에요. 삭제는 언제든지 할 수 있어요: 대화별로, 리딩별로, 또는 계정에서 한 번에 전부요.</p>
+
+<p><strong>듀오 분석.</strong> 듀오 분석에서는 다른 사람의 발 사진도 함께 업로드해요. 여기에도 같은 약속이 적용돼요: 사진은 절대 저장되지 않고, 비교 리딩은 당신이 저장 스위치를 켜 둔 경우에만 당신의 계정 아래에 보관돼요. 입력한 이름과 관계는 절대 저장되지 않아요. 다른 사람의 발 사진은 그 사람이 알고 동의한 경우에만 업로드해 주세요. 어린이의 경우에는 부모나 보호자가 결정해요. 듀오 분석의 두 번째 사람인데 저장된 비교 리딩을 삭제하고 싶다면, <a href="mailto:support@toereading.app">support@toereading.app</a>로 이메일을 보내 누가 분석을 했는지 함께 알려 주세요. 저희가 삭제해 드릴게요.</p>
+
 <h2>3. 데이터 처리를 돕는 곳</h2>
 <table>
 <tr><th>업체</th><th>역할</th><th>위치</th></tr>
 <tr><td>Supabase</td><td>계정 및 데이터베이스 호스팅</td><td>EU(독일 프랑크푸르트)</td></tr>
 <tr><td>Cloudflare</td><td>분석 게이트웨이(워커), DNS</td><td>EU/미국, EU Data Privacy Framework &amp; SCC</td></tr>
 <tr><td>Anthropic</td><td>사진의 AI 분석(Claude API). API 데이터는 모델 학습에 사용되지 않아요</td><td>미국, EU 표준계약조항(SCC)/DPF로 보호</td></tr>
-<tr><td>결제 파트너</td><td>결제(Merchant of Record, 독립적 컨트롤러)</td><td>EU/EEA 또는 EU 적정성 결정을 받은 국가</td></tr>
+<tr><td>Stripe / Link</td><td>Stripe Managed Payments를 통한 결제. Link가 Merchant of Record로서 결제 데이터에 대해 독립적으로 책임져요</td><td>EU/미국, EU Data Privacy Framework &amp; SCC</td></tr>
+<tr><td>Brevo</td><td>계정 이메일 발송(이메일 확인, 비밀번호 재설정)</td><td>EU</td></tr>
 <tr><td>GitHub Pages</td><td>앱 정적 파일의 호스팅. IP 주소를 기록할 수 있어요</td><td>미국, DPF</td></tr>
 </table>
 <p>처리자들과는 데이터 처리 계약을 맺고 있어요. 개인정보를 판매하는 일은 절대 없어요.</p>
@@ -800,13 +898,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>हम आपकी जन्मतिथि या कोई भी ऐसा डेटा नहीं माँगते जिसकी हमें ज़रूरत नहीं है (डेटा-न्यूनीकरण)। हम विज्ञापन- या एनालिटिक्स-ट्रैकर इस्तेमाल नहीं करते। ऐप आपका सत्र-टोकन और भाषा-वरीयता आपके ब्राउज़र के लोकल स्टोरेज में रखती है, केवल कार्यात्मक उद्देश्य से।</p>
 
+<p><strong>सवाल पूछिए।</strong> अगर आप आईने से कोई सवाल पूछते हैं, तो आपका सवाल और उसका जवाब केवल वह जवाब तैयार करने के लिए संसाधित होते हैं; उनकी सामग्री हम कहीं भी संग्रहीत नहीं करते, न अपने डेटाबेस में और न लॉग में। जब तक आप ऐप में लगे हैं, बातचीत बस आपकी स्क्रीन पर बनी रहती है, ताकि आप आगे और सवाल पूछ सकें। ऐप बंद कीजिए, और वह मिट जाती है, बशर्ते आपने सहेजने वाला स्विच चालू न किया हो।</p>
+
+<p><strong>सहेजने वाला स्विच।</strong> अगर आप "मेरी रीडिंग और बातचीत सहेजें" वाला स्विच चालू करते हैं, तो हम आपकी रीडिंग के पाठों के साथ-साथ आपकी सवाल-जवाब की बातचीत भी आपके खाते में संग्रहीत करते हैं। यह डिफ़ॉल्ट रूप से बंद रहता है। मिटाना हमेशा संभव है: हर बातचीत अलग से, हर रीडिंग अलग से, या अपने खाते के ज़रिए सब कुछ एक साथ।</p>
+
+<p><strong>डुओ-विश्लेषण।</strong> डुओ-विश्लेषण में आप किसी और के पैरों की फ़ोटो भी अपलोड करते हैं। उस पर भी वही वादे लागू होते हैं: फ़ोटो कभी संग्रहीत नहीं होतीं, और तुलनात्मक रीडिंग हम केवल तभी रखते हैं जब आपने सहेजने वाला स्विच चालू किया हो, आपके खाते के अंतर्गत। दर्ज किए गए नाम और रिश्ता कभी संग्रहीत नहीं होते। किसी और के पैरों की फ़ोटो केवल तभी अपलोड कीजिए जब उस व्यक्ति को इसकी जानकारी हो और वह सहमत हो; बच्चों के मामले में माता-पिता या अभिभावक तय करते हैं। क्या आप किसी डुओ-विश्लेषण में दूसरे व्यक्ति हैं और चाहते हैं कि कोई सहेजी गई तुलनात्मक रीडिंग मिटा दी जाए? हमें <a href="mailto:support@toereading.app">support@toereading.app</a> पर ईमेल कीजिए और साथ में बताइए कि विश्लेषण किसने बनाया था, फिर हम उसका ध्यान रखेंगे।</p>
+
 <h2>3. डेटा-प्रसंस्करण में हमारी मदद कौन करता है</h2>
 <table>
 <tr><th>पक्ष</th><th>भूमिका</th><th>स्थान</th></tr>
 <tr><td>Supabase</td><td>खाते और डेटाबेस-होस्टिंग</td><td>EU (फ़्रैंकफ़र्ट, जर्मनी)</td></tr>
 <tr><td>Cloudflare</td><td>विश्लेषण-गेटवे (वर्कर), DNS</td><td>EU/US, EU Data Privacy Framework &amp; SCCs</td></tr>
 <tr><td>Anthropic</td><td>आपकी फ़ोटो का AI-विश्लेषण (Claude API); API-डेटा मॉडलों के प्रशिक्षण में इस्तेमाल नहीं होता</td><td>US, EU Standard Contractual Clauses / DPF द्वारा संरक्षित</td></tr>
-<tr><td>भुगतान पार्टनर</td><td>भुगतान (Merchant of Record, स्वतंत्र नियंत्रक)</td><td>EU/EEA या EU के पर्याप्तता-निर्णय (adequacy decision) वाला कोई देश</td></tr>
+<tr><td>Stripe / Link</td><td>Stripe Managed Payments के ज़रिए भुगतान; Link Merchant of Record के रूप में कार्य करता है और भुगतान-डेटा के लिए स्वतंत्र रूप से ज़िम्मेदार है</td><td>EU/US, EU Data Privacy Framework &amp; SCCs</td></tr>
+<tr><td>Brevo</td><td>खाते से जुड़े ईमेल भेजना (सत्यापन, पासवर्ड-रीसेट)</td><td>EU</td></tr>
 <tr><td>GitHub Pages</td><td>ऐप की स्टैटिक फ़ाइलों की होस्टिंग; IP-पते लॉग कर सकता है</td><td>US, DPF</td></tr>
 </table>
 <p>हमने अपने प्रोसेसरों के साथ डेटा-प्रसंस्करण समझौते किए हैं। हम व्यक्तिगत डेटा कभी नहीं बेचते।</p>
@@ -850,13 +955,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>Kami tidak menanyakan tanggal lahirmu atau data lain apa pun yang tidak kami perlukan (minimalisasi data). Kami tidak menggunakan pelacak iklan atau analitik. Aplikasi menyimpan token sesi dan preferensi bahasamu di penyimpanan lokal browsermu, murni fungsional.</p>
 
+<p><strong>Ajukan pertanyaan.</strong> Jika kamu mengajukan pertanyaan kepada cermin, pertanyaanmu dan jawabannya hanya diproses untuk menghasilkan jawaban itu; kami tidak menyimpan isinya di mana pun, tidak di basis data kami dan tidak di log. Percakapannya tetap ada di aplikasi di layarmu selama kamu masih menggunakannya, jadi kamu bisa mengajukan pertanyaan lanjutan. Begitu kamu menutup aplikasi, percakapan itu hilang, kecuali sakelar simpanmu menyala.</p>
+
+<p><strong>Sakelar simpan.</strong> Jika kamu menyalakan sakelar "Simpan pembacaan dan percakapanku", kami menyimpan percakapan tanya jawabmu bersama teks pembacaanmu di akunmu. Secara bawaan sakelar ini mati. Menghapus selalu bisa: per percakapan, per pembacaan, atau sekaligus lewat akunmu.</p>
+
+<p><strong>Analisis duo.</strong> Pada analisis duo, kamu juga mengunggah foto kaki orang lain. Janji yang sama berlaku: foto tidak pernah disimpan, dan pembacaan perbandingannya hanya kami simpan jika sakelar simpanmu menyala, di bawah akunmu. Nama dan hubungan yang diisi tidak pernah disimpan. Unggah kaki orang lain hanya jika orang itu tahu dan setuju; untuk anak-anak, orang tua atau walinya yang memutuskan. Apakah kamu orang kedua dalam sebuah analisis duo dan ingin pembacaan perbandingan yang tersimpan itu dihapus? Kirim email ke <a href="mailto:support@toereading.app">support@toereading.app</a> dan sebutkan siapa yang membuat analisisnya, kami akan mengurusnya.</p>
+
 <h2>3. Siapa yang membantu kami memproses data</h2>
 <table>
 <tr><th>Pihak</th><th>Peran</th><th>Lokasi</th></tr>
 <tr><td>Supabase</td><td>Hosting akun dan basis data</td><td>UE (Frankfurt, Jerman)</td></tr>
 <tr><td>Cloudflare</td><td>Gateway analisis (worker), DNS</td><td>UE/AS, EU Data Privacy Framework &amp; SCC</td></tr>
 <tr><td>Anthropic</td><td>Analisis AI atas fotomu (Claude API); data API tidak digunakan untuk melatih model</td><td>AS, dilindungi Klausul Kontraktual Standar UE / DPF</td></tr>
-<tr><td>Mitra pembayaran</td><td>Pembayaran (Merchant of Record, pengendali independen)</td><td>UE/EEA atau negara dengan keputusan kecukupan UE</td></tr>
+<tr><td>Stripe / Link</td><td>Pembayaran lewat Stripe Managed Payments; Link bertindak sebagai Merchant of Record dan merupakan pengendali independen atas data pembayaran</td><td>UE/AS, EU Data Privacy Framework &amp; SCC</td></tr>
+<tr><td>Brevo</td><td>Mengirim email akun (verifikasi, reset kata sandi)</td><td>UE</td></tr>
 <tr><td>GitHub Pages</td><td>Hosting berkas statis aplikasi; dapat mencatat alamat IP</td><td>AS, DPF</td></tr>
 </table>
 <p>Kami memiliki perjanjian pemrosesan data dengan para pemroses kami. Kami tidak pernah menjual data pribadi.</p>
@@ -900,13 +1012,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>Chúng tôi không hỏi ngày sinh của bạn hay bất kỳ dữ liệu nào khác mà chúng tôi không cần (tối thiểu hóa dữ liệu). Chúng tôi không dùng trình theo dõi quảng cáo hay phân tích. Ứng dụng lưu token phiên và tùy chọn ngôn ngữ của bạn trong bộ nhớ cục bộ (local storage) của trình duyệt, thuần túy phục vụ chức năng.</p>
 
+<p><strong>Đặt câu hỏi.</strong> Nếu bạn đặt câu hỏi cho tấm gương, câu hỏi của bạn và câu trả lời chỉ được xử lý để tạo ra câu trả lời đó; chúng tôi không lưu nội dung ở bất cứ đâu, không trong cơ sở dữ liệu của chúng tôi và không trong nhật ký. Cuộc trò chuyện chỉ đơn giản hiển thị trong ứng dụng trên màn hình của bạn trong lúc bạn đang dùng, để bạn có thể hỏi tiếp. Đóng ứng dụng là cuộc trò chuyện biến mất, trừ khi bạn đang bật công tắc lưu.</p>
+
+<p><strong>Công tắc lưu.</strong> Nếu bạn bật công tắc "Lưu các bài đọc và cuộc trò chuyện của tôi", chúng tôi sẽ lưu các cuộc trò chuyện hỏi đáp của bạn cùng với các văn bản bài đọc trong tài khoản của bạn. Mặc định công tắc này tắt. Bạn luôn có thể xóa: theo từng cuộc trò chuyện, theo từng bài đọc, hoặc tất cả cùng lúc qua tài khoản của bạn.</p>
+
+<p><strong>Phân tích đôi.</strong> Với một phân tích đôi, bạn cũng tải lên ảnh bàn chân của một người khác. Các cam kết vẫn như vậy: ảnh không bao giờ được lưu, và bài đọc so sánh chỉ được chúng tôi giữ lại nếu bạn đang bật công tắc lưu, dưới tài khoản của bạn. Tên và mối quan hệ bạn điền vào không bao giờ được lưu. Chỉ tải lên bàn chân của người khác nếu người đó biết và đồng ý; với trẻ em, cha mẹ hoặc người giám hộ là người quyết định. Bạn là người thứ hai trong một phân tích đôi và muốn một bài đọc so sánh đã lưu được xóa? Hãy email cho chúng tôi tại <a href="mailto:support@toereading.app">support@toereading.app</a> và cho biết ai đã tạo phân tích đó, chúng tôi sẽ lo việc này.</p>
+
 <h2>3. Ai giúp chúng tôi xử lý dữ liệu</h2>
 <table>
 <tr><th>Bên</th><th>Vai trò</th><th>Vị trí</th></tr>
 <tr><td>Supabase</td><td>Lưu trữ tài khoản và cơ sở dữ liệu</td><td>EU (Frankfurt, Đức)</td></tr>
 <tr><td>Cloudflare</td><td>Cổng phân tích (worker), DNS</td><td>EU/Mỹ, EU Data Privacy Framework &amp; SCC</td></tr>
 <tr><td>Anthropic</td><td>Phân tích AI đối với ảnh của bạn (Claude API); dữ liệu API không được dùng để huấn luyện các mô hình</td><td>Mỹ, được bảo vệ bởi các Điều khoản Hợp đồng Chuẩn của EU / DPF</td></tr>
-<tr><td>Đối tác thanh toán</td><td>Thanh toán (Merchant of Record, bên kiểm soát độc lập)</td><td>EU/EEA hoặc một quốc gia có quyết định công nhận mức bảo vệ tương đương của EU</td></tr>
+<tr><td>Stripe / Link</td><td>Thanh toán qua Stripe Managed Payments; Link đóng vai trò Merchant of Record và là bên kiểm soát độc lập đối với dữ liệu thanh toán</td><td>EU/Mỹ, EU Data Privacy Framework &amp; SCC</td></tr>
+<tr><td>Brevo</td><td>Gửi các email tài khoản (xác minh, đặt lại mật khẩu)</td><td>EU</td></tr>
 <tr><td>GitHub Pages</td><td>Lưu trữ các tệp tĩnh của ứng dụng; có thể ghi lại địa chỉ IP</td><td>Mỹ, DPF</td></tr>
 </table>
 <p>Chúng tôi có thỏa thuận xử lý dữ liệu với các bên xử lý của mình. Chúng tôi không bao giờ bán dữ liệu cá nhân.</p>
@@ -950,13 +1069,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>เราไม่ขอวันเกิดของคุณหรือข้อมูลอื่นใดที่เราไม่จำเป็นต้องใช้ (การเก็บข้อมูลให้น้อยที่สุด) เราไม่ใช้ตัวติดตามเพื่อการโฆษณาหรือการวิเคราะห์ แอปเก็บโทเคนเซสชันและภาษาที่คุณเลือกไว้ใน local storage ของเบราว์เซอร์ของคุณ เพื่อการทำงานของแอปเท่านั้น</p>
 
+<p><strong>ถามคำถาม</strong> หากคุณถามคำถามกับกระจก คำถามของคุณและคำตอบจะถูกประมวลผลเพื่อสร้างคำตอบนั้นเท่านั้น เราไม่จัดเก็บเนื้อหาไว้ที่ใดทั้งสิ้น ไม่อยู่ในฐานข้อมูลของเราและไม่อยู่ในบันทึกระบบ บทสนทนาจะยังคงแสดงอยู่บนหน้าจอในแอประหว่างที่คุณใช้งาน คุณจึงถามคำถามต่อเนื่องได้ เมื่อคุณปิดแอป บทสนทนาก็หายไป เว้นแต่คุณเปิดสวิตช์บันทึกไว้</p>
+
+<p><strong>สวิตช์บันทึก</strong> หากคุณเปิดสวิตช์ "บันทึกบทอ่านและบทสนทนาของฉัน" เราจะเก็บบทสนทนาคำถามของคุณไว้กับบัญชีของคุณควบคู่กับข้อความบทอ่าน ค่าเริ่มต้นของสวิตช์นี้คือปิดอยู่ คุณลบได้ทุกเมื่อ: ทีละบทสนทนา ทีละบทอ่าน หรือทั้งหมดในครั้งเดียวผ่านบัญชีของคุณ</p>
+
+<p><strong>การวิเคราะห์คู่</strong> ในการวิเคราะห์คู่ คุณจะอัปโหลดรูปเท้าของอีกคนหนึ่งด้วย คำมั่นเดิมของเรามีผลเหมือนกันทุกประการ: รูปภาพไม่ถูกจัดเก็บเด็ดขาด และเราเก็บบทอ่านเชิงเปรียบเทียบไว้เฉพาะเมื่อคุณเปิดสวิตช์บันทึกเท่านั้น โดยเก็บไว้ภายใต้บัญชีของคุณ ชื่อและความสัมพันธ์ที่กรอกเข้ามาไม่ถูกจัดเก็บเด็ดขาด อัปโหลดรูปเท้าของผู้อื่นเฉพาะเมื่อคนคนนั้นรับรู้และยินยอมเท่านั้น หากเป็นเด็ก ให้พ่อแม่หรือผู้ปกครองเป็นผู้ตัดสินใจ หากคุณเป็นบุคคลที่สองในการวิเคราะห์คู่และต้องการให้ลบบทอ่านเชิงเปรียบเทียบที่บันทึกไว้ อีเมลมาที่ <a href="mailto:support@toereading.app">support@toereading.app</a> พร้อมบอกเราว่าใครเป็นผู้ทำการวิเคราะห์นั้น แล้วเราจะจัดการให้</p>
+
 <h2>3. ใครช่วยเราประมวลผลข้อมูล</h2>
 <table>
 <tr><th>ฝ่าย</th><th>บทบาท</th><th>ที่ตั้ง</th></tr>
 <tr><td>Supabase</td><td>โฮสติงบัญชีและฐานข้อมูล</td><td>EU (แฟรงก์เฟิร์ต เยอรมนี)</td></tr>
 <tr><td>Cloudflare</td><td>เกตเวย์การวิเคราะห์ (worker), DNS</td><td>EU/US, EU Data Privacy Framework &amp; SCCs</td></tr>
 <tr><td>Anthropic</td><td>การวิเคราะห์รูปภาพของคุณด้วย AI (Claude API) ข้อมูลผ่าน API ไม่ถูกใช้ฝึกโมเดล</td><td>US, คุ้มครองโดย EU Standard Contractual Clauses / DPF</td></tr>
-<tr><td>พาร์ตเนอร์รับชำระเงิน</td><td>การชำระเงิน (Merchant of Record, ผู้ควบคุมข้อมูลอิสระ)</td><td>EU/EEA หรือประเทศที่มีคำวินิจฉัยความคุ้มครองเพียงพอของ EU</td></tr>
+<tr><td>Stripe / Link</td><td>การชำระเงินผ่าน Stripe Managed Payments โดย Link ทำหน้าที่เป็น Merchant of Record และเป็นผู้ควบคุมข้อมูลอิสระสำหรับข้อมูลการชำระเงิน</td><td>EU/US, EU Data Privacy Framework &amp; SCCs</td></tr>
+<tr><td>Brevo</td><td>ส่งอีเมลเกี่ยวกับบัญชี (การยืนยันอีเมล การรีเซ็ตรหัสผ่าน)</td><td>EU</td></tr>
 <tr><td>GitHub Pages</td><td>โฮสติงไฟล์สแตติกของแอป อาจบันทึกที่อยู่ IP</td><td>US, DPF</td></tr>
 </table>
 <p>เรามีข้อตกลงการประมวลผลข้อมูลกับผู้ประมวลผลของเรา เราไม่ขายข้อมูลส่วนบุคคลเด็ดขาด</p>
@@ -1000,13 +1126,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>Ми не питаємо дату народження чи будь-які інші дані, яких не потребуємо (мінімізація даних). Ми не використовуємо рекламні чи аналітичні трекери. Застосунок зберігає в локальному сховищі твого браузера токен сесії та мовне налаштування, суто для функціональності.</p>
 
+<p><strong>Постав запитання.</strong> Якщо ти ставиш дзеркалу запитання, твоє запитання і відповідь обробляються лише для того, щоб цю відповідь створити; їхній вміст ми ніде не зберігаємо: ані в нашій базі даних, ані в журналах. Поки ти в застосунку, розмова просто лишається на екрані, тож можна ставити подальші запитання. Закриєш застосунок, і все зникне, якщо тільки в тебе не ввімкнено перемикач збереження.</p>
+
+<p><strong>Перемикач збереження.</strong> Якщо ти вмикаєш перемикач «Зберігати мої читання та розмови», ми зберігаємо у твоєму обліковому записі поряд із текстами читань і твої розмови із дзеркалом. Типово перемикач вимкнено. Стерти можна будь-коли: окрему розмову, окреме читання або все одразу через обліковий запис.</p>
+
+<p><strong>Дуо-аналіз.</strong> Під час дуо-аналізу ти завантажуєш також фото стоп іншої людини. Обіцянки ті самі: фото ніколи не зберігаються, а порівняльне читання ми зберігаємо лише тоді, коли в тебе ввімкнено перемикач збереження, і лише у твоєму обліковому записі. Вказані імена й тип стосунків ніколи не зберігаються. Завантажуй чужі стопи лише тоді, коли ця людина про це знає і не заперечує; за дітей рішення ухвалює батько, мати чи опікун. Якщо ти друга особа в дуо-аналізі й хочеш, щоб збережене порівняльне читання було стерто, напиши нам на <a href="mailto:support@toereading.app">support@toereading.app</a> і вкажи, хто зробив аналіз: ми про все подбаємо.</p>
+
 <h2>3. Хто допомагає нам обробляти дані</h2>
 <table>
 <tr><th>Сторона</th><th>Роль</th><th>Розташування</th></tr>
 <tr><td>Supabase</td><td>Облікові записи та хостинг бази даних</td><td>ЄС (Франкфурт, Німеччина)</td></tr>
 <tr><td>Cloudflare</td><td>Шлюз аналізу (worker), DNS</td><td>ЄС/США, EU Data Privacy Framework &amp; SCC</td></tr>
 <tr><td>Anthropic</td><td>ШІ-аналіз твого фото (Claude API); дані API не використовуються для навчання моделей</td><td>США, захищено Стандартними договірними положеннями ЄС / DPF</td></tr>
-<tr><td>Платіжний партнер</td><td>Платежі (Merchant of Record, незалежний контролер)</td><td>ЄС/ЄЕЗ або країна з рішенням ЄС про адекватність</td></tr>
+<tr><td>Stripe / Link</td><td>Платежі через Stripe Managed Payments; Link виступає як Merchant of Record і є незалежним контролером платіжних даних</td><td>ЄС/США, EU Data Privacy Framework &amp; SCC</td></tr>
+<tr><td>Brevo</td><td>Надсилання службових листів облікового запису (підтвердження електронної пошти, скидання пароля)</td><td>ЄС</td></tr>
 <tr><td>GitHub Pages</td><td>Хостинг статичних файлів застосунку; може журналювати IP-адреси</td><td>США, DPF</td></tr>
 </table>
 <p>З нашими обробниками укладено договори про обробку даних. Ми ніколи не продаємо персональні дані.</p>
@@ -1050,13 +1183,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>Nem kérjük a születési dátumodat, sem más olyan adatot, amelyre nincs szükségünk (adattakarékosság). Nem használunk hirdetési vagy analitikai követőket. Az app a munkamenet-tokenedet és a nyelvi beállításodat a böngésződ helyi tárolójában őrzi, kizárólag működési célból.</p>
 
+<p><strong>Tegyél fel egy kérdést.</strong> Ha kérdést teszel fel a tükörnek, a kérdésedet és a választ kizárólag a válasz elkészítéséhez dolgozzuk fel; a tartalmat sehol nem tároljuk, sem az adatbázisunkban, sem a naplókban. A beszélgetés egyszerűen az app képernyőjén marad, amíg használod, így további kérdéseket is feltehetsz. Ha bezárod az appot, eltűnik, hacsak be nincs kapcsolva a mentés kapcsolója.</p>
+
+<p><strong>Mentés kapcsolója.</strong> Ha bekapcsolod a "Mentsd el az olvasataimat és beszélgetéseimet" kapcsolót, az olvasatszövegeid mellett a kérdezős beszélgetéseidet is elmentjük a fiókodhoz. Alapértelmezés szerint ez ki van kapcsolva. Törölni bármikor lehet: beszélgetésenként, olvasatonként vagy egyszerre mindet a fiókodon keresztül.</p>
+
+<p><strong>Duó-elemzés.</strong> Duó-elemzésnél valaki más lábát is feltöltöd. Ugyanazok az ígéretek érvényesek: a fotókat soha nem tároljuk, és az összehasonlító olvasatot csak akkor őrizzük meg, ha be van kapcsolva a mentés kapcsolója, a te fiókod alatt. A megadott neveket és a kapcsolat jellegét soha nem tároljuk. Csak akkor tölts fel valaki más lábáról fotót, ha az illető tud róla és beleegyezik; gyerekeknél a szülő vagy a gyám dönt. Te vagy a második személy egy duó-elemzésben, és szeretnéd, hogy egy elmentett összehasonlító olvasatot töröljünk? Írj nekünk a <a href="mailto:support@toereading.app">support@toereading.app</a> címre, és említsd meg, ki készítette az elemzést, mi pedig gondoskodunk róla.</p>
+
 <h2>3. Kik segítenek nekünk az adatkezelésben</h2>
 <table>
 <tr><th>Partner</th><th>Szerep</th><th>Helyszín</th></tr>
 <tr><td>Supabase</td><td>Fiókok és adatbázis-üzemeltetés</td><td>EU (Frankfurt, Németország)</td></tr>
 <tr><td>Cloudflare</td><td>Elemzési átjáró (worker), DNS</td><td>EU/USA, EU Data Privacy Framework &amp; SCC-k</td></tr>
 <tr><td>Anthropic</td><td>A fotód AI-elemzése (Claude API); az API-adatokat nem használják modellek tanítására</td><td>USA, az EU általános szerződési feltételei (SCC) / a DPF védelme alatt</td></tr>
-<tr><td>Fizetési partner</td><td>Fizetések (Merchant of Record, önálló adatkezelő)</td><td>EU/EGT vagy EU-s megfelelőségi határozattal rendelkező ország</td></tr>
+<tr><td>Stripe / Link</td><td>Fizetések a Stripe Managed Payments rendszerén keresztül; a Link Merchant of Record-ként (hivatalos eladóként) jár el, és a fizetési adatok önálló adatkezelője</td><td>EU/USA, EU Data Privacy Framework &amp; SCC-k</td></tr>
+<tr><td>Brevo</td><td>Fiókkal kapcsolatos e-mailek küldése (megerősítés, jelszó-visszaállítás)</td><td>EU</td></tr>
 <tr><td>GitHub Pages</td><td>Az app statikus fájljainak tárhelye; IP-címeket naplózhat</td><td>USA, DPF</td></tr>
 </table>
 <p>Adatfeldolgozóinkkal adatfeldolgozási megállapodásokat kötöttünk. Személyes adatokat soha nem adunk el.</p>
@@ -1100,13 +1240,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>আমরা তোমার জন্মতারিখ বা অপ্রয়োজনীয় অন্য কোনো তথ্য চাই না (ডেটা মিনিমাইজেশন)। আমরা বিজ্ঞাপন বা অ্যানালিটিক্স ট্র্যাকার ব্যবহার করি না। অ্যাপ তোমার সেশন টোকেন ও ভাষার পছন্দ তোমার ব্রাউজারের লোকাল স্টোরেজে রাখে, শুধুই কার্যকারিতার জন্য।</p>
 
+<p><strong>প্রশ্ন করো।</strong> তুমি আয়নাকে কোনো প্রশ্ন করলে, তোমার প্রশ্ন আর উত্তরটি শুধু সেই উত্তর তৈরির জন্যই প্রক্রিয়া করা হয়; বিষয়বস্তু আমরা কোথাও সংরক্ষণ করি না, আমাদের ডেটাবেসেও না, লগেও না। তুমি যতক্ষণ ব্যবহার করছ, কথোপকথনটা অ্যাপে তোমার স্ক্রিনেই থেকে যায়, যাতে তুমি আরও প্রশ্ন করতে পারো। অ্যাপ বন্ধ করলেই সেটা মুছে যায়, যদি না তোমার সংরক্ষণ-সুইচ চালু থাকে।</p>
+
+<p><strong>সংরক্ষণ-সুইচ।</strong> "আমার রিডিং ও কথোপকথন সংরক্ষণ করো" সুইচটি চালু করলে, তোমার রিডিংয়ের লেখার পাশাপাশি তোমার প্রশ্নের কথোপকথনও আমরা তোমার অ্যাকাউন্টে রাখি। এটি স্বাভাবিকভাবে বন্ধ থাকে। মুছে ফেলা যায় যেকোনো সময়: কথোপকথন ধরে, রিডিং ধরে, বা তোমার অ্যাকাউন্ট থেকে একবারে সব।</p>
+
+<p><strong>ডুয়ো-বিশ্লেষণ।</strong> ডুয়ো-বিশ্লেষণে তুমি অন্য কারও পায়ের ছবিও আপলোড করো। তখনও একই প্রতিশ্রুতি বহাল: ছবি কখনও সংরক্ষণ করা হয় না, আর তুলনামূলক রিডিংটি আমরা তখনই রাখি যখন তোমার সংরক্ষণ-সুইচ চালু থাকে, তোমার অ্যাকাউন্টের অধীনে। লিখে দেওয়া নাম ও সম্পর্ক কখনও সংরক্ষণ করা হয় না। অন্য কারও পায়ের ছবি তখনই আপলোড কোরো যখন সেই মানুষটি বিষয়টি জানে আর সম্মত; শিশুদের ক্ষেত্রে সিদ্ধান্ত নেন মা-বাবা বা অভিভাবক। তুমি কি কোনো ডুয়ো-বিশ্লেষণের দ্বিতীয় জন, আর চাও যে সংরক্ষিত কোনো তুলনামূলক রিডিং মুছে ফেলা হোক? আমাদের ইমেইল করো <a href="mailto:support@toereading.app">support@toereading.app</a> ঠিকানায় আর জানিয়ো কে বিশ্লেষণটি করেছে, আমরা তার ব্যবস্থা করব।</p>
+
 <h2>৩. তথ্য প্রক্রিয়ায় কারা আমাদের সাহায্য করে</h2>
 <table>
 <tr><th>পক্ষ</th><th>ভূমিকা</th><th>অবস্থান</th></tr>
 <tr><td>Supabase</td><td>অ্যাকাউন্ট ও ডেটাবেস হোস্টিং</td><td>EU (ফ্রাঙ্কফুর্ট, জার্মানি)</td></tr>
 <tr><td>Cloudflare</td><td>বিশ্লেষণ গেটওয়ে (worker), DNS</td><td>EU/US, EU Data Privacy Framework &amp; SCC</td></tr>
 <tr><td>Anthropic</td><td>তোমার ছবির AI-বিশ্লেষণ (Claude API); API-র তথ্য মডেল প্রশিক্ষণে ব্যবহার হয় না</td><td>US, EU Standard Contractual Clauses / DPF দিয়ে সুরক্ষিত</td></tr>
-<tr><td>পেমেন্ট পার্টনার</td><td>পেমেন্ট (Merchant of Record, স্বাধীন নিয়ন্ত্রক)</td><td>EU/EEA বা EU-র পর্যাপ্ততা-সিদ্ধান্তপ্রাপ্ত কোনো দেশ</td></tr>
+<tr><td>Stripe / Link</td><td>Stripe Managed Payments-এর মাধ্যমে পেমেন্ট; Link কাজ করে Merchant of Record হিসেবে এবং পেমেন্ট-তথ্যের জন্য স্বাধীনভাবে দায়ী</td><td>EU/US, EU Data Privacy Framework &amp; SCC</td></tr>
+<tr><td>Brevo</td><td>অ্যাকাউন্ট-সংক্রান্ত ইমেইল পাঠানো (যাচাই, পাসওয়ার্ড রিসেট)</td><td>EU</td></tr>
 <tr><td>GitHub Pages</td><td>অ্যাপের স্ট্যাটিক ফাইলের হোস্টিং; IP ঠিকানা লগ করতে পারে</td><td>US, DPF</td></tr>
 </table>
 <p>আমাদের প্রসেসরদের সঙ্গে ডেটা-প্রসেসিং চুক্তি আছে। আমরা কখনও ব্যক্তিগত তথ্য বিক্রি করি না।</p>
@@ -1150,13 +1297,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>ہم آپ کی تاریخ پیدائش یا کوئی بھی ایسا ڈیٹا نہیں مانگتے جس کی ہمیں ضرورت نہیں (ڈیٹا کم سے کم رکھنے کا اصول)۔ ہم اشتہاری یا اینالیٹکس ٹریکر استعمال نہیں کرتے۔ ایپ آپ کا سیشن ٹوکن اور زبان کی ترجیح آپ کے براؤزر کی لوکل اسٹوریج میں رکھتی ہے، صرف فنکشنل مقصد کے لیے۔</p>
 
+<p><strong>سوال پوچھیں۔</strong> اگر آپ آئینے سے کوئی سوال پوچھتے ہیں تو آپ کا سوال اور اس کا جواب صرف جواب تیار کرنے کے لیے پروسیس ہوتے ہیں؛ ہم ان کا مواد کہیں محفوظ نہیں کرتے، نہ اپنے ڈیٹا بیس میں اور نہ لاگز میں۔ جب تک آپ ایپ استعمال کر رہے ہیں، گفتگو ایپ میں آپ کی اسکرین پر موجود رہتی ہے تاکہ آپ مزید سوال پوچھ سکیں۔ ایپ بند کریں تو وہ ختم ہو جاتی ہے، الا یہ کہ آپ نے محفوظ کرنے کا سوئچ آن کر رکھا ہو۔</p>
+
+<p><strong>محفوظ کرنے کا سوئچ۔</strong> اگر آپ "میری ریڈنگز اور گفتگوئیں محفوظ کریں" کا سوئچ آن کریں تو ہم آپ کی ریڈنگ کے متن کے ساتھ ساتھ آپ کے سوال و جواب کی گفتگوئیں بھی آپ کے اکاؤنٹ کے ساتھ محفوظ کرتے ہیں۔ یہ بطور ڈیفالٹ بند ہوتا ہے۔ مٹانا ہمیشہ ممکن ہے: ہر گفتگو الگ، ہر ریڈنگ الگ، یا اپنے اکاؤنٹ کے ذریعے ایک ساتھ سب کچھ۔</p>
+
+<p><strong>جوڑی کا تجزیہ۔</strong> جوڑی کے تجزیے میں آپ کسی اور کے پاؤں کی تصاویر بھی اپ لوڈ کرتے ہیں۔ اس پر بھی وہی وعدے لاگو ہوتے ہیں: تصاویر کبھی محفوظ نہیں کی جاتیں، اور موازنے والی ریڈنگ ہم صرف اسی صورت میں رکھتے ہیں جب آپ نے محفوظ کرنے کا سوئچ آن کر رکھا ہو، آپ کے اکاؤنٹ کے تحت۔ درج کیے گئے نام اور رشتہ کبھی محفوظ نہیں کیے جاتے۔ کسی اور کے پاؤں کی تصاویر صرف اسی وقت اپ لوڈ کریں جب وہ شخص اس سے آگاہ ہو اور رضامند ہو؛ بچوں کے معاملے میں فیصلہ والدین یا سرپرست کرتے ہیں۔ کیا آپ کسی جوڑی کے تجزیے میں دوسرے فرد ہیں اور چاہتے ہیں کہ محفوظ شدہ موازنے والی ریڈنگ مٹا دی جائے؟ ہمیں <a href="mailto:support@toereading.app">support@toereading.app</a> پر ای میل کریں اور بتائیں کہ تجزیہ کس نے بنایا تھا، ہم اس کا بندوبست کر دیں گے۔</p>
+
 <h2>3. ڈیٹا پروسیس کرنے میں ہماری مدد کون کرتا ہے</h2>
 <table>
 <tr><th>فریق</th><th>کردار</th><th>مقام</th></tr>
 <tr><td>Supabase</td><td>اکاؤنٹس اور ڈیٹا بیس ہوسٹنگ</td><td>EU (فرینکفرٹ، جرمنی)</td></tr>
 <tr><td>Cloudflare</td><td>تجزیے کا گیٹ وے (worker)، DNS</td><td>EU/US، EU Data Privacy Framework &amp; SCCs</td></tr>
 <tr><td>Anthropic</td><td>آپ کی تصویر کا AI تجزیہ (Claude API)؛ API کا ڈیٹا ماڈلز کی تربیت کے لیے استعمال نہیں ہوتا</td><td>US، EU Standard Contractual Clauses / DPF کے تحت محفوظ</td></tr>
-<tr><td>پیمنٹ پارٹنر</td><td>ادائیگیاں (Merchant of Record، خود مختار کنٹرولر)</td><td>EU/EEA یا ایسا ملک جس کے لیے EU کا مطابقتی فیصلہ موجود ہے</td></tr>
+<tr><td>Stripe / Link</td><td>Stripe Managed Payments کے ذریعے ادائیگیاں؛ Link بطور Merchant of Record کام کرتا ہے اور ادائیگی کے ڈیٹا کے لیے خود مختار طور پر ذمہ دار ہے</td><td>EU/US، EU Data Privacy Framework &amp; SCCs</td></tr>
+<tr><td>Brevo</td><td>اکاؤنٹ کی ای میلز بھیجنا (تصدیق، پاس ورڈ ری سیٹ)</td><td>EU</td></tr>
 <tr><td>GitHub Pages</td><td>ایپ کی سٹیٹک فائلوں کی ہوسٹنگ؛ IP ایڈریس لاگ کر سکتا ہے</td><td>US، DPF</td></tr>
 </table>
 <p>ہمارے پروسیسرز کے ساتھ ڈیٹا پروسیسنگ کے معاہدے موجود ہیں۔ ہم ذاتی ڈیٹا کبھی نہیں بیچتے۔</p>
@@ -1200,13 +1354,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>تاریخ تولدت یا هیچ داده دیگری را که لازم نداریم نمی‌پرسیم (کمینه‌سازی داده). از ردیاب‌های تبلیغاتی یا تحلیلی استفاده نمی‌کنیم. اپ توکن نشست و زبان دلخواهت را در حافظه محلی مرورگرت نگه می‌دارد، صرفاً برای کارکرد اپ.</p>
 
+<p><strong>سؤالی بپرس.</strong> اگر از آینه سؤالی بپرسی، سؤال و پاسخ آن فقط برای ساختن همان پاسخ پردازش می‌شوند؛ محتوا را هیچ‌جا ذخیره نمی‌کنیم، نه در پایگاه داده‌مان و نه در لاگ‌ها. گفت‌وگو تا وقتی مشغولش هستی همان‌جا در اپ روی صفحه‌ات می‌ماند تا بتوانی سؤال‌های بعدی را هم بپرسی. اپ را که ببندی از میان می‌رود، مگر اینکه کلید ذخیره‌سازی را روشن کرده باشی.</p>
+
+<p><strong>کلید ذخیره‌سازی.</strong> اگر کلید «خوانش‌ها و گفت‌وگوهایم را ذخیره کن» را روشن کنی، در کنار متن خوانش‌هایت، گفت‌وگوهای پرسش‌وپاسخت را هم پای حسابت نگه می‌داریم. این کلید به‌صورت پیش‌فرض خاموش است. پاک کردن همیشه ممکن است: گفت‌وگو به گفت‌وگو، خوانش به خوانش، یا همه یک‌جا از راه حسابت.</p>
+
+<p><strong>تحلیل دونفره.</strong> در تحلیل دونفره عکس پاهای یک نفر دیگر را هم بارگذاری می‌کنی. همان قول‌ها اینجا هم برقرار است: عکس‌ها هرگز ذخیره نمی‌شوند و خوانش مقایسه‌ای را فقط وقتی نگه می‌داریم که کلید ذخیره‌سازی را روشن کرده باشی، آن هم زیر حساب خودت. نام‌ها و نسبتی که وارد می‌کنی هرگز ذخیره نمی‌شوند. عکس پاهای کس دیگری را فقط وقتی بفرست که آن شخص خبر داشته باشد و موافق باشد؛ درباره کودکان، پدر و مادر یا سرپرست تصمیم می‌گیرد. نفر دومِ یک تحلیل دونفره‌ای و می‌خواهی خوانش مقایسه‌ایِ ذخیره‌شده پاک شود؟ به <a href="mailto:support@toereading.app">support@toereading.app</a> ایمیل بزن و بنویس چه کسی تحلیل را انجام داده است؛ ترتیبش را می‌دهیم.</p>
+
 <h2>3. چه کسانی در پردازش داده به ما کمک می‌کنند</h2>
 <table>
 <tr><th>طرف</th><th>نقش</th><th>مکان</th></tr>
 <tr><td>Supabase</td><td>میزبانی حساب‌ها و پایگاه داده</td><td>اتحادیه اروپا (فرانکفورت، آلمان)</td></tr>
 <tr><td>Cloudflare</td><td>دروازه تحلیل (worker)، DNS</td><td>اتحادیه اروپا/آمریکا، چارچوب حریم خصوصی داده اتحادیه اروپا (DPF) &amp; بندهای SCC</td></tr>
 <tr><td>Anthropic</td><td>تحلیل هوش مصنوعی عکست (Claude API)؛ داده API برای آموزش مدل‌ها به کار نمی‌رود</td><td>آمریکا، محافظت‌شده با بندهای قراردادی استاندارد اتحادیه اروپا / DPF</td></tr>
-<tr><td>شریک پرداخت</td><td>پرداخت‌ها (Merchant of Record، کنترل‌کننده مستقل)</td><td>اتحادیه اروپا/منطقه اقتصادی اروپا یا کشوری با تصمیم کفایت اتحادیه اروپا</td></tr>
+<tr><td>Stripe / Link</td><td>پرداخت‌ها از راه Stripe Managed Payments؛ Link به‌عنوان Merchant of Record (فروشنده رسمی) عمل می‌کند و برای داده‌های پرداخت کنترل‌کننده مستقل است</td><td>اتحادیه اروپا/آمریکا، چارچوب حریم خصوصی داده اتحادیه اروپا (DPF) &amp; بندهای SCC</td></tr>
+<tr><td>Brevo</td><td>ارسال ایمیل‌های حساب (تأیید ایمیل، بازنشانی رمز عبور)</td><td>اتحادیه اروپا</td></tr>
 <tr><td>GitHub Pages</td><td>میزبانی فایل‌های ایستای اپ؛ ممکن است نشانی‌های IP را ثبت کند</td><td>آمریکا، DPF</td></tr>
 </table>
 <p>با پردازشگرهای‌مان قرارداد پردازش داده داریم. هرگز داده شخصی نمی‌فروشیم.</p>
@@ -1250,13 +1411,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>Kami tidak meminta tarikh lahir anda atau apa-apa data lain yang tidak kami perlukan (peminimuman data). Kami tidak menggunakan penjejak iklan atau analitik. Aplikasi ini menyimpan token sesi dan pilihan bahasa anda dalam storan setempat pelayar anda, semata-mata untuk fungsi.</p>
 
+<p><strong>Tanya soalan.</strong> Jika anda bertanya soalan kepada cermin, soalan anda dan jawapannya diproses semata-mata untuk menjana jawapan itu; kami tidak menyimpan kandungannya di mana-mana, tidak dalam pangkalan data kami dan tidak dalam log. Perbualan itu hanya kekal pada skrin anda dalam aplikasi selagi anda menggunakannya, supaya anda boleh bertanya soalan susulan. Tutup aplikasi dan ia hilang, kecuali anda telah menghidupkan suis simpan.</p>
+
+<p><strong>Suis simpan.</strong> Jika anda menghidupkan suis "Simpan bacaan dan perbualan saya", kami menyimpan perbualan soalan anda bersama teks bacaan anda pada akaun anda. Suis ini dimatikan secara lalai. Anda sentiasa boleh memadam: mengikut perbualan, mengikut bacaan, atau kesemuanya sekali gus melalui akaun anda.</p>
+
+<p><strong>Analisis duo.</strong> Dengan analisis duo, anda turut memuat naik foto kaki orang lain. Janji yang sama terpakai: foto tidak pernah disimpan, dan kami hanya menyimpan bacaan perbandingan itu jika anda menghidupkan suis simpan, di bawah akaun anda. Nama dan hubungan yang anda isikan tidak pernah disimpan. Muat naik kaki orang lain hanya jika orang itu mengetahuinya dan bersetuju; bagi kanak-kanak, ibu bapa atau penjaga yang membuat keputusan. Adakah anda orang kedua dalam sesuatu analisis duo dan mahu bacaan perbandingan yang disimpan itu dipadamkan? E-mel kami di <a href="mailto:support@toereading.app">support@toereading.app</a> dan beritahu kami siapa yang membuat analisis itu, dan kami akan menguruskannya.</p>
+
 <h2>3. Siapa yang membantu kami memproses data</h2>
 <table>
 <tr><th>Pihak</th><th>Peranan</th><th>Lokasi</th></tr>
 <tr><td>Supabase</td><td>Akaun dan pengehosan pangkalan data</td><td>EU (Frankfurt, Jerman)</td></tr>
 <tr><td>Cloudflare</td><td>Gerbang analisis (worker), DNS</td><td>EU/AS, EU Data Privacy Framework &amp; SCC</td></tr>
 <tr><td>Anthropic</td><td>Analisis AI foto anda (Claude API); data API tidak digunakan untuk melatih model</td><td>AS, dilindungi oleh Klausa Kontrak Standard EU / DPF</td></tr>
-<tr><td>Rakan pembayaran</td><td>Pembayaran (Merchant of Record, pengawal bebas)</td><td>EU/EEA atau negara dengan keputusan kecukupan EU</td></tr>
+<tr><td>Stripe / Link</td><td>Pembayaran melalui Stripe Managed Payments; Link bertindak sebagai Merchant of Record dan bertanggungjawab secara bebas atas data pembayaran</td><td>EU/AS, EU Data Privacy Framework &amp; SCC</td></tr>
+<tr><td>Brevo</td><td>Menghantar e-mel akaun (pengesahan, penetapan semula kata laluan)</td><td>EU</td></tr>
 <tr><td>GitHub Pages</td><td>Pengehosan fail statik aplikasi; mungkin melog alamat IP</td><td>AS, DPF</td></tr>
 </table>
 <p>Kami mempunyai perjanjian pemprosesan data dengan pemproses kami. Kami tidak pernah menjual data peribadi.</p>
@@ -1300,13 +1468,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>Hindi namin hinihingi ang petsa ng iyong kapanganakan o anumang iba pang data na hindi namin kailangan (data minimisation). Hindi kami gumagamit ng mga tracker para sa advertising o analytics. Iniimbak ng app ang iyong session token at kagustuhan sa wika sa local storage ng iyong browser, functional lamang.</p>
 
+<p><strong>Magtanong.</strong> Kung magtatanong ka sa salamin, ang iyong tanong at ang sagot ay pinoproseso lang para mabuo ang sagot na iyon; hindi namin iniimbak ang nilalaman kahit saan, hindi sa aming database at hindi sa mga log. Nananatili lang ang usapan sa iyong screen sa app habang ginagamit mo ito, para makapagtanong ka pa ng mga follow-up. Isara mo ang app at mawawala ito, maliban kung naka-on ang iyong save switch.</p>
+
+<p><strong>Save switch.</strong> Kung i-o-on mo ang switch na "I-save ang aking mga pagbasa at usapan", iniimbak namin ang iyong mga usapan sa pagtatanong kasama ng mga teksto ng iyong pagbasa sa iyong account. Naka-off ito bilang default. Palagi kang makakapagbura: bawat usapan, bawat pagbasa, o lahat nang sabay-sabay sa pamamagitan ng iyong account.</p>
+
+<p><strong>Duo analysis.</strong> Sa duo analysis, nag-a-upload ka rin ng mga paa ng ibang tao. Nalalapat ang parehong mga pangako: hindi kailanman iniimbak ang mga larawan, at iniimbak lang namin ang paghahambing na pagbasa kung naka-on ang iyong save switch, sa ilalim ng iyong account. Hindi kailanman iniimbak ang mga pangalan at relasyong inilagay mo. Mag-upload lang ng mga paa ng ibang tao kung alam ng taong iyon ang tungkol dito at pumapayag siya; para sa mga bata, ang magulang o tagapag-alaga ang magpapasya. Ikaw ba ang pangalawang tao sa isang duo analysis at gusto mong mabura ang isang naka-save na paghahambing na pagbasa? Mag-email sa amin sa <a href="mailto:support@toereading.app">support@toereading.app</a> at sabihin sa amin kung sino ang gumawa ng pagsusuri, at aasikasuhin namin ito.</p>
+
 <h2>3. Sino ang tumutulong sa aming magproseso ng data</h2>
 <table>
 <tr><th>Partido</th><th>Papel</th><th>Lokasyon</th></tr>
 <tr><td>Supabase</td><td>Hosting ng mga account at database</td><td>EU (Frankfurt, Germany)</td></tr>
 <tr><td>Cloudflare</td><td>Gateway ng pagsusuri (worker), DNS</td><td>EU/US, EU Data Privacy Framework &amp; SCCs</td></tr>
 <tr><td>Anthropic</td><td>AI na pagsusuri ng iyong larawan (Claude API); hindi ginagamit ang API data para mag-train ng mga model</td><td>US, protektado ng EU Standard Contractual Clauses / DPF</td></tr>
-<tr><td>Payment partner</td><td>Mga bayad (Merchant of Record, independiyenteng controller)</td><td>EU/EEA o bansang may EU adequacy decision</td></tr>
+<tr><td>Stripe / Link</td><td>Mga bayad sa pamamagitan ng Stripe Managed Payments; ang Link ay kumikilos bilang Merchant of Record at independiyenteng responsable para sa payment data</td><td>EU/US, EU Data Privacy Framework &amp; SCCs</td></tr>
+<tr><td>Brevo</td><td>Pagpapadala ng mga account email (verification, pag-reset ng password)</td><td>EU</td></tr>
 <tr><td>GitHub Pages</td><td>Hosting ng mga static na file ng app; maaaring mag-log ng mga IP address</td><td>US, DPF</td></tr>
 </table>
 <p>May mga data processing agreement kami sa aming mga processor. Hindi namin kailanman ibinebenta ang personal na data.</p>
@@ -1350,13 +1525,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>Δεν ζητάμε την ημερομηνία γέννησής σου ούτε άλλα δεδομένα που δεν χρειαζόμαστε (ελαχιστοποίηση δεδομένων). Δεν χρησιμοποιούμε διαφημιστικούς ή στατιστικούς ιχνηλάτες. Η εφαρμογή αποθηκεύει το token συνεδρίας και την προτίμηση γλώσσας σου στο local storage του browser σου, αμιγώς για λειτουργικούς λόγους.</p>
 
+<p><strong>Κάνε μια ερώτηση.</strong> Αν κάνεις μια ερώτηση στον καθρέφτη, η ερώτησή σου και η απάντηση επεξεργάζονται μόνο για να δημιουργηθεί αυτή η απάντηση· δεν αποθηκεύουμε το περιεχόμενο πουθενά, ούτε στη βάση δεδομένων μας ούτε σε αρχεία καταγραφής. Η συζήτηση απλώς μένει στην οθόνη σου μέσα στην εφαρμογή όσο ασχολείσαι, ώστε να μπορείς να κάνεις κι άλλες, διευκρινιστικές ερωτήσεις. Αν κλείσεις την εφαρμογή, χάνεται, εκτός αν έχεις ενεργοποιημένο τον διακόπτη αποθήκευσης.</p>
+
+<p><strong>Διακόπτης αποθήκευσης.</strong> Αν ενεργοποιήσεις τον διακόπτη "Αποθήκευση των αναγνώσεων και των συζητήσεών μου", αποθηκεύουμε στον λογαριασμό σου, μαζί με τα κείμενα των αναγνώσεών σου, και τις συζητήσεις ερωτήσεων. Από προεπιλογή αυτό είναι απενεργοποιημένο. Μπορείς πάντα να διαγράφεις: ανά συζήτηση, ανά ανάγνωση, ή όλα μαζί μέσω του λογαριασμού σου.</p>
+
+<p><strong>Ανάλυση duo.</strong> Σε μια ανάλυση duo ανεβάζεις και τα πόδια ενός άλλου προσώπου. Ισχύουν οι ίδιες υποσχέσεις: οι φωτογραφίες δεν αποθηκεύονται ποτέ, και τη συγκριτική ανάγνωση την κρατάμε μόνο αν έχεις ενεργοποιημένο τον διακόπτη αποθήκευσης, στον δικό σου λογαριασμό. Τα ονόματα και η σχέση που συμπληρώνεις δεν αποθηκεύονται ποτέ. Ανέβαζε τα πόδια κάποιου άλλου μόνο αν εκείνο το πρόσωπο το γνωρίζει και συμφωνεί· για τα παιδιά αποφασίζει ο γονέας ή ο κηδεμόνας. Είσαι το δεύτερο πρόσωπο σε μια ανάλυση duo και θέλεις να διαγραφεί μια αποθηκευμένη συγκριτική ανάγνωση; Στείλε μας e-mail στο <a href="mailto:support@toereading.app">support@toereading.app</a> και πες μας ποιος έκανε την ανάλυση, και θα το φροντίσουμε εμείς.</p>
+
 <h2>3. Ποιοι μας βοηθούν στην επεξεργασία</h2>
 <table>
 <tr><th>Μέρος</th><th>Ρόλος</th><th>Τοποθεσία</th></tr>
 <tr><td>Supabase</td><td>Λογαριασμοί και φιλοξενία βάσης δεδομένων</td><td>ΕΕ (Φρανκφούρτη, Γερμανία)</td></tr>
 <tr><td>Cloudflare</td><td>Πύλη ανάλυσης (worker), DNS</td><td>ΕΕ/ΗΠΑ, EU Data Privacy Framework &amp; SCC</td></tr>
 <tr><td>Anthropic</td><td>Ανάλυση AI της φωτογραφίας σου (Claude API)· τα δεδομένα του API δεν χρησιμοποιούνται για εκπαίδευση μοντέλων</td><td>ΗΠΑ, με προστασία μέσω των Τυποποιημένων Συμβατικών Ρητρών της ΕΕ / DPF</td></tr>
-<tr><td>Συνεργάτης πληρωμών</td><td>Πληρωμές (Merchant of Record, ανεξάρτητος υπεύθυνος επεξεργασίας)</td><td>ΕΕ/ΕΟΧ ή χώρα με απόφαση επάρκειας της ΕΕ</td></tr>
+<tr><td>Stripe / Link</td><td>Πληρωμές μέσω Stripe Managed Payments· η Link ενεργεί ως Merchant of Record και είναι ανεξάρτητα υπεύθυνη για τα δεδομένα πληρωμών</td><td>ΕΕ/ΗΠΑ, EU Data Privacy Framework &amp; SCC</td></tr>
+<tr><td>Brevo</td><td>Αποστολή των e-mail λογαριασμού (επαλήθευση, επαναφορά κωδικού)</td><td>ΕΕ</td></tr>
 <tr><td>GitHub Pages</td><td>Φιλοξενία των στατικών αρχείων της εφαρμογής· μπορεί να καταγράφει διευθύνσεις IP</td><td>ΗΠΑ, DPF</td></tr>
 </table>
 <p>Με τους εκτελούντες την επεξεργασία έχουμε συνάψει συμβάσεις επεξεργασίας δεδομένων. Δεν πουλάμε ποτέ προσωπικά δεδομένα.</p>
@@ -1400,13 +1582,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>Nežádáme tvé datum narození ani jiné údaje, které nepotřebujeme (minimalizace údajů). Nepoužíváme reklamní ani analytické trackery. Aplikace ukládá tvůj token relace a jazykovou preferenci v local storage tvého prohlížeče, čistě funkčně.</p>
 
+<p><strong>Polož otázku.</strong> Když zrcadlu položíš otázku, tvá otázka i odpověď se zpracují jen proto, aby odpověď mohla vzniknout; obsah nikde neukládáme, ani v naší databázi, ani v lozích. Konverzace prostě zůstává v aplikaci na tvé obrazovce, dokud s ní pracuješ, takže se můžeš dál doptávat. Když aplikaci zavřeš, je pryč, pokud nemáš zapnutý přepínač ukládání.</p>
+
+<p><strong>Přepínač ukládání.</strong> Když zapneš přepínač „Ukládat moje čtení a konverzace“, ukládáme k tvému účtu vedle textů tvých čtení i tvé otázkové konverzace. Ve výchozím nastavení je vypnutý. Smazat můžeš vždy: po jednotlivých konverzacích, po jednotlivých čteních, nebo všechno najednou přes svůj účet.</p>
+
+<p><strong>Duo analýza.</strong> Při duo analýze nahráváš i nohy někoho jiného. Platí stejné sliby: fotky se nikdy neukládají a srovnávací čtení uchováme jen tehdy, když máš zapnutý přepínač ukládání, pod tvým účtem. Vyplněná jména a vztah se nikdy neukládají. Nohy někoho jiného nahrávej jen tehdy, když o tom ten člověk ví a souhlasí s tím; u dětí rozhoduje rodič nebo zákonný zástupce. Jsi druhou osobou v duo analýze a chceš, aby bylo uložené srovnávací čtení smazáno? Napiš nám na <a href="mailto:support@toereading.app">support@toereading.app</a> a uveď, kdo analýzu vytvořil, a postaráme se o to.</p>
+
 <h2>3. Kdo nám pomáhá se zpracováním</h2>
 <table>
 <tr><th>Strana</th><th>Role</th><th>Umístění</th></tr>
 <tr><td>Supabase</td><td>Účty a hosting databáze</td><td>EU (Frankfurt, Německo)</td></tr>
 <tr><td>Cloudflare</td><td>Brána analýzy (worker), DNS</td><td>EU/USA, EU Data Privacy Framework &amp; SCC</td></tr>
 <tr><td>Anthropic</td><td>AI analýza tvé fotky (Claude API); data z API se nepoužívají k trénování modelů</td><td>USA, chráněno standardními smluvními doložkami EU / DPF</td></tr>
-<tr><td>Platební partner</td><td>Platby (Merchant of Record, samostatný správce)</td><td>EU/EHP nebo země s rozhodnutím EU o odpovídající ochraně</td></tr>
+<tr><td>Stripe / Link</td><td>Platby přes Stripe Managed Payments; Link vystupuje jako Merchant of Record a je samostatně odpovědný za platební údaje</td><td>EU/USA, EU Data Privacy Framework &amp; SCC</td></tr>
+<tr><td>Brevo</td><td>Odesílání e-mailů k účtu (ověření, obnova hesla)</td><td>EU</td></tr>
 <tr><td>GitHub Pages</td><td>Hosting statických souborů aplikace; může logovat IP adresy</td><td>USA, DPF</td></tr>
 </table>
 <p>S našimi zpracovateli máme uzavřené smlouvy o zpracování údajů. Osobní údaje nikdy neprodáváme.</p>
@@ -1450,13 +1639,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>Nu îți cerem data nașterii și nici alte date de care nu avem nevoie (minimizarea datelor). Nu folosim trackere de publicitate sau de analiză. Aplicația stochează tokenul tău de sesiune și preferința de limbă în stocarea locală a browserului, exclusiv funcțional.</p>
 
+<p><strong>Pune o întrebare.</strong> Dacă îi pui oglinzii o întrebare, întrebarea ta și răspunsul sunt prelucrate doar pentru a genera acel răspuns; nu stocăm conținutul nicăieri, nici în baza noastră de date, nici în jurnale. Conversația rămâne pur și simplu pe ecran, în aplicație, cât timp o folosești, ca să poți pune întrebări de continuare. Dacă închizi aplicația, conversația dispare, cu excepția cazului în care ai activat comutatorul de salvare.</p>
+
+<p><strong>Comutatorul de salvare.</strong> Dacă activezi comutatorul "Salvează citirile și conversațiile mele", păstrăm în contul tău, pe lângă textele citirilor, și conversațiile tale de întrebări. Implicit, acesta este dezactivat. Poți șterge oricând: pe conversație, pe citire sau totul dintr-odată, din contul tău.</p>
+
+<p><strong>Analiza duo.</strong> La o analiză duo încarci și picioarele altei persoane. Se aplică aceleași promisiuni: fotografiile nu sunt salvate niciodată, iar citirea comparativă o păstrăm doar dacă ai activat comutatorul de salvare, în contul tău. Numele și relația pe care le completezi nu sunt stocate niciodată. Încarcă picioarele altcuiva doar dacă acea persoană știe și este de acord; în cazul copiilor, decide părintele sau tutorele. Ești a doua persoană dintr-o analiză duo și vrei ca o citire comparativă salvată să fie ștearsă? Scrie-ne la <a href="mailto:support@toereading.app">support@toereading.app</a> și spune-ne cine a făcut analiza, iar noi ne ocupăm de rest.</p>
+
 <h2>3. Cine ne ajută la prelucrarea datelor</h2>
 <table>
 <tr><th>Parte</th><th>Rol</th><th>Locație</th></tr>
 <tr><td>Supabase</td><td>Găzduirea conturilor și a bazei de date</td><td>UE (Frankfurt, Germania)</td></tr>
 <tr><td>Cloudflare</td><td>Gateway de analiză (worker), DNS</td><td>UE/SUA, EU Data Privacy Framework &amp; clauze contractuale standard (SCC)</td></tr>
 <tr><td>Anthropic</td><td>Analiza AI a fotografiei tale (API-ul Claude); datele din API nu sunt folosite pentru antrenarea modelelor</td><td>SUA, protejat prin clauzele contractuale standard ale UE / DPF</td></tr>
-<tr><td>Partenerul de plăți</td><td>Plăți (Merchant of Record, operator independent)</td><td>UE/SEE sau o țară cu o decizie de adecvare a UE</td></tr>
+<tr><td>Stripe / Link</td><td>Plăți prin Stripe Managed Payments; Link acționează ca Merchant of Record și este responsabil în mod independent pentru datele de plată</td><td>UE/SUA, EU Data Privacy Framework &amp; clauze contractuale standard (SCC)</td></tr>
+<tr><td>Brevo</td><td>Trimiterea e-mailurilor de cont (verificare, resetarea parolei)</td><td>UE</td></tr>
 <tr><td>GitHub Pages</td><td>Găzduirea fișierelor statice ale aplicației; poate înregistra adrese IP</td><td>SUA, DPF</td></tr>
 </table>
 <p>Avem acorduri de prelucrare a datelor cu persoanele noastre împuternicite. Nu vindem niciodată date personale.</p>
@@ -1500,13 +1696,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>Vi frågar inte efter ditt födelsedatum eller andra uppgifter vi inte behöver (uppgiftsminimering). Vi använder inga annons- eller analysspårare. Appen lagrar din sessionstoken och ditt språkval i webbläsarens lokala lagring, enbart funktionellt.</p>
 
+<p><strong>Ställ en fråga.</strong> Om du ställer en fråga till spegeln behandlas din fråga och svaret enbart för att ta fram det svaret; vi lagrar inte innehållet någonstans, varken i vår databas eller i loggar. Konversationen ligger helt enkelt kvar på din skärm i appen medan du håller på, så att du kan ställa följdfrågor. Stänger du appen är den borta, om du inte har slagit på sparreglaget.</p>
+
+<p><strong>Sparreglaget.</strong> Slår du på reglaget "Spara mina läsningar och konversationer" sparar vi dina frågekonversationer tillsammans med dina läsningstexter på ditt konto. Det är avstängt som standard. Du kan alltid radera: per konversation, per läsning eller allt på en gång via ditt konto.</p>
+
+<p><strong>Duoanalys.</strong> Vid en duoanalys laddar du också upp någon annans fötter. Samma löften gäller: foton sparas aldrig, och den jämförande läsningen behåller vi bara om du har slagit på sparreglaget, på ditt konto. Namn och relation som du fyller i sparas aldrig. Ladda bara upp någon annans fötter om personen känner till det och godkänner det; för barn är det föräldern eller vårdnadshavaren som bestämmer. Är du den andra personen i en duoanalys och vill att en sparad jämförande läsning raderas? Mejla oss på <a href="mailto:support@toereading.app">support@toereading.app</a> och berätta vem som gjorde analysen, så ordnar vi det.</p>
+
 <h2>3. Vilka som hjälper oss att behandla uppgifter</h2>
 <table>
 <tr><th>Part</th><th>Roll</th><th>Plats</th></tr>
 <tr><td>Supabase</td><td>Konton och databashosting</td><td>EU (Frankfurt, Tyskland)</td></tr>
 <tr><td>Cloudflare</td><td>Analysgateway (worker), DNS</td><td>EU/USA, EU:s Data Privacy Framework &amp; standardavtalsklausuler</td></tr>
 <tr><td>Anthropic</td><td>AI-analys av ditt foto (Claude API); API-data används inte för att träna modeller</td><td>USA, skyddat genom EU:s standardavtalsklausuler / DPF</td></tr>
-<tr><td>Betalpartner</td><td>Betalningar (Merchant of Record, självständigt personuppgiftsansvarig)</td><td>EU/EES eller ett land med EU-beslut om adekvat skyddsnivå</td></tr>
+<tr><td>Stripe / Link</td><td>Betalningar via Stripe Managed Payments; Link agerar Merchant of Record och är självständigt ansvarig för betaluppgifterna</td><td>EU/USA, EU:s Data Privacy Framework &amp; standardavtalsklausuler</td></tr>
+<tr><td>Brevo</td><td>Utskick av kontomejl (verifiering, återställning av lösenord)</td><td>EU</td></tr>
 <tr><td>GitHub Pages</td><td>Hosting av appens statiska filer; kan logga IP-adresser</td><td>USA, DPF</td></tr>
 </table>
 <p>Vi har personuppgiftsbiträdesavtal med våra biträden. Vi säljer aldrig personuppgifter.</p>
@@ -1550,13 +1753,20 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
 </table>
 <p>我們不會詢問你的出生日期或任何其他我們不需要的資料（資料最小化）。我們不使用廣告或分析追蹤器。本應用程式只在你瀏覽器的本機儲存空間中存放你的工作階段權杖與語言偏好，純屬功能性用途。</p>
 
+<p><strong>提出問題。</strong>如果你向鏡子提出問題，你的問題和回答只會為了產生該回答而處理；我們不會在任何地方儲存其內容，既不存在我們的資料庫，也不存在記錄中。在你使用期間，對話只會留在應用程式的畫面上，讓你可以繼續追問。關閉應用程式後，對話就會消失，除非你已開啟儲存開關。</p>
+
+<p><strong>儲存開關。</strong>如果你開啟「儲存我的解讀與對話」開關，我們會把你的提問對話連同解讀文字一起保存在你的帳戶中。此功能預設為關閉。你隨時可以刪除：按單一對話、按單一解讀，或透過帳戶一次全部刪除。</p>
+
+<p><strong>雙人分析。</strong>在雙人分析中，你也會上傳另一個人的腳部照片。同樣的承諾適用：照片絕不儲存，而比較解讀只有在你開啟儲存開關時才會保存，且保存在你的帳戶下。你填寫的姓名與關係絕不儲存。只有在對方知情且同意的情況下，才可以上傳他人的腳部照片；如為兒童，由家長或監護人決定。你是雙人分析中的第二位當事人，希望刪除一份已儲存的比較解讀嗎？請寄電子郵件到 <a href="mailto:support@toereading.app">support@toereading.app</a> 並告訴我們分析是誰做的，我們會為你處理。</p>
+
 <h2>3. 誰協助我們處理資料</h2>
 <table>
 <tr><th>對象</th><th>角色</th><th>地點</th></tr>
 <tr><td>Supabase</td><td>帳戶與資料庫代管</td><td>歐盟（德國法蘭克福）</td></tr>
 <tr><td>Cloudflare</td><td>分析閘道（worker）、DNS</td><td>歐盟／美國，歐盟資料隱私框架 &amp; 標準契約條款</td></tr>
 <tr><td>Anthropic</td><td>對你照片的 AI 分析（Claude API）；API 資料不用於訓練模型</td><td>美國，受歐盟標準契約條款／DPF 保護</td></tr>
-<tr><td>付款合作夥伴</td><td>付款（Merchant of Record，獨立控管者）</td><td>歐盟／歐洲經濟區，或具歐盟適足性認定的國家</td></tr>
+<tr><td>Stripe / Link</td><td>透過 Stripe Managed Payments 處理付款；Link 以 Merchant of Record（登記商家）身分行事，並就付款資料獨立負責</td><td>歐盟／美國，歐盟資料隱私框架 &amp; 標準契約條款</td></tr>
+<tr><td>Brevo</td><td>寄送帳戶電子郵件（驗證、密碼重設）</td><td>歐盟</td></tr>
 <tr><td>GitHub Pages</td><td>應用程式靜態檔案的代管；可能記錄 IP 位址</td><td>美國，DPF</td></tr>
 </table>
 <p>我們與各資料處理者簽有資料處理協議。我們絕不出售個人資料。</p>
