@@ -1,7 +1,7 @@
 {
   "name": "Toe Reading",
   "short_name": "Toe Reading",
-  "description": "Feet are mirrors \u2014 a playful self-inquiry through the shapes of your toes.",
+  "description": "Feet are mirrors: self-reflection through the shapes of your toes.",
   "lang": "en",
   "id": "./",
   "start_url": "./",
@@ -10,10 +10,27 @@
   "orientation": "portrait",
   "background_color": "#EFE8D8",
   "theme_color": "#EFE8D8",
-  "categories": ["lifestyle"],
+  "categories": [
+    "lifestyle"
+  ],
   "icons": [
-    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ]
 }
