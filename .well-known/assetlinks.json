@@ -1,0 +1,1 @@
+[{"relation": ["delegate_permission/common.handle_all_urls"], "target": {"namespace": "android_app", "package_name": "app.toereading", "sha256_cert_fingerprints": ["03:1D:F1:AF:E1:C2:B2:25:3B:6E:61:3F:29:C0:D5:C8:58:22:AF:EB:B3:F0:7B:56:78:CB:A3:FC:16:80:89:43", "0A:95:14:AF:45:21:63:46:74:36:B2:ED:34:9F:5F:6D:2C:D1:D8:ED:21:E7:69:E5:52:89:08:38:CE:27:C3:91"]}}]
