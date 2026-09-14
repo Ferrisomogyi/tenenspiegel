@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#EFE8D8">
+<title>Toe Reading · Beheer</title>
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--papier:#EFE8D8;--kaart:#FBF7EC;--inkt:#2B2118;--inkt-zacht:#6B5D4A;--lijn:#CBBD9F;--lijn-zacht:#DCD2BA;--ether:#4C5B9E;--lucht:#6E93A8;--vuur:#B84A28;--water:#2F6E62;--aarde:#8A6A3F;--goed:#2F6E62;--fout:#B84A28}
+*{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--papier);color:var(--inkt);font-family:'Karla',sans-serif;font-size:15px;line-height:1.5;min-height:100vh}
+a{color:var(--ether)}
+.top{display:flex;align-items:center;gap:14px;padding:14px 22px;border-bottom:1.5px solid var(--inkt);background:var(--kaart);position:sticky;top:0;z-index:5;flex-wrap:wrap}
+.top h1{font-family:'Fraunces',serif;font-weight:900;font-size:22px;letter-spacing:-.01em}
+.top h1 span{font-style:italic;font-weight:400}
+.top nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:8px}
+.top nav button{background:none;border:1.5px solid transparent;border-radius:999px;padding:6px 14px;font:inherit;font-weight:700;cursor:pointer;color:var(--inkt-zacht)}
+.top nav button.actief{border-color:var(--inkt);color:var(--inkt);background:var(--papier)}
+.top .wie{margin-left:auto;font-size:13px;color:var(--inkt-zacht)}
+.top .wie button{margin-left:8px}
+main{max-width:1240px;margin:0 auto;padding:22px}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:24px;margin:0 0 14px}
+h3{font-family:'Fraunces',serif;font-weight:600;font-size:17px;margin:0 0 8px}
+.kaart{background:var(--kaart);border:1.5px solid var(--inkt);border-radius:14px;padding:16px 18px;box-shadow:4px 4px 0 rgba(43,33,24,.08)}
+.rooster{display:grid;gap:14px}
+.rooster.k4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.rooster.k2{grid-template-columns:repeat(auto-fit,minmax(360px,1fr))}
+.tegel .lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--inkt-zacht)}
+.tegel .get{font-family:'Fraunces',serif;font-weight:900;font-size:34px;line-height:1.1;margin-top:4px}
+.tegel .sub{font-size:12.5px;color:var(--inkt-zacht);margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--lijn-zacht);vertical-align:top}
+th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--inkt-zacht);cursor:default;white-space:nowrap}
+tr.klik{cursor:pointer}tr.klik:hover td{background:rgba(43,33,24,.04)}
+.tabelwrap{overflow-x:auto}
+#klantBetalingen{overflow-x:auto}
+.txn{font-size:11px;word-break:break-all;max-width:260px;display:inline-block}
+.chip{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid var(--lijn);font-size:12px;margin:2px 3px 2px 0;background:#fff8}
+.chip.g{border-color:var(--goed);color:var(--goed)}.chip.r{border-color:var(--fout);color:var(--fout)}.chip.b{border-color:var(--ether);color:var(--ether)}
+button.knop,.knop{background:var(--inkt);color:var(--kaart);border:1.5px solid var(--inkt);border-radius:999px;padding:8px 16px;font:inherit;font-weight:700;cursor:pointer}
+button.knop.licht{background:var(--kaart);color:var(--inkt)}
+button.knop.klein{padding:5px 12px;font-size:13px}
+button.knop.rood{background:var(--fout);border-color:var(--fout)}
+button:disabled{opacity:.5;cursor:default}
+input,select,textarea{font:inherit;padding:8px 10px;border:1.5px solid var(--lijn);border-radius:10px;background:#fff;color:var(--inkt)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--inkt)}
+.rij{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.zacht{color:var(--inkt-zacht);font-size:13px}
+.melding{padding:10px 14px;border-radius:10px;border:1.5px solid var(--lijn);background:#fff8;margin:10px 0;font-size:14px}
+.melding.fout{border-color:var(--fout);color:var(--fout)}.melding.goed{border-color:var(--goed);color:var(--goed)}
+.spark{width:100%;height:70px;display:block}
+.login{max-width:420px;margin:60px auto}
+.login h2{text-align:center}
+.login form{display:grid;gap:10px}
+.kop-rij{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.kop-rij .zacht{margin-left:auto}
+.detail{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:960px){.detail{grid-template-columns:360px 1fr}}
+.detail dl{display:grid;grid-template-columns:130px 1fr;gap:4px 10px;font-size:13.5px}
+.detail dt{color:var(--inkt-zacht)}
+.lezing{border:1px solid var(--lijn);border-radius:12px;padding:12px 14px;margin-bottom:12px;background:#fff6}
+.lezing summary{cursor:pointer;font-weight:700}
+.vertelt p{margin:6px 0;font-size:14px}
+.vertelt b{font-family:'Fraunces',serif;font-weight:600}
+.vraagblok{border-left:3px solid var(--lijn);padding:4px 10px;margin:8px 0;font-size:13.5px}
+.tenenchips{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:12.5px}
+.tenenchips span b{color:var(--inkt-zacht);margin-right:4px}
+.log li{font-size:13px;padding:4px 0;border-bottom:1px solid var(--lijn-zacht);list-style:none}
+.balk{height:8px;background:var(--lijn-zacht);border-radius:999px;overflow:hidden}
+.balk i{display:block;height:100%;background:var(--ether)}
+.landrij{display:grid;grid-template-columns:60px 1fr 50px;gap:8px;align-items:center;font-size:13.5px;margin:4px 0}
+.acties{display:grid;gap:10px}
+.acties fieldset{border:1px solid var(--lijn);border-radius:10px;padding:10px 12px}
+.acties legend{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--inkt-zacht);padding:0 6px}
+.acties .rij input[type=number]{width:80px}
+footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
+</style>
+</head>
+<body>
+<div class="top">
+  <h1>Toe <span>Reading</span> · Beheer</h1>
+  <nav id="nav" hidden>
+    <button data-tab="dash" class="actief">Dashboard</button>
+    <button data-tab="klanten">Klanten</button>
+    <button data-tab="geo">Waar &amp; wat</button>
+    <button data-tab="codes">Cadeaucodes</button>
+    <button data-tab="log">Logboek</button>
+  </nav>
+  <div class="wie" id="wie"></div>
+</div>
+<main>
+  <div id="login" class="login" hidden>
+    <div class="kaart">
+      <h2>Inloggen</h2>
+      <p class="zacht" style="text-align:center;margin:6px 0 14px">Alleen voor beheer. Gebruik je Toe Reading-account.</p>
+      <form id="loginForm">
+        <input type="email" id="lEmail" placeholder="e-mail" autocomplete="username" required>
+        <input type="password" id="lWw" placeholder="wachtwoord" autocomplete="current-password" required>
+        <button class="knop" type="submit">Inloggen</button>
+      </form>
+      <div id="loginMelding"></div>
+    </div>
+  </div>
+
+  <section id="tab-dash" hidden>
+    <div class="kop-rij"><h2>Dashboard</h2><span class="zacht" id="dashTijd"></span><button class="knop klein licht" id="dashVernieuw">Vernieuwen</button></div>
+    <div id="dashPeriodes" class="rooster k4" style="margin-bottom:14px"></div>
+    <div class="rooster k2" style="margin-bottom:14px">
+      <div class="kaart"><h3>Laatste 30 dagen: analyses per dag</h3><svg class="spark" id="sparkAnalyses"></svg><div class="zacht" id="sparkAnalysesNoot"></div></div>
+      <div class="kaart"><h3>Laatste 30 dagen: netto omzet per dag</h3><svg class="spark" id="sparkOmzet"></svg><div class="zacht" id="sparkOmzetNoot"></div></div>
+    </div>
+    <div class="rooster k2">
+      <div class="kaart"><h3>Tegoed in omloop &amp; API</h3><div id="dashTegoed"></div></div>
+      <div class="kaart"><h3>Laatste activiteit</h3><ul class="log" id="dashRecent"></ul></div>
+    </div>
+  </section>
+
+  <section id="tab-klanten" hidden>
+    <div class="kop-rij"><h2>Klanten</h2><span class="zacht" id="klantenTotaal"></span></div>
+    <div class="kaart" style="margin-bottom:14px">
+      <div class="rij">
+        <input type="search" id="zoek" placeholder="zoek op e-mail, naam, land of stad" style="flex:1;min-width:220px">
+        <select id="sort"><option value="laatst">laatst actief</option><option value="nieuw">nieuwste eerst</option><option value="omzet">omzet</option><option value="email">e-mail</option></select>
+        <button class="knop klein" id="zoekKnop">Zoek</button>
+      </div>
+    </div>
+    <div class="kaart tabelwrap" id="klantenLijst"></div>
+  </section>
+
+  <section id="tab-klant" hidden>
+    <div class="kop-rij"><button class="knop klein licht" id="terugKlanten">← Klanten</button><h2 id="klantTitel"></h2><span class="zacht" id="klantSub"></span></div>
+    <div id="klantMelding"></div>
+    <div class="detail">
+      <div>
+        <div class="kaart" style="margin-bottom:14px"><h3>Profiel</h3><dl id="klantProfiel"></dl></div>
+        <div class="kaart" style="margin-bottom:14px"><h3>Tegoed</h3><dl id="klantTegoed"></dl></div>
+        <div class="kaart acties" style="margin-bottom:14px">
+          <h3>Acties</h3>
+          <fieldset><legend>Tegoed corrigeren</legend>
+            <div class="rij"><label>gratis <input type="number" id="aGratis" min="0"></label><label>pakket <input type="number" id="aPakket" min="0"></label><label>vragen <input type="number" id="aVragen" min="0"></label></div>
+            <div class="rij" style="margin-top:8px"><input type="text" id="aReden" placeholder="reden (verplicht, komt in het logboek)" style="flex:1"><button class="knop klein" id="aTegoedKnop">Opslaan</button></div>
+          </fieldset>
+          <fieldset><legend>Cadeaucode toekennen</legend>
+            <div class="rij"><select id="aCodeSoort"><option value="pakket10">10 analyses</option><option value="jaar">jaar-abonnement</option></select><input type="text" id="aCodeReden" placeholder="reden" style="flex:1"><button class="knop klein" id="aCodeKnop">Toekennen</button></div>
+            <div class="zacht" style="margin-top:6px">Pakt een open code en verzilvert hem namens de klant. De klant hoeft niets te doen.</div>
+          </fieldset>
+          <fieldset><legend>Account</legend>
+            <div class="rij"><button class="knop klein licht" id="aResetKnop">Wachtwoordresetmail sturen</button><button class="knop klein licht" id="aBewaarKnop"></button></div>
+          </fieldset>
+          <fieldset><legend>Supportnotitie</legend>
+            <textarea id="aNotitie" rows="3" style="width:100%" placeholder="wat is er afgesproken of gedaan?"></textarea>
+            <div class="rij" style="margin-top:8px;justify-content:flex-end"><button class="knop klein" id="aNotitieKnop">Notitie toevoegen</button></div>
+          </fieldset>
+        </div>
+        <div class="kaart" style="margin-bottom:14px"><h3>Notities</h3><ul class="log" id="klantNotities"></ul></div>
+        <div class="kaart"><h3>Wie keek hier (audit)</h3><ul class="log" id="klantAudit"></ul></div>
+      </div>
+      <div>
+        <div class="kaart" style="margin-bottom:14px"><h3>Lezingen <span class="zacht" id="klantLezingenN"></span></h3><div id="klantLezingen"></div></div>
+        <div class="kaart" style="margin-bottom:14px"><h3>Betalingen &amp; codes</h3><div id="klantBetalingen"></div></div>
+        <div class="kaart"><h3>Activiteit</h3><ul class="log" id="klantActiviteit"></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tab-geo" hidden>
+    <div class="kop-rij"><h2>Waar &amp; wat</h2><span class="zacht">Land en stad komen van het netwerk van de klant (Cloudflare), vanaf 15 sep 2026. Geen exacte locatie, geen IP-adres bewaard.</span></div>
+    <div class="rooster k2">
+      <div class="kaart"><h3>Landen</h3><div id="geoLanden"></div></div>
+      <div class="kaart"><h3>Steden</h3><div id="geoSteden"></div></div>
+      <div class="kaart"><h3>Talen</h3><div id="geoTalen"></div></div>
+      <div class="kaart"><h3>Producten</h3><div id="geoProducten"></div></div>
+    </div>
+  </section>
+
+  <section id="tab-codes" hidden>
+    <div class="kop-rij"><h2>Cadeaucodes</h2></div>
+    <div class="kaart" style="margin-bottom:14px">
+      <div class="rij"><select id="cSoort"><option value="pakket10">pakket10 (10 analyses)</option><option value="jaar">jaar</option></select><input type="number" id="cAantal" value="5" min="1" max="100" style="width:80px"><button class="knop klein" id="cMaak">Maak codes</button>
+      <select id="cStatus" style="margin-left:auto"><option value="open">open</option><option value="verzilverd">verzilverd</option></select><button class="knop klein licht" id="cToon">Toon</button></div>
+      <div id="cNieuw" class="zacht" style="margin-top:8px"></div>
+    </div>
+    <div class="kaart tabelwrap" id="cLijst"></div>
+  </section>
+
+  <section id="tab-log" hidden>
+    <div class="kop-rij"><h2>Logboek</h2><span class="zacht">Elke beheerhandeling, inclusief het openen van een klantkaart.</span></div>
+    <div class="kaart tabelwrap" id="logLijst"></div>
+  </section>
+</main>
+<footer>Toe Reading · Beheer 2.0 · v1.0 (15 sep 2026) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
+
+<script>
+const SB_URL = 'https://kfdtppnwhljivbcutxcm.supabase.co';
+const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtmZHRwcG53aGxqaXZiY3V0eGNtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM4MzAwOTQsImV4cCI6MjA5OTQwNjA5NH0.EQ_g5xEULelqYIdKBg7WI-m0-JorF7Cro6w7oNOhMV8';
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const euro = c => '€ ' + (Number(c || 0) / 100).toFixed(2).replace('.', ',');
+const dt = iso => { if(!iso) return '·'; const d = new Date(iso); return d.toLocaleDateString('nl-NL', {day:'2-digit', month:'short', year:'2-digit'}) + ' ' + d.toLocaleTimeString('nl-NL', {hour:'2-digit', minute:'2-digit'}); };
+const dag = iso => iso ? new Date(iso).toLocaleDateString('nl-NL', {day:'2-digit', month:'short', year:'2-digit'}) : '·';
+const geleden = iso => { if(!iso) return 'nooit'; const s = (Date.now() - new Date(iso)) / 1000; if(s < 3600) return Math.max(1, Math.round(s/60)) + ' min'; if(s < 86400) return Math.round(s/3600) + ' uur'; return Math.round(s/86400) + ' dg'; };
+const TEEN = {1:'grote teen',2:'tweede',3:'derde',4:'vierde',5:'kleine teen'};
+const LANDNAAM = new Intl.DisplayNames(['nl'], {type:'region'});
+const TAALNAAM = new Intl.DisplayNames(['nl'], {type:'language'});
+const land = c => { if(!c || c === '?') return 'onbekend'; try{ return LANDNAAM.of(c) + ' (' + c + ')'; }catch(e){ return c; } };
+const taal = c => { if(!c || c === '?') return 'onbekend'; try{ return TAALNAAM.of(c) + ' (' + c + ')'; }catch(e){ return c; } };
+
+/* ---- sessie: gedeeld met de app (zelfde origin, localStorage ts_sessie) ---- */
+function sessie(){ try{ const s = JSON.parse(localStorage.ts_sessie || 'null'); return (s && s.at) ? s : null; }catch(e){ return null; } }
+function bewaarSessie(s){ try{ localStorage.ts_sessie = JSON.stringify(s); }catch(e){} }
+function wisSessie(){ try{ delete localStorage.ts_sessie; }catch(e){} }
+function uitTokens(d){ const s = { at: d.access_token, rt: d.refresh_token || '', exp: d.expires_at || (Math.floor(Date.now()/1000) + (d.expires_in || 3600)), email: (d.user && d.user.email) || '', naam: (d.user && d.user.user_metadata && d.user.user_metadata.volledige_naam) || '', uid: (d.user && d.user.id) || '' }; bewaarSessie(s); return s; }
+async function sbAuth(pad, body, token){
+  const r = await fetch(SB_URL + '/auth/v1/' + pad, { method:'POST', headers: Object.assign({ 'Content-Type':'application/json', apikey: SB_KEY }, token ? { Authorization:'Bearer ' + token } : {}), body: JSON.stringify(body || {}) });
+  let d = null; try{ d = await r.json(); }catch(e){}
+  return { status: r.status, d };
+}
+let verversing = null;
+async function token(){
+  const s = sessie(); if(!s) return null;
+  if(s.exp - 60 > Math.floor(Date.now()/1000)) return s.at;
+  if(!s.rt){ wisSessie(); return null; }
+  if(!verversing) verversing = sbAuth('token?grant_type=refresh_token', { refresh_token: s.rt }).then(({status, d}) => { verversing = null; if(status === 200 && d && d.access_token) return uitTokens(d).at; wisSessie(); return null; }).catch(() => { verversing = null; return null; });
+  return verversing;
+}
+async function rpc(naam, body){
+  const t = await token(); if(!t) throw new Error('niet ingelogd');
+  const r = await fetch(SB_URL + '/rest/v1/rpc/' + naam, { method:'POST', headers:{ 'Content-Type':'application/json', apikey: SB_KEY, Authorization:'Bearer ' + t }, body: JSON.stringify(body || {}) });
+  const tekst = await r.text();
+  let j = null; try{ j = JSON.parse(tekst); }catch(e){ j = tekst; }
+  if(!r.ok){ const m = (j && (j.message || j.hint)) || tekst || ('fout ' + r.status); throw new Error(String(m).replace(/^.*alleen admin.*$/i, 'Dit account is geen beheerder.')); }
+  return j;
+}
+
+/* ---- navigatie ---- */
+const tabs = ['dash','klanten','klant','geo','codes','log'];
+function toon(tab){
+  for(const t of tabs) document.getElementById('tab-' + t).hidden = (t !== tab);
+  document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('actief', b.dataset.tab === tab || (tab === 'klant' && b.dataset.tab === 'klanten')));
+  if(tab !== 'klant') location.hash = tab;
+}
+document.querySelectorAll('#nav button').forEach(b => b.addEventListener('click', () => { toon(b.dataset.tab); laad(b.dataset.tab); }));
+function melding(el, tekst, soort){ el.innerHTML = tekst ? '<div class="melding ' + (soort || '') + '">' + esc(tekst) + '</div>' : ''; }
+
+async function start(){
+  const s = sessie();
+  document.getElementById('login').hidden = !!s;
+  document.getElementById('nav').hidden = !s;
+  if(!s){ document.getElementById('wie').textContent = ''; return; }
+  document.getElementById('wie').innerHTML = esc(s.email) + '<button class="knop klein licht" id="uitlog">Uitloggen</button>';
+  document.getElementById('uitlog').addEventListener('click', () => { wisSessie(); location.reload(); });
+  let admin = false;
+  try{ admin = await rpc('is_admin', {}) === true; }catch(e){}
+  if(!admin){ document.getElementById('nav').hidden = true; document.getElementById('login').hidden = false; melding(document.getElementById('loginMelding'), 'Dit account is geen beheerder. Log in met een beheerdersaccount.', 'fout'); return; }
+  const h = (location.hash || '#dash').slice(1);
+  const tab = tabs.includes(h) && h !== 'klant' ? h : 'dash';
+  toon(tab); laad(tab);
+}
+document.getElementById('loginForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  melding(document.getElementById('loginMelding'), 'Even geduld…');
+  const { status, d } = await sbAuth('token?grant_type=password', { email: document.getElementById('lEmail').value.trim(), password: document.getElementById('lWw').value });
+  if(status === 200 && d && d.access_token){ uitTokens(d); start(); }
+  else melding(document.getElementById('loginMelding'), 'Inloggen mislukt. Controleer e-mail en wachtwoord.', 'fout');
+});
+
+function laad(tab){
+  if(tab === 'dash') laadDash();
+  else if(tab === 'klanten') laadKlanten();
+  else if(tab === 'geo') laadGeo();
+  else if(tab === 'codes') laadCodes();
+  else if(tab === 'log') laadLog();
+}
+
+/* ---- dashboard ---- */
+let dashData = null;
+async function laadDash(){
+  const el = document.getElementById('dashPeriodes');
+  el.innerHTML = '<div class="zacht">Laden…</div>';
+  try{ dashData = await rpc('admin_dashboard', {}); }catch(e){ el.innerHTML = '<div class="melding fout">' + esc(e.message) + '</div>'; return; }
+  const d = dashData;
+  document.getElementById('dashTijd').textContent = 'bijgewerkt ' + dt(d.nu);
+  el.innerHTML = (d.periodes || []).map(p => '<div class="kaart tegel"><div class="lbl">' + esc(p.naam) + '</div><div class="get">' + euro(p.omzet_cent) + '</div><div class="sub">' + p.betalingen + ' betaling' + (p.betalingen === 1 ? '' : 'en') + (p.refunds ? ', ' + p.refunds + ' refund' + (p.refunds === 1 ? '' : 's') : '') + '</div><div class="sub" style="margin-top:8px"><b>' + p.accounts + '</b> nieuwe accounts · <b>' + p.actieve_klanten + '</b> actief</div><div class="sub"><b>' + p.analyses + '</b> analyses · <b>' + p.verhalen + '</b> verhalen · <b>' + p.vragen + '</b> vragen' + (p.duo ? ' · <b>' + p.duo + '</b> duo' : '') + '</div><div class="sub"><b>' + p.lezingen_bewaard + '</b> lezingen bewaard</div></div>').join('');
+  spark('sparkAnalyses', (d.per_dag || []).map(x => x.analyses), (d.per_dag || []).map(x => x.dag), v => v + ' analyses');
+  spark('sparkOmzet', (d.per_dag || []).map(x => x.omzet_cent / 100), (d.per_dag || []).map(x => x.dag), v => '€ ' + v.toFixed(2).replace('.', ','));
+  const tg = d.tegoed_totaal || {}, cd = d.codes || {}, api = d.api_saldo || null;
+  document.getElementById('dashTegoed').innerHTML = '<dl style="display:grid;grid-template-columns:1fr auto;gap:4px 10px;font-size:14px">'
+    + '<dt>Gratis analyses uitstaand</dt><dd><b>' + tg.gratis + '</b></dd><dt>Pakket-analyses uitstaand</dt><dd><b>' + tg.pakket + '</b></dd><dt>Vragen uitstaand</dt><dd><b>' + tg.vragen + '</b></dd><dt>Actieve jaarabonnementen</dt><dd><b>' + tg.abos_actief + '</b></dd>'
+    + '<dt>Cadeaucodes open / verzilverd</dt><dd><b>' + cd.open + '</b> / ' + cd.verzilverd + '</dd>'
+    + '<dt>API-saldo (anker)</dt><dd>' + (api ? '<b>$ ' + (api.bedrag_cent/100).toFixed(2) + '</b> <span class="zacht">gezet ' + esc(api.gezet_op) + '</span>' : '<span class="zacht">geen anker</span>') + '</dd>'
+    + (d.api_fout ? '<dt>API-fout</dt><dd><span class="chip r">let op: saldofout gemeld</span></dd>' : '')
+    + '</dl><div class="zacht" style="margin-top:8px">Uitstaand tegoed is een belofte aan klanten; elke analyse kost met Opus-combi circa 16 cent.</div>';
+  document.getElementById('dashRecent').innerHTML = (d.recent || []).map(a => '<li><span class="zacht">' + dt(a.t) + '</span> · <b>' + esc(a.soort) + '</b>' + (a.geheugen ? ' <span class="chip">geheugen</span>' : '') + ' · ' + esc(a.email || 'anoniem') + (a.land ? ' · ' + esc(a.stad ? a.stad + ', ' : '') + esc(a.land) : '') + (a.taal ? ' · ' + esc(a.taal) : '') + '</li>').join('') || '<li class="zacht">Nog geen activiteit gelogd (start 15 sep 2026).</li>';
+}
+document.getElementById('dashVernieuw').addEventListener('click', laadDash);
+function spark(id, waarden, labels, fmt){
+  const svg = document.getElementById(id); const W = 600, H = 70, n = waarden.length || 1, max = Math.max(1, ...waarden);
+  const bw = W / n;
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.innerHTML = '';
+  waarden.forEach((v, i) => {
+    const h = Math.round((v / max) * (H - 14));
+    const r = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    r.setAttribute('x', i * bw + 1); r.setAttribute('y', H - h - 2); r.setAttribute('width', Math.max(1, bw - 2)); r.setAttribute('height', h); r.setAttribute('rx', 2);
+    r.setAttribute('fill', v > 0 ? '#4C5B9E' : '#DCD2BA');
+    const t = document.createElementNS('http://www.w3.org/2000/svg', 'title'); t.textContent = dag(labels[i]) + ': ' + fmt(v); r.appendChild(t);
+    svg.appendChild(r);
+  });
+  const som = waarden.reduce((a, b) => a + b, 0);
+  document.getElementById(id + 'Noot').textContent = 'totaal 30 dagen: ' + fmt(som) + ' · hoogste dag: ' + fmt(max);
+}
+
+/* ---- klanten ---- */
+async function laadKlanten(){
+  const el = document.getElementById('klantenLijst');
+  el.innerHTML = '<div class="zacht">Laden…</div>';
+  let d;
+  try{ d = await rpc('admin_klanten', { p_zoek: document.getElementById('zoek').value.trim() || null, p_sort: document.getElementById('sort').value, p_limiet: 200, p_offset: 0 }); }
+  catch(e){ el.innerHTML = '<div class="melding fout">' + esc(e.message) + '</div>'; return; }
+  document.getElementById('klantenTotaal').textContent = d.totaal + ' account' + (d.totaal === 1 ? '' : 's');
+  const rijen = d.rijen || [];
+  el.innerHTML = '<table><thead><tr><th>Klant</th><th>Waar</th><th>Sinds</th><th>Actief</th><th>Tegoed</th><th>Lezingen</th><th>Omzet</th><th></th></tr></thead><tbody>'
+    + rijen.map(r => '<tr class="klik" data-id="' + esc(r.id) + '"><td><b>' + esc(r.email) + '</b>' + (r.naam ? '<br><span class="zacht">' + esc(r.naam) + '</span>' : '') + (r.is_admin ? ' <span class="chip b">admin</span>' : '') + (r.bevestigd ? '' : ' <span class="chip r">onbevestigd</span>') + '</td>'
+      + '<td>' + (r.land ? esc(r.stad ? r.stad + ', ' : '') + esc(r.land) : '<span class="zacht">·</span>') + (r.taal ? '<br><span class="zacht">' + esc(r.taal) + '</span>' : '') + '</td>'
+      + '<td>' + dag(r.aangemaakt) + '</td><td>' + geleden(r.laatst_actief || r.last_sign_in_at) + '</td>'
+      + '<td>' + (r.gratis_over || 0) + ' gratis · ' + (r.pakket_over || 0) + ' pakket · ' + (r.vragen_over || 0) + ' vragen' + (r.abo_tot && new Date(r.abo_tot) > new Date() ? '<br><span class="chip g">abo t/m ' + dag(r.abo_tot) + '</span>' : '') + '</td>'
+      + '<td>' + r.lezingen + ' bewaard' + (r.analyses ? '<br><span class="zacht">' + r.analyses + ' analyses · ' + r.vragen + ' vragen</span>' : '') + (r.bewaar_lezingen ? '' : '<br><span class="zacht">bewaren uit</span>') + '</td>'
+      + '<td>' + euro(r.omzet_cent) + '<br><span class="zacht">' + r.betalingen + ' betaling' + (r.betalingen === 1 ? '' : 'en') + '</span></td>'
+      + '<td>' + (r.notities ? '<span class="chip">' + r.notities + ' notitie' + (r.notities === 1 ? '' : 's') + '</span>' : '') + '</td></tr>').join('')
+    + '</tbody></table>' + (rijen.length === 0 ? '<div class="zacht" style="padding:10px">Geen klanten gevonden.</div>' : '');
+  el.querySelectorAll('tr.klik').forEach(tr => tr.addEventListener('click', () => openKlant(tr.dataset.id)));
+}
+document.getElementById('zoekKnop').addEventListener('click', laadKlanten);
+document.getElementById('zoek').addEventListener('keydown', e => { if(e.key === 'Enter') laadKlanten(); });
+document.getElementById('sort').addEventListener('change', laadKlanten);
+document.getElementById('terugKlanten').addEventListener('click', () => { toon('klanten'); laadKlanten(); });
+
+/* ---- klantkaart ---- */
+let huidigeKlant = null;
+async function openKlant(id){
+  toon('klant');
+  document.getElementById('klantTitel').textContent = 'Laden…';
+  melding(document.getElementById('klantMelding'), '');
+  let d;
+  try{ d = await rpc('admin_klant', { p_id: id }); }catch(e){ melding(document.getElementById('klantMelding'), e.message, 'fout'); return; }
+  huidigeKlant = d;
+  const p = d.profiel || {}, t = d.tegoed || {};
+  document.getElementById('klantTitel').textContent = p.email || '?';
+  document.getElementById('klantSub').textContent = (p.naam ? p.naam + ' · ' : '') + 'sinds ' + dag(p.aangemaakt);
+  document.getElementById('klantProfiel').innerHTML = kv([
+    ['E-mail', p.email], ['Naam', p.naam || '·'], ['Bevestigd', p.bevestigd ? dt(p.bevestigd) : '<span class="chip r">nee</span>'],
+    ['Laatste login', dt(p.laatste_login)], ['Laatst actief', dt(p.laatst_actief)],
+    ['Land / stad', p.land ? land(p.land) + (p.stad ? ' · ' + esc(p.stad) : '') + (p.regio && p.regio !== p.stad ? ' <span class="zacht">(' + esc(p.regio) + ')</span>' : '') : '<span class="zacht">nog niet gezien</span>'],
+    ['Taal', p.taal ? taal(p.taal) : '·'], ['Bewaart lezingen', p.bewaar_lezingen ? 'ja' : 'nee'], ['Vragen-akkoord', p.vraag_akkoord ? dt(p.vraag_akkoord) : 'nee'],
+    ['Beheerder', p.is_admin ? '<span class="chip b">ja</span>' : 'nee'], ['Id', '<span class="zacht" style="font-size:11px">' + esc(p.id) + '</span>'],
+  ]);
+  document.getElementById('klantTegoed').innerHTML = kv([
+    ['Gratis analyses', t.gratis_over ?? '·'], ['Pakket-analyses', t.pakket_over ?? '·'], ['Vragen', t.vragen_over ?? '·'],
+    ['Abonnement', t.abo_tot ? (new Date(t.abo_tot) > new Date() ? '<span class="chip g">t/m ' + dag(t.abo_tot) + '</span>' : 'verlopen ' + dag(t.abo_tot)) : 'geen'],
+    ['Fair use deze maand', (t.fair_use_maand ?? 0) + ' / 25'], ['Vragen deze maand (abo)', t.vragen_maand ?? 0],
+  ]);
+  document.getElementById('aGratis').value = t.gratis_over ?? 0; document.getElementById('aPakket').value = t.pakket_over ?? 0; document.getElementById('aVragen').value = t.vragen_over ?? 0; document.getElementById('aReden').value = '';
+  document.getElementById('aBewaarKnop').textContent = p.bewaar_lezingen ? 'Bewaarschakelaar uitzetten' : 'Bewaarschakelaar aanzetten';
+  const lz = d.lezingen || [];
+  document.getElementById('klantLezingenN').textContent = lz.length ? '(' + lz.length + ')' : '(geen bewaarde lezingen)';
+  document.getElementById('klantLezingen').innerHTML = lz.map(l => lezingHtml(l)).join('') || '<div class="zacht">Deze klant bewaart geen lezingen, of heeft er nog geen gemaakt.</div>';
+  document.getElementById('klantLezingen').querySelectorAll('button[data-wis]').forEach(b => b.addEventListener('click', () => wisLezing(b.dataset.wis)));
+  const bt = d.betalingen || [], cd = d.codes || [];
+  document.getElementById('klantBetalingen').innerHTML = (bt.length ? '<table><thead><tr><th>Wanneer</th><th>Product</th><th>Bedrag</th><th>Transactie</th></tr></thead><tbody>' + bt.map(b => '<tr><td>' + dt(b.t) + '</td><td>' + esc(b.product) + '</td><td>' + (String(b.product).startsWith('refund:') ? '−' : '') + euro(b.cent) + '</td><td class="zacht"><span class="txn">' + esc(b.txn) + '</span></td></tr>').join('') + '</tbody></table>' : '<div class="zacht">Geen betalingen.</div>')
+    + (cd.length ? '<div style="margin-top:10px"><b>Verzilverde codes:</b> ' + cd.map(c => '<span class="chip">' + esc(c.soort) + ' · ' + dag(c.op) + '</span>').join('') + '</div>' : '');
+  document.getElementById('klantNotities').innerHTML = (d.notities || []).map(n => '<li><span class="zacht">' + dt(n.t) + ' · ' + esc(n.admin || '') + '</span><br>' + esc(n.tekst) + '</li>').join('') || '<li class="zacht">Geen notities.</li>';
+  document.getElementById('klantActiviteit').innerHTML = (d.activiteit || []).map(a => '<li><span class="zacht">' + dt(a.t) + '</span> · <b>' + esc(a.soort) + '</b>' + (a.details && a.details.geheugen ? ' <span class="chip">geheugen</span>' : '') + (a.details && a.details.voet ? ' · ' + esc(a.details.voet) : '') + (a.land ? ' · ' + esc(a.stad ? a.stad + ', ' : '') + esc(a.land) : '') + (a.taal ? ' · ' + esc(a.taal) : '') + '</li>').join('') || '<li class="zacht">Nog geen activiteit gelogd.</li>';
+  document.getElementById('klantAudit').innerHTML = (d.audit || []).map(g => '<li><span class="zacht">' + dt(g.t) + ' · ' + esc(g.admin || '') + '</span> · ' + esc(g.actie) + (g.details && g.details.reden ? ' · ' + esc(g.details.reden) : '') + '</li>').join('') || '<li class="zacht">·</li>';
+}
+function kv(paren){ return paren.map(([k, v]) => '<dt>' + esc(k) + '</dt><dd>' + (v == null ? '·' : v) + '</dd>').join(''); }
+function lezingHtml(l){
+  const tenen = l.tenen || {}, v = l.vertelt || null, vr = Array.isArray(l.vragen) ? l.vragen : [];
+  let chips = '';
+  for(const kant of ['R','L']) for(let t = 1; t <= 5; t++){ const k = kant + t; const c = tenen[k]; if(c && c.length) chips += '<span><b>' + k + '</b>' + esc(c.join(', ')) + '</span>'; }
+  let verhaal = '';
+  if(v && v.duo) verhaal = '<div class="vertelt"><p><b>Duo-lezing</b></p><p>' + esc(v.verhaal || '') + '</p></div>';
+  else if(v){
+    verhaal = '<div class="vertelt">' + (v.eerste ? '<p>' + esc(v.eerste) + '</p>' : '');
+    for(const kant of ['R','L']) for(let t = 1; t <= 5; t++){ const k = kant + t; if(v.tenen && v.tenen[k]) verhaal += '<p><b>' + (kant === 'R' ? 'Rechts' : 'Links') + ' · ' + TEEN[t] + '</b><br>' + esc(v.tenen[k]) + '</p>'; }
+    verhaal += (v.samenhang ? '<p>' + esc(v.samenhang) + '</p>' : '') + '</div>';
+  }
+  return '<details class="lezing"><summary>' + dt(l.aangemaakt) + ' · ' + esc(l.diepgang || 'kort') + (v && v.duo ? ' · duo' : '') + ' · ' + Object.values(tenen).reduce((a, c) => a + (c ? c.length : 0), 0) + ' codes' + (vr.length ? ' · ' + vr.length + ' vragen' : '') + '</summary>'
+    + '<div class="tenenchips" style="margin:8px 0">' + (chips || '<span class="zacht">geen codes</span>') + '</div>' + verhaal
+    + (vr.length ? '<p style="margin-top:8px"><b>Vragen aan de spiegel</b></p>' + vr.map(q => '<div class="vraagblok"><b>' + esc(q.vraag) + '</b><br>' + esc(q.antwoord) + '</div>').join('') : '')
+    + '<div class="rij" style="margin-top:8px;justify-content:flex-end"><button class="knop klein rood" data-wis="' + esc(l.id) + '">Lezing wissen (namens klant)</button></div></details>';
+}
+async function actie(fn, okTekst){
+  const m = document.getElementById('klantMelding');
+  melding(m, 'Bezig…');
+  try{ const r = await fn(); if(r && r.ok === false) throw new Error(r.reden || 'mislukt'); melding(m, okTekst, 'goed'); await openKlant(huidigeKlant.profiel.id); melding(document.getElementById('klantMelding'), okTekst, 'goed'); }
+  catch(e){ melding(m, 'Mislukt: ' + e.message, 'fout'); }
+}
+document.getElementById('aTegoedKnop').addEventListener('click', () => {
+  const reden = document.getElementById('aReden').value.trim();
+  if(!reden){ melding(document.getElementById('klantMelding'), 'Vul een reden in; die komt in het logboek.', 'fout'); return; }
+  actie(() => rpc('admin_tegoed_zet', { p_gebruiker: huidigeKlant.profiel.id, p_gratis: +document.getElementById('aGratis').value, p_pakket: +document.getElementById('aPakket').value, p_vragen: +document.getElementById('aVragen').value, p_reden: reden }), 'Tegoed bijgewerkt.');
+});
+document.getElementById('aCodeKnop').addEventListener('click', () => actie(() => rpc('admin_code_toekennen', { p_gebruiker: huidigeKlant.profiel.id, p_soort: document.getElementById('aCodeSoort').value, p_reden: document.getElementById('aCodeReden').value.trim() || null }), 'Code toegekend en verzilverd namens de klant.'));
+document.getElementById('aResetKnop').addEventListener('click', async () => {
+  const m = document.getElementById('klantMelding');
+  if(!confirm('Wachtwoordresetmail sturen naar ' + huidigeKlant.profiel.email + '?')) return;
+  try{ await sbAuth('recover?redirect_to=' + encodeURIComponent(location.origin + '/'), { email: huidigeKlant.profiel.email }); await rpc('admin_notitie', { p_gebruiker: huidigeKlant.profiel.id, p_tekst: 'Wachtwoordresetmail gestuurd vanuit Beheer.' }); melding(m, 'Resetmail gestuurd (als het adres bestaat).', 'goed'); openKlant(huidigeKlant.profiel.id); }catch(e){ melding(m, 'Mislukt: ' + e.message, 'fout'); }
+});
+document.getElementById('aBewaarKnop').addEventListener('click', () => actie(() => rpc('admin_profiel_zet', { p_gebruiker: huidigeKlant.profiel.id, p_bewaar: !huidigeKlant.profiel.bewaar_lezingen }), 'Bewaarschakelaar gewijzigd.'));
+document.getElementById('aNotitieKnop').addEventListener('click', () => { const t = document.getElementById('aNotitie').value.trim(); if(!t) return; actie(() => rpc('admin_notitie', { p_gebruiker: huidigeKlant.profiel.id, p_tekst: t }).then(r => { document.getElementById('aNotitie').value = ''; return r; }), 'Notitie toegevoegd.'); });
+function wisLezing(id){ if(!confirm('Deze lezing definitief wissen namens de klant?')) return; const reden = prompt('Reden (komt in het logboek):') || ''; actie(() => rpc('admin_lezing_wis', { p_lezing: id, p_reden: reden }), 'Lezing gewist.'); }
+
+/* ---- geo ---- */
+async function laadGeo(){
+  if(!dashData){ try{ dashData = await rpc('admin_dashboard', {}); }catch(e){ document.getElementById('geoLanden').innerHTML = '<div class="melding fout">' + esc(e.message) + '</div>'; return; } }
+  const d = dashData;
+  const balken = (lijst, labelFn, keyN) => { const max = Math.max(1, ...lijst.map(x => x[keyN])); return lijst.map(x => '<div class="landrij"><span>' + labelFn(x) + '</span><div class="balk"><i style="width:' + Math.round(100 * x[keyN] / max) + '%"></i></div><b>' + x[keyN] + '</b></div>').join('') || '<div class="zacht">Nog geen gegevens.</div>'; };
+  document.getElementById('geoLanden').innerHTML = balken(d.landen || [], x => esc(land(x.land)), 'klanten').replace(/<span>/g, '<span style="grid-column:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:150px">');
+  document.getElementById('geoLanden').querySelectorAll('.landrij').forEach(r => r.style.gridTemplateColumns = '150px 1fr 40px');
+  document.getElementById('geoSteden').innerHTML = balken(d.steden || [], x => esc(x.stad + ' (' + x.land + ')'), 'klanten');
+  document.getElementById('geoSteden').querySelectorAll('.landrij').forEach(r => r.style.gridTemplateColumns = '150px 1fr 40px');
+  document.getElementById('geoTalen').innerHTML = balken(d.talen || [], x => esc(taal(x.taal)), 'klanten');
+  document.getElementById('geoTalen').querySelectorAll('.landrij').forEach(r => r.style.gridTemplateColumns = '150px 1fr 40px');
+  document.getElementById('geoProducten').innerHTML = (d.producten || []).map(p => '<div class="landrij" style="grid-template-columns:150px 1fr 90px"><span>' + esc(p.product) + '</span><span class="zacht">' + p.aantal + '×</span><b>' + euro(p.cent) + '</b></div>').join('') || '<div class="zacht">Nog geen betalingen.</div>';
+}
+
+/* ---- codes ---- */
+async function laadCodes(){
+  const el = document.getElementById('cLijst'); el.innerHTML = '<div class="zacht">Laden…</div>';
+  try{
+    const l = await rpc('admin_codes', { p_soort: null, p_status: document.getElementById('cStatus').value, p_limiet: 100 });
+    el.innerHTML = '<table><thead><tr><th>Code</th><th>Soort</th><th>Status</th><th>Verzilverd op</th></tr></thead><tbody>' + (l || []).map(c => '<tr><td><code>' + esc(c.code) + '</code></td><td>' + esc(c.soort) + '</td><td>' + (c.verzilverd ? '<span class="chip g">verzilverd</span>' : '<span class="chip">open</span>') + '</td><td>' + (c.verzilverd_op ? dt(c.verzilverd_op) : '·') + '</td></tr>').join('') + '</tbody></table>';
+  }catch(e){ el.innerHTML = '<div class="melding fout">' + esc(e.message) + '</div>'; }
+}
+document.getElementById('cToon').addEventListener('click', laadCodes);
+document.getElementById('cMaak').addEventListener('click', async () => {
+  const n = +document.getElementById('cAantal').value || 1, soort = document.getElementById('cSoort').value;
+  if(!confirm(n + ' nieuwe ' + soort + '-code(s) maken?')) return;
+  try{ const codes = await rpc('maak_codes', { p_soort: soort, p_aantal: n }); document.getElementById('cNieuw').innerHTML = '<b>Nieuwe codes:</b> ' + (codes || []).map(c => '<code>' + esc(c) + '</code>').join(' · ') + '<br><span class="zacht">Schrijf ze ook bij in je batchlijst; codes komen niet in Notion.</span>'; laadCodes(); }
+  catch(e){ document.getElementById('cNieuw').innerHTML = '<span class="melding fout">' + esc(e.message) + '</span>'; }
+});
+
+/* ---- logboek ---- */
+async function laadLog(){
+  const el = document.getElementById('logLijst'); el.innerHTML = '<div class="zacht">Laden…</div>';
+  try{
+    const l = await rpc('admin_log_lijst', { p_limiet: 200 });
+    el.innerHTML = '<table><thead><tr><th>Wanneer</th><th>Wie</th><th>Actie</th><th>Klant</th><th>Details</th></tr></thead><tbody>' + (l || []).map(g => '<tr><td>' + dt(g.t) + '</td><td>' + esc(g.admin || '') + '</td><td><b>' + esc(g.actie) + '</b></td><td>' + (g.doel_email ? '<a href="#" data-id="' + esc(g.doel) + '">' + esc(g.doel_email) + '</a>' : '·') + '</td><td class="zacht" style="font-size:12px">' + esc(g.details ? JSON.stringify(g.details) : '') + '</td></tr>').join('') + '</tbody></table>';
+    el.querySelectorAll('a[data-id]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); openKlant(a.dataset.id); }));
+  }catch(e){ el.innerHTML = '<div class="melding fout">' + esc(e.message) + '</div>'; }
+}
+
+start();
+</script>
+</body>
+</html>
