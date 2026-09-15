@@ -28,7 +28,8 @@ h2{font-family:'Fraunces',serif;font-weight:600;font-size:24px;margin:0 0 14px}
 h3{font-family:'Fraunces',serif;font-weight:600;font-size:17px;margin:0 0 8px}
 .kaart{background:var(--kaart);border:1.5px solid var(--inkt);border-radius:14px;padding:16px 18px;box-shadow:4px 4px 0 rgba(43,33,24,.08)}
 .rooster{display:grid;gap:14px}
-.rooster.k4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.rooster.k4{grid-template-columns:repeat(auto-fit,minmax(185px,1fr))}
+.tegel.jaar{background:#F4EDDC}
 .rooster.k2{grid-template-columns:repeat(auto-fit,minmax(360px,1fr))}
 .tegel .lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--inkt-zacht)}
 .tegel .get{font-family:'Fraunces',serif;font-weight:900;font-size:34px;line-height:1.1;margin-top:4px}
@@ -114,6 +115,10 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
       <div class="kaart"><h3>Laatste 30 dagen: analyses per dag</h3><svg class="spark" id="sparkAnalyses"></svg><div class="zacht" id="sparkAnalysesNoot"></div></div>
       <div class="kaart"><h3>Laatste 30 dagen: netto omzet per dag</h3><svg class="spark" id="sparkOmzet"></svg><div class="zacht" id="sparkOmzetNoot"></div></div>
     </div>
+    <div class="rooster k2" style="margin-bottom:14px;align-items:start">
+      <div class="kaart tabelwrap"><h3>Per jaar</h3><div id="dashJaren"></div></div>
+      <div class="kaart tabelwrap"><h3>Laatste 12 maanden</h3><div id="dashMaanden"></div></div>
+    </div>
     <div class="rooster k2">
       <div class="kaart"><h3>Tegoed in omloop &amp; API</h3><div id="dashTegoed"></div></div>
       <div class="kaart"><h3>Laatste activiteit</h3><ul class="log" id="dashRecent"></ul></div>
@@ -193,7 +198,7 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
     <div class="kaart tabelwrap" id="logLijst"></div>
   </section>
 </main>
-<footer>Toe Reading · Beheer 2.0 · v1.0 (15 sep 2026) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
+<footer>Toe Reading · Beheer 2.0 · v1.1 (15 sep 2026) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
 
 <script>
 const SB_URL = 'https://kfdtppnwhljivbcutxcm.supabase.co';
@@ -284,7 +289,11 @@ async function laadDash(){
   try{ dashData = await rpc('admin_dashboard', {}); }catch(e){ el.innerHTML = '<div class="melding fout">' + esc(e.message) + '</div>'; return; }
   const d = dashData;
   document.getElementById('dashTijd').textContent = 'bijgewerkt ' + dt(d.nu);
-  el.innerHTML = (d.periodes || []).map(p => '<div class="kaart tegel"><div class="lbl">' + esc(p.naam) + '</div><div class="get">' + euro(p.omzet_cent) + '</div><div class="sub">' + p.betalingen + ' betaling' + (p.betalingen === 1 ? '' : 'en') + (p.refunds ? ', ' + p.refunds + ' refund' + (p.refunds === 1 ? '' : 's') : '') + '</div><div class="sub" style="margin-top:8px"><b>' + p.accounts + '</b> nieuwe accounts · <b>' + p.actieve_klanten + '</b> actief</div><div class="sub"><b>' + p.analyses + '</b> analyses · <b>' + p.verhalen + '</b> verhalen · <b>' + p.vragen + '</b> vragen' + (p.duo ? ' · <b>' + p.duo + '</b> duo' : '') + '</div><div class="sub"><b>' + p.lezingen_bewaard + '</b> lezingen bewaard</div></div>').join('');
+  el.innerHTML = (d.periodes || []).map(p => '<div class="kaart tegel' + (/jaar/.test(p.naam) ? ' jaar' : '') + '"><div class="lbl">' + esc(p.naam) + '</div><div class="get">' + euro(p.omzet_cent) + '</div><div class="sub">' + p.betalingen + ' betaling' + (p.betalingen === 1 ? '' : 'en') + (p.refunds ? ', ' + p.refunds + ' refund' + (p.refunds === 1 ? '' : 's') : '') + '</div><div class="sub" style="margin-top:8px"><b>' + p.accounts + '</b> nieuwe accounts · <b>' + p.actieve_klanten + '</b> actief</div><div class="sub"><b>' + p.analyses + '</b> analyses · <b>' + p.verhalen + '</b> verhalen · <b>' + p.vragen + '</b> vragen' + (p.duo ? ' · <b>' + p.duo + '</b> duo' : '') + '</div><div class="sub"><b>' + p.lezingen_bewaard + '</b> lezingen bewaard</div></div>').join('');
+  const rij = (k, v) => '<td>' + k + '</td><td class="get2">' + euro(v.omzet_cent) + '</td><td>' + v.betalingen + (v.refunds ? ' <span class="zacht">(' + v.refunds + ' refund' + (v.refunds === 1 ? '' : 's') + ')</span>' : '') + '</td><td>' + v.accounts + '</td><td>' + v.analyses + '</td>' + (v.verhalen !== undefined ? '<td>' + v.verhalen + '</td><td>' + v.vragen + '</td>' : '');
+  document.getElementById('dashJaren').innerHTML = '<table><thead><tr><th>Jaar</th><th>Netto omzet</th><th>Betalingen</th><th>Accounts</th><th>Analyses</th><th>Verhalen</th><th>Vragen</th></tr></thead><tbody>' + (d.jaren || []).map(j => '<tr>' + rij('<b>' + j.jaar + '</b>', j) + '</tr>').join('') + '</tbody></table>';
+  const mnd = (d.per_maand || []).slice().reverse();
+  document.getElementById('dashMaanden').innerHTML = '<table><thead><tr><th>Maand</th><th>Netto omzet</th><th>Accounts</th><th>Analyses</th></tr></thead><tbody>' + mnd.map(m => '<tr' + (m.omzet_cent || m.accounts || m.analyses ? '' : ' class="zacht"') + '><td>' + esc(maandNaam(m.maand)) + '</td><td>' + euro(m.omzet_cent) + '</td><td>' + m.accounts + '</td><td>' + m.analyses + '</td></tr>').join('') + '</tbody></table>';
   spark('sparkAnalyses', (d.per_dag || []).map(x => x.analyses), (d.per_dag || []).map(x => x.dag), v => v + ' analyses');
   spark('sparkOmzet', (d.per_dag || []).map(x => x.omzet_cent / 100), (d.per_dag || []).map(x => x.dag), v => '€ ' + v.toFixed(2).replace('.', ','));
   const tg = d.tegoed_totaal || {}, cd = d.codes || {}, api = d.api_saldo || null;
@@ -297,6 +306,7 @@ async function laadDash(){
   document.getElementById('dashRecent').innerHTML = (d.recent || []).map(a => '<li><span class="zacht">' + dt(a.t) + '</span> · <b>' + esc(a.soort) + '</b>' + (a.geheugen ? ' <span class="chip">geheugen</span>' : '') + ' · ' + esc(a.email || 'anoniem') + (a.land ? ' · ' + esc(a.stad ? a.stad + ', ' : '') + esc(a.land) : '') + (a.taal ? ' · ' + esc(a.taal) : '') + '</li>').join('') || '<li class="zacht">Nog geen activiteit gelogd (start 15 sep 2026).</li>';
 }
 document.getElementById('dashVernieuw').addEventListener('click', laadDash);
+function maandNaam(ym){ const [y, m] = ym.split('-'); return ['jan','feb','mrt','apr','mei','jun','jul','aug','sep','okt','nov','dec'][+m - 1] + ' ' + y; }
 function spark(id, waarden, labels, fmt){
   const svg = document.getElementById(id); const W = 600, H = 70, n = waarden.length || 1, max = Math.max(1, ...waarden);
   const bw = W / n;
