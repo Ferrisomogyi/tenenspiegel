@@ -1,9 +1,9 @@
-/* Toe Reading service worker · v9.15.7 (fix: navigatie naar andere pagina's overschreef de offline-kopie van index.html)
+/* Toe Reading service worker · v9.15.8 (fix: navigatie naar andere pagina's overschreef de offline-kopie van index.html)
    Strategie:
    - navigaties (de pagina zelf): network-first, val terug op cache → nieuwe deploys komen direct door, offline blijft werken
    - overige same-origin GET (manifest, iconen): cache-first
    - POST-calls naar de worker (workers.dev) worden met rust gelaten */
-const CACHE = 'tenenspiegel-v9.15.7';
+const CACHE = 'tenenspiegel-v9.15.8';
 const KERN = [
   './',
   './index.html',
@@ -37,7 +37,7 @@ self.addEventListener('fetch', (e) => {
       fetch(req)
         .then((antwoord) => {
           const kopie = antwoord.clone();
-          /* v9.15.7: alleen de app zelf onder ./index.html bewaren; andere pagina's (pricing, beheer) onder hun eigen url */
+          /* v9.15.8: alleen de app zelf onder ./index.html bewaren; andere pagina's (pricing, beheer) onder hun eigen url */
           const isApp = url.pathname === '/' || url.pathname.endsWith('/index.html');
           caches.open(CACHE).then((c) => c.put(isApp ? './index.html' : req, kopie));
           return antwoord;
