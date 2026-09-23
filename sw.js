@@ -1,9 +1,9 @@
-/* Toe Reading service worker · v9.15.9 (fix: navigatie naar andere pagina's overschreef de offline-kopie van index.html)
+/* Toe Reading service worker · v9.16.0 (meekijkfoto; v9.15.9 fix: navigatie naar andere pagina's overschreef de offline-kopie van index.html)
    Strategie:
    - navigaties (de pagina zelf): network-first, val terug op cache → nieuwe deploys komen direct door, offline blijft werken
    - overige same-origin GET (manifest, iconen): cache-first
    - POST-calls naar de worker (workers.dev) worden met rust gelaten */
-const CACHE = 'tenenspiegel-v9.15.9';
+const CACHE = 'tenenspiegel-v9.16.0';
 const KERN = [
   './',
   './index.html',
