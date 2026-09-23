@@ -115,6 +115,7 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
       <div class="kaart"><h3>Laatste 30 dagen: analyses per dag</h3><svg class="spark" id="sparkAnalyses"></svg><div class="zacht" id="sparkAnalysesNoot"></div></div>
       <div class="kaart"><h3>Laatste 30 dagen: netto omzet per dag</h3><svg class="spark" id="sparkOmzet"></svg><div class="zacht" id="sparkOmzetNoot"></div></div>
     </div>
+    <div class="kaart tabelwrap" style="margin-bottom:14px"><h3>API-kosten: klant, eigen, onderzoek</h3><div id="dashKosten"><div class="zacht">Laden…</div></div></div>
     <div class="rooster k2" style="margin-bottom:14px;align-items:start">
       <div class="kaart tabelwrap"><h3>Per jaar</h3><div id="dashJaren"></div></div>
       <div class="kaart tabelwrap"><h3>Laatste 12 maanden</h3><div id="dashMaanden"></div></div>
@@ -130,7 +131,7 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
     <div class="kaart" style="margin-bottom:14px">
       <div class="rij">
         <input type="search" id="zoek" placeholder="zoek op e-mail, naam, land of stad" style="flex:1;min-width:220px">
-        <select id="sort"><option value="laatst">laatst actief</option><option value="nieuw">nieuwste eerst</option><option value="omzet">omzet</option><option value="email">e-mail</option></select>
+        <select id="sort"><option value="laatst">laatst actief</option><option value="nieuw">nieuwste eerst</option><option value="omzet">omzet</option><option value="kosten">API-kosten</option><option value="email">e-mail</option></select>
         <button class="knop klein" id="zoekKnop">Zoek</button>
       </div>
     </div>
@@ -155,7 +156,7 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
             <div class="zacht" style="margin-top:6px">Pakt een open code en verzilvert hem namens de klant. De klant hoeft niets te doen.</div>
           </fieldset>
           <fieldset><legend>Account</legend>
-            <div class="rij"><button class="knop klein licht" id="aResetKnop">Wachtwoordresetmail sturen</button><button class="knop klein licht" id="aBewaarKnop"></button></div>
+            <div class="rij"><button class="knop klein licht" id="aResetKnop">Wachtwoordresetmail sturen</button><button class="knop klein licht" id="aBewaarKnop"></button><button class="knop klein licht" id="aInternKnop"></button></div>
           </fieldset>
           <fieldset><legend>Supportnotitie</legend>
             <textarea id="aNotitie" rows="3" style="width:100%" placeholder="wat is er afgesproken of gedaan?"></textarea>
@@ -198,13 +199,15 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
     <div class="kaart tabelwrap" id="logLijst"></div>
   </section>
 </main>
-<footer>Toe Reading · Beheer 2.0 · v1.1 (15 sep 2026) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
+<footer>Toe Reading · Beheer 2.0 · v1.2 (23 sep 2026) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
 
 <script>
 const SB_URL = 'https://kfdtppnwhljivbcutxcm.supabase.co';
 const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtmZHRwcG53aGxqaXZiY3V0eGNtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM4MzAwOTQsImV4cCI6MjA5OTQwNjA5NH0.EQ_g5xEULelqYIdKBg7WI-m0-JorF7Cro6w7oNOhMV8';
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const euro = c => '€ ' + (Number(c || 0) / 100).toFixed(2).replace('.', ',');
+const usd = v => { const n = Number(v || 0); return '$ ' + (n !== 0 && Math.abs(n) < 0.1 ? n.toFixed(3) : n.toFixed(2)); }; // v1.2
+const taalLabel = c => c ? '<span class="zacht">taal: ' + esc(c) + '</span>' : ''; // v1.2: 'nl' onder 'Orihuela, ES' is de app-taal, geen land
 const dt = iso => { if(!iso) return '·'; const d = new Date(iso); return d.toLocaleDateString('nl-NL', {day:'2-digit', month:'short', year:'2-digit'}) + ' ' + d.toLocaleTimeString('nl-NL', {hour:'2-digit', minute:'2-digit'}); };
 const dag = iso => iso ? new Date(iso).toLocaleDateString('nl-NL', {day:'2-digit', month:'short', year:'2-digit'}) : '·';
 const geleden = iso => { if(!iso) return 'nooit'; const s = (Date.now() - new Date(iso)) / 1000; if(s < 3600) return Math.max(1, Math.round(s/60)) + ' min'; if(s < 86400) return Math.round(s/3600) + ' uur'; return Math.round(s/86400) + ' dg'; };
@@ -303,7 +306,29 @@ async function laadDash(){
     + '<dt>API-saldo (anker)</dt><dd>' + (api ? '<b>$ ' + (api.bedrag_cent/100).toFixed(2) + '</b> <span class="zacht">gezet ' + esc(api.gezet_op) + '</span>' : '<span class="zacht">geen anker</span>') + '</dd>'
     + (d.api_fout ? '<dt>API-fout</dt><dd><span class="chip r">let op: saldofout gemeld</span></dd>' : '')
     + '</dl><div class="zacht" style="margin-top:8px">Uitstaand tegoed is een belofte aan klanten; elke analyse kost met Opus-combi circa 16 cent.</div>';
-  document.getElementById('dashRecent').innerHTML = (d.recent || []).map(a => '<li><span class="zacht">' + dt(a.t) + '</span> · <b>' + esc(a.soort) + '</b>' + (a.geheugen ? ' <span class="chip">geheugen</span>' : '') + ' · ' + esc(a.email || 'anoniem') + (a.land ? ' · ' + esc(a.stad ? a.stad + ', ' : '') + esc(a.land) : '') + (a.taal ? ' · ' + esc(a.taal) : '') + '</li>').join('') || '<li class="zacht">Nog geen activiteit gelogd (start 15 sep 2026).</li>';
+  document.getElementById('dashRecent').innerHTML = (d.recent || []).map(a => '<li><span class="zacht">' + dt(a.t) + '</span> · <b>' + esc(a.soort) + '</b>' + (a.geheugen ? ' <span class="chip">geheugen</span>' : '') + ' · ' + esc(a.email || 'anoniem') + (a.land ? ' · ' + esc(a.stad ? a.stad + ', ' : '') + esc(a.land) : '') + (a.taal ? ' · ' + taalLabel(a.taal) : '') + '</li>').join('') || '<li class="zacht">Nog geen activiteit gelogd (start 15 sep 2026).</li>';
+  laadKosten();
+}
+/* v1.2: API-kosten per modelcall (tabel api_kosten, gevuld door worker v3.6.9). Categorie: klant, eigen (admin/intern), onderzoek (/admin/proef). */
+async function laadKosten(){
+  const el = document.getElementById('dashKosten');
+  let k;
+  try{ k = await rpc('admin_kosten', {}); }catch(e){ el.innerHTML = '<div class="melding fout">' + esc(e.message) + '</div>'; return; }
+  const per = k.periodes || [];
+  const tot = p => Number(p.klant || 0) + Number(p.eigen || 0) + Number(p.onderzoek || 0);
+  const marge = p => { const o = Number(p.omzet_cent || 0) / 100, c = Number(p.klant || 0); return o > 0 ? Math.round(100 * (1 - c / o)) + '%' : '<span class="zacht">·</span>'; };
+  let html = '<table><thead><tr><th>Periode</th><th>Klant</th><th>Eigen</th><th>Onderzoek</th><th>Totaal</th><th>Calls</th><th>Omzet</th><th>Marge*</th></tr></thead><tbody>'
+    + per.map(p => '<tr><td><b>' + esc(p.naam) + '</b></td><td class="get2">' + usd(p.klant) + '</td><td>' + usd(p.eigen) + '</td><td>' + usd(p.onderzoek) + '</td><td><b>' + usd(tot(p)) + '</b></td><td>' + p.calls + ' <span class="zacht">(' + p.klant_calls + ' klant)</span></td><td>' + euro(p.omzet_cent) + '</td><td>' + marge(p) + '</td></tr>').join('')
+    + '</tbody></table>';
+  const soorten = (k.per_soort || []);
+  if(soorten.length) html += '<div style="margin-top:12px"><b>Gemiddeld per call</b> <span class="zacht">(alle tijd)</span><table style="margin-top:6px"><thead><tr><th>Soort</th><th>Categorie</th><th>Calls</th><th>Totaal</th><th>Per call</th></tr></thead><tbody>'
+    + soorten.map(x => '<tr><td>' + esc(x.soort) + '</td><td>' + esc(x.categorie) + '</td><td>' + x.calls + '</td><td>' + usd(x.usd) + '</td><td><b>' + usd(x.gem) + '</b></td></tr>').join('') + '</tbody></table></div>';
+  const top = (k.top_klanten || []);
+  if(top.length) html += '<div style="margin-top:12px"><b>Klanten met de hoogste API-kosten</b><table style="margin-top:6px"><thead><tr><th>Klant</th><th>Calls</th><th>Kosten</th><th>Omzet</th></tr></thead><tbody>'
+    + top.map(x => '<tr class="klik" data-id="' + esc(x.id) + '"><td>' + esc(x.email || '?') + '</td><td>' + x.calls + '</td><td>' + usd(x.usd) + '</td><td>' + euro(x.omzet_cent) + '</td></tr>').join('') + '</tbody></table></div>';
+  html += '<div class="zacht" style="margin-top:8px">Gemeten per modelcall sinds ' + (k.sinds ? dt(k.sinds) : 'worker v3.6.9') + ' (prijzen van de Anthropic-prijspagina, 23 sep 2026). Daarvóór alleen het totaal via het API-anker; de $ 29,90 tot 22 sep was naar schatting ruim twee derde onderzoek (goudstandaard-toetsruns). *Marge = 1 − klantkosten / omzet, dollar tegen euro gerekend als 1:1, dus iets aan de voorzichtige kant.</div>';
+  el.innerHTML = html;
+  el.querySelectorAll('tr.klik').forEach(tr => tr.addEventListener('click', () => { toon('klanten'); openKlant(tr.dataset.id); }));
 }
 document.getElementById('dashVernieuw').addEventListener('click', laadDash);
 function maandNaam(ym){ const [y, m] = ym.split('-'); return ['jan','feb','mrt','apr','mei','jun','jul','aug','sep','okt','nov','dec'][+m - 1] + ' ' + y; }
@@ -332,13 +357,14 @@ async function laadKlanten(){
   catch(e){ el.innerHTML = '<div class="melding fout">' + esc(e.message) + '</div>'; return; }
   document.getElementById('klantenTotaal').textContent = d.totaal + ' account' + (d.totaal === 1 ? '' : 's');
   const rijen = d.rijen || [];
-  el.innerHTML = '<table><thead><tr><th>Klant</th><th>Waar</th><th>Sinds</th><th>Actief</th><th>Tegoed</th><th>Lezingen</th><th>Omzet</th><th></th></tr></thead><tbody>'
-    + rijen.map(r => '<tr class="klik" data-id="' + esc(r.id) + '"><td><b>' + esc(r.email) + '</b>' + (r.naam ? '<br><span class="zacht">' + esc(r.naam) + '</span>' : '') + (r.is_admin ? ' <span class="chip b">admin</span>' : '') + (r.bevestigd ? '' : ' <span class="chip r">onbevestigd</span>') + '</td>'
-      + '<td>' + (r.land ? esc(r.stad ? r.stad + ', ' : '') + esc(r.land) : '<span class="zacht">·</span>') + (r.taal ? '<br><span class="zacht">' + esc(r.taal) + '</span>' : '') + '</td>'
+  el.innerHTML = '<table><thead><tr><th>Klant</th><th>Waar</th><th>Sinds</th><th>Actief</th><th>Tegoed</th><th>Lezingen</th><th>Omzet</th><th>API-kosten</th><th></th></tr></thead><tbody>'
+    + rijen.map(r => '<tr class="klik" data-id="' + esc(r.id) + '"><td><b>' + esc(r.email) + '</b>' + (r.naam ? '<br><span class="zacht">' + esc(r.naam) + '</span>' : '') + (r.is_admin ? ' <span class="chip b">admin</span>' : '') + (r.intern && !r.is_admin ? ' <span class="chip">intern</span>' : '') + (r.bevestigd ? '' : ' <span class="chip r">onbevestigd</span>') + '</td>'
+      + '<td>' + (r.land ? esc(r.stad ? r.stad + ', ' : '') + esc(r.land) : '<span class="zacht">·</span>') + (r.taal ? '<br>' + taalLabel(r.taal) : '') + '</td>'
       + '<td>' + dag(r.aangemaakt) + '</td><td>' + geleden(r.laatst_actief || r.last_sign_in_at) + '</td>'
       + '<td>' + (r.gratis_over || 0) + ' gratis · ' + (r.pakket_over || 0) + ' pakket · ' + (r.vragen_over || 0) + ' vragen' + (r.abo_tot && new Date(r.abo_tot) > new Date() ? '<br><span class="chip g">abo t/m ' + dag(r.abo_tot) + '</span>' : '') + '</td>'
       + '<td>' + r.lezingen + ' bewaard' + (r.analyses ? '<br><span class="zacht">' + r.analyses + ' analyses · ' + r.vragen + ' vragen</span>' : '') + (r.bewaar_lezingen ? '' : '<br><span class="zacht">bewaren uit</span>') + '</td>'
       + '<td>' + euro(r.omzet_cent) + '<br><span class="zacht">' + r.betalingen + ' betaling' + (r.betalingen === 1 ? '' : 'en') + '</span></td>'
+      + '<td>' + (r.kosten_calls ? usd(r.kosten_usd) + '<br><span class="zacht">' + r.kosten_calls + ' call' + (r.kosten_calls === 1 ? '' : 's') + '</span>' : '<span class="zacht">·</span>') + '</td>'
       + '<td>' + (r.notities ? '<span class="chip">' + r.notities + ' notitie' + (r.notities === 1 ? '' : 's') + '</span>' : '') + '</td></tr>').join('')
     + '</tbody></table>' + (rijen.length === 0 ? '<div class="zacht" style="padding:10px">Geen klanten gevonden.</div>' : '');
   el.querySelectorAll('tr.klik').forEach(tr => tr.addEventListener('click', () => openKlant(tr.dataset.id)));
@@ -365,15 +391,18 @@ async function openKlant(id){
     ['Laatste login', dt(p.laatste_login)], ['Laatst actief', dt(p.laatst_actief)],
     ['Land / stad', p.land ? land(p.land) + (p.stad ? ' · ' + esc(p.stad) : '') + (p.regio && p.regio !== p.stad ? ' <span class="zacht">(' + esc(p.regio) + ')</span>' : '') : '<span class="zacht">nog niet gezien</span>'],
     ['Taal', p.taal ? taal(p.taal) : '·'], ['Bewaart lezingen', p.bewaar_lezingen ? 'ja' : 'nee'], ['Vragen-akkoord', p.vraag_akkoord ? dt(p.vraag_akkoord) : 'nee'],
-    ['Beheerder', p.is_admin ? '<span class="chip b">ja</span>' : 'nee'], ['Id', '<span class="zacht" style="font-size:11px">' + esc(p.id) + '</span>'],
+    ['Beheerder', p.is_admin ? '<span class="chip b">ja</span>' : 'nee'], ['Intern account', p.intern ? '<span class="chip">ja (kosten tellen als eigen)</span>' : 'nee'], ['Id', '<span class="zacht" style="font-size:11px">' + esc(p.id) + '</span>'],
   ]);
   document.getElementById('klantTegoed').innerHTML = kv([
     ['Gratis analyses', t.gratis_over ?? '·'], ['Pakket-analyses', t.pakket_over ?? '·'], ['Vragen', t.vragen_over ?? '·'],
     ['Abonnement', t.abo_tot ? (new Date(t.abo_tot) > new Date() ? '<span class="chip g">t/m ' + dag(t.abo_tot) + '</span>' : 'verlopen ' + dag(t.abo_tot)) : 'geen'],
     ['Fair use deze maand', (t.fair_use_maand ?? 0) + ' / 25'], ['Vragen deze maand (abo)', t.vragen_maand ?? 0],
+    ['API-kosten', (d.kosten && d.kosten.calls) ? '<b>' + usd(d.kosten.usd) + '</b> <span class="zacht">' + d.kosten.calls + ' calls sinds ' + dag(d.kosten.sinds) + '</span>' + ((d.kosten.per_soort || []).length ? '<br><span class="zacht">' + d.kosten.per_soort.map(x => esc(x.soort) + ' ' + x.calls + '× ' + usd(x.usd)).join(' · ') + '</span>' : '') : '<span class="zacht">nog niets gemeten</span>'],
+    ['Marge', (d.kosten && d.kosten.calls) ? euro((d.betalingen || []).reduce((a, b) => a + (String(b.product).startsWith('refund:') ? -b.cent : b.cent), 0)) + ' omzet − ' + usd(d.kosten.usd) + ' kosten' : '·'],
   ]);
   document.getElementById('aGratis').value = t.gratis_over ?? 0; document.getElementById('aPakket').value = t.pakket_over ?? 0; document.getElementById('aVragen').value = t.vragen_over ?? 0; document.getElementById('aReden').value = '';
   document.getElementById('aBewaarKnop').textContent = p.bewaar_lezingen ? 'Bewaarschakelaar uitzetten' : 'Bewaarschakelaar aanzetten';
+  document.getElementById('aInternKnop').textContent = p.intern ? 'Intern account: uitzetten' : 'Markeer als intern account';
   const lz = d.lezingen || [];
   document.getElementById('klantLezingenN').textContent = lz.length ? '(' + lz.length + ')' : '(geen bewaarde lezingen)';
   document.getElementById('klantLezingen').innerHTML = lz.map(l => lezingHtml(l)).join('') || '<div class="zacht">Deze klant bewaart geen lezingen, of heeft er nog geen gemaakt.</div>';
@@ -382,7 +411,7 @@ async function openKlant(id){
   document.getElementById('klantBetalingen').innerHTML = (bt.length ? '<table><thead><tr><th>Wanneer</th><th>Product</th><th>Bedrag</th><th>Transactie</th></tr></thead><tbody>' + bt.map(b => '<tr><td>' + dt(b.t) + '</td><td>' + esc(b.product) + '</td><td>' + (String(b.product).startsWith('refund:') ? '−' : '') + euro(b.cent) + '</td><td class="zacht"><span class="txn">' + esc(b.txn) + '</span></td></tr>').join('') + '</tbody></table>' : '<div class="zacht">Geen betalingen.</div>')
     + (cd.length ? '<div style="margin-top:10px"><b>Verzilverde codes:</b> ' + cd.map(c => '<span class="chip">' + esc(c.soort) + ' · ' + dag(c.op) + '</span>').join('') + '</div>' : '');
   document.getElementById('klantNotities').innerHTML = (d.notities || []).map(n => '<li><span class="zacht">' + dt(n.t) + ' · ' + esc(n.admin || '') + '</span><br>' + esc(n.tekst) + '</li>').join('') || '<li class="zacht">Geen notities.</li>';
-  document.getElementById('klantActiviteit').innerHTML = (d.activiteit || []).map(a => '<li><span class="zacht">' + dt(a.t) + '</span> · <b>' + esc(a.soort) + '</b>' + (a.details && a.details.geheugen ? ' <span class="chip">geheugen</span>' : '') + (a.details && a.details.voet ? ' · ' + esc(a.details.voet) : '') + (a.land ? ' · ' + esc(a.stad ? a.stad + ', ' : '') + esc(a.land) : '') + (a.taal ? ' · ' + esc(a.taal) : '') + '</li>').join('') || '<li class="zacht">Nog geen activiteit gelogd.</li>';
+  document.getElementById('klantActiviteit').innerHTML = (d.activiteit || []).map(a => '<li><span class="zacht">' + dt(a.t) + '</span> · <b>' + esc(a.soort) + '</b>' + (a.details && a.details.geheugen ? ' <span class="chip">geheugen</span>' : '') + (a.details && a.details.voet ? ' · ' + esc(a.details.voet) : '') + (a.land ? ' · ' + esc(a.stad ? a.stad + ', ' : '') + esc(a.land) : '') + (a.taal ? ' · ' + taalLabel(a.taal) : '') + '</li>').join('') || '<li class="zacht">Nog geen activiteit gelogd.</li>';
   document.getElementById('klantAudit').innerHTML = (d.audit || []).map(g => '<li><span class="zacht">' + dt(g.t) + ' · ' + esc(g.admin || '') + '</span> · ' + esc(g.actie) + (g.details && g.details.reden ? ' · ' + esc(g.details.reden) : '') + '</li>').join('') || '<li class="zacht">·</li>';
 }
 function kv(paren){ return paren.map(([k, v]) => '<dt>' + esc(k) + '</dt><dd>' + (v == null ? '·' : v) + '</dd>').join(''); }
@@ -419,6 +448,7 @@ document.getElementById('aResetKnop').addEventListener('click', async () => {
   if(!confirm('Wachtwoordresetmail sturen naar ' + huidigeKlant.profiel.email + '?')) return;
   try{ await sbAuth('recover?redirect_to=' + encodeURIComponent(location.origin + '/'), { email: huidigeKlant.profiel.email }); await rpc('admin_notitie', { p_gebruiker: huidigeKlant.profiel.id, p_tekst: 'Wachtwoordresetmail gestuurd vanuit Beheer.' }); melding(m, 'Resetmail gestuurd (als het adres bestaat).', 'goed'); openKlant(huidigeKlant.profiel.id); }catch(e){ melding(m, 'Mislukt: ' + e.message, 'fout'); }
 });
+document.getElementById('aInternKnop').addEventListener('click', () => actie(() => rpc('admin_intern_zet', { p_id: huidigeKlant.profiel.id, p_intern: !huidigeKlant.profiel.intern }), 'Interne markering gewijzigd; kosten van dit account tellen vanaf nu als ' + (huidigeKlant.profiel.intern ? 'klant' : 'eigen') + '.'));
 document.getElementById('aBewaarKnop').addEventListener('click', () => actie(() => rpc('admin_profiel_zet', { p_gebruiker: huidigeKlant.profiel.id, p_bewaar: !huidigeKlant.profiel.bewaar_lezingen }), 'Bewaarschakelaar gewijzigd.'));
 document.getElementById('aNotitieKnop').addEventListener('click', () => { const t = document.getElementById('aNotitie').value.trim(); if(!t) return; actie(() => rpc('admin_notitie', { p_gebruiker: huidigeKlant.profiel.id, p_tekst: t }).then(r => { document.getElementById('aNotitie').value = ''; return r; }), 'Notitie toegevoegd.'); });
 function wisLezing(id){ if(!confirm('Deze lezing definitief wissen namens de klant?')) return; const reden = prompt('Reden (komt in het logboek):') || ''; actie(() => rpc('admin_lezing_wis', { p_lezing: id, p_reden: reden }), 'Lezing gewist.'); }
