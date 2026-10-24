@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["4XHWJ24LZS.app.toereading"],
+        "components": [
+          { "/": "/*", "comment": "Alle paden op toereading.com openen in de app als die geinstalleerd is" }
+        ]
+      }
+    ]
+  },
+  "webcredentials": { "apps": ["4XHWJ24LZS.app.toereading"] }
+}
