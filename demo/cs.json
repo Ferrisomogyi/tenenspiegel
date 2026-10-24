@@ -1,0 +1,90 @@
+{
+ "ui": {
+  "tab_solo": "Jedno čtení",
+  "tab_duo": "Duo: syn a otec",
+  "sluit": "Zavřít",
+  "zag": "Co zrcadlo vidělo",
+  "aangevinkt": "Zaškrtnuto",
+  "notitie": "Poznámka",
+  "lezing_kop": "Podrobné čtení",
+  "vraag_kop": "Ukázková otázka",
+  "vraag_lbl": "Otázka",
+  "antwoord_lbl": "Odpověď zrcadla",
+  "zoon": "Syn",
+  "vader": "Otec",
+  "foto_alt_zoon": "Ukázková fotka: bosá chodidla shora, ve stoje",
+  "foto_alt_vader": "Ukázková fotka: otcova chodidla",
+  "duo_tabel": "Prst po prstu vedle sebe",
+  "duo_verhaal_kop": "Příběh dua",
+  "tour_knop": "Prohlídka v 6 krocích",
+  "tour_stap": "Krok {n} ze 6",
+  "tour_vorige": "Zpět",
+  "tour_volgende": "Dále",
+  "tour_klaar": "Hotovo",
+  "tour_naar_demo": "Podívat se na ukázkové čtení",
+  "fors_teen": "Mohutný prst"
+ },
+ "solo": {
+  "kop": "Ukázka · skutečné čtení",
+  "intro": "Skutečné čtení, ukázané anonymně. U každého prstu vidíš, které tvary jsou zaškrtnuté, co zrcadlo vidělo a co vypráví. Dole najdeš ukázkovou otázku.",
+  "eerste": "Tato chodidla hned upoutají svou vyrovnaností: pravé a levé jsou téměř zrcadlovým obrazem jedno druhého, od širokých palců se širokou střední částí až po malíčky, které se oba stáčejí ven a zužují se do špičky. Pomyslná čára od největšího k nejmenšímu prstu klesá na obou chodidlech plynule, bez prstů, které by z ní vyčnívaly nebo se propadaly, což je znamením, že žádná oblast tu nevystupuje přehnaně do popředí ani není odsouvána stranou. První, co upoutá pozornost, je téměř stejná stavba obou chodidel: myšlení a cítění tu od sebe zřejmě bývají málokdy daleko. Zároveň je téměř v každém prstu nenápadný detail, rezervoár, otočená špička, nehet, který vypadá trochu jinak, a ten ukazuje, že pod tímto klidem a souměrností se přece jen leccos drží uvnitř.",
+  "notities": {
+   "R1": "Začíná normálně u kořene, uprostřed se rozšiřuje a končí zase normálně: rezervoár. Kulatá špička, velký nehet.",
+   "R2": "Osa rovná, špička mírně hranatá. Prsty plynule klesají v jedné linii.",
+   "R3": "Začíná úzce u kořene a ke špičce se rozšiřuje: tenký kořen, energie narůstá. Osa rovná.",
+   "R4": "Mohutný prst s průměrným nehtem. Ohlíží se zpět jen minimálně: minulost hraje malou roli, pouštět se daří, když je potřeba.",
+   "R5": "Boky se sbíhají do úzké špičky: špičatý. Nehtová ploténka se zřetelně dívá šikmo ven: otočený. Nehet malý vzhledem ke článku. Žádný skrývající se prst, žádná zřetelná boule před kořenem, tedy žádný batůžek.",
+   "L1": "Začíná normálně u kořene, uprostřed se rozšiřuje a končí zase normálně: rezervoár. Špička kulatá s plochým místem (smíšený tvar), velký nehet.",
+   "L2": "Osa rovná, špička mírně hranatá. Prsty plynule klesají v jedné linii.",
+   "L3": "Začíná úzce u kořene a ke špičce se rozšiřuje: tenký kořen, energie narůstá. Osa rovná.",
+   "L4": "Mohutný prst s průměrným nehtem. Ohlíží se zpět jen minimálně: minulost hraje malou roli, pouštět se daří, když je potřeba.",
+   "L5": "Špička se ostře zužuje: špičatý. Nehet se dívá šikmo k vnějšímu okraji: otočený. Nehet malý vzhledem k poslednímu článku. Žádný skrývající se prst pod čtvrtým prstem a žádná boule před kořenem (žádný batůžek)."
+  },
+  "tenen": {
+   "R1": "Tvůj pravý palec je kulatý: co si myslíš, balíš do diplomacie a konfrontaci raději nevyhledáváš. Ale uprostřed se palec nadouvá v rezervoár: myslí se a zvažuje víc, než kdy vyjde ven, slova a postoje se hromadí, než se o ně podělíš. Velký nehet z tebe dělá spíš vysílač než přijímač: ne každého pustíš do toho, co si myslíš.",
+   "R2": "Tvůj pravý druhý prst stojí zpříma jako svíčka a spořádaně sleduje linii ostatních prstů: tvá vůle je uspořádaná, nehoníš se za měnícími se cíli. Mírně hranatá špička ukazuje, že když na to přijde, řekneš narovinu, co chceš: bez oklik, bez polovičatosti.",
+   "R3": "Tvůj pravý prostřední prst začíná úzce u kořene a ke špičce se rozšiřuje: tenký kořen. Tvá akceschopnost se nerozjede hned, potřebuješ rozběh, ale když se jednou rozjedeš, činnost se sama stupňuje a sílí, čím dál jdeš.",
+   "R4": "Pravý čtvrtý prst je mohutný: je v něm velká schopnost držet pevně vlastní situaci. To, že se mírně ohlížíš zpět, znamená, že minulost občas promlouvá do toho, jak se držíš nebo pouštíš; nedrží tě, pouštět se daří, když je potřeba. Průměrný nehet ukazuje, že dobře vyvažuješ držení se a otevřenost tomu, co přinášejí druzí.",
+   "R5": "Tvůj pravý malíček je špičatý a otočený: nejistota a strach v tobě vyplouvají v krátkých, ostrých vlnách a to, co z nich ukazuješ, nemusí být to, co se děje uvnitř: kurz se upravuje za pochodu. Malý nehet v této oblasti dodává citlivost: podněty zvenčí, napětí nebo hrozba, k tobě dolehnou silně.",
+   "L1": "Vlevo se vrací stejná stavba s vlastním zvratem: prst je smíšený tvar, na začátku kulatý a na špičce s plochým místem. Své city obvykle sděluješ taktně, ale když na to přijde, dokážeš najednou o svých pocitech mluvit zcela otevřeně. I tady je rezervoár: city, které se hromadí, než vyjdou ven, a velký nehet, který je kryje, dokud ta chvíle nepřijde.",
+   "L2": "Levý druhý prst napodobuje pravý: osa rovná, špička hranatá, úhledně v linii. Tvůj cit se ven dostane, když je potřeba, přímo a bez příkras: nenecháš pochyb o tom, co cítíš, i když ho v každodenním styku obvykle zabalíš do klidu.",
+   "L3": "Stejný vzorec vidíš vlevo: úzký začátek, široká špička. Tvá kreativita a intuitivní nápady vyvěrají pomalu a postupně rostou do plné síly, spíš narůstající proud než náhlý záblesk.",
+   "L4": "I levý čtvrtý prst je mohutný: máš hodně lásky, kterou můžeš dávat, lidem, ale stejně tak práci nebo projektu, do kterého se pustíš. Lehké ohlížení zpět tuto lásku zabarvuje nádechem dřívějších zkušeností, aniž by tě blokovalo; průměrný nehet pěkně vyvažuje vysílání a přijímání.",
+   "L5": "Vlevo se tento obraz opakuje pro důvěru: špičatý znamená, že optimismus a důvěra přicházejí v návalech, jako vlny, a otočená poloha ukazuje, že to, co navenek ukazuješ o své důvěře, ne vždy odpovídá tomu, co žije uvnitř. Díky malému nehtu jemně vnímáš signály důvěry nebo nedůvěry od druhých a vnímáš je rychle."
+  },
+  "samenhang": "Nejvýraznější na tomto čtení je, jak málo se pravá a levá strana liší: téměř prst po prstu se opakuje stejný vzorec. U tebe myšlení a cítění jen zřídka stojí proti sobě; co vymyslíš a co cítíš, jde z velké části ruku v ruce. U palců je to vidět nejnápadněji: oba budují rezervoár, vpravo zabalený v diplomacii, vlevo se zábleskem přímosti, jakmile na to přijde. Slova i city se tedy nejprve drží uvnitř, než se o ně podělíš. U druhých prstů se tento obraz posiluje: vůle i cit vycházejí ven spořádaně a v případě potřeby ostře a přímo. Třetí prsty ukazují, že jak tvá činnost, tak tvá kreativita potřebují zahřátí; síla roste sama, čím dál jdeš. U čtvrtých prstů vidíš dva pevné, mohutné prsty: velká schopnost držet se i velká schopnost milovat, oba s nádechem minulosti, která promlouvá, aniž by převládala. A malíčky nakonec ukazují, že jak tvá nejistota, tak tvá důvěra se projevují v krátkých, citlivých vrcholech a že to, co z nich ukazuješ, není vždy celý příběh. Červenou nití je člověk, u něhož hlava a srdce málokdy protiřečí a který téměř v každé oblasti, ve slovech, citech, strachu i důvěře, drží uvnitř víc, než se na první pohled dostane ven. Co by se stalo, kdyby se tento nahromaděný rezervoár slov a citů častěji přeléval po malých dávkách, dřív než si sám najde cestu ven?",
+  "vraag": "Jak mohu lépe dát najevo, co cítím, aniž by to ze mě najednou všechno vyhrklo?",
+  "antwoord": "Tvé palce dávají polovinu odpovědi už samy. Oba mají rezervoár: myšlenky a city se hromadí, než vyjdou ven. Vlevo je na něm navíc smíšený tvar, tedy nejdřív taktně a pak najednou velmi přímo. To je přesně ten okamžik, který popisuješ: rezervoár je plný a přímost přebírá vládu.\n\nTvé druhé prsty ti v tom pomáhají. Stojí rovně a v jedné linii: velmi dobře víš, co chceš a co cítíš, jen to ještě není venku. A tvé třetí prsty mají tenký kořen: rozjedeš se tím, že začneš, v malém, a pak to roste samo.\n\nZkus to proto po malých dávkách. Jedna věta denně o tom, co cítíš, v klidné chvíli, dřív než tlak vzroste. Velké nehty tě chrání, takže si vyber, u koho začneš. Kdo by mohl být prvním člověkem, před kterým tento týden necháš přetéct jednu malou dávku?"
+ },
+ "duo": {
+  "kop": "Ukázka · čtení dua",
+  "intro": "Syn a otec, dva páry chodidel vedle sebe. Pod fotkami vidíš u každého prstu tvary obou, a pod nimi příběh dua.",
+  "verhaal": "# Dva plány vedle sebe\n\n**Syn**\nCo na těchto chodidlech hned upoutá, je jejich vyrovnanost: pravé a levé jsou téměř zrcadlovým obrazem jedno druhého a čára od palce k malíčku klesá plynule, bez výkyvů. Myšlení a cítění spolu u něj zřídka válčí. Zároveň mají oba palce rezervoár: drží se tam víc, ve slovech i citech, než se na první pohled dostane ven. Čtvrté prsty jsou mohutné: velká schopnost držet se a milovat. Činnost a kreativita (třetí prsty) potřebují rozběh, než nabudou síly, a nejistota i důvěra (malíčky) přicházejí v krátkých, ostrých vrcholech, při nichž to, co se ukazuje, není vždy celý příběh.\n\n**Otec**\nU něj je nejvíc vidět, že palce jsou kulaté a mohutné a kratší než ostatní prsty: ne všechna energie ostatních prstů má stejně místa, aby vyšla ven přes tento palec, s nádechem spěchu. Druhé prsty jsou naopak dlouhé a ke špičce se rozšiřují: hodně vůle a citu. Jsou mírně křivé: pod tlakem přece jen trochu ustoupí. Vpravo je mezi prstem 1 a 2 málo prostoru (myšlení z něj vychází docela snadno), vlevo prostor je (mluvit o citech trvá déle). Čtvrté prsty se trochu ohlížejí zpět a stojí poněkud stranou od sousedů; pravý se navíc může stahovat: přizpůsobivost a také určitý vlastní odstup. Malíčky jsou, stejně jako u syna, špičaté a otočené.\n\n# V čem se podobají\n\nNejvýraznější styčný bod je v malíčcích: u obou špičaté a otočené, s malým nehtem. Nejistota a důvěra přicházejí u otce i syna ve vlnách a to, co z toho ukazují, se úplně nekryje s tím, co se děje uvnitř. To je něco, co mohou v sobě navzájem intuitivně poznávat, aniž by to kdy řekli nahlas. I třetí prsty se dotýkají: u obou rovná osa, takže v tom, co dělají, jsou oba přímí, bez oklik. A u obou hraje u čtvrtého prstu roli lehké ohlížení zpět: minulost se ještě trochu podílí na tom, jak se drží nebo pouštějí, aniž by je připoutávala.\n\n# V čem se liší\n\nNejzřetelnější rozdíl je u palce. U syna je to kulatý, prostorný rezervoár: balí do diplomacie, co si myslí a cítí, a nejprve to drží uvnitř, než se o to podělí. U otce je palec naopak kratší než ostatní prsty, s nádechem spěchu: ne všechna energie, která se pohybuje v ostatních prstech, má stejnou šanci vyjít ven přes tento prst, a co vyjde, vyjde rychleji a přímočařeji než u syna. Zatímco syn nejdřív zvažuje a uchovává uvnitř, u otce může něco uniknout dřív, než se to pořádně usadí.\n\nI druhý prst se liší: u syna zpříma jako svíčka a spořádaný, s hranatou špičkou, která se zostří, až když na to přijde. U otce dlouhý, kulatý a mírně křivý: víc místa pro přizpůsobení, špetka ústupnosti pod tlakem. A vpravo má otec málo prostoru mezi prstem 1 a 2 (myšlení vychází snadno), zatímco vlevo prostor je (mluvit o citech trvá déle). Právě tento rozdíl mezi rychlým sdílením a dlouhým čekáním se může třít se synem, který také ukáže svůj cit teprve tehdy, když je rezervoár dost plný. Dva lidé, kteří něco drží uvnitř, než se o to podělí, v trochu jiném okamžiku a jiným tempem, se mohou snadno minout: jeden je právě zralý sdílet, druhý právě čekat.\n\nU třetího prstu je rozdíl v tempu vidět znovu. Syn má tenký kořen: rozjíždí se pomalu a postupně sílí. Otec má smíšený tvar: nejdřív taktní v tom, co dělá, a když na to přijde, najednou velmi přímý.\n\n# Vstupy a zdi\n\nKe synovi se nejsnáz dostane po malých dávkách a s trpělivostí: jeho rezervoárové prsty (palce) ukazují, že raději buduje postupně, než aby se podělil o všechno najednou. Zeď vzniká hlavně tehdy, když se na něj tlačí, aby sdílel rychleji, než rezervoár dovolí; velké nehty na jeho palcích ho přitom dobře chrání, nepustí jen tak někoho do toho, co se v něm děje.\n\nU otce je vstup právě v rozhovoru o tom, co si myslí rozumově, to z něj vychází docela snadno. Těžší je rozhovor o citech: tam je prostor mezi prvním a druhým prstem, takže mluvit o citech potřebuje víc času a pozvání. Jeho pravý čtvrtý prst se může stahovat: tak se přizpůsobuje nebo se dočasně odtahuje. Nutit ho tam bude pravděpodobně kontraproduktivní.\n\nU obou tvoří malíčky zranitelné místo: malé nehty je činí citlivými na napětí nebo nedůvěru zvenčí, s čímž je třeba zacházet opatrně, z obou stran.\n\n# Cesty k sobě\n\nNejkrásnější cesta vede přes činy. Oba mají rovný třetí prst: v jednání jsou přímí a tam se nejrychleji najdou. Společné tvoření nebo podnikání je sblíží, aniž by se nejdřív muselo mnoho říkat. Ať otec udává tempo v myšlení, tam je rychlý, a ať syn udává tempo v cítění, tam potřebuje svůj vlastní okamžik. A protože oba mají citlivé malíčky, pomáhá nejistotu jednoduše vyslovit nahlas: kdo to řekne první, usnadní to tomu druhému. Jakou drobnost byste mohli tento měsíc udělat spolu, aby ani jeden z vás nemusel mluvit, a přesto jste si byli blíž?"
+ },
+ "tour": [
+  {
+   "titel": "Udělej fotku",
+   "tekst": "Postav se zpříma, váhu na obě chodidla, a vyfoť svá bosá chodidla přesně shora. Dobré světlo, uvolněné prsty."
+  },
+  {
+   "titel": "Zrcadlo se dívá s tebou",
+   "tekst": "Zrcadlo si prohlíží každý prst: tvar, postavení, nehet a linii od největšího k nejmenšímu. Trvá to asi minutu."
+  },
+  {
+   "titel": "Zkontroluj to",
+   "tekst": "U každého prstu vidíš, které tvary jsou zaškrtnuté. Vidíš to jinak? Tvar zapni nebo vypni. Čtenářem zůstáváš ty."
+  },
+  {
+   "titel": "Zrcadlo vypráví",
+   "tekst": "Hned po analýze zrcadlo vypráví, co říkají tvé prsty, ve stylu knih. Až zkontroluješ všech deset prstů, odemkne se podrobné čtení."
+  },
+  {
+   "titel": "Polož otázku",
+   "tekst": "O práci, lásce nebo rozhodnutí, které tě čeká. Zrcadlo odpovídá z tvých vlastních prstů."
+  },
+  {
+   "titel": "Čtěte spolu",
+   "tekst": "Polož vedle sebe dva páry chodidel: partneři, rodič a dítě, přátelé. Uvidíte, v čem se podobáte, v čem se lišíte a jak se k sobě dostat."
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "ui": {
+  "tab_solo": "Eine Lesung",
+  "tab_duo": "Duo: Sohn und Vater",
+  "sluit": "Schließen",
+  "zag": "Was der Spiegel sah",
+  "aangevinkt": "Angekreuzt",
+  "notitie": "Notiz",
+  "lezing_kop": "Die ausführliche Lesung",
+  "vraag_kop": "Beispielfrage",
+  "vraag_lbl": "Frage",
+  "antwoord_lbl": "Antwort des Spiegels",
+  "zoon": "Sohn",
+  "vader": "Vater",
+  "foto_alt_zoon": "Beispielfoto: nackte Füße von oben, im Stehen",
+  "foto_alt_vader": "Beispielfoto: die Füße des Vaters",
+  "duo_tabel": "Zeh für Zeh nebeneinander",
+  "duo_verhaal_kop": "Die Duo-Geschichte",
+  "tour_knop": "Rundgang in 6 Schritten",
+  "tour_stap": "Schritt {n} von 6",
+  "tour_vorige": "Zurück",
+  "tour_volgende": "Weiter",
+  "tour_klaar": "Fertig",
+  "tour_naar_demo": "Die Beispiel-Lesung ansehen",
+  "fors_teen": "Kräftiger Zeh"
+ },
+ "solo": {
+  "kop": "Beispiel · eine echte Lesung",
+  "intro": "Eine echte Lesung, anonym gezeigt. Bei jedem Zeh siehst du, welche Formen angekreuzt sind, was der Spiegel gesehen hat und was er erzählt. Ganz unten steht eine Beispielfrage.",
+  "eerste": "Diese Füße fallen sofort durch ihre Ausgewogenheit auf: Rechts und links sind fast ein Spiegelbild voneinander, von den breiten großen Zehen mit ihrer breiten Mitte bis zu den kleinen Zehen, die beide nach außen drehen und spitz zulaufen. Die gedachte Linie vom großen zum kleinen Zeh fällt auf beiden Füßen gleichmäßig ab, ohne Zehen, die herausragen oder absacken, ein Zeichen dafür, dass hier kein Bereich übertrieben in den Vordergrund tritt oder weggedrückt wird. Was zuerst ins Auge fällt, ist der nahezu identische Aufbau beider Füße: Denken und Fühlen liegen hier selten weit auseinander. Zugleich steckt in fast jedem Zeh ein feines Detail, ein Reservoir, eine gedrehte Spitze, ein Nagel, der ein wenig anders wirkt, und es zeigt, dass unter dieser Ruhe und Symmetrie doch einiges festgehalten wird.",
+  "notities": {
+   "R1": "Beginnt normal an der Wurzel, wird in der Mitte breit und endet wieder normal: Reservoir. Runde Spitze, großer Nagel.",
+   "R2": "Achse gerade, Spitze leicht eckig. Die Zehen fallen gleichmäßig auf einer Linie ab.",
+   "R3": "Beginnt schmal an der Wurzel und wird zur Spitze hin breiter: dünner Ansatz, die Energie baut sich auf. Achse gerade.",
+   "R4": "Kräftiger Zeh mit einem durchschnittlichen Nagel. Blickt nur minimal zurück: Die Vergangenheit spielt leicht mit, Loslassen gelingt, wenn es sein muss.",
+   "R5": "Die Seiten laufen zu einer schmalen Spitze zusammen: spitz. Die Nagelfläche blickt sichtbar schräg nach außen: gedreht. Nagel klein im Verhältnis zum Endglied. Kein Untertauchen, keine deutliche Beule vor der Wurzel, also kein kleiner Rucksack.",
+   "L1": "Beginnt normal an der Wurzel, wird in der Mitte breit und endet wieder normal: Reservoir. Spitze rund mit einem flachen Stück (Mischform), großer Nagel.",
+   "L2": "Achse gerade, Spitze leicht eckig. Die Zehen fallen gleichmäßig auf einer Linie ab.",
+   "L3": "Beginnt schmal an der Wurzel und wird zur Spitze hin breiter: dünner Ansatz, die Energie baut sich auf. Achse gerade.",
+   "L4": "Kräftiger Zeh mit einem durchschnittlichen Nagel. Blickt nur minimal zurück: Die Vergangenheit spielt leicht mit, Loslassen gelingt, wenn es sein muss.",
+   "L5": "Die Spitze läuft spitz zu: spitz. Der Nagel blickt schräg zum Außenrand: gedreht. Nagel klein im Verhältnis zum letzten Glied. Kein Untertauchen unter Zeh 4 und keine Beule vor der Wurzel (kein kleiner Rucksack)."
+  },
+  "tenen": {
+   "R1": "Dein rechter großer Zeh ist rund: Du verpackst, was du denkst, diplomatisch, und die Konfrontation suchst du lieber nicht. In der Mitte aber schwillt der Zeh zu einem Reservoir an: Es wird mehr gedacht und abgewogen, als je nach außen dringt, Worte und Standpunkte sammeln sich an, bevor sie geteilt werden. Der große Nagel macht dich dabei besser im Senden als im Empfangen: Du lässt nicht einfach jeden an das heran, was du denkst.",
+   "R2": "Dein rechter zweiter Zeh steht kerzengerade und folgt sauber der Linie der anderen Zehen: Dein Wille ist geordnet, du jagst keinen wechselnden Zielen nach. Die leicht eckige Spitze zeigt, dass du, wenn es darauf ankommt, geradeheraus sagst, was du willst: keine Umwege, keine halben Sachen.",
+   "R3": "Dein rechter mittlerer Zeh beginnt schmal an der Wurzel und wird zur Spitze hin breiter: ein dünner Ansatz. Deine Tatkraft springt nicht sofort an, du brauchst einen Anlauf, aber einmal in Fahrt, baut sich das Handeln von selbst auf und wird kräftiger, je weiter du kommst.",
+   "R4": "Der rechte vierte Zeh ist kräftig: In dir steckt viel Vermögen, die eigene Situation im Griff zu behalten. Dass du leicht zurückblickst, bedeutet, dass die Vergangenheit hin und wieder mitspielt, wie du festhältst oder loslässt; sie hält dich nicht fest, Loslassen gelingt, wenn es nötig ist. Der durchschnittliche Nagel zeigt, dass du hier gut ausbalanciert bist zwischen Festhalten und Offenbleiben für das, was andere dir anbieten.",
+   "R5": "Dein rechter kleiner Zeh ist spitz und gedreht: Unsicherheit und Angst steigen bei dir in kurzen, scharfen Schüben auf, und was du davon zeigst, ist nicht unbedingt das, was innen vorgeht: Der Kurs wird unterwegs angepasst. Der kleine Nagel macht dich in diesem Bereich empfindsam: Reize von außen, Spannung oder Bedrohung, kommen hart an.",
+   "L1": "Links siehst du denselben Aufbau wieder, mit einer eigenen Wendung: Der Zeh ist eine Mischform, am Anfang rund mit einem flachen Stück an der Spitze. Deine Gefühle bringst du meist taktvoll vor, aber wenn es darauf ankommt, kannst du plötzlich ganz geradeheraus sein über das, was du fühlst. Auch hier gibt es ein Reservoir: Gefühle, die sich aufstauen, bevor sie herauskommen, und einen großen Nagel, der sie bis zu diesem Moment abschirmt.",
+   "L2": "Der linke zweite Zeh macht das rechte Bild nach: gerade in der Achse, eckig an der Spitze, sauber auf der Linie. Dein Gefühl kommt, wenn es darauf ankommt, direkt und unverblümt heraus: Du lässt keinen Zweifel daran, was du fühlst, auch wenn du es im Alltag meist ruhig verpackst.",
+   "L3": "Dasselbe Muster siehst du links: schmaler Anfang, breite Spitze. Deine Kreativität und deine intuitiven Eingebungen sprudeln langsam hoch und wachsen nach und nach zu voller Kraft, eher ein anschwellender Strom als ein plötzlicher Blitz.",
+   "L4": "Auch der linke vierte Zeh ist kräftig: Du hast sehr viel Liebe zu geben, an Menschen, aber ebenso an eine Arbeit oder ein Projekt, für das du dich einsetzt. Der leichte Rückblick färbt dieses Lieben mit einem Hauch früherer Erfahrungen, ohne dich zu blockieren; der durchschnittliche Nagel hält Senden und Empfangen schön im Gleichgewicht.",
+   "L5": "Links wiederholt sich dieses Bild für das Vertrauen: Spitz bedeutet, dass Optimismus und Vertrauen in Schüben kommen, wie Wellen, und die gedrehte Stellung zeigt, dass das, was du nach außen von deinem Vertrauen zeigst, nicht immer dem entspricht, was innen lebt. Der kleine Nagel macht dich empfindsam für Signale von Vertrauen oder Misstrauen bei anderen, du spürst das schnell."
+  },
+  "samenhang": "Am auffälligsten an dieser Lesung ist, wie wenig sich rechts und links voneinander unterscheiden: Fast Zeh für Zeh wiederholt sich dasselbe Muster. Denken und Fühlen liegen bei dir selten im Streit miteinander; was du dir überlegst und was du fühlst, geht größtenteils im Gleichschritt. Bei den großen Zehen siehst du das am deutlichsten: Beide bauen ein Reservoir auf, rechts in Diplomatie verpackt, links mit einem Blitz von Direktheit, sobald es darauf ankommt. Worte und Gefühle werden also zuerst zurückgehalten, bevor sie geteilt werden. Bei den zweiten Zehen verstärkt sich dieses Bild: Wille und Gefühl kommen beide geordnet nach außen, und wenn nötig messerscharf und direkt. Die mittleren Zehen zeigen, dass sowohl dein Handeln als auch deine Kreativität ein Warm-up brauchen; die Kraft wächst von selbst, je weiter du kommst. Bei den vierten Zehen siehst du zwei stabile, kräftige Zehen: viel Vermögen zum Festhalten und viel Vermögen zum Lieben, beide mit einem Hauch Vergangenheit, der mitspielt, ohne zu dominieren. Und die kleinen Zehen zeigen schließlich, dass sich sowohl deine Unsicherheit als auch dein Vertrauen in kurzen, empfindsamen Spitzen melden und dass das, was du davon zeigst, nicht immer die ganze Geschichte ist. Der rote Faden ist ein Mensch, bei dem Kopf und Herz selten im Widerspruch stehen und der in fast jedem Bereich, bei Worten, Gefühlen, Angst und Vertrauen, mehr für sich behält, als auf den ersten Blick nach außen dringt. Was würde geschehen, wenn du dieses aufgestaute Reservoir an Worten und Gefühlen öfter in kleineren Tropfen überlaufen lässt, bevor es sich von selbst einen Ausweg sucht?",
+  "vraag": "Wie kann ich besser zeigen, was ich fühle, ohne dass plötzlich alles auf einmal herauskommt?",
+  "antwoord": "Deine großen Zehen geben schon die halbe Antwort. Beide haben ein Reservoir: Gedanken und Gefühle stauen sich auf, bevor sie nach außen kommen. Links sitzt obendrauf eine Mischform, also zuerst taktvoll und dann plötzlich ganz direkt. Genau diesen Moment beschreibst du: Das Reservoir ist voll, und die Direktheit übernimmt.\n\nDeine zweiten Zehen helfen dir dabei. Sie stehen gerade und auf einer Linie: Du weißt sehr genau, was du willst und was du fühlst, es ist nur noch nicht heraus. Und deine mittleren Zehen haben einen dünnen Ansatz: Du kommst in Gang, indem du anfängst, klein, und dann wächst es von selbst.\n\nVersuch es deshalb in kleinen Portionen. Ein Satz pro Tag darüber, was du fühlst, in einem ruhigen Moment, bevor der Druck steigt. Die großen Nägel schützen dich, such dir also selbst aus, bei wem du beginnst. Wer könnte diese Woche der Erste sein, bei dem du eine kleine Portion überlaufen lässt?"
+ },
+ "duo": {
+  "kop": "Beispiel · Duo-Lesung",
+  "intro": "Sohn und Vater, zwei Paar Füße nebeneinander. Unter den Fotos siehst du pro Zeh die Formen von beiden, darunter die Duo-Geschichte.",
+  "verhaal": "# Zwei Baupläne nebeneinander\n\n**Der Sohn**\nWas an diesen Füßen sofort auffällt, ist ihre Ausgewogenheit: Rechts und links sind fast ein Spiegelbild voneinander, und die Linie vom großen Zeh zum kleinen fällt gleichmäßig ab, ohne Ausreißer. Denken und Fühlen liegen bei ihm selten im Streit. Zugleich haben beide großen Zehen ein Reservoir: Dort wird mehr festgehalten, an Worten und Gefühl, als auf den ersten Blick nach außen dringt. Die vierten Zehen sind kräftig: viel Vermögen zum Festhalten und zum Lieben. Handeln und Kreativität (mittlere Zehen) brauchen einen Anlauf, bevor sie zu Kraft kommen, und Unsicherheit wie Vertrauen (die kleinen Zehen) kommen in kurzen, scharfen Spitzen, wobei das Gezeigte nicht immer die ganze Geschichte ist.\n\n**Der Vater**\nBei ihm fällt vor allem auf, dass die großen Zehen rund und kräftig sind und kürzer als die übrigen: Nicht die ganze Energie der anderen Zehen bekommt über diesen großen Zeh gleich viel Raum, nach außen zu kommen, mit einem Hauch von Eile dabei. Die zweiten Zehen sind dagegen lang und werden zur Spitze hin breiter: viel Willenskraft und Gefühl also. Sie sind leicht gekrümmt: Unter Druck gibt er dann doch etwas nach. Rechts gibt es wenig Raum zwischen Zeh 1 und 2 (das Denken kommt recht flott heraus), links dagegen schon (über Gefühle zu sprechen braucht mehr Zeit). Die vierten Zehen blicken ein wenig zurück und stehen etwas abseits von ihren Nachbarn; der rechte kann sich zudem einziehen: Anpassungsfähigkeit und auch eine gewisse eigene Distanz. Die kleinen Zehen sind, wie beim Sohn, spitz und gedreht.\n\n# Wo sie sich ähneln\n\nDer auffälligste Berührungspunkt liegt bei den kleinen Zehen: bei beiden spitz und gedreht, mit einem kleinen Nagel. Unsicherheit und Vertrauen kommen bei Vater und Sohn in Wellen, und was sie davon zeigen, deckt sich nicht ganz mit dem, was innen vorgeht. Das können sie, ohne es je auszusprechen, intuitiv aneinander erkennen. Auch die mittleren Zehen berühren sich: bei beiden eine gerade Achse, also sind beide in dem, was sie tun, direkt und ohne Umwege. Und bei beiden spielt am vierten Zeh ein leichter Rückblick mit: Die Vergangenheit wirkt noch darauf ein, wie sie festhalten oder loslassen, ohne sie festzusetzen.\n\n# Wo sie sich unterscheiden\n\nDer deutlichste Unterschied liegt beim großen Zeh. Beim Sohn ist er ein rundes, geräumiges Reservoir: Er verpackt, was er denkt und fühlt, diplomatisch und behält es zuerst bei sich, bevor es geteilt wird. Beim Vater ist der große Zeh dagegen kürzer als die übrigen, mit einem Hauch von Eile: Nicht die ganze Energie, die in den anderen Zehen umgeht, bekommt gleich viel Gelegenheit, über diesen Zeh herauszukommen, und was herauskommt, kommt schneller und direkter als beim Sohn. Wo der Sohn erst im Inneren abwägt und aufbewahrt, kann beim Vater etwas entweichen, bevor es richtig auskristallisiert ist.\n\nAuch der zweite Zeh unterscheidet sich: Beim Sohn kerzengerade und geordnet, mit einer eckigen Spitze, die erst scharf wird, wenn es darauf ankommt. Beim Vater lang, rund und leicht gekrümmt: mehr Raum für Anpassung, ein Hauch von Nachgeben unter Druck. Und rechts gibt es beim Vater wenig Raum zwischen Zeh 1 und 2 (das Denken kommt flott heraus), während links Raum ist (über Gefühle zu sprechen dauert länger). Genau dieser Unterschied zwischen schnell Teilen und lange Warten kann mit einem Sohn reiben, der sein eigenes Gefühl ebenfalls erst zeigt, wenn das Reservoir voll genug ist. Zwei Menschen, die beide etwas zurückhalten, bevor sie es teilen, zu einem etwas anderen Zeitpunkt und in einem anderen Tempo, können einander leicht verfehlen: Der eine ist gerade bereit zu teilen, der andere gerade bereit zu warten.\n\nBeim mittleren Zeh siehst du den Unterschied im Tempo wieder. Der Sohn hat einen dünnen Ansatz: Er kommt langsam in Gang und wird nach und nach kräftiger. Der Vater hat eine Mischform: zuerst taktvoll in dem, was er tut, und wenn es darauf ankommt, plötzlich ganz direkt.\n\n# Eingänge und Mauern\n\nBeim Sohn kommst du am leichtesten in kleinen Portionen und mit Geduld hinein: Seine Reservoir-Zehen (die großen Zehen) zeigen, dass er lieber stetig aufbaut, als alles auf einmal zu teilen. Eine Mauer entsteht vor allem, wenn Druck gemacht wird, schneller zu teilen, als das Reservoir zulässt; die großen Nägel an seinen großen Zehen schützen ihn dabei gut, er lässt nicht einfach jeden an das heran, was in ihm vorgeht.\n\nBeim Vater liegt ein Eingang im Gespräch über das, was er rational denkt, das kommt recht flott heraus. Schwieriger ist das Gefühlsgespräch: Dort gibt es Raum zwischen dem ersten und zweiten Zeh, über Gefühle zu sprechen braucht also mehr Zeit und Einladung. Sein rechter vierter Zeh kann sich einziehen: So passt er sich an oder nimmt vorübergehend Abstand. Forcieren wirkt dort wahrscheinlich nach hinten los.\n\nBei beiden bilden die kleinen Zehen eine verletzliche Stelle: Die kleinen Nägel machen sie empfindsam für Spannung oder Misstrauen von außen, etwas, womit man vorsichtig umgehen sollte, von beiden Seiten.\n\n# Wege zueinander\n\nDer schönste Weg führt über das Tun. Beide haben einen geraden mittleren Zeh: Im Tun sind sie direkt und finden am schnellsten zueinander. Gemeinsam etwas zu machen oder zu unternehmen bringt sie näher, ohne dass vorher viel gesagt werden muss. Lass den Vater beim Denken das Tempo angeben, dort ist er schnell, und lass den Sohn beim Fühlen das Tempo angeben, dort braucht er seinen eigenen Moment. Und weil beide empfindsame kleine Zehen haben, hilft es, Unsicherheit einfach laut auszusprechen: Wer es zuerst sagt, macht es dem anderen leichter. Welche Kleinigkeit könntet ihr diesen Monat gemeinsam tun, bei der keiner von beiden reden muss, um einander näher zu kommen?"
+ },
+ "tour": [
+  {
+   "titel": "Mach ein Foto",
+   "tekst": "Stell dich aufrecht hin, das Gewicht auf beiden Füßen, und fotografiere deine nackten Füße genau von oben. Gutes Licht, Zehen entspannt."
+  },
+  {
+   "titel": "Der Spiegel schaut mit",
+   "tekst": "Der Spiegel betrachtet jeden Zeh: Form, Stellung, Nagel und die Linie vom großen zum kleinen. Das dauert etwa eine Minute."
+  },
+  {
+   "titel": "Geh es selbst durch",
+   "tekst": "Bei jedem Zeh siehst du, welche Formen angekreuzt sind. Siehst du es anders? Schalte eine Form an oder aus. Du bleibst der Leser."
+  },
+  {
+   "titel": "Der Spiegel erzählt",
+   "tekst": "Gleich nach der Analyse erzählt der Spiegel, was deine Zehen sagen, im Stil der Bücher. Hast du alle zehn Zehen durchgesehen, wird die ausführliche Lesung freigeschaltet."
+  },
+  {
+   "titel": "Stell eine Frage",
+   "tekst": "Zu Arbeit, Liebe oder einer Entscheidung, die du treffen musst. Der Spiegel antwortet aus deinen eigenen Zehen."
+  },
+  {
+   "titel": "Lest gemeinsam",
+   "tekst": "Leg zwei Paar Füße nebeneinander: Partner, Eltern und Kind, Freunde. Du siehst, wo ihr euch ähnelt, wo ihr euch unterscheidet und wie ihr zueinander findet."
+  }
+ ]
+}

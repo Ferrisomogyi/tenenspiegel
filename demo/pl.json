@@ -1,0 +1,90 @@
+{
+ "ui": {
+  "tab_solo": "Jeden odczyt",
+  "tab_duo": "Duo: syn i ojciec",
+  "sluit": "Zamknij",
+  "zag": "Co zobaczyło lustro",
+  "aangevinkt": "Zaznaczone",
+  "notitie": "Notatka",
+  "lezing_kop": "Pełny odczyt",
+  "vraag_kop": "Przykładowe pytanie",
+  "vraag_lbl": "Pytanie",
+  "antwoord_lbl": "Odpowiedź lustra",
+  "zoon": "Syn",
+  "vader": "Ojciec",
+  "foto_alt_zoon": "Przykładowe zdjęcie: bose stopy widziane z góry, w pozycji stojącej",
+  "foto_alt_vader": "Przykładowe zdjęcie: stopy ojca",
+  "duo_tabel": "Palec po palcu, obok siebie",
+  "duo_verhaal_kop": "Opowieść duo",
+  "tour_knop": "Przewodnik w 6 krokach",
+  "tour_stap": "Krok {n} z 6",
+  "tour_vorige": "Wstecz",
+  "tour_volgende": "Dalej",
+  "tour_klaar": "Gotowe",
+  "tour_naar_demo": "Zobacz przykładowy odczyt",
+  "fors_teen": "Potężny palec"
+ },
+ "solo": {
+  "kop": "Przykład · prawdziwy odczyt",
+  "intro": "Prawdziwy odczyt, pokazany anonimowo. Przy każdym palcu widzisz, jakie formy zostały zaznaczone, co zobaczyło lustro i co mówi. Na dole znajdziesz przykładowe pytanie.",
+  "eerste": "Te stopy od razu rzucają się w oczy swoją równomiernością: prawa i lewa są niemal swoim lustrzanym odbiciem, od szerokich paluchów z szeroką częścią środkową po małe palce, które oba skręcają się na zewnątrz i zwężają ku czubkowi. Wyobrażona linia od największego do najmniejszego palca opada na obu stopach płynnie, bez palców, które wystawałyby ponad nią lub się zapadały, a to znak, że żaden obszar nie wysuwa się tu przesadnie na pierwszy plan ani nie jest spychany na bok. Pierwsze, co przyciąga uwagę, to ta niemal identyczna budowa obu stóp: myślenie i czucie wydają się tu rzadko od siebie oddalone. Jednocześnie w prawie każdym palcu kryje się subtelny szczegół, rezerwuar, skręcony czubek, paznokieć, który wygląda odrobinę inaczej, co pokazuje, że pod tym spokojem i symetrią wiele jednak jest zatrzymywane.",
+  "notities": {
+   "R1": "Zaczyna się normalnie przy nasadzie, w środku się rozszerza i kończy znów normalnie: rezerwuar. Okrągły czubek, duży paznokieć.",
+   "R2": "Oś prosta, czubek nieco kanciasty. Palce opadają płynnie na jednej linii.",
+   "R3": "Zaczyna się wąsko przy nasadzie i ku czubkowi się rozszerza: cienka nasada, energia narasta. Oś prosta.",
+   "R4": "Potężny palec ze średnim paznokciem. Spogląda wstecz tylko minimalnie: przeszłość gra niewielką rolę, odpuszczanie wychodzi, gdy trzeba.",
+   "R5": "Boki zbiegają się w wąski czubek: spiczasty. Płytka paznokcia wyraźnie skierowana ukośnie na zewnątrz: skręcony. Paznokieć mały w stosunku do paliczka. Bez palca nurkującego, bez wyraźnej wypukłości przed nasadą, a więc bez małego plecaka.",
+   "L1": "Zaczyna się normalnie przy nasadzie, w środku się rozszerza i kończy znów normalnie: rezerwuar. Czubek okrągły z płaskim fragmentem (forma mieszana), duży paznokieć.",
+   "L2": "Oś prosta, czubek nieco kanciasty. Palce opadają płynnie na jednej linii.",
+   "L3": "Zaczyna się wąsko przy nasadzie i ku czubkowi się rozszerza: cienka nasada, energia narasta. Oś prosta.",
+   "L4": "Potężny palec ze średnim paznokciem. Spogląda wstecz tylko minimalnie: przeszłość gra niewielką rolę, odpuszczanie wychodzi, gdy trzeba.",
+   "L5": "Czubek zwęża się ostro: spiczasty. Paznokieć skierowany ukośnie ku zewnętrznej krawędzi: skręcony. Paznokieć mały w stosunku do ostatniego paliczka. Bez palca nurkującego pod czwartym palcem i bez wypukłości przed nasadą (bez małego plecaka)."
+  },
+  "tenen": {
+   "R1": "Twój prawy paluch jest okrągły: to, co myślisz, pakujesz w dyplomację i wolisz nie szukać konfrontacji. Ale w środku palec nabrzmiewa w rezerwuar: myśli się i rozważa więcej, niż kiedykolwiek wychodzi na zewnątrz, słowa i stanowiska gromadzą się, zanim zostaną podzielone. Duży paznokieć sprawia, że lepiej nadajesz, niż odbierasz: nie wpuszczasz byle kogo do tego, co myślisz.",
+   "R2": "Twój prawy drugi palec stoi prosto jak świeca i grzecznie podąża za linią pozostałych palców: twoja siła woli jest uporządkowana, nie gonisz za zmieniającymi się celami. Lekko kanciasty czubek pokazuje, że gdy przychodzi co do czego, mówisz otwarcie, czego chcesz: bez okrężnych dróg, bez półśrodków.",
+   "R3": "Twój prawy środkowy palec zaczyna się wąsko przy nasadzie, a ku czubkowi się poszerza: cienka nasada. Twoja zdolność do działania nie rusza od razu, potrzebujesz rozbiegu, ale gdy już się rozpędzisz, działanie narasta samo i nabiera mocy w miarę tego, jak idziesz dalej.",
+   "R4": "Prawy czwarty palec jest potężny: jest w tobie dużo zdolności, by trzymać w ręku własną sytuację. To, że lekko spoglądasz wstecz, oznacza, że przeszłość czasem współgra z tym, jak się trzymasz lub puszczasz; nie wiąże cię jednak, odpuszczanie wychodzi, gdy trzeba. Przeciętny paznokieć pokazuje, że dobrze równoważysz trzymanie się i otwartość na to, co niosą inni.",
+   "R5": "Twój prawy mały palec jest spiczasty i skręcony: niepewność i lęk wypływają u ciebie w krótkich, ostrych falach, a to, co z nich pokazujesz, niekoniecznie jest tym, co dzieje się w środku: kurs jest korygowany w trakcie drogi. Mały paznokieć czyni cię w tej dziedzinie wrażliwym: bodźce z zewnątrz, napięcie czy zagrożenie, docierają do ciebie mocno.",
+   "L1": "Po lewej widać tę samą budowę, z własnym zwrotem: palec jest formą mieszaną, okrągły na początku i z płaskim fragmentem na czubku. Swoje uczucia przekazujesz zwykle taktownie, ale gdy przychodzi co do czego, potrafisz nagle być zupełnie bezpośredni w tym, co czujesz. Tutaj też jest rezerwuar: uczucia, które się spiętrzają, zanim wyjdą, i duży paznokieć, który je osłania, aż nadejdzie ta chwila.",
+   "L2": "Lewy drugi palec naśladuje prawy: oś prosta, czubek kanciasty, równo na linii. Twoje uczucie wychodzi, gdy trzeba, wprost i bez owijania: nie zostawiasz wątpliwości, co czujesz, choć na co dzień pakujesz je zwykle w spokój.",
+   "L3": "Ten sam wzór widać po lewej: wąski początek, szeroki czubek. Twoja kreatywność i intuicyjne natchnienia wzbierają powoli i z czasem rosną do pełnej mocy, to raczej narastający strumień niż nagły błysk.",
+   "L4": "Lewy czwarty palec też jest potężny: masz bardzo dużo miłości do oddania, ludziom, ale tak samo pracy czy projektowi, któremu się poświęcasz. Lekkie spoglądanie wstecz zabarwia to kochanie nutą dawnych doświadczeń, nie blokując cię; przeciętny paznokieć pięknie równoważy nadawanie i odbieranie.",
+   "L5": "Po lewej ten obraz powtarza się w odniesieniu do zaufania: spiczasty oznacza, że optymizm i zaufanie przychodzą impulsami, falami, a skręcone ułożenie pokazuje, że to, co okazujesz na zewnątrz o swoim zaufaniu, nie zawsze zgadza się z tym, co żyje w środku. Mały paznokieć czyni cię wrażliwym na sygnały zaufania lub nieufności u innych, szybko to wyczuwasz."
+  },
+  "samenhang": "Najbardziej uderzające w tym odczycie jest to, jak mało prawa i lewa strona się różnią: niemal palec po palcu powtarza się ten sam wzór. U ciebie myślenie i czucie rzadko wchodzą sobie w drogę; to, co wymyślasz, i to, co czujesz, w dużej mierze idą równo. Przy paluchach widać to najwyraźniej: oba budują rezerwuar, po prawej opakowany w dyplomację, po lewej z błyskiem bezpośredniości, gdy tylko przychodzi co do czego. Słowa i uczucia są więc najpierw zatrzymywane, zanim zostaną podzielone. Przy drugich palcach ten obraz się wzmacnia: wola i uczucie wychodzą na zewnątrz w uporządkowany sposób, a gdy trzeba, ostro i wprost. Trzecie palce pokazują, że zarówno twoje działanie, jak i kreatywność potrzebują rozgrzewki; siła rośnie sama w miarę tego, jak idziesz dalej. Przy czwartych palcach widać dwa mocne, potężne palce: dużo zdolności, by się trzymać, i dużo zdolności, by kochać, oba z odrobiną przeszłości, która współgra, nie dominując. A małe palce pokazują na koniec, że zarówno twoja niepewność, jak i zaufanie pojawiają się w krótkich, wrażliwych szczytach i że to, co z nich okazujesz, nie zawsze jest całą historią. Czerwoną nicią jest człowiek, u którego głowa i serce rzadko sobie przeczą i który prawie w każdej dziedzinie, w słowach, uczuciach, lęku i zaufaniu, zatrzymuje w sobie więcej, niż na pierwszy rzut oka wychodzi na zewnątrz. Co by się stało, gdybyś ten nagromadzony rezerwuar słów i uczuć częściej, w mniejszych porcjach, pozwolił przelewać się, zanim sam zacznie szukać ujścia?",
+  "vraag": "Jak mogę lepiej okazywać, co czuję, tak żeby nie wylało się to nagle wszystko naraz?",
+  "antwoord": "Twoje paluchy dają już pół odpowiedzi. Oba mają rezerwuar: myśli i uczucia piętrzą się, zanim wyjdą na zewnątrz. Po lewej jest na nim jeszcze forma mieszana, czyli najpierw taktownie, a potem nagle bardzo bezpośrednio. To dokładnie ten moment, który opisujesz: rezerwuar jest pełny, a bezpośredniość przejmuje stery.\n\nTwoje drugie palce ci w tym pomagają. Stoją prosto i na jednej linii: bardzo dobrze wiesz, czego chcesz i co czujesz, tylko jeszcze nie wyszło to na zewnątrz. A twoje trzecie palce mają cienką nasadę: ty rozkręcasz się, zaczynając, po trochu, a potem rośnie to samo.\n\nSpróbuj więc małymi porcjami. Jedno zdanie dziennie o tym, co czujesz, w spokojnej chwili, zanim napięcie wzrośnie. Duże paznokcie cię chronią, więc sam wybierz, od kogo zaczniesz. Kto mógłby być pierwszą osobą, przy której w tym tygodniu pozwolisz przelać się jednej małej porcji?"
+ },
+ "duo": {
+  "kop": "Przykład · odczyt duo",
+  "intro": "Syn i ojciec, dwie pary stóp obok siebie. Pod zdjęciami widzisz, palec po palcu, formy obu, a niżej opowieść duo.",
+  "verhaal": "# Dwa plany obok siebie\n\n**Syn**\nCo od razu rzuca się w oczy w tych stopach, to ich równomierność: prawa i lewa są niemal swoim lustrzanym odbiciem, a linia od palucha do małego palca opada płynnie, bez wyskoków. Myślenie i czucie rzadko u niego ze sobą walczą. Jednocześnie oba paluchy mają rezerwuar: zatrzymuje się tam więcej, słów i uczuć, niż na pierwszy rzut oka wychodzi na zewnątrz. Czwarte palce są potężne: dużo zdolności, by się trzymać i kochać. Działanie i kreatywność (trzecie palce) potrzebują rozbiegu, zanim nabiorą mocy, a niepewność i zaufanie (małe palce) pojawiają się w krótkich, ostrych szczytach, przy których to, co widać, nie zawsze jest całą historią.\n\n**Ojciec**\nU niego przede wszystkim widać, że paluchy są okrągłe i potężne oraz krótsze od pozostałych: nie cała energia pozostałych palców ma tyle samo miejsca, by wyjść przez ten paluch, z odrobiną pośpiechu. Drugie palce są za to długie i poszerzają się ku czubkowi: dużo siły woli i uczucia. Są lekko zakrzywione: pod presją jednak trochę ustępuje. Po prawej między palcem 1 a 2 jest mało przestrzeni (myślenie wychodzi dość swobodnie), po lewej przestrzeń jest (rozmowa o uczuciach zajmuje więcej czasu). Czwarte palce patrzą trochę wstecz i stoją nieco osobno od sąsiadów; prawy może się ponadto wciągać: zdolność przystosowania, a także pewien własny dystans. Małe palce są, tak jak u syna, spiczaste i skręcone.\n\n# Gdzie są do siebie podobni\n\nNajbardziej uderzający punkt wspólny leży w małych palcach: u obu spiczaste i skręcone, z małym paznokciem. Niepewność i zaufanie przychodzą u ojca i syna falami, a to, co z nich pokazują, nie całkiem pokrywa się z tym, co dzieje się w środku. To coś, co mogą w sobie nawzajem intuicyjnie rozpoznawać, nigdy nie nazywając tego na głos. Trzecie palce też się stykają: u obu oś prosta, więc w tym, co robią, obaj są bezpośredni, bez okrężnych dróg. A u obu przy czwartym palcu gra lekkie spoglądanie wstecz: przeszłość nadal trochę współtworzy to, jak się trzymają lub puszczają, nie przygważdżając ich.\n\n# Gdzie się różnią\n\nNajwyraźniejsza różnica leży przy paluchu. U syna jest to okrągły, przestronny rezerwuar: pakuje w dyplomację to, co myśli i czuje, i najpierw to zatrzymuje, zanim się tym podzieli. U ojca paluch jest natomiast krótszy od pozostałych, z odrobiną pośpiechu: nie cała energia, która krąży w pozostałych palcach, ma równą szansę wyjść przez ten palec, a to, co wychodzi, wychodzi szybciej i bardziej wprost niż u syna. Podczas gdy syn najpierw waży i przechowuje w środku, u ojca coś może się wymknąć, zanim na dobre się skrystalizuje.\n\nDrugi palec też się różni: u syna prosty jak świeca i uporządkowany, z kanciastym czubkiem, który staje się ostry dopiero wtedy, gdy przychodzi co do czego. U ojca długi, okrągły i lekko zakrzywiony: więcej miejsca na dostosowanie się, odrobina ustępowania pod presją. A po prawej u ojca jest mało przestrzeni między palcem 1 a 2 (myślenie wychodzi szybko), podczas gdy po lewej przestrzeń jest (rozmowa o uczuciach trwa dłużej). Właśnie ta różnica między szybkim dzieleniem się a długim czekaniem może zgrzytać z synem, który swoje uczucie też pokazuje dopiero wtedy, gdy rezerwuar jest dość pełny. Dwie osoby, które coś zatrzymują, zanim się tym podzielą, w odrobinę innym momencie i w innym tempie, mogą łatwo się minąć: jeden jest akurat gotowy, by się dzielić, drugi, by czekać.\n\nPrzy trzecim palcu widać różnicę w tempie. Syn ma cienką nasadę: rusza powoli i z czasem staje się silniejszy. Ojciec ma formę mieszaną: najpierw taktowny w tym, co robi, a gdy przychodzi co do czego, nagle bardzo bezpośredni.\n\n# Wejścia i mury\n\nDo syna najłatwiej wejść małymi porcjami i z cierpliwością: jego palce z rezerwuarem (paluchy) pokazują, że woli budować stopniowo, niż podzielić się wszystkim naraz. Mur powstaje przede wszystkim wtedy, gdy wywiera się presję, by dzielił się szybciej, niż pozwala rezerwuar; duże paznokcie na jego paluchach dobrze go przy tym chronią, nie wpuszcza byle kogo do tego, co się w nim dzieje.\n\nU ojca wejście leży właśnie w rozmowie o tym, co myśli racjonalnie, bo to wychodzi dość swobodnie. Trudniejsza jest rozmowa o uczuciach: tam jest przestrzeń między pierwszym a drugim palcem, więc mówienie o uczuciach potrzebuje więcej czasu i zaproszenia. Jego prawy czwarty palec potrafi się wciągać: tak się dostosowuje albo na chwilę bierze dystans. Wymuszanie tam prawdopodobnie przyniesie odwrotny skutek.\n\nU obu małe palce tworzą wrażliwe miejsce: małe paznokcie czynią ich czułymi na napięcie lub nieufność z zewnątrz, z czym warto obchodzić się ostrożnie, z obu stron.\n\n# Drogi do siebie\n\nNajpiękniejsza droga prowadzi przez działanie. Obaj mają prosty trzeci palec: w działaniu są bezpośredni i tam najszybciej się znajdują. Wspólne tworzenie czegoś albo podejmowanie jakiegoś przedsięwzięcia zbliża ich, bez potrzeby wcześniejszego mówienia. Niech ojciec nadaje tempo w myśleniu, bo tam jest szybki, a syn niech nadaje tempo w odczuwaniu, bo tam potrzebuje własnego momentu. A ponieważ obaj mają wrażliwe małe palce, pomaga po prostu głośno nazwać niepewność: kto powie to pierwszy, ułatwia zadanie drugiemu. Jaką małą rzecz moglibyście zrobić razem w tym miesiącu, przy której żaden z was nie musi mówić, a mimo to będziecie sobie bliżsi?"
+ },
+ "tour": [
+  {
+   "titel": "Zrób zdjęcie",
+   "tekst": "Stań prosto, ciężar rozłóż na obie stopy i sfotografuj swoje bose stopy dokładnie z góry. Dobre światło, palce rozluźnione."
+  },
+  {
+   "titel": "Lustro patrzy razem z tobą",
+   "tekst": "Lustro ogląda każdy palec: formę, ustawienie, paznokieć i linię od największego do najmniejszego. Trwa to około minuty."
+  },
+  {
+   "titel": "Sprawdź to sam",
+   "tekst": "Przy każdym palcu widzisz, jakie formy zostały zaznaczone. Widzisz to inaczej? Włącz lub wyłącz formę. To ty pozostajesz czytelnikiem."
+  },
+  {
+   "titel": "Lustro opowiada",
+   "tekst": "Zaraz po analizie lustro opowiada, co mówią twoje palce, w stylu książek. Gdy sprawdzisz wszystkie dziesięć palców, odblokuje się pełny odczyt."
+  },
+  {
+   "titel": "Zadaj pytanie",
+   "tekst": "O pracę, miłość albo wybór, przed którym stoisz. Lustro odpowiada na podstawie twoich własnych palców."
+  },
+  {
+   "titel": "Czytajcie razem",
+   "tekst": "Połóż dwie pary stóp obok siebie: partnerzy, rodzic i dziecko, przyjaciele. Zobaczycie, w czym jesteście podobni, w czym się różnicie i jak do siebie dotrzeć."
+  }
+ ]
+}

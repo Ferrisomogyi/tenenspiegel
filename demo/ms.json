@@ -1,0 +1,90 @@
+{
+ "ui": {
+  "tab_solo": "Satu bacaan",
+  "tab_duo": "Duo: anak dan bapa",
+  "sluit": "Tutup",
+  "zag": "Apa yang dilihat cermin",
+  "aangevinkt": "Ditandakan",
+  "notitie": "Catatan",
+  "lezing_kop": "Bacaan lanjutan",
+  "vraag_kop": "Contoh soalan",
+  "vraag_lbl": "Soalan",
+  "antwoord_lbl": "Jawapan cermin",
+  "zoon": "Anak",
+  "vader": "Bapa",
+  "foto_alt_zoon": "Foto contoh: kaki tanpa alas dilihat dari atas, berdiri",
+  "foto_alt_vader": "Foto contoh: kaki sang bapa",
+  "duo_tabel": "Jari kaki demi jari kaki bersebelahan",
+  "duo_verhaal_kop": "Kisah duo",
+  "tour_knop": "Panduan 6 langkah",
+  "tour_stap": "Langkah {n} daripada 6",
+  "tour_vorige": "Sebelumnya",
+  "tour_volgende": "Seterusnya",
+  "tour_klaar": "Selesai",
+  "tour_naar_demo": "Lihat contoh bacaan",
+  "fors_teen": "Jari kaki tegap"
+ },
+ "solo": {
+  "kop": "Contoh · bacaan sebenar",
+  "intro": "Sebuah bacaan sebenar, dipaparkan tanpa nama. Bagi setiap jari kaki, kamu boleh melihat bentuk yang ditandakan, apa yang dilihat cermin dan apa yang diceritakannya. Di bahagian bawah ada contoh soalan.",
+  "eerste": "Kaki ini terus menarik perhatian kerana keseimbangannya: kanan dan kiri hampir menjadi bayangan cermin antara satu sama lain, daripada ibu jari kaki yang lebar dengan bahagian tengah yang melebar sehingga jari kelingking yang kedua-duanya berpusing ke luar dan meruncing. Garis khayalan dari yang terbesar ke yang terkecil menurun dengan lancar pada kedua-dua kaki, tanpa jari yang terjulang atau terbenam. Ini petanda bahawa tiada satu bidang pun yang terlalu menguasai atau ditolak ke belakang. Yang pertama menarik perhatian ialah susunan kedua-dua kaki yang hampir serupa: fikiran dan perasaan di sini jarang berjauhan. Namun pada hampir setiap jari kaki ada butiran halus, sebuah takungan, hujung yang berpintal, kuku yang kelihatan sedikit berbeza, yang menunjukkan bahawa di sebalik ketenangan dan keseimbangan itu, agak banyak yang masih disimpan.",
+  "notities": {
+   "R1": "Bermula biasa di pangkal, melebar di bahagian tengah, kemudian kembali biasa di hujung: takungan. Hujung bulat, kuku besar.",
+   "R2": "Paksi lurus, hujung agak bersegi. Jari kaki menurun lancar dalam satu garisan.",
+   "R3": "Bermula sempit di pangkal dan semakin lebar ke arah hujung: pangkal nipis, tenaganya terus meningkat. Paksi lurus.",
+   "R4": "Jari kaki tegap dengan kuku sederhana. Hanya menoleh ke belakang dengan sedikit sekali: masa lalu memainkan peranan ringan, melepaskan tidak sukar apabila perlu.",
+   "R5": "Sisi-sisinya menyempit ke hujung yang kecil: runcing. Permukaan kuku jelas menghadap serong ke luar: berpintal. Kuku kecil berbanding ruas jari. Tiada jari kaki menyorok, tiada benjolan yang jelas sebelum pangkal, jadi tiada beg galas kecil.",
+   "L1": "Bermula biasa di pangkal, melebar di bahagian tengah, kemudian kembali biasa di hujung: takungan. Hujung bulat dengan bahagian rata (bentuk campuran), kuku besar.",
+   "L2": "Paksi lurus, hujung agak bersegi. Jari kaki menurun lancar dalam satu garisan.",
+   "L3": "Bermula sempit di pangkal dan semakin lebar ke arah hujung: pangkal nipis, tenaganya terus meningkat. Paksi lurus.",
+   "L4": "Jari kaki tegap dengan kuku sederhana. Hanya menoleh ke belakang dengan sedikit sekali: masa lalu memainkan peranan ringan, melepaskan tidak sukar apabila perlu.",
+   "L5": "Hujung meruncing: runcing. Kuku menghadap serong ke tepi luar: berpintal. Kuku kecil berbanding ruas terakhir. Tiada jari kaki menyorok di bawah jari 4 dan tiada benjolan sebelum pangkal (tiada beg galas kecil)."
+  },
+  "tenen": {
+   "R1": "Ibu jari kaki kananmu bulat: kamu membungkus apa yang kamu fikirkan dengan diplomatik, dan lebih suka tidak mencari pertelingkahan. Tetapi di bahagian tengah, ibu jari itu membengkak menjadi takungan: lebih banyak yang difikirkan dan dipertimbangkan daripada yang pernah keluar, kata-kata dan pendirian bertimbun dahulu sebelum dikongsi. Kuku yang besar menjadikan kamu lebih pandai menghantar daripada menerima: kamu tidak membenarkan sebarang orang masuk ke dalam fikiranmu.",
+   "R2": "Jari kaki kedua kananmu berdiri tegak lurus dan kemas mengikut garisan jari-jari lain: kekuatan kehendakmu teratur, kamu tidak mengejar matlamat yang bertukar-tukar. Hujungnya yang agak bersegi menunjukkan bahawa apabila benar-benar perlu, kamu berterus-terang tentang apa yang kamu mahu: tanpa selok-belok, tanpa kerja separuh jalan.",
+   "R3": "Jari kaki tengah kananmu bermula sempit di pangkal lalu melebar ke hujung: pangkal nipis. Daya geraknya tidak terus menyala, kamu perlukan sedikit ancang-ancang, tetapi setelah bermula, tindakanmu bertambah dengan sendirinya dan menjadi lebih kuat semakin kamu melangkah.",
+   "R4": "Jari kaki keempat kananmu tegap: ada banyak keupayaan untuk memegang kawalan atas keadaanmu sendiri. Kerana kamu hanya sedikit menoleh ke belakang, masa lalu sesekali turut menentukan cara kamu menggenggam atau melepaskan; ia tidak menahanmu, melepaskan tetap boleh apabila perlu. Kuku sederhana menunjukkan kamu agak seimbang antara bertahan dan tetap terbuka kepada apa yang disampaikan orang lain.",
+   "R5": "Jari kelingking kaki kananmu runcing dan berpintal: rasa tidak yakin dan takut muncul dalam gelombang singkat yang tajam, dan apa yang kamu tunjukkan belum tentu sama dengan apa yang berlaku di dalam: arahnya disesuaikan sepanjang jalan. Kuku yang kecil menjadikan kamu peka dalam bidang ini: rangsangan dari luar, ketegangan atau ancaman, terasa masuk dengan kuat.",
+   "L1": "Di sebelah kiri, susunan yang sama muncul semula dengan sentuhan tersendiri: ibu jari kaki ini berbentuk campuran, bulat dari pangkal dengan bahagian rata di hujung. Kamu biasanya menyampaikan perasaanmu dengan bijaksana, tetapi apabila benar-benar perlu, tiba-tiba kamu boleh sangat berterus-terang tentang apa yang kamu rasa. Di sini juga ada takungan: perasaan yang bertimbun sebelum keluar, dan kuku besar yang melindunginya sehingga saatnya tiba.",
+   "L2": "Jari kaki kedua kirimu meniru yang kanan: paksi lurus, hujung bersegi, kemas di atas garisan. Perasaanmu keluar dengan terus terang apabila diperlukan: kamu tidak membiarkan sebarang keraguan tentang apa yang kamu rasa, walaupun dalam kehidupan seharian kamu biasanya membungkusnya dengan tenang.",
+   "L3": "Corak yang sama kelihatan di kiri: pangkal sempit, hujung lebar. Kreativiti dan ilham intuisimu timbul perlahan-lahan dan membesar sedikit demi sedikit hingga mencapai kekuatan penuh, lebih seperti aliran yang membina daripada kilatan yang mendadak.",
+   "L4": "Jari kaki keempat kirimu juga tegap: kamu mempunyai banyak kasih sayang untuk diberi, kepada orang, tetapi sama besarnya kepada kerja atau projek yang kamu perjuangkan. Sedikit menoleh ke belakang mewarnai cara kamu menyayangi dengan secebis pengalaman lalu, tanpa menghalangmu; kuku sederhana menjaga keseimbangan antara memberi dan menerima.",
+   "L5": "Di kiri, gambaran itu berulang untuk kepercayaan: runcing bermaksud optimisme dan kepercayaan datang sebagai dorongan, seperti ombak, dan kedudukan berpintal menunjukkan bahawa apa yang kamu pamerkan tentang kepercayaanmu tidak selalu sama dengan apa yang hidup di dalam. Kuku yang kecil menjadikan kamu peka terhadap isyarat percaya atau curiga daripada orang lain, kamu cepat merasainya."
+  },
+  "samenhang": "Yang paling ketara dalam bacaan ini ialah betapa kecilnya perbezaan antara kanan dan kiri: hampir jari demi jari, corak yang sama berulang. Fikiran dan perasaan jarang bercanggah pada dirimu; apa yang kamu fikirkan dan apa yang kamu rasakan sebahagian besarnya berjalan seiring. Pada ibu jari kaki, ini paling terasa: kedua-duanya membina takungan, di kanan terbungkus diplomasi, di kiri dengan kilatan sikap terus terang apabila tiba masanya. Jadi kata-kata dan perasaan sama-sama ditahan dahulu sebelum dikongsi. Pada jari kaki kedua, gambaran itu menguat: kehendak dan perasaan sama-sama keluar dengan teratur, dan apabila perlu setajam pisau dan terus. Jari kaki tengah menunjukkan bahawa tindakan dan kreativitimu sama-sama memerlukan pemanasan; kekuatannya tumbuh dengan sendirinya semakin kamu melangkah. Pada jari kaki keempat terlihat dua jari yang kukuh dan tegap: banyak keupayaan untuk bertahan dan banyak keupayaan untuk menyayangi, kedua-duanya dengan sedikit masa lalu yang turut serta tanpa menguasai. Dan jari kelingking akhirnya menunjukkan bahawa rasa tidak yakin dan kepercayaanmu sama-sama datang sebagai puncak yang singkat dan peka, dan apa yang kamu tunjukkan tidak selalu keseluruhan ceritanya. Benang merahnya ialah seorang insan yang kepala dan hatinya jarang bertentangan, dan yang dalam hampir setiap bidang, sama ada kata-kata, perasaan, rasa takut atau kepercayaan, menyimpan lebih banyak daripada yang kelihatan sepintas lalu. Apa yang akan berlaku jika kamu membiarkan takungan kata-kata dan perasaan itu melimpah lebih kerap, dalam titisan yang lebih kecil, sebelum ia mencari jalan keluarnya sendiri?",
+  "vraag": "Bagaimana aku boleh lebih menunjukkan apa yang aku rasa, tanpa semuanya tiba-tiba tumpah sekali gus?",
+  "antwoord": "Ibu jari kakimu sudah memberi separuh jawapannya. Kedua-duanya mempunyai takungan: fikiran dan perasaan bertimbun dahulu sebelum keluar. Di kiri, ada bentuk campuran di atasnya, jadi pada mulanya bijaksana, kemudian tiba-tiba sangat terus terang. Itulah tepat detik yang kamu gambarkan: takungan penuh dan sikap terus terang mengambil alih.\n\nJari kaki keduamu membantu di sini. Kedua-duanya lurus dan segaris: kamu tahu betul apa yang kamu mahu dan apa yang kamu rasa, cuma belum keluar. Dan jari kaki tengahmu mempunyai pangkal nipis: kamu mula bergerak dengan memulakan, kecil sahaja, kemudian semuanya membesar dengan sendirinya.\n\nJadi cubalah dalam bahagian kecil. Satu ayat sehari tentang apa yang kamu rasa, pada saat yang tenang, sebelum tekanan meningkat. Kuku besarmu melindungimu, jadi pilih sendiri kepada siapa kamu mula. Siapakah yang boleh menjadi orang pertama minggu ini yang kamu biarkan menerima satu bahagian kecil yang melimpah?"
+ },
+ "duo": {
+  "kop": "Contoh · bacaan duo",
+  "intro": "Anak dan bapa, dua pasang kaki bersebelahan. Di bawah foto kamu dapat melihat bentuk kedua-duanya jari kaki demi jari kaki, dan di bawahnya kisah duo.",
+  "verhaal": "# Dua pelan induk bersebelahan\n\n**Sang anak**\nYang terus kelihatan pada kakinya ialah keseimbangannya: kanan dan kiri hampir menjadi bayangan cermin, dan garis dari ibu jari kaki hingga jari kelingking menurun lancar tanpa ada yang terjulang. Fikiran dan perasaan jarang berselirat pada dirinya. Namun kedua-dua ibu jari kakinya mempunyai takungan: di sana lebih banyak yang disimpan, baik kata-kata mahupun perasaan, daripada yang kelihatan sepintas lalu. Jari kaki keempatnya tegap: banyak keupayaan untuk bertahan dan menyayangi. Tindakan dan kreativiti (jari kaki tengah) memerlukan ancang-ancang sebelum bertenaga, dan rasa tidak yakin serta kepercayaan (jari kelingking) datang dalam puncak yang singkat dan tajam, di mana apa yang ditunjukkan tidak selalu keseluruhan ceritanya.\n\n**Sang bapa**\nPada dirinya, yang paling ketara ialah ibu jari kakinya bulat dan tegap, serta lebih pendek daripada yang lain: tidak semua tenaga daripada jari-jari lain mendapat ruang yang sama untuk keluar melalui ibu jari itu, dengan sedikit rasa tergesa-gesa. Jari kaki keduanya pula panjang dan melebar ke hujung: banyak kehendak dan perasaan. Jari itu agak melengkung: di bawah tekanan, dia tetap sedikit mengalah. Di kanan ada sedikit ruang antara jari kaki 1 dan 2 (fikiran keluar dengan agak lancar), di kiri pula ada ruang (bercakap tentang perasaan memerlukan lebih masa). Jari kaki keempatnya sedikit menoleh ke belakang dan agak terpisah daripada jirannya; yang kanan juga boleh menarik diri: kebolehan menyesuaikan diri, serta jarak tertentu yang dia jaga sendiri. Jari kelingkingnya, sama seperti pada anaknya, runcing dan berpintal.\n\n# Di mana mereka serupa\n\nTitik pertemuan yang paling mengesankan ada pada jari kelingking: pada kedua-duanya runcing dan berpintal, dengan kuku kecil. Rasa tidak yakin dan kepercayaan datang pada bapa dan anak seperti ombak, dan apa yang mereka tunjukkan tidak sepenuhnya sama dengan apa yang berlaku di dalam. Itu sesuatu yang boleh mereka kenali antara satu sama lain secara intuitif, tanpa pernah menyebutnya dengan kuat. Jari kaki tengah mereka juga bertemu: pada kedua-duanya paksinya lurus, jadi dalam hal bertindak kedua-duanya terus, tanpa selok-belok. Dan pada kedua-duanya ada sedikit menoleh ke belakang pada jari kaki keempat: masa lalu masih turut berperanan dalam cara mereka memegang atau melepaskan, tanpa mengikat mereka.\n\n# Di mana mereka berbeza\n\nPerbezaan yang paling jelas ada pada ibu jari kaki. Pada sang anak, ibu jari kakinya bulat dengan takungan yang lapang: dia membungkus apa yang difikir dan dirasakannya dengan diplomatik, dan menyimpannya dahulu sebelum dikongsi. Pada sang bapa, ibu jari kakinya pula lebih pendek daripada yang lain, dengan sedikit rasa tergesa-gesa: tidak semua tenaga yang berputar dalam jari-jari lain mendapat peluang yang sama untuk keluar melalui ibu jari itu, dan apa yang keluar, keluar lebih cepat dan lebih terus daripada pada anaknya. Jika sang anak menimbang dan menyimpan dahulu di dalam, pada sang bapa sesuatu boleh terlepas sebelum benar-benar masak.\n\nJari kaki kedua juga berbeza: pada sang anak tegak lurus dan kemas, dengan hujung bersegi yang hanya menjadi tajam apabila benar-benar perlu. Pada sang bapa panjang, bulat dan agak melengkung: lebih banyak ruang untuk menyesuaikan diri, sedikit mengalah di bawah tekanan. Dan di kanan, sang bapa mempunyai sedikit ruang antara jari kaki 1 dan 2 (fikiran keluar dengan lancar), manakala di kiri pula ada ruang (bercakap tentang perasaan mengambil masa lebih lama). Perbezaan antara cepat berkongsi dan lama menunggu itulah yang boleh menimbulkan geseran dengan seorang anak yang juga baru menunjukkan perasaannya apabila takungannya cukup penuh. Dua orang yang sama-sama menyimpan sesuatu sebelum berkongsi, pada saat yang sedikit berbeza dan dengan rentak yang lain, mudah terlepas antara satu sama lain: yang seorang baru bersedia berkongsi, yang seorang lagi baru bersedia menunggu.\n\nPada jari kaki tengah, perbezaan rentak kelihatan lagi. Sang anak mempunyai pangkal nipis: dia perlahan-lahan mula bergerak dan semakin kuat dengan peredaran masa. Sang bapa mempunyai bentuk campuran: pada mulanya bijaksana dalam apa yang dia lakukan, dan apabila benar-benar perlu, tiba-tiba sangat terus terang.\n\n# Pintu masuk dan tembok\n\nKepada sang anak, jalan masuk yang paling mudah ialah melalui bahagian kecil dan kesabaran: jari-jari takungannya (ibu jari kaki) menunjukkan bahawa dia lebih suka membina perlahan-lahan daripada berkongsi semuanya sekali gus. Tembok muncul terutamanya apabila ada tekanan untuk berkongsi lebih cepat daripada yang mampu ditampung takungannya; kuku besar pada ibu jari kakinya melindunginya dengan baik, dia tidak membenarkan sebarang orang masuk ke dalam apa yang berlaku dalam dirinya.\n\nPada sang bapa, pintu masuknya pula ada dalam perbualan tentang apa yang dia fikirkan secara rasional, yang keluar dengan agak lancar. Lebih sukar ialah perbualan tentang perasaan: di situ ada ruang antara jari kaki pertama dan kedua, jadi bercakap tentang perasaan memerlukan lebih masa dan jemputan. Jari kaki keempat kanannya boleh menarik diri: begitulah dia menyesuaikan diri atau buat sementara waktu menjaga jarak. Memaksa di situ kemungkinan besar akan memakan diri.\n\nPada kedua-duanya, jari kelingking ialah titik yang rapuh: kuku yang kecil menjadikan mereka peka terhadap ketegangan atau rasa curiga dari luar, sesuatu yang perlu ditangani dengan berhati-hati, dari kedua-dua pihak.\n\n# Jalan untuk saling mendekat\n\nJalan yang paling indah melalui perbuatan. Kedua-duanya mempunyai jari kaki tengah yang lurus: dalam bertindak mereka terus, dan di situlah mereka paling cepat bertemu. Membuat sesuatu atau menjalankan sesuatu bersama akan mendekatkan mereka, tanpa perlu banyak bercakap terlebih dahulu. Biarlah sang bapa menentukan rentak dalam hal berfikir, di sana dia pantas, dan biarlah sang anak menentukan rentak dalam hal merasa, di sana dia memerlukan detiknya sendiri. Dan kerana kedua-duanya mempunyai jari kelingking yang peka, adalah membantu jika rasa tidak yakin disebut sahaja dengan terbuka: siapa yang menyebutnya dahulu, memudahkan yang seorang lagi. Perkara kecil apakah yang boleh kamu berdua lakukan bersama bulan ini, di mana tiada seorang pun perlu bercakap, namun tetap menjadi lebih rapat antara satu sama lain?"
+ },
+ "tour": [
+  {
+   "titel": "Ambil foto",
+   "tekst": "Berdirilah tegak dengan berat badan pada kedua-dua kaki, kemudian ambil foto kaki tanpa alasmu lurus dari atas. Cahaya yang baik, jari kaki santai."
+  },
+  {
+   "titel": "Cermin turut melihat",
+   "tekst": "Cermin memerhati setiap jari kaki: bentuk, kedudukan, kuku dan garisan dari yang terbesar ke yang terkecil. Ini mengambil masa kira-kira satu minit."
+  },
+  {
+   "titel": "Semak sendiri",
+   "tekst": "Bagi setiap jari kaki, kamu boleh melihat bentuk yang ditandakan. Kamu melihatnya berbeza? Hidupkan atau matikan sesuatu bentuk. Kamulah pembacanya."
+  },
+  {
+   "titel": "Cermin bercerita",
+   "tekst": "Sebaik sahaja analisis selesai, cermin menceritakan apa yang dikatakan jari-jari kakimu, dalam gaya buku-bukunya. Jika kesepuluh jari kaki sudah kamu semak, bacaan lanjutan terbuka."
+  },
+  {
+   "titel": "Ajukan soalan",
+   "tekst": "Tentang kerja, cinta atau pilihan yang perlu kamu buat. Cermin menjawab daripada jari-jari kakimu sendiri."
+  },
+  {
+   "titel": "Baca bersama",
+   "tekst": "Letakkan dua pasang kaki bersebelahan: pasangan, ibu bapa dan anak, sahabat. Kamu melihat di mana kamu serupa, di mana kamu berbeza dan bagaimana kamu boleh saling menjangkau."
+  }
+ ]
+}

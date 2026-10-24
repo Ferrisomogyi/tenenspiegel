@@ -1,0 +1,90 @@
+{
+ "ui": {
+  "tab_solo": "Satu pembacaan",
+  "tab_duo": "Duo: anak dan ayah",
+  "sluit": "Tutup",
+  "zag": "Apa yang dilihat cermin",
+  "aangevinkt": "Dicentang",
+  "notitie": "Catatan",
+  "lezing_kop": "Pembacaan lengkap",
+  "vraag_kop": "Contoh pertanyaan",
+  "vraag_lbl": "Pertanyaan",
+  "antwoord_lbl": "Jawaban cermin",
+  "zoon": "Anak",
+  "vader": "Ayah",
+  "foto_alt_zoon": "Foto contoh: kaki telanjang dilihat dari atas, berdiri",
+  "foto_alt_vader": "Foto contoh: kaki sang ayah",
+  "duo_tabel": "Jari demi jari berdampingan",
+  "duo_verhaal_kop": "Kisah duo",
+  "tour_knop": "Tur 6 langkah",
+  "tour_stap": "Langkah {n} dari 6",
+  "tour_vorige": "Sebelumnya",
+  "tour_volgende": "Berikutnya",
+  "tour_klaar": "Selesai",
+  "tour_naar_demo": "Lihat contoh pembacaan",
+  "fors_teen": "Jari kekar"
+ },
+ "solo": {
+  "kop": "Contoh · pembacaan sungguhan",
+  "intro": "Sebuah pembacaan sungguhan, ditampilkan secara anonim. Untuk setiap jari kamu bisa melihat bentuk mana yang dicentang, apa yang dilihat cermin, dan apa yang diceritakannya. Di bagian bawah ada contoh pertanyaan.",
+  "eerste": "Kaki ini langsung menarik perhatian karena keseimbangannya: kanan dan kiri hampir seperti bayangan cermin satu sama lain, dari jempol kaki yang lebar dengan bagian tengah yang melebar sampai kelingking yang sama-sama berputar ke luar dan meruncing. Garis khayal dari yang terbesar ke yang terkecil turun dengan mulus di kedua kaki, tanpa jari yang menonjol atau melorot. Itu pertanda bahwa tidak ada satu bidang pun yang terlalu menguasai atau ditekan ke belakang. Yang pertama kali menarik perhatian adalah susunan kedua kaki yang nyaris kembar: pikiran dan perasaan di sini jarang berjauhan. Namun hampir di setiap jari ada detail halus, sebuah waduk, ujung yang terpuntir, kuku yang tampak sedikit berbeda, yang menunjukkan bahwa di balik ketenangan dan keseimbangan itu, cukup banyak hal yang tetap disimpan.",
+  "notities": {
+   "R1": "Mulai biasa di pangkal, melebar di bagian tengah, lalu kembali biasa di ujung: waduk. Ujung bulat, kuku besar.",
+   "R2": "Poros lurus, ujung agak bersudut. Jari-jari turun mulus dalam satu garis.",
+   "R3": "Mulai sempit di pangkal dan makin lebar ke arah ujung: pangkal tipis, energinya terus naik. Poros lurus.",
+   "R4": "Jari kekar dengan kuku rata-rata. Hanya sedikit sekali menoleh ke belakang: masa lalu ikut berperan ringan, melepaskan tidak sulit kalau memang perlu.",
+   "R5": "Sisi-sisinya menyempit ke ujung yang kecil: runcing. Bidang kuku jelas menghadap miring ke luar: terpuntir. Kuku kecil dibandingkan ruas jarinya. Tidak ada jari bersembunyi, tidak ada tonjolan yang jelas sebelum pangkal, jadi tidak ada ransel kecil.",
+   "L1": "Mulai biasa di pangkal, melebar di bagian tengah, lalu kembali biasa di ujung: waduk. Ujung bulat dengan bagian datar (bentuk campuran), kuku besar.",
+   "L2": "Poros lurus, ujung agak bersudut. Jari-jari turun mulus dalam satu garis.",
+   "L3": "Mulai sempit di pangkal dan makin lebar ke arah ujung: pangkal tipis, energinya terus naik. Poros lurus.",
+   "L4": "Jari kekar dengan kuku rata-rata. Hanya sedikit sekali menoleh ke belakang: masa lalu ikut berperan ringan, melepaskan tidak sulit kalau memang perlu.",
+   "L5": "Ujung meruncing: runcing. Kuku menghadap miring ke tepi luar: terpuntir. Kuku kecil dibandingkan ruas terakhir. Tidak ada jari bersembunyi di bawah jari 4 dan tidak ada tonjolan sebelum pangkal (tanpa ransel kecil)."
+  },
+  "tenen": {
+   "R1": "Jempol kaki kananmu bulat: kamu membungkus apa yang kamu pikirkan dengan diplomatis, dan lebih suka tidak mencari pertikaian. Tetapi di bagian tengah, jempol itu menggembung menjadi waduk: lebih banyak yang dipikirkan dan dipertimbangkan daripada yang pernah keluar, kata-kata dan pendapat menumpuk dulu sebelum dibagikan. Kuku yang besar membuatmu lebih pandai mengirim daripada menerima: kamu tidak membiarkan sembarang orang masuk ke dalam pikiranmu.",
+   "R2": "Jari kedua kananmu berdiri tegak lurus dan rapi mengikuti garis jari-jari lainnya: kekuatan kemauanmu tertata, kamu tidak mengejar tujuan yang berganti-ganti. Ujungnya yang agak bersudut menunjukkan bahwa saat benar-benar dibutuhkan, kamu blak-blakan tentang apa yang kamu mau: tanpa jalan memutar, tanpa setengah-setengah.",
+   "R3": "Jari tengah kananmu mulai sempit di pangkal lalu melebar ke ujung: pangkal tipis. Daya geraknya tidak langsung menyala, kamu butuh ancang-ancang, tetapi begitu sudah berjalan, tindakanmu menumpuk dengan sendirinya dan makin kuat seiring kamu melangkah.",
+   "R4": "Jari keempat kananmu kekar: ada banyak kemampuan untuk memegang kendali atas situasimu sendiri. Karena kamu hanya sedikit menoleh ke belakang, masa lalu sesekali ikut menentukan cara kamu menggenggam atau melepas; ia tidak menahanmu, melepaskan tetap bisa kalau memang perlu. Kuku yang rata-rata menunjukkan kamu cukup seimbang antara bertahan dan tetap terbuka pada apa yang orang lain sampaikan.",
+   "R5": "Kelingking kananmu runcing dan terpuntir: rasa tidak aman dan takut muncul dalam gelombang singkat yang tajam, dan apa yang kamu perlihatkan belum tentu sama dengan apa yang terjadi di dalam: arahnya disesuaikan di sepanjang jalan. Kuku yang kecil membuatmu peka di bidang ini: rangsangan dari luar, ketegangan atau ancaman, terasa masuk dengan keras.",
+   "L1": "Di sisi kiri, susunan yang sama muncul lagi dengan sentuhan sendiri: jempol kaki ini berbentuk campuran, bulat dari pangkal dengan bagian datar di ujung. Kamu biasanya menyampaikan perasaanmu dengan bijak, tetapi saat benar-benar perlu, tiba-tiba kamu bisa sangat blak-blakan tentang apa yang kamu rasakan. Di sini pun ada waduk: perasaan yang menumpuk sebelum keluar, dan kuku besar yang melindunginya sampai saatnya tiba.",
+   "L2": "Jari kedua kirimu meniru yang kanan: poros lurus, ujung bersudut, rapi di dalam garis. Perasaanmu keluar dengan langsung dan apa adanya saat dibutuhkan: kamu tidak membiarkan keraguan tentang apa yang kamu rasakan, meski dalam keseharian kamu biasanya membungkusnya dengan tenang.",
+   "L3": "Pola yang sama terlihat di kiri: pangkal sempit, ujung lebar. Kreativitas dan ilham intuitifmu muncul perlahan dan tumbuh sedikit demi sedikit sampai kekuatan penuh, lebih seperti aliran yang membangun daripada kilatan yang tiba-tiba.",
+   "L4": "Jari keempat kirimu juga kekar: kamu punya banyak cinta untuk diberikan, kepada orang, tetapi sama besarnya kepada pekerjaan atau proyek yang kamu perjuangkan. Sedikit menoleh ke belakang memberi warna pengalaman lama pada cara kamu mencintai, tanpa menghalangimu; kuku yang rata-rata menjaga keseimbangan antara memberi dan menerima.",
+   "L5": "Di kiri, gambaran itu berulang untuk kepercayaan: runcing berarti optimisme dan kepercayaan datang sebagai dorongan, seperti gelombang, dan posisi terpuntir menunjukkan bahwa apa yang kamu tampilkan tentang kepercayaanmu tidak selalu sama dengan apa yang hidup di dalam. Kuku yang kecil membuatmu peka terhadap sinyal percaya atau curiga dari orang lain, kamu cepat merasakannya."
+  },
+  "samenhang": "Yang paling mencolok dalam pembacaan ini adalah betapa kecilnya perbedaan antara kanan dan kiri: hampir jari demi jari, pola yang sama berulang. Pikiran dan perasaan jarang saling bertentangan padamu; apa yang kamu pikirkan dan apa yang kamu rasakan sebagian besar berjalan seiring. Pada jempol kaki, ini paling terasa: keduanya membangun waduk, di kanan terbungkus diplomasi, di kiri dengan kilatan sikap langsung begitu saatnya tiba. Jadi kata-kata dan perasaan sama-sama ditahan dulu sebelum dibagikan. Pada jari kedua, gambaran itu menguat: kemauan dan perasaan sama-sama keluar dengan tertata, dan kalau perlu setajam pisau dan langsung. Jari tengah menunjukkan bahwa tindakan dan kreativitasmu sama-sama butuh pemanasan; kekuatannya tumbuh dengan sendirinya seiring kamu melangkah. Pada jari keempat terlihat dua jari yang tegap dan kekar: banyak kemampuan untuk bertahan dan banyak kemampuan untuk mencintai, keduanya dengan sedikit masa lalu yang ikut serta tanpa menguasai. Dan kelingking akhirnya memperlihatkan bahwa rasa tidak aman dan kepercayaanmu sama-sama datang sebagai puncak yang singkat dan peka, dan apa yang kamu tampilkan tidak selalu seluruh ceritanya. Benang merahnya adalah seseorang yang kepala dan hatinya jarang bertentangan, dan yang di hampir setiap bidang, entah kata-kata, perasaan, rasa takut, atau kepercayaan, menyimpan lebih banyak daripada yang terlihat sekilas. Apa yang akan terjadi kalau kamu membiarkan waduk kata dan perasaan itu meluap lebih sering, dalam tetesan yang lebih kecil, sebelum ia mencari jalan keluarnya sendiri?",
+  "vraag": "Bagaimana aku bisa lebih menunjukkan apa yang aku rasakan, tanpa semuanya tiba-tiba tumpah sekaligus?",
+  "antwoord": "Jempol kakimu sudah memberi setengah jawabannya. Keduanya punya waduk: pikiran dan perasaan menumpuk dulu sebelum keluar. Di kiri, ada bentuk campuran di atasnya, jadi awalnya bijak, lalu tiba-tiba sangat langsung. Itulah persis momen yang kamu gambarkan: waduknya penuh dan sikap langsung mengambil alih.\n\nJari keduamu membantu di sini. Keduanya lurus dan segaris: kamu tahu betul apa yang kamu mau dan apa yang kamu rasakan, hanya saja belum keluar. Dan jari tengahmu punya pangkal tipis: kamu mulai bergerak dengan memulai, kecil saja, lalu semuanya tumbuh sendiri.\n\nJadi cobalah dalam porsi kecil. Satu kalimat sehari tentang apa yang kamu rasakan, di saat yang tenang, sebelum tekanannya naik. Kuku besarmu melindungimu, jadi pilih sendiri kepada siapa kamu mulai. Siapa yang bisa jadi orang pertama minggu ini yang kamu biarkan menerima satu porsi kecil yang meluap?"
+ },
+ "duo": {
+  "kop": "Contoh · pembacaan duo",
+  "intro": "Anak dan ayah, dua pasang kaki berdampingan. Di bawah foto kamu bisa melihat bentuk keduanya jari demi jari, dan di bawahnya kisah duo.",
+  "verhaal": "# Dua cetak biru berdampingan\n\n**Sang anak**\nYang langsung terlihat pada kakinya adalah keseimbangannya: kanan dan kiri hampir seperti bayangan cermin, dan garis dari jempol kaki sampai kelingking turun mulus tanpa ada yang menonjol. Pikiran dan perasaan jarang saling berantakan pada dirinya. Namun kedua jempol kakinya punya waduk: di sana lebih banyak yang disimpan, baik kata-kata maupun perasaan, daripada yang terlihat sekilas. Jari keempatnya kekar: banyak kemampuan untuk bertahan dan mencintai. Tindakan dan kreativitas (jari tengah) butuh ancang-ancang sebelum bertenaga, dan rasa tidak aman serta kepercayaan (kelingking) datang dalam puncak yang singkat dan tajam, di mana apa yang ditampilkan tidak selalu seluruh ceritanya.\n\n**Sang ayah**\nPada dirinya, yang paling terlihat adalah jempol kakinya bulat dan kekar, serta lebih pendek dari yang lain: tidak semua energi dari jari-jari lain mendapat ruang yang sama untuk keluar lewat jempol itu, dengan sedikit rasa tergesa-gesa. Jari keduanya justru panjang dan melebar ke ujung: banyak kemauan dan perasaan. Jari itu agak melengkung: di bawah tekanan, dia tetap sedikit mengalah. Di kanan ada sedikit ruang antara jari 1 dan 2 (pikiran keluar dengan cukup lancar), di kiri justru ada ruang (bicara soal perasaan butuh lebih banyak waktu). Jari keempatnya sedikit menoleh ke belakang dan agak terpisah dari tetangganya; yang kanan juga bisa menarik diri: kemampuan menyesuaikan diri, sekaligus jarak tertentu yang dia jaga sendiri. Kelingkingnya, sama seperti pada anaknya, runcing dan terpuntir.\n\n# Di mana mereka mirip\n\nTitik temu yang paling mengena ada di kelingking: pada keduanya runcing dan terpuntir, dengan kuku kecil. Rasa tidak aman dan kepercayaan datang pada ayah dan anak seperti gelombang, dan apa yang mereka tunjukkan tidak sepenuhnya sama dengan apa yang terjadi di dalam. Itu sesuatu yang bisa mereka kenali satu sama lain secara intuitif, tanpa pernah mengatakannya keras-keras. Jari tengah mereka juga bertemu: pada keduanya porosnya lurus, jadi dalam hal bertindak keduanya langsung, tanpa jalan memutar. Dan pada keduanya ada sedikit menoleh ke belakang di jari keempat: masa lalu masih ikut berperan dalam cara mereka memegang atau melepas, tanpa mengikat mereka.\n\n# Di mana mereka berbeda\n\nPerbedaan yang paling jelas ada di jempol kaki. Pada sang anak, jempolnya bulat dengan waduk yang lapang: dia membungkus apa yang dipikirkan dan dirasakannya dengan diplomatis, dan menyimpannya dulu sebelum dibagikan. Pada sang ayah, jempolnya justru lebih pendek dari yang lain, dengan sedikit rasa tergesa-gesa: tidak semua energi yang berputar di jari-jari lain mendapat kesempatan yang sama untuk keluar lewat jempol itu, dan apa yang keluar, keluar lebih cepat dan lebih langsung daripada pada anaknya. Kalau sang anak menimbang dan menyimpan dulu di dalam, pada sang ayah sesuatu bisa terlepas sebelum benar-benar matang.\n\nJari kedua juga berbeda: pada sang anak tegak lurus dan rapi, dengan ujung bersudut yang baru menajam saat benar-benar dibutuhkan. Pada sang ayah panjang, bulat, dan agak melengkung: lebih banyak ruang untuk menyesuaikan diri, sedikit mengalah di bawah tekanan. Dan di kanan, sang ayah punya sedikit ruang antara jari 1 dan 2 (pikiran keluar dengan lancar), sedangkan di kiri justru ada ruang (bicara soal perasaan makan waktu lebih lama). Perbedaan antara cepat berbagi dan lama menunggu itulah yang bisa menimbulkan gesekan dengan seorang anak yang juga baru menunjukkan perasaannya saat waduknya cukup penuh. Dua orang yang sama-sama menyimpan sesuatu sebelum membaginya, pada saat yang sedikit berbeda dan dengan tempo yang lain, mudah saling terlewat: yang satu baru siap berbagi, yang lain baru siap menunggu.\n\nPada jari tengah, perbedaan tempo terlihat lagi. Sang anak punya pangkal tipis: dia pelan-pelan mulai berjalan dan makin kuat seiring waktu. Sang ayah punya bentuk campuran: awalnya bijak dalam apa yang dia lakukan, dan saat benar-benar perlu, tiba-tiba sangat langsung.\n\n# Pintu masuk dan tembok\n\nKepada sang anak, jalan masuk yang paling mudah adalah lewat porsi kecil dan kesabaran: jari-jari waduknya (jempol kaki) menunjukkan bahwa dia lebih suka membangun pelan-pelan daripada membagikan semuanya sekaligus. Tembok muncul terutama kalau ada tekanan untuk berbagi lebih cepat daripada yang bisa ditampung waduknya; kuku besar pada jempol kakinya melindunginya dengan baik, dia tidak membiarkan sembarang orang masuk ke dalam apa yang terjadi di dalam dirinya.\n\nPada sang ayah, pintu masuknya justru ada dalam percakapan tentang apa yang dia pikirkan secara rasional, yang keluar cukup lancar. Lebih sulit adalah percakapan tentang perasaan: di situ ada ruang antara jari pertama dan kedua, jadi bicara soal perasaan butuh lebih banyak waktu dan undangan. Jari keempat kanannya bisa menarik diri: begitulah dia menyesuaikan diri atau sementara menjaga jarak. Memaksa di situ kemungkinan besar malah menjadi bumerang.\n\nPada keduanya, kelingking adalah titik yang rentan: kuku yang kecil membuat mereka peka terhadap ketegangan atau ketidakpercayaan dari luar, sesuatu yang perlu disikapi dengan hati-hati, dari kedua sisi.\n\n# Jalan untuk saling mendekat\n\nJalan yang paling indah lewat tindakan. Keduanya punya jari tengah yang lurus: dalam bertindak mereka langsung, dan di situlah mereka paling cepat bertemu. Membuat sesuatu atau menjalankan sesuatu bersama akan mendekatkan mereka, tanpa perlu banyak bicara lebih dulu. Biarkan sang ayah menentukan tempo dalam hal berpikir, di sana dia cepat, dan biarkan sang anak menentukan tempo dalam hal merasakan, di sana dia butuh momennya sendiri. Dan karena keduanya punya kelingking yang peka, membantu kalau rasa tidak aman diucapkan saja dengan terbuka: siapa yang mengatakannya lebih dulu, membuatnya lebih mudah bagi yang lain. Hal kecil apa yang bisa kalian lakukan bersama bulan ini, di mana tak satu pun dari kalian perlu bicara, namun tetap bisa jadi lebih dekat satu sama lain?"
+ },
+ "tour": [
+  {
+   "titel": "Ambil foto",
+   "tekst": "Berdirilah tegak dengan berat badan di kedua kaki, lalu foto kaki telanjangmu lurus dari atas. Cahaya yang bagus, jari-jari kaki rileks."
+  },
+  {
+   "titel": "Cermin ikut melihat",
+   "tekst": "Cermin memperhatikan setiap jari: bentuk, posisi, kuku, dan garis dari yang terbesar ke yang terkecil. Ini memakan waktu sekitar satu menit."
+  },
+  {
+   "titel": "Periksa sendiri",
+   "tekst": "Untuk setiap jari kamu bisa melihat bentuk mana yang dicentang. Kamu melihatnya berbeda? Aktifkan atau matikan sebuah bentuk. Kamulah pembacanya."
+  },
+  {
+   "titel": "Cermin bercerita",
+   "tekst": "Tepat setelah analisis, cermin menceritakan apa yang dikatakan jari-jari kakimu, dengan gaya buku-bukunya. Kalau kesepuluh jari sudah kamu periksa, pembacaan lengkap terbuka."
+  },
+  {
+   "titel": "Ajukan pertanyaan",
+   "tekst": "Tentang pekerjaan, cinta, atau pilihan yang harus kamu ambil. Cermin menjawab dari jari-jari kakimu sendiri."
+  },
+  {
+   "titel": "Baca bersama",
+   "tekst": "Letakkan dua pasang kaki berdampingan: pasangan, orang tua dan anak, sahabat. Kamu melihat di mana kalian mirip, di mana kalian berbeda, dan bagaimana kalian bisa saling menjangkau."
+  }
+ ]
+}

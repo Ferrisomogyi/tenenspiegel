@@ -1,0 +1,90 @@
+{
+ "ui": {
+  "tab_solo": "Uma leitura",
+  "tab_duo": "Duo: filho e pai",
+  "sluit": "Fechar",
+  "zag": "O que o espelho viu",
+  "aangevinkt": "Assinalado",
+  "notitie": "Nota",
+  "lezing_kop": "A leitura alargada",
+  "vraag_kop": "Pergunta de exemplo",
+  "vraag_lbl": "Pergunta",
+  "antwoord_lbl": "Resposta do espelho",
+  "zoon": "Filho",
+  "vader": "Pai",
+  "foto_alt_zoon": "Foto de exemplo: pés descalços vistos de cima, em pé",
+  "foto_alt_vader": "Foto de exemplo: os pés do pai",
+  "duo_tabel": "Dedo a dedo, lado a lado",
+  "duo_verhaal_kop": "A história do duo",
+  "tour_knop": "Visita guiada em 6 passos",
+  "tour_stap": "Passo {n} de 6",
+  "tour_vorige": "Anterior",
+  "tour_volgende": "Seguinte",
+  "tour_klaar": "Concluir",
+  "tour_naar_demo": "Ver a leitura de exemplo",
+  "fors_teen": "Dedo robusto"
+ },
+ "solo": {
+  "kop": "Exemplo · uma leitura real",
+  "intro": "Uma leitura real, mostrada de forma anónima. Em cada dedo vês que formas foram assinaladas, o que o espelho viu e o que ele conta. No fim encontras uma pergunta de exemplo.",
+  "eerste": "Estes pés chamam logo a atenção pela sua regularidade: o direito e o esquerdo são quase um reflexo um do outro, desde os dedões largos, com a parte central larga, até aos dedos mindinhos, que ambos se viram para fora e terminam em ponta. A linha imaginária do maior para o mais pequeno desce de forma fluida nos dois pés, sem dedos que sobressaiam ou se afundem, sinal de que aqui nenhuma área ocupa o primeiro plano de forma exagerada nem é posta de lado. O que primeiro se nota é essa construção quase idêntica dos dois pés: pensar e sentir raramente parecem andar longe um do outro. Ao mesmo tempo, em quase todos os dedos há um pormenor subtil, um reservatório, uma ponta torcida, uma unha que parece um pouco diferente, que mostra que, por baixo desta calma e simetria, ainda se guarda bastante.",
+  "notities": {
+   "R1": "Começa normal na raiz, alarga-se no meio e termina outra vez normal: reservatório. Ponta redonda, unha grande.",
+   "R2": "Eixo direito, ponta ligeiramente angulosa. Os dedos descem de forma fluida numa só linha.",
+   "R3": "Começa fino na raiz e alarga em direção à ponta: base fina, a energia vai crescendo. Eixo direito.",
+   "R4": "Dedo robusto com unha mediana. Olha para trás apenas minimamente: o passado pesa pouco, largar consegue-se quando é preciso.",
+   "R5": "Os lados convergem numa ponta estreita: pontiagudo. A unha olha visivelmente de lado, para fora: torcido. Unha pequena em relação à falange. Sem dedo escondido, sem protuberância evidente antes da raiz, portanto sem mochilinha.",
+   "L1": "Começa normal na raiz, alarga-se no meio e termina outra vez normal: reservatório. Ponta redonda com uma parte plana (forma mista), unha grande.",
+   "L2": "Eixo direito, ponta ligeiramente angulosa. Os dedos descem de forma fluida numa só linha.",
+   "L3": "Começa fino na raiz e alarga em direção à ponta: base fina, a energia vai crescendo. Eixo direito.",
+   "L4": "Dedo robusto com unha mediana. Olha para trás apenas minimamente: o passado pesa pouco, largar consegue-se quando é preciso.",
+   "L5": "A ponta termina em bico: pontiagudo. A unha olha de lado para o bordo exterior: torcido. Unha pequena em relação à última falange. Sem dedo escondido por baixo do quarto dedo e sem protuberância antes da raiz (sem mochilinha)."
+  },
+  "tenen": {
+   "R1": "O teu dedão direito é redondo: embalas o que pensas com diplomacia e preferes não procurar o confronto. Mas no meio o dedo incha num reservatório: pensa-se e pondera-se mais do que alguma vez sai para fora, palavras e posições acumulam-se antes de serem partilhadas. A unha grande faz de ti alguém melhor a transmitir do que a receber: não deixas entrar qualquer pessoa no que pensas.",
+   "R2": "O teu segundo dedo direito está perfeitamente direito e segue com ordem a linha dos outros dedos: a tua força de vontade é organizada, não persegues objetivos que mudam a toda a hora. A ponta ligeiramente angulosa mostra que, quando chega a hora, és frontal sobre o que queres: sem desvios, sem trabalho a meio.",
+   "R3": "O teu terceiro dedo direito começa fino na raiz e fica mais largo em direção à ponta: uma base fina. A tua capacidade de ação não arranca logo, precisas de balanço, mas quando ganhas embalo a ação vai-se construindo sozinha e torna-se mais forte à medida que avanças.",
+   "R4": "O quarto dedo direito é robusto: há nele muita capacidade de manter o controlo sobre a tua própria situação. O facto de olhares ligeiramente para trás significa que o passado entra às vezes na forma como seguras ou largas; não te prende, largar consegue-se quando é preciso. A unha mediana mostra que estás bem equilibrado entre agarrar e permanecer recetivo ao que os outros te trazem.",
+   "R5": "O teu dedo mindinho direito é pontiagudo e torcido: a insegurança e o medo surgem em ti em rajadas curtas e agudas, e o que mostras disso não é necessariamente o que se passa por dentro: o rumo é corrigido pelo caminho. A unha pequena torna-te sensível neste campo: os estímulos de fora, tensão ou ameaça, entram com força.",
+   "L1": "À esquerda reencontra-se a mesma construção, com um toque próprio: o dedo é uma forma mista, redondo no início e com uma parte plana na ponta. Normalmente expressas os teus sentimentos com tato, mas quando chega a altura podes de repente ser totalmente frontal sobre o que sentes. Também aqui há um reservatório: sentimentos que se acumulam antes de saírem, e uma unha grande que os protege até esse momento chegar.",
+   "L2": "O segundo dedo esquerdo repete o direito: eixo direito, ponta angulosa, certinho na linha. O teu sentimento sai, quando é preciso, de forma direta e sem rodeios: não deixas dúvidas sobre o que sentes, mesmo que no dia a dia o embales normalmente com calma.",
+   "L3": "O mesmo padrão repete-se à esquerda: início fino, ponta larga. A tua criatividade e as tuas inspirações intuitivas vão brotando devagar e crescem aos poucos até à força plena, mais uma corrente que se constrói do que um relâmpago repentino.",
+   "L4": "Também o quarto dedo esquerdo é robusto: tens muito amor para dar, a pessoas, mas igualmente a um trabalho ou projeto a que te dedicas. O leve olhar para trás tinge esse amar com um toque de experiências anteriores, sem te bloquear; a unha mediana mantém o enviar e o receber em bom equilíbrio.",
+   "L5": "À esquerda repete-se essa imagem, agora para a confiança: pontiagudo significa que o otimismo e a confiança chegam por impulsos, como ondas, e a posição torcida mostra que aquilo que mostras sobre a tua confiança nem sempre coincide com o que vive por dentro. A unha pequena torna-te sensível aos sinais de confiança ou desconfiança dos outros, percebes isso depressa."
+  },
+  "samenhang": "O mais marcante nesta leitura é quão pouco o lado direito e o esquerdo diferem: quase dedo a dedo repete-se o mesmo padrão. Em ti, pensar e sentir raramente andam em conflito; o que pensas e o que sentes avançam em grande parte a par. Nos dedões vê-se isso de forma mais impressionante: ambos constroem um reservatório, à direita embalado em diplomacia, à esquerda com um lampejo de franqueza assim que chega a hora. Palavras e sentimentos são portanto primeiro guardados antes de serem partilhados. Nos segundos dedos essa imagem reforça-se: vontade e sentimento saem ambos de forma ordenada e, se necessário, certeira e direta. Os terceiros dedos mostram que tanto a tua ação como a tua criatividade precisam de aquecimento; a força cresce sozinha à medida que avanças. Nos quartos dedos vês dois dedos firmes e robustos: muita capacidade de agarrar e muita capacidade de amar, ambas com um toque de passado que acompanha sem dominar. E os mindinhos mostram, por fim, que tanto a tua insegurança como a tua confiança se apresentam em picos curtos e sensíveis, e que aquilo que mostras delas nem sempre é a história toda. O fio condutor é uma pessoa em quem cabeça e coração raramente se contradizem, e que em quase todos os campos guarda mais, em palavras, sentimentos, medo e confiança, do que à primeira vista chega ao exterior. O que aconteceria se deixasses esse reservatório acumulado de palavras e sentimentos transbordar com mais frequência, em porções mais pequenas, antes que ele próprio procure uma saída?",
+  "vraag": "Como posso mostrar melhor o que sinto, sem que de repente saia tudo de uma vez?",
+  "antwoord": "Os teus dedões já dão metade da resposta. Ambos têm um reservatório: pensamentos e sentimentos acumulam-se antes de saírem. À esquerda há ainda uma forma mista por cima, ou seja, primeiro com tato e depois, de repente, muito direto. É exatamente o momento que descreves: o reservatório está cheio e a franqueza assume o controlo.\n\nOs teus segundos dedos ajudam-te aqui. Estão direitos e na mesma linha: sabes muito bem o que queres e o que sentes, só ainda não saiu. E os teus terceiros dedos têm uma base fina: tu pões-te a andar começando, em pequeno, e depois cresce sozinho.\n\nExperimenta por isso em pequenas porções. Uma frase por dia sobre o que sentes, num momento calmo, antes de a pressão subir. As unhas grandes protegem-te, por isso escolhe tu a quem começar por dizer. Quem poderia ser a primeira pessoa a quem, esta semana, deixas transbordar uma pequena porção?"
+ },
+ "duo": {
+  "kop": "Exemplo · leitura em duo",
+  "intro": "Filho e pai, dois pares de pés lado a lado. Por baixo das fotos vês, dedo a dedo, as formas de ambos e, mais abaixo, a história do duo.",
+  "verhaal": "# Duas plantas lado a lado\n\n**O filho**\nO que logo chama a atenção nestes pés é a sua regularidade: o direito e o esquerdo são quase um reflexo um do outro, e a linha do dedão ao mindinho desce de forma fluida, sem exceções. Nele, pensar e sentir raramente andam em guerra. Ao mesmo tempo, os dois dedões têm um reservatório: aí guarda-se mais, em palavras e sentimento, do que à primeira vista chega ao exterior. Os quartos dedos são robustos: muita capacidade de agarrar e de amar. A ação e a criatividade (terceiros dedos) precisam de balanço antes de ganhar força, e a insegurança e a confiança (os mindinhos) surgem em picos curtos e agudos, em que o que se mostra nem sempre é a história toda.\n\n**O pai**\nNele, o que mais se nota é que os dedões são redondos e robustos, e mais curtos do que os restantes: nem toda a energia dos outros dedos tem o mesmo espaço para sair através desse dedão, com uma pitada de pressa. Os segundos dedos, pelo contrário, são longos e alargam em direção à ponta: muita força de vontade e sentimento, portanto. Estão ligeiramente curvados: sob pressão, ele acaba por ceder um pouco. À direita há pouco espaço entre o dedo 1 e o 2 (o pensamento sai com bastante facilidade), à esquerda há mais (falar de sentimentos leva mais tempo). Os quartos dedos olham um pouco para trás e estão algo afastados dos vizinhos; o direito pode além disso recolher-se: capacidade de adaptação e também uma certa distância própria. Os mindinhos são, tal como no filho, pontiagudos e torcidos.\n\n# Onde se parecem\n\nO ponto de contacto mais marcante está nos mindinhos: em ambos pontiagudos e torcidos, com uma unha pequena. A insegurança e a confiança surgem em pai e filho em ondas, e o que deixam ver disso não coincide totalmente com o que se passa por dentro. É algo que podem reconhecer um no outro por intuição, sem nunca o dizerem em voz alta. Também os terceiros dedos se tocam: em ambos um eixo direito, portanto naquilo que fazem são os dois diretos, sem rodeios. E em ambos um leve olhar para trás está presente no quarto dedo: o passado ainda pesa um pouco na forma como seguram ou largam, sem os prender.\n\n# Onde diferem\n\nA diferença mais clara está no dedão. No filho é um reservatório redondo e amplo: ele embala com diplomacia o que pensa e sente, e guarda-o primeiro antes de o partilhar. No pai, o dedão é pelo contrário mais curto do que os restantes, com uma pitada de pressa: nem toda a energia que circula nos outros dedos tem a mesma oportunidade de sair por esse dedo, e o que sai, sai mais depressa e de forma mais direta do que no filho. Enquanto o filho pesa e guarda primeiro por dentro, no pai algo pode escapar antes de estar bem assente.\n\nTambém o segundo dedo difere: no filho é direitíssimo e ordenado, com uma ponta angulosa que só se torna afiada quando chega a hora. No pai é longo, redondo e ligeiramente curvado: mais espaço para adaptação, um toque de ceder sob pressão. E à direita o pai tem pouco espaço entre o dedo 1 e o 2 (o pensamento sai com facilidade), enquanto à esquerda há espaço (falar de sentimentos demora mais): exatamente essa diferença entre partilhar depressa e esperar muito pode atritar com um filho que também só mostra o seu sentimento quando o reservatório está suficientemente cheio. Duas pessoas que guardam algo antes de o partilhar, num momento ligeiramente diferente e a outro ritmo, podem facilmente falhar-se: um está mesmo a precisar de partilhar, o outro de esperar.\n\nNo terceiro dedo vê-se de novo a diferença de ritmo. O filho tem uma base fina: arranca devagar e vai ficando mais forte aos poucos. O pai tem uma forma mista: primeiro com tato naquilo que faz e, quando chega a hora, de repente muito direto.\n\n# Portas de entrada e muros\n\nCom o filho entra-se mais facilmente em pequenas porções e com paciência: os seus dedos de reservatório (os dedões) mostram que ele prefere construir de forma gradual do que partilhar tudo de uma vez. Um muro surge sobretudo quando se faz pressão para partilhar mais depressa do que o reservatório permite; as unhas grandes nos dedões protegem-no bem nisso, não deixa entrar qualquer pessoa no que se passa dentro dele.\n\nCom o pai, uma porta de entrada está precisamente na conversa sobre o que ele pensa de forma racional, que sai com bastante facilidade. Mais difícil é a conversa sobre sentimentos: aí há espaço entre o primeiro e o segundo dedo, por isso falar de sentimentos precisa de mais tempo e de convite. O quarto dedo direito pode recolher-se: é assim que ele se adapta ou toma temporariamente distância. Forçar aí provavelmente produz o efeito contrário.\n\nEm ambos, os mindinhos formam um ponto vulnerável: as unhas pequenas tornam-nos sensíveis à tensão ou à desconfiança vindas de fora, algo a tratar com cuidado, de ambos os lados.\n\n# Caminhos um para o outro\n\nO caminho mais bonito passa pelo fazer. Ambos têm um terceiro dedo direito: no fazer são diretos e é aí que mais depressa se encontram. Criar ou empreender algo em conjunto aproxima-os, sem que seja preciso dizer muito primeiro. Que o pai dê o ritmo no pensar, onde ele é rápido, e que o filho dê o ritmo no sentir, onde precisa do seu próprio momento. E como ambos têm mindinhos sensíveis, ajuda dizer a insegurança simplesmente em voz alta: quem o diz primeiro facilita a tarefa ao outro. Que pequena coisa poderiam fazer juntos este mês, em que nenhum dos dois precise de falar para ainda assim ficarem mais perto um do outro?"
+ },
+ "tour": [
+  {
+   "titel": "Tira uma foto",
+   "tekst": "Fica de pé, com o peso nos dois pés, e fotografa os teus pés descalços diretamente de cima. Boa luz, dedos relaxados."
+  },
+  {
+   "titel": "O espelho olha contigo",
+   "tekst": "O espelho observa cada dedo: forma, posição, unha e a linha do maior para o mais pequeno. Demora cerca de um minuto."
+  },
+  {
+   "titel": "Confere tu mesmo",
+   "tekst": "Em cada dedo vês que formas foram assinaladas. Vês de outra maneira? Liga ou desliga uma forma. Tu continuas a ser o leitor."
+  },
+  {
+   "titel": "O espelho conta",
+   "tekst": "Logo a seguir à análise, o espelho conta o que dizem os teus dedos, ao estilo dos livros. Quando tiveres conferido os dez dedos, fica disponível a leitura alargada."
+  },
+  {
+   "titel": "Faz uma pergunta",
+   "tekst": "Sobre trabalho, amor ou uma escolha que tens de fazer. O espelho responde a partir dos teus próprios dedos."
+  },
+  {
+   "titel": "Lê a dois",
+   "tekst": "Põe dois pares de pés lado a lado: parceiros, pais e filhos, amigos. Vês onde se parecem, onde diferem e como se alcançam."
+  }
+ ]
+}

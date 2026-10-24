@@ -1,0 +1,90 @@
+{
+ "ui": {
+  "tab_solo": "En läsning",
+  "tab_duo": "Duo: son och far",
+  "sluit": "Stäng",
+  "zag": "Vad spegeln såg",
+  "aangevinkt": "Ikryssat",
+  "notitie": "Anteckning",
+  "lezing_kop": "Den fördjupade läsningen",
+  "vraag_kop": "Exempelfråga",
+  "vraag_lbl": "Fråga",
+  "antwoord_lbl": "Spegelns svar",
+  "zoon": "Son",
+  "vader": "Far",
+  "foto_alt_zoon": "Exempelfoto: bara fötter sedda uppifrån, stående",
+  "foto_alt_vader": "Exempelfoto: faderns fötter",
+  "duo_tabel": "Tå för tå bredvid varandra",
+  "duo_verhaal_kop": "Duo-berättelsen",
+  "tour_knop": "Rundvandring i 6 steg",
+  "tour_stap": "Steg {n} av 6",
+  "tour_vorige": "Föregående",
+  "tour_volgende": "Nästa",
+  "tour_klaar": "Klart",
+  "tour_naar_demo": "Se exempelläsningen",
+  "fors_teen": "Kraftig tå"
+ },
+ "solo": {
+  "kop": "Exempel · en äkta läsning",
+  "intro": "En äkta läsning, visad anonymt. För varje tå ser du vilka former som är ikryssade, vad spegeln såg och vad den berättar. Längst ned finns en exempelfråga.",
+  "eerste": "De här fötterna sticker genast ut genom sin jämnhet: höger och vänster är nästan varandras spegelbild, från de breda stortårna med bred mittdel till de små tårna, som båda vrider sig utåt och slutar spetsigt. Den tänkta linjen från störst till minst sluttar mjukt nedåt på båda fötterna, utan tår som sticker upp eller sjunker undan, ett tecken på att inget område här tar överdrivet stor plats eller trycks undan. Det som först fångar blicken är den nästan identiska uppbyggnaden hos båda fötterna: tanke och känsla verkar sällan ligga långt ifrån varandra här. Samtidigt finns i nästan varje tå en diskret detalj, en reservoar, en vriden topp, en nagel som ser lite annorlunda ut, som visar att under allt det lugnet och den symmetrin hålls ändå en hel del kvar inombords.",
+  "notities": {
+   "R1": "Börjar normalt vid roten, breddas på mitten och slutar normalt igen: reservoar. Rund topp, stor nagel.",
+   "R2": "Rak axel, toppen lite kantig. Tårna sluttar mjukt på en linje.",
+   "R3": "Börjar smal vid roten och blir bredare mot toppen: smal bas, energin byggs upp. Rak axel.",
+   "R4": "Kraftig tå med genomsnittlig nagel. Blickar bara minimalt tillbaka: det förflutna spelar en lätt roll, att släppa taget går om det behövs.",
+   "R5": "Sidorna löper mot en smal topp: spetsig tå. Nagelytan blickar tydligt snett utåt: vriden tå. Nageln är liten i förhållande till tåleden. Ingen undangömd tå, ingen tydlig bula framför roten, alltså ingen liten ryggsäck.",
+   "L1": "Börjar normalt vid roten, breddas på mitten och slutar normalt igen: reservoar. Toppen rund med ett platt parti (blandform), stor nagel.",
+   "L2": "Rak axel, toppen lite kantig. Tårna sluttar mjukt på en linje.",
+   "L3": "Börjar smal vid roten och blir bredare mot toppen: smal bas, energin byggs upp. Rak axel.",
+   "L4": "Kraftig tå med genomsnittlig nagel. Blickar bara minimalt tillbaka: det förflutna spelar en lätt roll, att släppa taget går om det behövs.",
+   "L5": "Toppen löper spetsigt: spetsig tå. Nageln blickar snett mot ytterkanten: vriden tå. Nageln är liten i förhållande till sista tåleden. Ingen undangömd tå under tå 4 och ingen bula framför roten (ingen liten ryggsäck)."
+  },
+  "tenen": {
+   "R1": "Din högra stortå är rund: du paketerar det du tänker diplomatiskt och söker helst inte konfrontation. Men på mitten sväller tån till en reservoar: det tänks och övervägs mer än det någonsin kommer ut, ord och ståndpunkter samlas på hög innan de delas. Den stora nageln gör dig bättre på att sända än att ta emot: du släpper inte in vem som helst i det du tänker.",
+   "R2": "Din högra andra tå står spikrak och följer snyggt linjen från de andra tårna: din viljekraft är ordnad, du jagar inga växlande mål. Den lätt kantiga toppen visar att du, när det väl gäller, är rakt på sak med vad du vill: inga omvägar, inget halvdant arbete.",
+   "R3": "Din högra mellersta tå börjar smal vid roten och blir bredare mot toppen: en smal bas. Din handlingskraft kommer inte igång direkt, du behöver ett försprång, men när du väl kommit i gång byggs handlingen upp av sig själv och blir kraftfullare ju längre du kommer.",
+   "R4": "Den högra fjärde tån är kraftig: det finns stor förmåga att hålla grepp om den egna situationen. Att du blickar lätt tillbaka betyder att det förflutna ibland spelar med i hur du håller fast eller släpper. Det binder dig inte, att släppa taget går när det behövs. Den genomsnittliga nageln visar att du har god balans mellan att hålla fast och att vara öppen för det andra bjuder på.",
+   "R5": "Din högra lilltå är spetsig och vriden: osäkerhet och oro stiger upp hos dig i korta, vassa svallningar, och det du visar av dem är inte nödvändigtvis det som pågår inombords: kursen justeras under färden. Den lilla nageln visar känslighet på det här området: intryck utifrån, spänning eller hot, kommer in hårt.",
+   "L1": "Till vänster ser du samma uppbyggnad igen, med en egen vri: tån är en blandform, rund i början med ett platt parti vid toppen. Du lägger fram dina känslor oftast med takt, men när det väl gäller kan du plötsligt bli rakt på sak om vad du känner. Också här finns en reservoar: känslor som samlas innan de kommer ut, och en stor nagel som skärmar av dem tills stunden är inne.",
+   "L2": "Vänster andra tå gör som den högra: rak axel, kantig topp, snyggt på linjen. Din känsla kommer ut, när det väl gäller, direkt och ogenerat: du lämnar inget tvivel om vad du känner, även om du i vardagen oftast paketerar det lugnt.",
+   "L3": "Samma mönster ser du till vänster: smal början, bred topp. Din kreativitet och dina intuitiva ingivelser bubblar långsamt upp och växer gradvis till full kraft, snarare en uppbyggande ström än ett plötsligt blixtljus.",
+   "L4": "Också den vänstra fjärde tån är kraftig: du har mycket kärlek att ge, till människor, men lika gärna till ett arbete eller ett projekt du går in för. Den lätta tillbakablicken färgar kärleken med en antydan av tidigare erfarenheter, utan att den blockerar dig. Den genomsnittliga nageln håller sändande och mottagande fint i balans.",
+   "L5": "Till vänster upprepas bilden, den här gången för tillit: spetsig betyder att optimism och tillit kommer som impulser, som vågor, och den vridna ställningen visar att det du visar utåt om din tillit inte alltid stämmer med det som lever inombords. Den lilla nageln gör dig känslig för andras signaler om tillit eller misstro, det känner du snabbt av."
+  },
+  "samenhang": "Det mest slående i den här läsningen är hur lite höger och vänster skiljer sig åt: nästan tå för tå upprepas samma mönster. Tanke och känsla ligger sällan i delo hos dig, det du tänker och det du känner går till stor del hand i hand. Vid stortårna syns det tydligast: båda bygger upp en reservoar, den högra paketerad i diplomati, den vänstra med ett blixtljus av rakhet så fort det väl gäller. Både ord och känslor hålls alltså först inne innan de delas. Vid andra tårna förstärks bilden: vilja och känsla kommer båda ordnat ut och, när det behövs, skarpt och direkt. De mellersta tårna visar att både din handling och din kreativitet behöver en uppvärmning, kraften växer av sig själv ju längre du kommer. Vid de fjärde tårna ser du två rejäla, kraftiga tår: stor förmåga att hålla fast och stor förmåga att älska, båda med en släng av det förflutna som spelar med utan att dominera. Och lilltårna visar till sist att både din osäkerhet och din tillit kommer i korta, känsliga toppar, och att det du visar av dem inte alltid är hela historien. Den röda tråden är en människa hos vilken huvud och hjärta sällan säger emot varandra, och som på nästan alla plan, i ord, känslor, oro och tillit, håller mer inombords än som syns vid första anblicken. Vad skulle hända om du lät den uppbyggda reservoaren av ord och känslor rinna över oftare, i mindre mängder, innan den av sig själv söker en utväg?",
+  "vraag": "Hur kan jag bättre visa vad jag känner, utan att allt kommer ut på en gång?",
+  "antwoord": "Dina stortår ger redan halva svaret. Båda har en reservoar: tankar och känslor samlas på hög innan de kommer ut. Till vänster ligger dessutom en blandform ovanpå, alltså först takt och sedan plötsligt mycket rakt på sak. Det är precis det ögonblick du beskriver: reservoaren är full och rakheten tar över.\n\nDina tår nummer två hjälper dig här. De står rakt och på en linje: du vet mycket väl vad du vill och vad du känner, det har bara inte kommit ut än. Och dina mellersta tår har en smal bas: du kommer i gång genom att börja, smått, och sedan växer det av sig själv.\n\nProva därför i små portioner. En mening om dagen om vad du känner, i ett lugnt ögonblick, innan trycket stiger. De stora naglarna skyddar dig, så välj själv vem du börjar med. Vem skulle kunna bli den första som du den här veckan låter få en liten portion som rinner över?"
+ },
+ "duo": {
+  "kop": "Exempel · duo-läsning",
+  "intro": "Son och far, två par fötter bredvid varandra. Under fotona ser du tå för tå formerna hos båda, och därunder duo-berättelsen.",
+  "verhaal": "# Två ritningar bredvid varandra\n\n**Sonen**\nDet som genast faller i ögonen hos de här fötterna är deras jämnhet: höger och vänster är nästan varandras spegelbild, och linjen från stortå till lilltå sluttar mjukt nedåt utan utstickare. Tanke och känsla ligger sällan i delo hos honom. Samtidigt har båda stortårna en reservoar: där hålls mer kvar, i ord och känsla, än vad som syns vid första anblicken. De fjärde tårna är kraftiga: stor förmåga att hålla fast och älska. Handling och kreativitet (de mellersta tårna) behöver ett försprång innan de får kraft, och osäkerhet såväl som tillit (lilltårna) kommer i korta, vassa toppar, där det som visas inte alltid är hela historien.\n\n**Fadern**\nHos honom syns framför allt att stortårna är runda och kraftiga, och kortare än de andra: all energi från de andra tårna får inte lika stort utrymme att komma ut via den stortån, med en släng av brådska. Andra tårna är däremot långa och blir bredare mot toppen: mycket viljekraft och känsla alltså. De är lätt böjda: under press ger han ändå efter lite. Till höger finns lite utrymme mellan tå 1 och 2 (tanken kommer ut ganska lätt), till vänster däremot finns det (att prata om känslor tar längre tid). De fjärde tårna blickar en aning tillbaka och står lite för sig själva från grannarna, och den högra kan dessutom dra sig in: anpassningsförmåga, och också ett visst eget avstånd. Lilltårna är, precis som hos sonen, spetsiga och vridna.\n\n# Där de liknar varandra\n\nDen mest träffande beröringspunkten finns i lilltårna: hos båda spetsiga och vridna, med en liten nagel. Osäkerhet och tillit kommer hos far och son i vågor, och det de visar av dem täcker inte helt det som pågår inombords. Det är något de, utan att någonsin säga det högt, intuitivt kan känna igen hos varandra. Även de mellersta tårna möts: hos båda en rak axel, så i det de gör är de båda direkta, utan omvägar. Och hos båda spelar en lätt tillbakablick med vid fjärde tån: det förflutna är med lite i hur de håller fast eller släpper, utan att binda dem.\n\n# Där de skiljer sig åt\n\nDen tydligaste skillnaden finns vid stortån. Hos sonen är den en rund, rymlig reservoar: han paketerar det han tänker och känner diplomatiskt, och håller det först inne innan det delas. Hos fadern är stortån i stället kortare än de andra, med en släng av brådska: all energi som rör sig i de andra tårna får inte lika stor chans att ta sig ut via den, och det som kommer ut, kommer snabbare och rakare än hos sonen. Där sonen först väger och bevarar inombords kan något hos fadern slippa ut innan det riktigt hunnit mogna.\n\nÄven andra tån skiljer sig: hos sonen spikrak och ordnad, med en kantig topp som först blir skarp när det väl gäller. Hos fadern lång, rund och lätt böjd: mer utrymme för anpassning, en släng av att ge efter under press. Och till höger finns hos fadern lite utrymme mellan tå 1 och 2 (tanken kommer lätt), medan det till vänster finns utrymme (att prata om känslor tar längre tid). Just den skillnaden mellan att dela snabbt och att vänta länge kan skava mot en son som också visar sin känsla först när reservoaren är full nog. Två människor som båda håller något tillbaka innan de delar det, vid ett något annorlunda ögonblick och i ett annat tempo, kan lätt missa varandra: den ene är precis redo att dela, den andre precis redo att vänta.\n\nVid mellersta tån syns skillnaden i tempo. Sonen har en smal bas: han kommer långsamt i gång och blir gradvis kraftfullare. Fadern har en blandform: först taktfull i det han gör, och när det väl gäller plötsligt mycket direkt.\n\n# Ingångar och murar\n\nHos sonen kommer man lättast in i små portioner och med tålamod: hans reservoartår (stortårna) visar att han hellre bygger upp stadigt än delar allt på en gång. En mur uppstår framför allt när man pressar honom att dela snabbare än reservoaren tillåter. De stora naglarna på hans stortår skyddar honom väl i det, han släpper inte in vem som helst i det som pågår.\n\nHos fadern ligger en ingång i samtalet om det han tänker rationellt, det kommer ut ganska lätt. Svårare är känslosamtalet: där finns utrymme mellan första och andra tån, så att prata om känslor behöver mer tid och en inbjudan. Hans högra fjärde tå kan dra sig in: så anpassar han sig eller tar tillfälligt avstånd. Att forcera fungerar där troligen åt motsatt håll.\n\nHos båda utgör lilltårna en sårbar punkt: de små naglarna gör dem känsliga för spänning eller misstro utifrån, något att hantera varsamt, från båda håll.\n\n# Vägar till varandra\n\nDen finaste vägen går genom görandet. Båda har en rak mellersta tå: i görandet är de direkta och hittar varandra snabbast. Att göra eller företa sig något tillsammans för dem närmare varandra, utan att mycket först behöver sägas. Låt fadern ange tempot när det gäller att tänka, där är han snabb, och låt sonen ange tempot när det gäller att känna, där behöver han sitt eget ögonblick. Och eftersom båda har känsliga lilltår hjälper det att helt enkelt säga osäkerheten högt: den som säger den först gör det lättare för den andre. Vilken liten sak skulle ni kunna göra tillsammans den här månaden, där ingen av er behöver prata för att ändå komma närmare varandra?"
+ },
+ "tour": [
+  {
+   "titel": "Ta ett foto",
+   "tekst": "Ställ dig upp med vikten på båda fötterna och fotografera dina bara fötter rakt uppifrån. Bra ljus, avslappnade tår."
+  },
+  {
+   "titel": "Spegeln tittar med",
+   "tekst": "Spegeln granskar varje tå: form, ställning, nagel och linjen från stor till liten. Det tar ungefär en minut."
+  },
+  {
+   "titel": "Gå igenom det själv",
+   "tekst": "För varje tå ser du vilka former som är ikryssade. Ser du det annorlunda? Slå på eller av en form. Du förblir läsaren."
+  },
+  {
+   "titel": "Spegeln berättar",
+   "tekst": "Direkt efter analysen berättar spegeln vad dina tår säger, i böckernas stil. Har du gått igenom alla tio tårna öppnas den fördjupade läsningen."
+  },
+  {
+   "titel": "Ställ en fråga",
+   "tekst": "Om jobb, kärlek eller ett val du måste göra. Spegeln svarar utifrån dina egna tår."
+  },
+  {
+   "titel": "Läs tillsammans",
+   "tekst": "Lägg två par fötter bredvid varandra: partners, förälder och barn, vänner. Du ser var ni liknar varandra, var ni skiljer er åt och hur ni når varandra."
+  }
+ ]
+}

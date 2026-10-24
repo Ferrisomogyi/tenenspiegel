@@ -1,0 +1,90 @@
+{
+ "ui": {
+  "tab_solo": "O citire",
+  "tab_duo": "Duo: fiu și tată",
+  "sluit": "Închide",
+  "zag": "Ce a văzut oglinda",
+  "aangevinkt": "Bifat",
+  "notitie": "Notă",
+  "lezing_kop": "Citirea extinsă",
+  "vraag_kop": "Întrebare exemplu",
+  "vraag_lbl": "Întrebare",
+  "antwoord_lbl": "Răspunsul oglinzii",
+  "zoon": "Fiu",
+  "vader": "Tată",
+  "foto_alt_zoon": "Fotografie exemplu: picioare goale văzute de sus, în picioare",
+  "foto_alt_vader": "Fotografie exemplu: picioarele tatălui",
+  "duo_tabel": "Deget lângă deget",
+  "duo_verhaal_kop": "Povestea duo",
+  "tour_knop": "Tur în 6 pași",
+  "tour_stap": "Pasul {n} din 6",
+  "tour_vorige": "Înapoi",
+  "tour_volgende": "Înainte",
+  "tour_klaar": "Gata",
+  "tour_naar_demo": "Vezi citirea exemplu",
+  "fors_teen": "Deget viguros"
+ },
+ "solo": {
+  "kop": "Exemplu · o citire reală",
+  "intro": "O citire reală, prezentată anonim. Pentru fiecare deget vezi ce forme au fost bifate, ce a văzut oglinda și ce spune ea. La final găsești o întrebare exemplu.",
+  "eerste": "Aceste picioare se remarcă imediat prin echilibrul lor: dreptul și stângul sunt aproape o imagine în oglindă unul al celuilalt, de la degetele mari late, cu partea de mijloc lată, până la degetele mici, care se răsucesc amândouă spre exterior și se termină ascuțit. Linia imaginară de la cel mare la cel mic coboară lin pe ambele picioare, fără degete care ies în față sau se afundă, semn că aici nicio zonă nu domină în mod exagerat și nu este împinsă în umbră. Ceea ce atrage prima dată atenția este construcția aproape identică a celor două picioare: gândul și simțirea par să se afle rareori departe unul de altul. În același timp, aproape în fiecare deget se ascunde un detaliu discret, un rezervor, un vârf răsucit, o unghie care arată puțin altfel, și acesta arată că sub liniștea și simetria aceasta se ține în sine destul de multe.",
+  "notities": {
+   "R1": "Începe normal la rădăcină, se lărgește la mijloc și se termină din nou normal: rezervor. Vârf rotund, unghie mare.",
+   "R2": "Ax drept, vârf ușor colțuros. Degetele coboară lin pe o singură linie.",
+   "R3": "Începe îngust la rădăcină și se lărgește spre vârf: bază subțire, energia crește pe parcurs. Ax drept.",
+   "R4": "Deget viguros cu unghie medie. Privește înapoi doar foarte puțin: trecutul contează ușor, desprinderea reușește la nevoie.",
+   "R5": "Laturile se îngustează spre un vârf: deget ascuțit. Suprafața unghiei privește vizibil oblic spre exterior: deget răsucit. Unghia este mică în raport cu ultima falangă. Fără deget care se ascunde, fără o umflătură clară înaintea rădăcinii, deci fără rucsăcel.",
+   "L1": "Începe normal la rădăcină, se lărgește la mijloc și se termină din nou normal: rezervor. Vârf rotund cu o porțiune plată (formă mixtă), unghie mare.",
+   "L2": "Ax drept, vârf ușor colțuros. Degetele coboară lin pe o singură linie.",
+   "L3": "Începe îngust la rădăcină și se lărgește spre vârf: bază subțire, energia crește pe parcurs. Ax drept.",
+   "L4": "Deget viguros cu unghie medie. Privește înapoi doar foarte puțin: trecutul contează ușor, desprinderea reușește la nevoie.",
+   "L5": "Vârful se termină ascuțit: deget ascuțit. Unghia privește oblic spre marginea exterioară: deget răsucit. Unghia este mică în raport cu ultima falangă. Fără deget care se ascunde sub degetul 4 și fără umflătură înaintea rădăcinii (fără rucsăcel)."
+  },
+  "tenen": {
+   "R1": "Degetul tău mare de la piciorul drept este rotund: îți împachetezi gândurile cu diplomație și preferi să eviți confruntarea. La mijloc însă degetul se umflă într-un rezervor: se gândește și se cântărește mai mult decât iese vreodată în afară, cuvintele și punctele de vedere se strâng înainte de a fi împărtășite. Unghia mare arată că ești mai priceput la a transmite decât la a primi: nu lași pe oricine să intre în ce gândești.",
+   "R2": "Al doilea deget de la piciorul drept stă perfect drept și urmează fidel linia celorlalte degete: voința ta este ordonată, nu alergi după ținte care se schimbă mereu. Vârful ușor colțuros arată că, la nevoie, ești foarte direct în privința a ceea ce vrei: fără ocolișuri, fără lucruri făcute pe jumătate.",
+   "R3": "Degetul mijlociu de la piciorul drept începe îngust la rădăcină și se lărgește spre vârf: bază subțire. Forța ta de acțiune nu pornește imediat, ai nevoie de elan, dar odată pornit, ritmul se construiește de la sine și devine tot mai puternic pe măsură ce înaintezi.",
+   "R4": "Al patrulea deget de la piciorul drept este viguros: ai multă capacitate de a ține frâiele propriei tale situații. Faptul că privești ușor înapoi înseamnă că trecutul contează uneori în felul în care ții sau lași să plece. Nu te ține pe loc, desprinderea reușește atunci când e nevoie. Unghia medie arată că ești bine echilibrat între a ține și a rămâne deschis la ce aduc ceilalți.",
+   "R5": "Degetul tău mic de la piciorul drept este ascuțit și răsucit: nesiguranța și teama apar la tine în valuri scurte și ascuțite, iar ce arăți din ele nu este neapărat ce se petrece înăuntru: direcția se ajustează pe drum. Unghia mică indică sensibilitate în acest domeniu: stimulii din exterior, tensiunea sau amenințarea, pătrund tare.",
+   "L1": "În stânga regăsești aceeași construcție, cu o nuanță proprie: degetul este o formă mixtă, rotundă la început, cu o porțiune plată spre vârf. Îți exprimi de obicei sentimentele cu tact, dar la nevoie poți deveni brusc foarte direct în privința a ceea ce simți. Și aici există un rezervor: sentimente care se strâng înainte de a ieși, și o unghie mare care le apără până când vine momentul.",
+   "L2": "Al doilea deget de la piciorul stâng le face ca pe cel din dreapta: ax drept, vârf colțuros, ordonat pe linie. Simțirea ta iese, la nevoie, direct și fără ocolișuri: nu lași nicio îndoială asupra a ceea ce simți, chiar dacă în viața de zi cu zi o împachetezi de obicei liniștit.",
+   "L3": "Același tipar apare și în stânga: început îngust, vârf larg. Creativitatea și inspirațiile tale intuitive se ridică încet și cresc treptat până la putere deplină, mai degrabă un curent care se construiește decât o străfulgerare bruscă.",
+   "L4": "Și al patrulea deget de la piciorul stâng este viguros: ai foarte multă dragoste de dat, oamenilor, dar la fel de bine unei munci sau unui proiect în care te angajezi. Privirea ușoară înapoi dă iubirii tale o umbră de experiențe mai vechi, fără să te blocheze. Unghia medie ține în echilibru frumos transmiterea și primirea.",
+   "L5": "În stânga se repetă imaginea, de data aceasta pentru încredere: ascuțit înseamnă că optimismul și încrederea vin în impulsuri, ca niște valuri, iar poziția răsucită arată că ceea ce arăți în exterior despre încrederea ta nu coincide mereu cu ce trăiește înăuntru. Unghia mică indică o percepție fină a semnalelor de încredere sau de neîncredere ale celorlalți: simți asta repede."
+  },
+  "samenhang": "Cel mai izbitor lucru în această citire este cât de puțin diferă dreapta de stânga: aproape deget cu deget se repetă același tipar. Gândul și simțirea ta rareori sunt în conflict: ce gândești și ce simți merg în mare parte în aceeași direcție. La degetele mari se vede cel mai bine: amândouă construiesc un rezervor, cel din dreapta împachetat în diplomație, cel din stânga cu o străfulgerare de directețe când vine momentul. Astfel, atât cuvintele, cât și sentimentele sunt mai întâi ținute înăuntru înainte de a fi împărtășite. La al doilea deget imaginea se întărește: voința și simțirea ies amândouă ordonat și, la nevoie, tăios și direct. Degetele mijlocii arată că atât acțiunea, cât și creativitatea ta au nevoie de încălzire; forța crește de la sine pe măsură ce mergi mai departe. La al patrulea deget vezi două degete solide, viguroase: multă capacitate de a ține și multă capacitate de a iubi, ambele cu o umbră de trecut care contează fără să domine. Iar degetele mici arată, în sfârșit, că atât nesiguranța, cât și încrederea ta se prezintă în vârfuri scurte, sensibile, și că ce arăți din ele nu este mereu întreaga poveste. Firul roșu este un om la care capul și inima rareori se contrazic și care, aproape pe fiecare plan, în cuvinte, sentimente, teamă și încredere, ține în sine mai mult decât se vede la prima vedere. Ce s-ar întâmpla dacă ai lăsa acest rezervor de cuvinte și sentimente să se reverse mai des, în porții mai mici, înainte să-și găsească singur o ieșire?",
+  "vraag": "Cum pot să arăt mai bine ce simt, fără să iasă totul deodată?",
+  "antwoord": "Degetele tale mari îți dau deja jumătate din răspuns. Amândouă au un rezervor: gândurile și sentimentele se adună înainte să iasă în afară. În stânga mai e și o formă mixtă deasupra, deci mai întâi tact și apoi, brusc, foarte multă directețe. Exact momentul pe care îl descrii: rezervorul e plin și directețea preia controlul.\n\nAl doilea deget te ajută aici. Stă drept și pe aceeași linie cu celelalte: știi foarte bine ce vrei și ce simți, doar că încă nu a ieșit. Iar degetele tale mijlocii au o bază subțire: tu pornești începând, mic, și apoi crește de la sine.\n\nÎncearcă deci în porții mici. O frază pe zi despre ce simți, într-un moment liniștit, înainte să crească presiunea. Unghiile mari te protejează, așa că alege tu cu cine începi. Cine ar putea fi primul în fața căruia, săptămâna aceasta, lași să se reverse o mică porție?"
+ },
+ "duo": {
+  "kop": "Exemplu · citire duo",
+  "intro": "Fiu și tată, două perechi de picioare una lângă alta. Sub fotografii vezi, deget cu deget, formele ambilor, iar mai jos povestea duo.",
+  "verhaal": "# Două planuri una lângă alta\n\n**Fiul**\nCe se observă imediat la aceste picioare este echilibrul lor: dreptul și stângul sunt aproape o imagine în oglindă unul al celuilalt, iar linia de la degetul mare la cel mic coboară lin, fără ieșiri din rând. Gândul și simțirea rareori îl trag în direcții opuse. În același timp, ambele degete mari au un rezervor: acolo se ține mai mult, în cuvinte și în simțire, decât iese la prima vedere. Al patrulea deget este viguros pe ambele picioare: multă capacitate de a ține și de a iubi. Acțiunea și creativitatea (degetele mijlocii) au nevoie de elan înainte să prindă putere, iar nesiguranța și încrederea (degetele mici) apar în vârfuri scurte și ascuțite, în care ce se arată nu este mereu întreaga poveste.\n\n**Tatăl**\nLa el se remarcă mai ales că degetele mari sunt rotunde și viguroase, și mai scurte decât restul: nu toată energia celorlalte degete primește la fel de mult loc să iasă prin acest deget mare, cu un strop de grabă. Al doilea deget este, dimpotrivă, lung și se lărgește spre vârf: multă voință și simțire, deci. Este ușor încovoiat: sub presiune cedează totuși puțin. În dreapta e puțin spațiu între degetul 1 și 2 (gândul iese destul de ușor), în stânga, dimpotrivă, există (a vorbi despre ce simte durează mai mult). Al patrulea deget privește puțin înapoi și stă oarecum separat de vecini; cel din dreapta se poate și retrage: capacitate de adaptare și, totodată, o anumită distanță proprie. Degetele mici sunt, ca la fiul său, ascuțite și răsucite.\n\n# Unde se aseamănă\n\nCel mai izbitor punct de întâlnire se află la degetele mici: la amândoi ascuțite și răsucite, cu unghie mică. Nesiguranța și încrederea vin la tată și la fiu în valuri, iar ce arată din ele nu acoperă întocmai ce se petrece înăuntru. Este ceva ce pot recunoaște intuitiv unul la celălalt, fără să o spună vreodată cu voce tare. Și degetele mijlocii se întâlnesc: la amândoi axul este drept, deci în ce fac sunt amândoi direcți, fără ocolișuri. Iar la amândoi contează o ușoară privire înapoi la al patrulea deget: trecutul mai are un cuvânt de spus în felul în care țin sau lasă să plece, fără să-i țină pe loc.\n\n# Unde se deosebesc\n\nCea mai clară deosebire se află la degetul mare. La fiu este un rezervor rotund, încăpător: își împachetează cu diplomație ce gândește și ce simte și le ține mai întâi înăuntru înainte de a le împărtăși. La tată, degetul mare este, dimpotrivă, mai scurt decât restul, cu un strop de grabă: nu toată energia care se agită în celelalte degete are aceeași șansă să iasă prin el, iar ce iese, iese mai repede și mai direct decât la fiul său. Dacă fiul cântărește și păstrează mai întâi înăuntru, la tată poate să scape ceva înainte să fi ajuns bine la maturitate.\n\nȘi al doilea deget diferă: la fiu perfect drept și ordonat, cu un vârf colțuros care devine ascuțit doar când vine momentul. La tată lung, rotund și ușor încovoiat: mai mult loc de adaptare, un pic de cedare sub presiune. Iar în dreapta tatăl are puțin spațiu între degetul 1 și 2 (gândul iese ușor), în timp ce în stânga există spațiu (a vorbi despre simțire durează mai mult). Tocmai această deosebire între împărtășirea rapidă și așteptarea lungă poate să scârțâie în fața unui fiu care își arată și el simțirea abia când rezervorul e destul de plin. Doi oameni care țin amândoi ceva înainte să-l împărtășească, într-un moment puțin diferit și într-un alt ritm, se pot rata ușor: unul tocmai e gata să împărtășească, celălalt tocmai e gata să aștepte.\n\nLa degetul mijlociu se vede deosebirea de ritm. Fiul are o bază subțire: pornește încet și devine treptat mai puternic. Tatăl are o formă mixtă: mai întâi discret în ce face și, când vine momentul, brusc foarte direct.\n\n# Uși și ziduri\n\nLa fiu intri cel mai ușor în porții mici și cu răbdare: degetele lui cu rezervor (degetele mari) arată că preferă să construiască treptat decât să împărtășească totul deodată. Un zid apare mai ales când se pune presiune să împărtășească mai repede decât permite rezervorul; unghiile mari de la degetele lui mari îl protejează bine în acest sens, nu lasă pe oricine să intre în ce se petrece înăuntru.\n\nLa tată o ușă se află în discuția despre ce gândește rațional, care iese destul de ușor. Mai greu este discuția despre simțire: acolo e spațiu între primul și al doilea deget, deci a vorbi despre simțire are nevoie de mai mult timp și de o invitație. Degetul lui al patrulea din dreapta se poate retrage: așa se adaptează sau își ia temporar distanță. Dacă forțezi acolo, probabil are efectul opus.\n\nLa amândoi degetele mici sunt un loc vulnerabil: unghiile mici le fac sensibile la tensiune sau neîncredere din afară, ceva de tratat cu grijă, din ambele părți.\n\n# Drumuri unul spre celălalt\n\nCel mai frumos drum trece prin a face. Amândoi au degetul mijlociu drept: în a face sunt direcți și se găsesc cel mai repede. A crea sau a întreprinde ceva împreună îi apropie, fără să fie nevoie să se spună mai întâi multe. Lasă-l pe tată să dea ritmul când e vorba de gândit, acolo e rapid, și lasă-l pe fiu să dea ritmul când e vorba de simțit, acolo are nevoie de propriul moment. Și, fiindcă amândoi au degete mici sensibile, ajută să numiți nesiguranța cu voce tare: cine o spune primul îi ușurează celuilalt. Ce lucru mic ați putea face împreună luna aceasta, în care niciunul nu trebuie să vorbească pentru a se apropia totuși unul de celălalt?"
+ },
+ "tour": [
+  {
+   "titel": "Fă o fotografie",
+   "tekst": "Stai drept, cu greutatea pe ambele picioare, și fotografiază-ți picioarele goale exact de sus. Lumină bună, degete relaxate."
+  },
+  {
+   "titel": "Oglinda se uită cu tine",
+   "tekst": "Oglinda privește fiecare deget: forma, poziția, unghia și linia de la cel mare la cel mic. Durează aproximativ un minut."
+  },
+  {
+   "titel": "Verifică și tu",
+   "tekst": "La fiecare deget vezi ce forme au fost bifate. Vezi altfel? Activează sau dezactivează o formă. Cititorul rămâi tu."
+  },
+  {
+   "titel": "Oglinda povestește",
+   "tekst": "Imediat după analiză, oglinda spune ce îți spun degetele, în stilul cărților. Dacă ai verificat toate cele zece degete, se deblochează citirea extinsă."
+  },
+  {
+   "titel": "Pune o întrebare",
+   "tekst": "Despre muncă, dragoste sau o alegere pe care trebuie să o faci. Oglinda răspunde pornind de la propriile tale degete."
+  },
+  {
+   "titel": "Citiți împreună",
+   "tekst": "Pune două perechi de picioare una lângă alta: parteneri, părinte și copil, prieteni. Vezi unde vă asemănați, unde vă deosebiți și cum ajungeți unul la celălalt."
+  }
+ ]
+}

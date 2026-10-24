@@ -1,0 +1,90 @@
+{
+ "ui": {
+  "tab_solo": "Tek okuma",
+  "tab_duo": "Çift: oğul ve baba",
+  "sluit": "Kapat",
+  "zag": "Aynanın gördükleri",
+  "aangevinkt": "İşaretlenenler",
+  "notitie": "Not",
+  "lezing_kop": "Ayrıntılı okuma",
+  "vraag_kop": "Örnek soru",
+  "vraag_lbl": "Soru",
+  "antwoord_lbl": "Aynanın cevabı",
+  "zoon": "Oğul",
+  "vader": "Baba",
+  "foto_alt_zoon": "Örnek fotoğraf: üstten, ayakta duran çıplak ayaklar",
+  "foto_alt_vader": "Örnek fotoğraf: babanın ayakları",
+  "duo_tabel": "Parmak parmak yan yana",
+  "duo_verhaal_kop": "Çift hikâyesi",
+  "tour_knop": "6 adımda tur",
+  "tour_stap": "Adım {n} / 6",
+  "tour_vorige": "Önceki",
+  "tour_volgende": "Sonraki",
+  "tour_klaar": "Tamam",
+  "tour_naar_demo": "Örnek okumaya bak",
+  "fors_teen": "Güçlü parmak"
+ },
+ "solo": {
+  "kop": "Örnek · gerçek bir okuma",
+  "intro": "Gerçek bir okuma, isimsiz olarak gösteriliyor. Her parmakta hangi biçimlerin işaretlendiğini, aynanın ne gördüğünü ve ne anlattığını görürsün. En altta bir örnek soru var.",
+  "eerste": "Bu ayaklar daha ilk bakışta dengeli görünüşleriyle dikkat çekiyor: sağ ve sol neredeyse birbirinin aynası. Geniş orta kısımlı büyük başparmaklardan, ikisi de dışa doğru dönen ve sivrilen küçük parmaklara kadar her şey birbirini tekrar ediyor. Büyükten küçüğe uzanan hayali çizgi iki ayakta da akıcı biçimde iniyor; ne öne fırlayan ne de geriye çekilen bir parmak var. Bu, hiçbir alanın aşırı öne çıkmadığını ya da bastırılmadığını düşündürüyor. İlk göze çarpan şey, iki ayağın neredeyse özdeş yapısı: burada düşünmek ve hissetmek nadiren birbirinden uzaklaşıyor. Aynı zamanda hemen her parmakta ince bir ayrıntı var: bir rezervuar, dönmüş bir uç, biraz farklı görünen bir tırnak. Bunlar, bu sakinliğin ve simetrinin altında epey şeyin tutulduğunu gösteriyor.",
+  "notities": {
+   "R1": "Kökte normal başlıyor, ortada genişliyor ve yine normal bitiyor: rezervuar. Yuvarlak uç, büyük tırnak.",
+   "R2": "Eksen düz, uç hafif köşeli. Parmaklar akıcı biçimde tek çizgide iniyor.",
+   "R3": "Kökte dar başlıyor, uca doğru genişliyor: ince başlangıç, enerji adım adım yükseliyor. Eksen düz.",
+   "R4": "Güçlü parmak, ortalama tırnak. Geriye çok az bakıyor: geçmiş hafifçe işin içinde, gerekirse bırakmak mümkün.",
+   "R5": "Yanlar dar bir uca doğru iniyor: sivri. Tırnak yüzeyi belirgin biçimde dışa ve çapraza bakıyor: dönmüş. Tırnak, parmak boğumuna göre küçük. Alta dalma yok, kökün önünde belirgin bir kabarıklık da yok, yani küçük sırt çantası yok.",
+   "L1": "Kökte normal başlıyor, ortada genişliyor ve yine normal bitiyor: rezervuar. Uç yuvarlak ve düz bir kısım var (karma biçim), büyük tırnak.",
+   "L2": "Eksen düz, uç hafif köşeli. Parmaklar akıcı biçimde tek çizgide iniyor.",
+   "L3": "Kökte dar başlıyor, uca doğru genişliyor: ince başlangıç, enerji adım adım yükseliyor. Eksen düz.",
+   "L4": "Güçlü parmak, ortalama tırnak. Geriye çok az bakıyor: geçmiş hafifçe işin içinde, gerekirse bırakmak mümkün.",
+   "L5": "Uç sivrilerek bitiyor: sivri. Tırnak çapraz biçimde dış kenara bakıyor: dönmüş. Tırnak, son boğuma göre küçük. 4. parmağın altına dalma yok, kökün önünde de kabarıklık yok (küçük sırt çantası yok)."
+  },
+  "tenen": {
+   "R1": "Sağ başparmağın yuvarlak: düşündüklerini diplomatik bir paketle sunuyorsun, çatışmayı pek aramıyorsun. Ama ortada parmak şişip bir rezervuara dönüşüyor: dışarı çıkandan çok daha fazlası düşünülüyor ve tartılıyor, sözler ve görüşler paylaşılmadan önce birikiyor. Büyük tırnak da seni almaktan çok vermekte iyi kılıyor: düşündüklerine herkesi öyle kolay kolay almıyorsun.",
+   "R2": "Sağ ikinci parmağın dimdik duruyor ve diğer parmakların çizgisini düzgünce izliyor: iradenin düzeni var, sürekli değişen hedeflerin peşinden koşmuyorsun. Hafif köşeli uç, iş ciddiye bindiğinde ne istediğin konusunda lafı dolandırmadığını gösteriyor: dolambaçlı yollar yok, yarım iş yok.",
+   "R3": "Sağ üçüncü parmağın kökte dar başlıyor ve uca doğru genişliyor: ince başlangıç. Eylem gücün hemen devreye girmiyor, bir ısınma süresine ihtiyacın var; ama bir kez hızlanınca eylem kendiliğinden birikiyor ve ilerledikçe güçleniyor.",
+   "R4": "Sağ dördüncü parmak güçlü: kendi durumunu elinde tutma kapasitesi geniş. Hafifçe geriye bakman, geçmişin zaman zaman tutunma ya da bırakma biçimine karıştığını gösteriyor; bu seni tutsak etmiyor, gerektiğinde bırakmak mümkün. Ortalama tırnak, tutunmak ile başkalarının getirdiklerine açık kalmak arasında iyi bir denge kurduğunu gösteriyor.",
+   "R5": "Sağ küçük parmağın sivri ve dönmüş: belirsizlik ve korku sende kısa, keskin dalgalar halinde yükseliyor ve bunlardan gösterdiğin şey, içeride olup bitenin aynısı olmak zorunda değil: rota yol boyunca düzeltiliyor. Küçük tırnak seni bu alanda hassas kılıyor: dışarıdan gelen uyarıcılar, gerginlik ya da tehdit sert biçimde içeri giriyor.",
+   "L1": "Solda aynı yapıyı görüyorsun, kendine has bir dokunuşla: parmak bir karma biçim, başlangıçta yuvarlak, uçta düz bir kısım var. Duygularını çoğunlukla nazik bir dille ifade ediyorsun, ama iş işe geldiğinde ne hissettiğin konusunda bir anda çok açık sözlü olabiliyorsun. Burada da bir rezervuar var: dışarı çıkmadan önce biriken duygular ve onları o ana kadar koruyan büyük bir tırnak.",
+   "L2": "Sol ikinci parmak sağdakini tekrar ediyor: eksen düz, uç köşeli, çizgide düzgün. İş işe geldiğinde duygun doğrudan ve süssüz çıkıyor: günlük hayatta genellikle sakin bir dille sarmalasan da, ne hissettiğin konusunda kimsede şüphe bırakmıyorsun.",
+   "L3": "Solda da aynı örüntü var: dar başlangıç, geniş uç. Yaratıcılığın ve sezgisel esinlerin yavaş yavaş kabarıyor ve zamanla tam güce ulaşıyor; ani bir parıltıdan çok, giderek büyüyen bir akış.",
+   "L4": "Sol dördüncü parmak da güçlü: verecek çok sevgin var; insanlara olduğu kadar bir işe ya da uğrunda çabaladığın bir projeye de. Hafif geriye bakış, bu sevmeyi eski deneyimlerin hafif bir izi ile renklendiriyor, ama seni engellemiyor; ortalama tırnak vermek ile almayı güzel bir dengede tutuyor.",
+   "L5": "Solda bu görüntü güven için tekrarlanıyor: sivri, iyimserliğin ve güvenin ani esintiler halinde, dalgalar gibi geldiğini gösteriyor; dönmüş duruş ise güven konusunda dışarı gösterdiğin şeyin her zaman içeride yaşananla örtüşmediğini anlatıyor. Küçük tırnak seni başkalarının güven ya da güvensizlik işaretlerine karşı hassas kılıyor, bunu çabucak hissediyorsun."
+  },
+  "samenhang": "Bu okumada en dikkat çekici şey, sağ ile solun birbirinden ne kadar az ayrıldığı: neredeyse parmak parmak aynı örüntü tekrar ediyor. Sende düşünmek ve hissetmek nadiren birbiriyle çatışıyor; ne düşündüğün ile ne hissettiğin büyük ölçüde birlikte ilerliyor. Bunu en çarpıcı biçimde başparmaklarda görüyorsun: ikisi de bir rezervuar kuruyor, sağda diplomasiyle sarılı, solda iş işe geldiği anda bir parıltı kadar açık sözlülükle. Yani hem sözler hem duygular paylaşılmadan önce içeride tutuluyor. İkinci parmaklarda bu görüntü güçleniyor: irade de duygu da düzenli biçimde dışarı çıkıyor ve gerektiğinde jilet gibi keskin ve doğrudan oluyor. Üçüncü parmaklar, hem eylemin hem yaratıcılığın bir ısınma süresine ihtiyaç duyduğunu gösteriyor; güç ilerledikçe kendiliğinden büyüyor. Dördüncü parmaklarda iki sağlam, güçlü parmak görüyorsun: hem tutunma hem sevme kapasitesi geniş, ikisinde de baskın olmadan işin içine karışan bir parça geçmiş var. Son olarak küçük parmaklar, hem belirsizliğinin hem güveninin kısa, hassas zirveler halinde geldiğini ve bunlardan gösterdiğin şeyin her zaman hikâyenin tamamı olmadığını anlatıyor. Ana tema, kafası ile kalbi nadiren birbirine ters düşen ve hemen her alanda, sözlerde, duygularda, korkuda ve güvende, ilk bakışta dışarı çıkandan daha fazlasını içinde tutan bir insan. Biriken o söz ve duygu rezervuarının kendi çıkış yolunu bulmasını beklemek yerine, onu daha sık, küçük taşmalarla akıtsan ne olurdu?",
+  "vraag": "Hissettiğimi, bir anda hepsi dışarı dökülmeden nasıl daha iyi gösterebilirim?",
+  "antwoord": "Başparmakların cevabın yarısını zaten veriyor. İkisinde de bir rezervuar var: düşünceler ve duygular dışarı çıkmadan önce birikiyor. Solda bunun üstünde bir karma biçim var, yani önce nazik, sonra bir anda çok doğrudan. Tam da anlattığın an bu: rezervuar doluyor ve doğrudanlık devralıyor.\n\nİkinci parmakların bu konuda sana yardım ediyor. Düz ve tek çizgide duruyorlar: ne istediğini ve ne hissettiğini çok iyi biliyorsun, sadece henüz dışarı çıkmamış. Üçüncü parmaklarda ise ince başlangıç var: sen başlayarak harekete geçiyorsun, küçükten, sonra kendiliğinden büyüyor.\n\nO yüzden küçük porsiyonlarla dene. Günde bir cümle, ne hissettiğini anlatan, sakin bir anda, baskı yükselmeden önce. Büyük tırnakların seni koruyor, o yüzden kiminle başlayacağını kendin seç. Bu hafta küçük bir porsiyonu taşırabileceğin ilk kişi kim olabilir?"
+ },
+ "duo": {
+  "kop": "Örnek · çift okuma",
+  "intro": "Oğul ve baba, iki çift ayak yan yana. Fotoğrafların altında her parmak için ikisinin biçimlerini, onun altında da çift hikâyesini görürsün.",
+  "verhaal": "# İki planın yan yana hali\n\n**Oğul**\nBu ayaklarda hemen göze çarpan şey dengeli olmaları: sağ ve sol neredeyse birbirinin aynası, başparmaktan küçük parmağa uzanan çizgi de çıkıntı yapmadan akıcı biçimde iniyor. Onda düşünmek ve hissetmek nadiren birbirine karışıyor. Bununla birlikte iki başparmakta da birer rezervuar var: sözlerde ve duyguda, ilk bakışta dışarı çıkandan daha fazlası tutuluyor. Dördüncü parmaklar güçlü: tutunma ve sevme kapasitesi geniş. Eylem ve yaratıcılık (üçüncü parmaklar) güçlenmeden önce bir ısınma süresine ihtiyaç duyuyor, belirsizlik ve güven (küçük parmaklar) ise kısa, keskin zirveler halinde geliyor; gösterilen şey her zaman hikâyenin tamamı olmuyor.\n\n**Baba**\nOnda en çok dikkat çeken, başparmakların yuvarlak ve güçlü olması, ayrıca diğerlerinden kısa olması (fazla küçük parmak): öbür parmaklardaki enerjinin hepsi başparmaktan dışarı çıkmak için eşit alan bulamıyor, üstüne biraz da acelecilik (aceleci parmak) var. İkinci parmaklar ise uzun (fazla büyük parmak) ve uca doğru genişliyor: yani güçlü bir irade ve duygu. Hafif kıvrıklar: baskı altında yine de biraz taviz veriyor. Sağda 1. ve 2. parmak arasında az aralık var (düşünceler oldukça akıcı dışarı çıkıyor), solda ise aralık var (duygu hakkında konuşmak daha çok zaman alıyor). Dördüncü parmaklar hafifçe geriye bakıyor ve komşularından biraz ayrı duruyor; üstelik sağdaki içe çekilebiliyor: uyum yeteneği ve belli bir kendi mesafesi. Küçük parmaklar, oğlunda olduğu gibi, sivri ve dönmüş.\n\n# Nerede benziyorlar\n\nEn çarpıcı ortak nokta küçük parmaklarda: ikisinde de sivri ve dönmüş, küçük bir tırnakla birlikte. Belirsizlik ve güven baba ile oğulda dalgalar halinde geliyor ve bunlardan gösterdikleri, içeride olup bitenle tam olarak örtüşmüyor. Bunu hiç yüksek sesle dile getirmeden, sezgiyle birbirlerinde tanıyabiliyorlar. Üçüncü parmaklar da buluşuyor: ikisinde de eksen düz, yani yaptıkları işte ikisi de doğrudan, dolambaçsız. Ayrıca ikisinde de dördüncü parmakta hafif bir geriye bakış var: geçmiş, nasıl tutundukları ya da bıraktıkları üzerinde hâlâ biraz etkili, ama onları kilitlemiyor.\n\n# Nerede ayrılıyorlar\n\nEn belirgin fark başparmakta. Oğulda bu yuvarlak, geniş bir rezervuar: ne düşündüğünü ve ne hissettiğini diplomatik bir paketle sunuyor ve paylaşmadan önce içeride tutuyor. Babada ise başparmak diğerlerinden kısa ve biraz aceleci: diğer parmaklarda dolaşan enerjinin hepsi o parmaktan çıkmak için eşit şans bulamıyor ve çıkan şey, oğlundakinden daha hızlı ve daha doğrudan çıkıyor. Oğul önce içeride tartıp saklarken, babada bir şey tam olgunlaşmadan kaçıp gidebiliyor.\n\nİkinci parmak da farklı: oğulda dimdik ve düzenli, ancak iş ciddiye bindiğinde keskinleşen köşeli bir uçla. Babada uzun, yuvarlak ve hafif kıvrık: uyum için daha fazla alan, baskı altında biraz taviz. Üstelik sağda babada 1. ve 2. parmak arasında az aralık var (düşünceler akıcı çıkıyor), solda ise aralık var (duygu hakkında konuşmak daha uzun sürüyor). Hızlı paylaşmak ile uzun beklemek arasındaki bu fark, rezervuar yeterince dolduğunda duygusunu gösteren bir oğulla sürtüşebilir. İkisi de paylaşmadan önce bir şeyi tutuyor, ama biraz farklı bir anda ve farklı bir tempoda; bu yüzden birbirlerini kolayca ıskalayabilirler: biri tam paylaşmaya hazırken, öbürü tam beklemeye hazır.\n\nÜçüncü parmakta tempo farkı yeniden görünüyor. Oğulda ince başlangıç var: yavaş açılıyor ve zamanla güçleniyor. Babada karma biçim var: yaptığı işte önce nazik, iş işe geldiğinde bir anda çok doğrudan.\n\n# Kapılar ve duvarlar\n\nOğulun yanına en kolay küçük porsiyonlarla ve sabırla girilir: rezervuar parmakları (başparmaklar), her şeyi bir kerede paylaşmaktansa istikrarlı biçimde birikmeyi sevdiğini gösteriyor. Duvar, en çok rezervuarın izin verdiğinden daha hızlı paylaşması için baskı yapıldığında oluşuyor; başparmaklarındaki büyük tırnaklar onu bu konuda iyi koruyor, olup biteni herkese öyle kolay açmıyor.\n\nBabada kapı tam tersine, rasyonel olarak ne düşündüğüne dair sohbette: bu oldukça akıcı çıkıyor. Duygu sohbeti daha zor: orada birinci ve ikinci parmak arasında aralık var, yani duygu hakkında konuşmak daha fazla zaman ve davet ister. Sağ dördüncü parmağı içe çekilebiliyor: böyle uyum sağlıyor ya da geçici olarak mesafe alıyor. Orada zorlamak büyük olasılıkla ters teper.\n\nİkisinde de küçük parmaklar kırılgan bir nokta: küçük tırnaklar onları dışarıdan gelen gerginliğe ya da güvensizliğe karşı hassas kılıyor; iki taraftan da dikkatle yaklaşılması gereken bir şey.\n\n# Birbirine giden yollar\n\nEn güzel yol yapmaktan geçiyor. İkisinde de düz bir üçüncü parmak var: yapmakta doğrudanlar ve birbirlerini en hızlı orada buluyorlar. Birlikte bir şey yapmak ya da girişmek, önce çok şey söylemeye gerek kalmadan onları yakınlaştırıyor. Düşünmede tempoyu baba belirlesin, orada hızlı; hissetmede tempoyu oğul belirlesin, orada kendi anına ihtiyacı var. İkisinin de hassas küçük parmakları olduğu için, belirsizliği düpedüz yüksek sesle söylemek yardımcı olur: ilk söyleyen, öbürü için işi kolaylaştırır. Bu ay birlikte yapabileceğiniz, ikinizin de konuşmak zorunda kalmadan yine de birbirinize yaklaşabileceği küçük bir şey ne olabilir?"
+ },
+ "tour": [
+  {
+   "titel": "Bir fotoğraf çek",
+   "tekst": "Dik dur, ağırlığın iki ayağına eşit dağılsın ve çıplak ayaklarını tam üstten fotoğrafla. Işık iyi, parmaklar rahat olsun."
+  },
+  {
+   "titel": "Ayna da bakıyor",
+   "tekst": "Ayna her parmağa bakıyor: biçim, duruş, tırnak ve büyükten küçüğe uzanan çizgi. Bu yaklaşık bir dakika sürer."
+  },
+  {
+   "titel": "Sen de kontrol et",
+   "tekst": "Her parmakta hangi biçimlerin işaretlendiğini görürsün. Sen farklı mı görüyorsun? Bir biçimi aç ya da kapat. Okuyucu sensin."
+  },
+  {
+   "titel": "Ayna anlatıyor",
+   "tekst": "Analizden hemen sonra ayna, parmaklarının ne dediğini kitapların tarzında anlatır. On parmağı da kontrol ettiğinde ayrıntılı okuma açılır."
+  },
+  {
+   "titel": "Bir soru sor",
+   "tekst": "İş, aşk ya da vermen gereken bir karar hakkında. Ayna, senin kendi parmaklarından yola çıkarak cevap verir."
+  },
+  {
+   "titel": "Birlikte oku",
+   "tekst": "İki çift ayağı yan yana koy: eşler, ebeveyn ve çocuk, arkadaşlar. Nerede benzediğinizi, nerede ayrıldığınızı ve birbirinize nasıl ulaşabileceğinizi görürsünüz."
+  }
+ ]
+}

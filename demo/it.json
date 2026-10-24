@@ -1,0 +1,90 @@
+{
+ "ui": {
+  "tab_solo": "Una lettura",
+  "tab_duo": "Duo: figlio e padre",
+  "sluit": "Chiudi",
+  "zag": "Cosa ha visto lo specchio",
+  "aangevinkt": "Spuntato",
+  "notitie": "Nota",
+  "lezing_kop": "La lettura estesa",
+  "vraag_kop": "Domanda di esempio",
+  "vraag_lbl": "Domanda",
+  "antwoord_lbl": "Risposta dello specchio",
+  "zoon": "Figlio",
+  "vader": "Padre",
+  "foto_alt_zoon": "Foto di esempio: piedi nudi visti dall'alto, in piedi",
+  "foto_alt_vader": "Foto di esempio: i piedi del padre",
+  "duo_tabel": "Dito per dito, uno accanto all'altro",
+  "duo_verhaal_kop": "La storia del duo",
+  "tour_knop": "Percorso guidato in 6 passi",
+  "tour_stap": "Passo {n} di 6",
+  "tour_vorige": "Indietro",
+  "tour_volgende": "Avanti",
+  "tour_klaar": "Fatto",
+  "tour_naar_demo": "Guarda la lettura di esempio",
+  "fors_teen": "Dito robusto"
+ },
+ "solo": {
+  "kop": "Esempio · una lettura vera",
+  "intro": "Una lettura vera, mostrata in forma anonima. Per ogni dito vedi quali forme sono state spuntate, cosa ha visto lo specchio e cosa racconta. In fondo c'è una domanda di esempio.",
+  "eerste": "Questi piedi colpiscono subito per la loro regolarità: destro e sinistro sono quasi l'uno l'immagine speculare dell'altro, dagli alluci larghi con la loro parte centrale ampia fino ai mignoli che girano entrambi verso l'esterno e finiscono a punta. La linea immaginaria dal più grande al più piccolo scende in modo fluido su entrambi i piedi, senza dita che sporgono o sprofondano, segno che qui nessuna area passa in primo piano in modo esagerato né viene spinta da parte. Ciò che attira per primo l'attenzione è la struttura quasi identica dei due piedi: pensare e sentire sembrano raramente lontani l'uno dall'altro. Allo stesso tempo, quasi ogni dito porta un dettaglio sottile, un serbatoio, una punta ruotata, un'unghia che appare un po' diversa, e questo mostra che sotto quella calma e quella simmetria si trattiene comunque parecchio.",
+  "notities": {
+   "R1": "Parte normale dalla radice, si allarga a metà e termina di nuovo normale: serbatoio. Punta rotonda, unghia grande.",
+   "R2": "Asse dritto, punta leggermente squadrata. Le dita scendono in modo fluido su un'unica linea.",
+   "R3": "Parte stretto dalla radice e si allarga verso la punta: base sottile, l'energia cresce. Asse dritto.",
+   "R4": "Dito robusto con un'unghia nella media. Guarda indietro solo in minima parte: il passato ha un ruolo leggero, il distacco riesce quando serve.",
+   "R5": "I lati convergono verso una punta stretta: appuntito. La superficie dell'unghia guarda visibilmente in diagonale verso l'esterno: ruotato. Unghia piccola rispetto all'ultima falange. Nessun nascondersi, nessun rigonfiamento evidente prima della radice, quindi nessuno zainetto.",
+   "L1": "Parte normale dalla radice, si allarga a metà e termina di nuovo normale: serbatoio. Punta rotonda con un tratto piatto (forma mista), unghia grande.",
+   "L2": "Asse dritto, punta leggermente squadrata. Le dita scendono in modo fluido su un'unica linea.",
+   "L3": "Parte stretto dalla radice e si allarga verso la punta: base sottile, l'energia cresce. Asse dritto.",
+   "L4": "Dito robusto con un'unghia nella media. Guarda indietro solo in minima parte: il passato ha un ruolo leggero, il distacco riesce quando serve.",
+   "L5": "La punta si restringe fino a finire appuntita: appuntito. L'unghia guarda in diagonale verso il bordo esterno: ruotato. Unghia piccola rispetto all'ultima falange. Nessun nascondersi sotto il dito 4 e nessun rigonfiamento prima della radice (nessuno zainetto)."
+  },
+  "tenen": {
+   "R1": "Il tuo alluce destro ha una forma rotonda: avvolgi ciò che pensi di diplomazia e preferisci non cercare lo scontro. Ma a metà il dito si gonfia in un serbatoio: si pensa e si valuta più di quanto arrivi mai all'esterno, parole e punti di vista si accumulano prima di essere condivisi. L'unghia grande ti rende più bravo a trasmettere che a ricevere: non lasci entrare chiunque in ciò che pensi.",
+   "R2": "Il tuo secondo dito destro sta perfettamente dritto e segue con ordine la linea delle altre dita: la tua forza di volontà è ordinata, non insegui obiettivi che cambiano. La punta leggermente squadrata mostra che, quando si arriva al dunque, dici senza giri di parole ciò che vuoi: niente deviazioni, niente mezze misure.",
+   "R3": "Il tuo dito medio destro parte stretto dalla radice e si allarga verso la punta: una base sottile. La tua determinazione non scatta subito, hai bisogno di una rincorsa, ma una volta in moto l'azione si costruisce da sé e diventa più forte man mano che vai avanti.",
+   "R4": "Il quarto dito destro è robusto: in te c'è molta capacità di tenere salda la presa sulla tua situazione. Il fatto che guardi leggermente indietro significa che il passato, ogni tanto, entra in gioco nel modo in cui ti aggrappi o lasci andare; non ti trattiene, il distacco riesce quando serve. L'unghia nella media mostra che sei ben equilibrato tra il tenere e il restare aperto a ciò che gli altri portano.",
+   "R5": "Il tuo mignolo destro è appuntito e ruotato: incertezza e paura affiorano in te in ondate brevi e vive, e ciò che ne mostri non è per forza ciò che accade dentro: la rotta viene corretta strada facendo. L'unghia piccola ti rende sensibile in quest'area: gli stimoli esterni, la tensione o la minaccia, arrivano forte.",
+   "L1": "A sinistra ritrovi la stessa struttura, con una sfumatura tutta sua: il dito è una forma mista, rotondo all'inizio con un tratto piatto in punta. In genere porti i tuoi sentimenti con tatto, ma quando conta puoi diventare all'improvviso del tutto diretto su ciò che senti. Anche qui c'è un serbatoio: sentimenti che si accumulano prima di uscire, e un'unghia grande che li protegge finché non arriva quel momento.",
+   "L2": "Il secondo dito sinistro ripete il destro: asse dritto, punta squadrata, ordinato sulla linea. Il tuo sentire, quando conta, esce diretto e senza veli: non lasci dubbi su ciò che provi, anche se nella vita di tutti i giorni lo avvolgi di norma nella calma.",
+   "L3": "A sinistra vedi lo stesso schema: inizio stretto, punta larga. La tua creatività e le tue intuizioni affiorano lentamente e crescono a poco a poco fino alla piena forza, più una corrente che si fa strada che un lampo improvviso.",
+   "L4": "Anche il quarto dito sinistro è robusto: hai moltissimo amore da dare, alle persone, ma altrettanto a un lavoro o a un progetto in cui ti butti. Il lieve sguardo all'indietro colora questo amare con un velo di esperienze passate, senza bloccarti; l'unghia nella media mantiene bene in equilibrio il trasmettere e il ricevere.",
+   "L5": "A sinistra questa immagine si ripete per la fiducia: appuntito significa che ottimismo e fiducia arrivano a ondate, come onde, e la posizione ruotata mostra che ciò che lasci vedere della tua fiducia non sempre corrisponde a ciò che vive dentro. L'unghia piccola ti rende sensibile ai segnali di fiducia o di sfiducia degli altri, li percepisci in fretta."
+  },
+  "samenhang": "La cosa più evidente in questa lettura è quanto poco differiscano destra e sinistra: quasi dito per dito si ripete lo stesso schema. In te pensare e sentire sono raramente in conflitto; ciò che pensi e ciò che senti procedono in gran parte di pari passo. Negli alluci lo vedi nel modo più nitido: entrambi costruiscono un serbatoio, a destra avvolto di diplomazia, a sinistra con un lampo di franchezza non appena si arriva al dunque. Parole e sentimenti vengono quindi prima trattenuti e solo dopo condivisi. Nei secondi diti questo quadro si rafforza: volontà e sentire escono entrambi in modo ordinato e, se serve, netti e diretti. I diti medi mostrano che sia la tua azione sia la tua creatività hanno bisogno di un riscaldamento; la forza cresce da sé man mano che vai avanti. Nei quarti diti vedi due diti solidi e robusti: molta capacità di tenere e molta capacità di amare, entrambe con un velo di passato che accompagna senza dominare. E infine i mignoli mostrano che sia la tua incertezza sia la tua fiducia si presentano in picchi brevi e sensibili, e che ciò che ne mostri non è sempre tutta la storia. Il filo conduttore è una persona in cui testa e cuore raramente si contraddicono, e che in quasi ogni ambito, parole, sentimenti, paura e fiducia, trattiene dentro più di quanto appaia all'esterno a prima vista. Cosa succederebbe se lasciassi traboccare più spesso questo serbatoio accumulato di parole e sentimenti, in gocce più piccole, prima che trovi da sé una via d'uscita?",
+  "vraag": "Come posso far capire meglio ciò che sento, senza che esca tutto d'un colpo?",
+  "antwoord": "I tuoi alluci danno già metà della risposta. Entrambi hanno un serbatoio: pensieri e sentimenti si accumulano prima di uscire. A sinistra c'è in più una forma mista: prima con tatto, poi all'improvviso molto diretto. È proprio il momento che descrivi: il serbatoio è pieno e la franchezza prende il sopravvento.\n\nI tuoi secondi diti ti aiutano in questo. Sono dritti e su un'unica linea: sai benissimo cosa vuoi e cosa senti, solo che non è ancora uscito. E i tuoi diti medi hanno una base sottile: tu ti metti in moto cominciando, in piccolo, e poi cresce da solo.\n\nProva quindi a piccole porzioni. Una frase al giorno su ciò che senti, in un momento tranquillo, prima che la pressione salga. Le unghie grandi ti proteggono, quindi scegli tu con chi iniziare. Chi potrebbe essere la prima persona, questa settimana, con cui lasci traboccare una piccola porzione?"
+ },
+ "duo": {
+  "kop": "Esempio · lettura in duo",
+  "intro": "Figlio e padre, due paia di piedi uno accanto all'altro. Sotto le foto vedi, dito per dito, le forme di entrambi, e più in basso la storia del duo.",
+  "verhaal": "# Due progetti uno accanto all'altro\n\n**Il figlio**\nCiò che colpisce subito in questi piedi è la loro regolarità: destro e sinistro sono quasi l'uno l'immagine speculare dell'altro, e la linea dall'alluce al mignolo scende in modo fluido, senza sbalzi. In lui pensare e sentire sono raramente in conflitto. Allo stesso tempo, entrambi gli alluci hanno un serbatoio: lì si trattiene più, in parole e in sentire, di quanto appaia all'esterno a prima vista. I quarti diti sono robusti: molta capacità di tenere e di amare. Azione e creatività (diti medi) hanno bisogno di una rincorsa prima di entrare in forza, e incertezza e fiducia (i mignoli) arrivano in picchi brevi e vivi, dove ciò che viene mostrato non è sempre tutta la storia.\n\n**Il padre**\nIn lui colpisce soprattutto che gli alluci sono rotondi e robusti, e più corti degli altri diti: non tutta l'energia delle altre dita trova lo stesso spazio per uscire da quell'alluce, con un pizzico di fretta. I secondi diti sono invece lunghi e si allargano verso la punta: molta forza di volontà e molto sentire, dunque. Sono leggermente curvi: sotto pressione, dopotutto, cede un poco. A destra c'è poco spazio tra il dito 1 e il 2 (il pensiero esce con una certa scioltezza), a sinistra invece ce n'è (parlare del sentire richiede più tempo). I quarti diti guardano un po' indietro e stanno un po' staccati dai vicini; il destro, inoltre, può ritirarsi: capacità di adattamento, e anche una certa distanza tutta sua. I mignoli sono, come nel figlio, appuntiti e ruotati.\n\n# Dove si somigliano\n\nIl punto di contatto più evidente è nei mignoli: in entrambi appuntiti e ruotati, con un'unghia piccola. Incertezza e fiducia arrivano a ondate sia nel padre sia nel figlio, e ciò che ne mostrano non coincide del tutto con ciò che accade dentro. È qualcosa che possono riconoscere l'uno nell'altro in modo intuitivo, senza mai dirlo ad alta voce. Si toccano anche i diti medi: in entrambi un asse dritto, quindi in ciò che fanno sono entrambi diretti, senza giri. E in entrambi, al quarto dito, entra in gioco un lieve sguardo all'indietro: il passato conta ancora nel modo in cui tengono o lasciano andare, senza inchiodarli.\n\n# Dove si differenziano\n\nLa differenza più netta è nell'alluce. Nel figlio è un serbatoio rotondo e ampio: avvolge di diplomazia ciò che pensa e sente, e prima lo tiene dentro, poi lo condivide. Nel padre l'alluce è invece più corto degli altri diti, con un pizzico di fretta: non tutta l'energia che si muove nelle altre dita ha la stessa possibilità di uscire da quel dito, e ciò che esce, esce più in fretta e in modo più diretto che nel figlio. Dove il figlio prima pesa e conserva dentro di sé, nel padre qualcosa può sfuggire prima di essersi davvero cristallizzato.\n\nDiverso anche il secondo dito: nel figlio dritto come un fuso e ordinato, con una punta squadrata che diventa tagliente solo quando si arriva al dunque. Nel padre lungo, rotondo e leggermente curvo: più spazio per l'adattamento, un velo di cedimento sotto pressione. E a destra il padre ha poco spazio tra il dito 1 e il 2 (il pensiero esce in fretta), mentre a sinistra lo spazio c'è (parlare del sentire richiede più tempo). Proprio questa differenza tra condividere in fretta e aspettare a lungo può stridere con un figlio che mostra il proprio sentire a sua volta solo tardi, quando il serbatoio è abbastanza pieno. Due persone che trattengono entrambe qualcosa prima di condividerlo, in un momento un po' diverso e a un ritmo diverso, possono facilmente mancarsi: uno è proprio sul punto di condividere, l'altro proprio sul punto di aspettare.\n\nAl dito medio si vede di nuovo la differenza di ritmo. Il figlio ha una base sottile: si mette in moto lentamente e diventa via via più forte. Il padre ha una forma mista: prima con tatto in ciò che fa, e quando si arriva al dunque, all'improvviso molto diretto.\n\n# Porte e muri\n\nCon il figlio si entra più facilmente a piccole porzioni e con pazienza: i suoi diti serbatoio (gli alluci) mostrano che preferisce costruire con costanza piuttosto che condividere tutto in una volta. Un muro nasce soprattutto quando si fa pressione perché condivida più in fretta di quanto il serbatoio consenta; le unghie grandi sui suoi alluci lo proteggono bene in questo, non lascia entrare chiunque in ciò che accade dentro di lui.\n\nCon il padre, una porta d'ingresso è la conversazione su ciò che pensa in modo razionale, che esce con una certa scioltezza. Più delicata è la conversazione sul sentire: lì c'è spazio tra il primo e il secondo dito, quindi parlare del sentire richiede più tempo e più invito. Il suo quarto dito destro può ritirarsi: così si adatta o prende temporaneamente le distanze. Forzare lì probabilmente ottiene l'effetto contrario.\n\nIn entrambi i mignoli formano un punto vulnerabile: le unghie piccole li rendono sensibili alla tensione o alla sfiducia che viene da fuori, qualcosa da trattare con cautela, da entrambe le parti.\n\n# Strade l'uno verso l'altro\n\nLa strada più bella passa dal fare. Entrambi hanno un dito medio dritto: nel fare sono diretti e si ritrovano più in fretta. Creare o intraprendere qualcosa insieme li avvicina, senza che prima serva dire molto. Lascia che sia il padre a dare il ritmo nel pensare, lì è veloce, e lascia che sia il figlio a darlo nel sentire, lì ha bisogno del suo momento. E poiché entrambi hanno mignoli sensibili, aiuta dire semplicemente ad alta voce l'incertezza: chi la dice per primo rende le cose più facili all'altro. Quale piccola cosa potreste fare insieme questo mese, in cui nessuno dei due debba parlare per avvicinarsi all'altro?"
+ },
+ "tour": [
+  {
+   "titel": "Fai una foto",
+   "tekst": "Mettiti in piedi, con il peso su entrambi i piedi, e fotografa i tuoi piedi nudi esattamente dall'alto. Buona luce, dita rilassate."
+  },
+  {
+   "titel": "Lo specchio guarda con te",
+   "tekst": "Lo specchio osserva ogni dito: forma, posizione, unghia e la linea dal più grande al più piccolo. Ci vuole circa un minuto."
+  },
+  {
+   "titel": "Ripercorrilo tu stesso",
+   "tekst": "Per ogni dito vedi quali forme sono spuntate. Lo vedi diversamente? Attiva o disattiva una forma. Il lettore resti tu."
+  },
+  {
+   "titel": "Lo specchio racconta",
+   "tekst": "Subito dopo l'analisi lo specchio racconta cosa dicono le tue dita, nello stile dei libri. Quando hai ripassato tutte e dieci le dita, si sblocca la lettura estesa."
+  },
+  {
+   "titel": "Fai una domanda",
+   "tekst": "Sul lavoro, sull'amore o su una scelta che devi fare. Lo specchio risponde a partire dalle tue dita."
+  },
+  {
+   "titel": "Leggete insieme",
+   "tekst": "Metti due paia di piedi uno accanto all'altro: partner, genitore e figlio, amici. Vedi dove vi somigliate, dove vi differenziate e come raggiungervi."
+  }
+ ]
+}

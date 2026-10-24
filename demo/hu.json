@@ -1,0 +1,90 @@
+{
+ "ui": {
+  "tab_solo": "Egy olvasat",
+  "tab_duo": "Duó: fiú és apa",
+  "sluit": "Bezárás",
+  "zag": "Amit a tükör látott",
+  "aangevinkt": "Kijelölt formák",
+  "notitie": "Megjegyzés",
+  "lezing_kop": "A részletes olvasat",
+  "vraag_kop": "Példakérdés",
+  "vraag_lbl": "Kérdés",
+  "antwoord_lbl": "A tükör válasza",
+  "zoon": "Fiú",
+  "vader": "Apa",
+  "foto_alt_zoon": "Példafotó: meztelen lábak felülről, állva",
+  "foto_alt_vader": "Példafotó: az apa lábai",
+  "duo_tabel": "Lábujjanként egymás mellett",
+  "duo_verhaal_kop": "A duó története",
+  "tour_knop": "Bemutató 6 lépésben",
+  "tour_stap": "{n}. lépés a 6-ból",
+  "tour_vorige": "Előző",
+  "tour_volgende": "Következő",
+  "tour_klaar": "Kész",
+  "tour_naar_demo": "Nézd meg a példaolvasatot",
+  "fors_teen": "Erőteljes lábujj"
+ },
+ "solo": {
+  "kop": "Példa · egy valódi olvasat",
+  "intro": "Egy valódi olvasat, név nélkül mutatva. Minden lábujjnál látod, mely formák vannak kijelölve, mit látott a tükör, és mit mesél. Alul egy példakérdés is van.",
+  "eerste": "Ezek a lábak azonnal feltűnnek kiegyensúlyozottságukkal: a jobb és a bal szinte egymás tükörképe, a középen széles nagylábujjaktól egészen a kislábujjakig, amelyek mindketten kifelé fordulnak és hegyesen végződnek. A nagytól a kicsi felé futó képzeletbeli vonal mindkét lábon simán lejt, nincs kiálló vagy lesüllyedő lábujj, ami arra utal, hogy itt egyetlen terület sem lép túlzottan előtérbe, és egyiket sem nyomják vissza. Ami először szemet szúr, az a két láb szinte azonos felépítése: a gondolkodás és az érzés itt ritkán távolodik el egymástól. Ugyanakkor szinte minden lábujjon van egy finom részlet, egy tartály, egy elcsavarodott csúcs, egy kicsit másnak tűnő köröm, amely azt mutatja, hogy e nyugalom és szimmetria alatt azért sok minden bent marad.",
+  "notities": {
+   "R1": "A tövénél átlagosan indul, középen kiszélesedik, majd újra átlagosan végződik: tartály. Kerek csúcs, nagy köröm.",
+   "R2": "Egyenes tengely, a csúcs kissé szögletes. A lábujjak simán, egy vonalban lejtenek.",
+   "R3": "A tövénél keskenyen indul, a csúcs felé szélesedik: vékony tő, az energia fokozatosan épül. Egyenes tengely.",
+   "R4": "Erőteljes lábujj átlagos körömmel. Csak minimálisan néz vissza: a múlt enyhén szerepet játszik, az elengedés szükség esetén megy.",
+   "R5": "Az oldalak keskeny csúcs felé tartanak: hegyes. A körömlap jól láthatóan ferdén kifelé néz: elcsavarodott. A köröm kicsi az ujjperchez képest. Nincs elbújó lábujj, nincs egyértelmű dudor a tő előtt, tehát nincs kis hátizsák.",
+   "L1": "A tövénél átlagosan indul, középen kiszélesedik, majd újra átlagosan végződik: tartály. A csúcs kerek, lapos résszel (kevert forma), nagy köröm.",
+   "L2": "Egyenes tengely, a csúcs kissé szögletes. A lábujjak simán, egy vonalban lejtenek.",
+   "L3": "A tövénél keskenyen indul, a csúcs felé szélesedik: vékony tő, az energia fokozatosan épül. Egyenes tengely.",
+   "L4": "Erőteljes lábujj átlagos körömmel. Csak minimálisan néz vissza: a múlt enyhén szerepet játszik, az elengedés szükség esetén megy.",
+   "L5": "A csúcs hegyesen végződik: hegyes. A köröm ferdén a külső szél felé néz: elcsavarodott. A köröm kicsi az utolsó ujjperchez képest. Nincs elbújó lábujj a 4. lábujj alatt, és nincs dudor a tő előtt (nincs kis hátizsák)."
+  },
+  "tenen": {
+   "R1": "A jobb nagylábujjad kerek formájú: amit gondolsz, diplomatikusan csomagolod be, a konfrontációt inkább nem keresed. Ám a közepén a lábujj kiszélesedik, és tartállyá válik: sokkal többet gondolsz és mérlegelsz, mint amennyi kijut, a szavak és álláspontok felgyülemlenek, mielőtt megosztanád őket. A nagy köröm emellett jobbá tesz a küldésben, mint a fogadásban: nem engedsz be akárkit abba, amit gondolsz.",
+   "R2": "A jobb második lábujjad egyenesen áll, és szépen követi a többi lábujj vonalát: az akaraterőd rendezett, nem kergetsz változó célokat. A kissé szögletes csúcs azt mutatja, hogy amikor komolyra fordul a dolog, kertelés nélkül megmondod, mit akarsz: nincsenek kitérők, nincs félmunka.",
+   "R3": "A jobb harmadik lábujjad keskenyen indul a tövénél, és a csúcs felé szélesedik: vékony tő. A tetterőd nem indul be rögtön, kell egy kis nekifutás; de ha egyszer beindultál, a cselekvés magától épül, és erősebb lesz, ahogy haladsz.",
+   "R4": "A jobb negyedik lábujjad erőteljes: sok erő van benned ahhoz, hogy kézben tartsd a saját helyzetedet. Az, hogy kissé visszanézel, azt jelenti, hogy a múlt néha belejátszik abba, hogyan ragaszkodsz vagy engedsz el; nem tart fogva, az elengedés szükség esetén megy. Az átlagos köröm azt mutatja, hogy jó egyensúlyban vagy a ragaszkodás és aközött, hogy nyitott maradsz arra, amit mások hoznak.",
+   "R5": "A jobb kislábujjad hegyes és elcsavarodott: a bizonytalanság és a félelem nálad rövid, éles hullámokban kerül felszínre, és amit ebből megmutatsz, nem feltétlenül az, ami belül zajlik: az irányt menet közben korrigálod. A kicsi köröm érzékennyé tesz ezen a téren: a külső ingerek, a feszültség vagy a fenyegetés keményen hatolnak be.",
+   "L1": "Balra ugyanazt a felépítést látod viszont, saját csavarral: a lábujj kevert forma, az eleje kerek, a csúcson lapos résszel. Az érzéseidet általában tapintatosan hozod elő, de amikor eljön a pillanat, hirtelen kertelés nélkül tudsz beszélni arról, amit érzel. Itt is van egy tartály: az érzések felgyülemlenek, mielőtt kijönnének, és egy nagy köröm védi őket, amíg el nem jön az idő.",
+   "L2": "A bal második lábujj megismétli a jobbat: egyenes tengely, szögletes csúcs, szépen a vonalon. Az érzésed, ha komolyra fordul a dolog, közvetlenül és köntörfalazás nélkül jön ki: nem hagysz kétséget afelől, mit érzel, még ha a mindennapokban általában nyugodtan fogalmazod is meg.",
+   "L3": "Balra ugyanez a minta látszik: keskeny kezdet, széles csúcs. A kreativitásod és az intuitív ötleteid lassan buzognak fel, és fokozatosan érik el a teljes erejüket, inkább épülő áramlás, mint hirtelen villanás.",
+   "L4": "A bal negyedik lábujj is erőteljes: nagyon sok szereteted van adni, embereknek, de ugyanúgy egy munkának vagy egy projektnek is, amiért küzdesz. A könnyű visszatekintés a korábbi tapasztalatok árnyalatával színezi ezt a szeretetet, anélkül hogy gátolna; az átlagos köröm szépen egyensúlyban tartja a küldést és a fogadást.",
+   "L5": "Balra ez a kép ismétlődik meg a bizalomra: a hegyes azt jelenti, hogy az optimizmus és a bizalom hirtelen jön, hullámokban, az elcsavarodott állás pedig azt mutatja, hogy amit kifelé mutatsz a bizalmadról, az nem mindig egyezik azzal, ami belül él. A kicsi köröm érzékennyé tesz mások bizalmának vagy bizalmatlanságának jeleire, gyorsan megérzed őket."
+  },
+  "samenhang": "Ebben az olvasatban a leginkább szembetűnő, milyen kevéssé különbözik a jobb és a bal: szinte lábujjról lábujjra ugyanaz a minta ismétlődik. A gondolkodás és az érzés nálad ritkán kerül ellentétbe egymással; amit kigondolsz, és amit érzel, nagyrészt együtt halad. A nagylábujjaknál ez látszik a leginkább: mindkettő tartályt épít, jobbra diplomáciába csomagolva, balra egy villanásnyi egyenességgel, amint komolyra fordul a dolog. A szavak és az érzések tehát először bent maradnak, és csak utána kerülnek megosztásra. A második lábujjaknál ez a kép erősödik: az akarat és az érzés egyaránt rendezetten jön ki, és ha kell, pengeéles és közvetlen. A harmadik lábujjak azt mutatják, hogy mind a cselekvésednek, mind a kreativitásodnak szüksége van egy bemelegítésre; az erő magától nő, ahogy haladsz. A negyedik lábujjaknál két szilárd, erőteljes lábujjat látsz: sok erő a ragaszkodásra és sok erő a szeretetre, mindkettőben egy csipetnyi múlt, amely belejátszik, de nem uralkodik. A kislábujjak végül azt mutatják, hogy a bizonytalanságod és a bizalmad is rövid, érzékeny csúcsokban jelentkezik, és amit ebből megmutatsz, az nem mindig a teljes történet. A vezérfonal egy olyan ember, akinél a fej és a szív ritkán mond ellent egymásnak, és aki szinte minden téren, szavakban, érzésekben, félelemben és bizalomban, többet tart magában, mint ami első pillantásra kijön. Mi történne, ha ezt a felgyűlt szó- és érzéstartályt gyakrabban, kisebb cseppekben hagynád túlcsordulni, mielőtt magától keres kiutat?",
+  "vraag": "Hogyan tudnám jobban megmutatni, amit érzek, anélkül, hogy egyszerre kijönne az egész?",
+  "antwoord": "A nagylábujjaid már félig megadják a választ. Mindkettőn van egy tartály: a gondolatok és az érzések felgyülemlenek, mielőtt kijönnének. Balra ezen még egy kevert forma is van, tehát előbb tapintatos, aztán hirtelen nagyon egyenes. Pontosan ez az a pillanat, amit leírsz: a tartály megtelik, és átveszi az irányítást az egyenesség.\n\nA második lábujjaid ebben segítenek. Egyenesek és egy vonalban állnak: nagyon jól tudod, mit akarsz és mit érzel, csak még nem jött ki. A harmadik lábujjaidnak pedig vékony tövük van: te a kezdéstől lendülsz be, kicsiben, és aztán magától nő.\n\nPróbáld hát kis adagokban. Naponta egy mondat arról, amit érzel, egy nyugodt pillanatban, mielőtt a nyomás felmenne. A nagy körmeid védenek, ezért te döntsd el, kivel kezded. Ki lehet az első, akinél ezen a héten egy kis adag kicsordulhat?"
+ },
+ "duo": {
+  "kop": "Példa · duóolvasat",
+  "intro": "Fiú és apa, két pár láb egymás mellett. A fotók alatt lábujjanként látod mindkettejük formáit, alattuk pedig a duó történetét.",
+  "verhaal": "# Két tervrajz egymás mellett\n\n**A fiú**\nAmi ezeken a lábakon azonnal feltűnik, az a kiegyensúlyozottságuk: a jobb és a bal szinte egymás tükörképe, a nagylábujjtól a kislábujjig futó vonal pedig kiugrások nélkül, simán lejt. A gondolkodás és az érzés nála ritkán keveredik egymással. Ugyanakkor mindkét nagylábujján van egy tartály: ott több marad bent, szavakban és érzésben, mint ami első pillantásra kijön. A negyedik lábujjak erőteljesek: sok erő a ragaszkodásra és a szeretetre. A cselekvésnek és a kreativitásnak (harmadik lábujjak) kell egy nekifutás, mielőtt erőre kapnak, a bizonytalanság és a bizalom (kislábujjak) pedig rövid, éles csúcsokban jelentkezik, és amit megmutat belőle, az nem mindig a teljes történet.\n\n**Az apa**\nNála leginkább az tűnik fel, hogy a nagylábujjak kerekek és erőteljesek, és rövidebbek a többinél (túl kicsi lábujj): a többi lábujj energiájának nem jut egyformán hely, hogy ezen a nagylábujjon át kijöjjön, némi sietséggel (siető lábujj). A második lábujjak viszont hosszúak (túl nagy lábujj), és a csúcs felé szélesednek: tehát sok akarat és érzés. Kissé görbék (begörbült lábujj): nyomás alatt azért enged egy keveset. Jobbra kevés a tér az 1. és a 2. lábujj között (a gondolkodás elég gördülékenyen kijön), balra viszont van tér (az érzésekről beszélni több időbe telik). A negyedik lábujjak kissé visszanéznek, és kicsit elállnak a szomszédoktól; a jobb ráadásul be tud húzódni (behúzott lábujj): alkalmazkodóképesség, és egy bizonyos saját távolságtartás is. A kislábujjak, akárcsak a fiúnál, hegyesek és elcsavarodottak.\n\n# Miben hasonlítanak\n\nA legszembetűnőbb közös pont a kislábujjakban van: mindkettejüknél hegyesek és elcsavarodottak, kicsi körömmel. A bizonytalanság és a bizalom apánál és fiúnál hullámokban jön, és amit ebből mutatnak, az nem fedi teljesen azt, ami belül zajlik. Ezt anélkül, hogy valaha hangosan kimondanák, intuitívan felismerhetik egymásban. A harmadik lábujjak is találkoznak: mindkettejüknél egyenes a tengely, vagyis abban, amit tesznek, mindketten közvetlenek, kerülőutak nélkül. És mindkettőnél enyhe visszanézés van a negyedik lábujjon: a múlt még szerepet játszik abban, hogyan ragaszkodnak vagy engednek el, anélkül hogy rögzítené őket.\n\n# Miben különböznek\n\nA legvilágosabb különbség a nagylábujjnál van. A fiúnál ez egy kerek, tágas tartály: amit gondol és érez, diplomatikusan csomagolja, és megosztás előtt előbb bent tartja. Az apánál a nagylábujj épp ellenkezőleg, rövidebb a többinél, némi sietséggel: nem minden energia, ami a többi lábujjban kering, kap egyforma esélyt, hogy rajta át kijöjjön, és ami kijön, gyorsabban és közvetlenebbül jön ki, mint a fiánál. Míg a fiú először bent mérlegel és őriz, az apánál kiszökhet valami, mielőtt igazán kikristályosodott volna.\n\nA második lábujj is különbözik: a fiúnál egyenes és rendezett, szögletes csúccsal, amely csak akkor válik élessé, ha komolyra fordul a dolog. Az apánál hosszú, kerek és kissé görbe: több hely az alkalmazkodásra, egy csipetnyi engedés nyomás alatt. És az apánál jobbra kevés a tér az 1. és a 2. lábujj között (a gondolkodás gördülékenyen kijön), balra viszont van tér (az érzésekről beszélni tovább tart). Épp ez a különbség a gyors megosztás és a hosszú várakozás között súrlódhat egy olyan fiúval, aki a saját érzését is csak akkor mutatja meg, ha a tartály elég tele van. Két ember, aki mindketten visszatart valamit, mielőtt megosztaná, de egy kicsit más pillanatban és más tempóban, könnyen elmehet egymás mellett: az egyik épp megosztásra érett, a másik épp várakozásra.\n\nA harmadik lábujjnál a tempókülönbség tér vissza. A fiúnak vékony tője van: lassan indul be, és fokozatosan erősebb lesz. Az apának kevert formája van: abban, amit tesz, először tapintatos, és amikor komolyra fordul a dolog, hirtelen nagyon közvetlen.\n\n# Bejáratok és falak\n\nA fiúhoz a legkönnyebben kis adagokban és türelemmel lehet bejutni: a tartályos lábujjai (a nagylábujjak) azt mutatják, hogy inkább egyenletesen épít, mintsem hogy egyszerre megosszon mindent. Fal főleg akkor keletkezik, ha nyomást gyakorolnak rá, hogy gyorsabban osszon meg, mint ahogy a tartály megengedi; a nagylábujjain lévő nagy körmök ebben jól védik, nem enged be akárkit abba, ami benne zajlik.\n\nAz apánál a bejárat éppen abban a beszélgetésben van, hogy mit gondol racionálisan, az elég gördülékenyen jön ki. Az érzésekről szóló beszélgetés nehezebb: ott tér van az első és a második lábujj között, tehát az érzésekről beszélni több időt és meghívást igényel. A jobb negyedik lábujja be tud húzódni: így alkalmazkodik, vagy vesz ideiglenesen távolságot. Erőltetni ott valószínűleg visszafelé sül el.\n\nMindkettőjüknél a kislábujjak sérülékeny pontot jelentenek: a kicsi körmök érzékennyé teszik őket a külső feszültségre vagy bizalmatlanságra, ezzel óvatosan érdemes bánni, mindkét oldalról.\n\n# Utak egymáshoz\n\nA legszebb út a cselekvésen át vezet. Mindkettőjüknek egyenes a harmadik lábujja: a cselekvésben közvetlenek, és ott találnak egymásra a leggyorsabban. Együtt valamit alkotni vagy vállalni közelebb hozza őket egymáshoz, anélkül hogy előbb sokat kellene beszélni. A gondolkodásnál az apa adja meg a tempót, mert ott gyors, az érzésnél pedig a fiú, mert ott megvan a maga pillanata. És mivel mindkettőjüknek érzékeny a kislábujja, segít a bizonytalanságot egyszerűen hangosan kimondani: aki előbb kimondja, könnyebbé teszi a másiknak. Mi lenne az a kis dolog, amit ebben a hónapban együtt csinálhattok, és amiben egyikőtöknek sem kell beszélnie ahhoz, hogy közelebb kerüljetek egymáshoz?"
+ },
+ "tour": [
+  {
+   "titel": "Készíts egy fotót",
+   "tekst": "Állj egyenesen, a súlyod mindkét lábon, és fotózd le a meztelen lábaidat egyenesen felülről. Jó fény, laza lábujjak."
+  },
+  {
+   "titel": "A tükör is nézi",
+   "tekst": "A tükör minden lábujjat megnéz: formát, állást, körmöt és a nagytól a kicsi felé futó vonalat. Ez nagyjából egy percig tart."
+  },
+  {
+   "titel": "Ellenőrizd te is",
+   "tekst": "Lábujjanként látod, mely formák vannak kijelölve. Te másképp látod? Kapcsolj be vagy ki egy formát. Te maradsz az olvasó."
+  },
+  {
+   "titel": "A tükör mesél",
+   "tekst": "Az elemzés után rögtön elmeséli a tükör, mit mondanak a lábujjaid, a könyvek stílusában. Ha mind a tíz lábujjat végignézted, megnyílik a részletes olvasat."
+  },
+  {
+   "titel": "Tegyél fel egy kérdést",
+   "tekst": "A munkáról, a szerelemről vagy egy döntésről, amit meg kell hoznod. A tükör a saját lábujjaid alapján válaszol."
+  },
+  {
+   "titel": "Olvassatok együtt",
+   "tekst": "Tegyél két pár lábat egymás mellé: társak, szülő és gyerek, barátok. Láthatjátok, miben hasonlítotok, miben különböztök, és hogyan érhetitek el egymást."
+  }
+ ]
+}

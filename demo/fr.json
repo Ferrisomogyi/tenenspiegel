@@ -1,0 +1,90 @@
+{
+ "ui": {
+  "tab_solo": "Une lecture",
+  "tab_duo": "Duo : fils et père",
+  "sluit": "Fermer",
+  "zag": "Ce que le miroir a vu",
+  "aangevinkt": "Coché",
+  "notitie": "Note",
+  "lezing_kop": "La lecture approfondie",
+  "vraag_kop": "Exemple de question",
+  "vraag_lbl": "Question",
+  "antwoord_lbl": "Réponse du miroir",
+  "zoon": "Fils",
+  "vader": "Père",
+  "foto_alt_zoon": "Photo d'exemple : pieds nus vus de dessus, debout",
+  "foto_alt_vader": "Photo d'exemple : les pieds du père",
+  "duo_tabel": "Orteil par orteil, côte à côte",
+  "duo_verhaal_kop": "L'histoire du duo",
+  "tour_knop": "Visite guidée en 6 étapes",
+  "tour_stap": "Étape {n} sur 6",
+  "tour_vorige": "Précédent",
+  "tour_volgende": "Suivant",
+  "tour_klaar": "Terminé",
+  "tour_naar_demo": "Voir l'exemple de lecture",
+  "fors_teen": "Orteil vigoureux"
+ },
+ "solo": {
+  "kop": "Exemple · une vraie lecture",
+  "intro": "Une vraie lecture, présentée de façon anonyme. Pour chaque orteil, tu vois quelles formes ont été cochées, ce que le miroir a vu et ce qu'il raconte. En bas, tu trouveras un exemple de question.",
+  "eerste": "Ces pieds frappent tout de suite par leur régularité : le droit et le gauche sont presque l'image l'un de l'autre, des gros orteils larges avec leur partie centrale ample jusqu'aux petits orteils qui tournent tous deux vers l'extérieur et s'effilent en pointe. La ligne imaginaire du plus grand au plus petit descend en douceur sur les deux pieds, sans orteil qui dépasse ou qui s'efface, signe qu'aucune zone ne s'impose ici de façon excessive ni n'est repoussée. Ce qui attire d'abord le regard, c'est cette construction presque identique des deux pieds : penser et ressentir semblent rarement très éloignés l'un de l'autre. En même temps, presque chaque orteil porte un détail subtil, un réservoir, un bout tourné, un ongle qui n'a pas tout à fait le même aspect, et cela montre que sous ce calme et cette symétrie, bien des choses sont tout de même retenues.",
+  "notities": {
+   "R1": "Commence normalement à la racine, s'élargit au milieu et finit de nouveau normalement : réservoir. Bout rond, grand ongle.",
+   "R2": "Axe droit, bout légèrement anguleux. Les orteils descendent en douceur sur une même ligne.",
+   "R3": "Commence étroit à la racine et s'élargit vers le bout : base fine, l'énergie monte en puissance. Axe droit.",
+   "R4": "Orteil vigoureux avec un ongle moyen. Ne regarde qu'à peine en arrière : le passé joue un petit rôle, le détachement vient quand il le faut.",
+   "R5": "Les côtés convergent vers un bout étroit : pointu. La surface de l'ongle regarde nettement de biais vers l'extérieur : tourné. Ongle petit par rapport à la dernière phalange. Pas de cachette, pas de bosse nette avant la racine, donc pas de petit sac à dos.",
+   "L1": "Commence normalement à la racine, s'élargit au milieu et finit de nouveau normalement : réservoir. Bout rond avec un pan plat (forme mixte), grand ongle.",
+   "L2": "Axe droit, bout légèrement anguleux. Les orteils descendent en douceur sur une même ligne.",
+   "L3": "Commence étroit à la racine et s'élargit vers le bout : base fine, l'énergie monte en puissance. Axe droit.",
+   "L4": "Orteil vigoureux avec un ongle moyen. Ne regarde qu'à peine en arrière : le passé joue un petit rôle, le détachement vient quand il le faut.",
+   "L5": "Le bout s'effile en pointe : pointu. L'ongle regarde de biais vers le bord extérieur : tourné. Ongle petit par rapport à la dernière phalange. Pas de cachette sous l'orteil 4 et pas de bosse avant la racine (pas de petit sac à dos)."
+  },
+  "tenen": {
+   "R1": "Ton gros orteil droit est de forme ronde : tu enveloppes ce que tu penses de diplomatie, et tu préfères ne pas chercher la confrontation. Mais au milieu, l'orteil se gonfle en réservoir : il se pense et se pèse plus de choses qu'il n'en sort jamais, mots et points de vue s'accumulent avant d'être partagés. Le grand ongle fait de toi quelqu'un qui émet mieux qu'il ne reçoit : tu ne laisses pas n'importe qui entrer dans ce que tu penses.",
+   "R2": "Ton deuxième orteil droit se tient bien droit et suit proprement la ligne des autres orteils : ta volonté est ordonnée, tu ne cours pas après des objectifs changeants. Le bout légèrement anguleux montre que, quand il le faut vraiment, tu dis carrément ce que tu veux : pas de détours, pas de demi-mesures.",
+   "R3": "Ton orteil du milieu droit commence étroit à la racine et s'élargit vers le bout : une base fine. Ton élan ne démarre pas tout de suite, il te faut de l'élan, mais une fois lancé, l'action se construit d'elle-même et gagne en force à mesure que tu avances.",
+   "R4": "Le quatrième orteil droit est vigoureux : il y a en toi beaucoup de capacité à garder prise sur ta propre situation. Le fait que tu regardes légèrement en arrière signifie que le passé joue de temps à autre un rôle dans ta façon de t'accrocher ou de lâcher prise ; il ne te retient pas, le détachement vient quand c'est nécessaire. L'ongle moyen montre que tu es bien équilibré entre tenir bon et rester ouvert à ce que les autres t'apportent.",
+   "R5": "Ton petit orteil droit est pointu et tourné : l'incertitude et la peur te traversent par bouffées brèves et vives, et ce que tu en montres n'est pas forcément ce qui se passe à l'intérieur : le cap est ajusté en cours de route. Le petit ongle te rend sensible dans ce domaine : les stimuli extérieurs, la tension ou la menace, t'atteignent fort.",
+   "L1": "À gauche, on retrouve la même construction, avec une nuance bien à elle : l'orteil est une forme mixte, rond au départ avec un pan plat au bout. En général, tu exprimes tes sentiments avec tact, mais quand ça compte, tu peux soudain être tout à fait direct sur ce que tu ressens. Ici aussi, il y a un réservoir : des sentiments qui s'accumulent avant de sortir, et un grand ongle qui les protège jusqu'à ce que le moment soit venu.",
+   "L2": "Le deuxième orteil gauche imite le droit : axe droit, bout anguleux, bien sur la ligne. Ton ressenti sort, quand il le faut, de façon directe et sans détour : tu ne laisses aucun doute sur ce que tu ressens, même si au quotidien tu l'enveloppes plutôt de calme.",
+   "L3": "On retrouve le même schéma à gauche : début étroit, bout large. Ta créativité et tes inspirations intuitives remontent lentement et grandissent peu à peu jusqu'à leur pleine force, plutôt un flux qui monte qu'un éclair soudain.",
+   "L4": "Le quatrième orteil gauche est lui aussi vigoureux : tu as énormément d'amour à donner, aux gens, mais tout autant à un travail ou à un projet dans lequel tu t'engages. Le léger regard en arrière teinte cet amour d'une pointe d'expériences passées, sans te bloquer ; l'ongle moyen garde joliment en équilibre l'émission et la réception.",
+   "L5": "À gauche, cette image se répète pour la confiance : pointu signifie que l'optimisme et la confiance arrivent par élans, comme des vagues, et la position tournée montre que ce que tu laisses voir de ta confiance ne correspond pas toujours à ce qui vit à l'intérieur. Le petit ongle te rend sensible aux signaux de confiance ou de méfiance chez les autres, tu les perçois vite."
+  },
+  "samenhang": "Le plus frappant dans cette lecture, c'est le peu de différence entre le droit et le gauche : presque orteil par orteil, le même schéma se répète. Chez toi, penser et ressentir sont rarement en conflit ; ce que tu penses et ce que tu ressens avancent en grande partie du même pas. C'est aux gros orteils que cela se voit le mieux : tous deux construisent un réservoir, à droite enveloppé de diplomatie, à gauche avec un éclair de franchise dès que le moment décisif arrive. Les mots comme les sentiments sont donc d'abord retenus avant d'être partagés. Avec les deuxièmes orteils, ce tableau se renforce : volonté et ressenti sortent tous deux de façon ordonnée, et si nécessaire net et direct. Les orteils du milieu montrent que ton action comme ta créativité ont besoin d'un échauffement ; la force grandit d'elle-même à mesure que tu avances. Aux quatrièmes orteils, on voit deux orteils solides et vigoureux : beaucoup de capacité à tenir bon et beaucoup de capacité à aimer, tous deux avec un soupçon de passé qui accompagne sans dominer. Et les petits orteils montrent enfin que ton incertitude comme ta confiance se présentent par pics brefs et sensibles, et que ce que tu en montres n'est pas toujours toute l'histoire. Le fil rouge est celui d'une personne dont la tête et le cœur se contredisent rarement, et qui, presque partout, en mots, en sentiments, en peur et en confiance, garde en elle plus qu'il n'en paraît au premier regard. Que se passerait-il si tu laissais ce réservoir accumulé de mots et de sentiments déborder plus souvent, en plus petites gouttes, avant qu'il ne se cherche lui-même une issue ?",
+  "vraag": "Comment puis-je mieux montrer ce que je ressens, sans que tout sorte d'un coup ?",
+  "antwoord": "Tes gros orteils donnent déjà la moitié de la réponse. Tous deux ont un réservoir : pensées et sentiments s'accumulent avant de sortir. À gauche, il s'y ajoute une forme mixte : d'abord plein de tact, puis soudain très direct. C'est exactement le moment que tu décris : le réservoir est plein et la franchise prend le relais.\n\nTes deuxièmes orteils t'aident en cela. Ils sont droits et sur une même ligne : tu sais très bien ce que tu veux et ce que tu ressens, simplement cela n'est pas encore sorti. Et tes orteils du milieu ont une base fine : tu te mets en route en commençant, petit, puis cela grandit tout seul.\n\nEssaie donc par petites portions. Une phrase par jour sur ce que tu ressens, à un moment calme, avant que la pression monte. Les grands ongles te protègent, choisis donc toi-même avec qui commencer. Qui pourrait être la première personne, cette semaine, chez qui tu laisses déborder une petite portion ?"
+ },
+ "duo": {
+  "kop": "Exemple · lecture en duo",
+  "intro": "Fils et père, deux paires de pieds côte à côte. Sous les photos, tu vois pour chaque orteil les formes de l'un et de l'autre, puis l'histoire du duo.",
+  "verhaal": "# Deux plans côte à côte\n\n**Le fils**\nCe qui frappe tout de suite chez ces pieds, c'est leur régularité : le droit et le gauche sont presque l'image l'un de l'autre, et la ligne du gros orteil au petit descend en douceur, sans écart. Chez lui, penser et ressentir sont rarement en conflit. En même temps, les deux gros orteils ont un réservoir : on y retient plus, en mots et en ressenti, qu'il n'en paraît au premier regard. Les quatrièmes orteils sont vigoureux : beaucoup de capacité à tenir bon et à aimer. L'action et la créativité (orteils du milieu) ont besoin d'un élan avant d'atteindre leur force, et l'incertitude comme la confiance (les petits orteils) arrivent par pics brefs et vifs, ce qui est montré n'étant pas toujours toute l'histoire.\n\n**Le père**\nChez lui, ce qui frappe surtout, c'est que les gros orteils sont ronds et vigoureux, et plus courts que les autres : toute l'énergie des autres orteils ne trouve pas la même place pour sortir par ce gros orteil, avec un petit côté pressé. Les deuxièmes orteils, en revanche, sont longs et s'élargissent vers le bout : beaucoup de volonté et de ressenti, donc. Ils sont légèrement recourbés : sous la pression, il cède tout de même un peu. À droite, il y a peu d'espace entre les orteils 1 et 2 (la pensée sort assez vite), à gauche il y en a (parler du ressenti prend plus de temps). Les quatrièmes orteils regardent un peu en arrière et se tiennent un peu à l'écart de leurs voisins ; le droit peut en plus se rétracter : capacité d'adaptation, et aussi une certaine distance qui lui est propre. Les petits orteils sont, comme chez son fils, pointus et tournés.\n\n# Là où ils se ressemblent\n\nLe point de rencontre le plus frappant se trouve aux petits orteils : chez tous deux pointus et tournés, avec un petit ongle. L'incertitude et la confiance viennent par vagues chez le père comme chez le fils, et ce qu'ils en montrent ne recouvre pas tout à fait ce qui se passe à l'intérieur. C'est quelque chose qu'ils peuvent reconnaître l'un chez l'autre par intuition, sans jamais le dire à voix haute. Les orteils du milieu se rejoignent aussi : chez les deux, un axe droit, donc dans ce qu'ils font, ils sont tous deux directs, sans détours. Et chez les deux, un léger regard en arrière joue au quatrième orteil : le passé influence encore leur façon de tenir ou de lâcher, sans les figer.\n\n# Là où ils diffèrent\n\nLa différence la plus nette se trouve au gros orteil. Chez le fils, c'est un réservoir rond et spacieux : il enveloppe de diplomatie ce qu'il pense et ressent, et le garde d'abord en lui avant de le partager. Chez le père, le gros orteil est au contraire plus court que les autres, avec un petit côté pressé : toute l'énergie qui circule dans les autres orteils n'a pas la même chance de sortir par cet orteil, et ce qui sort arrive plus vite et plus directement que chez son fils. Là où le fils pèse et garde d'abord en lui, quelque chose peut s'échapper chez le père avant d'avoir vraiment pris forme.\n\nLe deuxième orteil diffère aussi : chez le fils, bien droit et ordonné, avec un bout anguleux qui ne devient tranchant que quand il le faut vraiment. Chez le père, long, rond et légèrement recourbé : plus de place pour l'adaptation, un soupçon de concession sous la pression. Et à droite, le père a peu d'espace entre les orteils 1 et 2 (la pensée sort vite), tandis qu'à gauche il y en a (parler du ressenti dure plus longtemps). Cette différence même entre partager vite et attendre longtemps peut frotter avec un fils qui ne montre lui aussi son ressenti que lorsque le réservoir est assez plein. Deux personnes qui retiennent toutes deux quelque chose avant de le partager, à un moment un peu différent et à un autre rythme, peuvent facilement se manquer : l'un est juste prêt à partager, l'autre juste prêt à attendre.\n\nAu troisième orteil, on retrouve la différence de rythme. Le fils a une base fine : il se met lentement en route et gagne peu à peu en force. Le père a une forme mixte : d'abord plein de tact dans ce qu'il fait, puis, quand il le faut, soudain très direct.\n\n# Portes et murs\n\nAvec le fils, on entre le plus facilement par petites portions et avec patience : ses orteils réservoirs (les gros orteils) montrent qu'il préfère construire régulièrement plutôt que de tout partager d'un coup. Un mur naît surtout quand on le presse de partager plus vite que ce que son réservoir permet ; les grands ongles de ses gros orteils le protègent bien dans ce cas, il ne laisse pas n'importe qui entrer dans ce qui se passe en lui.\n\nChez le père, une porte d'entrée se trouve dans la conversation sur ce qu'il pense de façon rationnelle, cela sort assez vite. La conversation sur le ressenti est plus délicate : il y a de l'espace entre le premier et le deuxième orteil, donc parler du ressenti demande plus de temps et d'invitation. Son quatrième orteil droit peut se rétracter : c'est ainsi qu'il s'adapte ou prend temporairement de la distance. Forcer risque d'y produire l'effet inverse.\n\nChez les deux, les petits orteils forment un point vulnérable : les petits ongles les rendent sensibles à la tension ou à la méfiance venues de l'extérieur, quelque chose à manier avec précaution, des deux côtés.\n\n# Chemins l'un vers l'autre\n\nLe plus beau chemin passe par le faire. Tous deux ont un orteil du milieu droit : dans l'action, ils sont directs et se retrouvent le plus vite. Créer ou entreprendre quelque chose ensemble les rapproche, sans qu'il faille d'abord beaucoup parler. Laisse le père donner le rythme pour la réflexion, il y est rapide, et laisse le fils donner le rythme pour le ressenti, il y a besoin de son propre moment. Et comme tous deux ont des petits orteils sensibles, il aide de dire simplement l'incertitude à voix haute : celui qui le dit le premier facilite les choses à l'autre. Quelle petite chose pourriez-vous faire ensemble ce mois-ci, où aucun de vous deux n'a besoin de parler pour se rapprocher de l'autre ?"
+ },
+ "tour": [
+  {
+   "titel": "Prends une photo",
+   "tekst": "Tiens-toi debout, le poids sur les deux pieds, et photographie tes pieds nus bien à la verticale. Bonne lumière, orteils détendus."
+  },
+  {
+   "titel": "Le miroir regarde avec toi",
+   "tekst": "Le miroir examine chaque orteil : forme, position, ongle et la ligne du plus grand au plus petit. Cela prend environ une minute."
+  },
+  {
+   "titel": "Vérifie par toi-même",
+   "tekst": "Pour chaque orteil, tu vois quelles formes sont cochées. Tu vois les choses autrement ? Active ou désactive une forme. C'est toi qui restes le lecteur."
+  },
+  {
+   "titel": "Le miroir raconte",
+   "tekst": "Juste après l'analyse, le miroir raconte ce que disent tes orteils, dans le style des livres. Quand tu as passé en revue les dix orteils, la lecture approfondie se débloque."
+  },
+  {
+   "titel": "Pose une question",
+   "tekst": "Sur le travail, l'amour ou un choix à faire. Le miroir répond à partir de tes propres orteils."
+  },
+  {
+   "titel": "Lisez ensemble",
+   "tekst": "Place deux paires de pieds côte à côte : partenaires, parent et enfant, amis. Tu vois où vous vous ressemblez, où vous différez et comment vous atteindre l'un l'autre."
+  }
+ ]
+}

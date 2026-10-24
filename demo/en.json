@@ -1,0 +1,90 @@
+{
+ "ui": {
+  "tab_solo": "A reading",
+  "tab_duo": "Duo: son and father",
+  "sluit": "Close",
+  "zag": "What the mirror saw",
+  "aangevinkt": "Ticked",
+  "notitie": "Note",
+  "lezing_kop": "The extended reading",
+  "vraag_kop": "Sample question",
+  "vraag_lbl": "Question",
+  "antwoord_lbl": "The mirror's answer",
+  "zoon": "Son",
+  "vader": "Father",
+  "foto_alt_zoon": "Sample photo: bare feet seen from above, standing",
+  "foto_alt_vader": "Sample photo: the father's feet",
+  "duo_tabel": "Toe by toe, side by side",
+  "duo_verhaal_kop": "The duo story",
+  "tour_knop": "Tour in 6 steps",
+  "tour_stap": "Step {n} of 6",
+  "tour_vorige": "Previous",
+  "tour_volgende": "Next",
+  "tour_klaar": "Done",
+  "tour_naar_demo": "See the sample reading",
+  "fors_teen": "Sturdy toe"
+ },
+ "solo": {
+  "kop": "Sample · a real reading",
+  "intro": "A real reading, shown anonymously. For each toe you see which shapes were ticked, what the mirror saw and what it tells you. At the bottom there is a sample question.",
+  "eerste": "These feet stand out right away for their evenness: right and left are almost a mirror image of each other, from the broad big toes with their wide middle section to the little toes that both turn outward and taper to a point. The imaginary line from big to small runs down smoothly on both feet, with no toes sticking out above it or sinking below it, a sign that no single area is pushed to the front or pushed away here. What catches the eye first is the almost identical build of both feet: thinking and feeling seem to lie rarely far apart here. At the same time, almost every toe carries a subtle detail, a reservoir, a twisted tip, a nail that looks just a little different, which shows that beneath all this calm and symmetry quite a lot is being held in.",
+  "notities": {
+   "R1": "Starts normal at the root, widens in the middle and ends normal again: reservoir. Round tip, large nail.",
+   "R2": "Axis straight, tip slightly angular. Toes descend smoothly on one line.",
+   "R3": "Starts narrow at the root and widens toward the tip: thin base, the energy builds up. Axis straight.",
+   "R4": "Sturdy toe with an average nail. Looks back only minimally: the past plays a light part, letting go works when it has to.",
+   "R5": "The sides run to a narrow tip: pointed. The nail surface visibly looks out at an angle: twisted. Nail small in relation to the top joint. No hiding, no clear bump before the root, so no little backpack.",
+   "L1": "Starts normal at the root, widens in the middle and ends normal again: reservoir. Tip round with a flat stretch (mixed shape), large nail.",
+   "L2": "Axis straight, tip slightly angular. Toes descend smoothly on one line.",
+   "L3": "Starts narrow at the root and widens toward the tip: thin base, the energy builds up. Axis straight.",
+   "L4": "Sturdy toe with an average nail. Looks back only minimally: the past plays a light part, letting go works when it has to.",
+   "L5": "Tip tapers to a point: pointed. The nail looks at an angle toward the outer edge: twisted. Nail small in relation to the last joint. No hiding beneath toe 4 and no bump before the root (no little backpack)."
+  },
+  "tenen": {
+   "R1": "Your right big toe is round in shape: you wrap what you think in diplomacy, and you would rather not seek out confrontation. But in the middle the toe swells into a reservoir: more is thought and weighed than ever comes out, and words and viewpoints pile up before they are shared. The large nail makes you better at sending than at receiving: you do not simply let everyone in on what you think.",
+   "R2": "Your right second toe stands perfectly straight and neatly follows the line of the other toes: your willpower is orderly, and you do not chase changing goals. The slightly angular tip shows that, when it comes down to it, you are completely straightforward about what you want: no detours, no half measures.",
+   "R3": "Your right middle toe starts narrow at the root and grows wider toward the tip: a thin base. Your drive does not start up right away, you need a run-up, but once you are under way the action builds on its own and grows stronger the further you go.",
+   "R4": "The right fourth toe is sturdy: there is a great capacity in you to keep a grip on your own situation. That you look back lightly means the past now and then plays a part in how you hold on or let go; it does not hold you captive, and letting go works when it is needed. The average nail shows that you are well balanced here between holding on and staying open to what others bring you.",
+   "R5": "Your right little toe is pointed and twisted: insecurity and fear rise in you in short, sharp bursts, and what you show of them is not necessarily what is going on inside: the course is adjusted along the way. The small nail makes you sensitive in this area: stimuli from outside, tension or threat, come in hard.",
+   "L1": "On the left you see the same build again, with a twist of its own: the toe is a mixed shape, round at the start with a flat stretch at the tip. You usually bring your feelings tactfully, but when it matters you can suddenly be completely blunt about what you feel. Here too there is a reservoir: feelings that pile up before they come out, and a large nail that shields them until that moment arrives.",
+   "L2": "Left toe two echoes the right one: straight in its axis, angular at the tip, neatly on the line. When it matters, your feeling comes out direct and unvarnished: you leave no doubt about what you feel, even though in daily life you usually wrap it in calm.",
+   "L3": "You see the same pattern on the left: narrow start, wide tip. Your creativity and intuitive impulses bubble up slowly and grow gradually to full strength, more a building stream than a sudden flash.",
+   "L4": "The left fourth toe is sturdy too: you have a great deal of love to give, to people, but just as much to a job or a project you throw yourself into. The light look back colors that loving with a touch of earlier experiences, without blocking you; the average nail keeps sending and receiving nicely in balance.",
+   "L5": "On the left that picture repeats itself for trust: pointed means that optimism and trust arrive in surges, like waves, and the twisted position shows that what you show outwardly about your trust does not always match what lives inside. The small nail makes you sensitive to signals of trust or distrust from others, you pick those up quickly."
+  },
+  "samenhang": "The most striking thing in this reading is how little right and left differ from each other: almost toe for toe, the same pattern repeats. With you, thinking and feeling are rarely at odds; what you think and what you feel largely move together. You see it most clearly in the big toes: both build a reservoir, on the right wrapped in diplomacy, on the left with a flash of directness as soon as it comes down to it. So both words and feelings are first held in before they are shared. With the second toes that picture grows stronger: will and feeling both come out in an orderly way, and when needed razor-sharp and direct. The middle toes show that both your action and your creativity need a warm-up; the strength grows by itself the further you go. With the fourth toes you see two solid, sturdy toes: a great capacity to hold on and a great capacity to love, both with a touch of the past playing along without taking over. And finally the little toes show that both your insecurity and your trust present themselves in short, sensitive peaks, and that what you show of them is not always the whole story. The common thread is a person whose head and heart are rarely in conflict, and who in almost every area holds in more, in words, feelings, fear and trust, than shows on the surface. What would happen if you let that built-up reservoir of words and feelings overflow more often, in smaller drops, before it finds its own way out?",
+  "vraag": "How can I show better what I feel, without it all coming out at once?",
+  "antwoord": "Your big toes already give half the answer. Both have a reservoir: thoughts and feelings pile up before they come out. On the left there is a mixed shape on top of that, so first tactful and then suddenly very direct. That is exactly the moment you describe: the reservoir is full and the directness takes over.\n\nYour second toes help you here. They stand straight and on one line: you know very well what you want and what you feel, it just is not out yet. And your middle toes have a thin base: you get going by starting, small, and then it grows by itself.\n\nSo try it in small portions. One sentence a day about what you feel, at a quiet moment, before the pressure rises. The large nails protect you, so choose for yourself who you start with. Who could be the first person this week with whom you let one small portion overflow?"
+ },
+ "duo": {
+  "kop": "Sample · duo reading",
+  "intro": "Son and father, two pairs of feet side by side. Below the photos you see each toe's shapes for both of them, and below that the duo story.",
+  "verhaal": "# Two blueprints side by side\n\n**The son**\nWhat stands out right away about these feet is their evenness: right and left are almost a mirror image of each other, and the line from big toe to little toe descends smoothly with no outliers. Thinking and feeling are rarely at odds in him. At the same time, both big toes have a reservoir: more is held in there, in words and feeling, than shows on the surface at first glance. The fourth toes are sturdy: a great capacity to hold on and to love. Action and creativity (middle toes) need a run-up before they come into their strength, and insecurity and trust (the little toes) arrive in short, sharp peaks, where what is shown is not always the whole story.\n\n**The father**\nWith him, what stands out most is that the big toes are round and sturdy, and shorter than the rest: not all the energy of the other toes gets equal room to come out through that big toe, with a touch of haste added. The second toes, on the other hand, are long and grow wider toward the tip: a lot of willpower and feeling, then. They are slightly curled: under pressure he gives in a little after all. On the right there is little space between toe 1 and 2 (thinking comes out fairly easily), on the left there is space (talking about feeling takes more time). The fourth toes look back a little and stand somewhat apart from their neighbors; the right one can also retract: adaptability, and also a certain distance of his own. The little toes are, just like his son's, pointed and twisted.\n\n# Where they are alike\n\nThe most striking point of contact is in the little toes: in both pointed and twisted, with a small nail. Insecurity and trust come in waves for father and son, and what they show of them does not quite match what is going on inside. It is something they can recognize in each other intuitively, without ever saying it out loud. The middle toes meet too: in both a straight axis, so in what they do, both are direct, with no detours. And in both a light look back plays along at the fourth toe: the past still plays a part in how they hold on or let go, without pinning them down.\n\n# Where they differ\n\nThe clearest difference is at the big toe. In the son it is a round, roomy reservoir: he wraps what he thinks and feels in diplomacy, and keeps it inside first before it is shared. In the father the big toe is shorter than the rest, with a touch of haste: not all the energy moving in the other toes gets an equal chance to come out through that toe, and what comes out comes faster and more directly than with his son. Where the son first weighs and stores things inside, something can escape from the father before it has properly crystallized.\n\nThe second toe differs too: in the son bolt upright and orderly, with an angular tip that only turns sharp when it comes down to it. In the father long, round and slightly curled: more room for adaptation, a touch of giving in under pressure. And on the right the father has little space between toe 1 and 2 (thinking comes out easily), while on the left there is space (talking about feeling takes longer). That very difference between sharing fast and waiting long can chafe against a son who also shows his own feeling only late, when the reservoir is full enough. Two people who both hold something back before sharing it, at a slightly different moment and at a different pace, can easily miss each other: one is just ready to share, the other just ready to wait.\n\nWith the middle toe you see the difference in pace again. The son has a thin base: he gets going slowly and gradually grows stronger. The father has a mixed shape: first tactful in what he does, and when it comes down to it suddenly very direct.\n\n# Doors and walls\n\nWith the son, the easiest way in is in small portions and with patience: his reservoir toes (the big toes) show that he would rather build up steadily than share everything at once. A wall mostly appears when pressure is put on him to share faster than the reservoir allows; the large nails on his big toes protect him well here, he does not simply let everyone in on what is going on.\n\nWith the father, a way in lies in the conversation about what he thinks rationally, which comes out fairly easily. The feelings conversation is harder: there is space between the first and second toe, so talking about feeling needs more time and invitation. His right fourth toe can retract: that is how he adapts or temporarily takes distance. Forcing probably backfires there.\n\nIn both, the little toes form a vulnerable spot: the small nails make them sensitive to tension or distrust from outside, something to handle carefully, from both sides.\n\n# Routes to each other\n\nThe most beautiful route runs through doing. Both have a straight middle toe: in doing, they are direct and find each other fastest. Making or undertaking something together brings them closer, without much needing to be said first. Let the father set the pace when it comes to thinking, he is quick there, and let the son set the pace when it comes to feeling, there he needs his own moment. And because both have sensitive little toes, it helps to simply say insecurity out loud: whoever says it first makes it easier for the other. What small thing could the two of you do together this month, where neither has to talk in order to come closer to each other?"
+ },
+ "tour": [
+  {
+   "titel": "Take a photo",
+   "tekst": "Stand upright, weight on both feet, and photograph your bare feet straight from above. Good light, toes relaxed."
+  },
+  {
+   "titel": "The mirror looks along",
+   "tekst": "The mirror examines every toe: shape, position, nail and the line from big to small. That takes about a minute."
+  },
+  {
+   "titel": "Check it yourself",
+   "tekst": "For each toe you see which shapes are ticked. Do you see it differently? Switch a shape on or off. You remain the reader."
+  },
+  {
+   "titel": "The mirror speaks",
+   "tekst": "Right after the analysis the mirror tells you what your toes say, in the style of the books. Once you have checked all ten toes, the extended reading unlocks."
+  },
+  {
+   "titel": "Ask a question",
+   "tekst": "About work, love or a choice you have to make. The mirror answers from your own toes."
+  },
+  {
+   "titel": "Read together",
+   "tekst": "Place two pairs of feet side by side: partners, parent and child, friends. You see where you are alike, where you differ and how you reach each other."
+  }
+ ]
+}

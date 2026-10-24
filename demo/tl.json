@@ -1,0 +1,90 @@
+{
+ "ui": {
+  "tab_solo": "Isang pagbasa",
+  "tab_duo": "Duo: anak at ama",
+  "sluit": "Isara",
+  "zag": "Ang nakita ng salamin",
+  "aangevinkt": "Namarkahan",
+  "notitie": "Tala",
+  "lezing_kop": "Ang pinalawak na pagbasa",
+  "vraag_kop": "Halimbawang tanong",
+  "vraag_lbl": "Tanong",
+  "antwoord_lbl": "Sagot ng salamin",
+  "zoon": "Anak",
+  "vader": "Ama",
+  "foto_alt_zoon": "Halimbawang larawan: mga hubad na paa mula sa itaas, nakatayo",
+  "foto_alt_vader": "Halimbawang larawan: ang mga paa ng ama",
+  "duo_tabel": "Bawat daliri, magkatabi",
+  "duo_verhaal_kop": "Ang kuwento ng duo",
+  "tour_knop": "Gabay sa 6 na hakbang",
+  "tour_stap": "Hakbang {n} sa 6",
+  "tour_vorige": "Nakaraan",
+  "tour_volgende": "Susunod",
+  "tour_klaar": "Tapos na",
+  "tour_naar_demo": "Tingnan ang halimbawang pagbasa",
+  "fors_teen": "Matipunong daliri"
+ },
+ "solo": {
+  "kop": "Halimbawa · isang tunay na pagbasa",
+  "intro": "Isang tunay na pagbasa, ipinapakita nang walang pangalan. Sa bawat daliri makikita mo kung aling mga hugis ang namarkahan, ano ang nakita ng salamin at ano ang sinasabi nito. Sa ibaba ay may halimbawang tanong.",
+  "eerste": "Agad na kapansin-pansin sa mga paang ito ang pagkakapantay-pantay nito: ang kanan at kaliwa ay halos salamin ng isa't isa, mula sa malalapad na hinlalaki na may malapad na gitna hanggang sa mga kalingkingan na parehong nakaliko palabas at matulis ang dulo. Ang guni-guning guhit mula sa pinakamalaki hanggang sa pinakamaliit ay maayos na bumababa sa magkabilang paa, walang daliring sumisilip sa itaas o lumulubog, tanda na walang isang bahagi ng sarili na sobrang namumuno o itinutulak sa likod. Ang unang umaagaw ng pansin ay ang halos magkaparehong anyo ng dalawang paa: bihirang magkalayo rito ang pag-iisip at ang damdamin. Kasabay nito, halos sa bawat daliri ay may pinong detalye, isang reservoir, isang pilipit na dulo, isang kukong bahagyang iba ang itsura, na nagpapakitang sa ilalim ng katahimikan at pagkakapantay-pantay na iyon, marami pa ring pinanghahawakan.",
+  "notities": {
+   "R1": "Karaniwan ang simula sa ugat, lumalapad sa gitna, at karaniwan ulit ang dulo: reservoir. Bilog ang dulo, malaking kuko.",
+   "R2": "Tuwid ang aksis, medyo anggulo ang dulo. Maayos na bumababa ang mga daliri sa iisang linya.",
+   "R3": "Makitid ang simula sa ugat at lumalapad papunta sa dulo: manipis na ugat, umaakyat ang enerhiya. Tuwid ang aksis.",
+   "R4": "Matipunong daliri na may karaniwang kuko. Kaunting-kaunti lang ang paglingon: bahagyang may bahagi ang nakaraan, kaya namang bumitaw kapag kailangan.",
+   "R5": "Sumisikip ang mga gilid papunta sa makitid na dulo: matulis. Kitang nakatagilid palabas ang ibabaw ng kuko: pilipit. Maliit ang kuko kumpara sa buko ng daliri. Walang nagtatagong daliri, walang malinaw na bukol bago ang ugat, kaya walang munting backpack.",
+   "L1": "Karaniwan ang simula sa ugat, lumalapad sa gitna, at karaniwan ulit ang dulo: reservoir. Bilog ang dulo na may patag na bahagi (halong hugis), malaking kuko.",
+   "L2": "Tuwid ang aksis, medyo anggulo ang dulo. Maayos na bumababa ang mga daliri sa iisang linya.",
+   "L3": "Makitid ang simula sa ugat at lumalapad papunta sa dulo: manipis na ugat, umaakyat ang enerhiya. Tuwid ang aksis.",
+   "L4": "Matipunong daliri na may karaniwang kuko. Kaunting-kaunti lang ang paglingon: bahagyang may bahagi ang nakaraan, kaya namang bumitaw kapag kailangan.",
+   "L5": "Matulis ang dulo. Nakatagilid ang kuko papunta sa panlabas na gilid: pilipit. Maliit ang kuko kumpara sa huling buko. Walang nagtatagong daliri sa ilalim ng daliri 4 at walang bukol bago ang ugat (walang munting backpack)."
+  },
+  "tenen": {
+   "R1": "Bilog ang kanang hinlalaki mo sa paa: binabalot mo nang may diplomasya ang iniisip mo, at ayaw mong humanap ng sagupaan. Pero sa gitna, namamaga ang daliri at nagiging reservoir: mas marami ang naiisip at pinag-iisipan kaysa sa lumalabas, nag-iipon muna ang mga salita at paninindigan bago ibahagi. Ang malaking kuko ay nagpapahusay sa iyo sa pagpapadala kaysa sa pagtanggap: hindi mo basta pinapapasok ang kahit sino sa iniisip mo.",
+   "R2": "Tuwid na tuwid ang kanang pangalawang daliri mo at maayos na sumusunod sa linya ng iba pang daliri: maayos ang lakas ng kalooban mo, hindi ka humahabol sa palit-palit na mga layunin. Ang bahagyang anggulong dulo ay nagpapakitang kapag dumating na ang oras, prangka ka tungkol sa gusto mo: walang paligoy-ligoy, walang kalahating gawa.",
+   "R3": "Makitid ang simula ng kanang gitnang daliri mo sa ugat at lumalapad papunta sa dulo: manipis na ugat. Hindi agad umaandar ang kilos mo, kailangan mo ng takbo bago tumalon, pero kapag umandar na, kusang nabubuo ang aksyon at lumalakas habang tumatagal.",
+   "R4": "Matipuno ang kanang pang-apat na daliri mo: marami kang kakayahang humawak ng kontrol sa sarili mong sitwasyon. Ang bahagyang paglingon ay nangangahulugang paminsan-minsan ay may bahagi ang nakaraan sa kung paano ka kumakapit o bumibitaw; hindi ka nito pinipigilan, kaya mong bumitaw kapag kailangan. Ipinapakita ng karaniwang kuko na balanse ka sa pagitan ng pagkapit at pagiging bukas sa iniaalok ng iba.",
+   "R5": "Matulis at pilipit ang kanang kalingkingan mo: dumarating ang kawalan ng katiyakan at takot sa maikli at matatalim na alon, at ang ipinapakita mo ay hindi laging ang nangyayari sa loob: inaayos ang landas habang nasa daan. Ang maliit na kuko ay ginagawa kang sensitibo sa bahaging ito: matindi ang tama ng mga pampasigla mula sa labas, ng tensyon o banta.",
+   "L1": "Sa kaliwa, bumabalik ang parehong anyo na may sariling ikot: halong hugis ang hinlalaking ito, bilog mula sa simula na may patag na bahagi sa dulo. Karaniwan ay may taktika ang pagbabahagi mo ng damdamin, pero kapag kailangan na, bigla kang nagiging diretsahan sa nararamdaman mo. May reservoir din dito: mga damdaming nag-iipon bago lumabas, at isang malaking kuko na nagtatanggol sa mga ito hanggang dumating ang tamang sandali.",
+   "L2": "Ginagaya ng kaliwang pangalawang daliri ang kanan: tuwid ang aksis, anggulo ang dulo, nasa linya. Lumalabas ang damdamin mo nang diretso at walang paligoy kapag kailangan: hindi mo hinahayaang magduda ang iba sa nararamdaman mo, kahit sa araw-araw ay kalmado mo itong binabalot.",
+   "L3": "Nakikita rin sa kaliwa ang parehong padron: makitid na simula, malapad na dulo. Dahan-dahang umaalagwa ang pagkamalikhain at mga intuwisyon mo at unti-unting lumalakas hanggang sa buong lakas, mas parang umaakyat na agos kaysa biglaang kislap.",
+   "L4": "Matipuno rin ang kaliwang pang-apat na daliri: napakarami mong pagmamahal na maibibigay, sa mga tao, pero ganoon din sa trabaho o proyektong ipinaglalaban mo. Ang bahagyang paglingon ay nagbibigay ng bahid ng mga dating karanasan sa pagmamahal mo, nang hindi ka hinaharangan; ang karaniwang kuko ay nagpapanatili ng balanse sa pagbibigay at pagtanggap.",
+   "L5": "Sa kaliwa, inuulit ang larawang iyon para sa tiwala: ang matulis ay nangangahulugang dumarating ang optimismo at tiwala bilang biglaang udyok, parang mga alon, at ipinapakita ng pilipit na tindig na ang ipinapakita mo tungkol sa tiwala mo ay hindi laging tugma sa buhay sa loob. Ang maliit na kuko ay ginagawa kang sensitibo sa mga hudyat ng tiwala o pagdududa ng iba, mabilis mo itong nararamdaman."
+  },
+  "samenhang": "Ang pinakakapansin-pansin sa pagbasang ito ay kung gaano kaunti ang pagkakaiba ng kanan at kaliwa: halos bawat daliri, inuulit ang parehong padron. Bihirang magsalungatan ang pag-iisip at damdamin mo; ang iniisip mo at ang nararamdaman mo ay halos sabay na tumatakbo. Pinakamalinaw ito sa mga hinlalaki: parehong may reservoir, sa kanan ay nababalot ng diplomasya, sa kaliwa ay may kislap ng pagiging diretsahan kapag dumating na ang oras. Kaya ang mga salita at ang damdamin ay parehong iniipon muna bago ibahagi. Lalong tumitibay ang larawan sa mga pangalawang daliri: parehong maayos na lumalabas ang kalooban at damdamin, at kapag kailangan, matalas at diretso. Ipinapakita ng mga gitnang daliri na parehong nangangailangan ng warm-up ang kilos at pagkamalikhain mo; kusang lumalakas ang puwersa habang tumatagal. Sa mga pang-apat na daliri, makikita ang dalawang matipunong daliri: malaking kakayahang kumapit at malaking kakayahang magmahal, parehong may bahid ng nakaraang sumasabay nang hindi namumuno. At sa wakas, ipinapakita ng mga kalingkingan na ang kawalan ng katiyakan at ang tiwala mo ay parehong dumarating sa maikli at sensitibong mga taluktok, at ang ipinapakita mo ay hindi laging buong kuwento. Ang sinulid na bumabalot dito ay isang taong bihirang magsalungat ang isip at puso, at na sa halos lahat ng bahagi, sa salita, damdamin, takot at tiwala, mas marami ang kinikimkim kaysa sa unang nakikita. Ano kaya ang mangyayari kung hahayaan mong mas madalas na umapaw ang naipong reservoir ng mga salita at damdamin, sa mas maliliit na patak, bago pa ito kusang humanap ng labasan?",
+  "vraag": "Paano ko mas maipapakita ang nararamdaman ko, nang hindi lumalabas ang lahat nang biglaan?",
+  "antwoord": "Kalahati na ng sagot ang ibinibigay ng mga hinlalaki mo. Parehong may reservoir ang mga ito: nag-iipon ang mga kaisipan at damdamin bago lumabas. Sa kaliwa, may halong hugis pa sa ibabaw, kaya muna ay may taktika, tapos bigla ay napakadiretso. Iyan mismo ang sandaling inilalarawan mo: puno na ang reservoir at ang pagiging diretsahan ang pumalit.\n\nTinutulungan ka rito ng mga pangalawang daliri mo. Tuwid ang mga ito at nasa iisang linya: alam na alam mo ang gusto mo at ang nararamdaman mo, hindi pa lang ito lumalabas. At may manipis na ugat ang mga gitnang daliri mo: umaandar ka sa pagsisimula, maliit lang, tapos kusa na itong lumalaki.\n\nKaya subukan mo ito sa maliliit na bahagi. Isang pangungusap kada araw tungkol sa nararamdaman mo, sa tahimik na sandali, bago tumaas ang presyon. Pinoprotektahan ka ng malalaking kuko mo, kaya ikaw ang pumili kung kanino ka magsisimula. Sino kaya ang maaaring maging una ngayong linggo na papayagan mong tumanggap ng isang maliit na bahaging umaapaw?"
+ },
+ "duo": {
+  "kop": "Halimbawa · duo na pagbasa",
+  "intro": "Anak at ama, dalawang pares ng paa na magkatabi. Sa ilalim ng mga larawan makikita mo ang mga hugis ng dalawa sa bawat daliri, at sa ilalim nito ang kuwento ng duo.",
+  "verhaal": "# Dalawang plano na magkatabi\n\n**Ang anak**\nAgad na kapansin-pansin sa mga paang ito ang pagkakapantay-pantay nito: ang kanan at kaliwa ay halos salamin ng isa't isa, at ang linya mula sa hinlalaki hanggang sa kalingkingan ay maayos na bumababa nang walang umaangat. Bihirang magkagulo ang pag-iisip at damdamin sa kanya. Kasabay nito, parehong may reservoir ang dalawang hinlalaki niya: mas marami ang kinikimkim doon, sa salita at damdamin, kaysa sa unang nakikita. Matipuno ang mga pang-apat na daliri: malaking kakayahang kumapit at magmahal. Kailangan ng takbo ng kilos at pagkamalikhain (mga gitnang daliri) bago lumakas, at ang kawalan ng katiyakan at ang tiwala (mga kalingkingan) ay dumarating sa maikli at matatalim na taluktok, kung saan ang ipinapakita ay hindi laging buong kuwento.\n\n**Ang ama**\nSa kanya, pinakakapansin-pansin na bilog at matipuno ang mga hinlalaki, at mas maikli kaysa sa iba: hindi lahat ng enerhiya ng ibang daliri ay nakakakuha ng parehong espasyo para lumabas sa hinlalaking iyon, na may kaunting pagmamadali. Mahaba naman ang mga pangalawang daliri at lumalapad papunta sa dulo: maraming lakas ng kalooban at damdamin. Bahagya silang baluktot: sa ilalim ng presyon, bahagya pa rin siyang nagpapaubaya. Sa kanan, kaunti ang espasyo sa pagitan ng daliri 1 at 2 (madaling lumalabas ang pag-iisip), sa kaliwa naman ay may espasyo (mas matagal ang pag-uusap tungkol sa damdamin). Bahagyang lumilingon ang mga pang-apat na daliri at medyo hiwalay sa mga katabi; ang kanan ay maaari pang umurong: kakayahang makibagay, at may sariling distansyang iniingatan. Ang mga kalingkingan niya, tulad ng sa anak, ay matulis at pilipit.\n\n# Kung saan sila magkahawig\n\nAng pinakanakakagulat na tagpuan ay nasa mga kalingkingan: sa dalawa, matulis at pilipit, na may maliit na kuko. Dumarating ang kawalan ng katiyakan at tiwala sa ama at anak na parang mga alon, at ang ipinapakita nila ay hindi lubos na tugma sa nangyayari sa loob. Iyon ay isang bagay na maaari nilang makilala sa isa't isa nang likas, kahit kailanman ay hindi sinabi nang malakas. Nagtatagpo rin ang mga gitnang daliri: tuwid ang aksis ng dalawa, kaya sa kilos ay parehong diretso, walang paligoy-ligoy. At sa dalawa, may bahagyang paglingon sa pang-apat na daliri: may bahagi pa rin ang nakaraan sa kung paano sila kumakapit o bumibitaw, nang hindi sila ikinukulong.\n\n# Kung saan sila magkaiba\n\nAng pinakamalinaw na pagkakaiba ay nasa hinlalaki. Sa anak, bilog ito na may maluwang na reservoir: binabalot niya nang may diplomasya ang iniisip at nararamdaman niya, at iniipon muna bago ibahagi. Sa ama, mas maikli ang hinlalaki kaysa sa iba, na may kaunting pagmamadali: hindi lahat ng enerhiyang umiikot sa ibang daliri ay nakakakuha ng parehong pagkakataong lumabas dito, at ang lumalabas ay mas mabilis at mas diretso kaysa sa anak. Kung ang anak ay tumitimbang at nag-iimbak muna sa loob, sa ama ay may makakawala bago pa man ito ganap na mahubog.\n\nIba rin ang pangalawang daliri: sa anak, tuwid na tuwid at maayos, na may anggulong dulo na tumatalas lamang kapag kailangan na. Sa ama, mahaba, bilog at bahagyang baluktot: mas maraming espasyo para makibagay, kaunting pagpapaubaya sa ilalim ng presyon. At sa kanan, kaunti ang espasyo ng ama sa pagitan ng daliri 1 at 2 (madaling lumalabas ang pag-iisip), samantalang sa kaliwa ay may espasyo (mas matagal ang pag-uusap tungkol sa damdamin). Ang pagkakaiba ng mabilis na pagbabahagi at mahabang paghihintay ay maaaring magdulot ng alitan sa isang anak na ipinapakita lamang ang damdamin kapag sapat na ang laman ng reservoir niya. Dalawang taong parehong may kinikimkim bago magbahagi, sa bahagyang magkaibang sandali at sa magkaibang tempo, ay madaling magkamali ng tiyempo: ang isa ay handa nang magbahagi, ang isa ay handa pa lang maghintay.\n\nSa gitnang daliri, makikita muli ang pagkakaiba sa tempo. May manipis na ugat ang anak: dahan-dahan siyang umaandar at unti-unting lumalakas. Halong hugis ang sa ama: una ay may taktika sa ginagawa niya, at kapag kailangan na, bigla siyang nagiging napakadiretso.\n\n# Mga pasukan at pader\n\nSa anak, pinakamadaling pumasok sa maliliit na bahagi at may pasensya: ipinapakita ng mga daliring reservoir niya (ang mga hinlalaki) na mas gusto niyang magtayo nang tuloy-tuloy kaysa ibahagi ang lahat nang sabay. Nabubuo ang pader lalo na kapag pinipilit siyang magbahagi nang mas mabilis kaysa kaya ng reservoir niya; mahusay siyang pinoprotektahan ng malalaking kuko sa mga hinlalaki niya, hindi niya basta pinapapasok ang sinuman sa nangyayari sa loob niya.\n\nSa ama, ang pasukan ay nasa usapan tungkol sa iniisip niya nang makatwiran, na madaling lumalabas. Mas mahirap ang usapan tungkol sa damdamin: may espasyo sa pagitan ng una at pangalawang daliri, kaya kailangan ng mas maraming oras at paanyaya ang pag-uusap tungkol sa damdamin. Maaaring umurong ang kanang pang-apat na daliri niya: ganito siya nakikibagay o pansamantalang lumalayo. Malamang na kontra ang epekto ng pamimilit doon.\n\nSa dalawa, ang mga kalingkingan ay mahinang bahagi: ang maliliit na kuko ay ginagawa silang sensitibo sa tensyon o kawalan ng tiwala mula sa labas, isang bagay na dapat ingatan, mula sa magkabilang panig.\n\n# Mga daan patungo sa isa't isa\n\nAng pinakamagandang daan ay dumadaan sa paggawa. Parehong tuwid ang gitnang daliri nila: sa pagkilos, diretso sila, at doon sila pinakamabilis magkita. Ang sama-samang paglikha o pagtatayo ng isang bagay ay naglalapit sa kanila, nang hindi na kailangang magsalita muna. Hayaang ang ama ang magtakda ng tempo sa pag-iisip, mabilis siya roon, at hayaang ang anak ang magtakda ng tempo sa pakiramdam, kailangan niya roon ng sarili niyang sandali. At dahil parehong sensitibo ang mga kalingkingan nila, nakakatulong na sabihin lang nang malakas ang kawalan ng katiyakan: ang unang magsabi ay nagpapagaan nito para sa isa. Anong maliit na bagay ang magagawa ninyong magkasama ngayong buwan, na hindi na kailangang magsalita ng sinuman sa inyo para mapalapit pa rin sa isa't isa?"
+ },
+ "tour": [
+  {
+   "titel": "Kumuha ng larawan",
+   "tekst": "Tumayo nang tuwid, nasa dalawang paa ang bigat, at kunan ng larawan ang hubad mong mga paa mula sa itaas. Magandang ilaw, relaks ang mga daliri."
+  },
+  {
+   "titel": "Sumasama ang salamin sa pagtingin",
+   "tekst": "Tinitingnan ng salamin ang bawat daliri: hugis, tindig, kuko at ang linya mula sa pinakamalaki hanggang sa pinakamaliit. Mga isang minuto ito."
+  },
+  {
+   "titel": "Suriin ito mismo",
+   "tekst": "Sa bawat daliri makikita mo kung aling mga hugis ang namarkahan. Iba ang tingin mo? I-on o i-off ang isang hugis. Ikaw pa rin ang bumabasa."
+  },
+  {
+   "titel": "Nagkukuwento ang salamin",
+   "tekst": "Pagkatapos agad ng pagsusuri, ikinukuwento ng salamin kung ano ang sinasabi ng mga daliri mo, sa istilo ng mga aklat. Kapag nasuri mo na ang lahat ng sampung daliri, bubukas ang pinalawak na pagbasa."
+  },
+  {
+   "titel": "Magtanong",
+   "tekst": "Tungkol sa trabaho, pag-ibig o isang pasyang kailangan mong gawin. Sumasagot ang salamin mula sa sarili mong mga daliri."
+  },
+  {
+   "titel": "Magbasa nang magkasama",
+   "tekst": "Ilagay nang magkatabi ang dalawang pares ng paa: magkapareha, magulang at anak, magkaibigan. Makikita mo kung saan kayo magkahawig, kung saan kayo magkaiba at kung paano kayo magkakalapit."
+  }
+ ]
+}

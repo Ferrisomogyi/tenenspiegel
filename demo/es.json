@@ -1,0 +1,90 @@
+{
+ "ui": {
+  "tab_solo": "Una lectura",
+  "tab_duo": "Dúo: hijo y padre",
+  "sluit": "Cerrar",
+  "zag": "Lo que vio el espejo",
+  "aangevinkt": "Marcado",
+  "notitie": "Nota",
+  "lezing_kop": "La lectura ampliada",
+  "vraag_kop": "Pregunta de ejemplo",
+  "vraag_lbl": "Pregunta",
+  "antwoord_lbl": "Respuesta del espejo",
+  "zoon": "Hijo",
+  "vader": "Padre",
+  "foto_alt_zoon": "Foto de ejemplo: pies descalzos vistos desde arriba, de pie",
+  "foto_alt_vader": "Foto de ejemplo: los pies del padre",
+  "duo_tabel": "Dedo por dedo, uno junto al otro",
+  "duo_verhaal_kop": "La historia del dúo",
+  "tour_knop": "Recorrido en 6 pasos",
+  "tour_stap": "Paso {n} de 6",
+  "tour_vorige": "Anterior",
+  "tour_volgende": "Siguiente",
+  "tour_klaar": "Listo",
+  "tour_naar_demo": "Ver la lectura de ejemplo",
+  "fors_teen": "Dedo robusto"
+ },
+ "solo": {
+  "kop": "Ejemplo · una lectura real",
+  "intro": "Una lectura real, mostrada de forma anónima. En cada dedo ves qué formas están marcadas, lo que vio el espejo y lo que cuenta. Al final hay una pregunta de ejemplo.",
+  "eerste": "Estos pies llaman la atención enseguida por su equilibrio: el derecho y el izquierdo son casi un reflejo el uno del otro, desde los dedos gordos anchos con su parte central amplia hasta los dedos pequeños que giran ambos hacia fuera y terminan en punta. La línea imaginaria del más grande al más pequeño desciende con suavidad en los dos pies, sin dedos que sobresalgan o se hundan, señal de que aquí ninguna zona se pone en primer plano de forma exagerada ni se aparta. Lo primero que llama la atención es esa construcción casi idéntica de ambos pies: pensar y sentir parecen estar pocas veces muy lejos el uno del otro. A la vez, casi cada dedo lleva un detalle sutil, una reserva, una punta girada, una uña que se ve algo distinta, y eso muestra que bajo esa calma y esa simetría se guarda bastante.",
+  "notities": {
+   "R1": "Empieza normal en la raíz, se ensancha en el medio y termina otra vez normal: reserva. Punta redonda, uña grande.",
+   "R2": "Eje recto, punta algo angulosa. Los dedos descienden con suavidad en una misma línea.",
+   "R3": "Empieza estrecho en la raíz y se ensancha hacia la punta: base fina, la energía va en aumento. Eje recto.",
+   "R4": "Dedo robusto con una uña media. Mira hacia atrás solo mínimamente: el pasado juega un papel ligero, soltar es posible cuando hace falta.",
+   "R5": "Los lados convergen en una punta estrecha: puntiagudo. La superficie de la uña mira visiblemente en diagonal hacia fuera: girado. Uña pequeña en relación con la última falange. Sin esconderse, sin bulto claro antes de la raíz, es decir, sin mochilita.",
+   "L1": "Empieza normal en la raíz, se ensancha en el medio y termina otra vez normal: reserva. Punta redonda con un tramo plano (forma mixta), uña grande.",
+   "L2": "Eje recto, punta algo angulosa. Los dedos descienden con suavidad en una misma línea.",
+   "L3": "Empieza estrecho en la raíz y se ensancha hacia la punta: base fina, la energía va en aumento. Eje recto.",
+   "L4": "Dedo robusto con una uña media. Mira hacia atrás solo mínimamente: el pasado juega un papel ligero, soltar es posible cuando hace falta.",
+   "L5": "La punta se estrecha hasta ser puntiaguda: puntiagudo. La uña mira en diagonal hacia el borde exterior: girado. Uña pequeña en relación con la última falange. Sin esconderse bajo el dedo 4 y sin bulto antes de la raíz (sin mochilita)."
+  },
+  "tenen": {
+   "R1": "Tu dedo gordo derecho es de forma redonda: envuelves lo que piensas con diplomacia y prefieres no buscar la confrontación. Pero en el medio el dedo se hincha hasta formar una reserva: se piensa y se sopesa más de lo que llega a salir, y las palabras y los puntos de vista se acumulan antes de compartirse. La uña grande te hace mejor emitiendo que recibiendo: no dejas entrar a cualquiera en lo que piensas.",
+   "R2": "Tu segundo dedo derecho está perfectamente recto y sigue con pulcritud la línea de los demás dedos: tu fuerza de voluntad es ordenada, no persigues metas cambiantes. La punta algo angulosa muestra que, a la hora de la verdad, dices sin rodeos lo que quieres: sin desvíos, sin hacer las cosas a medias.",
+   "R3": "Tu dedo medio derecho empieza estrecho en la raíz y se ensancha hacia la punta: una base fina. Tu empuje no arranca de inmediato, necesitas carrerilla, pero una vez en marcha la acción se va construyendo sola y gana fuerza a medida que avanzas.",
+   "R4": "El cuarto dedo derecho es robusto: hay en ti mucha capacidad para mantener el control de tu propia situación. Que mires ligeramente hacia atrás significa que el pasado interviene de vez en cuando en cómo te aferras o sueltas; no te retiene, soltar es posible cuando hace falta. La uña media muestra que estás bien equilibrado entre sujetar y mantenerte receptivo a lo que aportan los demás.",
+   "R5": "Tu dedo pequeño derecho es puntiagudo y girado: la inseguridad y el miedo suben en ti en ráfagas breves y agudas, y lo que muestras de ello no es necesariamente lo que ocurre por dentro: el rumbo se ajusta por el camino. La uña pequeña te hace sensible en este terreno: los estímulos de fuera, la tensión o la amenaza, entran con fuerza.",
+   "L1": "A la izquierda se repite la misma construcción, con un giro propio: el dedo es una forma mixta, redonda al principio con un tramo plano en la punta. Sueles expresar tus sentimientos con tacto, pero cuando importa, de pronto puedes ser totalmente directo sobre lo que sientes. Aquí también hay una reserva: sentimientos que se acumulan antes de salir, y una uña grande que los protege hasta que llega ese momento.",
+   "L2": "El segundo dedo izquierdo imita al derecho: eje recto, punta angulosa, pulcramente en la línea. Cuando importa, tu sentir sale directo y sin adornos: no dejas dudas sobre lo que sientes, aunque en el día a día lo envuelvas por lo general con calma.",
+   "L3": "El mismo patrón se ve a la izquierda: comienzo estrecho, punta ancha. Tu creatividad y tus ocurrencias intuitivas brotan despacio y van creciendo poco a poco hasta alcanzar toda su fuerza, más una corriente que se va formando que un destello repentino.",
+   "L4": "El cuarto dedo izquierdo también es robusto: tienes muchísimo amor que dar, a las personas, pero igualmente a un trabajo o a un proyecto en el que te entregas. La ligera mirada atrás tiñe ese amar con un matiz de experiencias pasadas, sin bloquearte; la uña media mantiene muy bien el equilibrio entre emitir y recibir.",
+   "L5": "A la izquierda esa imagen se repite para la confianza: puntiagudo significa que el optimismo y la confianza llegan por impulsos, como olas, y la posición girada muestra que lo que dejas ver de tu confianza no siempre coincide con lo que vive por dentro. La uña pequeña te hace sensible a las señales de confianza o desconfianza de los demás, las percibes enseguida."
+  },
+  "samenhang": "Lo más llamativo de esta lectura es lo poco que se diferencian el lado derecho y el izquierdo: casi dedo por dedo se repite el mismo patrón. En ti, pensar y sentir rara vez andan reñidos; lo que piensas y lo que sientes avanzan en buena parte a la par. En los dedos gordos se ve de la forma más clara: ambos construyen una reserva, a la derecha envuelta en diplomacia, a la izquierda con un destello de franqueza en cuanto llega la hora de la verdad. Así que tanto las palabras como los sentimientos se guardan primero antes de compartirse. En los segundos dedos esa imagen se refuerza: voluntad y sentir salen ambos de forma ordenada y, si hace falta, certeros y directos. Los dedos medios muestran que tanto tu acción como tu creatividad necesitan un calentamiento; la fuerza crece sola a medida que avanzas. En los cuartos dedos ves dos dedos sólidos y robustos: mucha capacidad de sujetar y mucha capacidad de amar, ambas con un toque de pasado que acompaña sin dominar. Y por último los dedos pequeños muestran que tanto tu inseguridad como tu confianza se presentan en picos breves y sensibles, y que lo que muestras de ellas no siempre es toda la historia. El hilo conductor es una persona en quien la cabeza y el corazón rara vez se contradicen, y que en casi todos los terrenos, palabras, sentimientos, miedo y confianza, guarda más de lo que a primera vista sale al exterior. ¿Qué pasaría si dejaras que esa reserva acumulada de palabras y sentimientos se desbordara más a menudo, en gotas más pequeñas, antes de que ella misma busque una salida?",
+  "vraag": "¿Cómo puedo mostrar mejor lo que siento, sin que de pronto salga todo de golpe?",
+  "antwoord": "Tus dedos gordos ya dan la mitad de la respuesta. Los dos tienen una reserva: pensamientos y sentimientos se acumulan antes de salir. A la izquierda, además, hay encima una forma mixta: primero con tacto y luego, de pronto, muy directo. Es justo el momento que describes: la reserva está llena y la franqueza toma el mando.\n\nTus segundos dedos te ayudan en esto. Están rectos y en una misma línea: sabes muy bien lo que quieres y lo que sientes, solo que todavía no ha salido. Y tus dedos medios tienen una base fina: tú te pones en marcha empezando, en pequeño, y luego crece solo.\n\nPrueba por eso en porciones pequeñas. Una frase al día sobre lo que sientes, en un momento tranquilo, antes de que suba la presión. Las uñas grandes te protegen, así que elige tú con quién empezar. ¿Quién podría ser la primera persona esta semana con quien dejes desbordarse una pequeña porción?"
+ },
+ "duo": {
+  "kop": "Ejemplo · lectura en dúo",
+  "intro": "Hijo y padre, dos pares de pies uno junto al otro. Debajo de las fotos ves, dedo por dedo, las formas de ambos, y más abajo la historia del dúo.",
+  "verhaal": "# Dos planos, uno junto al otro\n\n**El hijo**\nLo que llama la atención enseguida en estos pies es su equilibrio: el derecho y el izquierdo son casi un reflejo el uno del otro, y la línea del dedo gordo al pequeño desciende con suavidad, sin desniveles. En él, pensar y sentir rara vez andan reñidos. A la vez, los dos dedos gordos tienen una reserva: ahí se guarda más, en palabras y en sentir, de lo que sale a primera vista. Los cuartos dedos son robustos: mucha capacidad de sujetar y de amar. La acción y la creatividad (dedos medios) necesitan carrerilla antes de ganar fuerza, y la inseguridad y la confianza (los dedos pequeños) llegan en picos breves y agudos, donde lo que se muestra no siempre es toda la historia.\n\n**El padre**\nEn él llama la atención sobre todo que los dedos gordos son redondos y robustos, y más cortos que el resto: no toda la energía de los otros dedos tiene el mismo espacio para salir por ese dedo gordo, con un puntito de prisa. Los segundos dedos son, en cambio, largos y se ensanchan hacia la punta: mucha fuerza de voluntad y mucho sentir, pues. Están ligeramente curvados: bajo presión, al fin y al cabo, cede un poco. A la derecha hay poco espacio entre el dedo 1 y el 2 (el pensamiento sale con bastante fluidez), a la izquierda sí lo hay (hablar del sentir lleva más tiempo). Los cuartos dedos miran un poco hacia atrás y están algo separados de sus vecinos; el derecho, además, puede replegarse: capacidad de adaptación y también cierta distancia propia. Los dedos pequeños son, igual que en su hijo, puntiagudos y girados.\n\n# En qué se parecen\n\nEl punto de encuentro más llamativo está en los dedos pequeños: en ambos puntiagudos y girados, con una uña pequeña. La inseguridad y la confianza llegan en olas tanto en el padre como en el hijo, y lo que muestran de ellas no coincide del todo con lo que ocurre por dentro. Es algo que pueden reconocer el uno en el otro de forma intuitiva, sin decirlo nunca en voz alta. También se tocan los dedos medios: en ambos un eje recto, de modo que en lo que hacen son directos los dos, sin rodeos. Y en ambos interviene una ligera mirada atrás en el cuarto dedo: el pasado sigue influyendo en cómo se aferran o sueltan, sin dejarlos atascados.\n\n# En qué se diferencian\n\nLa diferencia más clara está en el dedo gordo. En el hijo es una reserva redonda y amplia: envuelve con diplomacia lo que piensa y siente, y primero lo guarda dentro antes de compartirlo. En el padre, el dedo gordo es en cambio más corto que el resto, con un puntito de prisa: no toda la energía que se mueve en los otros dedos tiene la misma oportunidad de salir por ese dedo, y lo que sale, sale más rápido y más directo que en su hijo. Donde el hijo primero sopesa y guarda por dentro, en el padre algo puede escaparse antes de haberse cristalizado del todo.\n\nTambién el segundo dedo es distinto: en el hijo, recto como una vela y ordenado, con una punta angulosa que solo se vuelve afilada cuando llega la hora de la verdad. En el padre, largo, redondo y ligeramente curvado: más espacio para la adaptación, un toque de ceder bajo presión. Y a la derecha el padre tiene poco espacio entre el dedo 1 y el 2 (el pensamiento sale rápido), mientras que a la izquierda sí hay espacio (hablar del sentir tarda más). Precisamente esa diferencia entre compartir rápido y esperar mucho puede rozar con un hijo que también muestra su propio sentir solo tarde, cuando la reserva está lo bastante llena. Dos personas que guardan algo antes de compartirlo, en un momento algo distinto y a un ritmo diferente, pueden perderse con facilidad: uno está justo a punto de compartir, el otro justo a punto de esperar.\n\nEn el dedo medio se vuelve a ver la diferencia de ritmo. El hijo tiene una base fina: tarda en ponerse en marcha y poco a poco gana fuerza. El padre tiene una forma mixta: primero con tacto en lo que hace y, cuando llega el momento, de pronto muy directo.\n\n# Entradas y muros\n\nCon el hijo se entra con más facilidad en porciones pequeñas y con paciencia: sus dedos con reserva (los dedos gordos) muestran que prefiere ir construyendo de forma constante que compartirlo todo de una vez. Un muro surge sobre todo cuando se le presiona para compartir más rápido de lo que su reserva permite; las uñas grandes de sus dedos gordos lo protegen bien en eso, no deja entrar a cualquiera en lo que está pasando.\n\nCon el padre, una entrada está en la conversación sobre lo que piensa de forma racional, que sale con bastante fluidez. Más difícil es la conversación sobre el sentir: ahí hay espacio entre el primer y el segundo dedo, de modo que hablar del sentir necesita más tiempo e invitación. Su cuarto dedo derecho puede replegarse: así se adapta o toma distancia por un tiempo. Forzar ahí probablemente sea contraproducente.\n\nEn ambos, los dedos pequeños forman un punto vulnerable: las uñas pequeñas los hacen sensibles a la tensión o a la desconfianza del exterior, algo que conviene tratar con cuidado, desde ambos lados.\n\n# Caminos el uno hacia el otro\n\nEl camino más bonito pasa por el hacer. Los dos tienen un dedo medio recto: en el hacer son directos y se encuentran más rápido. Crear o emprender algo juntos los acerca, sin que antes haya que decir mucho. Que el padre marque el ritmo al pensar, ahí es rápido, y que el hijo marque el ritmo al sentir, ahí necesita su propio momento. Y como los dos tienen dedos pequeños sensibles, ayuda nombrar la inseguridad en voz alta sin más: quien lo dice primero se lo pone más fácil al otro. ¿Qué pequeña cosa podríais hacer juntos este mes, en la que ninguno de los dos tenga que hablar para acercarse al otro?"
+ },
+ "tour": [
+  {
+   "titel": "Haz una foto",
+   "tekst": "Ponte de pie, con el peso en los dos pies, y fotografía tus pies descalzos justo desde arriba. Buena luz, dedos relajados."
+  },
+  {
+   "titel": "El espejo mira contigo",
+   "tekst": "El espejo examina cada dedo: forma, posición, uña y la línea del más grande al más pequeño. Eso lleva aproximadamente un minuto."
+  },
+  {
+   "titel": "Compruébalo tú mismo",
+   "tekst": "En cada dedo ves qué formas están marcadas. ¿Lo ves distinto? Activa o desactiva una forma. Tú sigues siendo el lector."
+  },
+  {
+   "titel": "El espejo habla",
+   "tekst": "Justo después del análisis, el espejo te cuenta lo que dicen tus dedos, al estilo de los libros. Cuando hayas revisado los diez dedos, se desbloquea la lectura ampliada."
+  },
+  {
+   "titel": "Haz una pregunta",
+   "tekst": "Sobre el trabajo, el amor o una decisión que tengas que tomar. El espejo responde a partir de tus propios dedos."
+  },
+  {
+   "titel": "Leed juntos",
+   "tekst": "Pon dos pares de pies uno junto al otro: pareja, padre o madre e hijo, amigos. Ves en qué os parecéis, en qué os diferenciáis y cómo llegar el uno al otro."
+  }
+ ]
+}

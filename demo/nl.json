@@ -1,0 +1,90 @@
+{
+ "ui": {
+  "tab_solo": "Een lezing",
+  "tab_duo": "Duo: zoon en vader",
+  "sluit": "Sluiten",
+  "zag": "Wat de spiegel zag",
+  "aangevinkt": "Aangevinkt",
+  "notitie": "Notitie",
+  "lezing_kop": "De uitgebreide lezing",
+  "vraag_kop": "Voorbeeldvraag",
+  "vraag_lbl": "Vraag",
+  "antwoord_lbl": "Antwoord van de spiegel",
+  "zoon": "Zoon",
+  "vader": "Vader",
+  "foto_alt_zoon": "Voorbeeldfoto: blote voeten van boven, staand",
+  "foto_alt_vader": "Voorbeeldfoto: de voeten van de vader",
+  "duo_tabel": "Per teen naast elkaar",
+  "duo_verhaal_kop": "Het duo-verhaal",
+  "tour_knop": "Rondleiding in 6 stappen",
+  "tour_stap": "Stap {n} van 6",
+  "tour_vorige": "Vorige",
+  "tour_volgende": "Volgende",
+  "tour_klaar": "Klaar",
+  "tour_naar_demo": "Bekijk de voorbeeldlezing",
+  "fors_teen": "Forse teen"
+ },
+ "solo": {
+  "kop": "Voorbeeld · een echte lezing",
+  "intro": "Een echte lezing, anoniem getoond. Per teen zie je welke vormen zijn aangevinkt, wat de spiegel zag en wat hij vertelt. Onderaan staat een voorbeeldvraag.",
+  "eerste": "Deze voeten vallen meteen op door hun gelijkmatigheid: rechts en links zijn bijna een spiegelbeeld van elkaar, van de brede grote tenen met brede middenpartij tot de kleine tenen die allebei naar buiten draaien en spits toelopen. De denkbeeldige lijn van groot naar klein loopt op beide voeten vloeiend af, zonder tenen die er bovenuit steken of wegzakken, een teken dat hier geen enkel gebied overdreven op de voorgrond treedt of wordt weggedrukt. Wat als eerste de aandacht trekt, is die bijna identieke opbouw van beide voeten: denken en voelen lijken hier zelden ver uit elkaar te liggen. Tegelijk zit in bijna elke teen een subtiel detail, een reservoir, een gedraaide top, een nagel die net iets anders oogt, dat laat zien dat onder die rust en symmetrie toch het nodige wordt vastgehouden.",
+  "notities": {
+   "R1": "Begint normaal bij de wortel, loopt in het midden breed uit en eindigt weer normaal: reservoir. Ronde top, grote nagel.",
+   "R2": "As recht, top ietwat hoekig. Tenen lopen vloeiend af op één lijn.",
+   "R3": "Begint smal bij de wortel en loopt naar de top breder toe: dunne aanzet, de energie loopt op. As recht.",
+   "R4": "Forse teen met een gemiddelde nagel. Kijkt maar minimaal terug: het verleden speelt licht mee, onthechten lukt als het moet.",
+   "R5": "Zijkanten lopen naar een smalle top: puntig. Nagelvlak kijkt zichtbaar schuin naar buiten: gedraaid. Nagel klein ten opzichte van het kootje. Geen onderduik, geen duidelijke bobbel vóór de wortel, dus geen rugzakje.",
+   "L1": "Begint normaal bij de wortel, loopt in het midden breed uit en eindigt weer normaal: reservoir. Top rond met een vlak stuk (mengvorm), grote nagel.",
+   "L2": "As recht, top ietwat hoekig. Tenen lopen vloeiend af op één lijn.",
+   "L3": "Begint smal bij de wortel en loopt naar de top breder toe: dunne aanzet, de energie loopt op. As recht.",
+   "L4": "Forse teen met een gemiddelde nagel. Kijkt maar minimaal terug: het verleden speelt licht mee, onthechten lukt als het moet.",
+   "L5": "Top loopt spits toe: puntig. De nagel kijkt schuin naar de buitenrand: gedraaid. Nagel klein ten opzichte van het laatste kootje. Geen onderduik onder teen 4 en geen bobbel vóór de wortel (geen rugzakje)."
+  },
+  "tenen": {
+   "R1": "Je rechter grote teen is rond van vorm: je verpakt wat je denkt diplomatiek, je zoekt de confrontatie liever niet op. Maar in het midden zwelt de teen aan tot een reservoir: er wordt meer gedacht en overwogen dan er ooit naar buiten komt, woorden en standpunten hopen zich op voor ze gedeeld worden. De grote nagel maakt je daarbij beter in zenden dan in ontvangen: je laat niet zomaar iedereen toe in wat je denkt.",
+   "R2": "Je rechter tweede teen staat kaarsrecht en volgt keurig de lijn van de andere tenen: je wilskracht is ordelijk, je jaagt geen wisselende doelen na. De licht hoekige top laat zien dat je, als puntje bij paaltje komt, recht voor je raap bent over wat je wilt: geen omwegen, geen half werk.",
+   "R3": "Je rechter derde teen begint smal bij de wortel en wordt breder naar de top: een dunne aanzet. Je daadkracht komt niet meteen op gang, je hebt een aanloop nodig, maar eenmaal op stoom bouwt de actie zich vanzelf op en wordt ze krachtiger naarmate je verder komt.",
+   "R4": "De rechter vierde teen is fors: er zit veel vermogen in om grip te houden op je eigen situatie. Dat je licht terugkijkt, betekent dat het verleden af en toe meespeelt in hoe je vasthoudt of loslaat; het houdt je niet vast, onthechten lukt als het nodig is. De gemiddelde nagel laat zien dat je daarin goed in balans bent tussen vasthouden en ontvankelijk blijven voor wat anderen aandragen.",
+   "R5": "Je rechter pink is puntig en gedraaid: onzekerheid en angst komen bij jou in korte, scherpe vlagen naar boven, en wat je daarvan laat zien is niet per se wat er vanbinnen speelt: de koers wordt onderweg bijgesteld. De kleine nagel maakt je op dit vlak gevoelig: prikkels van buiten, spanning of dreiging, komen hard binnen.",
+   "L1": "Links zie je dezelfde opbouw terug, met een eigen draai: de teen is een mengvorm, rond van begin met een vlak stuk aan de top. Je brengt je gevoelens meestal tactvol, maar als het erop aankomt kun je opeens recht voor z'n raap zijn over wat je voelt. Ook hier zit een reservoir: gevoelens die zich opstapelen voor ze eruit komen, en een grote nagel die ze afschermt tot dat moment daar is.",
+   "L2": "Linker teen twee doet het rechts na: recht van as, hoekig aan de top, netjes op de lijn. Je gevoel komt er, als het erop aankomt, direct en onverbloemd uit: je laat er geen twijfel over bestaan wat je voelt, ook al verpak je het in het dagelijks verkeer doorgaans rustig.",
+   "L3": "Hetzelfde patroon zie je links: smal begin, brede top. Je creativiteit en intuïtieve ingevingen borrelen langzaam op en groeien gaandeweg tot volle kracht, eerder een opbouwende stroom dan een plotselinge flits.",
+   "L4": "Ook de linker vierde teen is fors: je hebt heel veel liefde te geven, aan mensen, maar net zo goed aan werk of een project waar je voor gaat. De lichte terugkijk kleurt dat liefhebben met een zweem van vroegere ervaringen, zonder dat het je blokkeert; de gemiddelde nagel houdt zenden en ontvangen mooi in evenwicht.",
+   "L5": "Links herhaalt zich dat beeld voor vertrouwen: puntig betekent dat optimisme en vertrouwen in opwellingen komen, als golven, en de gedraaide stand laat zien dat wat je naar buiten toont over je vertrouwen niet altijd overeenkomt met wat er vanbinnen leeft. De kleine nagel maakt je gevoelig voor signalen van vertrouwen of wantrouwen van anderen, je voelt dat snel aan."
+  },
+  "samenhang": "Het meest opvallende in deze lezing is hoe weinig rechts en links van elkaar verschillen: bijna teen voor teen herhaalt zich hetzelfde patroon. Denken en voelen liggen bij jou zelden met elkaar in de clinch; wat je bedenkt en wat je voelt trekken grotendeels gelijk op. Bij de grote tenen zie je dat het meest treffend: beide bouwen een reservoir op, rechts verpakt in diplomatie, links met een flits van directheid zodra het puntje bij paaltje komt. Woorden én gevoelens worden dus eerst binnengehouden voor ze gedeeld worden. Bij de tweede tenen versterkt dat beeld zich: wil en gevoel komen allebei ordelijk naar buiten, en als het nodig is messcherp en direct. De derde tenen laten zien dat zowel je actie als je creativiteit een warming-up nodig hebben; de kracht groeit vanzelf naarmate je verder gaat. Bij de vierde tenen zie je twee stevige, forse tenen: veel vermogen om vast te houden én veel vermogen om lief te hebben, beide met een vleugje verleden dat meespeelt zonder te overheersen. En de pinken laten tot slot zien dat zowel je onzekerheid als je vertrouwen zich in korte, gevoelige pieken aandienen, en dat wat je daarvan toont niet altijd het hele verhaal is. De rode draad is een mens bij wie hoofd en hart zelden tegenstrijdig zijn, en die op bijna elk vlak meer binnenhoudt, aan woorden, gevoelens, angst en vertrouwen, dan er op het eerste gezicht naar buiten komt. Wat zou er gebeuren als je dat opgebouwde reservoir aan woorden en gevoelens eens vaker, in kleinere beetjes, laat overlopen voordat het vanzelf een uitweg zoekt?",
+  "vraag": "Hoe kan ik beter laten merken wat ik voel, zonder dat het er ineens allemaal uitkomt?",
+  "antwoord": "Je grote tenen geven het antwoord al half. Allebei hebben ze een reservoir: gedachten en gevoelens stapelen zich op voordat ze naar buiten komen. Links zit daar een mengvorm bovenop, dus eerst tactvol en daarna opeens heel direct. Dat is precies het moment dat je beschrijft: het reservoir zit vol en de directheid neemt het over.\n\nJe tweede tenen helpen je hierbij. Ze staan recht en op één lijn: je weet heel goed wat je wilt en wat je voelt, het is er alleen nog niet uit. En je derde tenen hebben een dunne aanzet: jij komt op gang door te beginnen, klein, en dan groeit het vanzelf.\n\nProbeer het daarom in kleine porties. Eén zin per dag over wat je voelt, op een rustig moment, voordat de druk oploopt. De grote nagels beschermen je, dus kies zelf bij wie je begint. Wie zou de eerste kunnen zijn bij wie je deze week één kleine portie laat overlopen?"
+ },
+ "duo": {
+  "kop": "Voorbeeld · duo-lezing",
+  "intro": "Zoon en vader, twee paar voeten naast elkaar. Onder de foto's zie je per teen de vormen van allebei, daaronder het duo-verhaal.",
+  "verhaal": "# Twee blauwdrukken naast elkaar\n\n**De zoon**\nWat meteen opvalt aan deze voeten is hun gelijkmatigheid: rechts en links zijn bijna een spiegelbeeld van elkaar, en de lijn van grote teen naar pink loopt vloeiend af zonder uitschieters. Denken en voelen liggen bij hem zelden met elkaar overhoop. Tegelijk hebben beide grote tenen een reservoir: daar wordt meer vastgehouden, aan woorden en gevoel, dan er op het eerste gezicht naar buiten komt. De vierde tenen zijn fors: veel vermogen om vast te houden en lief te hebben. Actie en creativiteit (derde tenen) hebben een aanloop nodig voor ze op kracht komen, en onzekerheid én vertrouwen (de pinken) komen in korte, scherpe pieken, waarbij wat getoond wordt niet altijd het hele verhaal is.\n\n**De vader**\nBij hem valt vooral op dat de grote tenen rond en fors zijn, en korter dan de rest: niet alle energie van de andere tenen krijgt via die grote teen evenveel ruimte om naar buiten te komen, met een tikje haast erbij. De tweede tenen zijn juist lang en worden breder naar de top: veel wilskracht en gevoel dus. Ze zijn licht krom: onder druk geeft hij toch wat toe. Rechts zit er weinig ruimte tussen teen 1 en 2 (denken komt er vrij vlot uit), links juist wel (praten over gevoel kost meer tijd). De vierde tenen kijken een tikje terug en staan wat los van de buren; de rechter kan zich bovendien intrekken: aanpassingsvermogen, en ook een zekere eigen afstand. De pinken zijn, net als bij zijn zoon, puntig en gedraaid.\n\n# Waar ze op elkaar lijken\n\nHet meest treffende raakpunt zit in de pinken: bij beiden puntig en gedraaid, met een kleine nagel. Onzekerheid en vertrouwen komen bij vader en zoon in golven, en wat ze daarvan laten zien dekt niet helemaal wat er vanbinnen omgaat. Dat is iets wat ze, zonder het ooit hardop te benoemen, intuïtief in elkaar kunnen herkennen. Ook de derde tenen raken elkaar: bij allebei een rechte as, dus in wat ze doen zijn ze allebei direct, zonder omwegen. En bij allebei speelt een lichte terugkijk mee bij de vierde teen: het verleden doet nog iets mee in hoe ze vasthouden of loslaten, zonder dat het hen vastzet.\n\n# Waar ze verschillen\n\nHet duidelijkste verschil zit bij de grote teen. Bij de zoon is dat een rond, ruim reservoir: hij verpakt wat hij denkt en voelt diplomatiek, en houdt het eerst binnen voor het gedeeld wordt. Bij de vader is de grote teen juist korter dan de rest, met een tikje haast: niet alle energie die in de andere tenen omgaat krijgt evenveel kans om er via die teen uit te komen, en wat eruit komt, komt sneller en directer dan bij zijn zoon. Waar de zoon eerst binnenshuis weegt en bewaart, kan bij de vader iets ontsnappen voor het goed en wel is uitgekristalliseerd.\n\nOok de tweede teen verschilt: bij de zoon kaarsrecht en ordelijk, met een hoekige top die pas scherp wordt als het erop aankomt. Bij de vader lang, rond en licht krom: meer ruimte voor aanpassing, een vleugje toegeven onder druk. En rechts zit bij de vader weinig ruimte tussen teen 1 en 2 (denken komt er vlot uit), terwijl links juist wel ruimte zit (praten over gevoel duurt langer), precies dat verschil tussen snel delen en lang wachten kan schuren met een zoon die zijn eigen gevoel ook pas laat zien als het reservoir vol genoeg is. Twee mensen die allebei iets vasthouden voor ze het delen, op een net iets ander moment en in een ander tempo, kunnen elkaar makkelijk mislopen: de een is net toe aan delen, de ander net toe aan wachten.\n\nBij de derde teen zie je het verschil in tempo terug. De zoon heeft een dunne aanzet: hij komt langzaam op gang en wordt gaandeweg krachtiger. De vader heeft een mengvorm: eerst tactvol in wat hij doet, en als het erop aankomt opeens heel direct.\n\n# Ingangen en muren\n\nBij de zoon kom je het makkelijkst binnen in kleine porties en met geduld: zijn reservoir-tenen (de grote tenen) laten zien dat hij liever gestaag opbouwt dan in één keer alles deelt. Een muur ontstaat vooral als er druk wordt gezet om sneller te delen dan het reservoir toelaat; de grote nagels op zijn grote tenen beschermen hem daarbij goed, hij laat niet zomaar iedereen toe in wat er speelt.\n\nBij de vader ligt een ingang juist in het gesprek over wat hij rationeel denkt, dat komt er vrij vlot uit. Lastiger is het gevoelsgesprek: daar zit ruimte tussen de eerste en tweede teen, dus praten over gevoel heeft meer tijd en uitnodiging nodig. Zijn rechter vierde teen kan zich intrekken: zo past hij zich aan of neemt hij tijdelijk afstand. Forceren werkt daar waarschijnlijk averechts.\n\nBij beiden vormen de pinken een kwetsbare plek: de kleine nagels maken ze gevoelig voor spanning of wantrouwen van buitenaf, iets om voorzichtig mee om te gaan, van beide kanten.\n\n# Routes naar elkaar\n\nDe mooiste route loopt via het doen. Allebei hebben ze een rechte derde teen: in het doen zijn ze direct en vinden ze elkaar het snelst. Samen iets maken of ondernemen brengt ze dichterbij, zonder dat er eerst veel gezegd hoeft te worden. Laat de vader het tempo aangeven bij het denken, daar is hij snel, en laat de zoon het tempo aangeven bij het voelen, daar heeft hij zijn eigen moment voor nodig. En omdat ze allebei gevoelige pinken hebben, helpt het om onzekerheid gewoon hardop te benoemen: wie het eerst zegt, maakt het de ander makkelijker. Welk klein ding zouden jullie deze maand samen kunnen doen, waarbij geen van beiden hoeft te praten om toch dichter bij elkaar te komen?"
+ },
+ "tour": [
+  {
+   "titel": "Maak een foto",
+   "tekst": "Ga rechtop staan, gewicht op beide voeten, en fotografeer je blote voeten recht van boven. Goed licht, tenen ontspannen."
+  },
+  {
+   "titel": "De spiegel kijkt mee",
+   "tekst": "De spiegel bekijkt elke teen: vorm, stand, nagel en de lijn van groot naar klein. Dat duurt ongeveer een minuut."
+  },
+  {
+   "titel": "Loop het zelf na",
+   "tekst": "Per teen zie je welke vormen zijn aangevinkt. Zie jij het anders? Zet een vorm aan of uit. Jij blijft de lezer."
+  },
+  {
+   "titel": "De spiegel vertelt",
+   "tekst": "Meteen na de analyse vertelt de spiegel wat je tenen zeggen, in de stijl van de boeken. Heb je alle tien de tenen nagelopen, dan komt de uitgebreide lezing vrij."
+  },
+  {
+   "titel": "Stel een vraag",
+   "tekst": "Over werk, liefde of een keuze die je moet maken. De spiegel antwoordt vanuit jouw eigen tenen."
+  },
+  {
+   "titel": "Lees samen",
+   "tekst": "Leg twee paar voeten naast elkaar: partners, ouder en kind, vrienden. Je ziet waar jullie op elkaar lijken, waar jullie verschillen en hoe je elkaar bereikt."
+  }
+ ]
+}

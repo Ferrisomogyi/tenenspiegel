@@ -1,0 +1,90 @@
+{
+ "ui": {
+  "tab_solo": "Một bài đọc",
+  "tab_duo": "Song đôi: con trai và cha",
+  "sluit": "Đóng",
+  "zag": "Điều tấm gương thấy",
+  "aangevinkt": "Đã đánh dấu",
+  "notitie": "Ghi chú",
+  "lezing_kop": "Bài đọc mở rộng",
+  "vraag_kop": "Câu hỏi mẫu",
+  "vraag_lbl": "Câu hỏi",
+  "antwoord_lbl": "Câu trả lời của tấm gương",
+  "zoon": "Con trai",
+  "vader": "Cha",
+  "foto_alt_zoon": "Ảnh mẫu: đôi chân trần nhìn từ trên xuống, đang đứng",
+  "foto_alt_vader": "Ảnh mẫu: đôi chân của người cha",
+  "duo_tabel": "Từng ngón chân đặt cạnh nhau",
+  "duo_verhaal_kop": "Câu chuyện song đôi",
+  "tour_knop": "Hướng dẫn 6 bước",
+  "tour_stap": "Bước {n} trên 6",
+  "tour_vorige": "Trước",
+  "tour_volgende": "Tiếp",
+  "tour_klaar": "Xong",
+  "tour_naar_demo": "Xem một bài đọc mẫu",
+  "fors_teen": "Ngón vạm vỡ"
+ },
+ "solo": {
+  "kop": "Ví dụ · một bài đọc thật",
+  "intro": "Một bài đọc thật, được hiển thị ẩn danh. Với từng ngón chân, bạn thấy những dáng nào đã được đánh dấu, tấm gương nhìn thấy gì và nó kể điều gì. Ở cuối có một câu hỏi mẫu.",
+  "eerste": "Đôi chân này gây chú ý ngay bởi sự cân đối: bên phải và bên trái gần như là hình ảnh phản chiếu của nhau, từ ngón cái bản rộng với phần giữa rộng, đến hai ngón út đều xoay ra ngoài và thon nhọn ở đầu. Đường tưởng tượng từ ngón lớn đến ngón nhỏ đi xuống êm ả trên cả hai bàn chân, không có ngón nào nhô lên hay chìm xuống, dấu hiệu cho thấy ở đây không có vùng nào bị phóng đại lên phía trước hay bị đẩy lui. Điều thu hút ánh nhìn đầu tiên là cấu trúc gần như giống hệt của hai bàn chân: suy nghĩ và cảm xúc ở đây dường như hiếm khi cách xa nhau. Đồng thời, hầu như ngón nào cũng có một chi tiết tinh tế, một bể chứa, một đầu ngón xoay, một chiếc móng trông hơi khác, cho thấy dưới sự yên ả và đối xứng ấy vẫn có khá nhiều điều được giữ lại.",
+  "notities": {
+   "R1": "Gốc bình thường, ở giữa nở rộng, rồi cuối lại bình thường: bể chứa. Đầu tròn, móng lớn.",
+   "R2": "Ngón thẳng, đầu hơi góc cạnh: ngón góc cạnh. Các ngón hạ dần êm ả: các ngón trên một đường.",
+   "R3": "Gốc hẹp, rộng dần về phía đầu ngón: gốc mảnh, năng lượng dâng lên. Trục thẳng.",
+   "R4": "Ngón vạm vỡ với móng trung bình. Ngón ngoái nhìn rất nhẹ: quá khứ chỉ góp mặt khẽ, buông bỏ được khi cần.",
+   "R5": "Hai bên thu về một đầu hẹp: ngón nhọn. Mặt móng nghiêng rõ ra ngoài: ngón xoay. Móng nhỏ so với đốt ngón. Không có ngón ẩn mình, trước gốc cũng không có chỗ phồng rõ, nên không có chiếc ba lô nhỏ.",
+   "L1": "Gốc bình thường, ở giữa nở rộng, rồi cuối lại bình thường: bể chứa. Đầu tròn kèm một đoạn phẳng (dáng pha trộn), móng lớn.",
+   "L2": "Ngón thẳng, đầu hơi góc cạnh: ngón góc cạnh. Các ngón hạ dần êm ả: các ngón trên một đường.",
+   "L3": "Gốc hẹp, rộng dần về phía đầu ngón: gốc mảnh, năng lượng dâng lên. Trục thẳng.",
+   "L4": "Ngón vạm vỡ với móng trung bình. Ngón ngoái nhìn rất nhẹ: quá khứ chỉ góp mặt khẽ, buông bỏ được khi cần.",
+   "L5": "Đầu thon nhọn: ngón nhọn. Móng nghiêng ra mép ngoài: ngón xoay. Móng nhỏ so với đốt cuối. Không có ngón ẩn mình dưới ngón thứ tư, trước gốc cũng không có chỗ phồng (không có chiếc ba lô nhỏ)."
+  },
+  "tenen": {
+   "R1": "Ngón cái chân phải của bạn là ngón tròn: bạn gói điều mình nghĩ một cách khéo léo, ngoại giao, và không thích tự tìm đến xung đột. Nhưng ở giữa, ngón này phình ra thành bể chứa: điều được nghĩ và cân nhắc nhiều hơn rất nhiều so với điều thực sự nói ra, lời nói và quan điểm dồn lại trước khi được chia sẻ. Móng lớn khiến bạn giỏi gửi đi hơn là đón nhận: bạn không để ai cũng dễ dàng bước vào những gì bạn nghĩ.",
+   "R2": "Ngón thứ hai chân phải của bạn là ngón thẳng, đi đúng theo đường của các ngón khác: ý chí của bạn ngay ngắn, bạn không chạy theo những mục tiêu cứ đổi thay. Đầu ngón hơi góc cạnh (ngón góc cạnh) cho thấy khi đến lúc quan trọng, bạn nói thẳng điều mình muốn: không đường vòng, không làm nửa vời.",
+   "R3": "Ngón giữa chân phải của bạn có gốc hẹp, rộng dần về phía đầu ngón: gốc mảnh. Sức hành động của bạn không bật lên ngay, bạn cần một đoạn lấy đà, nhưng khi đã vào guồng, hành động tự dồn lên và mạnh dần theo mỗi bước đi.",
+   "R4": "Ngón thứ tư chân phải là ngón vạm vỡ: bạn có nhiều khả năng giữ vững tình huống của mình. Việc bạn ngoái nhìn nhẹ (ngón ngoái nhìn) nghĩa là quá khứ thỉnh thoảng góp mặt vào cách bạn nắm giữ hay buông bỏ; nó không trói bạn, khi cần bạn buông được. Móng trung bình cho thấy bạn cân bằng tốt giữa nắm giữ và để ngỏ với những gì người khác mang đến.",
+   "R5": "Ngón út chân phải của bạn là ngón nhọn và là ngón xoay: bất an và sợ hãi đến với bạn thành những đợt ngắn và sắc, và điều bạn để lộ ra không nhất thiết là điều đang diễn ra bên trong: hướng đi được chỉnh lại giữa đường. Móng nhỏ khiến bạn nhạy cảm ở vùng này: kích thích từ bên ngoài, căng thẳng hay đe dọa, đi vào rất mạnh.",
+   "L1": "Bên trái bạn thấy lại cấu trúc ấy, với một nét riêng: ngón này là dáng pha trộn, đầu tròn với một đoạn phẳng ở đỉnh. Bạn thường nói về cảm xúc một cách tế nhị, nhưng khi đến lúc, bạn có thể bỗng thẳng thắn về điều mình cảm thấy. Ở đây cũng có một bể chứa: cảm xúc dồn lại trước khi bật ra, và móng lớn che chắn chúng cho đến lúc ấy.",
+   "L2": "Ngón thứ hai bên trái làm giống bên phải: ngón thẳng, ngón góc cạnh ở đầu, nằm gọn trên đường. Khi đến lúc, cảm xúc của bạn bật ra thẳng thắn, không che đậy: bạn không để ai nghi ngờ điều bạn cảm thấy, dù thường ngày bạn gói nó khá bình thản.",
+   "L3": "Cùng một mẫu hình bên trái: đầu hẹp, đỉnh rộng. Sự sáng tạo và những cảm hứng trực giác của bạn trào lên chậm rãi và lớn dần đến sức mạnh trọn vẹn, giống một dòng chảy đang tích tụ hơn là một tia chớp bất chợt.",
+   "L4": "Ngón thứ tư bên trái cũng là ngón vạm vỡ: bạn có rất nhiều tình yêu để cho, cho con người, và cũng cho công việc hay dự án mà bạn dốc lòng. Cái ngoái nhìn nhẹ (ngón ngoái nhìn) nhuốm tình yêu ấy một chút trải nghiệm xưa, mà không cản trở bạn; móng trung bình giữ việc gửi đi và đón nhận ở thế cân bằng đẹp.",
+   "L5": "Bên trái, hình ảnh về niềm tin lặp lại: nhọn nghĩa là sự lạc quan và niềm tin đến theo từng cơn bột phát, như những con sóng, và dáng xoay cho thấy điều bạn thể hiện ra ngoài về niềm tin không phải lúc nào cũng khớp với điều đang sống bên trong. Móng nhỏ khiến bạn nhạy với tín hiệu tin tưởng hay nghi ngờ từ người khác, bạn cảm nhận rất nhanh."
+  },
+  "samenhang": "Điều nổi bật nhất trong bài đọc này là bên phải và bên trái khác nhau ít đến thế nào: gần như từng ngón một, cùng một mẫu hình lặp lại. Với bạn, suy nghĩ và cảm xúc hiếm khi giằng co; điều bạn nghĩ và điều bạn cảm thấy phần lớn đi cùng nhịp. Ở các ngón cái, điều đó rõ nhất: cả hai đều xây một bể chứa, bên phải được gói bằng sự ngoại giao, bên trái bằng một tia thẳng thắn khi đến lúc. Vậy là cả lời nói lẫn cảm xúc đều được giữ lại trước, rồi mới chia sẻ. Ở các ngón thứ hai, hình ảnh ấy thêm đậm: ý chí và cảm xúc đều ra ngoài ngay ngắn, và khi cần thì sắc bén, trực diện. Các ngón giữa cho thấy cả hành động lẫn sự sáng tạo của bạn cần khởi động; sức mạnh tự lớn dần khi bạn đi tiếp. Ở các ngón thứ tư là hai ngón vạm vỡ: nhiều khả năng nắm giữ và nhiều khả năng yêu thương, cả hai mang theo một chút quá khứ, góp mặt mà không lấn át. Và sau cùng, các ngón út cho thấy cả bất an lẫn niềm tin đều đến thành những đỉnh ngắn, nhạy cảm, và điều bạn thể hiện từ đó không phải lúc nào cũng là cả câu chuyện. Sợi chỉ xuyên suốt là một con người mà đầu và tim hiếm khi mâu thuẫn, và ở hầu như mọi mặt, lời nói, cảm xúc, nỗi sợ và niềm tin, giữ bên trong nhiều hơn những gì thoạt nhìn lộ ra ngoài. Điều gì sẽ xảy ra nếu bạn để bể chứa lời nói và cảm xúc đã dồn lại ấy tràn ra thường hơn, từng chút một, trước khi nó tự tìm lối thoát?",
+  "vraag": "Làm sao để tôi cho người khác biết rõ hơn mình đang cảm thấy gì, mà không để mọi thứ tuôn ra cùng một lúc?",
+  "antwoord": "Hai ngón cái của bạn đã trả lời được một nửa. Cả hai đều có bể chứa: suy nghĩ và cảm xúc dồn lại trước khi ra ngoài. Bên trái còn có thêm dáng pha trộn phía trên, nên lúc đầu khéo léo rồi bỗng rất thẳng. Đó chính là khoảnh khắc bạn mô tả: bể chứa đã đầy và sự thẳng thắn tiếp quản.\n\nCác ngón thứ hai giúp bạn ở đây. Chúng là ngón thẳng và là các ngón trên một đường: bạn biết rất rõ mình muốn gì và cảm thấy gì, chỉ là nó chưa ra khỏi bạn. Còn các ngón giữa của bạn có gốc mảnh: bạn vào guồng bằng cách bắt đầu, nhỏ thôi, rồi nó tự lớn lên.\n\nVì vậy hãy thử theo từng phần nhỏ. Mỗi ngày một câu về điều bạn cảm thấy, vào lúc yên ả, trước khi áp lực dâng lên. Móng lớn đang bảo vệ bạn, nên hãy tự chọn bắt đầu với ai. Tuần này, ai có thể là người đầu tiên để bạn cho tràn ra một phần nhỏ?"
+ },
+ "duo": {
+  "kop": "Ví dụ · bài đọc song đôi",
+  "intro": "Con trai và cha, hai đôi chân đặt cạnh nhau. Dưới các bức ảnh bạn thấy dáng của cả hai theo từng ngón chân, và bên dưới là câu chuyện song đôi.",
+  "verhaal": "# Hai bản thiết kế đặt cạnh nhau\n\n**Con trai**\nĐiều thấy ngay ở đôi chân này là sự cân đối: bên phải và bên trái gần như phản chiếu nhau, và đường từ ngón cái đến ngón út hạ xuống êm ả, không có chỗ nhô ra. Suy nghĩ và cảm xúc ở cậu ấy hiếm khi chồng chéo lên nhau. Đồng thời, cả hai ngón cái đều có bể chứa: ở lời nói và cảm xúc, điều được giữ lại nhiều hơn điều thoạt nhìn lộ ra. Các ngón thứ tư là ngón vạm vỡ: nhiều khả năng nắm giữ và nhiều khả năng yêu thương. Hành động và sự sáng tạo (ngón giữa) cần lấy đà trước khi vào sức, còn bất an và niềm tin (ngón út) đến thành những đỉnh ngắn, sắc, và điều được thể hiện không phải lúc nào cũng là cả câu chuyện.\n\n**Cha**\nỞ ông ấy, điều nổi bật trước hết là ngón cái tròn và vạm vỡ (ngón cái vạm vỡ), ngắn hơn các ngón còn lại, một ngón quá nhỏ, kèm chút ngón vội vã: không phải toàn bộ năng lượng chạy trong các ngón khác đều có chỗ rộng rãi như nhau để thoát ra qua ngón cái này. Các ngón thứ hai thì ngược lại là ngón quá cỡ, rộng dần về phía đầu: ý chí và cảm xúc đều dồi dào. Chúng hơi cong, là ngón cong: dưới áp lực, ông ấy vẫn nhường một chút. Bên phải, giữa ngón cái và ngón thứ hai có rất ít khoảng cách giữa các ngón (suy nghĩ ra khá thuận), bên trái thì có (nói về cảm xúc mất nhiều thời gian hơn). Các ngón thứ tư là ngón ngoái nhìn, hơi ngoái lại và đứng hơi tách khỏi ngón bên cạnh; ngón bên phải còn có thể là ngón rút vào: vừa là khả năng thích nghi, vừa là một khoảng cách riêng nhất định. Các ngón út, giống như ở người con, là ngón nhọn và ngón xoay.\n\n# Điểm giống nhau\n\nĐiểm chạm đáng chú ý nhất nằm ở các ngón út: ở cả hai đều là ngón nhọn và ngón xoay, với móng nhỏ. Bất an và niềm tin ở cha và con đều đến thành từng đợt sóng, và điều họ để lộ ra không hoàn toàn trùng với điều đang diễn ra bên trong. Đây là điều họ có thể nhận ra ở nhau bằng trực giác, dù chưa từng nói thành lời. Các ngón giữa cũng chạm nhau: cả hai đều là ngón thẳng, nên trong việc làm, cả hai đều trực diện, không đi đường vòng. Và ở cả hai, ngón thứ tư đều có chút ngoái nhìn nhẹ: quá khứ vẫn góp phần vào cách họ nắm giữ hay buông bỏ, mà không giam giữ họ.\n\n# Điểm khác nhau\n\nKhác biệt rõ nhất nằm ở ngón cái. Ở người con, đó là một bể chứa tròn, rộng rãi: cậu ấy gói điều mình nghĩ và cảm một cách ngoại giao, và giữ nó bên trong trước khi chia sẻ. Ngón cái của người cha thì ngược lại ngắn hơn các ngón còn lại, kèm chút vội vã: không phải toàn bộ năng lượng đang chạy trong các ngón khác đều có cơ hội như nhau để thoát ra qua ngón này, và điều thoát ra thì nhanh hơn, trực diện hơn so với người con. Nơi người con trước hết cân nhắc và cất giữ bên trong, ở người cha có thể có điều gì đó lọt ra trước khi nó kịp thành hình.\n\nNgón thứ hai cũng khác: ở người con là ngón thẳng, ngay ngắn, với đầu ngón góc cạnh, chỉ sắc lại khi đến lúc quan trọng. Ở người cha thì dài, tròn và hơi cong: nhiều chỗ hơn để thích nghi, một chút nhường nhịn dưới áp lực. Thêm nữa, ở bên phải của người cha có ít khoảng cách giữa các ngón giữa ngón cái và ngón thứ hai (suy nghĩ ra thuận), còn bên trái thì có khoảng cách đó (nói về cảm xúc lâu hơn). Sự khác biệt giữa chia sẻ nhanh và chờ lâu này có thể gây cọ xát với một người con chỉ bộc lộ cảm xúc của mình khi bể chứa đã đủ đầy. Hai người đều giữ lại điều gì đó trước khi chia sẻ, nhưng ở thời điểm hơi khác và với nhịp độ khác, nên dễ lỡ nhau: người này vừa sẵn sàng chia sẻ thì người kia vừa sẵn sàng chờ.\n\nỞ ngón giữa, bạn thấy lại sự khác biệt về nhịp độ. Người con có gốc mảnh: cậu ấy vào guồng chậm và dần mạnh lên. Người cha là dáng pha trộn: trong việc làm lúc đầu tế nhị, và khi đến lúc thì bỗng rất trực diện.\n\n# Lối vào và những bức tường\n\nVới người con, cách dễ bước vào nhất là từng phần nhỏ và kiên nhẫn: các ngón bể chứa của cậu ấy (ngón cái) cho thấy cậu ấy thích dồn dần hơn là chia sẻ tất cả một lần. Bức tường hình thành chủ yếu khi có áp lực buộc chia sẻ nhanh hơn bể chứa cho phép; móng lớn trên ngón cái bảo vệ cậu ấy rất tốt ở điểm này, cậu ấy không để ai cũng dễ dàng bước vào những gì đang diễn ra.\n\nVới người cha, lối vào lại nằm ở cuộc trò chuyện về điều ông ấy nghĩ bằng lý trí, điều đó ra khá thuận. Khó hơn là cuộc trò chuyện về cảm xúc: giữa ngón cái và ngón thứ hai có khoảng cách, nên nói về cảm xúc cần nhiều thời gian và lời mời hơn. Ngón thứ tư bên phải của ông ấy có thể rút vào: nhờ vậy ông ấy thích nghi hoặc tạm giữ khoảng cách. Ép buộc ở đó có lẽ phản tác dụng.\n\nỞ cả hai, các ngón út là chỗ dễ tổn thương: móng nhỏ khiến chúng nhạy với căng thẳng hay sự ngờ vực từ bên ngoài, cần đối xử nhẹ nhàng, từ cả hai phía.\n\n# Những con đường đến với nhau\n\nCon đường đẹp nhất đi qua việc làm. Cả hai đều có ngón giữa thẳng: trong việc làm họ trực diện, và tìm thấy nhau nhanh nhất. Cùng tạo ra hay cùng làm một việc gì đó đưa họ lại gần mà không cần nói nhiều trước. Hãy để người cha dẫn nhịp ở chuyện suy nghĩ, vì ở đó ông ấy nhanh, và để người con dẫn nhịp ở chuyện cảm xúc, vì ở đó cậu ấy cần khoảnh khắc của riêng mình. Và vì cả hai đều có ngón út nhạy cảm, nói thẳng nỗi bất an ra sẽ giúp ích: ai nói trước sẽ khiến người kia dễ hơn. Tháng này hai người có thể cùng làm việc nhỏ nào, mà không ai phải nói gì vẫn thấy gần nhau hơn?"
+ },
+ "tour": [
+  {
+   "titel": "Chụp một tấm ảnh",
+   "tekst": "Đứng thẳng, dồn trọng lượng lên cả hai chân, rồi chụp đôi chân trần từ ngay phía trên. Ánh sáng tốt, ngón chân thả lỏng."
+  },
+  {
+   "titel": "Tấm gương cùng nhìn",
+   "tekst": "Tấm gương xem từng ngón chân: dáng, hướng, móng và đường từ lớn đến nhỏ. Việc này mất khoảng một phút."
+  },
+  {
+   "titel": "Tự đi lại một lượt",
+   "tekst": "Với từng ngón chân, bạn thấy những dáng nào đã được đánh dấu. Bạn thấy khác? Hãy bật hoặc tắt một dáng. Người đọc luôn là bạn."
+  },
+  {
+   "titel": "Tấm gương kể",
+   "tekst": "Ngay sau khi phân tích, tấm gương kể điều các ngón chân của bạn nói, theo phong cách của những cuốn sách. Khi bạn đã xem đủ cả mười ngón, bài đọc mở rộng sẽ được mở."
+  },
+  {
+   "titel": "Đặt một câu hỏi",
+   "tekst": "Về công việc, tình yêu hoặc một lựa chọn bạn phải đưa ra. Tấm gương trả lời từ chính các ngón chân của bạn."
+  },
+  {
+   "titel": "Đọc cùng nhau",
+   "tekst": "Đặt hai đôi chân cạnh nhau: bạn đời, cha mẹ và con, bạn bè. Bạn sẽ thấy hai bên giống nhau ở đâu, khác nhau ở đâu và làm sao đến được với nhau."
+  }
+ ]
+}
