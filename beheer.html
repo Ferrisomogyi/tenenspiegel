@@ -116,6 +116,7 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
       <div class="kaart"><h3>Laatste 30 dagen: netto omzet per dag</h3><svg class="spark" id="sparkOmzet"></svg><div class="zacht" id="sparkOmzetNoot"></div></div>
     </div>
     <div class="kaart tabelwrap" style="margin-bottom:14px"><h3>API-kosten: klant, eigen, onderzoek</h3><div id="dashKosten"><div class="zacht">Laden…</div></div></div>
+    <div class="kaart tabelwrap" style="margin-bottom:14px"><h3>Jouw indruk: duimpjes na een lezing</h3><div id="dashFeedback"><div class="zacht">Laden…</div></div></div>
     <div class="rooster k2" style="margin-bottom:14px;align-items:start">
       <div class="kaart tabelwrap"><h3>Per jaar</h3><div id="dashJaren"></div></div>
       <div class="kaart tabelwrap"><h3>Laatste 12 maanden</h3><div id="dashMaanden"></div></div>
@@ -199,7 +200,7 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
     <div class="kaart tabelwrap" id="logLijst"></div>
   </section>
 </main>
-<footer>Toe Reading · Beheer 2.0 · v1.2 (23 sep 2026) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
+<footer>Toe Reading · Beheer 2.0 · v1.3 (24 okt 2026, duimpjes) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
 
 <script>
 const SB_URL = 'https://kfdtppnwhljivbcutxcm.supabase.co';
@@ -308,6 +309,26 @@ async function laadDash(){
     + '</dl><div class="zacht" style="margin-top:8px">Uitstaand tegoed is een belofte aan klanten; elke analyse kost met Opus-combi circa 16 cent.</div>';
   document.getElementById('dashRecent').innerHTML = (d.recent || []).map(a => '<li><span class="zacht">' + dt(a.t) + '</span> · <b>' + esc(a.soort) + '</b>' + (a.geheugen ? ' <span class="chip">geheugen</span>' : '') + ' · ' + esc(a.email || 'anoniem') + (a.land ? ' · ' + esc(a.stad ? a.stad + ', ' : '') + esc(a.land) : '') + (a.taal ? ' · ' + taalLabel(a.taal) : '') + '</li>').join('') || '<li class="zacht">Nog geen activiteit gelogd (start 15 sep 2026).</li>';
   laadKosten();
+  laadFeedback();
+}
+/* v1.3 (24 okt 2026): duimpjes uit app v9.17.0 (tabel feedback). Alleen om later samen van te leren; stuurt niets aan. */
+const DUIM = { ja: '<span title="omhoog">👍</span>', deels: '<span title="opzij" style="display:inline-block;transform:rotate(-90deg)">👍</span>', nee: '<span title="omlaag" style="display:inline-block;transform:rotate(180deg)">👍</span>' };
+async function laadFeedback(){
+  const el = document.getElementById('dashFeedback');
+  let f;
+  try{ f = await rpc('admin_feedback', { p_limiet: 100 }); }catch(e){ el.innerHTML = '<div class="melding fout">' + esc(e.message) + '</div>'; return; }
+  const pct = (n, t) => t ? Math.round(100 * n / t) + '%' : '<span class="zacht">·</span>';
+  let html = '<table><thead><tr><th>Periode</th><th>' + DUIM.ja + '</th><th>' + DUIM.deels + '</th><th>' + DUIM.nee + '</th><th>Totaal</th><th>Omhoog</th><th>Met tekst</th></tr></thead><tbody>'
+    + (f.periodes || []).map(p => { const t = p.ja + p.deels + p.nee; return '<tr><td><b>' + esc(p.naam) + '</b></td><td>' + p.ja + '</td><td>' + p.deels + '</td><td>' + p.nee + '</td><td><b>' + t + '</b>' + (p.intern ? ' <span class="zacht">(+' + p.intern + ' intern)</span>' : '') + '</td><td>' + pct(p.ja, t) + '</td><td>' + p.met_tekst + '</td></tr>'; }).join('')
+    + '</tbody></table>';
+  const tl = f.per_taal || [];
+  if(tl.length) html += '<div style="margin-top:10px" class="zacht">Per taal: ' + tl.map(x => esc(x.taal) + ' ' + x.ja + '/' + x.deels + '/' + x.nee).join(' · ') + '</div>';
+  const rec = f.recent || [];
+  html += '<div style="margin-top:12px"><b>Laatste reacties</b><table style="margin-top:6px"><thead><tr><th>Wanneer</th><th></th><th>Klant</th><th>Taal</th><th>Tekst</th><th>Codes</th></tr></thead><tbody>'
+    + (rec.length ? rec.map(r => '<tr class="klik" data-id="' + esc(r.id) + '"><td class="zacht">' + dt(r.t) + '</td><td>' + (DUIM[r.oordeel] || esc(r.oordeel)) + '</td><td>' + esc(r.email || '?') + (r.intern ? ' <span class="chip">intern</span>' : '') + '</td><td>' + esc(r.taal || '') + '</td><td>' + (r.tekst ? esc(r.tekst) : '<span class="zacht">·</span>') + '</td><td class="zacht" style="font-size:12px">' + esc(Object.entries(r.codes || {}).map(([k, v]) => k + ': ' + v.join(', ')).join(' | ')) + '</td></tr>').join('') : '<tr><td colspan="6" class="zacht">Nog geen reacties (app v9.17.0, live sinds 24 okt 2026).</td></tr>')
+    + '</tbody></table></div><div class="zacht" style="margin-top:8px">Alleen om later samen van te leren: de duimpjes veranderen niets aan lezingen, prompts of modellen. Interne accounts tellen niet mee in de cijfers.</div>';
+  el.innerHTML = html;
+  el.querySelectorAll('tr.klik').forEach(tr => tr.addEventListener('click', () => { toon('klanten'); openKlant(tr.dataset.id); }));
 }
 /* v1.2: API-kosten per modelcall (tabel api_kosten, gevuld door worker v3.6.9). Categorie: klant, eigen (admin/intern), onderzoek (/admin/proef). */
 async function laadKosten(){
