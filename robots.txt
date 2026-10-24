@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /beheer.html
+Sitemap: https://toereading.com/sitemap.xml
