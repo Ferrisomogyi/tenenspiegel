@@ -1812,14 +1812,16 @@ html[dir="rtl"] main{direction:rtl;text-align:right}
   var t='en';
   try{
     var app=localStorage.taal, kies=localStorage.legal_taal;
-    t = (TALEN.indexOf(app)>=0 ? app : (TALEN.indexOf(kies)>=0 ? kies : (navigator.language||'').slice(0,2).toLowerCase()));
+    var code=function(x){ x=String(x||'').toLowerCase().replace(/_/g,'-'); if(x==='zht'||/^zh-(hant|tw|hk|mo)\b/.test(x)) return 'zht'; if(x==='fil'||x.indexOf('fil-')===0) return 'tl'; return TALEN.indexOf(x)>=0 ? x : x.slice(0,2); }; /* v9.19.2 */
+    var q=''; try{ q=code(new URLSearchParams(location.search).get('lang')); }catch(e){}
+    t = (TALEN.indexOf(q)>=0 ? q : (TALEN.indexOf(app)>=0 ? app : (TALEN.indexOf(kies)>=0 ? kies : code(navigator.language))));
   }catch(e){}
   if(TALEN.indexOf(t)<0) t='en';
   var sel=document.getElementById('taalKeuze');
   function zet(x){
     if(TALEN.indexOf(x)<0) x='en';
     document.documentElement.setAttribute('data-taal',x);
-    document.documentElement.lang=x;
+    document.documentElement.lang=({zht:'zh-Hant',tl:'fil'})[x]||x;
     document.documentElement.dir=RTL[x]?'rtl':'ltr';
     if(sel) sel.value=x;
     try{localStorage.legal_taal=x;}catch(e){}
