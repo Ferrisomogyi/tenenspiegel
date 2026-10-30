@@ -1,9 +1,9 @@
-/* Toe Reading service worker · v9.19.5 (vragen over bewaarde lezingen; koopnoot bank-modus; tweede kassa iDEAL | Wero en Bancontact, jaarpas, KvK in de footer; v9.19.2 kijkrichting en omwisselen, regioslot, zh-Hant, bewaarvraag, lezingen op het toestel; v9.19.1 store-prijzen per product, tegoed op eigen uid, Play-melding achter PLAY_LIVE; v9.19.0 store-betalen, AI-toestemming, fair use 8; v9.18.2 domein toereading.com; v9.18.1 Forse teen op teen 2-5, benadrukte teen, anders in rust, staand-regel; v9.18.0 voorbeeldlezing + duo-voorbeeld, rondleiding, voortgangsbalk; v9.17.0 spiegel vertelt meteen, klopte-je-lezing, foto staand; v9.16.3 vormen versmalling en dunneaanzet; v9.16.2 duo-verhaal zonder markdown; v9.16.1 duo-hint; v9.16.0 meekijkfoto; v9.15.9 fix: navigatie naar andere pagina's overschreef de offline-kopie van index.html)
+/* Toe Reading service worker · v9.19.5-logo13 (30 okt: nieuwe iconen, logo 13; vragen over bewaarde lezingen; koopnoot bank-modus; tweede kassa iDEAL | Wero en Bancontact, jaarpas, KvK in de footer; v9.19.2 kijkrichting en omwisselen, regioslot, zh-Hant, bewaarvraag, lezingen op het toestel; v9.19.1 store-prijzen per product, tegoed op eigen uid, Play-melding achter PLAY_LIVE; v9.19.0 store-betalen, AI-toestemming, fair use 8; v9.18.2 domein toereading.com; v9.18.1 Forse teen op teen 2-5, benadrukte teen, anders in rust, staand-regel; v9.18.0 voorbeeldlezing + duo-voorbeeld, rondleiding, voortgangsbalk; v9.17.0 spiegel vertelt meteen, klopte-je-lezing, foto staand; v9.16.3 vormen versmalling en dunneaanzet; v9.16.2 duo-verhaal zonder markdown; v9.16.1 duo-hint; v9.16.0 meekijkfoto; v9.15.9 fix: navigatie naar andere pagina's overschreef de offline-kopie van index.html)
    Strategie:
    - navigaties (de pagina zelf): network-first, val terug op cache → nieuwe deploys komen direct door, offline blijft werken
    - overige same-origin GET (manifest, iconen): cache-first
    - POST-calls naar de worker (workers.dev) worden met rust gelaten */
-const CACHE = 'tenenspiegel-v9.19.5';
+const CACHE = 'tenenspiegel-v9.19.5-logo13';
 const KERN = [
   './',
   './index.html',
