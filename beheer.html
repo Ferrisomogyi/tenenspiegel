@@ -90,6 +90,7 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
     <button data-tab="klanten">Klanten</button>
     <button data-tab="geo">Waar &amp; wat</button>
     <button data-tab="codes">Cadeaucodes</button>
+    <button data-tab="beveiliging">Beveiliging</button>
     <button data-tab="log">Logboek</button>
   </nav>
   <div class="wie" id="wie"></div>
@@ -170,13 +171,14 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
       <div>
         <div class="kaart" style="margin-bottom:14px"><h3>Lezingen <span class="zacht" id="klantLezingenN"></span></h3><div id="klantLezingen"></div></div>
         <div class="kaart" style="margin-bottom:14px"><h3>Betalingen &amp; codes</h3><div id="klantBetalingen"></div></div>
-        <div class="kaart"><h3>Activiteit</h3><ul class="log" id="klantActiviteit"></ul></div>
+        <div class="kaart" style="margin-bottom:14px"><h3>Activiteit</h3><ul class="log" id="klantActiviteit"></ul></div>
+        <div class="kaart"><h3>Beveiliging &amp; mails</h3><ul class="log" id="klantBeveiliging"><li class="zacht">Laden…</li></ul></div>
       </div>
     </div>
   </section>
 
   <section id="tab-geo" hidden>
-    <div class="kop-rij"><h2>Waar &amp; wat</h2><span class="zacht">Land en stad komen van het netwerk van de klant (Cloudflare), vanaf 15 sep 2026. Geen exacte locatie, geen IP-adres bewaard.</span></div>
+    <div class="kop-rij"><h2>Waar &amp; wat</h2><span class="zacht">Land en stad komen van het netwerk van de klant (Cloudflare), vanaf 15 sep 2026. Geen exacte locatie. IP-adressen staan alleen in de beveiligingslog (90 dagen).</span></div>
     <div class="rooster k2">
       <div class="kaart"><h3>Landen</h3><div id="geoLanden"></div></div>
       <div class="kaart"><h3>Steden</h3><div id="geoSteden"></div></div>
@@ -195,12 +197,21 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
     <div class="kaart tabelwrap" id="cLijst"></div>
   </section>
 
+  <section id="tab-beveiliging" hidden>
+    <div class="kop-rij"><h2>Beveiliging</h2><span class="zacht">Registreren, inloggen, wachtwoordherstel en adreswijzigingen, met IP-adres. Bewaard 90 dagen. Elke inzage komt in het logboek.</span></div>
+    <div class="kaart" style="margin-bottom:14px"><div class="rij">
+      <select id="bvFilter"><option value="">alles</option><option value="user_recovery_requested">herstelverzoeken</option><option value="login">inloggen</option><option value="user_signedup">registraties</option><option value="user_updated_password">wachtwoord gewijzigd</option></select>
+      <label><input type="checkbox" id="bvIntern"> ook interne accounts</label>
+      <button class="knop klein licht" id="bvVernieuw">Vernieuwen</button></div></div>
+    <div class="kaart tabelwrap" id="bvLijst"></div>
+  </section>
+
   <section id="tab-log" hidden>
     <div class="kop-rij"><h2>Logboek</h2><span class="zacht">Elke beheerhandeling, inclusief het openen van een klantkaart.</span></div>
     <div class="kaart tabelwrap" id="logLijst"></div>
   </section>
 </main>
-<footer>Toe Reading · Beheer 2.0 · v1.3 (24 okt 2026, duimpjes) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
+<footer>Toe Reading · Beheer 2.0 · v1.4 (31 okt 2026, beveiligingslog) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
 
 <script>
 const SB_URL = 'https://kfdtppnwhljivbcutxcm.supabase.co';
@@ -246,7 +257,7 @@ async function rpc(naam, body){
 }
 
 /* ---- navigatie ---- */
-const tabs = ['dash','klanten','klant','geo','codes','log'];
+const tabs = ['dash','klanten','klant','geo','codes','beveiliging','log'];
 function toon(tab){
   for(const t of tabs) document.getElementById('tab-' + t).hidden = (t !== tab);
   document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('actief', b.dataset.tab === tab || (tab === 'klant' && b.dataset.tab === 'klanten')));
@@ -283,6 +294,7 @@ function laad(tab){
   else if(tab === 'geo') laadGeo();
   else if(tab === 'codes') laadCodes();
   else if(tab === 'log') laadLog();
+  else if(tab === 'beveiliging') laadBeveiliging();
 }
 
 /* ---- dashboard ---- */
@@ -435,6 +447,7 @@ async function openKlant(id){
   document.getElementById('klantActiviteit').innerHTML = (d.activiteit || []).map(a => '<li><span class="zacht">' + dt(a.t) + '</span> · <b>' + esc(a.soort) + '</b>' + (a.details && a.details.geheugen ? ' <span class="chip">geheugen</span>' : '') + (a.details && a.details.voet ? ' · ' + esc(a.details.voet) : '') + (a.land ? ' · ' + esc(a.stad ? a.stad + ', ' : '') + esc(a.land) : '') + (a.taal ? ' · ' + taalLabel(a.taal) : '') + '</li>').join('') || '<li class="zacht">Nog geen activiteit gelogd.</li>';
   document.getElementById('klantAudit').innerHTML = (d.audit || []).map(g => '<li><span class="zacht">' + dt(g.t) + ' · ' + esc(g.admin || '') + '</span> · ' + esc(g.actie) + (g.details && g.details.reden ? ' · ' + esc(g.details.reden) : '') + '</li>').join('') || '<li class="zacht">·</li>';
 }
+/* v1.4 */ const _openKlant14 = openKlant; openKlant = async function(id){ await _openKlant14(id); laadKlantBeveiliging(id); };
 function kv(paren){ return paren.map(([k, v]) => '<dt>' + esc(k) + '</dt><dd>' + (v == null ? '·' : v) + '</dd>').join(''); }
 function lezingHtml(l){
   const tenen = l.tenen || {}, v = l.vertelt || null, vr = Array.isArray(l.vragen) ? l.vragen : [];
@@ -503,6 +516,44 @@ document.getElementById('cMaak').addEventListener('click', async () => {
   try{ const codes = await rpc('maak_codes', { p_soort: soort, p_aantal: n }); document.getElementById('cNieuw').innerHTML = '<b>Nieuwe codes:</b> ' + (codes || []).map(c => '<code>' + esc(c) + '</code>').join(' · ') + '<br><span class="zacht">Schrijf ze ook bij in je batchlijst; codes komen niet in Notion.</span>'; laadCodes(); }
   catch(e){ document.getElementById('cNieuw').innerHTML = '<span class="melding fout">' + esc(e.message) + '</span>'; }
 });
+
+/* ---- v1.4 (31 okt 2026): beveiligingslog (auth.audit_log_entries via admin_beveiliging, 90 dagen) ---- */
+const BV_ACTIE = { login: 'ingelogd', logout: 'uitgelogd', user_signedup: 'geregistreerd', user_confirmation_requested: 'bevestigmail aangevraagd',
+  user_recovery_requested: 'wachtwoordherstel aangevraagd', user_updated_password: 'wachtwoord gewijzigd', user_modified: 'account gewijzigd',
+  user_deleted: 'account verwijderd', user_invited: 'uitgenodigd', user_reauthenticate_requested: 'herbevestiging aangevraagd',
+  identity_linked: 'identiteit gekoppeld', identity_unlinked: 'identiteit losgekoppeld' };
+const BV_MAIL = { geen_verhaal: 'mail: verhaal kwam niet af', nooit_begonnen: 'mail: nooit begonnen', duim: 'mail: duimpjesvraag', kwartaal: 'mail: kwartaalvraag' };
+const bvActie = a => esc(BV_ACTIE[a] || a || '?');
+const bvKleur = a => a === 'user_recovery_requested' || a === 'user_updated_password' ? ' class="chip r"' : a === 'user_signedup' ? ' class="chip g"' : ' class="chip"';
+async function laadBeveiliging(){
+  const el = document.getElementById('bvLijst'); el.innerHTML = '<div class="zacht">Laden…</div>';
+  try{
+    const d = await rpc('admin_beveiliging', { p_klant: null, p_limiet: 500 });
+    const f = document.getElementById('bvFilter').value, metIntern = document.getElementById('bvIntern').checked;
+    const rijen = (d.gebeurtenissen || []).filter(g => (!f || g.actie === f) && (metIntern || !g.intern));
+    el.innerHTML = (d.audit_aan ? '' : '<div class="melding">De auditlog staat nog uit of is net aangezet: Supabase › Authentication › Audit Logs › "Write audit logs to the database". Gebeurtenissen van vóór het aanzetten staan er niet in.</div>') +
+      '<table><thead><tr><th>Wanneer</th><th>Wat</th><th>Wie</th><th>IP-adres</th></tr></thead><tbody>' +
+      (rijen.map(g => '<tr><td>' + dt(g.tijd) + '</td><td><span' + bvKleur(g.actie) + '>' + bvActie(g.actie) + '</span></td><td>' +
+        (g.gebruiker ? '<a href="#" data-id="' + esc(g.gebruiker) + '">' + esc(g.email || g.gebruiker) + '</a>' : esc(g.email || '·')) + (g.intern ? ' <span class="zacht">(intern)</span>' : '') +
+        '</td><td>' + (g.ip ? '<code>' + esc(g.ip) + '</code>' : '<span class="zacht">via dashboard</span>') + '</td></tr>').join('') ||
+        '<tr><td colspan="4" class="zacht">Niets gevonden in de laatste 90 dagen.</td></tr>') + '</tbody></table>';
+    el.querySelectorAll('a[data-id]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); openKlant(a.dataset.id); }));
+  }catch(e){ el.innerHTML = '<div class="melding fout">' + esc(e.message) + '</div>'; }
+}
+['bvFilter','bvIntern'].forEach(id => document.getElementById(id).addEventListener('change', laadBeveiliging));
+document.getElementById('bvVernieuw').addEventListener('click', laadBeveiliging);
+async function laadKlantBeveiliging(id){
+  const el = document.getElementById('klantBeveiliging'); el.innerHTML = '<li class="zacht">Laden…</li>';
+  try{
+    const d = await rpc('admin_beveiliging', { p_klant: id, p_limiet: 100 });
+    const items = (d.gebeurtenissen || []).map(g => ({ t: g.tijd, html: '<span' + bvKleur(g.actie) + '>' + bvActie(g.actie) + '</span>' + (g.ip ? ' <code>' + esc(g.ip) + '</code>' : '') }))
+      .concat((d.mails || []).map(m => ({ t: m.tijd, html: '<b>' + esc(BV_MAIL[m.soort] || m.soort) + '</b> · ' + esc(m.status) + (m.test ? ' <span class="chip">test</span>' : '') +
+        (m.actie ? ' · antwoord: ' + esc(m.actie) : '') })))
+      .sort((a, b) => String(b.t).localeCompare(String(a.t)));
+    el.innerHTML = items.map(i => '<li><span class="zacht">' + dt(i.t) + '</span> · ' + i.html + '</li>').join('') ||
+      '<li class="zacht">Geen gebeurtenissen in de laatste 90 dagen' + (d.audit_aan ? '' : ' (auditlog staat nog uit)') + '.</li>';
+  }catch(e){ el.innerHTML = '<li class="melding fout">' + esc(e.message) + '</li>'; }
+}
 
 /* ---- logboek ---- */
 async function laadLog(){
