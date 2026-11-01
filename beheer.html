@@ -200,9 +200,10 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
   <section id="tab-beveiliging" hidden>
     <div class="kop-rij"><h2>Beveiliging</h2><span class="zacht">Registreren, inloggen, wachtwoordherstel en adreswijzigingen, met IP-adres. Bewaard 90 dagen. Elke inzage komt in het logboek.</span></div>
     <div class="kaart" style="margin-bottom:14px"><div class="rij">
-      <select id="bvFilter"><option value="">alles</option><option value="user_recovery_requested">herstelverzoeken</option><option value="login">inloggen</option><option value="user_signedup">registraties</option><option value="user_updated_password">wachtwoord gewijzigd</option></select>
+      <select id="bvFilter"><option value="">alles</option><option value="user_recovery_requested">herstelverzoeken</option><option value="login">inloggen</option><option value="user_signedup">registraties</option><option value="user_updated_password">wachtwoord gewijzigd</option><option value="mislukt">mislukte pogingen</option></select>
       <label><input type="checkbox" id="bvIntern"> ook interne accounts</label>
       <button class="knop klein licht" id="bvVernieuw">Vernieuwen</button></div></div>
+    <div class="zacht" id="bvSync" style="margin:0 0 8px"></div>
     <div class="kaart tabelwrap" id="bvLijst"></div>
   </section>
 
@@ -211,7 +212,7 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
     <div class="kaart tabelwrap" id="logLijst"></div>
   </section>
 </main>
-<footer>Toe Reading · Beheer 2.0 · v1.4 (31 okt 2026, beveiligingslog) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
+<footer>Toe Reading · Beheer 2.0 · v1.5 (31 okt 2026, beveiligingslog met IP) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
 
 <script>
 const SB_URL = 'https://kfdtppnwhljivbcutxcm.supabase.co';
@@ -524,18 +525,38 @@ const BV_ACTIE = { login: 'ingelogd', logout: 'uitgelogd', user_signedup: 'gereg
   identity_linked: 'identiteit gekoppeld', identity_unlinked: 'identiteit losgekoppeld' };
 const BV_MAIL = { geen_verhaal: 'mail: verhaal kwam niet af', nooit_begonnen: 'mail: nooit begonnen', duim: 'mail: duimpjesvraag', kwartaal: 'mail: kwartaalvraag' };
 const bvActie = a => esc(BV_ACTIE[a] || a || '?');
+/* v1.5: IP uit beveiliging_ip (elk uur opgehaald uit de auth-logs) */
+const bvIp = g => g.ip ? '<code>' + esc(g.ip) + '</code>' + (g.via === 'dashboard' ? ' <span class="zacht">(dashboard)</span>' : '') : '<span class="zacht">onbekend</span>';
+const BV_FOUT = { invalid_credentials: 'verkeerd wachtwoord of e-mail', email_not_confirmed: 'e-mail niet bevestigd', otp_expired: 'link verlopen',
+  over_request_rate_limit: 'te veel pogingen', over_email_send_rate_limit: 'te veel mails', user_already_exists: 'bestaat al', weak_password: 'zwak wachtwoord' };
+function bvSyncTekst(sy){
+  if(!sy || !sy.laatste) return 'IP-adressen: nog niet opgehaald (beveiliging-sync draait elk uur).';
+  return 'IP-adressen bijgewerkt: ' + dt(sy.laatste) + (sy.fout ? ' · <span class="chip r">fout: ' + esc(sy.fout) + '</span>' : '');
+}
+function bvMislukt(lijst){
+  const perIp = {}; lijst.forEach(m => { perIp[m.ip] = (perIp[m.ip] || 0) + 1; });
+  const top = Object.entries(perIp).sort((a, b) => b[1] - a[1]).slice(0, 5);
+  return '<div class="zacht" style="margin:8px 0">Mislukte pogingen hebben geen e-mailadres in de log. ' + lijst.length + ' in 90 dagen' +
+    (top.length ? '; meeste per IP: ' + top.map(([ip, n]) => '<code>' + esc(ip) + '</code> ' + n + '×').join(', ') : '') + '.</div>' +
+    '<table><thead><tr><th>Wanneer</th><th>Wat</th><th>Reden</th><th>IP-adres</th></tr></thead><tbody>' +
+    (lijst.map(m => '<tr><td>' + dt(m.tijd) + '</td><td><span class="chip r">' + esc(m.pad === '/token' ? 'inloggen mislukt' : 'mislukt: ' + m.pad) +
+      '</span></td><td>' + esc(BV_FOUT[m.fout] || m.fout || String(m.status)) + '</td><td><code>' + esc(m.ip || '?') + '</code></td></tr>').join('') ||
+      '<tr><td colspan="4" class="zacht">Geen mislukte pogingen in de laatste 90 dagen.</td></tr>') + '</tbody></table>';
+}
 const bvKleur = a => a === 'user_recovery_requested' || a === 'user_updated_password' ? ' class="chip r"' : a === 'user_signedup' ? ' class="chip g"' : ' class="chip"';
 async function laadBeveiliging(){
   const el = document.getElementById('bvLijst'); el.innerHTML = '<div class="zacht">Laden…</div>';
   try{
     const d = await rpc('admin_beveiliging', { p_klant: null, p_limiet: 500 });
     const f = document.getElementById('bvFilter').value, metIntern = document.getElementById('bvIntern').checked;
+    document.getElementById('bvSync').innerHTML = bvSyncTekst(d.sync);
+    if(f === 'mislukt'){ el.innerHTML = bvMislukt(d.mislukt || []); return; }
     const rijen = (d.gebeurtenissen || []).filter(g => (!f || g.actie === f) && (metIntern || !g.intern));
     el.innerHTML = (d.audit_aan ? '' : '<div class="melding">De auditlog staat nog uit of is net aangezet: Supabase › Authentication › Audit Logs › "Write audit logs to the database". Gebeurtenissen van vóór het aanzetten staan er niet in.</div>') +
       '<table><thead><tr><th>Wanneer</th><th>Wat</th><th>Wie</th><th>IP-adres</th></tr></thead><tbody>' +
       (rijen.map(g => '<tr><td>' + dt(g.tijd) + '</td><td><span' + bvKleur(g.actie) + '>' + bvActie(g.actie) + '</span></td><td>' +
         (g.gebruiker ? '<a href="#" data-id="' + esc(g.gebruiker) + '">' + esc(g.email || g.gebruiker) + '</a>' : esc(g.email || '·')) + (g.intern ? ' <span class="zacht">(intern)</span>' : '') +
-        '</td><td>' + (g.ip ? '<code>' + esc(g.ip) + '</code>' : '<span class="zacht">via dashboard</span>') + '</td></tr>').join('') ||
+        '</td><td>' + bvIp(g) + '</td></tr>').join('') ||
         '<tr><td colspan="4" class="zacht">Niets gevonden in de laatste 90 dagen.</td></tr>') + '</tbody></table>';
     el.querySelectorAll('a[data-id]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); openKlant(a.dataset.id); }));
   }catch(e){ el.innerHTML = '<div class="melding fout">' + esc(e.message) + '</div>'; }
@@ -546,7 +567,7 @@ async function laadKlantBeveiliging(id){
   const el = document.getElementById('klantBeveiliging'); el.innerHTML = '<li class="zacht">Laden…</li>';
   try{
     const d = await rpc('admin_beveiliging', { p_klant: id, p_limiet: 100 });
-    const items = (d.gebeurtenissen || []).map(g => ({ t: g.tijd, html: '<span' + bvKleur(g.actie) + '>' + bvActie(g.actie) + '</span>' + (g.ip ? ' <code>' + esc(g.ip) + '</code>' : '') }))
+    const items = (d.gebeurtenissen || []).map(g => ({ t: g.tijd, html: '<span' + bvKleur(g.actie) + '>' + bvActie(g.actie) + '</span> ' + bvIp(g) }))
       .concat((d.mails || []).map(m => ({ t: m.tijd, html: '<b>' + esc(BV_MAIL[m.soort] || m.soort) + '</b> · ' + esc(m.status) + (m.test ? ' <span class="chip">test</span>' : '') +
         (m.actie ? ' · antwoord: ' + esc(m.actie) : '') })))
       .sort((a, b) => String(b.t).localeCompare(String(a.t)));
