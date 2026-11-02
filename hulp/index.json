@@ -1,0 +1,122 @@
+{
+ "nl": {
+  "bytes": 67405,
+  "md5": "f1399ec35609bf5980c263d3a7095947"
+ },
+ "en": {
+  "bytes": 66506,
+  "md5": "86ddff57a38cce7e3773d3dd929888d6"
+ },
+ "de": {
+  "bytes": 71913,
+  "md5": "d7f23cdb2ed3b87831998a0a0fc8b0e0"
+ },
+ "fr": {
+  "bytes": 74280,
+  "md5": "77c3d6fcec57a200ac7fe70ca2540892"
+ },
+ "es": {
+  "bytes": 71018,
+  "md5": "a8e165019625bfd483a4733d382ddcb7"
+ },
+ "it": {
+  "bytes": 70485,
+  "md5": "f956b9312c456496696313fba91ab51c"
+ },
+ "pt": {
+  "bytes": 71200,
+  "md5": "bbb0cbc6f1f74b5f05e948337451558b"
+ },
+ "pl": {
+  "bytes": 71158,
+  "md5": "6bbe7327908aa7ee3f4a5c9c599a85de"
+ },
+ "ru": {
+  "bytes": 102046,
+  "md5": "c574b68e87eeb8e673ecb9341bb0ca76"
+ },
+ "tr": {
+  "bytes": 70726,
+  "md5": "d17fb7e551c3e1bac1e698707f0dcafa"
+ },
+ "ar": {
+  "bytes": 87892,
+  "md5": "59af568b6c606389bd3d1b9d798dd9c5"
+ },
+ "zh": {
+  "bytes": 64964,
+  "md5": "2cb2042b21466bc71c6d8aeb8d2c813f"
+ },
+ "ja": {
+  "bytes": 82902,
+  "md5": "4ad8eac1cece301374311e1bc8fe0393"
+ },
+ "ko": {
+  "bytes": 75011,
+  "md5": "3a55f5a7536a1ca4edf69acd8067b41d"
+ },
+ "hi": {
+  "bytes": 127052,
+  "md5": "467581038e118ec871324323d918db47"
+ },
+ "id": {
+  "bytes": 70540,
+  "md5": "45510bdcc19446667f035cce1f4de51a"
+ },
+ "vi": {
+  "bytes": 83995,
+  "md5": "3484e19bcc53b228025c8c14681d5b4e"
+ },
+ "th": {
+  "bytes": 128479,
+  "md5": "39d31eac3c069b62faa23ca2ee505acf"
+ },
+ "uk": {
+  "bytes": 100358,
+  "md5": "c0b3092925419a8f1eadade3bbe1b4ae"
+ },
+ "hu": {
+  "bytes": 72853,
+  "md5": "2e293a88d211913589a7532660548db7"
+ },
+ "bn": {
+  "bytes": 126191,
+  "md5": "3b2422f3fab0a073f4246bb9867b2606"
+ },
+ "ur": {
+  "bytes": 96685,
+  "md5": "d60483f99e1578156b530b247cc1ec29"
+ },
+ "fa": {
+  "bytes": 93494,
+  "md5": "68ee51c893b92a79e02d514e10520910"
+ },
+ "ms": {
+  "bytes": 71936,
+  "md5": "a4813f2e2ac06d280d7cb1fbf15c0837"
+ },
+ "tl": {
+  "bytes": 75291,
+  "md5": "ff84f7a63fe3b222dea778cd94b9e99a"
+ },
+ "el": {
+  "bytes": 108836,
+  "md5": "7af40adc92dc0f7a8dcb026364b53078"
+ },
+ "cs": {
+  "bytes": 69526,
+  "md5": "70541dd648d0ec251a979366a8c2b611"
+ },
+ "ro": {
+  "bytes": 72879,
+  "md5": "3febf5d6d0c5dbe67b6ccfbfced041e2"
+ },
+ "sv": {
+  "bytes": 68690,
+  "md5": "a81338dc4e2fd8252ae8dd9fad73916f"
+ },
+ "zht": {
+  "bytes": 65967,
+  "md5": "a698489490f6ecda479d59e5c361c115"
+ }
+}
