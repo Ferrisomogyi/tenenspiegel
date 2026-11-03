@@ -1,0 +1,36 @@
+{
+  "name": "足鏡",
+  "short_name": "足鏡",
+  "description": "雙腳是鏡子：透過腳趾的形狀認識自己。",
+  "lang": "zh-Hant",
+  "id": "./",
+  "start_url": "./?lang=zht",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#EFE8D8",
+  "theme_color": "#EFE8D8",
+  "categories": [
+    "lifestyle"
+  ],
+  "icons": [
+    {
+      "src": "icons/icon-zht-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-zht-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-zht-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

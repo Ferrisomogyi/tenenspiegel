@@ -1,0 +1,36 @@
+{
+  "name": "足镜",
+  "short_name": "足镜",
+  "description": "双脚是镜子：通过脚趾的形状认识自己。",
+  "lang": "zh",
+  "id": "./",
+  "start_url": "./?lang=zh",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#EFE8D8",
+  "theme_color": "#EFE8D8",
+  "categories": [
+    "lifestyle"
+  ],
+  "icons": [
+    {
+      "src": "icons/icon-zh-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-zh-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-zh-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
