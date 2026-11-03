@@ -6,7 +6,7 @@
 (function () {
   'use strict';
   if (window.__hulpKnop) return; window.__hulpKnop = 1;
-  var ZICHTBAAR = false;
+  var ZICHTBAAR = true; // 3 nov 2026 15:27: zichtbaar na toetsset (worker v3.7.6, kennis v5)
   var WORKER = 'https://tenenspiegel-ai.ferri-a8a.workers.dev/hulp';
   var MAIL = 'support@toereading.com';
   var MAX_DAG = 20;
