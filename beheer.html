@@ -133,7 +133,8 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
     <div class="kaart" style="margin-bottom:14px">
       <div class="rij">
         <input type="search" id="zoek" placeholder="zoek op e-mail, naam, land of stad" style="flex:1;min-width:220px">
-        <select id="sort"><option value="laatst">laatst actief</option><option value="nieuw">nieuwste eerst</option><option value="omzet">omzet</option><option value="kosten">API-kosten</option><option value="email">e-mail</option></select>
+        <select id="sort"><option value="laatst">laatst actief</option><option value="nieuw">nieuwste eerst</option><option value="omzet">omzet</option><option value="kosten">API-kosten</option><option value="email">e-mail</option><option value="missers">afgekeurde foto's</option></select>
+        <label class="zacht" style="display:inline-flex;align-items:center;gap:4px"><input type="checkbox" id="alleenMissers"> alleen met afgekeurde foto's</label>
         <button class="knop klein" id="zoekKnop">Zoek</button>
       </div>
     </div>
@@ -212,7 +213,7 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
     <div class="kaart tabelwrap" id="logLijst"></div>
   </section>
 </main>
-<footer>Toe Reading · Beheer 2.0 · v1.5 (31 okt 2026, beveiligingslog met IP) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
+<footer>Toe Reading · Beheer 2.0 · v1.6 (14 nov 2026, afgekeurde foto's, verbruik deze maand, Nederlandse tijd) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
 
 <script>
 const SB_URL = 'https://kfdtppnwhljivbcutxcm.supabase.co';
@@ -221,8 +222,9 @@ const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp
 const euro = c => '€ ' + (Number(c || 0) / 100).toFixed(2).replace('.', ',');
 const usd = v => { const n = Number(v || 0); return '$ ' + (n !== 0 && Math.abs(n) < 0.1 ? n.toFixed(3) : n.toFixed(2)); }; // v1.2
 const taalLabel = c => c ? '<span class="zacht">taal: ' + esc(c) + '</span>' : ''; // v1.2: 'nl' onder 'Orihuela, ES' is de app-taal, geen land
-const dt = iso => { if(!iso) return '·'; const d = new Date(iso); return d.toLocaleDateString('nl-NL', {day:'2-digit', month:'short', year:'2-digit'}) + ' ' + d.toLocaleTimeString('nl-NL', {hour:'2-digit', minute:'2-digit'}); };
-const dag = iso => iso ? new Date(iso).toLocaleDateString('nl-NL', {day:'2-digit', month:'short', year:'2-digit'}) : '·';
+const TZ = 'Europe/Amsterdam'; // v1.6 (L4): altijd Nederlandse tijd, ook als de computer anders staat
+const dt = iso => { if(!iso) return '·'; const d = new Date(iso); return d.toLocaleDateString('nl-NL', {day:'2-digit', month:'short', year:'2-digit', timeZone: TZ}) + ' ' + d.toLocaleTimeString('nl-NL', {hour:'2-digit', minute:'2-digit', timeZone: TZ}); };
+const dag = iso => iso ? new Date(iso).toLocaleDateString('nl-NL', {day:'2-digit', month:'short', year:'2-digit', timeZone: TZ}) : '·';
 const geleden = iso => { if(!iso) return 'nooit'; const s = (Date.now() - new Date(iso)) / 1000; if(s < 3600) return Math.max(1, Math.round(s/60)) + ' min'; if(s < 86400) return Math.round(s/3600) + ' uur'; return Math.round(s/86400) + ' dg'; };
 const TEEN = {1:'grote teen',2:'tweede',3:'derde',4:'vierde',5:'kleine teen'};
 const LANDNAAM = new Intl.DisplayNames(['nl'], {type:'region'});
@@ -317,7 +319,9 @@ async function laadDash(){
   document.getElementById('dashTegoed').innerHTML = '<dl style="display:grid;grid-template-columns:1fr auto;gap:4px 10px;font-size:14px">'
     + '<dt>Gratis analyses uitstaand</dt><dd><b>' + tg.gratis + '</b></dd><dt>Pakket-analyses uitstaand</dt><dd><b>' + tg.pakket + '</b></dd><dt>Vragen uitstaand</dt><dd><b>' + tg.vragen + '</b></dd><dt>Actieve jaarabonnementen</dt><dd><b>' + tg.abos_actief + '</b></dd>'
     + '<dt>Cadeaucodes open / verzilverd</dt><dd><b>' + cd.open + '</b> / ' + cd.verzilverd + '</dd>'
-    + '<dt>API-saldo (anker)</dt><dd>' + (api ? '<b>$ ' + (api.bedrag_cent/100).toFixed(2) + '</b> <span class="zacht">gezet ' + esc(api.gezet_op) + '</span>' : '<span class="zacht">geen anker</span>') + '</dd>'
+    + '<dt>API-verbruik deze maand</dt><dd id="apiVerbruik"><span class="zacht">laden…</span></dd>'
+    + '<dt>Auto-reload Anthropic</dt><dd><span class="chip g">aan</span> <span class="zacht">tot $ 30 zodra het saldo onder $ 5 komt</span></dd>'
+    + '<dt>Laatste anker (echt saldo)</dt><dd>' + ankerHtml(api) + '</dd>'
     + (d.api_fout ? '<dt>API-fout</dt><dd><span class="chip r">let op: saldofout gemeld</span></dd>' : '')
     + '</dl><div class="zacht" style="margin-top:8px">Uitstaand tegoed is een belofte aan klanten; elke analyse kost met Opus-combi circa 16 cent.</div>';
   document.getElementById('dashRecent').innerHTML = (d.recent || []).map(a => '<li><span class="zacht">' + dt(a.t) + '</span> · <b>' + esc(a.soort) + '</b>' + (a.geheugen ? ' <span class="chip">geheugen</span>' : '') + ' · ' + esc(a.email || 'anoniem') + (a.land ? ' · ' + esc(a.stad ? a.stad + ', ' : '') + esc(a.land) : '') + (a.taal ? ' · ' + taalLabel(a.taal) : '') + '</li>').join('') || '<li class="zacht">Nog geen activiteit gelogd (start 15 sep 2026).</li>';
@@ -326,6 +330,20 @@ async function laadDash(){
 }
 /* v1.3 (24 okt 2026): duimpjes uit app v9.17.0 (tabel feedback). Alleen om later samen van te leren; stuurt niets aan. */
 const DUIM = { ja: '<span title="omhoog">👍</span>', deels: '<span title="opzij" style="display:inline-block;transform:rotate(-90deg)">👍</span>', nee: '<span title="omlaag" style="display:inline-block;transform:rotate(180deg)">👍</span>' };
+// v1.6 saldo-fix: geen geschat restsaldo meer (dat miste promotegoed en bijboekingen), wel het gemeten verbruik en het laatste echte anker
+function ankerHtml(api){
+  if(!api) return '<span class="zacht">geen anker gezet</span>';
+  const t = Date.parse(api.gezet_op), oud = isFinite(t) && (Date.now() - t) > 14 * 86400000;
+  return '<b>$ ' + (api.bedrag_cent/100).toFixed(2) + '</b> <span class="zacht">gezet ' + esc(isFinite(t) ? dt(api.gezet_op) : api.gezet_op) + '</span>' + (oud ? ' <span class="chip r">ouder dan 14 dagen: saldo in de Console nakijken</span>' : '');
+}
+function toonVerbruik(k){
+  const el = document.getElementById('apiVerbruik'); if(!el) return;
+  const ym = new Intl.DateTimeFormat('sv-SE', { timeZone: TZ, year: 'numeric', month: '2-digit' }).format(new Date()).slice(0, 7);
+  const m = ((k && k.per_maand) || []).find(x => x.maand === ym);
+  if(!m){ el.innerHTML = '<b>$ 0.00</b>'; return; }
+  const tot = Number(m.klant || 0) + Number(m.eigen || 0) + Number(m.onderzoek || 0);
+  el.innerHTML = '<b>' + usd(tot) + '</b> <span class="zacht">klant ' + usd(m.klant) + ' · eigen ' + usd(m.eigen) + ' · onderzoek ' + usd(m.onderzoek) + '</span>';
+}
 async function laadFeedback(){
   const el = document.getElementById('dashFeedback');
   let f;
@@ -348,6 +366,7 @@ async function laadKosten(){
   const el = document.getElementById('dashKosten');
   let k;
   try{ k = await rpc('admin_kosten', {}); }catch(e){ el.innerHTML = '<div class="melding fout">' + esc(e.message) + '</div>'; return; }
+  toonVerbruik(k);
   const per = k.periodes || [];
   const tot = p => Number(p.klant || 0) + Number(p.eigen || 0) + Number(p.onderzoek || 0);
   const marge = p => { const o = Number(p.omzet_cent || 0) / 100, c = Number(p.klant || 0); return o > 0 ? Math.round(100 * (1 - c / o)) + '%' : '<span class="zacht">·</span>'; };
@@ -387,11 +406,23 @@ async function laadKlanten(){
   const el = document.getElementById('klantenLijst');
   el.innerHTML = '<div class="zacht">Laden…</div>';
   let d;
-  try{ d = await rpc('admin_klanten', { p_zoek: document.getElementById('zoek').value.trim() || null, p_sort: document.getElementById('sort').value, p_limiet: 200, p_offset: 0 }); }
+  try{ d = await rpc('admin_klanten', { p_zoek: document.getElementById('zoek').value.trim() || null, p_sort: document.getElementById('sort').value === 'missers' ? 'laatst' : document.getElementById('sort').value, p_limiet: document.getElementById('sort').value === 'missers' || document.getElementById('alleenMissers').checked ? 1000 : 200, p_offset: 0 }); }
   catch(e){ el.innerHTML = '<div class="melding fout">' + esc(e.message) + '</div>'; return; }
   document.getElementById('klantenTotaal').textContent = d.totaal + ' account' + (d.totaal === 1 ? '' : 's');
-  const rijen = d.rijen || [];
-  el.innerHTML = '<table><thead><tr><th>Klant</th><th>Waar</th><th>Sinds</th><th>Actief</th><th>Tegoed</th><th>Lezingen</th><th>Omzet</th><th>API-kosten</th><th></th></tr></thead><tbody>'
+  let rijen = d.rijen || [];
+  // v1.6 (M8): afgekeurde foto's per klant erbij (eigen RPC; de foto zelf wordt nergens bewaard)
+  let ms = []; try{ ms = await rpc('admin_missers', { p_limiet: 2000 }) || []; }catch(e){ ms = []; }
+  const mMap = {}; ms.forEach(x => { mMap[x.id] = x; });
+  const alleenM = document.getElementById('alleenMissers').checked, sortM = document.getElementById('sort').value === 'missers';
+  if(alleenM) rijen = rijen.filter(r => mMap[r.id]);
+  if(sortM) rijen = rijen.slice().sort((a, b) => ((mMap[b.id] || {}).missers || 0) - ((mMap[a.id] || {}).missers || 0) || String((mMap[b.id] || {}).laatste || '').localeCompare(String((mMap[a.id] || {}).laatste || '')));
+  const redenNaam = { geen_voeten: 'geen voeten', onscherp: 'onscherp', half: 'half in beeld', voeten_omhoog: 'voeten omhoog', anders: 'anders' };
+  const mCel = r => { const x = mMap[r.id]; if(!x) return '<span class="zacht">·</span>';
+    return '<b' + (x.missers > 3 ? ' style="color:#b3261e"' : '') + '>' + x.missers + '</b> <span class="zacht">van 3 gratis</span>'
+      + (x.laatste ? '<br><span class="zacht">' + dag(x.laatste) + ' · ' + esc(redenNaam[x.laatste_reden] || x.laatste_reden || '') + '</span>' : '')
+      + '<br><span class="zacht">' + Object.keys(x.per_reden || {}).map(k => esc(redenNaam[k] || k) + ' ' + x.per_reden[k] + '×').join(' · ') + '</span>'
+      + '<br><button class="knop klein licht" data-mactie="teller_terug" data-id="' + esc(r.id) + '">teller terugzetten</button> <button class="knop klein licht" data-mactie="analyse_terug" data-id="' + esc(r.id) + '">analyse teruggeven</button>'; };
+  el.innerHTML = '<table><thead><tr><th>Klant</th><th>Waar</th><th>Sinds</th><th>Actief</th><th>Tegoed</th><th>Lezingen</th><th>Omzet</th><th>API-kosten</th><th>Afgekeurde foto&#39;s</th><th></th></tr></thead><tbody>'
     + rijen.map(r => '<tr class="klik" data-id="' + esc(r.id) + '"><td><b>' + esc(r.email) + '</b>' + (r.naam ? '<br><span class="zacht">' + esc(r.naam) + '</span>' : '') + (r.is_admin ? ' <span class="chip b">admin</span>' : '') + (r.intern && !r.is_admin ? ' <span class="chip">intern</span>' : '') + (r.bevestigd ? '' : ' <span class="chip r">onbevestigd</span>') + '</td>'
       + '<td>' + (r.land ? esc(r.stad ? r.stad + ', ' : '') + esc(r.land) : '<span class="zacht">·</span>') + (r.taal ? '<br>' + taalLabel(r.taal) : '') + '</td>'
       + '<td>' + dag(r.aangemaakt) + '</td><td>' + geleden(r.laatst_actief || r.last_sign_in_at) + '</td>'
@@ -399,13 +430,23 @@ async function laadKlanten(){
       + '<td>' + r.lezingen + ' bewaard' + (r.analyses ? '<br><span class="zacht">' + r.analyses + ' analyses · ' + r.vragen + ' vragen</span>' : '') + (r.bewaar_lezingen ? '' : '<br><span class="zacht">bewaren uit</span>') + '</td>'
       + '<td>' + euro(r.omzet_cent) + '<br><span class="zacht">' + r.betalingen + ' betaling' + (r.betalingen === 1 ? '' : 'en') + '</span></td>'
       + '<td>' + (r.kosten_calls ? usd(r.kosten_usd) + '<br><span class="zacht">' + r.kosten_calls + ' call' + (r.kosten_calls === 1 ? '' : 's') + '</span>' : '<span class="zacht">·</span>') + '</td>'
+      + '<td>' + mCel(r) + '</td>'
       + '<td>' + (r.notities ? '<span class="chip">' + r.notities + ' notitie' + (r.notities === 1 ? '' : 's') + '</span>' : '') + '</td></tr>').join('')
     + '</tbody></table>' + (rijen.length === 0 ? '<div class="zacht" style="padding:10px">Geen klanten gevonden.</div>' : '');
   el.querySelectorAll('tr.klik').forEach(tr => tr.addEventListener('click', () => openKlant(tr.dataset.id)));
+  el.querySelectorAll('button[data-mactie]').forEach(b => b.addEventListener('click', async ev => {
+    ev.stopPropagation();
+    const terug = b.dataset.mactie === 'analyse_terug';
+    const reden = prompt((terug ? 'Eén analyse teruggeven aan deze klant.' : 'De teller van afgekeurde foto\'s op 0 zetten (de klant krijgt weer 3 gratis herkansingen).') + ' Reden (komt in het logboek):');
+    if(!reden || !reden.trim()) return;
+    try{ const u = await rpc('admin_misser_actie', { p_gebruiker: b.dataset.id, p_actie: b.dataset.mactie, p_reden: reden.trim() }); if(u && u.ok === false) throw new Error(u.reden || 'mislukt'); await laadKlanten(); }
+    catch(e){ alert('Mislukt: ' + e.message); }
+  }));
 }
 document.getElementById('zoekKnop').addEventListener('click', laadKlanten);
 document.getElementById('zoek').addEventListener('keydown', e => { if(e.key === 'Enter') laadKlanten(); });
 document.getElementById('sort').addEventListener('change', laadKlanten);
+document.getElementById('alleenMissers').addEventListener('change', laadKlanten);
 document.getElementById('terugKlanten').addEventListener('click', () => { toon('klanten'); laadKlanten(); });
 
 /* ---- klantkaart ---- */
@@ -430,7 +471,7 @@ async function openKlant(id){
   document.getElementById('klantTegoed').innerHTML = kv([
     ['Gratis analyses', t.gratis_over ?? '·'], ['Pakket-analyses', t.pakket_over ?? '·'], ['Vragen', t.vragen_over ?? '·'],
     ['Abonnement', t.abo_tot ? (new Date(t.abo_tot) > new Date() ? '<span class="chip g">t/m ' + dag(t.abo_tot) + '</span>' : 'verlopen ' + dag(t.abo_tot)) : 'geen'],
-    ['Fair use deze maand', (t.fair_use_maand ?? 0) + ' / 25'], ['Vragen deze maand (abo)', t.vragen_maand ?? 0],
+    ['Fair use deze maand', (t.fair_use_maand ?? 0) + ' / 8'], ['Afgekeurde foto\'s', (t.missers ?? 0) + ' <span class="zacht">(3 gratis, daarna kost het een analyse)</span>'], ['Vragen deze maand (abo)', t.vragen_maand ?? 0],
     ['API-kosten', (d.kosten && d.kosten.calls) ? '<b>' + usd(d.kosten.usd) + '</b> <span class="zacht">' + d.kosten.calls + ' calls sinds ' + dag(d.kosten.sinds) + '</span>' + ((d.kosten.per_soort || []).length ? '<br><span class="zacht">' + d.kosten.per_soort.map(x => esc(x.soort) + ' ' + x.calls + '× ' + usd(x.usd)).join(' · ') + '</span>' : '') : '<span class="zacht">nog niets gemeten</span>'],
     ['Marge', (d.kosten && d.kosten.calls) ? euro((d.betalingen || []).reduce((a, b) => a + (String(b.product).startsWith('refund:') ? -b.cent : b.cent), 0)) + ' omzet − ' + usd(d.kosten.usd) + ' kosten' : '·'],
   ]);
@@ -445,7 +486,7 @@ async function openKlant(id){
   document.getElementById('klantBetalingen').innerHTML = (bt.length ? '<table><thead><tr><th>Wanneer</th><th>Product</th><th>Bedrag</th><th>Transactie</th></tr></thead><tbody>' + bt.map(b => '<tr><td>' + dt(b.t) + '</td><td>' + esc(b.product) + '</td><td>' + (String(b.product).startsWith('refund:') ? '−' : '') + euro(b.cent) + '</td><td class="zacht"><span class="txn">' + esc(b.txn) + '</span></td></tr>').join('') + '</tbody></table>' : '<div class="zacht">Geen betalingen.</div>')
     + (cd.length ? '<div style="margin-top:10px"><b>Verzilverde codes:</b> ' + cd.map(c => '<span class="chip">' + esc(c.soort) + ' · ' + dag(c.op) + '</span>').join('') + '</div>' : '');
   document.getElementById('klantNotities').innerHTML = (d.notities || []).map(n => '<li><span class="zacht">' + dt(n.t) + ' · ' + esc(n.admin || '') + '</span><br>' + esc(n.tekst) + '</li>').join('') || '<li class="zacht">Geen notities.</li>';
-  document.getElementById('klantActiviteit').innerHTML = (d.activiteit || []).map(a => '<li><span class="zacht">' + dt(a.t) + '</span> · <b>' + esc(a.soort) + '</b>' + (a.details && a.details.geheugen ? ' <span class="chip">geheugen</span>' : '') + (a.details && a.details.voet ? ' · ' + esc(a.details.voet) : '') + (a.land ? ' · ' + esc(a.stad ? a.stad + ', ' : '') + esc(a.land) : '') + (a.taal ? ' · ' + taalLabel(a.taal) : '') + '</li>').join('') || '<li class="zacht">Nog geen activiteit gelogd.</li>';
+  document.getElementById('klantActiviteit').innerHTML = (d.activiteit || []).map(a => '<li><span class="zacht">' + dt(a.t) + '</span> · <b>' + esc(a.soort) + '</b>' + (a.details && a.details.geheugen ? ' <span class="chip">geheugen</span>' : '') + (a.details && a.details.voet ? ' · ' + esc(a.details.voet) : '') + (a.soort === 'afgekeurd' && a.details ? ' · ' + esc(String(a.details.reden || '').replace(/_/g, ' ')) + (a.details.misser ? ' (misser ' + a.details.misser + ')' : '') + (a.details.afgeboekt ? ' <span class="chip r">analyse af</span>' : '') + (a.details.teruggegeven ? ' <span class="chip g">analyse terug</span>' : '') : '') + (a.land ? ' · ' + esc(a.stad ? a.stad + ', ' : '') + esc(a.land) : '') + (a.taal ? ' · ' + taalLabel(a.taal) : '') + '</li>').join('') || '<li class="zacht">Nog geen activiteit gelogd.</li>';
   document.getElementById('klantAudit').innerHTML = (d.audit || []).map(g => '<li><span class="zacht">' + dt(g.t) + ' · ' + esc(g.admin || '') + '</span> · ' + esc(g.actie) + (g.details && g.details.reden ? ' · ' + esc(g.details.reden) : '') + '</li>').join('') || '<li class="zacht">·</li>';
 }
 /* v1.4 */ const _openKlant14 = openKlant; openKlant = async function(id){ await _openKlant14(id); laadKlantBeveiliging(id); };
