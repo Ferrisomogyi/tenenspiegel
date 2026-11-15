@@ -86,7 +86,7 @@
     '#hulpLog{flex:1;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column;gap:10px}' +
     '#hulpLog .hl-b{max-width:88%;padding:9px 12px;border-radius:12px;white-space:pre-wrap;word-wrap:break-word;font-size:15px;line-height:1.45}' +
     '#hulpLog .hl-bot{align-self:flex-start;background:var(--papier,#EFE8D8)}#hulpLog .hl-ik{align-self:flex-end;background:var(--ether,#4C5B9E);color:#fff}' +
-    '#hulpLog .hl-bezig{opacity:.7;font-style:italic}#hulpLog .hl-faq{font-size:14px}#hulpLog .hl-faq h3{font-size:15px;margin:4px 0 6px}#hulpLog details{margin:0 0 6px;border-bottom:1px solid var(--lijn-zacht,#DCD2BA);padding:4px 0}' +
+    '#hulpLog .hl-bezig{opacity:.7}#hulpLog .hl-faq{font-size:14px}#hulpLog .hl-faq h3{font-size:15px;margin:4px 0 6px}#hulpLog details{margin:0 0 6px;border-bottom:1px solid var(--lijn-zacht,#DCD2BA);padding:4px 0}' +
     '#hulpLog summary{cursor:pointer;font-weight:600}#hulpLog details p{margin:6px 0 4px;white-space:pre-wrap}#hulpLog a{color:var(--ether,#4C5B9E)}' +
     '#hulpVenster form{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--lijn-zacht,#DCD2BA)}' +
     '#hulpVenster textarea{flex:1;resize:none;height:44px;max-height:120px;border:1px solid var(--lijn,#CBBD9F);border-radius:10px;padding:10px;font:inherit;font-size:15px;background:#fff;color:inherit}' +
@@ -190,6 +190,7 @@
     disc = el('p', { 'class': 'hl-disc' });
     venster = el('div', { id: 'hulpVenster', role: 'dialog', 'aria-modal': 'false', 'aria-labelledby': 'hulpTitel', hidden: '' }, [el('header', {}, [titel, nieuw, sluit]), log, form, disc]);
     document.body.appendChild(knop); document.body.appendChild(venster); teksten();
+    try { new MutationObserver(function () { teksten(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] }); } catch (e) {} // v1.2 (N19): de knop volgt de taalwissel
     knop.addEventListener('click', open); sluit.addEventListener('click', dicht); nieuw.addEventListener('click', opnieuw);
     form.addEventListener('submit', stel);
     invoer.addEventListener('keydown', function (e) { if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) stel(e); });
