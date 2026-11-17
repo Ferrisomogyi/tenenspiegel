@@ -92,6 +92,7 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
     <button data-tab="codes">Cadeaucodes</button>
     <button data-tab="beveiliging">Beveiliging</button>
     <button data-tab="log">Logboek</button>
+    <button data-tab="bezoek">Bezoekers &amp; resultaat</button>
   </nav>
   <div class="wie" id="wie"></div>
 </div>
@@ -212,8 +213,30 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
     <div class="kop-rij"><h2>Logboek</h2><span class="zacht">Elke beheerhandeling, inclusief het openen van een klantkaart.</span></div>
     <div class="kaart tabelwrap" id="logLijst"></div>
   </section>
+  <section id="tab-bezoek" hidden>
+    <div class="kop-rij"><h2>Bezoekers &amp; resultaat</h2><span class="zacht" id="bzTijd"></span><button class="knop klein licht" id="bzVernieuw">Vernieuwen</button></div>
+    <div class="rij" style="margin-bottom:14px"><span class="zacht">Periode</span><span id="bzPeriodes" class="rij"></span><span class="zacht" style="margin-left:auto">Geen IP-adressen, geen cookies. Land, regio en plaats komen van het netwerk (Cloudflare), bij benadering.</span></div>
+    <div id="bzMelding"></div>
+    <div id="bzTegels" class="rooster k4" style="margin-bottom:14px"></div>
+    <div class="rooster k2" style="margin-bottom:14px">
+      <div class="kaart"><h3>Vandaag per uur</h3><div id="bzUur"></div><div class="zacht" id="bzUurNoot"></div></div>
+      <div class="kaart"><h3>Laatste 30 dagen per dag</h3><div id="bzDag"></div><div class="zacht" id="bzDagNoot"></div></div>
+    </div>
+    <div class="kaart tabelwrap" style="margin-bottom:14px"><h3>Herkomst: van bezoek tot betaling</h3><div id="bzHerkomst"></div></div>
+    <div class="rooster k2" style="margin-bottom:14px;align-items:start">
+      <div style="display:grid;gap:14px">
+        <div class="kaart tabelwrap"><h3>Landen</h3><div id="bzLanden"></div></div>
+        <div class="kaart"><h3>Talen van bezoekers</h3><div id="bzTalen"></div></div>
+      </div>
+      <div class="kaart tabelwrap"><h3>Regio&#39;s en steden</h3><div id="bzSteden"></div></div>
+    </div>
+    <div class="kaart tabelwrap"><h3 id="bzResKop">Resultaat</h3><div id="bzResultaat"></div>
+      <div class="rij" style="margin-top:10px"><button class="knop klein licht" id="bzVastKnop">Vaste kosten aanpassen</button><span class="zacht">Vaste bedragen staan er één keer in en pas je aan als een abonnement wijzigt. AI-kosten worden in dollars gemeten en omgerekend naar euro.</span></div>
+      <div id="bzVast" hidden style="margin-top:12px"></div>
+    </div>
+  </section>
 </main>
-<footer>Toe Reading · Beheer 2.0 · v1.6 (14 nov 2026, afgekeurde foto's, verbruik deze maand, Nederlandse tijd) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
+<footer>Toe Reading · Beheer 2.0 · v1.7 (17 nov 2026, bezoekers en resultaat) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
 
 <script>
 const SB_URL = 'https://kfdtppnwhljivbcutxcm.supabase.co';
@@ -260,7 +283,7 @@ async function rpc(naam, body){
 }
 
 /* ---- navigatie ---- */
-const tabs = ['dash','klanten','klant','geo','codes','beveiliging','log'];
+const tabs = ['dash','klanten','klant','geo','codes','beveiliging','log','bezoek'];
 function toon(tab){
   for(const t of tabs) document.getElementById('tab-' + t).hidden = (t !== tab);
   document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('actief', b.dataset.tab === tab || (tab === 'klant' && b.dataset.tab === 'klanten')));
@@ -298,6 +321,7 @@ function laad(tab){
   else if(tab === 'codes') laadCodes();
   else if(tab === 'log') laadLog();
   else if(tab === 'beveiliging') laadBeveiliging();
+  else if(tab === 'bezoek') laadBezoek();
 }
 
 /* ---- dashboard ---- */
@@ -542,6 +566,131 @@ async function laadGeo(){
   document.getElementById('geoTalen').querySelectorAll('.landrij').forEach(r => r.style.gridTemplateColumns = '150px 1fr 40px');
   document.getElementById('geoProducten').innerHTML = (d.producten || []).map(p => '<div class="landrij" style="grid-template-columns:150px 1fr 90px"><span>' + esc(p.product) + '</span><span class="zacht">' + p.aantal + '×</span><b>' + euro(p.cent) + '</b></div>').join('') || '<div class="zacht">Nog geen betalingen.</div>';
 }
+
+/* ---- v1.7 (17 nov 2026): bezoekers en resultaat (admin_bezoekers; eigen teller via worker v3.8.8, route /tel) ---- */
+let bzDagen = 30, bzData = null;
+const bzGetal = n => Number(n || 0).toLocaleString('nl-NL');
+const bzPct = (a, b) => b > 0 ? (100 * a / b).toFixed(1).replace('.', ',') + '%' : '·';
+function bzJaarDagen(){ const p = new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date()).split('-').map(Number); return Math.round((Date.UTC(p[0], p[1] - 1, p[2]) - Date.UTC(p[0], 0, 1)) / 86400000) + 1; }
+function bzStaven(a, b, labels, titels){
+  const W = 560, H = 120, n = a.length || 1, bw = W / n, top = Math.max(1, ...a.map((v, i) => v + (b ? b[i] : 0)));
+  let uit = '<svg viewBox="0 0 ' + W + ' ' + (H + 18) + '" style="width:100%;height:auto;display:block" role="img" aria-label="staafgrafiek">';
+  a.forEach((v, i) => {
+    const w = b ? b[i] : 0, ha = v / top * H, hb = w / top * H, x = i * bw + 1.5, br = Math.max(1, bw - 3);
+    uit += '<rect x="' + x.toFixed(1) + '" y="' + (H - ha).toFixed(1) + '" width="' + br.toFixed(1) + '" height="' + ha.toFixed(1) + '" rx="2" fill="#4C5B9E"><title>' + esc(titels[i]) + '</title></rect>';
+    if(w) uit += '<rect x="' + x.toFixed(1) + '" y="' + (H - ha - hb).toFixed(1) + '" width="' + br.toFixed(1) + '" height="' + hb.toFixed(1) + '" rx="2" fill="#6E93A8"><title>' + esc(titels[i]) + '</title></rect>';
+    if(labels[i]) uit += '<text x="' + (x + br / 2).toFixed(1) + '" y="' + (H + 13) + '" font-size="10" text-anchor="middle" fill="#6B5D4A">' + esc(labels[i]) + '</text>';
+  });
+  return uit + '<line x1="0" y1="' + H + '" x2="' + W + '" y2="' + H + '" stroke="#CBBD9F"/></svg>';
+}
+/* rekent het Resultaat-blok uit de ruwe bedragen; alle percentages komen uit de instelling 'resultaat' */
+function bzReken(r){
+  const i = Object.assign({ btw_pct: 21, belasting_pct: 50, usd_eur: 0.91, stripe_vast_cent: 29, stripe_pct: 0, google_pct: 15 }, r.inst || {});
+  const api = r.api || {};
+  const googleBruto = (r.google_cent || 0) + (r.google_geschat_cent || 0);
+  const bruto = (r.web_cent || 0) + googleBruto - (r.terug_cent || 0);
+  const btw = Math.round(bruto * i.btw_pct / (100 + i.btw_pct));
+  const netto = bruto - btw;
+  const apiK = Math.round((api.klant || 0) * i.usd_eur * 100), apiE = Math.round(((api.eigen || 0) + (api.onderzoek || 0)) * i.usd_eur * 100);
+  const stripe = Math.round((r.web_n || 0) * i.stripe_vast_cent + (r.web_cent || 0) * i.stripe_pct / 100);
+  const google = Math.round(googleBruto * i.google_pct / 100);
+  const vast = (r.vaste || []).map(v => ({ naam: v.naam, per: v.per, cent: Math.round(v.valuta === 'USD' ? (v.deel_cent || 0) * i.usd_eur : (v.deel_cent || 0)) }));
+  const kosten = apiK + apiE + stripe + google + vast.reduce((a, b) => a + b.cent, 0);
+  const voor = netto - kosten;
+  const bel = voor > 0 ? Math.round(voor * i.belasting_pct / 100) : 0;
+  return { i, googleBruto, bruto, btw, netto, apiK, apiE, stripe, google, vast, kosten, voor, bel, over: voor - bel };
+}
+function bzPeriodeNaam(){ return bzDagen === 1 ? 'vandaag' : bzDagen === 7 ? 'laatste 7 dagen' : bzDagen === 30 ? 'laatste 30 dagen' : 'dit jaar'; }
+async function laadBezoek(){
+  const jaar = bzJaarDagen();
+  document.getElementById('bzPeriodes').innerHTML = [[1, 'Vandaag'], [7, '7 dagen'], [30, '30 dagen'], [jaar, 'Dit jaar']].map(([d, n], k) => '<button class="knop klein' + ((k === 3 ? ![1, 7, 30].includes(bzDagen) : bzDagen === d) ? '' : ' licht') + '" data-d="' + d + '">' + n + '</button>').join('');
+  document.getElementById('bzPeriodes').querySelectorAll('button').forEach(b => b.addEventListener('click', () => { bzDagen = +b.dataset.d; laadBezoek(); }));
+  const mel = document.getElementById('bzMelding');
+  let d; try{ d = await rpc('admin_bezoekers', { p_dagen: bzDagen }); }catch(e){ melding(mel, e.message, 'fout'); return; }
+  melding(mel, ''); bzData = d;
+  const b = d.bezoekers, r = d.resultaat, k = bzReken(r), per = bzPeriodeNaam();
+  document.getElementById('bzTijd').textContent = 'Bijgewerkt ' + dt(b.nu);
+  const tegel = (lbl, get, sub, jaarKlas) => '<div class="kaart tegel' + (jaarKlas ? ' jaar' : '') + '"><div class="lbl">' + esc(lbl) + '</div><div class="get">' + get + '</div><div class="sub">' + esc(sub) + '</div></div>';
+  const split = x => bzGetal(x.eerste) + ' eerste bezoeken, ' + bzGetal(x.n - x.eerste) + ' terugkerend';
+  document.getElementById('bzTegels').innerHTML =
+    tegel('Bezoeken vandaag', bzGetal(b.vandaag.n), split(b.vandaag)) + tegel('Laatste 7 dagen', bzGetal(b.d7.n), split(b.d7)) + tegel('Laatste 30 dagen', bzGetal(b.d30.n), split(b.d30)) +
+    tegel('Aanmeldingen, ' + per, bzGetal(b.aanmeldingen), bzPct(b.aanmeldingen, b.periode.eerste) + ' van de eerste bezoeken') +
+    tegel('Betalingen, ' + per, bzGetal(b.betalingen), bzPct(b.betalingen, b.aanmeldingen) + ' van de aanmeldingen') +
+    tegel('Wat je overhoudt, ' + per, euro(k.over), 'na kosten en ' + k.i.belasting_pct + '% belasting', true);
+  const uren = (b.per_uur || []).map(x => x.n), topUur = uren.indexOf(Math.max(...uren, 0));
+  document.getElementById('bzUur').innerHTML = bzStaven(uren, null, uren.map((_, i) => i % 3 === 0 ? String(i) : ''), uren.map((v, i) => i + '.00 tot ' + (i + 1) + '.00: ' + v));
+  document.getElementById('bzUurNoot').textContent = b.vandaag.n ? 'Drukste uur vandaag: ' + topUur + '.00 tot ' + (topUur + 1) + '.00, ' + uren[topUur] + (uren[topUur] === 1 ? ' bezoek' : ' bezoeken') + '. Tijden in Nederlandse tijd.' : 'Vandaag nog geen bezoeken geteld. Tijden in Nederlandse tijd.';
+  const pd = b.per_dag || [];
+  document.getElementById('bzDag').innerHTML = bzStaven(pd.map(x => x.eerste), pd.map(x => x.terug), pd.map((x, i) => i % 5 === 0 ? String(+x.dag.slice(8)) : ''), pd.map(x => dag(x.dag + 'T12:00:00Z') + ': ' + x.eerste + ' eerste, ' + x.terug + ' terugkerend'));
+  document.getElementById('bzDagNoot').innerHTML = '<span style="color:#4C5B9E">&#9632;</span> eerste bezoek &nbsp; <span style="color:#6E93A8">&#9632;</span> terugkerend. Beweeg over een staaf voor de aantallen.';
+  const h = b.herkomst || [], som = f => h.reduce((a, x) => a + Number(x[f] || 0), 0);
+  document.getElementById('bzHerkomst').innerHTML = h.length ? '<table><thead><tr><th>Bron</th><th>Bezoeken</th><th>Eerste bezoeken</th><th>Aanmeldingen</th><th>Betalingen</th><th>Omzet</th><th>Van eerste bezoek naar betaling</th></tr></thead><tbody>'
+    + h.map(x => '<tr><td><b>' + esc(x.bron) + '</b></td><td>' + bzGetal(x.bezoeken) + '</td><td>' + bzGetal(x.eerste) + '</td><td>' + bzGetal(x.aanmeldingen) + '</td><td>' + bzGetal(x.betalingen) + '</td><td>' + euro(x.omzet_cent) + '</td><td>' + bzPct(x.betalingen, x.eerste) + '</td></tr>').join('')
+    + '<tr><td><b>Totaal</b></td><td><b>' + bzGetal(som('bezoeken')) + '</b></td><td><b>' + bzGetal(som('eerste')) + '</b></td><td><b>' + bzGetal(som('aanmeldingen')) + '</b></td><td><b>' + bzGetal(som('betalingen')) + '</b></td><td><b>' + euro(som('omzet_cent')) + '</b></td><td><b>' + bzPct(som('betalingen'), som('eerste')) + '</b></td></tr></tbody></table>'
+    + '<div class="zacht" style="margin-top:8px">De bron wordt vastgelegd bij het eerste bezoek en gaat mee naar het account bij aanmelden. Campagnes herken je aan de utm-code in de link die je deelt. &quot;Onbekend&quot; zijn accounts van voor de teller.</div>'
+    : '<div class="zacht">Nog geen bezoeken, aanmeldingen of betalingen in deze periode.</div>';
+  const ln = b.landen || [], lmax = Math.max(1, ...ln.map(x => Number(x.bezoeken)));
+  document.getElementById('bzLanden').innerHTML = ln.length ? '<table><thead><tr><th>Land</th><th style="width:26%"></th><th>Bezoeken</th><th>Aanmeldingen</th><th>Betalingen</th></tr></thead><tbody>'
+    + ln.map(x => '<tr><td style="white-space:nowrap">' + esc(land(x.land)) + '</td><td style="vertical-align:middle"><div class="balk"><i style="width:' + Math.round(100 * x.bezoeken / lmax) + '%"></i></div></td><td>' + bzGetal(x.bezoeken) + '</td><td>' + bzGetal(x.aanmeldingen) + '</td><td>' + bzGetal(x.betalingen) + '</td></tr>').join('')
+    + '</tbody></table><div class="zacht" style="margin-top:8px">Later komt hier de wereldkaart bij.</div>' : '<div class="zacht">Nog geen gegevens.</div>';
+  const st = b.steden || [];
+  document.getElementById('bzSteden').innerHTML = st.length ? '<table><thead><tr><th>Plaats</th><th>Regio, land</th><th>Bezoeken</th><th>Aanmeldingen</th></tr></thead><tbody>'
+    + st.map(x => '<tr><td><b>' + esc(x.stad) + '</b></td><td>' + esc((x.regio ? x.regio + ', ' : '') + x.land) + '</td><td>' + bzGetal(x.bezoeken) + '</td><td>' + bzGetal(x.aanmeldingen) + '</td></tr>').join('')
+    + '</tbody></table><div class="zacht" style="margin-top:8px">Plaats is een schatting op netwerkniveau. Geen exacte locatie.</div>' : '<div class="zacht">Nog geen gegevens.</div>';
+  const tl = b.talen || [], tmax = Math.max(1, ...tl.map(x => Number(x.n)));
+  document.getElementById('bzTalen').innerHTML = tl.map(x => '<div class="landrij" style="grid-template-columns:190px 1fr 60px"><span>' + esc(taal(x.taal)) + '</span><div class="balk"><i style="width:' + Math.round(100 * x.n / tmax) + '%"></i></div><b>' + bzGetal(x.n) + '</b></div>').join('') || '<div class="zacht">Nog geen gegevens.</div>';
+  bzToonResultaat(r, k, per);
+}
+function bzToonResultaat(r, k, per){
+  document.getElementById('bzResKop').textContent = 'Resultaat, ' + per;
+  const kop = t => '<tr><th colspan="3" style="padding-top:14px">' + esc(t) + '</th></tr>';
+  const rij = (naam, cent, noot) => '<tr><td>' + esc(naam) + '</td><td style="text-align:right;white-space:nowrap">' + euro(cent) + '</td><td class="zacht">' + esc(noot || '') + '</td></tr>';
+  const vet = (naam, cent) => '<tr><td><b>' + esc(naam) + '</b></td><td style="text-align:right;white-space:nowrap"><b>' + euro(cent) + '</b></td><td></td></tr>';
+  const api = r.api || {};
+  let h = '<table><tbody>' + kop('Omzet')
+    + rij('Web (iDEAL, kaart en wallet), inclusief btw', r.web_cent, r.web_n + (r.web_n === 1 ? ' betaling' : ' betalingen'))
+    + rij('Google Play, inclusief btw', k.googleBruto, r.google_n + (r.google_n === 1 ? ' aankoop' : ' aankopen') + (r.google_geschat_cent ? ', geschat op de Nederlandse prijs (bedrag staat nog niet in de database)' : ''))
+    + (r.terug_n ? rij('Terugbetaald', -r.terug_cent, r.terug_n + (r.terug_n === 1 ? ' terugbetaling' : ' terugbetalingen')) : '')
+    + vet('Omzet inclusief btw', k.bruto) + rij('Btw', -k.btw, 'schatting, ' + k.i.btw_pct + '% over alle omzet') + vet('Omzet na btw', k.netto)
+    + kop('Kosten')
+    + rij('AI-kosten klanten (lezingen, vragen, duo)', k.apiK, 'gemeten per modelcall, ' + usd(api.klant) + ' tegen ' + String(k.i.usd_eur).replace('.', ','))
+    + rij('AI-kosten eigen gebruik en onderzoek', k.apiE, 'gemeten per modelcall, ' + usd(Number(api.eigen || 0) + Number(api.onderzoek || 0)))
+    + rij('Betaalkosten Stripe', k.stripe, 'schatting: ' + euro(k.i.stripe_vast_cent) + ' per betaling' + (k.i.stripe_pct ? ' plus ' + k.i.stripe_pct + '%' : ''))
+    + rij('Servicekosten Google Play', k.google, 'schatting: ' + k.i.google_pct + '%')
+    + k.vast.map(v => rij(v.naam, v.cent, v.per === 'eenmalig' ? 'eenmalig' : 'vast bedrag per ' + v.per + ', naar rato van de periode')).join('')
+    + (k.vast.length ? '' : '<tr><td colspan="3" class="zacht">Nog geen vaste kosten ingevuld.</td></tr>')
+    + vet('Kosten totaal', k.kosten) + vet('Resultaat voor belasting', k.voor)
+    + rij('Reservering belasting (' + k.i.belasting_pct + '%)', k.bel, k.voor > 0 ? '' : 'geen reservering bij een negatief resultaat')
+    + '<tr><td style="font-family:Fraunces,serif;font-size:19px;font-weight:900">Wat je overhoudt</td><td style="text-align:right;white-space:nowrap;font-family:Fraunces,serif;font-size:22px;font-weight:900;color:var(--' + (k.over >= 0 ? 'goed' : 'fout') + ')">' + euro(k.over) + '</td><td></td></tr></tbody></table>';
+  document.getElementById('bzResultaat').innerHTML = h;
+  bzToonVast(r, k);
+}
+function bzToonVast(r, k){
+  const el = document.getElementById('bzVast');
+  const opt = (lijst, w) => lijst.map(o => '<option' + (o === w ? ' selected' : '') + '>' + o + '</option>').join('');
+  const regel = v => '<tr data-id="' + (v ? v.id : '') + '"><td><input data-k="naam" value="' + esc(v ? v.naam : '') + '" placeholder="nieuwe kostenpost" style="width:150px"></td>'
+    + '<td><input data-k="bedrag" type="number" step="0.01" min="0" value="' + (v ? (v.bedrag_cent / 100).toFixed(2) : '') + '" style="width:95px"></td>'
+    + '<td><select data-k="valuta">' + opt(['EUR', 'USD'], v ? v.valuta : 'EUR') + '</select></td><td><select data-k="per">' + opt(['maand', 'jaar', 'eenmalig'], v ? v.per : 'maand') + '</select></td>'
+    + '<td><input data-k="vanaf" type="date" value="' + esc(v ? v.vanaf : '') + '"></td><td><input data-k="tot" type="date" value="' + esc(v && v.tot ? v.tot : '') + '"></td>'
+    + '<td><input data-k="notitie" value="' + esc(v && v.notitie ? v.notitie : '') + '" style="width:110px"></td>'
+    + '<td style="white-space:nowrap"><button class="knop klein" data-bewaar>' + (v ? 'Bewaar' : 'Voeg toe') + '</button>' + (v ? ' <button class="knop klein licht" data-wis>Wis</button>' : '') + '</td></tr>';
+  const INST = [['btw_pct', 'Btw %'], ['belasting_pct', 'Belasting %'], ['usd_eur', 'Dollar naar euro'], ['stripe_vast_cent', 'Stripe per betaling (cent)'], ['stripe_pct', 'Stripe %'], ['google_pct', 'Google Play %']];
+  el.innerHTML = '<div class="tabelwrap"><table><thead><tr><th>Kostenpost</th><th>Bedrag</th><th>Valuta</th><th>Per</th><th>Vanaf</th><th>Tot (leeg is doorlopend)</th><th>Notitie</th><th></th></tr></thead><tbody>'
+    + (r.vaste || []).map(regel).join('') + regel(null) + '</tbody></table></div>'
+    + '<div class="rij" style="margin-top:12px">' + INST.map(([s, n]) => '<label class="zacht">' + n + ' <input data-inst="' + s + '" type="number" step="0.01" min="0" value="' + k.i[s] + '" style="width:80px"></label>').join('') + '<button class="knop klein" id="bzInstBewaar">Bewaar aannames</button></div><div id="bzVastMelding"></div>';
+  const mel = document.getElementById('bzVastMelding');
+  const doe = async fn => { try{ await fn(); document.getElementById('bzVast').dataset.open = '1'; await laadBezoek(); }catch(e){ melding(mel, e.message, 'fout'); } };
+  el.querySelectorAll('button[data-bewaar]').forEach(b => b.addEventListener('click', () => {
+    const tr = b.closest('tr'), w = s => tr.querySelector('[data-k="' + s + '"]').value.trim(), bedrag = parseFloat(w('bedrag').replace(',', '.'));
+    if(!w('naam') || !(bedrag >= 0)){ melding(mel, 'Vul een naam en een bedrag in.', 'fout'); return; }
+    doe(() => rpc('admin_vaste_kosten_zet', { p_id: tr.dataset.id ? +tr.dataset.id : null, p_naam: w('naam'), p_bedrag_cent: Math.round(bedrag * 100), p_valuta: w('valuta'), p_per: w('per'), p_vanaf: w('vanaf') || null, p_tot: w('tot') || null, p_notitie: w('notitie') || null }));
+  }));
+  el.querySelectorAll('button[data-wis]').forEach(b => b.addEventListener('click', () => { const tr = b.closest('tr'); if(!confirm('Deze kostenpost wissen?')) return; doe(() => rpc('admin_vaste_kosten_wis', { p_id: +tr.dataset.id })); }));
+  document.getElementById('bzInstBewaar').addEventListener('click', () => { const p = {}; el.querySelectorAll('input[data-inst]').forEach(x => { const v = parseFloat(String(x.value).replace(',', '.')); if(v >= 0) p[x.dataset.inst] = v; }); doe(() => rpc('admin_resultaat_inst_zet', { p })); });
+  el.hidden = el.dataset.open !== '1';
+}
+document.getElementById('bzVernieuw').addEventListener('click', laadBezoek);
+document.getElementById('bzVastKnop').addEventListener('click', () => { const el = document.getElementById('bzVast'); el.dataset.open = el.hidden ? '1' : '0'; el.hidden = !el.hidden; });
 
 /* ---- codes ---- */
 async function laadCodes(){
