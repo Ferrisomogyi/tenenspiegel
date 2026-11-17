@@ -236,7 +236,7 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
     </div>
   </section>
 </main>
-<footer>Toe Reading · Beheer 2.0 · v1.7 (17 nov 2026, bezoekers en resultaat) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
+<footer>Toe Reading · Beheer 2.0 · v1.8 (17 nov 2026, bezoekers en resultaat) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
 
 <script>
 const SB_URL = 'https://kfdtppnwhljivbcutxcm.supabase.co';
@@ -570,7 +570,8 @@ async function laadGeo(){
 /* ---- v1.7 (17 nov 2026): bezoekers en resultaat (admin_bezoekers; eigen teller via worker v3.8.8, route /tel) ---- */
 let bzDagen = 30, bzData = null;
 const bzGetal = n => Number(n || 0).toLocaleString('nl-NL');
-const bzPct = (a, b) => b > 0 ? (100 * a / b).toFixed(1).replace('.', ',') + '%' : '·';
+const bzPct = (a, b) => b > 0 && a <= b ? (100 * a / b).toFixed(1).replace('.', ',') + '%' : '·';
+const bzDeel = (a, b, van, anders) => b > 0 && a <= b ? bzPct(a, b) + ' van de ' + van : (a > 0 ? anders : '· van de ' + van);
 function bzJaarDagen(){ const p = new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date()).split('-').map(Number); return Math.round((Date.UTC(p[0], p[1] - 1, p[2]) - Date.UTC(p[0], 0, 1)) / 86400000) + 1; }
 function bzStaven(a, b, labels, titels){
   const W = 560, H = 120, n = a.length || 1, bw = W / n, top = Math.max(1, ...a.map((v, i) => v + (b ? b[i] : 0)));
@@ -614,8 +615,8 @@ async function laadBezoek(){
   const split = x => bzGetal(x.eerste) + ' eerste bezoeken, ' + bzGetal(x.n - x.eerste) + ' terugkerend';
   document.getElementById('bzTegels').innerHTML =
     tegel('Bezoeken vandaag', bzGetal(b.vandaag.n), split(b.vandaag)) + tegel('Laatste 7 dagen', bzGetal(b.d7.n), split(b.d7)) + tegel('Laatste 30 dagen', bzGetal(b.d30.n), split(b.d30)) +
-    tegel('Aanmeldingen, ' + per, bzGetal(b.aanmeldingen), bzPct(b.aanmeldingen, b.periode.eerste) + ' van de eerste bezoeken') +
-    tegel('Betalingen, ' + per, bzGetal(b.betalingen), bzPct(b.betalingen, b.aanmeldingen) + ' van de aanmeldingen') +
+    tegel('Aanmeldingen, ' + per, bzGetal(b.aanmeldingen), bzDeel(b.aanmeldingen, b.periode.eerste, 'eerste bezoeken', 'ook van eerdere bezoekers')) +
+    tegel('Betalingen, ' + per, bzGetal(b.betalingen), bzDeel(b.betalingen, b.aanmeldingen, 'aanmeldingen', 'ook van eerdere aanmeldingen')) +
     tegel('Wat je overhoudt, ' + per, euro(k.over), 'na kosten en ' + k.i.belasting_pct + '% belasting', true);
   const uren = (b.per_uur || []).map(x => x.n), topUur = uren.indexOf(Math.max(...uren, 0));
   document.getElementById('bzUur').innerHTML = bzStaven(uren, null, uren.map((_, i) => i % 3 === 0 ? String(i) : ''), uren.map((v, i) => i + '.00 tot ' + (i + 1) + '.00: ' + v));
