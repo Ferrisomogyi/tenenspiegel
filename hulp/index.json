@@ -1,122 +1,134 @@
 {
  "nl": {
-  "bytes": 78806,
-  "md5": "a2a9d7b60b7549d7aab9e73f022a3a2e"
+  "bytes": 96516,
+  "md5": "d862fe12fbf1289dfa08e6285fb53f04"
  },
  "en": {
-  "bytes": 78016,
-  "md5": "77e87f4d4683e85f6c83a473c95a43a0"
+  "bytes": 95795,
+  "md5": "1cd7fedceaaa7bc9200b6a7842b8d219"
  },
  "de": {
-  "bytes": 83966,
-  "md5": "3390346cfa76a3824c99990da0b58643"
+  "bytes": 103084,
+  "md5": "32d04c9ca1f2a19cdce82b0d8538cadb"
  },
  "fr": {
-  "bytes": 86482,
-  "md5": "8dfecf5e42f0961b4dad33fae3826faf"
+  "bytes": 105704,
+  "md5": "5979e8d2aa12762492b2806ed0e9350b"
  },
  "es": {
-  "bytes": 82742,
-  "md5": "b94fdd5942932b1d01d1582476944b3a"
+  "bytes": 101077,
+  "md5": "4a8f12d8d125fa80d7fa0774b41254f9"
  },
  "it": {
-  "bytes": 82254,
-  "md5": "9fb9921db732a1a7402a273ce8cc7dc9"
+  "bytes": 100600,
+  "md5": "92b9308e266664f87bc7d6528207370c"
  },
  "pt": {
-  "bytes": 82908,
-  "md5": "d870bd62906e7f5e700dd49c0ed10b5b"
+  "bytes": 101081,
+  "md5": "13850e7402e31cd1b82fba9fe0a1373f"
  },
  "pl": {
-  "bytes": 82861,
-  "md5": "64251a7e0855714c263b042ee99a27d9"
+  "bytes": 101435,
+  "md5": "841e08c86d42d40b64f8c96cf55f7335"
  },
  "ru": {
-  "bytes": 116923,
-  "md5": "51edee395f850a830237f8201b0784bf"
+  "bytes": 142507,
+  "md5": "36fb6aac953bbf73b4056854cefbda1c"
  },
  "tr": {
-  "bytes": 82559,
-  "md5": "53f7f6a6e63b6022c8057e9a4f544026"
+  "bytes": 100984,
+  "md5": "598cbbc43b781ad21f36486838636815"
  },
  "ar": {
-  "bytes": 101564,
-  "md5": "a7016a2dfd1dfdafbbc5084f2f52e700"
+  "bytes": 124471,
+  "md5": "3a5e66082c945b4142a5245766270f02"
  },
  "zh": {
-  "bytes": 76212,
-  "md5": "311cac02e00fd0dd0e7688413a48e3f5"
+  "bytes": 93308,
+  "md5": "af0d28fc39bcfb71e1046e1217470338"
  },
  "ja": {
-  "bytes": 95947,
-  "md5": "abadc362c7001c9df019251b47d473ff"
+  "bytes": 117755,
+  "md5": "ffc508193ac310656bb0ed5c89130447"
  },
  "ko": {
-  "bytes": 87266,
-  "md5": "a533aaf3e2afe0ddc40773298d368989"
+  "bytes": 107022,
+  "md5": "b17a40a8c8b4d4c362c5b1655f301b42"
  },
  "hi": {
-  "bytes": 144967,
-  "md5": "1245c896899d1ee03f7a1aba33c6e307"
+  "bytes": 177981,
+  "md5": "692696af06f1cc0dade7a3ee92e5ec4a"
  },
  "id": {
-  "bytes": 82319,
-  "md5": "9a07abdb12fd2b9d33bb5e00c0b87b25"
+  "bytes": 100684,
+  "md5": "d9e552b2bcc51d1bc4f40f8fd2fd7f76"
  },
  "vi": {
-  "bytes": 97347,
-  "md5": "1f3c3f9a965d2a4e64676380c02ffc02"
+  "bytes": 118854,
+  "md5": "bed45548b18b53e012911546e01653ad"
  },
  "th": {
-  "bytes": 146498,
-  "md5": "445d86dd4b7093c7f113feeb530504de"
+  "bytes": 178389,
+  "md5": "a5b5828c264e230f64482ffe7c70d472"
  },
  "uk": {
-  "bytes": 115275,
-  "md5": "340e47b8c4db89bc02c531a589a5dcd1"
+  "bytes": 140924,
+  "md5": "a30599a3bffa24c9486e5421f2abbe9f"
  },
  "hu": {
-  "bytes": 84887,
-  "md5": "6df4abdb545683811284361ef826374f"
+  "bytes": 103756,
+  "md5": "48593137387b7b583df1daca90bdb980"
  },
  "bn": {
-  "bytes": 143691,
-  "md5": "56eba8c37ac516d83685aefea564b25c"
+  "bytes": 175857,
+  "md5": "8eebecb28ec0fb5db9336224a0d10338"
  },
  "ur": {
-  "bytes": 111352,
-  "md5": "4b42b5411b2e8310e2941046cb7368bb"
+  "bytes": 137168,
+  "md5": "355531782b9ab5c2e276fa1689b375c4"
  },
  "fa": {
-  "bytes": 108036,
-  "md5": "7a6502b952cfe224e9951ef396d9dbf2"
+  "bytes": 132595,
+  "md5": "094e46fa69e58d8f8257cef7b7f1ea5d"
  },
  "ms": {
-  "bytes": 83936,
-  "md5": "da87c755547471b6a8c9ddd353bda7dc"
+  "bytes": 102796,
+  "md5": "c9aae4389c47cce0dd07d82bca3cc9e1"
  },
  "tl": {
-  "bytes": 87548,
-  "md5": "95b55b84e8101b6fa2cd307836f5ab98"
+  "bytes": 107075,
+  "md5": "7952914a9fdff71225a5c942b5ed1cf4"
  },
  "el": {
-  "bytes": 124776,
-  "md5": "e56dcc270c3b1c21df82211dba6a9357"
+  "bytes": 152985,
+  "md5": "2bae3763a09766d1d3dce4499dfa490f"
  },
  "cs": {
-  "bytes": 81091,
-  "md5": "9277acce146b608e7f5a7dce35e53a52"
+  "bytes": 98978,
+  "md5": "aa7b433ef726ca6ad57ace27d3390baa"
  },
  "ro": {
-  "bytes": 84811,
-  "md5": "5ac79f1a93c89b17b68aee760ea17466"
+  "bytes": 103603,
+  "md5": "5f77c658a99377fe5740d633f5054501"
  },
  "sv": {
-  "bytes": 80409,
-  "md5": "0b192406eb99b65c7de7ab53f412646a"
+  "bytes": 98489,
+  "md5": "10ea5f8136b7d80a6c8ad40cc39fcab7"
+ },
+ "no": {
+  "bytes": 95996,
+  "md5": "0c8b04d820ef1b7a249eee5796af00e1"
+ },
+ "da": {
+  "bytes": 96063,
+  "md5": "b74c792502ece5e5ca75ef1f46e46b32"
+ },
+ "fi": {
+  "bytes": 98575,
+  "md5": "9aecaaadb8ad08848323d9bcf6ab19bd"
  },
  "zht": {
-  "bytes": 77287,
-  "md5": "eba0e472a9e6d1318868fcc59ff10e16"
+  "bytes": 94501,
+  "md5": "450992a4c362986809cae023fdecc618"
  }
 }
