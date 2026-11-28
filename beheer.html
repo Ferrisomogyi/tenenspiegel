@@ -90,6 +90,7 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
     <button data-tab="klanten">Klanten</button>
     <button data-tab="geo">Waar &amp; wat</button>
     <button data-tab="codes">Cadeaucodes</button>
+    <button data-tab="partners">Partners</button>
     <button data-tab="beveiliging">Beveiliging</button>
     <button data-tab="log">Logboek</button>
     <button data-tab="bezoek">Bezoekers &amp; resultaat</button>
@@ -193,10 +194,17 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
     <div class="kop-rij"><h2>Cadeaucodes</h2></div>
     <div class="kaart" style="margin-bottom:14px">
       <div class="rij"><select id="cSoort"><option value="pakket10">pakket10 (10 analyses)</option><option value="jaar">jaar</option></select><input type="number" id="cAantal" value="5" min="1" max="100" style="width:80px"><button class="knop klein" id="cMaak">Maak codes</button>
-      <select id="cStatus" style="margin-left:auto"><option value="open">open</option><option value="verzilverd">verzilverd</option></select><button class="knop klein licht" id="cToon">Toon</button></div>
+      <select id="cStatus" style="margin-left:auto"><option value="open">open (nog niet weggegeven)</option><option value="uitgegeven">uitgegeven</option><option value="verzilverd">verzilverd</option><option value="">alles</option></select><button class="knop klein licht" id="cToon">Vernieuw</button></div>
       <div id="cNieuw" class="zacht" style="margin-top:8px"></div>
     </div>
     <div class="kaart tabelwrap" id="cLijst"></div>
+  </section>
+
+  <section id="tab-partners" hidden>
+    <div class="kop-rij"><h2>Partners</h2><span class="zacht" id="pTijd"></span><button class="knop klein licht" id="pVernieuw">Vernieuwen</button></div>
+    <div class="kaart" style="margin-bottom:14px"><div id="pLijst"></div></div>
+    <div class="kaart tabelwrap"><h3>Per kwartaal</h3><div id="pKwartalen"></div>
+      <p class="zacht" style="margin-top:10px">Netto = omzet na terugbetalingen, min btw, min betaal- en winkelkosten, min AI-kosten van die klanten, binnen de looptijd na aanmelding. Tarieven uit Bezoekers &amp; resultaat. Onder de drempel schuift de commissie door naar het volgende kwartaal; uitbetalingen houdt deze versie nog niet bij.</p></div>
   </section>
 
   <section id="tab-beveiliging" hidden>
@@ -236,7 +244,7 @@ footer{text-align:center;font-size:12px;color:var(--inkt-zacht);padding:26px}
     </div>
   </section>
 </main>
-<footer>Toe Reading · Beheer 2.0 · v1.8 (17 nov 2026, bezoekers en resultaat) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
+<footer>Toe Reading · Beheer 2.0 · v1.9 (28 nov 2026, partners en uitgegeven codes) · alleen voor beheer, alle data via beveiligde admin-functies</footer>
 
 <script>
 const SB_URL = 'https://kfdtppnwhljivbcutxcm.supabase.co';
@@ -283,7 +291,7 @@ async function rpc(naam, body){
 }
 
 /* ---- navigatie ---- */
-const tabs = ['dash','klanten','klant','geo','codes','beveiliging','log','bezoek'];
+const tabs = ['dash','klanten','klant','geo','codes','partners','beveiliging','log','bezoek'];
 function toon(tab){
   for(const t of tabs) document.getElementById('tab-' + t).hidden = (t !== tab);
   document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('actief', b.dataset.tab === tab || (tab === 'klant' && b.dataset.tab === 'klanten')));
@@ -319,6 +327,7 @@ function laad(tab){
   else if(tab === 'klanten') laadKlanten();
   else if(tab === 'geo') laadGeo();
   else if(tab === 'codes') laadCodes();
+  else if(tab === 'partners') laadPartners();
   else if(tab === 'log') laadLog();
   else if(tab === 'beveiliging') laadBeveiliging();
   else if(tab === 'bezoek') laadBezoek();
@@ -697,17 +706,57 @@ document.getElementById('bzVastKnop').addEventListener('click', () => { const el
 async function laadCodes(){
   const el = document.getElementById('cLijst'); el.innerHTML = '<div class="zacht">Laden…</div>';
   try{
-    const l = await rpc('admin_codes', { p_soort: null, p_status: document.getElementById('cStatus').value, p_limiet: 100 });
-    el.innerHTML = '<table><thead><tr><th>Code</th><th>Soort</th><th>Status</th><th>Verzilverd op</th></tr></thead><tbody>' + (l || []).map(c => '<tr><td><code>' + esc(c.code) + '</code></td><td>' + esc(c.soort) + '</td><td>' + (c.verzilverd ? '<span class="chip g">verzilverd</span>' : '<span class="chip">open</span>') + '</td><td>' + (c.verzilverd_op ? dt(c.verzilverd_op) : '·') + '</td></tr>').join('') + '</tbody></table>';
+    const st = document.getElementById('cStatus').value || null;
+    const l = await rpc('admin_codes', { p_soort: null, p_status: st, p_limiet: 500 });
+    const chip = c => c.status === 'verzilverd' ? '<span class="chip g">verzilverd</span>' : c.status === 'uitgegeven' ? '<span class="chip b">uitgegeven</span>' : '<span class="chip">open</span>';
+    const actie = c => c.status === 'open' ? '<button class="knop klein licht" data-uit="' + esc(c.code) + '">Uitgeven</button>'
+      : c.status === 'uitgegeven' ? '<button class="knop klein licht" data-terug="' + esc(c.code) + '">Terugnemen</button>' : '';
+    el.innerHTML = '<div class="zacht" style="margin-bottom:8px">' + (l || []).length + ' code(s)</div><table><thead><tr><th>Code</th><th>Soort</th><th>Status</th><th>Aan wie</th><th>Uitgegeven op</th><th>Verzilverd op</th><th></th></tr></thead><tbody>' + (l || []).map(c => '<tr><td><code>' + esc(c.code) + '</code></td><td>' + esc(c.soort) + '</td><td>' + chip(c) + '</td><td>' + esc(c.uitgegeven_aan || '') + '</td><td>' + (c.uitgegeven_op ? dt(c.uitgegeven_op) : '·') + '</td><td>' + (c.verzilverd_op ? dt(c.verzilverd_op) : '·') + '</td><td>' + actie(c) + '</td></tr>').join('') + '</tbody></table>';
+    el.querySelectorAll('[data-uit]').forEach(b => b.addEventListener('click', async () => {
+      const aan = prompt('Code ' + b.dataset.uit + ' uitgeven. Aan wie en waarom? (bijv. "Trudy, dank voor testen")');
+      if(aan === null || !aan.trim()) return;
+      try{ const r = await rpc('admin_code_uitgeven', { p_code: b.dataset.uit, p_aan: aan.trim() }); if(!r || !r.ok) throw new Error((r && r.reden) || 'mislukt'); laadCodes(); }
+      catch(e){ alert(e.message); }
+    }));
+    el.querySelectorAll('[data-terug]').forEach(b => b.addEventListener('click', async () => {
+      if(!confirm('Code ' + b.dataset.terug + ' terugnemen? Hij staat dan weer op open.')) return;
+      try{ const r = await rpc('admin_code_uitgeven', { p_code: b.dataset.terug, p_aan: null }); if(!r || !r.ok) throw new Error((r && r.reden) || 'mislukt'); laadCodes(); }
+      catch(e){ alert(e.message); }
+    }));
   }catch(e){ el.innerHTML = '<div class="melding fout">' + esc(e.message) + '</div>'; }
 }
 document.getElementById('cToon').addEventListener('click', laadCodes);
+document.getElementById('cStatus').addEventListener('change', laadCodes); /* v1.9: direct verversen */
 document.getElementById('cMaak').addEventListener('click', async () => {
   const n = +document.getElementById('cAantal').value || 1, soort = document.getElementById('cSoort').value;
   if(!confirm(n + ' nieuwe ' + soort + '-code(s) maken?')) return;
   try{ const codes = await rpc('maak_codes', { p_soort: soort, p_aantal: n }); document.getElementById('cNieuw').innerHTML = '<b>Nieuwe codes:</b> ' + (codes || []).map(c => '<code>' + esc(c) + '</code>').join(' · ') + '<br><span class="zacht">Schrijf ze ook bij in je batchlijst; codes komen niet in Notion.</span>'; laadCodes(); }
   catch(e){ document.getElementById('cNieuw').innerHTML = '<span class="melding fout">' + esc(e.message) + '</span>'; }
 });
+
+/* ---- v1.9 (28 nov 2026): partners en commissie per kwartaal (admin_partners) ---- */
+const kwNaam = d => { const x = new Date(d + 'T12:00:00'); return 'Q' + (Math.floor(x.getMonth() / 3) + 1) + ' ' + x.getFullYear(); };
+async function laadPartners(){
+  const el = document.getElementById('pLijst'), kw = document.getElementById('pKwartalen');
+  el.innerHTML = '<div class="zacht">Laden…</div>'; kw.innerHTML = '';
+  let d; try{ d = await rpc('admin_partners', {}); }catch(e){ el.innerHTML = '<div class="melding fout">' + esc(e.message) + '</div>'; return; }
+  document.getElementById('pTijd').textContent = dt(new Date().toISOString());
+  const ps = (d && d.partners) || [], rijen = (d && d.kwartalen) || [];
+  el.innerHTML = ps.length ? '<table><thead><tr><th>Partner</th><th>Code</th><th>Commissie</th><th>Aanmeldingen</th><th>Laatste 30 dagen</th><th>Link</th></tr></thead><tbody>' + ps.map(p => {
+      const lang = 'https://toereading.com/?utm_source=' + encodeURIComponent(p.code) + '&utm_medium=partner';
+      return '<tr><td><b>' + esc(p.naam || p.code) + '</b></td><td><code>' + esc(p.code) + '</code></td><td>' + esc(p.pct) + '% · ' + esc(p.maanden) + ' mnd · drempel ' + euro(p.drempel_cent) + '</td><td>' + esc(p.aanmeldingen) + '</td><td>' + esc(p.aanmeldingen_30d) + '</td><td><code>' + esc(p.kort || lang) + '</code></td></tr>';
+    }).join('') + '</tbody></table>' : '<div class="zacht">Nog geen partners.</div>';
+  if(!rijen.length){ kw.innerHTML = '<div class="zacht">Nog geen betalende klanten via een partner.</div>'; return; }
+  const open = {};
+  kw.innerHTML = '<table><thead><tr><th>Partner</th><th>Kwartaal</th><th>Klanten</th><th>Betalingen</th><th>Terug</th><th>Omzet</th><th>Btw</th><th>Kosten</th><th>AI</th><th>Netto</th><th>Commissie</th><th>Uit te betalen</th></tr></thead><tbody>' + rijen.map(r => {
+      open[r.code] = (open[r.code] || 0) + Number(r.commissie_cent || 0);
+      let uit = '<span class="zacht">schuift door (' + euro(open[r.code]) + ')</span>';
+      if(open[r.code] >= Number(r.drempel_cent || 2500)){ uit = '<b>' + euro(open[r.code]) + '</b>'; open[r.code] = 0; }
+      else if(open[r.code] <= 0){ uit = '<span class="zacht">·</span>'; }
+      return '<tr><td>' + esc(r.naam || r.code) + '</td><td>' + kwNaam(r.kwartaal) + '</td><td>' + r.klanten + '</td><td>' + r.betalingen + '</td><td>' + r.terugbetalingen + '</td><td>' + euro(r.bruto_cent) + '</td><td>' + euro(r.btw_cent) + '</td><td>' + euro(r.kosten_cent) + '</td><td>' + euro(r.ai_cent) + '</td><td>' + euro(r.netto_cent) + '</td><td>' + euro(r.commissie_cent) + '</td><td>' + uit + '</td></tr>';
+    }).join('') + '</tbody></table>';
+}
+document.getElementById('pVernieuw').addEventListener('click', laadPartners);
 
 /* ---- v1.4 (31 okt 2026): beveiligingslog (auth.audit_log_entries via admin_beveiliging, 90 dagen) ---- */
 const BV_ACTIE = { login: 'ingelogd', logout: 'uitgelogd', user_signedup: 'geregistreerd', user_confirmation_requested: 'bevestigmail aangevraagd',
